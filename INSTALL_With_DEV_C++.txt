@@ -18,6 +18,8 @@ windres = windres.exe
 dllwrap = dllwrap.exe
 gprof = gprof.exe
 
+in the Makefile tab uncheck Use fast but imperfect dependency generation
+
 open WhiteCat_crossplateform.dev in IDE/DEV-C++
 and in the Project Options/Compiler select MinGW
 
