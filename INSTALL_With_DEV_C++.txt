@@ -1,0 +1,24 @@
+follow the INSTALL_INSTRUCTION_for_MINGW.txt
+install Dev-Cpp 5.6.1 No Compiler Setup.exe int the DEVKIT/Windows folder
+open dev c++
+in the Tools/Compiler Options create a compiler ou called MinGW 
+add in MinGW compiler tab Directories
+Binaries to C:\MinGW\bin
+Librairies to C:\MinGW\lib
+C Includes to C:\MinGW\include
+C++ Includes to C:\MinGW\include
+
+In the Programs tab
+add all the programme in C:\MinGW\bin
+gcc = gcc.exe
+g++ = g++.exe
+make = mingw32-make.exe
+gdb = gdb.exe
+windres = windres.exe
+dllwrap = dllwrap.exe
+gprof = gprof.exe
+
+open WhiteCat_crossplateform.dev in IDE/DEV-C++
+and in the Project Options/Compiler select MinGW
+
+Click Compile and run 

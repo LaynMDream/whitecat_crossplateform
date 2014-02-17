@@ -1,0 +1,4 @@
+-change condition ternaire
+-add accolade dans switch case
+- includes opencv cv.hpp par opencv/cv.hpp etc...
+
