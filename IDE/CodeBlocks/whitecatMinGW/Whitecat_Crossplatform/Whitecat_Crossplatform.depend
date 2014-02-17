@@ -1825,3 +1825,270 @@
 1392300107 source:c:\whitecat_crossplateform\src\whitecat_private.rc
 	<windows.h>
 
+1392318514 source:c:\users\bibi\documents\github\whitecat_crossplateform\src\main_nov_2013_opensource_kbd.cpp
+	<allegro.h>
+	<winalleg.h>
+	<OpenLayer.hpp>
+	<stdio.h>
+	<loadpng.h>
+	<assert.h>
+	<Iphlpapi.h>
+	<audiere.h>
+	<jpgalleg.h>
+	<hpdf.h>
+	<MidiShare.h>
+	<whitecat.h>
+	<my_window_file_sample.h>
+	<patch_splines_2.cpp>
+	<grider_calculs8.cpp>
+	<midi_CORE.cpp>
+	<CORE_6.cpp>
+	<saves_export_pdf2.cpp>
+	<saves_export_import.cpp>
+	<saves_menu_8.cpp>
+	<gestionaire_fenetres2.cpp>
+	<gui_boutons_rebuild1.cpp>
+	<grider_core8.cpp>
+	<wizard_operations.cpp>
+	<faders_operations.cpp>
+	<chasers_core_5.cpp>
+	"mover_spline6.cpp"
+	"mover_2013.cpp"
+	"plot_core9.cpp"
+	"plot9.cpp"
+	<audio_core5.cpp>
+	<save_show_13.cpp>
+	<network_artnet_3.cpp>
+	<logicals_intres.cpp>
+	<channels_9_core.cpp>
+	<wizard.cpp>
+	<grand_master.cpp>
+	<faders_core_24.cpp>
+	<audio_visu4.cpp>
+	<icat_core14.cpp>
+	<arduino_device_core.cpp>
+	<banger_core_8.cpp>
+	<banger_visu_8.cpp>
+	<Call_everybody_5.cpp>
+	<patch_core.cpp>
+	<patch_visu.cpp>
+	<time_core_3.cpp>
+	<time_visu_3.cpp>
+	<trichro_core2.cpp>
+	<trichro_visu2.cpp>
+	<numpad_core.cpp>
+	<numpad_visuel.cpp>
+	<keyboard_functions2.cpp>
+	<keyboard_routines2.cpp>
+	<minifaders_core.cpp>
+	<minifaders_visu.cpp>
+	<faders_visuels_26.cpp>
+	<channels_10_visu.cpp>
+	<video_tracking_core.cpp>
+	<video_tracking_visu.cpp>
+	<list_proj_core.cpp>
+	<list_proj_visu.cpp>
+	<sequentiel_6_core.cpp>
+	<iCat14.cpp>
+	<network_MAC_adress_3.cpp>
+	<midi_launchpad.cpp>
+	<grider8.cpp>
+	<sequentiel_7_visu.cpp>
+	<Draw3.cpp>
+	<echo3.cpp>
+	<my_window_file_sample.cpp>
+	<procs_visuels_rebuild1.cpp>
+	<dmx_functions_13.cpp>
+	<midi_13.cpp>
+	<CFG_screen.cpp>
+	<arduino_core_6_UNO_anton3.cpp>
+	<arduino_6_UNO_anton2.cpp>
+	<CFG_config_panel_8.cpp>
+	<chasers_visu.cpp>
+	<graphics_rebuild1.cpp>
+
+1139867830 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\audiere-1.9.4-win32\include\audiere.h
+	<vector>
+	<string>
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
+	"windows.h"
+
+1391962280 c:\users\bibi\documents\github\whitecat_crossplateform\src\whitecat.h
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\my_window_file_sample.h
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\patch_splines_2.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\grider_calculs8.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\midi_core.cpp
+
+1391861068 c:\users\bibi\documents\github\whitecat_crossplateform\src\core_6.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\saves_export_pdf2.cpp
+	<setjmp.h>
+	"hpdf.h"
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\saves_export_import.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\saves_menu_8.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
+
+1391861425 c:\users\bibi\documents\github\whitecat_crossplateform\src\grider_core8.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\wizard_operations.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\faders_operations.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\chasers_core_5.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\mover_spline6.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\mover_2013.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\plot_core9.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\plot9.cpp
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\audio_core5.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\save_show_13.cpp
+
+1391822711 c:\users\bibi\documents\github\whitecat_crossplateform\src\network_artnet_3.cpp
+	<winsock2.h>
+
+1391861425 c:\users\bibi\documents\github\whitecat_crossplateform\src\logicals_intres.cpp
+
+1391821635 c:\users\bibi\documents\github\whitecat_crossplateform\src\channels_9_core.cpp
+	<allegro.h>
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\wizard.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\grand_master.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\faders_core_24.cpp
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\audio_visu4.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\icat_core14.cpp
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_device_core.cpp
+	"serial.cpp"
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\cserial\serial.cpp
+	"Serial.h"
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\cserial\serial.h
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\banger_core_8.cpp
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\banger_visu_8.cpp
+
+1391548144 c:\users\bibi\documents\github\whitecat_crossplateform\src\call_everybody_5.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\patch_core.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\patch_visu.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\time_core_3.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\time_visu_3.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\trichro_core2.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\trichro_visu2.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\numpad_core.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\numpad_visuel.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\keyboard_functions2.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\keyboard_routines2.cpp
+	<allegro.h>
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\minifaders_core.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\minifaders_visu.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\faders_visuels_26.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\channels_10_visu.cpp
+
+1392222550 c:\users\bibi\documents\github\whitecat_crossplateform\src\video_tracking_core.cpp
+	"opencv2/opencv.hpp"
+	"opencv/cv.h"
+	"opencv/highgui.h"
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\video_tracking_visu.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\list_proj_core.cpp
+
+1391861950 c:\users\bibi\documents\github\whitecat_crossplateform\src\list_proj_visu.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\sequentiel_6_core.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\icat14.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\network_mac_adress_3.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\midi_launchpad.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\grider8.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\sequentiel_7_visu.cpp
+
+1391548144 c:\users\bibi\documents\github\whitecat_crossplateform\src\draw3.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\echo3.cpp
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\my_window_file_sample.cpp
+
+1391548151 c:\users\bibi\documents\github\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\dmx_functions_13.cpp
+	<odmxusb.cpp>
+	<odmxusb.h>
+	<dmx_enttec_pro.cpp>
+	<dmx_sunlite.cpp>
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\odmxusb_terry\odmxusb.cpp
+	"odmxusb.h"
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\odmxusb_terry\odmxusb.h
+	<windows.h>
+	"FTD2XX.H"
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\odmxusb_terry\ftd2xx.h
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\dmx_enttec_pro.cpp
+	<process.h>
+	<assert.h>
+	<tchar.h>
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\dmx_sunlite.cpp
+	<_DasHard.h>
+
+1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\dashard\_dashard.h
+
+1391548149 c:\users\bibi\documents\github\whitecat_crossplateform\src\midi_13.cpp
+
+1391548144 c:\users\bibi\documents\github\whitecat_crossplateform\src\cfg_screen.cpp
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_core_6_uno_anton3.cpp
+
+1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_6_uno_anton2.cpp
+
+1391548144 c:\users\bibi\documents\github\whitecat_crossplateform\src\cfg_config_panel_8.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\chasers_visu.cpp
+
+1391548146 c:\users\bibi\documents\github\whitecat_crossplateform\src\graphics_rebuild1.cpp
+
+1392672163 source:c:\users\bibi\documents\github\whitecat_crossplateform\src\whitecat_private.rc
+	<windows.h>
+

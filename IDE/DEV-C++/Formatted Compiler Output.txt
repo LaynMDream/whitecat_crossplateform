@@ -6242,3 +6242,36 @@
 1110	46	C:\Users\bibi\Documents\whitecat_crossplateform\Src\MAIN_nov_2013_opensource_kbd.cpp	[Warning] deprecated conversion from string constant to 'char*' [-Wwrite-strings]
 1112	47	C:\Users\bibi\Documents\whitecat_crossplateform\Src\MAIN_nov_2013_opensource_kbd.cpp	[Warning] deprecated conversion from string constant to 'char*' [-Wwrite-strings]
 1114	46	C:\Users\bibi\Documents\whitecat_crossplateform\Src\MAIN_nov_2013_opensource_kbd.cpp	[Warning] deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+
+17/02/2014 22:25:41: Appending to log...
+
+23		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win	recipe for target 'clean' failed
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\process_begin	CreateProcess(NULL, rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe, ...) failed.
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\make (e=2)	Le fichier spécifié est introuvable.
+			
+
+17/02/2014 22:26:10: Appending to log...
+
+23		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win	recipe for target 'clean' failed
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\process_begin	CreateProcess(NULL, rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe, ...) failed.
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\make (e=2)	Le fichier spécifié est introuvable.
+			
+
+17/02/2014 22:26:17: Appending to log...
+
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Finding dependencies for file	C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\..\..\Src\MAIN_nov_2013_opensource_kbd.cpp
+
+17/02/2014 22:26:21: Appending to log...
+
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Finding dependencies for file	C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\..\..\Src\MAIN_nov_2013_opensource_kbd.cpp
+
+17/02/2014 22:35:57: Appending to log...
+
+23		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win	recipe for target 'clean' failed
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\process_begin	CreateProcess(NULL, rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_5_1_withdevc.exe, ...) failed.
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\make (e=2)	Le fichier spécifié est introuvable.
+			
+
+17/02/2014 22:36:03: Appending to log...
+
+		C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Finding dependencies for file	C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\..\..\Src\MAIN_nov_2013_opensource_kbd.cpp

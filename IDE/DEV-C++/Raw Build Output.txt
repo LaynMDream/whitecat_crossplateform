@@ -6678,3 +6678,71 @@ Executing  make...
 mingw32-make.exe -f "C:\Users\bibi\Documents\whitecat_crossplateform\IDE\DEV-C++\Makefile.win" all
 mingw32-make.exe: Nothing to be done for 'all'.
 Compilation succeeded in 0,05 seconds
+
+17/02/2014 22:25:41: Appending to log...
+
+General: MinGW
+Building Makefile "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win"
+Executing make clean
+rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe
+C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win:23: recipe for target 'clean' failed
+process_begin: CreateProcess(NULL, rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe, ...) failed.
+make (e=2): Le fichier spécifié est introuvable.
+mingw32-make.exe: *** [clean] Error 2
+Compilation succeeded in 0,06 seconds
+
+17/02/2014 22:26:10: Appending to log...
+
+General: MinGW
+Building Makefile "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win"
+Executing make clean
+rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe
+C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win:23: recipe for target 'clean' failed
+process_begin: CreateProcess(NULL, rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe, ...) failed.
+make (e=2): Le fichier spécifié est introuvable.
+mingw32-make.exe: *** [clean] Error 2
+Compilation succeeded in 0,06 seconds
+
+17/02/2014 22:26:17: Appending to log...
+
+General: MinGW
+Building Makefile "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win"
+Finding dependencies for file: C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\..\..\Src\MAIN_nov_2013_opensource_kbd.cpp
+Executing  make...
+mingw32-make.exe -f "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win" all
+windres.exe -i WhiteCat_private.rc --input-format=rc -o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res -O coff 
+g++.exe ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res -o ../../build/mingw_build/white_cat/white_cat_0_8_4_15_withcodeblocks.exe -L"C:/MinGW/lib" -L"C:/MinGW/lib" -L"../../lib/windows/audiere-1.9.4-win32/lib" -L"../../lib/windows/enttec_pro" -L"../../lib/windows/midishare/librairies" -L"../../lib/windows/odmxusb_terry" -L"C:/MinGW/opencv2.4.8/x86/mingw/staticlib" -L"C:/MinGW/opencv2.4.8/x86/mingw/lib" -mwindows -lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lpthreadGC2 -lwsock32 -liphlpapi -lpng12.dll -lz -lhpdf ../../lib/windows/odmxusb_terry/FTD2XX.lib ../../lib/windows/enttec_pro/ftd2xx.lib ../../lib/windows/midishare/libraries/mshare32.lib ../../lib/windows/audiere-1.9.4-win32/lib/audiere.lib C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjasper.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjpeg.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibpng.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibtiff.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_calib3d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_contrib248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_core248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_features2d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_flann248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_gpu248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_highgui248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_imgproc248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_legacy248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ml248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_nonfree248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_objdetect248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ocl248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_photo248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_stitching248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_superres248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ts248.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_video248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_videostab248.dll.a C:/MinGW/lib/libz.a
+Compilation succeeded in 1,62 seconds
+
+17/02/2014 22:26:21: Appending to log...
+
+General: MinGW
+Building Makefile "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win"
+Finding dependencies for file: C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\..\..\Src\MAIN_nov_2013_opensource_kbd.cpp
+Executing  make...
+mingw32-make.exe -f "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win" all
+mingw32-make.exe: Nothing to be done for 'all'.
+Compilation succeeded in 0,39 seconds
+
+17/02/2014 22:35:57: Appending to log...
+
+General: MinGW
+Building Makefile "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win"
+Executing make clean
+rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_5_1_withdevc.exe
+C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win:23: recipe for target 'clean' failed
+process_begin: CreateProcess(NULL, rm.exe -f ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res ../../build/mingw_build/white_cat/white_cat_0_8_5_1_withdevc.exe, ...) failed.
+make (e=2): Le fichier spécifié est introuvable.
+mingw32-make.exe: *** [clean] Error 2
+Compilation succeeded in 0,08 seconds
+
+17/02/2014 22:36:03: Appending to log...
+
+General: MinGW
+Building Makefile "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win"
+Finding dependencies for file: C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\..\..\Src\MAIN_nov_2013_opensource_kbd.cpp
+Executing  make...
+mingw32-make.exe -f "C:\Users\bibi\Documents\GitHub\whitecat_crossplateform\IDE\DEV-C++\Makefile.win" all
+windres.exe -i WhiteCat_private.rc --input-format=rc -o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res -O coff 
+g++.exe ../../build/mingw_build/white_cat/obj/MAIN_nov_2013_opensource_kbd.o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res -o ../../build/mingw_build/white_cat/white_cat_0_8_5_1_withdevc.exe -L"C:/MinGW/lib" -L"C:/MinGW/lib" -L"../../lib/windows/audiere-1.9.4-win32/lib" -L"../../lib/windows/enttec_pro" -L"../../lib/windows/midishare/librairies" -L"../../lib/windows/odmxusb_terry" -L"C:/MinGW/opencv2.4.8/x86/mingw/staticlib" -L"C:/MinGW/opencv2.4.8/x86/mingw/lib" -mwindows -lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lpthreadGC2 -lwsock32 -liphlpapi -lpng12.dll -lz -lhpdf ../../lib/windows/odmxusb_terry/FTD2XX.lib ../../lib/windows/enttec_pro/ftd2xx.lib ../../lib/windows/midishare/libraries/mshare32.lib ../../lib/windows/audiere-1.9.4-win32/lib/audiere.lib C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjasper.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjpeg.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibpng.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibtiff.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_calib3d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_contrib248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_core248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_features2d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_flann248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_gpu248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_highgui248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_imgproc248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_legacy248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ml248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_nonfree248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_objdetect248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ocl248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_photo248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_stitching248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_superres248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ts248.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_video248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_videostab248.dll.a C:/MinGW/lib/libz.a
+Compilation succeeded in 1,61 seconds
