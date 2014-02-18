@@ -7,7 +7,7 @@ download the build folder at https://github.com/AntonLanghoff/whitecatbuild and 
 In the DEVKIT/Windows folder:
 
 1- lunch mingw-get-setup.exe install it on C:/MinGW
-In the dialogue box check mark for instatlation all the basic setup package+ all the package listed in the file packageinstalled.txt in C:\whitecat_crossplateform
+In the dialogue box check mark for instatlation all the basic setup package+ all the package listed in the file MinGWpackageinstalled.rtf
 click in the instalation menu on  Apply changes
 click in the instalation menu on  mark all upgrade
 click in the instalation menu on  Apply changes
