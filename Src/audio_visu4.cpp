@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file audio_visu.cpp
+* \file audio_visu4.cpp
 * \brief {Audio GUI fonctions}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

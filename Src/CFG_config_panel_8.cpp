@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file CFG_config_panel8.cpp
+* \file CFG_config_panel_8.cpp
 * \brief {config core file}
 * \author Christoph Guillermet
 * \version {0.8.5.2}
@@ -35,7 +35,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
-*   Gère les fonction de configuration de whitecat
+*   GÃ¨re les fonction de configuration de whitecat
 *
 *   Configuration core fonction of whitecat
 *
@@ -1373,7 +1373,7 @@ char read_buff[ 512 ] ;
 	cfg_file = fopen("user\\config_network.txt", "rt" );
 	if( !cfg_file )
 	{
-	 printf("\nPb à ouverture de config_network.txt\n");
+	 printf("\nPb Ã  ouverture de config_network.txt\n");
      return 1;
 	}
 

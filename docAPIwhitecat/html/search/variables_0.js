@@ -58,7 +58,7 @@ var searchData=
   ['arduino_5fmax_5fout_5fdigi',['arduino_max_out_digi',['../whitecat_8h.html#a55e9a7437dca41de4b643057c08ad19f',1,'whitecat.h']]],
   ['arduino_5forder',['arduino_order',['../whitecat_8h.html#a32bfbb1d7acebed2dec256cbc39aac56',1,'whitecat.h']]],
   ['arduino_5fpwm_5faff_5fsize',['arduino_pwm_aff_size',['../save__show__13_8cpp.html#ac290c7278397bd9d3978960bf03472e6',1,'save_show_13.cpp']]],
-  ['arduino_5frate',['ARDUINO_RATE',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'ARDUINO_RATE():&#160;MAIN_janv_2014_opensource_kbd.cpp'],['../_m_a_i_n__n_white_cat___openversion__crossplatform_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'ARDUINO_RATE():&#160;MAIN_nWhiteCat_Openversion_crossplatform.cpp']]],
+  ['arduino_5frate',['ARDUINO_RATE',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'MAIN_janv_2014_opensource_kbd.cpp']]],
   ['arduino_5fsimulating_5fmidi',['arduino_simulating_midi',['../whitecat_8h.html#a18609ef09e36d3647b7b189bb1e4e4fa',1,'whitecat.h']]],
   ['arduino_5ftotal_5fpin',['arduino_total_pin',['../whitecat_8h.html#a1bc1c3f47d2088f2fc9b067d3eea0c73',1,'whitecat.h']]],
   ['artdetected',['ArtDetected',['../whitecat_8h.html#ac63e0c383a1df6ee1f0f8923d8763224',1,'whitecat.h']]],

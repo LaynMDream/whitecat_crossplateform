@@ -3,22 +3,22 @@ var NAVTREE =
   [ "WhitecatAPI", "index.html", [
     [ "README", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", null, [
-      [ "Class List", "annotated.html", "annotated" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+      [ "Liste des classes", "annotated.html", "annotated" ],
+      [ "Index des classes", "classes.html", null ],
+      [ "Membres de classe", "functions.html", [
+        [ "Tout", "functions.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ],
+    [ "Fichiers", null, [
+      [ "Liste des fichiers", "files.html", "files" ],
+      [ "Membres de fichier", "globals.html", [
+        [ "Tout", "globals.html", "globals_dup" ],
+        [ "Fonctions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", "globals_vars" ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
+        [ "Définitions de type", "globals_type.html", null ],
+        [ "Énumérations", "globals_enum.html", null ],
+        [ "Valeurs énumérées", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -27,26 +27,26 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_c_f_g__config__panel__7_8cpp.html",
-"_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",
-"dmx__ftdi___i_n__test__enttec__pro_8cpp.html",
-"gui__boutons__rebuild1_8cpp.html#a1816d0599254412c089995c155e37453",
-"network__artnet__3_8cpp.html#aa1df3e62651956a123b5de1eddb899d4",
-"plot__core9_8cpp.html#ad3894921efd1d3506ce1b054b21b8a95",
-"save__show__13_8cpp.html#a7b3c97df7290a4b38ecb22f2b5103de9",
-"saves__export__pdf2_8cpp.html#a43345b45f19806fafaca498fdf7ee954",
-"whitecat_8h.html#a080ca9e45c9753dc223dfde8a62e0bcc",
-"whitecat_8h.html#a2755fa2c57b4425b0e3aec80bfda7a57",
-"whitecat_8h.html#a4a7d86dc52926f291f56054215ef8925",
-"whitecat_8h.html#a69e83fa4b92da554f8031ec41011b26c",
-"whitecat_8h.html#a8bbee54d72ee73515441ad00246a8492",
-"whitecat_8h.html#aabc5a850a772aa084b2c08f18fedbdca",
-"whitecat_8h.html#aca766cdd892cde0b9629e7513d6ecd79",
-"whitecat_8h.html#aec004ab20439cfd8045d062c91852648"
+"_c_f_g__config__panel__8_8cpp.html",
+"_white_cat__private_8h.html#ae4fa88b4630b8cd07bc0bd4bd90ca816",
+"faders__operations_8cpp.html#acc9c7cebe2c499a652cf57035ef0f3d7",
+"keyboard__functions2_8cpp.html#af3dd6697323b10b480719c1612bcf29a",
+"plot9_8cpp.html#a97706670567f9475cd0e7a47e0bbb831",
+"save__show__13_8cpp.html#a2648a08266e6b56ba6039be0702eb238",
+"save__show__13_8cpp.html#ab29f256ae187d93c16e24c4eacbbd332",
+"tracker__main14nov_8cpp.html",
+"whitecat_8h.html#a1447ebe0d477833e6b3b45a65a12e37f",
+"whitecat_8h.html#a3506faab8b41d7b989a32c41670f5e56",
+"whitecat_8h.html#a54f3a754f8dca984d222844f012f03d0",
+"whitecat_8h.html#a77bbd3658c64787cb37d9b92ca22305e",
+"whitecat_8h.html#a9a391065d1101c9258ed6a93623a4165",
+"whitecat_8h.html#ab8ef1bf8a70cc07c6d55823c390a7e76",
+"whitecat_8h.html#ad8df5c19653947965ed275ebe440a131",
+"whitecat_8h.html#af8d610de3728ccbcf4b34d015e302351"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
+var SYNCOFFMSG = 'cliquez pour activer la synchronisation du panel';
 var SYNCONMSG = 'click to disable panel synchronisation';
 var SYNCOFFMSG = 'click to enable panel synchronisation';
 var navTreeSubIndices = new Array();

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['fader_5fniveau_5fson',['fader_niveau_son',['../audio__visu2_8cpp.html#a0b5439162e79825e703858743cab3d1d',1,'fader_niveau_son(int xp, int yp, int numero):&#160;audio_visu2.cpp'],['../audio__visu3_8cpp.html#a0b5439162e79825e703858743cab3d1d',1,'fader_niveau_son(int xp, int yp, int numero):&#160;audio_visu3.cpp'],['../audio__visu4_8cpp.html#a0b5439162e79825e703858743cab3d1d',1,'fader_niveau_son(int xp, int yp, int numero):&#160;audio_visu4.cpp']]],
-  ['faderspace',['FaderSpace',['../faders__visuels__24_8cpp.html#a9ea1e5a2798eea88240ff9ea8500b339',1,'FaderSpace(int x, int y, int espacement, int nbr_fader):&#160;faders_visuels_24.cpp'],['../faders__visuels__25_8cpp.html#a9ea1e5a2798eea88240ff9ea8500b339',1,'FaderSpace(int x, int y, int espacement, int nbr_fader):&#160;faders_visuels_25.cpp'],['../faders__visuels__26_8cpp.html#a9ea1e5a2798eea88240ff9ea8500b339',1,'FaderSpace(int x, int y, int espacement, int nbr_fader):&#160;faders_visuels_26.cpp']]],
+  ['fader_5fniveau_5fson',['fader_niveau_son',['../audio__visu4_8cpp.html#a0b5439162e79825e703858743cab3d1d',1,'audio_visu4.cpp']]],
+  ['faderspace',['FaderSpace',['../faders__visuels__26_8cpp.html#a9ea1e5a2798eea88240ff9ea8500b339',1,'faders_visuels_26.cpp']]],
   ['fantastick_5fcheck_5fstring',['Fantastick_check_string',['../icat__core14_8cpp.html#ae1847eaa0922902ca67dd5cebbcf8aae',1,'icat_core14.cpp']]],
   ['feedback_5fbanger',['feedback_banger',['../banger__visu__8_8cpp.html#a6e14bd4c4187451197497d56125bba7d',1,'banger_visu_8.cpp']]],
-  ['fenetre_5faudio',['fenetre_audio',['../audio__visu2_8cpp.html#a839f8a050c93200c75b01047fd4f6d09',1,'fenetre_audio(int xb, int yb):&#160;audio_visu2.cpp'],['../audio__visu3_8cpp.html#a839f8a050c93200c75b01047fd4f6d09',1,'fenetre_audio(int xb, int yb):&#160;audio_visu3.cpp'],['../audio__visu4_8cpp.html#a839f8a050c93200c75b01047fd4f6d09',1,'fenetre_audio(int xb, int yb):&#160;audio_visu4.cpp']]],
+  ['fenetre_5faudio',['fenetre_audio',['../audio__visu4_8cpp.html#a839f8a050c93200c75b01047fd4f6d09',1,'audio_visu4.cpp']]],
   ['fenetre_5fbanger',['fenetre_banger',['../banger__visu__8_8cpp.html#a48fb13f28b925cd6737cfe8e583bcbd8',1,'banger_visu_8.cpp']]],
   ['fenetre_5fconfirm',['fenetre_confirm',['../logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb',1,'logicals_intres.cpp']]],
   ['fenetre_5fwizard',['fenetre_wizard',['../wizard_8cpp.html#a242d83bba0e7fa9a2653e86bbbd10d18',1,'wizard.cpp']]],

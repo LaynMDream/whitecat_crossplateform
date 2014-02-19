@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file fader_core_24.cpp
+* \file faders_core_24.cpp
 * \brief {Core fonctions for the faders}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

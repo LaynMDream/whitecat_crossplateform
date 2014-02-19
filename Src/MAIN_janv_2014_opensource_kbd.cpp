@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file MAIN_janv_2014_opensource_kdb.cpp
+* \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

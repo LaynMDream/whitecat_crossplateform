@@ -38,7 +38,7 @@ var searchData=
   ['petitpetitchiffregris',['petitpetitchiffregris',['../whitecat_8h.html#ae97b8b7a8f3f6a414ecf241091ba26c9',1,'whitecat.h']]],
   ['petitpetitchiffrerouge',['petitpetitchiffrerouge',['../whitecat_8h.html#a624cb0be19e5dbf397d9bc8935ef4e50',1,'whitecat.h']]],
   ['phe',['phe',['../whitecat_8h.html#a7813c2c8b00c18f0f242992f2cd2309f',1,'whitecat.h']]],
-  ['pi',['PI',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;MAIN_janv_2014_opensource_kbd.cpp'],['../_m_a_i_n__n_white_cat___openversion__crossplatform_8cpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;MAIN_nWhiteCat_Openversion_crossplatform.cpp']]],
+  ['pi',['PI',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#a598a3330b3c21701223ee0ca14316eca',1,'MAIN_janv_2014_opensource_kbd.cpp']]],
   ['picker_5ftrichro',['picker_trichro',['../whitecat_8h.html#af8cc2979fddd85efdab523a39abfb31b',1,'whitecat.h']]],
   ['picker_5fx',['picker_x',['../whitecat_8h.html#a9143601c127784a0390c6b04b4670329',1,'whitecat.h']]],
   ['picker_5fy',['picker_y',['../whitecat_8h.html#a371cc233c6b647b6710ced809ad4149d',1,'whitecat.h']]],

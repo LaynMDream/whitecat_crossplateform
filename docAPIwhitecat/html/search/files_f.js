@@ -5,6 +5,5 @@ var searchData=
   ['saves_5fexport_5fpdf2_2ecpp',['saves_export_pdf2.cpp',['../saves__export__pdf2_8cpp.html',1,'']]],
   ['saves_5fmenu_5f8_2ecpp',['saves_menu_8.cpp',['../saves__menu__8_8cpp.html',1,'']]],
   ['sequentiel_5f6_5fcore_2ecpp',['sequentiel_6_core.cpp',['../sequentiel__6__core_8cpp.html',1,'']]],
-  ['sequentiel_5f6_5fvisu_2ecpp',['sequentiel_6_visu.cpp',['../sequentiel__6__visu_8cpp.html',1,'']]],
   ['sequentiel_5f7_5fvisu_2ecpp',['sequentiel_7_visu.cpp',['../sequentiel__7__visu_8cpp.html',1,'']]]
 ];

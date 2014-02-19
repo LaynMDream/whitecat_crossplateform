@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file wizard_perations.cpp
+* \file wizard_operations.cpp
 * \brief {GUI fonctions for wizard }
 * \author Christoph Guillermet
 * \version {0.8.5.2}

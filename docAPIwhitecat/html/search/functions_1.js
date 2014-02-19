@@ -13,7 +13,7 @@ var searchData=
   ['bouton_5fview_5flaunchpad_5fpos_5fcore',['bouton_view_launchpad_pos_core',['../chasers__core__5_8cpp.html#ac0937d092e3181686c614d1d3efb9d75',1,'chasers_core_5.cpp']]],
   ['bouton_5fview_5ftrack_5fdownup',['bouton_view_track_downup',['../chasers__visu_8cpp.html#ab0a3e125f61ec9d2c30206b3f2bb746f',1,'chasers_visu.cpp']]],
   ['bouton_5fview_5ftrack_5fdownup_5fcore',['bouton_view_track_downup_core',['../chasers__core__5_8cpp.html#a9ef4033a9905a9a671f6f1e10d01847d',1,'chasers_core_5.cpp']]],
-  ['box_5fartnet_5fudpport',['Box_artnet_udpport',['../_c_f_g__config__panel__7_8cpp.html#a135e0098047da37f73e154c4976bc518',1,'Box_artnet_udpport(int macx, int macy):&#160;CFG_config_panel_7.cpp'],['../_c_f_g__config__panel__8_8cpp.html#a135e0098047da37f73e154c4976bc518',1,'Box_artnet_udpport(int macx, int macy):&#160;CFG_config_panel_8.cpp']]],
+  ['box_5fartnet_5fudpport',['Box_artnet_udpport',['../_c_f_g__config__panel__8_8cpp.html#a135e0098047da37f73e154c4976bc518',1,'CFG_config_panel_8.cpp']]],
   ['box_5fip_5frouting',['Box_IP_routing',['../network___m_a_c__adress__3_8cpp.html#ac218210ef672c54b74f648774fd25b7b',1,'network_MAC_adress_3.cpp']]],
   ['box_5fmem_5fto_5fmem',['Box_mem_to_mem',['../wizard_8cpp.html#a83efc50e6fdd7761f349a8befed67316',1,'wizard.cpp']]],
   ['boxes',['Boxes',['../graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf',1,'graphics_rebuild1.cpp']]],

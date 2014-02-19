@@ -1,7 +1,7 @@
 var searchData=
 [
   ['x',['x',['../structcurve__node.html#aa7ae8f2ee3bbd3e6194785c392751cdb',1,'curve_node::x()'],['../struct_n_o_d_e.html#ae491648fdefa758c04fd1b39997dfe44',1,'NODE::x()']]],
-  ['x1_5fx2',['x1_x2',['../sequentiel__6__visu_8cpp.html#aa0d5cc4c4ac1e0239551c9fde309658d',1,'x1_x2(int x_seq, int y_seq):&#160;sequentiel_6_visu.cpp'],['../sequentiel__7__visu_8cpp.html#aa0d5cc4c4ac1e0239551c9fde309658d',1,'x1_x2(int x_seq, int y_seq):&#160;sequentiel_7_visu.cpp']]],
+  ['x1_5fx2',['x1_x2',['../sequentiel__7__visu_8cpp.html#aa0d5cc4c4ac1e0239551c9fde309658d',1,'sequentiel_7_visu.cpp']]],
   ['x_5fbanger',['X_banger',['../whitecat_8h.html#a6e712accfd39e9ac4362be7188323c91',1,'whitecat.h']]],
   ['x_5fecho',['x_echo',['../whitecat_8h.html#ab6cb9f626da9e39c842177f8ea1e03c4',1,'whitecat.h']]],
   ['x_5ffract',['x_fract',['../whitecat_8h.html#a57c606a001ca8c5b7543e31d2b5522af',1,'whitecat.h']]],

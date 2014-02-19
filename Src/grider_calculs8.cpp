@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file grider_calcul8.cpp
+* \file grider_calculs8.cpp
 * \brief {calcul fonctions for grid players}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file save_export_pdf2.cpp
+* \file saves_export_pdf2.cpp
 * \brief {import and export the show in PDF}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

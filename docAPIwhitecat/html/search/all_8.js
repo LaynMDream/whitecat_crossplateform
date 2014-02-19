@@ -427,7 +427,7 @@ var searchData=
   ['initialisation_5ftableau_5fwindows',['initialisation_tableau_windows',['../gestionaire__fenetres2_8cpp.html#aaa99bcedb7bd6b585af815763ac3d437',1,'gestionaire_fenetres2.cpp']]],
   ['initiate_5fwindows',['initiate_windows',['../gestionaire__fenetres2_8cpp.html#a01d7d03f50e01b3b5680d4855ce0e1d8',1,'gestionaire_fenetres2.cpp']]],
   ['initmidi',['InitMidi',['../midi___c_o_r_e_8cpp.html#a0ccf480a33424e626f88d109d53d8366',1,'midi_CORE.cpp']]],
-  ['initsound',['InitSound',['../audio__core3_8cpp.html#a05d0ff746200f59b25fb77e50e7c081f',1,'InitSound():&#160;audio_core3.cpp'],['../audio__core4_8cpp.html#a05d0ff746200f59b25fb77e50e7c081f',1,'InitSound():&#160;audio_core4.cpp'],['../audio__core5_8cpp.html#a05d0ff746200f59b25fb77e50e7c081f',1,'InitSound():&#160;audio_core5.cpp']]],
+  ['initsound',['InitSound',['../audio__core5_8cpp.html#a05d0ff746200f59b25fb77e50e7c081f',1,'audio_core5.cpp']]],
   ['inittbllibev',['InitTblLibEv',['../midi___c_o_r_e_8cpp.html#a2b0b387b399b110d0894dd7c92cf64b3',1,'midi_CORE.cpp']]],
   ['initvideo',['InitVideo',['../video__tracking__core_8cpp.html#ad77e843aafa23836bfc4a5f8876f9dad',1,'video_tracking_core.cpp']]],
   ['insert_5fsteps',['insert_steps',['../grider__calculs8_8cpp.html#a18a55b45badff9bcdb30ddc4a397df80',1,'grider_calculs8.cpp']]],

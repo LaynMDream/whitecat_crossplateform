@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file save_menu_8.cpp
+* \file saves_menu_8.cpp
 * \brief {GUI window of save and load menu}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

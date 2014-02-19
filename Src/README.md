@@ -1,27 +1,15 @@
-<<<<<<< HEAD
-WhiteCat Lighting Board isa free lighting desk for windows, based on LGPL.
-=======
-WhiteCat Lighting Board is a free lighting desk for windows, based on LGPL.
->>>>>>> Minor fix
+WhiteCat Lighting Board isa free lighting desk for windows, based on GPL v2 or after.
 
 First release open source ! version 0.8.4.
 
 To install and compile:
-Download (http://www.le-chat-noir-numerique.fr/) and unzip WhiteCat on C://
-Put the sources folder inside of it
+Download (https://github.com/AntonLanghoff/whitecat_crossplateform) and clone it somewhere
+download at https://github.com/AntonLanghoff/whitecatlib and copy it in whitecat_crossplateform folder
+download at https://github.com/AntonLanghoff/whitecatbuild and copy it in whitecat_crossplateform folder
 
-Inside the Sources folder, go to DevKit Folder.
+Follow the INSTALL_INSTRUCTION_for_MinGW.txt
 
-Install Dev-Cpp
-Got to gcc 3.4.5 folder, install all the DevPaks inside of it ( bin, utils, etc...)
-Now install DevPaks in following order:
-allegro 4 2 2 1
-zlib > lib png > load png
-libahru 2.0.8
-lib_jpeg
-
-<<<<<<< HEAD
-You can now open the WhiteCat_opensource.dev project, and compile a new exe ( please rename in DevCpp Options the EXE name or it will not compile).
+You can now open the Whitecat_Crossplatform.cbp project whitecat_crossplateform/IDE/CodeBlocks/whitecatMinGW, and compile a new exe ( rebuild).
+your exe will be in whitecat_crossplateform/build/mingw_build/white_cat/Whitecat_Crossplatform.exe
 =======
-You can now open the WhiteCat_opensource.dev project, and compile a new exe ( please rename in DevCpp Options the EXE name or it will not compile).
->>>>>>> Minor fix
+

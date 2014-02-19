@@ -63,7 +63,7 @@ var searchData=
   ['refresh_5fstep_5fin_5fplayer',['refresh_step_in_player',['../grider__calculs8_8cpp.html#a1043daba02cc271e1770bb0cc156d954',1,'grider_calculs8.cpp']]],
   ['refresh_5ftime_5fcursor',['refresh_time_cursor',['../_c_o_r_e__6_8cpp.html#a23e8581e0717573c80f8fc12ea8606bd',1,'CORE_6.cpp']]],
   ['refresh_5fview_5fshape_5fparams',['refresh_view_shape_params',['../plot__core9_8cpp.html#a910d7cb9e1f6176bb241140c87e715d5',1,'plot_core9.cpp']]],
-  ['refresh_5fvision_5fmemories',['refresh_vision_memories',['../sequentiel__6__visu_8cpp.html#aaa9e3d6dfa511aed5a938d99daca6d3f',1,'refresh_vision_memories(int x_seq, int y_seq):&#160;sequentiel_6_visu.cpp'],['../sequentiel__7__visu_8cpp.html#aaa9e3d6dfa511aed5a938d99daca6d3f',1,'refresh_vision_memories(int x_seq, int y_seq):&#160;sequentiel_7_visu.cpp']]],
+  ['refresh_5fvision_5fmemories',['refresh_vision_memories',['../sequentiel__7__visu_8cpp.html#aaa9e3d6dfa511aed5a938d99daca6d3f',1,'sequentiel_7_visu.cpp']]],
   ['reload_5fwindow_5fpositions',['reload_window_positions',['../_c_f_g__screen_8cpp.html#ae69cbad138c5afc8b94f25aff31d054e',1,'CFG_screen.cpp']]],
   ['remember_5fconfig_5fpage',['remember_config_page',['../_c_o_r_e__6_8cpp.html#abfbdb9056b43d4acfaf3f39122911bad',1,'CORE_6.cpp']]],
   ['reorder_5fchannel_5fview_5flist_5fof_5fchannels',['reorder_channel_view_list_of_channels',['../_c_o_r_e__6_8cpp.html#a8ba74bfea445389fb44b94246338b465',1,'CORE_6.cpp']]],

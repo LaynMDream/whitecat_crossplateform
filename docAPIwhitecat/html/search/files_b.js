@@ -1,7 +1,6 @@
 var searchData=
 [
   ['main_5fjanv_5f2014_5fopensource_5fkbd_2ecpp',['MAIN_janv_2014_opensource_kbd.cpp',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html',1,'']]],
-  ['main_5fnwhitecat_5fopenversion_5fcrossplatform_2ecpp',['MAIN_nWhiteCat_Openversion_crossplatform.cpp',['../_m_a_i_n__n_white_cat___openversion__crossplatform_8cpp.html',1,'']]],
   ['midi_5f13_2ecpp',['midi_13.cpp',['../midi__13_8cpp.html',1,'']]],
   ['midi_5fcore_2ecpp',['midi_CORE.cpp',['../midi___c_o_r_e_8cpp.html',1,'']]],
   ['midi_5flaunchpad_2ecpp',['midi_launchpad.cpp',['../midi__launchpad_8cpp.html',1,'']]],

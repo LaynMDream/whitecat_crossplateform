@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calculation_5fon_5ffaders_5fdone',['calculation_on_faders_done',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#abfd20761b0f16abcfe2abaa5e582759b',1,'calculation_on_faders_done():&#160;MAIN_janv_2014_opensource_kbd.cpp'],['../_m_a_i_n__n_white_cat___openversion__crossplatform_8cpp.html#abfd20761b0f16abcfe2abaa5e582759b',1,'calculation_on_faders_done():&#160;MAIN_nWhiteCat_Openversion_crossplatform.cpp']]],
+  ['calculation_5fon_5ffaders_5fdone',['calculation_on_faders_done',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#abfd20761b0f16abcfe2abaa5e582759b',1,'MAIN_janv_2014_opensource_kbd.cpp']]],
   ['call_5fpreset',['call_preset',['../whitecat_8h.html#a12210b3a626733e4f726366b503c3029',1,'whitecat.h']]],
   ['call_5fstage',['call_stage',['../whitecat_8h.html#a57907cdd58ed31994a0b0b7a9cb260af',1,'whitecat.h']]],
   ['camera_5fis_5fon',['camera_is_on',['../whitecat_8h.html#a0d665da9cedbf99b15c980117e50ff90',1,'whitecat.h']]],

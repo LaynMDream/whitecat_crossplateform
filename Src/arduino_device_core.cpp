@@ -35,7 +35,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
-*   Gestion des fonctions arduino sur le port série VCOM à travers l'usb pour l'ouverture l'initialistaion et la fermeture du port VCOM
+*   Gestion des fonctions arduino sur le port sÃ©rie VCOM Ã  travers l'usb pour l'ouverture l'initialistaion et la fermeture du port VCOM
 *
 *   Arduino transfert fonctions to usb via the serial VCOM PORT for opening the port, close it or initialise it.
 *

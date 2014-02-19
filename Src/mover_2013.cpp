@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file mover_2014.cpp
+* \file mover_2013.cpp
 * \brief {pan and tilt for motor spot}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file fader_visuels_26.cpp
+* \file faders_visuels_26.cpp
 * \brief {GUI fonctions for the faders}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

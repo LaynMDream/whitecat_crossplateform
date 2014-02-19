@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file keyboard_fonctions2.cpp
+* \file keyboard_functions2.cpp
 * \brief {Core fonctions for keyboard entry}
 * \author Christoph Guillermet
 * \version {0.8.5.2}

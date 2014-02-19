@@ -27,7 +27,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 /**
 
-* \file video_tracking_core2.cpp
+* \file video_tracking_core.cpp
 * \brief {Core fonctions for the tracking video}
 * \author Christoph Guillermet
 * \version {0.8.5.2}
