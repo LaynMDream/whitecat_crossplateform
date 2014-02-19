@@ -98,7 +98,7 @@
 		<Unit filename="../../../../Src/Draw3.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="../../../../Src/MAIN_nov_2013_opensource_kbd.cpp" />
+		<Unit filename="../../../../Src/MAIN_janv_2014_opensource_kbd.cpp" />
 		<Unit filename="../../../../Src/WhiteCat_OpenVersion.ico">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -106,10 +106,10 @@
 		<Unit filename="../../../../Src/WhiteCat_private.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="../../../../Src/arduino_6_UNO_anton2.cpp">
+		<Unit filename="../../../../Src/arduino_6_UNO.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="../../../../Src/arduino_core_6_UNO_anton3.cpp">
+		<Unit filename="../../../../Src/arduino_core_6_UNO.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../../Src/arduino_device_core.cpp">

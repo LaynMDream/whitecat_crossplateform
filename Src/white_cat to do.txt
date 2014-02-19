@@ -21,7 +21,7 @@ wizard logical
 icat logical
 cfg menu logical
 
-
+bug comptage projos a cause de DUB ?
 
 si en mode check dimmers ne pas désolectionner les dimmers apres affectation > revoir check chan et aparition dimmers
 

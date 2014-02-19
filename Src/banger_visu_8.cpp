@@ -1,44 +1,3 @@
-/*-------------------------------------------------------------------------------------------------------------
-                                 |
-          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
-       WWWWWWWWWWWWWWW           | 
-     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
-    WWWWWWWWWWWWWWWWWCWWWW       | 
-   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
-  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
- WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 3 of the License, or
- WWWWWW               WWWWWWW    | (at your option) any later version.
-WWWWWWWW              WWWWWWW    | 
-WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
-WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
-WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
-WWWWWWWW           C  WWWWWWWW   | 
- WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
- WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>. 
-  WWWWWWWWWWC    CWWWWWWWWWW     |   
-   WWWWWWWWWWWWWWWWWWWWWWWW      | 
-    WWWWWWWWWWWWWWWWWWWWWW       |    
-      WWWWWWWWWWWWWWWWWWa        |     
-        WWWWWWWWWWWWWWW          |     
-           WWWWWWWWt             |
-                                 |
----------------------------------------------------------------------------------------------------------------*/
-
-/**
-
- \file banger_visu_8.cpp
- \brief {description courte} 
- \author Christoph Guillermet
- \version {numero de version du fichier}
- \date {date description}
- 
- White Cat {- catégorie} {- sous catégorie {- sous catégorie}}
- Description détaillée
- 
- **/
- 
- 
 int alarm_window()
 {
 Rect windowAlarm(Vec2D(XAlarm,YAlarm),Vec2D(300,110));
@@ -70,7 +29,7 @@ if((nb)+(lb*8)<core_user_define_nb_bangers)
 {
 Circle BangerFeedback(Vec2D(xvis+(nb*12)+30,yvis+(lb*12)+30),5);
 BangerFeedback.DrawOutline(CouleurLigne.WithAlpha(0.5));
-if(bang_is_sended[(nb)+(lb*8)]==0 && (((nb)+(lb*8))<127))//évenement pas encore fini dans son éxécution
+if(bang_is_sended[(nb)+(lb*8)]==0 && (((nb)+(lb*8))<127))//�venement pas encore fini dans son �x�cution
 {
 BangerFeedback.Draw(CouleurBlind.WithAlpha(alpha_blinker));                                                 
 }
@@ -119,7 +78,7 @@ petitpetitchiffre.Print(over_banger_is,xvis,yvis+230);
 int fenetre_banger(int xb,int yb)
 {
 
-Rect bang_backg(Vec2D(xb,yb), Vec2D( 480,300));
+Rect bang_backg(Vec2D(xb,yb), Vec2D(size_X_Banger,size_Y_Banger));
 bang_backg.SetRoundness(15);
 bang_backg.SetLineWidth(triple_epaisseur_ligne_fader);
 bang_backg.Draw(CouleurFond); 
@@ -209,7 +168,6 @@ if(mouse_x>(xb+410) && mouse_x<(xb+460) && mouse_y>(yb+40) && mouse_y<(yb+70))
 }
 petitchiffre.Print("Bang it !",xb+420 ,yb+59);
 
-
 petitchiffre.Print("Ev.Type",xb+30,yb+90);
 petitchiffre.Print("Action",xb+150,yb+90);
 petitchiffre.Print("Val 1",xb+275,yb+90);
@@ -219,31 +177,44 @@ petitchiffre.Print("Delay",xb+385,yb+90);
 char bangers_type_affiche[16];
 char bangers_type_action[25];//garder 25 car recopie dedans du texte descriptif
 
+//mapping clavier
+Rect Kbdb( Vec2D((xb),(yb)),Vec2D(40,20));
+Rect KbdShift(Vec2D((xb),(yb)),Vec2D(40,20));
+
+Rect BangEvent(Vec2D(xb,yb),Vec2D(100,20));
+
+Rect BangAction(Vec2D(xb,yb),Vec2D(115,20));
+
+Rect BoxVal1(Vec2D(xb,yb),Vec2D(40,20));
+
+Rect BoxVal2(Vec2D(xb,yb),Vec2D(40,20));
+
+Rect BoxDelay(Vec2D(xb,yb),Vec2D(40,20));
+
 for (int lp=0;lp<6;lp++)//6 ev en bang
 {
-Rect BangEvent(Vec2D(xb+30,yb+100+(lp*30)),Vec2D(100,20));
+BangEvent.MoveTo(Vec2D(xb+30,yb+100+(lp*30)));
 BangEvent.SetRoundness(5);
 BangEvent.Draw(CouleurBleuProcedure); 
 
-Rect BangAction(Vec2D(xb+145,yb+100+(lp*30)),Vec2D(115,20));
+BangAction.MoveTo(Vec2D(xb+145,yb+100+(lp*30)));
 BangAction.SetRoundness(5);
 BangAction.Draw(CouleurBleuProcedure); 
 
-
-Rect BoxVal1(Vec2D(xb+270,yb+100+(lp*30)),Vec2D(40,20));
+BoxVal1.MoveTo(Vec2D(xb+270,yb+100+(lp*30)));
 BoxVal1.SetRoundness(5);
 BoxVal1.Draw(CouleurBleuProcedure);
 
-Rect BoxVal2(Vec2D(xb+320,yb+100+(lp*30)),Vec2D(40,20));
+BoxVal2.MoveTo(Vec2D(xb+320,yb+100+(lp*30)));
 BoxVal2.SetRoundness(5);
 BoxVal2.Draw(CouleurBleuProcedure);
 
-Rect BoxDelay(Vec2D(xb+380,yb+100+(lp*30)),Vec2D(40,20));
+BoxDelay.MoveTo(Vec2D(xb+380,yb+100+(lp*30)));
 BoxDelay.SetRoundness(5);
 BoxDelay.Draw(CouleurBleuProcedure);
 
-
 Circle Bangsolo(Vec2D(xb+450,yb+110+(lp*30)),10);
+
 if(event_sended[index_banger_selected][lp]==1 &&  bang_is_sended[index_banger_selected]==0)
 {
 Bangsolo.Draw(CouleurSurvol);
@@ -257,6 +228,12 @@ if(mouse_x>xb+440 && mouse_x<xb+460 && mouse_y>yb+100+(lp*30) && mouse_y<yb+120+
 Bangsolo.DrawOutline(CouleurBlind);                     
 }                        
 }
+
+
+Kbdb.MoveTo(Vec2D(xb+470,yb+100+(lp*30)));
+Kbdb.DrawOutline(CouleurFader.WithAlpha(0.5));
+KbdShift.MoveTo(Vec2D(xb+515,yb+100+(lp*30)));
+KbdShift.DrawOutline(CouleurBlind.WithAlpha(0.5));
 
 sprintf(numev,"%d",lp+1);
 petitpetitchiffre.Print(numev,xb+10,yb+110+(lp*30));
