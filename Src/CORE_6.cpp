@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère la plupart des fonctions global du coeur de whitecat
+*
 *   Global fonctions for the core of whitecat
 *
  **/

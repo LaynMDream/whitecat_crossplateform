@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour redéssiner les bouttons
+*
 *   GUI fonctions to redraw buttons
 *
  **/

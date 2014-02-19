@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour gérer la fenêtre des grid players
+*
 *   GUI fonctions to manage windows of the gridplayers
 *
  **/

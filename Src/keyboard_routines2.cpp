@@ -37,6 +37,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions core pour gérer les raccourcis clavier dans whitecat
+*
 *   Core fonctions for keyboard shortcut
 *
  **/

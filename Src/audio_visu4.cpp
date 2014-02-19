@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gestion des fonctions de la fenetre Audio
+*
 *   Audio GUI fonctions
 *
  **/

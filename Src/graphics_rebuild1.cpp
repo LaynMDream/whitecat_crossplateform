@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour redéssiner l'interface graphique
+*
 *   GUI fonctions to redraw graphics
 *
  **/

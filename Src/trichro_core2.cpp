@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Core fonctions pour la fenêtre de roue de couleur en trichromie
+*
 *   Core fonctions for the color whell
 *
 **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions de dessins du midi dans l'inteface graphique
+*
 *   Midi GUI fonctions
 *
  **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Test pour recevoir le dmx in de l'enttec usb pro, specifique pour windows
+*
 *   Test to get the dmx in from enttec usb pro, only for windows
 *
  **/

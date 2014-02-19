@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Core fonctions pour la fenêtre de tracking video
+*
 *   Core fonctions for the tracking video window
 *
 **/

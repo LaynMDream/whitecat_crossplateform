@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions logique d'enregistrement de mémoir et autres
+*
 *   Logic fonctions for cue record and others
 *
  **/

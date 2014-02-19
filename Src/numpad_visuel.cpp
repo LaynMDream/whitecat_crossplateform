@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction GUI pour la fenêtre du pad numérique dans whitecat
+*
 *   GUI fonction for the numerical pad window in whitecat
 *
 **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Aucune idée à quoi sert ce fichier
+*
 *   No idea what it does
 *
  **/

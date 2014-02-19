@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour controller les faders et leurs effets
+*
 *   Fonctions to assign dock and fonctions for the faders
 *
  **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Création de la fenêtre Arduino dans le config menu et des différentes fonctions
+*
 *   Create the Arduino windows in the config menu
 *
  **/

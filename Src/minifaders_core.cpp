@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions core de la gestion des mini faders
+*
 *   Minifaders Core fonctions
 *
 **/

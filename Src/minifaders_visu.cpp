@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions GUI du dessin de la fenêtre des mini faders
+*
 *   Minifaders GUI fonctions for the minifaders windows
 *
 **/

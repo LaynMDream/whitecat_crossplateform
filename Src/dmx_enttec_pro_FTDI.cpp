@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère les envoie de config du port VCOM et autre fonction pour l'enttec usb pro, specifique pour windows
+*
 *   Config the VCOM port and other fonctions for the enttec usb pro, only for windows
 *
  **/

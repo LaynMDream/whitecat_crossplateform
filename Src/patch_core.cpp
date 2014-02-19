@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction Core pour le patch dmx
+*
 *   Core fonction for the dmx patch
 *
 **/

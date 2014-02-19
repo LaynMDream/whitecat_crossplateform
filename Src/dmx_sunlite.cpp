@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour controller les interfaces dmx sunlite
+*
 *   Fonctions for the sunlite dmx interfaces
 *
  **/

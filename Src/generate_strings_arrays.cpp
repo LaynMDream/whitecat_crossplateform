@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour créer des tableaux de chaines de caractères
+*
 *   Fonctions to create strings array
 *
  **/

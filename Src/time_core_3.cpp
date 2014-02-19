@@ -37,6 +37,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Core fonctions pour la fenêtre time
+*
 *   Core fonctions for the time window
 *
 **/

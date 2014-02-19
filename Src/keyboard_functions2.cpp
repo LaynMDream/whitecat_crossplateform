@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions core pour gérer les entrées clavier dans whitecat
+*
 *   Core fonctions for keyboard input in whitecat
 *
  **/

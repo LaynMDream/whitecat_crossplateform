@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère les fonction core des chenillards
+*
 *   Core fonctions for the chasers
 *
  **/

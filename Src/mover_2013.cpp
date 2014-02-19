@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Ajout d'une fenêtre permettant le déplacement en pan tilt des projecteurs asservis
+*
 *   Add pan tilt fonctions for motor fader
 *
 **/

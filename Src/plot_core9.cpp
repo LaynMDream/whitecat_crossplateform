@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions Core de la fenêtre plot
+*
 *   Core fonctions for the plot window
 *
 **/

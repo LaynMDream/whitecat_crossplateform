@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour gérer les différentes fenêtres dans whitecat
+*
 *   GUI fonctions to manage windows in whitecat
 *
  **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Header qui contient toute les variables globales déclarées dans whitecat
+*
 *   Header for all the global variables used in whitecat
 *
 */

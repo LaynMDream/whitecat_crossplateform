@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Calcul de la trajectoire de déplacement du projecteur motorisé entre deux points
+*
 *   Calcul of the mouvement of a motorised spot between two points
 *
 **/

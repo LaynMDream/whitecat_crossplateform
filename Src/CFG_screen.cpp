@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère les fonction de la fenetre cfg menu
+*
 *   GUI fonction of the windows cfg menu
 *
  **/

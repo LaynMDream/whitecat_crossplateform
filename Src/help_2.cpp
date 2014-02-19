@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour déssiner la fenêtre help
+*
 *   GUI fonctions for the help window
 *
  **/

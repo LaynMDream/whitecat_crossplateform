@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère les fonction GUI de la fenêtre des chenillards
+*
 *   GUI fonctions for the chasers
 *
  **/

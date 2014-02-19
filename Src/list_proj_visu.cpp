@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions GUI pour gérer la fenêtre du menu list des projos et channels macro
+*
 *   GUI fonctions for window of the spot list menu and macro channels
 *
  **/

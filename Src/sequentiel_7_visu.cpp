@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   GUI fonctions pour la fenêtre des memoires
+*
 *   GUI fonctions for the cuelist
 *
 **/

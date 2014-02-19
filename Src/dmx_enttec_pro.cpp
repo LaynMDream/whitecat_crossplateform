@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère les envoie du data dmx et autre fonction vers l'enttec usb pro, specifique pour windows
+*
 *   send dmx data and other fonctions to the enttec usb pro, only for windows
 *
  **/

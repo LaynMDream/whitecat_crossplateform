@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions core pour iCat qui permet de controller whitecat sur un iphone via le logiciel ifantastic
+*
 *   Core fonctions for icat a iphone control and gui send via the iFantastic software
 *
  **/

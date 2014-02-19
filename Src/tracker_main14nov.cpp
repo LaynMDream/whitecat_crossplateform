@@ -37,6 +37,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Je ne sais pas ce qu'est le tracker dans whitecat et il fait appel à un include de chat_dock_tracker_14nov2009.cpp, fhichier que je n'ai vu nul part
+*
 *   I don't know what is the tracker in whitecat sources
 *
 **/

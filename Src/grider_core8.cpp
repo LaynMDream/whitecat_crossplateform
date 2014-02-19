@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions core pour gérer les grid players
+*
 *   Core fonctions to manage the gridplayers
 *
  **/

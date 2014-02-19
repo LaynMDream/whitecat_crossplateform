@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour controller le module draw qui permet de dessiner directement pour controller la lumière en live
+*
 *   Fonctions for controlling the draw module who make the hability to draw directly for control the light in live
 *
  **/

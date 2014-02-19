@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour controller le module echo qui permet de controller la lumière à partir de loi physique de gravité ou autre
+*
 *   Fonctions for controlling the echo module who make the hability to control the light from physical law as gravity or other
 *
  **/

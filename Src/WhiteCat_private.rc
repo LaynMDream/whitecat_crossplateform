@@ -37,6 +37,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Modifier ce fichier pour créer une nouvelle release. Changer juste le numéro de version et la date et verifier le fichier WhiteCat_private.h
+*
 *   Modify this file to create a new release of whitecat. Change just the number of version and the date and verify the file WhiteCat_private.h
 *
 */

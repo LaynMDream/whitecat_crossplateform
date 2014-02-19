@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction pour scanner et afficher les adresse Mac des différentes cartes réseaux de l'ordinateur
+*
 *   fonctions to scan and show the different mac adress on the computer
 *
 **/

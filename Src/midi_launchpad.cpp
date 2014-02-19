@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour configurer le retour vers le launchpad of Novation
+*
 *   Midi Core fonctions to configure the return to the launchpad Novation
 *
 **/

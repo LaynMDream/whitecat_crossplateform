@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions GUI de dessin de la fenêtre plot
+*
 *   GUI fonctions for the plot window
 *
 **/

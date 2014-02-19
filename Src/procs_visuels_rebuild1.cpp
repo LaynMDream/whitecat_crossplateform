@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions d'actualisation des différents process dans l'interface graphique
+*
 *   Redraw fonctions in the GUI for the differents core process
 *
 **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction de calcul des courbes dans le patch dmx
+*
 *   Calcul fonction of the curves in the dmx patch
 *
 **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction artnet pour envoyer le dmx sur le réseaux en UDP
+*
 *   Artnet fonctions to send dmx on the network via UDP protocool
 *
 **/

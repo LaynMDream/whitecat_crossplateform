@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction GUI pour la fenêtre patch dmx
+*
 *   GUI fonction for the dmx patch window
 *
 **/

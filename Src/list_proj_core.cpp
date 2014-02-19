@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions core pour gérer le menu list des projos et channels macro
+*
 *   Core fonctions for the spot list menu and macro channels
 *
  **/

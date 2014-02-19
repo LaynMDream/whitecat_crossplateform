@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonction global d'écriture du dmx vers toutes les interfaces et l'arnet, gère aussi l'écriture direct du signal dmx par le processeur du pc, envoyer vers l'enttec open via les drivers D2XX
+*
 *   Global fonctions to write the dmx to the diferente interface and artnet, write too directly the dmx signal from the PC CPU to be send to the enttec open dmx via the D2XX drivers
 *
  **/

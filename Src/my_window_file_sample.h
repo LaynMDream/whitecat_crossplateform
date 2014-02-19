@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Exemple pour créer sa propre fenêtre dans whitecat afin d'ajouter un nouveau module
+*
 *   Exemple to create a new module window
 *
 

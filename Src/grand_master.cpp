@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions de dessin du grand master
+*
 *   GUI fonctions for grand master
 *
  **/

@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions pour désiner la fenêtre des faders
+*
 *   Fonctions GUI to draw the faders windows
 *
  **/

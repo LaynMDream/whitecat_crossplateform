@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions d'import export PDF pour garder une sauvegarde de la conduite en papier
+*
 *   Import and export the show in PDF to keep a save of the show in a paper format
 *
 **/

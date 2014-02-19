@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Main loop avec include des libraries et des différents fichiers C++ de whitecat. Whitecat est en fait coder en C.
+*
 *   Main loop with include of librairies and the C++ files used in whitecat. Whitecat is in fact coded in C.
 *
  **/

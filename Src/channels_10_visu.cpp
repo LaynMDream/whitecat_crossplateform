@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Gère les fonction GUI de l'affichage des channels dmx
+*
 *   GUI fonctions for the dmx channels
 *
  **/

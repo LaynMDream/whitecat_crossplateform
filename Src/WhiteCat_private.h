@@ -38,6 +38,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Modifier ce fichier pour créer une nouvelle release. Changer juste le numéro de version et la date et aller dans le fichier WhiteCat_private.rc
+*
 *   Modify this file to create a new release of whitecat. Change just the number of version and the date and go to the file WhiteCat_private.rc
 *
 */

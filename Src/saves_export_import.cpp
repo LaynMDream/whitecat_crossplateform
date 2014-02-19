@@ -36,6 +36,7 @@ WWWWWWWW           C  WWWWWWWW   |
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions d'import export ASCII pour charger ou envoyer une conduite vers ou depuis une console ou un autre programme
+*
 *   Import and export the show in ASCII from or to a console or a different software
 *
 **/
