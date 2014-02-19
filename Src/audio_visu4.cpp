@@ -1,4 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
 
+/**
+
+* \file audio_visu.cpp
+* \brief {Audio GUI fonctions}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Gestion des fonctions de la fenetre Audio
+*   Audio GUI fonctions
+*
+ **/
 
 
 int fader_niveau_son(int xp, int yp, int numero)
@@ -6,8 +46,8 @@ int fader_niveau_son(int xp, int yp, int numero)
 Rect FaderSon(Vec2D(xp,yp),Vec2D(20,127));
 FaderSon.SetRoundness(5);
 Rect FaderSonNiveau(Vec2D(xp,yp+(127-player_niveauson[numero])),Vec2D(20,player_niveauson[numero]));
-FaderSonNiveau.Draw(CouleurFader);   
-FaderSon.DrawOutline(CouleurLigne.WithAlpha(0.5));   
+FaderSonNiveau.Draw(CouleurFader);
+FaderSon.DrawOutline(CouleurLigne.WithAlpha(0.5));
 
 petitpetitchiffre.Print(string_niveauson[numero],xp+22,yp+10);
 petitpetitchiffre.Print(ol::ToString(player_niveauson[numero]),xp+22,yp+20);
@@ -24,16 +64,16 @@ Circle(Vec2D(xp+37,yp+117),7).DrawOutline(CouleurLigne);
 
 raccrochage_midi_visuel_vertical(xp,yp,616+numero,20,127);
 
-return(0);    
+return(0);
 }
 
 int lecteur_audio( int xp, int yp, int numero)
 {
-Rect FramePlayer(Vec2D(xp-5,yp-5),Vec2D(340,135));   
-FramePlayer.SetRoundness(5);   
+Rect FramePlayer(Vec2D(xp-5,yp-5),Vec2D(340,135));
+FramePlayer.SetRoundness(5);
 FramePlayer.Draw(CouleurBleuProcedure.WithAlpha(0.7));
 Rect Player(Vec2D(xp,yp),Vec2D(200,20));
-Player.SetRoundness(5);   
+Player.SetRoundness(5);
 Player.Draw(CouleurConfig.WithAlpha(0.8));
 Player.DrawOutline(CouleurLigne);
 
@@ -265,7 +305,7 @@ petitpetitchiffre.Print(ol::ToString(player_pitch[numero]),(xp+110),(yp+117));
 
 
 raccrochage_midi_visuel_horizontal_audio (xp+130, yp+100, 620+numero, 127,10);
-//Pan 
+//Pan
 Line(Vec2D(xp+130,yp+90),Vec2D(xp+257,yp+90)).Draw(CouleurLigne);//ligne horizontale
 Line(Vec2D(xp+194,yp+80),Vec2D(xp+194,yp+100)).Draw(CouleurLigne);//barre 64
 Line(Vec2D(xp+257,yp+85),Vec2D(xp+257,yp+90)).Draw(CouleurLigne);//barre 127
@@ -308,7 +348,7 @@ else if (mouse_x>xp+120+player_pan[numero] && mouse_x<xp+150+player_pan[numero] 
 {PanMidi.DrawOutline(CouleurBlind);}
 }
 
-return(0);   
+return(0);
 }
 
 
@@ -317,17 +357,17 @@ int fenetre_audio(int xb,int yb)
 
 Rect audio_backg(Vec2D(xb,yb), Vec2D( 600,150+(index_nbre_players_visibles*120)));
 audio_backg.SetRoundness(15);
-audio_backg.Draw(CouleurFond); 
+audio_backg.Draw(CouleurFond);
 audio_backg.SetLineWidth(triple_epaisseur_ligne_fader);
 if(window_focus_id==919)
 {
-audio_backg.DrawOutline(CouleurFader); 
+audio_backg.DrawOutline(CouleurFader);
 }
 else
 {
-audio_backg.DrawOutline(CouleurLigne);    
+audio_backg.DrawOutline(CouleurLigne);
 }
- 
+
 neuro.Print( "AudioPlayers",(xb+80), (yb+30));
 
 //FOLDER
@@ -357,19 +397,19 @@ if(strcmp(audiofile_name,list_audio_files[audiofile_selected])==0 && (audiofile_
 
 if(window_focus_id==919 && mouse_x>xb+355 && mouse_x<xb+505 && mouse_y>(yb+33+(y*20)) && mouse_y<(yb+48+(y*20)))
 {
-OverAudioFile.DrawOutline(CouleurLigne);                  
+OverAudioFile.DrawOutline(CouleurLigne);
 }
 
 
-petitpetitchiffre.Print(ol::ToString(line_audio+y),xb+360,yb+45+(y*20)); 
+petitpetitchiffre.Print(ol::ToString(line_audio+y),xb+360,yb+45+(y*20));
 Canvas::SetClipping( xb+355,yb+35+(y*20),230,20);
-petitpetitchiffre.Print(list_audio_files[line_audio+y],xb+375,yb+45+(y*20));   
+petitpetitchiffre.Print(list_audio_files[line_audio+y],xb+375,yb+45+(y*20));
 Canvas::DisableClipping();
 }
 
 //////////////////UP DOWN LINE IMPORT/////////////////////
 Circle LineUp(Vec2D(xb+570,yb+65),12);
-LineUp.Draw(CouleurFond);   
+LineUp.Draw(CouleurFond);
 Circle LineDown(Vec2D(xb+570,yb+(index_nbre_players_visibles*120)),12);
 LineDown.Draw(CouleurFond);
 
@@ -381,13 +421,13 @@ LineDown.DrawOutline(CouleurLigne);
 
 ///RESCAN FOLDER
     Rect AudioRescanDriver( Vec2D(xb+230,yb+10), Vec2D ( 50,20));
-    AudioRescanDriver.SetRoundness(7.5); 
+    AudioRescanDriver.SetRoundness(7.5);
     AudioRescanDriver.DrawOutline(CouleurLigne);
 
 ////////////////////////////////////////////////////////////////////////////////
 //EDIT ON OFF
    Rect EditSound( Vec2D(xb+230,yb+40), Vec2D ( 50,20));
-    EditSound.SetRoundness(7.5); 
+    EditSound.SetRoundness(7.5);
     if(index_edit_audio==1){EditSound.Draw(CouleurFader);}
     EditSound.DrawOutline(CouleurLigne);
     petitpetitchiffre.Print("EDIT",xb+240,yb+53);
@@ -404,7 +444,7 @@ lecteur_audio(xb+5,yb+70+(lop*140),lop);
 Rect AffectA(Vec2D(xb+440,yb+55+(index_nbre_players_visibles*120)),Vec2D(140,20));
 AffectA.SetRoundness(5);
 AffectA.Draw(CouleurFader.WithAlpha(index_affect_audio_to_dock));
-AffectA.DrawOutline(CouleurLigne);  
+AffectA.DrawOutline(CouleurLigne);
 petitchiffre.Print("AFFECT TO DOCK",xb+460,yb+70+(index_nbre_players_visibles*120));
 
 petitchiffre.Print("Volume",xb+400,yb+100+(index_nbre_players_visibles*120));
@@ -418,9 +458,9 @@ for (int co=0;co<3;co++)
  Rect AffectAudioType(Vec2D(xb+460+(pl*30),yb+90+(index_nbre_players_visibles*120)+(co*20)),Vec2D(20,15));
  AffectAudioType.SetRoundness(3);
  if(player_to_affect_to_dock==pl && audio_type_for_dock_affectation_is==co){AffectAudioType.Draw(CouleurFader);}
- AffectAudioType.DrawOutline(CouleurLigne);  
+ AffectAudioType.DrawOutline(CouleurLigne);
 }
- petitpetitchiffre.Print(ol::ToString((pl+1)),xb+467+(pl*30),yb+85+(index_nbre_players_visibles*120));       
+ petitpetitchiffre.Print(ol::ToString((pl+1)),xb+467+(pl*30),yb+85+(index_nbre_players_visibles*120));
 }
 
 
@@ -428,26 +468,26 @@ if(window_focus_id==919  )
 {
 if(mouse_x>xb+350 && mouse_x<xb+590 && mouse_y>yb+10 && mouse_y<yb+40)
 {
-AudioFolderis.DrawOutline(CouleurLigne);   
-}        
+AudioFolderis.DrawOutline(CouleurLigne);
+}
 else if( mouse_x>xb+230 && mouse_x<xb+280 && mouse_y>yb+10 && mouse_y<yb+30 )
     {
-    AudioRescanDriver.Draw(CouleurSurvol);            
+    AudioRescanDriver.Draw(CouleurSurvol);
     }
 else if( mouse_x>xb+558 && mouse_x<xb+582  )
 {
 if(mouse_y>yb+53 && mouse_y<yb+72)
-{                      
-LineUp.Draw(CouleurSurvol);           
+{
+LineUp.Draw(CouleurSurvol);
 }
 if(mouse_y>yb+(index_nbre_players_visibles*120)-7 && mouse_y<yb+(index_nbre_players_visibles*120)+5)
-{ 
-LineDown.Draw(CouleurSurvol);             
-}                                                
+{
+LineDown.Draw(CouleurSurvol);
+}
 }
 }
 
 
 petitpetitchiffre.Print("rescan!",xb+235,yb+23);
-return(0);    
+return(0);
 }

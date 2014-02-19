@@ -1,3 +1,45 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file gui_boutons_rebuild1.cpp
+* \brief {GUI fonctions to redraw buttons}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions pour redéssiner les bouttons
+*   GUI fonctions to redraw buttons
+*
+ **/
+
 int bouton_on_view(int xp, int yp, bool state)
 {
 Rect On(Vec2D(xp,yp),Vec2D(20,20));
@@ -13,7 +55,7 @@ On.DrawOutline(CouleurBlind);
 }
 }
 
-return(0);   
+return(0);
 }
 
 int bouton_text_view(int xp, int yp,char *dex, bool state)
@@ -29,8 +71,8 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 Texn.DrawOutline(CouleurBlind);
 }
-}   
- return(0);   
+}
+ return(0);
 }
 
 
@@ -40,8 +82,8 @@ float valeur=0.0;
 //if(mouse_x>=xr-Rrayon && mouse_x<=xr+Rrayon && mouse_y>=yr-Rrayon && mouse_y<=yr+Rrayon)
 //{
 valeur=(atan2(xr-(mouse_x-xr), yr-(mouse_y-yr)));
-//}    
- return(valeur);   
+//}
+ return(valeur);
 }
 
 int rotatif(int xr, int yr, int Rrayon, float valeur)
@@ -54,7 +96,7 @@ angleDegree = angleRadian * (180 / Math.PI);
 
 Et une autre formule qui permet de trouver la distance entre 2 points.
 distance= Math.sqrt(px1*px2 + py1*py2);*/
-Circle Rot(Vec2D(xr,yr),Rrayon);  
+Circle Rot(Vec2D(xr,yr),Rrayon);
 
 Rot.SetRadius(Rrayon);
 Rot.RotateBy(1);
@@ -70,15 +112,15 @@ double Vx, Vy;
 for(double v=-PI ;v<=PI ;v+=(PI/6))
 {
  Vx=cos(v)*Rrayon;
- Vy=sin(v)*Rrayon;  
- Line(Vec2D(xr,yr),Vec2D(xr+Vx,yr+Vy)).Draw(CouleurFond);       
+ Vy=sin(v)*Rrayon;
+ Line(Vec2D(xr,yr),Vec2D(xr+Vx,yr+Vy)).Draw(CouleurFond);
 }
 Vx=cos(((2*PI)-valeur)-2)*Rrayon;
 Vy=sin(((2*PI)-valeur)-2)*Rrayon;
 Line Curseur(Vec2D(xr,yr),Vec2D(xr+Vx,yr+Vy));
 Curseur.SetLineWidth(Rrayon/5);
 Curseur.Draw(CouleurLigne);
- return(0);   
+ return(0);
 }
 
 int play_button_view(int xp, int yp, bool state)
@@ -98,7 +140,7 @@ Play.DrawOutline(CouleurBlind);
 }
 }
 
-return(0);   
+return(0);
 }
 
 int seek_button_view(int xp,int yp, bool state)
@@ -119,7 +161,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 SeekToZero.DrawOutline(CouleurBlind);
 }
-}   
+}
 return(0);
 }
 
@@ -162,7 +204,7 @@ Play.DrawOutline(CouleurBlind);
 }
 }
 
-return(0);   
+return(0);
 }
 
 int autolaunch_button_view(int xp,int yp, bool state)
@@ -200,7 +242,7 @@ Line(Vec2D(xp+6,yp+4),Vec2D(xp+6,yp+16)).Draw(CouleurLigne);
 Line(Vec2D(xp+6,yp+4),Vec2D(xp+16,yp+10)).Draw(CouleurLigne);
 Line(Vec2D(xp+6,yp+16),Vec2D(xp+16,yp+10)).Draw(CouleurLigne);
 
-return(0);   
+return(0);
 }
 
 
@@ -224,9 +266,9 @@ int case_moins_view(int xp,int yp, bool state)
 Rect MoinsC(Vec2D(xp,yp),Vec2D(15,15));
 MoinsC.SetRoundness(2);
 MoinsC.Draw(CouleurFond.WithAlpha(0.4));
-if(state==1){MoinsC.Draw(CouleurBlind);}    
+if(state==1){MoinsC.Draw(CouleurBlind);}
 petitchiffre.Print("-",xp+3,yp+10);
- return(0);   
+ return(0);
 }
 
 
@@ -235,9 +277,9 @@ int case_plus_view(int xp,int yp, bool state)
 Rect PlusC(Vec2D(xp,yp),Vec2D(15,15));
 PlusC.SetRoundness(2);
 PlusC.Draw(CouleurFond.WithAlpha(0.4));
-if(state==1){PlusC.Draw(CouleurBlind);}    
+if(state==1){PlusC.Draw(CouleurBlind);}
 petitchiffre.Print("+",xp+3,yp+10);
- return(0);   
+ return(0);
 }
 
 int toggling_bar_view(int xp,int yp, bool state, char *titre)
@@ -247,7 +289,7 @@ toggling_B.SetRoundness(4);
 toggling_B.Draw(CouleurFond.WithAlpha(0.4));
 petitpetitchiffre.Print(titre,xp,yp+12);
 
-return(0); 
+return(0);
 }
 
 
@@ -258,141 +300,141 @@ pulse_B.SetRoundness(4);
 pulse_B.Draw(CouleurFond.WithAlpha(0.4));
 petitpetitchiffre.Print(titre,xp,yp+12);
 
-return(0); 
+return(0);
 }
 
-//////////////MIDI MUTE AFFICHAGES 
+//////////////MIDI MUTE AFFICHAGES
 
 int raccrochage_midi_logical_vertical_dmx(int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
- 
+
 //midi racroche
 if(mouse_x>Xb+largeur+4 && mouse_x<Xb+largeur+16 && mouse_y>=Yb+hauteur-1 && mouse_y<=Yb+hauteur+11 )
 {
 if(mouse_button==1 && mouse_released==0)
-{ 
+{
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
 mouse_released=1;
-}                      
-} 
-return(0);  
+}
+}
+return(0);
 }
 
 int raccrochage_midi_visuel_vertical_dmx (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur+10,Yb+hauteur+5, 6);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-BMidiRaccroche.Draw(CouleurFader);   
-//affichage niveau 
+BMidiRaccroche.Draw(CouleurFader);
+//affichage niveau
 Line MonNiveauMidi(Vec2D(Xb,(Yb+hauteur) -(val_raccrochage_midi[IDmidi]*2)),Vec2D(Xb+largeur+10,(Yb+hauteur) - (val_raccrochage_midi[IDmidi]*2)));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurLigne);     
-                          
+MonNiveauMidi.Draw(CouleurLigne);
+
 Line MaJonction(Vec2D(Xb+largeur+10,(Yb+hauteur)),Vec2D(Xb+largeur+10,(Yb+hauteur) - (val_raccrochage_midi[IDmidi]*2)));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurFond,CouleurLigne);                                 
-                                       
+MaJonction.Draw(CouleurFond,CouleurLigne);
+
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 
 
 int raccrochage_midi_visuel_vertical_dmx_inverted (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur+10,Yb+hauteur+5, 6);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-BMidiRaccroche.Draw(CouleurFader);   
-//affichage niveau 
+BMidiRaccroche.Draw(CouleurFader);
+//affichage niveau
 Line MonNiveauMidi(Vec2D(Xb,Yb+(val_raccrochage_midi[IDmidi]*2)),Vec2D(Xb+largeur+10,Yb+(val_raccrochage_midi[IDmidi]*2)));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurLigne);     
-                          
+MonNiveauMidi.Draw(CouleurLigne);
+
 Line MaJonction(Vec2D(Xb+largeur+10,Yb+hauteur),Vec2D(Xb+largeur+10,Yb+(val_raccrochage_midi[IDmidi]*2)));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurFond,CouleurLigne);                                 
-                                       
+MaJonction.Draw(CouleurFond,CouleurLigne);
+
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 ///////////////////////////////////////////////////////////////////////////////////
 int raccrochage_midi_logical_vertical(int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
- 
+
 //midi racroche
 if(mouse_x>Xb+largeur+6 && mouse_x<Xb+largeur+14 && mouse_y>=Yb+hauteur-1 && mouse_y<=Yb+hauteur+9)
 {
 if(mouse_button==1 && mouse_released==0)
-{ 
+{
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
 mouse_released=1;
-}                      
-} 
-return(0);  
+}
+}
+return(0);
 }
 
 int raccrochage_midi_visuel_vertical (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur+10,Yb+hauteur+5, 4);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-BMidiRaccroche.Draw(CouleurFader);   
-//affichage niveau 
+BMidiRaccroche.Draw(CouleurFader);
+//affichage niveau
 Line MonNiveauMidi(Vec2D(Xb,(Yb+hauteur) -val_raccrochage_midi[IDmidi]),Vec2D(Xb+largeur+10,(Yb+hauteur) - val_raccrochage_midi[IDmidi]));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurLigne);     
-                          
+MonNiveauMidi.Draw(CouleurLigne);
+
 Line MaJonction(Vec2D(Xb+largeur+10,(Yb+hauteur)),Vec2D(Xb+largeur+10,(Yb+hauteur) - val_raccrochage_midi[IDmidi]));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurFond.WithAlpha(0.0),CouleurLigne);                                 
-                                       
+MaJonction.Draw(CouleurFond.WithAlpha(0.0),CouleurLigne);
+
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 
 
 int raccrochage_midi_logical_horizontal_audio(int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
- 
+
 //midi racroche
 if(mouse_x>Xb+largeur+7 && mouse_x<Xb+largeur+13 && mouse_y>=Yb+hauteur+12 && mouse_y<=Yb+hauteur+18 )
 {
 if(mouse_button==1 && mouse_released==0)
-{ 
+{
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
 mouse_released=1;
-}                      
-} 
-return(0);  
+}
+}
+return(0);
 }
 
 
 
 int raccrochage_midi_visuel_horizontal_audio (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur+10,Yb+hauteur+15, 3);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-   
-//affichage niveau 
+
+//affichage niveau
 Line MonNiveauMidi(Vec2D(Xb+val_raccrochage_midi[IDmidi],Yb ),Vec2D(Xb+val_raccrochage_midi[IDmidi],(Yb+hauteur)+15 ));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurLigne);     
-  
+MonNiveauMidi.Draw(CouleurLigne);
+
 Line MaJonction(Vec2D(Xb+val_raccrochage_midi[IDmidi],(Yb+hauteur)+15),Vec2D(Xb+largeur+7,(Yb+hauteur)+15));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurLigne,CouleurConfig);                                 
-BMidiRaccroche.Draw(CouleurFader);                                       
+MaJonction.Draw(CouleurLigne,CouleurConfig);
+BMidiRaccroche.Draw(CouleurFader);
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 
@@ -402,17 +444,17 @@ return(0);
 
 int raccrochage_midi_logical_horizontal(int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
- 
+
 //midi racroche
 if(mouse_x>Xb+largeur+4 && mouse_x<Xb+largeur+16 && mouse_y>=Yb+hauteur+9 && mouse_y<=Yb+hauteur+21 )
 {
 if(mouse_button==1 && mouse_released==0)
-{ 
+{
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
 mouse_released=1;
-}                      
-} 
-return(0);  
+}
+}
+return(0);
 }
 
 
@@ -420,61 +462,61 @@ return(0);
 
 int raccrochage_midi_visuel_horizontal (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur+10,Yb+hauteur+15, 6);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-   
-//affichage niveau 
+
+//affichage niveau
 Line MonNiveauMidi(Vec2D(Xb+val_raccrochage_midi[IDmidi],Yb ),Vec2D(Xb+val_raccrochage_midi[IDmidi],(Yb+hauteur)+15 ));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurLigne);     
-  
+MonNiveauMidi.Draw(CouleurLigne);
+
 Line MaJonction(Vec2D(Xb+val_raccrochage_midi[IDmidi],(Yb+hauteur)+15),Vec2D(Xb+largeur+4,(Yb+hauteur)+15));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurLigne,CouleurFond);                                 
-BMidiRaccroche.Draw(CouleurFader);                                       
+MaJonction.Draw(CouleurLigne,CouleurFond);
+BMidiRaccroche.Draw(CouleurFader);
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 
 
 int raccrochage_midi_logical_horizontal_little(int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
- 
+
 //midi racroche
 if(mouse_x>Xb+largeur+7 && mouse_x<Xb+largeur+14 && mouse_y>=Yb+hauteur+11 && mouse_y<=Yb+hauteur+18 )
 {
 if(mouse_button==1 && mouse_released==0)
-{ 
+{
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
 mouse_released=1;
-}                      
-} 
-return(0);  
+}
+}
+return(0);
 }
 
 
 
 int raccrochage_midi_visuel_horizontal_little (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur+10,Yb+hauteur+15, 4);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-   
-//affichage niveau 
+
+//affichage niveau
 Line MonNiveauMidi(Vec2D(Xb+val_raccrochage_midi[IDmidi],Yb ),Vec2D(Xb+val_raccrochage_midi[IDmidi],(Yb+hauteur)+15 ));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurLigne);     
-  
+MonNiveauMidi.Draw(CouleurLigne);
+
 Line MaJonction(Vec2D(Xb+val_raccrochage_midi[IDmidi],(Yb+hauteur)+15),Vec2D(Xb+largeur+6,(Yb+hauteur)+15));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurLigne,CouleurFond);                                 
-BMidiRaccroche.Draw(CouleurFader);                                       
+MaJonction.Draw(CouleurLigne,CouleurFond);
+BMidiRaccroche.Draw(CouleurFader);
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 
@@ -483,50 +525,50 @@ return(0);
 
 int raccrochage_midi_logical_circulaire(int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
- 
+
 //midi racroche
 if(mouse_x>Xb+largeur+4 && mouse_x<Xb+largeur+16 && mouse_y>=Yb+hauteur+9 && mouse_y<=Yb+hauteur+21 )
 {
 if(mouse_button==1 && mouse_released==0)
-{ 
+{
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
 mouse_released=1;
-}                      
-} 
-return(0);  
+}
+}
+return(0);
 }
 
 
 int raccrochage_midi_visuel_circulaire (int Xb, int Yb, int IDmidi, int largeur, int hauteur)
 {
-    
+
 Circle BMidiRaccroche(Xb+largeur,Yb+hauteur+15, 6);//raccroche midi
 if(is_raccrochage_midi_remote[IDmidi]==1)
 {
-BMidiRaccroche.Draw(CouleurFader);   
-//affichage niveau 
+BMidiRaccroche.Draw(CouleurFader);
+//affichage niveau
 //attaque midi
 
 float tmp_angle_snap=((PI*360) / (22860))*val_raccrochage_midi[IDmidi];//((PI*360) / (180*127))*val_raccrochage_midi[IDmidi];
 float tmp_vx = cos(tmp_angle_snap)*125;
 float tmp_vy = sin(tmp_angle_snap)*125;
 float tmp_position_curseur_hue_x= xtrichro_window+tmp_vx;
-float tmp_position_curseur_hue_y=ytrichro_window+tmp_vy ; 
+float tmp_position_curseur_hue_y=ytrichro_window+tmp_vy ;
 
 
  //affichage du pointeur de hue
-Circle monCurseurHue( Vec2D(tmp_position_curseur_hue_x, tmp_position_curseur_hue_y), 10 ); 
+Circle monCurseurHue( Vec2D(tmp_position_curseur_hue_x, tmp_position_curseur_hue_y), 10 );
 monCurseurHue.Draw( CouleurFond );
 Line MonNiveauMidi(Vec2D(Xb+largeur-6,Yb+hauteur+15 ),Vec2D(tmp_position_curseur_hue_x,Yb+hauteur+15 ));
 MonNiveauMidi.SetLineWidth(epaisseur_ligne_fader);
-MonNiveauMidi.Draw(CouleurFond,CouleurLigne);     
-  
+MonNiveauMidi.Draw(CouleurFond,CouleurLigne);
+
 Line MaJonction(Vec2D(tmp_position_curseur_hue_x,Yb+hauteur+15),Vec2D(tmp_position_curseur_hue_x,tmp_position_curseur_hue_y));
 MaJonction.SetLineWidth(epaisseur_ligne_fader);
-MaJonction.Draw(CouleurLigne,CouleurFond);                                 
-                                       
+MaJonction.Draw(CouleurLigne,CouleurFond);
+
 }
-BMidiRaccroche.DrawOutline(CouleurLigne); 
+BMidiRaccroche.DrawOutline(CouleurLigne);
 return(0);
 }
 
@@ -547,14 +589,14 @@ if(mouse_x>Xb && mouse_x<Xb+60 && mouse_y>Yb && mouse_y<Yb+20 && mouse_released=
  {
  attribute_midi_solo_affectation(1593,Midi_Faders_Affectation_Type);
  mouse_released=1;
- }          
+ }
  else
- {      
+ {
  index_global_midi_send_on_faders=toggle(index_global_midi_send_on_faders);
  set_all_faders_midi_out(index_global_midi_send_on_faders);
  do_light_midi_send_on_faders=1;
  mouse_released=1;
- }                            
+ }
 }
 }
 return(0);
@@ -568,19 +610,19 @@ MidiMute_B.SetRoundness(4);
 
 MidiMute_B.DrawOutline(CouleurLigne);
 
-petitpetitchiffre.Print("Midi Out",Xb+8,Yb+8); 
-petitpetitchiffre.Print("faders",Xb+10,Yb+18); 
+petitpetitchiffre.Print("Midi Out",Xb+8,Yb+8);
+petitpetitchiffre.Print("faders",Xb+10,Yb+18);
 if(Midi_Faders_Affectation_Type!=0)
 {
- MidiMute_B.DrawOutline(CouleurBlind);   
+ MidiMute_B.DrawOutline(CouleurBlind);
  if(do_light_midi_send_on_faders==1)
- { MidiMute_B.Draw(CouleurFader);do_light_midi_send_on_faders=0;}                    
+ { MidiMute_B.Draw(CouleurFader);do_light_midi_send_on_faders=0;}
 }
 if(mouse_x>Xb && mouse_x<Xb+60 && mouse_y>Yb && mouse_y<Yb+20)
-{   
+{
 show_type_midi(1593, "MidiOUT Faders");
-} 
- return(0);   
+}
+ return(0);
 }
 
 int command_button_view( int xcom, int ycom, int isstate, char *desc, char *shortcut, int IDmidi)
@@ -599,7 +641,7 @@ break;
 case 1335://freeze
 if(isstate==1)
 {Command.Draw(CouleurBlind.WithAlpha(alpha_blinker));}
-Command.DrawOutline(CouleurBlind); 
+Command.DrawOutline(CouleurBlind);
 break;
 case 1541://exclude
 if(isstate==1)
@@ -609,8 +651,8 @@ break;
 case 1277: //MIdi Mute
 if(isstate==1)
 {Command.Draw(CouleurFader.WithAlpha(alpha_blinker));}
-Command.DrawOutline(CouleurLigne); 
-Command.DrawOutline(CouleurBleuProcedure.WithAlpha(0.5));     
+Command.DrawOutline(CouleurLigne);
+Command.DrawOutline(CouleurBleuProcedure.WithAlpha(0.5));
 break;
 case 1333://direct Ch
 if(isstate==1)
@@ -637,29 +679,29 @@ case 1625: //MIdi affect
 switch(isstate)
 {
 case 1:
-Command.Draw(CouleurLigne); 
+Command.Draw(CouleurLigne);
 Command.Draw(CouleurBleuProcedure.WithAlpha(alpha_blinker));
 break;
 case 2:
-Command.Draw(CouleurLigne); 
+Command.Draw(CouleurLigne);
 Command.Draw(CouleurBlind.WithAlpha(alpha_blinker));
 break;
 default:
-Command.DrawOutline(CouleurLigne); 
-Command.DrawOutline(CouleurBleuProcedure.WithAlpha(0.5)); 
+Command.DrawOutline(CouleurLigne);
+Command.DrawOutline(CouleurBleuProcedure.WithAlpha(0.5));
 break;
-}    
+}
 break;
 case 1593:
 if(do_light_midi_send_on_faders==1)
-{ Command.Draw(CouleurFader);do_light_midi_send_on_faders=0;} 
-Command.DrawOutline(CouleurLigne); 
-Command.DrawOutline(CouleurBleuProcedure.WithAlpha(0.5));  
+{ Command.Draw(CouleurFader);do_light_midi_send_on_faders=0;}
+Command.DrawOutline(CouleurLigne);
+Command.DrawOutline(CouleurBleuProcedure.WithAlpha(0.5));
 break;
 case 2047://exemple My window
 if(isstate==1)
 {Command.Draw(CouleurFader);}
-Command.DrawOutline(CouleurLigne); 
+Command.DrawOutline(CouleurLigne);
 Command.DrawOutline(CouleurBleuProcedure.WithAlpha(alpha_blinker));  //animation qui est faite dans le fichier main
 //chercher alpha_blinker ....
 break;
@@ -667,7 +709,7 @@ default:
 if(isstate==1)
 {Command.Draw(CouleurFader);}
 Command.DrawOutline(CouleurLigne.WithAlpha(0.8));
-break;            
+break;
 }
 
 if((window_focus_id==0 && index_over_A_window==0 )|| (window_focus_id==W_MAINMENU) && mouse_x>xcom && mouse_x<xcom+60 && mouse_y>ycom && mouse_y<ycom+20)
@@ -677,7 +719,7 @@ if(Midi_Faders_Affectation_Type!=0 && IDmidi!=1625)
 }
 
 petitpetitchiffre.Print(desc,xcom+5,ycom+12);
-return(0);   
+return(0);
 }
 
 int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
@@ -693,7 +735,7 @@ attribute_midi_solo_affectation(IDmidi,1);
 else if( IDmidi==1625)
 {
 if(do_affectation_on_midi_affect_itself==1 ) {attribute_midi_solo_affectation(IDmidi,1);}
-else 
+else
 {
 Midi_Faders_Affectation_Type++;
 if(Midi_Faders_Affectation_Type>2){Midi_Faders_Affectation_Type=0;}
@@ -701,7 +743,7 @@ index_midi_mute=0;
 reset_index_actions();
 }
 }
- 
+
 }
 
 else
@@ -712,10 +754,10 @@ switch (thecommand)//permet de faire un toggle du bon index
 case 0://sequenciel
           if(index_window_sequentiel==0){;add_a_window(W_SEQUENCIEL);substract_a_window(W_MAINMENU);}
           else {substract_a_window(W_SEQUENCIEL);}
-          
+
 break;
 case 1://time
-          if(index_time==0){add_a_window(W_TIME);substract_a_window(W_MAINMENU);  } 
+          if(index_time==0){add_a_window(W_TIME);substract_a_window(W_MAINMENU);  }
            else {   substract_a_window(W_TIME); }
 break;
 case 2://banger
@@ -736,7 +778,7 @@ break;
 //2eme colonne
 case 10://patch
  if(index_patch_window==0){add_a_window(W_PATCH);substract_a_window(W_MAINMENU);}
-     else {substract_a_window(W_PATCH);}      
+     else {substract_a_window(W_PATCH);}
 break;
 case 11://list
 if(index_list_projecteurs==0){add_a_window(W_LIST);substract_a_window(W_MAINMENU);}
@@ -769,11 +811,11 @@ if(index_show_minifaders==0){add_a_window(W_MINIFADERS);substract_a_window(W_MAI
 else {substract_a_window(W_MINIFADERS);}
 break;
 case 22://trichromy
-if(index_trichro_window==0){add_a_window(W_TRICHROMY);substract_a_window(W_MAINMENU);} 
+if(index_trichro_window==0){add_a_window(W_TRICHROMY);substract_a_window(W_MAINMENU);}
 else  { substract_a_window(W_TRICHROMY);  }
 break;
 case 23://chasers
-if(index_window_chasers==0){add_a_window(W_CHASERS);substract_a_window(W_MAINMENU);} 
+if(index_window_chasers==0){add_a_window(W_CHASERS);substract_a_window(W_MAINMENU);}
 else {substract_a_window(W_CHASERS);}
 break;
 case 24://grider
@@ -785,7 +827,7 @@ break;
 //4eme colonne
 
 case 30://tracking
- if(index_video_window==0){ add_a_window(W_TRACKINGVIDEO);substract_a_window(W_MAINMENU); } 
+ if(index_video_window==0){ add_a_window(W_TRACKINGVIDEO);substract_a_window(W_MAINMENU); }
  else{ substract_a_window(W_TRACKINGVIDEO);}
 break;
 
@@ -800,7 +842,7 @@ break;
 case 33://audioplayers
 if(index_show_audio_window==0){add_a_window(W_AUDIO);substract_a_window(W_MAINMENU);}
 else {substract_a_window(W_AUDIO);}
-reset_audio_indexs_to_dock(); 
+reset_audio_indexs_to_dock();
 break;
 case 34://name
 index_type=toggle(index_type);
@@ -822,7 +864,7 @@ else {substract_a_window(W_iCAT);}
 break;
 case 42: //npad
   if(index_visual_pad==0){add_a_window(W_NUMPAD);substract_a_window(W_MAINMENU);}
- else {substract_a_window(W_NUMPAD);}  
+ else {substract_a_window(W_NUMPAD);}
 break;
 case 43://help
 index_call_help=toggle(index_call_help);
@@ -855,7 +897,7 @@ switch (window_focus_id)
 {
 case W_CHASERS:
 index_affect_chaser_to_dock=index_do_dock;
-break;   
+break;
 case W_GRID:
 for(int i=0;i<4;i++)
 {
@@ -866,8 +908,8 @@ gridplayer_to_affect_is=i; break;
 }
 break;
 case W_MOVER:
-index_affect_to_dock_mover=index_do_dock;     
-break;    
+index_affect_to_dock_mover=index_do_dock;
+break;
 case W_DRAW:
 index_affect_draw_to_dock=index_do_dock;
 break;
@@ -875,13 +917,13 @@ case W_ECHO:
 index_affect_echo_to_dock=index_do_dock;
 break;
 case W_TIME:
-index_affect_time=index_do_dock;   
+index_affect_time=index_do_dock;
 break;
 case W_TRACKINGVIDEO:
-index_affect_video_tracking_to_dock=index_do_dock; 
+index_affect_video_tracking_to_dock=index_do_dock;
 break;
 case W_TRICHROMY:
-index_affect_color_to_dock=index_do_dock; 
+index_affect_color_to_dock=index_do_dock;
 break;
 case W_AUDIO:
 index_affect_audio_to_dock=index_do_dock;
@@ -890,10 +932,10 @@ audio_type_for_dock_affectation_is=0;
 break;
 case W_CFGMENU:
 if(config_page_is==1) { index_affect_dmxin=index_do_dock; }
-else if(config_page_is==3) {index_do_affect_net_to_dock=index_do_dock; } 
+else if(config_page_is==3) {index_do_affect_net_to_dock=index_do_dock; }
 break;
 default:
-break;      
+break;
 }
 
 break;
@@ -917,7 +959,7 @@ reset_index_actions();
 break;
 case 107://midi mute
 reset_index_actions();
-index_midi_mute=toggle(index_midi_mute);  
+index_midi_mute=toggle(index_midi_mute);
     if(index_midi_mute==1)
     {
     for(int y=0;y<2048;y++)
@@ -928,12 +970,12 @@ index_midi_mute=toggle(index_midi_mute);
     for(int y=0;y<2048;y++)
     { is_raccrochage_midi_remote[y]=0;}
     sprintf(string_Last_Order,">>Midi IN un-muted");
-    }         
+    }
 break;
 case 108://MAIN MENU
 if(mouse_released==0)
 {
-            
+
               mouse_released=1;
               switch(index_show_main_menu)
               {
@@ -941,7 +983,7 @@ if(mouse_released==0)
               case 1:substract_a_window(W_MAINMENU);index_show_main_menu=0; break;
               default:
               break;
-              }   
+              }
 
 }
 break;
@@ -957,45 +999,45 @@ case 111: //direct CH
 if(index_direct_chan==0 && multiple_direct_chan==0)
 {
 reset_index_actions();
-reset_indexs_confirmation(); 
-index_direct_chan=1; index_do_dock=index_direct_chan;  
+reset_indexs_confirmation();
+index_direct_chan=1; index_do_dock=index_direct_chan;
 }
 else if(index_direct_chan==1 && multiple_direct_chan==0)
 {
-index_direct_chan=1; 
-multiple_direct_chan=1;     
-index_do_dock=1;  
+index_direct_chan=1;
+multiple_direct_chan=1;
+index_do_dock=1;
 }
 else if(index_direct_chan==1 && multiple_direct_chan==1)
 {
-reset_index_actions();  
-reset_indexs_confirmation();  
+reset_index_actions();
+reset_indexs_confirmation();
 }
-           
+
 break;
 case 112: // view
- index_inspekt=toggle(index_inspekt);  i_m_over_a_track=0;                
+ index_inspekt=toggle(index_inspekt);  i_m_over_a_track=0;
 break;
 case 113://HIPASS
-index_do_hipass=toggle( index_do_hipass);           
-index_inspekt=index_do_hipass;    
+index_do_hipass=toggle( index_do_hipass);
+index_inspekt=index_do_hipass;
 break;
 case 114://FGROUP
 if(index_do_fgroup==0)
 {
 reset_index_actions();
-reset_indexs_confirmation(); 
+reset_indexs_confirmation();
 index_do_fgroup=1;
 }
-else 
+else
 {
-reset_index_actions();     
+reset_index_actions();
 }
-index_do_dock=index_do_fgroup; 
+index_do_dock=index_do_fgroup;
 break;
 default:
-break;       
-}    
+break;
+}
 }
 
 if(index_show_main_menu==1 ){window_bring_to_front(W_MAINMENU);}
@@ -1005,5 +1047,5 @@ mouse_released=1;
 
 
 
- return(0);   
+ return(0);
 }

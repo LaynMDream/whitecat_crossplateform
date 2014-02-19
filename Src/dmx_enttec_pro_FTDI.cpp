@@ -1,3 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file dmx_enttec_pro_FTDI.cpp
+* \brief {send dmx fonctions to the enttec usb pro via the fdtdi D2xx drivers}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Gère les envoie de config du port VCOM et autre fonction pour l'enttec usb pro, specifique pour windows
+*   Config the VCOM port and other fonctions for the enttec usb pro, only for windows
+*
+ **/
 
 #include "pro_driver_pro.h"
 
@@ -6,9 +47,9 @@
 DMXUSBPROParamsType PRO_Params;
 FT_HANDLE device_handle = NULL ;
 
-#define DMX_DATA_LENGTH 513 // Includes the start code 
+#define DMX_DATA_LENGTH 513 // Includes the start code
 
-	// declare all needed variables 
+	// declare all needed variables
 	WORD wVID = 0x0403;
 	WORD wPID = 0x6001;
 	uint8_t Num_Devices =0;
@@ -18,7 +59,7 @@ FT_HANDLE device_handle = NULL ;
 	int i=0;
 	int device_num=0;
 	BOOL resEnttecPro = 0;
-	
+
 
 /* Function : FTDI_ClosePort
  * Author	: ENTTEC
@@ -41,9 +82,9 @@ int FTDI_ListDevices()
 	FT_STATUS ftStatus;
 	DWORD numDevs=0;
 	ftStatus = FT_ListDevices((PVOID)&numDevs,NULL,FT_LIST_NUMBER_ONLY);
-	if(ftStatus == FT_OK) 
+	if(ftStatus == FT_OK)
 		return numDevs;
-	return NO_RESPONSE; 
+	return NO_RESPONSE;
 }
 
 
@@ -78,7 +119,7 @@ int FTDI_SendData(int label, unsigned char *data, int length)
 	if (resEnttecPro == FT_OK)
 		return true;
 	else
-		return false; 
+		return false;
 }
 
 /* Function : FTDI_ReceiveData
@@ -113,7 +154,7 @@ int FTDI_ReceiveData(int label, unsigned char *data, unsigned int expected_lengt
 	length = byte;
 	resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
 	if (resEnttecPro != FT_OK) return  NO_RESPONSE;
-	length += ((uint32_t)byte)<<BYTE_LENGTH;	
+	length += ((uint32_t)byte)<<BYTE_LENGTH;
 	// Check Length is not greater than allowed
 	if (length > DMX_PACKET_SIZE)
 		return  NO_RESPONSE;
@@ -144,7 +185,7 @@ void FTDI_PurgeBuffer()
 /* Function : FTDI_OpenDevice
  * Author	: ENTTEC
  * Purpose  : Opens the PRO; Tests various parameters; outputs info
- * Parameters: device num (returned by the List Device fuc), Fw Version MSB, Fw Version LSB 
+ * Parameters: device num (returned by the List Device fuc), Fw Version MSB, Fw Version LSB
  **/
 uint16_t FTDI_OpenDevice(int device_num)
 {
@@ -164,21 +205,21 @@ int RTimeout =120;
 	FT_STATUS ftStatus;
 	int BreakTime;
 	int MABTime;
-	// Try at least 3 times 
+	// Try at least 3 times
 	do  {
 		sprintf(string_display_dmx_params,"D2XX Opening [Device %d] Try %d",device_num,tries);
-		// Open the PRO 
+		// Open the PRO
 		ftStatus = FT_Open(device_num,&device_handle);
 		// delay for next try
 		Sleep(750);
 		tries ++;
-	} while ((ftStatus != FT_OK) && (tries < 3)); 
+	} while ((ftStatus != FT_OK) && (tries < 3));
 	// PRO Opened succesfully
-	if (ftStatus == FT_OK) 
+	if (ftStatus == FT_OK)
 	{
 		// GET D2XX Driver Version
 		ftStatus = FT_GetDriverVersion(device_handle,(LPDWORD)&version);
-		if (ftStatus == FT_OK) 
+		if (ftStatus == FT_OK)
 		{
 			major_ver = (uint8_t) version >> 16;
 			minor_ver = (uint8_t) version >> 8;
@@ -190,8 +231,8 @@ int RTimeout =120;
 
 		// GET Latency Timer
 		ftStatus = FT_GetLatencyTimer (device_handle,(PUCHAR)&latencyTimer);
-		if (ftStatus == FT_OK) 
-			sprintf(string_display_dmx_params,"Latency Timer:: %d ",latencyTimer);		
+		if (ftStatus == FT_OK)
+			sprintf(string_display_dmx_params,"Latency Timer:: %d ",latencyTimer);
 		else
 			sprintf(string_display_dmx_params,"Unable to Get Latency Timer") ;
 		// SET Default Read & Write Timeouts (in micro sec ~ 100)
@@ -233,7 +274,7 @@ int RTimeout =120;
 		// Firmware  Version
 		VersionMSB = PRO_Params.FirmwareMSB;
 		VersionLSB = PRO_Params.FirmwareLSB;
-		// GET PRO's serial number 
+		// GET PRO's serial number
 		res = FTDI_SendData(GET_WIDGET_SN,(unsigned char *)&size,2);
 		res=FTDI_ReceiveData(GET_WIDGET_SN,(unsigned char *)&temp,4);
 		// Display All PRO Parametrs & Info avialable
@@ -246,8 +287,8 @@ int RTimeout =120;
 		sprintf(string_display_dmx_params,"SEND REFRESH RATE: %d packets/sec",PRO_Params.RefreshRate);
 		// return success
 		return true;
-	}		
-	else // Can't open Device 
+	}
+	else // Can't open Device
 	{	sprintf(string_display_dmx_params,"Can't open Pro");	return FALSE;}
 	return(0);
 }
@@ -275,7 +316,7 @@ uint8_t FTDI_RxDMX(uint8_t label, unsigned char *data, uint32_t* expected_length
 	if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
 	if(header[0] != label) return NO_RESPONSE;
 	length = header[1];
-	length += ((uint32_t)header[2])<<BYTE_LENGTH;	
+	length += ((uint32_t)header[2])<<BYTE_LENGTH;
 	length += 1;
 	// Check Length is not greater than allowed
 	if (length > DMX_PACKET_SIZE +3)
@@ -295,7 +336,7 @@ uint8_t FTDI_RxDMX(uint8_t label, unsigned char *data, uint32_t* expected_length
 /*
 int main(int argc, char**argv)
 {
-	// declare all needed variables 
+	// declare all needed variables
 	WORD wVID = 0x0403;
 	WORD wPID = 0x6001;
 	uint8_t Num_Devices =0;
@@ -307,7 +348,7 @@ int main(int argc, char**argv)
 	// startup message for example
 	printf("\nEnttec Pro - C - Windows - FTDI Test\n");
 	printf("\nLooking for a PRO's connected to PC ... ");
-	Num_Devices = FTDI_ListDevices(); 
+	Num_Devices = FTDI_ListDevices();
 	// Number of Found Devices
 	if (Num_Devices == 0)
 	{
@@ -323,19 +364,19 @@ int main(int argc, char**argv)
 			device_num = 0;
 			device_connected = FTDI_OpenDevice(device_num);
 */
-		// If you want to open all; use for loop ; uncomment the folllowing 
+		// If you want to open all; use for loop ; uncomment the folllowing
 		/*
 		 for (i=0;i<Num_Devices;i++)
 		 {
 			if (device_connected)
 				break;
 			device_num = i;
-			device_connected = FTDI_OpenDevice(device_num);		
+			device_connected = FTDI_OpenDevice(device_num);
 		 }
 		 */
 
 		// Send DMX Code
-/*		if (device_connected) 
+/*		if (device_connected)
 		{
 			unsigned char myDmx[DMX_DATA_LENGTH];
 			printf("\n Press Enter to Send DMX data :");
@@ -347,7 +388,7 @@ int main(int argc, char**argv)
 				memset(myDmx,i,DMX_DATA_LENGTH);
 				// Start Code = 0
 				myDmx[0] = 0;
-				// actual send function called 
+				// actual send function called
 				res = FTDI_SendData(SET_DMX_TX_MODE, myDmx, DMX_DATA_LENGTH);
 				// check response from Send function
 				if (res < 0)
@@ -361,11 +402,11 @@ int main(int argc, char**argv)
 				printf("Iteration: %d\n", i);
 				printf("DMX Data SENT from 0 to 10: ");
 				for (int j = 0; j <= 8; j++)
-					printf (" %d ",myDmx[j]);				
+					printf (" %d ",myDmx[j]);
 			}
 		}
 
-		// DMX Receive Code in a loop 
+		// DMX Receive Code in a loop
 		if (device_connected)
 		{
 			unsigned char myDmxIn[DMX_DATA_LENGTH];

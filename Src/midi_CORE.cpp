@@ -1,3 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file midi_CORE.cpp
+* \brief {midi Core}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions core du la gestion midi
+*   Midi Core fonctions
+*
+**/
 
 //pour midi
 
@@ -12,7 +53,7 @@ for(int i=0;i<48;i++)
 {
 midi_needs_no_key_on_key_off[900+i]=1;
 }
-return(0);   
+return(0);
 }
 
 
@@ -50,10 +91,10 @@ int InitTblLibEv() {
   strcpy(TblLibEv[typeNonRegParam],  "NonRegParam.");
   strcpy(TblLibEv[typeRegParam],	 "Reg Param   ");
   strcpy(TblLibEv[typeSeqNum],		 "Seq Number  ");
-  
-  
+
+
   strcpy(TblLibEv[typeTextual],	 	 "Text        ");
-  
+
   strcpy(TblLibEv[typeCopyright],	 "Copyright   ");
   strcpy(TblLibEv[typeSeqName],	 	 "Seq Name    ");
   strcpy(TblLibEv[typeInstrName],	 "Instr Name  ");
@@ -85,20 +126,20 @@ pascal void InstallFilter( short refNum, MidiFilterPtr filter )
 		MidiAcceptPort(myFilter,i,true);
 	}
 	for (i = 0 ; i < 16 ; i++ ) MidiAcceptChan(myFilter,i,true);
-	
+
 	MidiAcceptType(myFilter,typeKeyOn, true);
 	MidiAcceptType(myFilter,typeKeyOff, true);
 	MidiAcceptType(myFilter,typeCtrlChange, true);
  	MidiAcceptType(myFilter,typePitchWheel, true);
-	
+
 	MidiSetFilter(refNum, myFilter);
 }
 
 
 /* ------------------------------------------------------------------------- */
 int InitMidi()
-{  	
-if ( !MidiShare()) 
+{
+if ( !MidiShare())
 {
 sprintf (string_Last_Order,"MidiShare not available\n");
 }
@@ -116,7 +157,7 @@ return(0);
 }
 
 
-int QuitMidi() 
+int QuitMidi()
 {
 	MidiFreeFilter(myFilter);
 	MidiClose(myRefNum);

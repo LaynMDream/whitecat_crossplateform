@@ -1,3 +1,45 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file dmx_fonctions_13.cpp
+* \brief {global fonctions for all interfaces and artnet}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonction global d'écriture du dmx vers toutes les interfaces et l'arnet, gère aussi l'écriture direct du signal dmx par le processeur du pc, envoyer vers l'enttec open via les drivers D2XX
+*   Global fonctions to write the dmx to the diferente interface and artnet, write too directly the dmx signal from the PC CPU to be send to the enttec open dmx via the D2XX drivers
+*
+ **/
+
 #include <odmxusb.cpp>
 #include <odmxusb.h>
 Open_USB_DMX *pUsbDmx = NULL;
@@ -21,8 +63,8 @@ switch(myDMXinterfaceis)
     nbrbytessended=sendto(sockartnet, ArtPollBuffer,sizeof( ArtPollBuffer),0,(SOCKADDR*)&sinS,sinsize);
      //ArtNet
     ArtDmx();
-    nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);  
-    index_init_dmx_ok=1; 
+    nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);
+    index_init_dmx_ok=1;
     break;
 
     case 2:
@@ -32,10 +74,10 @@ switch(myDMXinterfaceis)
 		sprintf(string_display_dmx_params,"Pointer Created");
 		rest(100);
     if (pUsbDmx != NULL)
-		   {	
+		   {
 				  int iRet;
 				  iRet = pUsbDmx->open_dmx_devices();
-                  sprintf(string_display_dmx_params,"Enttec Open Dmx return :%d",iRet);  
+                  sprintf(string_display_dmx_params,"Enttec Open Dmx return :%d",iRet);
                   if (iRet==0)
                   { sprintf(string_display_dmx_params,"Impossible to open interface, is it PLUGGED ?");
                     return(0);
@@ -46,38 +88,38 @@ switch(myDMXinterfaceis)
                    DmxBlockEnttecOpen[ko]=DmxBlock[ko+1];
                    }
                   pUsbDmx->send_dmx_packet(DmxBlockEnttecOpen);
-                   
+
         	}
      	 else {
               sprintf(string_display_dmx_params,"Interface Opened !");
-              index_init_dmx_ok=1; 
-          }        
+              index_init_dmx_ok=1;
+          }
     break;
-    
-    
+
+
     case 3:
     //VCOM
     Detect_EnttecProOut();
     Open_EnttecProOut();
-    
+
     //FTDI
     /*
     Num_Devices = FTDI_ListDevices();
     device_num = 0;
 	device_connected = FTDI_OpenDevice(device_num);*/
-   	
+
     break;
-    
-    
+
+
     case 4:
     //sunlite
     open_sunlite();
-    index_init_dmx_ok=1;     
+    index_init_dmx_ok=1;
     break;
-    
+
     default:
     break;
-}    
+}
 
 if(index_artnet_doubledmx==1)
 {
@@ -88,15 +130,15 @@ if(index_artnet_doubledmx==1)
     nbrbytessended=sendto(sockartnet, ArtPollBuffer,sizeof( ArtPollBuffer),0,(SOCKADDR*)&sinS,sinsize);
      //ArtNet
     ArtDmx();
-    nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);  
-    //index_init_dmx_ok=1;                     
+    nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);
+    //index_init_dmx_ok=1;
 }
 return(0);
 }
 ////////////////////////////////////////////////////////////////////////////////
 int Close_dmx_interface()
 {
- 
+
  switch(myDMXinterfaceis)
 {
 //art-net
@@ -123,21 +165,21 @@ int Close_dmx_interface()
  Close_EnttecProOut();
  //FTDI_ClosePort();
  break;
- 
+
  //sunlite
  case 4:
- close_sunlite();    
+ close_sunlite();
  break;
  default:
  break;
- 
- } 
+
+ }
  index_init_dmx_ok=0;
- 
- if (index_init_EnttecPROIN_ok==1){Close_ProIn();}  
+
+ if (index_init_EnttecPROIN_ok==1){Close_ProIn();}
  if(index_artnet_doubledmx==1)
  {   fermeture_client_artnet();}
- return(0);   
+ return(0);
 }
 ////////////////////////////////////////////////////////////////////////////////
 int check_if_dmx_change()
@@ -146,11 +188,11 @@ int check_if_dmx_change()
  {
  if (artnet_backup[iop]!=DmxBlock[iop])
  {
- do_send_on_change=1; 
+ do_send_on_change=1;
  break;
- }       
- } 
- return(0);   
+ }
+ }
+ return(0);
 }
 
 
@@ -160,17 +202,17 @@ int SendData_to_interface()
 if(index_init_dmx_ok==1 )
 {
   switch(myDMXinterfaceis)
-  {                      
+  {
   case 1:
   ArtDmx();
   check_if_dmx_change();
   if(do_send_on_change==1)
   {
-  nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);          
+  nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);
   do_send_on_change=0;
   for(int bup=0;bup<512;bup++)
   {artnet_backup[bup]=DmxBlock[bup];}
-  }                    
+  }
   break;
   //enttec open
   case 2:
@@ -182,7 +224,7 @@ if(index_init_dmx_ok==1 )
 		{
 	    int iRet;
 		iRet = pUsbDmx->get_dmx_device_count();
-   	    pUsbDmx->send_dmx_packet(DmxBlockEnttecOpen); 
+   	    pUsbDmx->send_dmx_packet(DmxBlockEnttecOpen);
         }
   break;
  //enttec pro
@@ -203,17 +245,17 @@ if(index_init_dmx_ok==1 )
                 sprintf(string_display_dmx_params,">>No ENTTEC PRO OUT founded, closing port");
                 FTDI_ClosePort();
                 }*/
-         
+
  break;
  //sunlite
  case 4:
- sunlite_send_data();    
+ sunlite_send_data();
  break;
  default:
  break;
  }
 }
-//DOUBLE DMX 
+//DOUBLE DMX
   if(index_artnet_doubledmx==1)
  {
  init_artnet_variables();
@@ -221,14 +263,14 @@ if(index_init_dmx_ok==1 )
   check_if_dmx_change();
   if(do_send_on_change==1)
   {
-  nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);          
+  nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);
    do_send_on_change=0;
   for(int bup=0;bup<512;bup++)
   {artnet_backup[bup]=DmxBlock[bup];}
-  }                                        
+  }
  }
 
- return(0);  
+ return(0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -236,13 +278,13 @@ int Attribute_ArtNet(int aff, int ddok)
 {
  if(DockIsSelected[aff][ddok]==1  && DockTypeIs[aff][ddok]==2)
  {
- for (int pp=0;pp<512;pp++)            
+ for (int pp=0;pp<512;pp++)
  {
  FaderDockContains[aff][ddok][pp]=ArtNet_16xUniverse_Receiving[pp][DockNetIs[aff][ddok]];
- }                          
-    
  }
-return(0);  
+
+ }
+return(0);
 }
 
 
@@ -260,7 +302,7 @@ else if(bufferSaisie[i]+channel_level_mofification_while_crossfade[i]<0){bufferS
 else {bufferSaisie[i]+=channel_level_mofification_while_crossfade[i];}
 }
 reset_modified_levels_in_crossfade();
-return(0);   
+return(0);
 }
 
 
@@ -273,22 +315,22 @@ prepare_crossfade();
 floatX1=niveauX1;
 floatX2=niveauX2;
 crossfade_done_time=0;
-}   
+}
 
 if(index_go==1 && index_pause==0)
 {
 crossfade_done_time++;
 if(actual_time>(crossfade_start_time+crossfade_time_delay_out))
 {
-floatX1-=fraction_X1_out;  
-if(floatX1<0){floatX1=0.0;}              
+floatX1-=fraction_X1_out;
+if(floatX1<0){floatX1=0.0;}
 niveauX1=(int)floatX1;
 crossfade_time_delay_out=0;
 }
 if(actual_time>(crossfade_start_time+crossfade_time_delay_in))
 {
-floatX2+=fraction_X2_in; 
-if(floatX2>255){floatX2=255;}               
+floatX2+=fraction_X2_in;
+if(floatX2>255){floatX2=255;}
 niveauX2=(int)floatX2;
 crossfade_time_delay_in=0;
 }
@@ -300,7 +342,7 @@ refresh_modified_levels_in_crossfade();//modification fleches pdt crossfade
 index_go=0;
 if(index_auto_mute_cuelist_speed==1 && crossfade_speed!=64)
 {is_raccrochage_midi_remote[493]=1; }
-if(auto_reset_crossfade_speed_on_link==1 && (Links_Memoires[position_onstage]==0 || index_link_is_on==0 )) 
+if(auto_reset_crossfade_speed_on_link==1 && (Links_Memoires[position_onstage]==0 || index_link_is_on==0 ))
 {crossfade_speed=64;}
 
 crossfade_done_time=0;
@@ -314,23 +356,23 @@ if(midi_send_out[492]==1){index_send_midi_out[492]=1;}//x2
 //auto go
 if(Links_Memoires[position_onstage]==1 && index_link_is_on==1)
 {
-crossfade_start_time=actual_time;                                       
+crossfade_start_time=actual_time;
 prepare_crossfade();
 floatX1=niveauX1;
 floatX2=niveauX2;
 index_go=1;
-do_send_bang();  
+do_send_bang();
 //integration du gridplayer 1
 if(show_gridplayer_in_seq==1)
 {
 grid_in_preset[0][0]=index_grider_selected[0];
 grid_in_preset[0][1]=set_from_seq_gridplayer1_next_step[position_preset]-1;
-if( set_from_seq_gridplayer1_next_step[position_preset]!=-1 
+if( set_from_seq_gridplayer1_next_step[position_preset]!=-1
 && set_from_seq_gridplayer1_next_step[position_preset]!=index_grider_step_is[0])
 {
 gridder_prepare_cross(0,index_grider_selected[0],set_from_seq_gridplayer1_next_step[position_preset]-1);
 grider_is_playing[0]=1;grid_crossfade_start_time[0]=actual_time;
-}                              
+}
 }
 }
 }
@@ -357,30 +399,30 @@ crossfade_done_time=0;
 crossfade_time_delay_in=0;
 crossfade_time_delay_out=0;
 
-floatX1+=fraction_X1_out;  
-if(floatX1>255){floatX1=255.0;}              
+floatX1+=fraction_X1_out;
+if(floatX1>255){floatX1=255.0;}
 niveauX1=(int)floatX1;
 
-floatX2-=fraction_X2_in; 
-if(floatX2<0){floatX2=0.0;}               
+floatX2-=fraction_X2_in;
+if(floatX2<0){floatX2=0.0;}
 niveauX2=(int)floatX2;
 
 //integration du gridplayer 1
 if(show_gridplayer_in_seq==1 && set_from_seq_gridplayer1_next_step[position_onstage]!=-1)
 {
 grider_is_playing[0]=0;
-grid_floatX1[0]+=grid_fraction_X1_out[0];  
-if(grid_floatX1[0]>255.0){grid_floatX1[0]=255.0;}              
-grid_niveauX1[0]=(int)grid_floatX1[0];  
-grid_floatX2[0]-=grid_fraction_X2_in[0]; 
-if(grid_floatX2[0]<0.0){grid_floatX2[0]=0.0;}   
-grid_niveauX2[0]=(int)grid_floatX2[0];                             
+grid_floatX1[0]+=grid_fraction_X1_out[0];
+if(grid_floatX1[0]>255.0){grid_floatX1[0]=255.0;}
+grid_niveauX1[0]=(int)grid_floatX1[0];
+grid_floatX2[0]-=grid_fraction_X2_in[0];
+if(grid_floatX2[0]<0.0){grid_floatX2[0]=0.0;}
+grid_niveauX2[0]=(int)grid_floatX2[0];
 }
 
 if(niveauX1==255 && niveauX2==0)
 {
 crossfade_done_time=0;sprintf(string_time_left_is,"");
-index_go_back=0;  
+index_go_back=0;
 if(index_auto_mute_cuelist_speed==1 && crossfade_speed!=64)
 {is_raccrochage_midi_remote[493]=1; }
 crossfade_speed=64;
@@ -401,27 +443,27 @@ int prepare_lfos(int cmptfader, int dksel)
 {
 if(lfo_speed[cmptfader]<64)
 {
-fraction_lfo_in[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][1]*(((float)BPS_RATE)*(64.0/lfo_speed[cmptfader])));  
+fraction_lfo_in[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][1]*(((float)BPS_RATE)*(64.0/lfo_speed[cmptfader])));
 fraction_lfo_out[cmptfader]=  255.0/ (time_per_dock[cmptfader][dksel][3]*(((float)BPS_RATE)*(64.0/lfo_speed[cmptfader])));
 time_delay_in[cmptfader]=(int)(time_per_dock[cmptfader][dksel][0]*(((float)BPS_RATE)*(64.0/lfo_speed[cmptfader])));
 time_delay_out[cmptfader]=(int)(time_per_dock[cmptfader][dksel][0]*(((float)BPS_RATE)*(64.0/lfo_speed[cmptfader])));
 }
 else if(lfo_speed[cmptfader]==64)
 {
-fraction_lfo_in[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][1]*BPS_RATE);  
-fraction_lfo_out[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][3]*BPS_RATE);     
-time_delay_in[cmptfader]=(int) (time_per_dock[cmptfader][dksel][0]*BPS_RATE);  
-time_delay_out[cmptfader]=(int)(time_per_dock[cmptfader][dksel][2]*BPS_RATE);                            
+fraction_lfo_in[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][1]*BPS_RATE);
+fraction_lfo_out[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][3]*BPS_RATE);
+time_delay_in[cmptfader]=(int) (time_per_dock[cmptfader][dksel][0]*BPS_RATE);
+time_delay_out[cmptfader]=(int)(time_per_dock[cmptfader][dksel][2]*BPS_RATE);
 }
 else if(lfo_speed[cmptfader]>64)
 {
-fraction_lfo_in[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][1]*(((float)BPS_RATE*3)/(lfo_speed[cmptfader]-62))); //-62 evite un passage de temps pas bon, cf curseur 
+fraction_lfo_in[cmptfader]= 255.0/ (time_per_dock[cmptfader][dksel][1]*(((float)BPS_RATE*3)/(lfo_speed[cmptfader]-62))); //-62 evite un passage de temps pas bon, cf curseur
 fraction_lfo_out[cmptfader]=  255.0/ (time_per_dock[cmptfader][dksel][3]*(((float)BPS_RATE*3)/(lfo_speed[cmptfader]-62)));
-time_delay_in[cmptfader]= (int) (time_per_dock[cmptfader][dksel][0]*(((float)BPS_RATE*3)/(lfo_speed[cmptfader]-62))); //-62 evite un passage de temps pas bon, cf curseur 
+time_delay_in[cmptfader]= (int) (time_per_dock[cmptfader][dksel][0]*(((float)BPS_RATE*3)/(lfo_speed[cmptfader]-62))); //-62 evite un passage de temps pas bon, cf curseur
 time_delay_out[cmptfader]= (int) (time_per_dock[cmptfader][dksel][2]*(((float)BPS_RATE*3)/(lfo_speed[cmptfader]-62)));
 }
 
-return(0);    
+return(0);
 }
 
 
@@ -435,65 +477,65 @@ int do_lfos()
  index_lfoing[cmptfader]=0;//pour lock faisait bugguer le next step
 
  ////////////////////////////ONCE/////////////////////////////////////////////////////////////////
- if (is_dock_for_lfo_selected[cmptfader][ dockis]==0 && lfo_cycle_is_on[cmptfader]==0)//ONCE CASE 
+ if (is_dock_for_lfo_selected[cmptfader][ dockis]==0 && lfo_cycle_is_on[cmptfader]==0)//ONCE CASE
  {
  //up only once
  if(lfo_mode_is[cmptfader]==1 && actual_time>(start_time_for_delays[cmptfader]+time_delay_in[cmptfader]))
  {
  index_lfoing[cmptfader]=1;
  faders_in_float[cmptfader]+=fraction_lfo_in[cmptfader];
- if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;} 
+ if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
  Fader[cmptfader]=int(faders_in_float[cmptfader]);
- } 
- 
- lfo_running_is_upward[cmptfader]=1;    
+ }
+
+ lfo_running_is_upward[cmptfader]=1;
  if(faders_in_float[cmptfader]>=255)
  {
- lfo_mode_is[cmptfader]=0;faders_in_float[cmptfader]=255.0;  
- } 
+ lfo_mode_is[cmptfader]=0;faders_in_float[cmptfader]=255.0;
+ }
  //ONSTOP UP LIMITE
- if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] 
+ if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader]
  || Fader[cmptfader]>LevelStopPos[cmptfader]) && FaderIsFlash[cmptfader]==0)
- { 
+ {
   Fader[cmptfader]=LevelStopPos[cmptfader];lfo_mode_is[cmptfader]=0;ActionnateStopOn[cmptfader]=0;
   }
  //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
- {index_send_midi_out[cmptfader]=1;}  
- 
- } 
+ {index_send_midi_out[cmptfader]=1;}
+
+ }
 
  //down only once
  else if(lfo_mode_is[cmptfader]==2 && actual_time>(start_time_for_delays[cmptfader]+time_delay_out[cmptfader]))
  {
  index_lfoing[cmptfader]=1;
  faders_in_float[cmptfader]-=fraction_lfo_out[cmptfader];
- if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;} 
+ if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
  Fader[cmptfader]=int(faders_in_float[cmptfader]);
  }
- 
+
  lfo_running_is_upward[cmptfader]=0;
  if(faders_in_float[cmptfader]==0.0)
  {
  lfo_mode_is[cmptfader]=0;faders_in_float[cmptfader]=0.0;
  }
  //ONSTOP DOWN LIMITE
- if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] 
+ if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader]
  || Fader[cmptfader]<LevelStopPos[cmptfader]) && FaderIsFlash[cmptfader]==0)
- { 
+ {
  Fader[cmptfader]=LevelStopPos[cmptfader];lfo_mode_is[cmptfader]=0;ActionnateStopOn[cmptfader]=0;
- } 
+ }
  //report midi
   midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
- {index_send_midi_out[cmptfader]=1;} 
+ {index_send_midi_out[cmptfader]=1;}
 
- 
+
  }
  }
  ////////////////////////////////LOOP ON ONCE//////////////////////////////////////////////////////////////////
@@ -504,12 +546,12 @@ int do_lfos()
  {
  index_lfoing[cmptfader]=1;
  faders_in_float[cmptfader]+=fraction_lfo_in[cmptfader];
- if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;} 
+ if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
  Fader[cmptfader]=int(faders_in_float[cmptfader]);
  }
- 
+
 //ONSTOP est butee haute de la boucle
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] || Fader[cmptfader]>LevelStopPos[cmptfader])
  && FaderIsFlash[cmptfader]==0)
@@ -517,16 +559,16 @@ int do_lfos()
  //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
- {index_send_midi_out[cmptfader]=1;} 
+ {index_send_midi_out[cmptfader]=1;}
 
  lfo_running_is_upward[cmptfader]=1;
  if(faders_in_float[cmptfader]>=255)
- { 
+ {
  start_time_for_delays[cmptfader]=actual_time;
- faders_in_float[cmptfader]=0.0;Fader[cmptfader]=0; 
+ faders_in_float[cmptfader]=0.0;Fader[cmptfader]=0;
  }
- 
- 
+
+
  if(faders_in_float[cmptfader]==0.0)//renvoi next dock quand à 0 pos
  {
  if(lfo_do_next_step[cmptfader][1]==1)//down dock
@@ -536,8 +578,8 @@ int do_lfos()
  if ( DockIsSelected[cmptfader][tt]==1)
   {
   DockIsSelected[cmptfader][tt]=0;
-  if(tt<core_user_define_nb_docks-1){ DockIsSelected[cmptfader][tt+1]=1;break;}  
-  else if(tt==core_user_define_nb_docks-1){DockIsSelected[cmptfader][0]=1;break;} 
+  if(tt<core_user_define_nb_docks-1){ DockIsSelected[cmptfader][tt+1]=1;break;}
+  else if(tt==core_user_define_nb_docks-1){DockIsSelected[cmptfader][0]=1;break;}
   }
  }
  }
@@ -548,8 +590,8 @@ int do_lfos()
  if ( DockIsSelected[cmptfader][tt]==1)
   {
   DockIsSelected[cmptfader][tt]=0;
-  if(tt>0){ DockIsSelected[cmptfader][tt-1]=1;break;}  
-  else if(tt==0){DockIsSelected[cmptfader][core_user_define_nb_docks-1]=1;break;} 
+  if(tt>0){ DockIsSelected[cmptfader][tt-1]=1;break;}
+  else if(tt==0){DockIsSelected[cmptfader][core_user_define_nb_docks-1]=1;break;}
   }
  }
 }
@@ -560,21 +602,21 @@ int do_lfos()
  {
  index_lfoing[cmptfader]=1;
  faders_in_float[cmptfader]-=fraction_lfo_out[cmptfader];
- if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;} 
+ if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
  Fader[cmptfader]=int(faders_in_float[cmptfader]);
  }
 
  //ONSTOP est plancher de la boucle
- if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] 
+ if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader]
  || Fader[cmptfader]<LevelStopPos[cmptfader]) && FaderIsFlash[cmptfader]==0)
  { Fader[cmptfader]=255;}
   //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
- {index_send_midi_out[cmptfader]=1;} 
- 
+ {index_send_midi_out[cmptfader]=1;}
+
  lfo_running_is_upward[cmptfader]=0;
  if(faders_in_float[cmptfader]==0.0)
  {
@@ -587,8 +629,8 @@ int do_lfos()
  if ( DockIsSelected[cmptfader][tt]==1)
   {
   DockIsSelected[cmptfader][tt]=0;
-  if(tt<core_user_define_nb_docks-1){ DockIsSelected[cmptfader][tt+1]=1;break;}  
-  else if(tt==core_user_define_nb_docks-1){DockIsSelected[cmptfader][0]=1;break;} 
+  if(tt<core_user_define_nb_docks-1){ DockIsSelected[cmptfader][tt+1]=1;break;}
+  else if(tt==core_user_define_nb_docks-1){DockIsSelected[cmptfader][0]=1;break;}
   }
  }
  }
@@ -599,8 +641,8 @@ int do_lfos()
  if ( DockIsSelected[cmptfader][tt]==1)
   {
   DockIsSelected[cmptfader][tt]=0;
-  if(tt>0){ DockIsSelected[cmptfader][tt-1]=1;break;}  
-  else if(tt==0){  DockIsSelected[cmptfader][core_user_define_nb_docks-1]=1;break;} 
+  if(tt>0){ DockIsSelected[cmptfader][tt-1]=1;break;}
+  else if(tt==0){  DockIsSelected[cmptfader][core_user_define_nb_docks-1]=1;break;}
   }
  }
  }
@@ -609,15 +651,15 @@ int do_lfos()
  }
  /////////////////////CYCLING SMOOTH IN OUT/ SAW///////////////////////////
  if (lfo_cycle_is_on[cmptfader]==1 )//LOOP LFO ( CYCLING + TIMES)
- {                                 
- 
+ {
+
  index_lfoing[cmptfader]=1;
  //up way
  if(lfo_running_is_upward[cmptfader]==1 && actual_time>(start_time_for_delays[cmptfader]+time_delay_in[cmptfader]))
  {
- faders_in_float[cmptfader]+=fraction_lfo_in[cmptfader]; 
- if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;} 
- 
+ faders_in_float[cmptfader]+=fraction_lfo_in[cmptfader];
+ if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;}
+
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
  Fader[cmptfader]=int(faders_in_float[cmptfader]);
@@ -630,11 +672,11 @@ int do_lfos()
   //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
- {index_send_midi_out[cmptfader]=1;} 
+ {index_send_midi_out[cmptfader]=1;}
  lfo_running_is_upward[cmptfader]=1;
  if(faders_in_float[cmptfader]==255)
  {
- faders_in_float[cmptfader]=255.0;Fader[cmptfader]=255; 
+ faders_in_float[cmptfader]=255.0;Fader[cmptfader]=255;
  start_time_for_delays[cmptfader]=actual_time;
  lfo_running_is_upward[cmptfader]=0;
  }
@@ -643,33 +685,33 @@ int do_lfos()
  else if(lfo_running_is_upward[cmptfader]==0 && actual_time>(start_time_for_delays[cmptfader]+time_delay_out[cmptfader]))
  {
  faders_in_float[cmptfader]-=fraction_lfo_out[cmptfader];
- if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;} 
+ if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
  Fader[cmptfader]=int(faders_in_float[cmptfader]);
  }
 
- 
+
  //ONSTOP est plancher de la boucle
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] || Fader[cmptfader]<LevelStopPos[cmptfader])
  && FaderIsFlash[cmptfader]==0)
- { 
+ {
  Fader[cmptfader]=LevelStopPos[cmptfader];
  }
  //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
- {index_send_midi_out[cmptfader]=1;} 
- 
+ {index_send_midi_out[cmptfader]=1;}
+
  if(faders_in_float[cmptfader]==0.0)
  {
  faders_in_float[cmptfader]=0.0;
  if( ActionnateStopOn[cmptfader]==0 && FaderIsFlash[cmptfader]==0){Fader[cmptfader]=0; }
- 
+
  start_time_for_delays[cmptfader]=actual_time;
  prepare_lfos(cmptfader, dockis);
  lfo_running_is_upward[cmptfader]=1;
- 
+
 if (is_dock_for_lfo_selected[cmptfader][ dockis]==1 )
 {
  if(lfo_do_next_step[cmptfader][1]==1)
@@ -680,10 +722,10 @@ if (is_dock_for_lfo_selected[cmptfader][ dockis]==1 )
  if ( DockIsSelected[cmptfader][tt]==1)
   {
   DockIsSelected[cmptfader][tt]=0;
-  if(tt<core_user_define_nb_docks-1){ DockIsSelected[cmptfader][tt+1]=1;break;}  
+  if(tt<core_user_define_nb_docks-1){ DockIsSelected[cmptfader][tt+1]=1;break;}
   else if(tt==core_user_define_nb_docks-1)
   {
-  DockIsSelected[cmptfader][0]=1;   break;} 
+  DockIsSelected[cmptfader][0]=1;   break;}
   }
  }
  }
@@ -695,8 +737,8 @@ if (is_dock_for_lfo_selected[cmptfader][ dockis]==1 )
  if ( DockIsSelected[cmptfader][tt]==1)
   {
   DockIsSelected[cmptfader][tt]=0;
-  if(tt>0){ DockIsSelected[cmptfader][tt-1]=1;break;}  
-  else if(tt==0){DockIsSelected[cmptfader][core_user_define_nb_docks-1]=1;break;} 
+  if(tt>0){ DockIsSelected[cmptfader][tt-1]=1;break;}
+  else if(tt==0){DockIsSelected[cmptfader][core_user_define_nb_docks-1]=1;break;}
   }
  }
  }
@@ -706,7 +748,7 @@ else if(is_dock_for_lfo_selected[cmptfader][ dockis]==0)
 {
  lfo_cycle_is_on[cmptfader]=0;
 
- } 
+ }
  }
  }
  }
@@ -718,24 +760,24 @@ else if(is_dock_for_lfo_selected[cmptfader][ dockis]==0)
  DoLock(cmptfader,Fader[cmptfader]);//remasterisation des niveaux
  //changement du niveau de lock, si on l augmente au dessus de son niveau de lock stocké
  if(Fader[cmptfader]>StateOfFaderBeforeLock[cmptfader] && FaderIsFlash[cmptfader]==0){StateOfFaderBeforeLock[cmptfader]=Fader[cmptfader];}
- }                    
+ }
  }
  /////CYCLE NETX / PREVIOUS ///////////////
   if(lfo_cycle_steps[cmptfader]==1 && lfo_do_next_step[cmptfader][0]==1 && dockis==0)
   {
   lfo_do_next_step[cmptfader][0]=0;
-  lfo_do_next_step[cmptfader][1]=1;    
+  lfo_do_next_step[cmptfader][1]=1;
   }
   else   if(lfo_cycle_steps[cmptfader]==1 && lfo_do_next_step[cmptfader][1]==1 && dockis==core_user_define_nb_docks-1)
   {
   lfo_do_next_step[cmptfader][1]=0;
-  lfo_do_next_step[cmptfader][0]=1;    
+  lfo_do_next_step[cmptfader][0]=1;
   }
   ////////////////////////////////
 
 
-} 
- return(0);   
+}
+ return(0);
 }
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -759,20 +801,20 @@ int Merger_Faders()
  switch(fader_fx_route[cif])
  {
  case 0:
-       bufferFaders[h]=Tmax(bufferFaders[h],FaderDoDmx[cif][h]);   
- break;                                 
+       bufferFaders[h]=Tmax(bufferFaders[h],FaderDoDmx[cif][h]);
+ break;
  case 1:
       if(FaderDoDmx[cif][h]>0)
       {
       bufferSequenciel[h]=Tmax(bufferSequenciel[h],FaderDoDmx[cif][h]);
-      channel_is_touched_by_fader_fx[h]=1;  
+      channel_is_touched_by_fader_fx[h]=1;
       channel_is_touched_by_fader_number[h]=cif;
       channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
       }
  break;
  }
  break;
- case 1://Exclude rendering 
+ case 1://Exclude rendering
  // rien ne se passe, ne sont pas reportés dans le buffer fader
  break;
  case 2://substract
@@ -788,13 +830,13 @@ int Merger_Faders()
     {
        tmp_val=bufferSequenciel[h]-FaderDoDmx[cif][h];
        if(tmp_val<0){tmp_val=0;}
-       bufferSequenciel[h]=tmp_val;  
-       channel_is_touched_by_fader_fx[h]=1;  
+       bufferSequenciel[h]=tmp_val;
+       channel_is_touched_by_fader_fx[h]=1;
        channel_is_touched_by_fader_number[h]=cif;
-       channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];                                   
-    }                             
+       channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
+    }
  break;
- }     
+ }
  break;
  case 3://add
  switch(fader_fx_route[cif])
@@ -805,7 +847,7 @@ int Merger_Faders()
  tmp_val=bufferFaders[h]+FaderDoDmx[cif][h];
  if(tmp_val>255){tmp_val=255;}
  bufferFaders[h]=tmp_val;
- channel_is_touched_by_fader_fx[h]=1;  
+ channel_is_touched_by_fader_fx[h]=1;
  channel_is_touched_by_fader_number[h]=cif;
  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
@@ -816,7 +858,7 @@ int Merger_Faders()
  tmp_val=bufferSequenciel[h]+FaderDoDmx[cif][h];
  if(tmp_val>255){tmp_val=255;}
  bufferSequenciel[h]=tmp_val;
- channel_is_touched_by_fader_fx[h]=1;  
+ channel_is_touched_by_fader_fx[h]=1;
  channel_is_touched_by_fader_number[h]=cif;
  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
@@ -833,7 +875,7 @@ int Merger_Faders()
  if(FaderDoDmx[cif][h]>0)
  {
  bufferFaders[h]=tmp_val;
- channel_is_touched_by_fader_fx[h]=1;  
+ channel_is_touched_by_fader_fx[h]=1;
  channel_is_touched_by_fader_number[h]=cif;
  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
@@ -845,7 +887,7 @@ int Merger_Faders()
  if(FaderDoDmx[cif][h]>0)
  {
  bufferSequenciel[h]=tmp_val;
- channel_is_touched_by_fader_fx[h]=1;  
+ channel_is_touched_by_fader_fx[h]=1;
  channel_is_touched_by_fader_number[h]=cif;
  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
@@ -863,7 +905,7 @@ int Merger_Faders()
   tmp_val=bufferFaders[h]-FaderDoDmx[cif][h];
   if(tmp_val<0){tmp_val=0;}
   bufferFaders[h]=tmp_val;
-  channel_is_touched_by_fader_fx[h]=1;  
+  channel_is_touched_by_fader_fx[h]=1;
   channel_is_touched_by_fader_number[h]=cif;
   channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
@@ -871,10 +913,10 @@ int Merger_Faders()
  {
   tmp_val=FaderDoDmx[cif][h]-bufferFaders[h];
   if(tmp_val<0){tmp_val=0;}
-  bufferFaders[h]=tmp_val;    
-  channel_is_touched_by_fader_fx[h]=1;  
+  bufferFaders[h]=tmp_val;
+  channel_is_touched_by_fader_fx[h]=1;
   channel_is_touched_by_fader_number[h]=cif;
-  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif]; 
+  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
  }
  break;
@@ -886,7 +928,7 @@ int Merger_Faders()
   tmp_val=bufferSequenciel[h]-FaderDoDmx[cif][h];
   if(tmp_val<0){tmp_val=0;}
   bufferSequenciel[h]=tmp_val;
-  channel_is_touched_by_fader_fx[h]=1;  
+  channel_is_touched_by_fader_fx[h]=1;
   channel_is_touched_by_fader_number[h]=cif;
   channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
@@ -894,10 +936,10 @@ int Merger_Faders()
  {
   tmp_val=FaderDoDmx[cif][h]-bufferSequenciel[h];
   if(tmp_val<0){tmp_val=0;}
-  bufferSequenciel[h]=tmp_val;    
-  channel_is_touched_by_fader_fx[h]=1;  
+  bufferSequenciel[h]=tmp_val;
+  channel_is_touched_by_fader_fx[h]=1;
   channel_is_touched_by_fader_number[h]=cif;
-  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif]; 
+  channel_is_touched_by_fader_type_fx[h]=fader_mode_with_buffers[cif];
  }
  }
  break;
@@ -910,8 +952,8 @@ int Merger_Faders()
  }
 
 
- 
- return(0);  
+
+ return(0);
 }
 
 int calculs_etats_faders_et_contenus()
@@ -935,63 +977,63 @@ index_fader_is_manipulated[f]=1;
 }
 else if (FaderIsFlash[f]==0 && FaderIsFlashBefore[f]==1)
 {
-Fader[f]=LevelFaderBeforeFlash[f];    
+Fader[f]=LevelFaderBeforeFlash[f];
 midi_levels[f]=Fader[f]/2; FaderIsFlashBefore[f]= FaderIsFlash[f];
 index_fader_is_manipulated[f]=1;
 }
 
 ////////////////////////
-//report des valeurs des docks aux faders   
+//report des valeurs des docks aux faders
  for (int d=0;d<core_user_define_nb_docks;d++)
  {
-        if (DockIsSelected[f][d]==1)    
+        if (DockIsSelected[f][d]==1)
         {
         switch(DockTypeIs[f][d])
         {
          //artnet
           case 2:
-          for (int pp=0;pp<513;pp++)            
+          for (int pp=0;pp<513;pp++)
               {
              FaderDockContains[f][d][pp]=(int)ArtNet_16xUniverse_Receiving[pp][(DockNetIs[f][d])];
               }
-          break;    
-          //DMX IN  
+          break;
+          //DMX IN
          case 3:
-          for (int ppin=0;ppin<513;ppin++)            
+          for (int ppin=0;ppin<513;ppin++)
              {
              FaderDockContains[f][d][ppin]=(int)dmxIN[ppin+1];
-             }  
+             }
           break;
            //VIDEO TRACKING
          case 4:
-          for (int ppin=0;ppin<514;ppin++)            
+          for (int ppin=0;ppin<514;ppin++)
              {
              FaderDockContains[f][d][ppin]=(int)buffer_tracker[ppin];
-           } 
+           }
            break;
-            // MEMOIRES 
+            // MEMOIRES
           case 5:
-             for (int ppin=0;ppin<514;ppin++)            
+             for (int ppin=0;ppin<514;ppin++)
              {
              FaderDockContains[f][d][ppin]=Memoires[(DockHasMem[f][d])][ppin];
              }
           break;
           case 6://report et controle des fadersAudio
-          Control_Audio_thruth_faders(f,d,0);     
+          Control_Audio_thruth_faders(f,d,0);
           break;
           case 7://report et controle des fadersAudio
-          Control_Audio_thruth_faders(f,d,1);     
+          Control_Audio_thruth_faders(f,d,1);
           break;
           case 8://report et controle des fadersAudio
-          Control_Audio_thruth_faders(f,d,2);     
+          Control_Audio_thruth_faders(f,d,2);
           break;
-          
+
           case 10://direct channeling remoting
           switch (index_fader_is_manipulated[f])
           {
           case 0:
           beforeloop_for_directch[f]=Fader[f];
-          Fader[f]=bufferSequenciel[(FaderDirectChan[f][d])];     
+          Fader[f]=bufferSequenciel[(FaderDirectChan[f][d])];
           if(Fader[f]==255){midi_levels[f]=127;} else { midi_levels[f]=(int)Fader[f]/2;}
           if( beforeloop_for_directch[f]!=Fader[f])
           {
@@ -1000,24 +1042,24 @@ index_fader_is_manipulated[f]=1;
           break;
           case 1:
           bufferSaisie[(FaderDirectChan[f][d])]=(255- curve_report[(FaderCurves[f])][(Fader[f])]);//pour etre actif: buffer saisi
-          index_fader_is_manipulated[f]=0;          
+          index_fader_is_manipulated[f]=0;
           break;
           }
           break;
-          
+
           case 11://chasers
-           for (int ppin=1;ppin<513;ppin++)            
+           for (int ppin=1;ppin<513;ppin++)
              {
              FaderDockContains[f][d][ppin]=MergerBufferChasers[(ChaserAffectedToDck[f][d])][ppin];
              }
           break;
           case 12://grid
-           for (int ppin=1;ppin<513;ppin++)            
+           for (int ppin=1;ppin<513;ppin++)
            {
              if(ppin<grider_begin_channel_is-1)
              {
-              FaderDockContains[f][d][ppin]=0;//nettoyage à cause de l adressage   si chgt adresse faut nettoyer le buffer                                  
-              }  
+              FaderDockContains[f][d][ppin]=0;//nettoyage à cause de l adressage   si chgt adresse faut nettoyer le buffer
+              }
              if(ppin+grider_begin_channel_is-1<513)//eviter débordement hors des 513 circuits
              {
              FaderDockContains[f][d][ppin+grider_begin_channel_is-1]=buffer_gridder[(faders_dock_grid_affectation[f][d])][ppin-1];
@@ -1025,33 +1067,33 @@ index_fader_is_manipulated[f]=1;
            }
           break;
           case 13://fgroup
-          
-          for (int ppin=1;ppin<513;ppin++)            
-              {FaderDockContains[f][d][ppin]=0;}  
-                           
+
+          for (int ppin=1;ppin<513;ppin++)
+              {FaderDockContains[f][d][ppin]=0;}
+
           for(int fg=0;fg<48;fg++)
           {
           if(fgroup[f][d][fg]==1)
           {
-               for (int ppin=1;ppin<513;ppin++)            
+               for (int ppin=1;ppin<513;ppin++)
               {
               FaderDockContains[f][d][ppin]=Tmax(FaderDockContains[f][d][ppin],FaderDoDmx[fg][ppin]);
-              }               
-          }                
-          }        
+              }
+          }
+          }
           break;
-          
+
           case 14://mover
-           for (int ppin=1;ppin<513;ppin++)            
+           for (int ppin=1;ppin<513;ppin++)
            {
               FaderDockContains[f][d][ppin]=buffer_moving_head[ppin];
            }
           break;
           case 15://draw
         //  if(drawing_bitmap==0)
-       //   {                               
+       //   {
           //calcul normal
-           for (int ppin=1;ppin<513;ppin++)            
+           for (int ppin=1;ppin<513;ppin++)
            {
             FaderDockContains[f][d][ppin]=0;
            for(int p=0;p<500;p++)
@@ -1065,11 +1107,11 @@ index_fader_is_manipulated[f]=1;
          //  }
           break;
           case 16://echo
-            for (int ppin=1;ppin<513;ppin++)            
+            for (int ppin=1;ppin<513;ppin++)
            {
-            FaderDockContains[f][d][ppin]=int (255.0 * echo_levels[(echo_affected_to_dock[f][d])][0][ppin-1] );    
-           }   
-               
+            FaderDockContains[f][d][ppin]=int (255.0 * echo_levels[(echo_affected_to_dock[f][d])][0][ppin-1] );
+           }
+
           break;
           default:
           break;
@@ -1079,14 +1121,14 @@ index_fader_is_manipulated[f]=1;
 
         for (int j=1;j<514;j++)
        {
-        FaderDoDmx[f][j]=(int)(((float)(FaderDockContains[f][d][j])/255)  * (255- curve_report[(FaderCurves[f])][(Fader[f])]) );    
+        FaderDoDmx[f][j]=(int)(((float)(FaderDockContains[f][d][j])/255)  * (255- curve_report[(FaderCurves[f])][(Fader[f])]) );
       //avant curve:  FaderDoDmx[f][j]=(int)(((float)(FaderDockContains[f][d][j])/255)  * Fader[f]);
-       }                                
+       }
  }
  }
  }
  calculation_on_faders_done=1;
- return(0);   
+ return(0);
 }
 ////////////////////////////////////////////////////////////////////////////////
 int Merger_Sequenciel()
@@ -1115,17 +1157,17 @@ for (int p=1;p<514;p++)
  else if (bufferSequenciel[p]+ channel_level_mofification_while_crossfade[p]<0){bufferSequenciel[p]=0;}
  }
 }
-return(0);   
+return(0);
 }
 ////////////////////////////////////////////////////////////////////////////////
 int Merger()
 {
  //rafraichissement visuel, pour pb de synchro entre calculs et rapidité affichage mis en amont d une frame
  for (int i=1;i<514;i++)
- { 
- buffer_affichage_valeurs_sequenciel[i]=bufferSequenciel[i];    
- }   
-    
+ {
+ buffer_affichage_valeurs_sequenciel[i]=bufferSequenciel[i];
+ }
+
  if(core_do_calculations[1]==1)
  {
  Merger_Sequenciel();
@@ -1135,10 +1177,10 @@ int Merger()
  calculs_etats_faders_et_contenus();//contenus fader par fader
  Merger_Faders();//buffer fader general
  }
- 
+
  int circrootpatch=0;
  for (int i=1;i<514;i++)
- { 
+ {
  switch(freeze_array[i])
  {
  case 0:
@@ -1159,25 +1201,25 @@ int Merger()
  if(index_go==1 && index_pause==0 && go_channel_is>0 && go_channel_is<513)
  {
   bufferSequenciel[go_channel_is]=(unsigned char) (255* alpha_blinker);
-  MergerArray[go_channel_is]=(unsigned char)(255* alpha_blinker);                      
+  MergerArray[go_channel_is]=(unsigned char)(255* alpha_blinker);
  }
- 
+
   if(index_go==1 && index_pause==1 && pause_channel_is>0 && pause_channel_is<513)
  {
   bufferSequenciel[pause_channel_is]=(unsigned char) (255* alpha_blinker);
-  MergerArray[pause_channel_is]=(unsigned char)(255* alpha_blinker);                      
+  MergerArray[pause_channel_is]=(unsigned char)(255* alpha_blinker);
  }
- 
+
  if(index_go==0 && index_pause==0 )
  {
- if(go_channel_is>0 && go_channel_is<513)   
+ if(go_channel_is>0 && go_channel_is<513)
  {bufferSequenciel[go_channel_is]=0;
   MergerArray[go_channel_is]=0;}
  if(pause_channel_is>0 && pause_channel_is<513)
   {bufferSequenciel[pause_channel_is]=0;
-  MergerArray[pause_channel_is]=0;}               
+  MergerArray[pause_channel_is]=0;}
  }
- 
+
  //Patch
  circrootpatch=Patch[i];
  DmxBlockPatch[i]=(MergerArray[circrootpatch]);
@@ -1196,11 +1238,11 @@ int Merger()
  //check channel override la sortie
  if(index_patch_overide==1)
  {
- if(patch_overide[i]==1){DmxBlock[i]=dimmer_check_level;}//75%                          
+ if(patch_overide[i]==1){DmxBlock[i]=dimmer_check_level;}//75%
  }
- 
+
  }
- return(0);   
+ return(0);
 }
 ////////////////////////////////////////////////////////////////////////////////
 int load_dmx_conf()
@@ -1215,8 +1257,8 @@ char read_buff[ 512 ] ;
 	{
 	 printf("\nPb à ouverture de config_dmx.txt\n");
      return 1;
-	}	
-	
+	}
+
     //premiere ligne les args
 	if( !fgets( read_buff , sizeof( read_buff ) ,cfg_file ) )
 	{
@@ -1225,15 +1267,15 @@ char read_buff[ 512 ] ;
 	}
 	fscanf( cfg_file , "%s\n" ,  &motcleinterfaceis );
 	fscanf( cfg_file , "%d\n" ,  &index_artnet_doubledmx);
-	fclose( cfg_file );	
-	
+	fclose( cfg_file );
+
     if (strcmp (motcleinterfaceis,"ART-NET")==0){myDMXinterfaceis=1;}
     else if (strcmp (motcleinterfaceis,"ENTTEC-OPEN-DMX")==0){myDMXinterfaceis=2;}
     else if (strcmp (motcleinterfaceis,"ENTTEC-PRO")==0){myDMXinterfaceis=3;}
-    else if (strcmp (motcleinterfaceis,"SUNLITE")==0){myDMXinterfaceis=4;}    
-  
-    
-return(0);  
+    else if (strcmp (motcleinterfaceis,"SUNLITE")==0){myDMXinterfaceis=4;}
+
+
+return(0);
 }
 
 
@@ -1258,8 +1300,8 @@ fprintf(fp,"%d\n",index_artnet_doubledmx);
 fclose(fp);
 if(myDMXinterfaceis==1){save_artnet_conf();}
 
-sprintf(string_Last_Order,">>Saved DMX configuration");     
-return(0);   
+sprintf(string_Last_Order,">>Saved DMX configuration");
+return(0);
 }
 
 
@@ -1267,7 +1309,7 @@ int Receive_DMX_IN()
 {
 if(myDMXinterfaceis==4 ) //sunlite
 {
-Receive_sunlite_dmxIN();                  
+Receive_sunlite_dmxIN();
 }
 
 else if (index_init_EnttecPROIN_ok==1 && myDMXinterfaceis!=4)
@@ -1277,8 +1319,8 @@ resIn=Enttec_Pro_ReceiveData(SET_DMX_RX_MODE,dmxIN,513); //etait en 513
 if(resIn<0)
             {
             sprintf(string_Last_Order,"DMX IN from ENTTEC PRO  FAILED");
-            } 
- }  
+            }
+ }
 
 return(0);
 }

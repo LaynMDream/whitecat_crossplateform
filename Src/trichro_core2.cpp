@@ -1,6 +1,48 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file trichro_core2.cpp
+* \brief {Core fonctions for the color whell}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Core fonctions pour la fenêtre de roue de couleur en trichromie
+*   Core fonctions for the color whell
+*
+**/
+
 /*BITMAP *bmp_buffer_trichro= create_bitmap(320, 200);
 clear_bitmap(bmp_buffer_trichro);
-destroy_bitmap(bmp_buffer_trichro);      
+destroy_bitmap(bmp_buffer_trichro);
 //blit(bmp, screen, 0, 0, 0, 0, 320, 200);*/
 
 
@@ -14,8 +56,8 @@ picker_trichro[dcolor_selected][0]=r_pick;
 picker_trichro[dcolor_selected][1]=v_pick;
 picker_trichro[dcolor_selected][2]=b_pick;
 picker_trichro[dcolor_selected][3]=my_yellow;
-     
-return(0);   
+
+return(0);
 }
 
 
@@ -26,7 +68,7 @@ int CounterClockWise ( double Pt0_X, double Pt0_Y, double Pt1_X, double Pt1_Y, d
  dx1 = Pt1_X - Pt0_X ;
  dy1 = Pt1_Y - Pt0_Y ;
  dx2 = Pt2_X - Pt0_X ;
- dy2 = Pt2_Y - Pt0_Y ; 
+ dy2 = Pt2_Y - Pt0_Y ;
  /* Verifie si les chiffres sont des zéros */
  if ( fabs(dx1) < ACCURACY_DOUBLE )
     dx1 = 0.0 ;
@@ -55,13 +97,13 @@ int trichro_back_buffer(int xchroma, int ychroma, int rayon, int largeurchroma)/
 {
 clear_bitmap(bmp_buffer_trichro);
 int coord[4];
-for (hcl=0.0; hcl<360.0; hcl+=0.4) 
+for (hcl=0.0; hcl<360.0; hcl+=0.4)
 {
      xcl = cos(hcl*PI/180.0)*(rayon+16);
 	 ycl = sin(hcl*PI/180.0)*(rayon+16);
-    
+
 	 hsv_to_rgb(hcl, 1.0, 1.0, &rcl, &gcl, &bcl);
-	 
+
 	 coord[0]=xchroma;
      coord[1]=ychroma;
      coord[2]=(int)(xchroma+xcl);
@@ -75,43 +117,43 @@ for (hcl=0.0; hcl<360.0; hcl+=0.4)
 circlefill(bmp_buffer_trichro,  xchroma,ychroma, rayon-16, makecol(0,0,0));
 
 for(angle = 0 ; angle <(PI*360) / 180  ; angle+=0.1)//radians
-{  
+{
    vx = cos(angle)*rayon;
    vy = sin(angle)*rayon;
-   if(mouse_x>xtrichro_window+vx-16  && mouse_x< xtrichro_window+vx+16 && mouse_y>ytrichro_window+vy-16 && mouse_y<ytrichro_window+vy+16 
+   if(mouse_x>xtrichro_window+vx-16  && mouse_x< xtrichro_window+vx+16 && mouse_y>ytrichro_window+vy-16 && mouse_y<ytrichro_window+vy+16
       && mouse_button==1 && window_focus_id==902)
-   
-   { 
+
+   {
    angle_snap=angle;//angle rotation roue couleur
    position_curseur_hue_x= xtrichro_window+vx;//affichage
    position_curseur_hue_y=ytrichro_window+vy ;//affichage
    cref=getpixel(bmp_buffer_trichro,(int)(xchroma+vx),(int)(ychroma+vy));
     r_pick=getr(cref);
     v_pick=getg(cref);
-    b_pick=getb(cref);   
+    b_pick=getb(cref);
    stock_etat_picker_dans_dockcolor(dock_color_selected);
     //angle=((PI*360) / (180*127))*midi_levels[497];
     midi_levels[497]=(int)(angle_snap/((PI*360) / (180*127)));
     if(midi_send_out[497]==1){index_send_midi_out[497]=1;}
     mouse_released=1;
    }
-   
+
 }
 
 
 //attaque midi
-if (miditable[0][497]==istyp && miditable[1][497]==ischan && miditable[2][497]==ispitch) 
+if (miditable[0][497]==istyp && miditable[1][497]==ischan && miditable[2][497]==ispitch)
 {
   angle_snap=((PI*360) / (180*127))*midi_levels[497];
   vx = cos(angle_snap)*125;
   vy = sin(angle_snap)*125;
   position_curseur_hue_x= xtrichro_window+vx;
-  position_curseur_hue_y=ytrichro_window+vy ; 
+  position_curseur_hue_y=ytrichro_window+vy ;
   cref=getpixel(bmp_buffer_trichro,(int)(xchroma+vx),(int)(ychroma+vy));
   r_pick=getr(cref);
   v_pick=getg(cref);
-  b_pick=getb(cref);   
-  stock_etat_picker_dans_dockcolor(dock_color_selected);  
+  b_pick=getb(cref);
+  stock_etat_picker_dans_dockcolor(dock_color_selected);
 }
 //triangle
 	V3D_f v1 =
@@ -132,7 +174,7 @@ if (miditable[0][497]==istyp && miditable[1][497]==ischan && miditable[2][497]==
 		0., 0.,
 		makecol(r_pick, v_pick, b_pick) // color vertex
 	};
-	
+
 
 	triangle3d_f(bmp_buffer_trichro, POLYTYPE_GCOL, NULL, &v1, &v2, &v3);
 
@@ -145,13 +187,13 @@ angle2=CounterClockWise(mouse_x,mouse_y,xtrichro_window+vxh, ytrichro_window+vyh
 angle3=CounterClockWise(mouse_x,mouse_y,xtrichro_window+vxw, ytrichro_window+vyw, xtrichro_window+vxd, ytrichro_window+vyd);//Pa3-Pa1
 
 if((angle1*angle2*angle3) <=0 ) //dans le triangle formé par la souris et les 3 points du triangle
-{                 
+{
 
 
 if(mouse_b&1 && mouse_x>xtrichro_window+vxd && mouse_x<xtrichro_window+vxw && mouse_y>ytrichro_window+vyd && mouse_y<ytrichro_window+vyh && window_focus_id==902)
-{                                 
+{
 picker_x=mouse_x-xtrichro_window;
-picker_y=mouse_y-ytrichro_window;    
+picker_y=mouse_y-ytrichro_window;
 stock_etat_picker_dans_dockcolor(dock_color_selected);
 }
 
@@ -163,15 +205,15 @@ if(getpixel(bmp_buffer_trichro,(int)(xchroma+picker_x),(int)(ychroma+picker_y))!
 
 my_red=getr(colorpicker);
 my_green=getg(colorpicker);
-my_blue=getb(colorpicker);  
+my_blue=getb(colorpicker);
 
 if (index_quadri==1)
 {
    float hue, saturation, value;
-   rgb_to_hsv(my_red, my_green, my_blue, &hue, &saturation, &value);   
-   //saturation: plus il y en a , moins de jaune il y a  
-   my_yellow=(int)(255-(255*saturation)); 
-}                  
+   rgb_to_hsv(my_red, my_green, my_blue, &hue, &saturation, &value);
+   //saturation: plus il y en a , moins de jaune il y a
+   my_yellow=(int)(255-(255*saturation));
+}
 return(0);
 }
 
@@ -186,42 +228,42 @@ if(dock_color_type[dock_color_selected]==0)//trichro
  for (int  doC=1;doC<514;doC++)
  {
  if(dock_color_channels[dock_color_selected][0][doC]==1)
- {dock_color_buffer_C[dock_color_selected][doC]=my_red; 
+ {dock_color_buffer_C[dock_color_selected][doC]=my_red;
  FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
+ }
  else  if(dock_color_channels[dock_color_selected][1][doC]==1)
- { dock_color_buffer_C[dock_color_selected][doC]=my_green; 
+ { dock_color_buffer_C[dock_color_selected][doC]=my_green;
   FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
+ }
  else  if(dock_color_channels[dock_color_selected][2][doC]==1)
- { dock_color_buffer_C[dock_color_selected][doC]=my_blue; 
+ { dock_color_buffer_C[dock_color_selected][doC]=my_blue;
   FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
- }      
+ }
+ }
 }
 else if(dock_color_type[dock_color_selected]==1)//quadri, desaturation par le jaune
-{ 
+{
  for (int  doC=1;doC<513;doC++)
  {
  if(dock_color_channels[dock_color_selected][0][doC]==1)
- {dock_color_buffer_C[dock_color_selected][doC]=my_red; 
+ {dock_color_buffer_C[dock_color_selected][doC]=my_red;
   FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
+ }
  else  if(dock_color_channels[dock_color_selected][1][doC]==1)
- { dock_color_buffer_C[dock_color_selected][doC]=my_green; 
+ { dock_color_buffer_C[dock_color_selected][doC]=my_green;
   FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
+ }
  else  if(dock_color_channels[dock_color_selected][2][doC]==1)
- { dock_color_buffer_C[dock_color_selected][doC]=my_blue; 
+ { dock_color_buffer_C[dock_color_selected][doC]=my_blue;
   FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
+ }
   else  if(dock_color_channels[dock_color_selected][3][doC]==1)
- { dock_color_buffer_C[dock_color_selected][doC]=my_yellow; 
+ { dock_color_buffer_C[dock_color_selected][doC]=my_yellow;
   FaderDockContains[lefaderacolorer][ledockacolorer][doC] =dock_color_buffer_C[dock_color_selected][doC];
- } 
- }   
-}   
- return(0);   
+ }
+ }
+}
+ return(0);
 }
 
 int show_who_is_in_dock_color(int dockCol, int couleur)
@@ -242,10 +284,10 @@ int do_logical_Interface_Trichromie(int xchroma, int ychroma, int rayon, int lar
 if(mouse_x>xchroma-60 && mouse_x<xchroma+80 && mouse_y>ychroma-190 && mouse_y<ychroma-160)
 {
 
-if(index_quadri==0){index_quadri=1;dock_color_type[dock_color_selected]=1;}   
-else if(index_quadri==1){index_quadri=0;dock_color_type[dock_color_selected]=0;}  
-mouse_released=1;         
-}                     
+if(index_quadri==0){index_quadri=1;dock_color_type[dock_color_selected]=1;}
+else if(index_quadri==1){index_quadri=0;dock_color_type[dock_color_selected]=0;}
+mouse_released=1;
+}
 
 /////////////////////AFFECTATION ON / OFF AUX DOCKS FADERS///////////////////////////
 
@@ -254,16 +296,16 @@ if(mouse_x>xchroma+20 && mouse_x<xchroma+150 && mouse_y>ychroma+300 && mouse_y< 
 if(index_affect_color_to_dock==0)
 {
 reset_index_actions();
-reset_indexs_confirmation(); 
+reset_indexs_confirmation();
 index_affect_color_to_dock=1;
 }
-else 
+else
 {
-reset_index_actions();     
+reset_index_actions();
 }
 index_do_dock=index_affect_color_to_dock;
-mouse_released=1;           
-}                      
+mouse_released=1;
+}
 /////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////ROUE DE COULEUR//////////////////////////////////////////////////////
@@ -271,7 +313,7 @@ mouse_released=1;
 //AFFECTATION MIDI
 if( Midi_Faders_Affectation_Type!=0)//config midi
   {
-  //midi report 
+  //midi report
   switch(miditable[0][497])
   {
   case 0: sprintf(thetypinfo,"Note");break;
@@ -279,20 +321,20 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   case 2: sprintf(thetypinfo,"Key Off");break;
   case 4: sprintf(thetypinfo,"Ctrl Change");break;
   }
-  sprintf(string_last_midi_id,"COLOR WHEEL FADER is Ch: %d Pitch: %d Typ: %s" , miditable[1][497],miditable[2][497],thetypinfo);  
+  sprintf(string_last_midi_id,"COLOR WHEEL FADER is Ch: %d Pitch: %d Typ: %s" , miditable[1][497],miditable[2][497],thetypinfo);
 
   if(mouse_x>xchroma-140 && mouse_x<xchroma+140 && mouse_y>ychroma-140 && mouse_y<ychroma+140)
   {
     attribute_midi_solo_affectation(497,Midi_Faders_Affectation_Mode);
     mouse_released=1;
    }
-}   
+}
 
 
 /////////////////////DOCKING DES COULEURS////////////////////////////////////////
-//emplacement des box pour actions de storage RVB sur 6 presets  
+//emplacement des box pour actions de storage RVB sur 6 presets
 
-//affectation des circuits aux RVB Y 
+//affectation des circuits aux RVB Y
 
 if(mouse_y>ychroma+165 && mouse_y<ychroma+185)
 {
@@ -322,20 +364,20 @@ if(index_blind==0)
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferSaisie[p]=my_red;}
-}     
 }
-else 
+}
+else
 {
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferBlind[p]=my_red;}
-}     
+}
 }
 sprintf(string_Last_Order,"Pasted On the Fly RED result");
 break;
 }
-mouse_released=1;           
-}            
+mouse_released=1;
+}
 
 else if (mouse_x> xchroma-65 && mouse_x< xchroma-15 )//GREEN
 {
@@ -357,20 +399,20 @@ if(index_blind==0)
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferSaisie[p]=my_green;}
-}     
 }
-else 
+}
+else
 {
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferBlind[p]=my_green;}
-}     
+}
 }
 sprintf(string_Last_Order,"Pasted On the Fly GREEN result");
 break;
 }
-mouse_released=1;  
-} 
+mouse_released=1;
+}
 
 else if (mouse_x> xchroma && mouse_x< xchroma+50 )//BLUE
 {
@@ -392,20 +434,20 @@ if(index_blind==0)
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferSaisie[p]=my_blue;}
-}     
 }
-else 
+}
+else
 {
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferBlind[p]=my_blue;}
-}     
+}
 }
 sprintf(string_Last_Order,"Pasted On the Fly BLUE result");
 break;
 }
-mouse_released=1;     
-} 
+mouse_released=1;
+}
 
 else if (mouse_x> xchroma+65 && mouse_x< xchroma+115 )//YELLOW
 {
@@ -426,32 +468,32 @@ if(index_blind==0)
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferSaisie[p]=my_yellow;}
-}     
 }
-else 
+}
+else
 {
 for(int p=1;p<513;p++)
 {
 if(Selected_Channel[p]==1){bufferBlind[p]=my_yellow;}
-}     
+}
 }
 sprintf(string_Last_Order,"Pasted On the Fly YELLOW result");
 break;
 }
-mouse_released=1;   
-}  
-}               
+mouse_released=1;
+}
+}
 
 
 //midi out de la roue
 
 if(mouse_x> xchroma+140-10 && mouse_x< xchroma+140+10 && mouse_y>ychroma+110-10 && mouse_y<ychroma+110+10)
 {
-  
-  if(midi_send_out[497]==0){midi_send_out[497]=1; }        
-  else if(midi_send_out[497]==1){midi_send_out[497]=0; }   
-  mouse_released=1;             
-  }            
+
+  if(midi_send_out[497]==0){midi_send_out[497]=1; }
+  else if(midi_send_out[497]==1){midi_send_out[497]=0; }
+  mouse_released=1;
+  }
 
 raccrochage_midi_logical_circulaire (xchroma-6, ychroma, 497, 125, 125);
 
@@ -494,8 +536,8 @@ load_etat_picker_dans_dockcolor(dock_color_selected);
 sprintf(string_Last_Order,">>Dock Color Selected %d",dock_color_selected+1);
 mouse_released=1;
 }
-} 
-}   
+}
+}
 
 //PASTE ON THE FLY
 if(mouse_x>xchroma-150 && mouse_x<xchroma-20 && mouse_y>ychroma+300 && mouse_y< ychroma+330)
@@ -503,10 +545,10 @@ if(mouse_x>xchroma-150 && mouse_x<xchroma-20 && mouse_y>ychroma+300 && mouse_y< 
 if(mouse_b&1 &&  mouse_released==0 && window_focus_id==902)
 {
 index_paste_on_the_fly=toggle(index_paste_on_the_fly);
-mouse_released=1;           
-}                      
+mouse_released=1;
 }
-return(0);   
+}
+return(0);
 }
 /////////////////////////////////////////////////////////////////
 

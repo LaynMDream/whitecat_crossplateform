@@ -1,3 +1,45 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file video_tracking_visu.cpp
+* \brief {GUI fonctions for the tracking video}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   GUI fonctions pour la fenêtre de tracking video
+*   GUI fonctions for the tracking video window
+*
+**/
+
 int ShowTrackers()
 {
 char num_tr[4];
@@ -6,10 +48,10 @@ char num_tr[4];
 if(tracking_spaces_on_off[tracking_dock_selected][Tr]==1)
 {
 Rect Tracker(Vec2D (videoX+tracking_coordonates[tracking_dock_selected][Tr][0]+15, videoY+tracking_coordonates[tracking_dock_selected][Tr][1]+61 ),
-             Vec2D (tracking_coordonates[tracking_dock_selected][Tr][2],tracking_coordonates[tracking_dock_selected][Tr][3]));   
+             Vec2D (tracking_coordonates[tracking_dock_selected][Tr][2],tracking_coordonates[tracking_dock_selected][Tr][3]));
 sprintf(num_tr,"%d",Tr+1);
 circuitlevel.Print(num_tr,videoX+tracking_coordonates[tracking_dock_selected][Tr][0]+20,videoY+tracking_coordonates[tracking_dock_selected][Tr][1]+75);
-Tracker.DrawOutline(CouleurFader); 
+Tracker.DrawOutline(CouleurFader);
 
 if(tracker_to_edit==Tr && (edit_tracker==1 || move_tracker==1))
 {
@@ -20,7 +62,7 @@ Background_Editor.SetRoundness(7.5);
 Background_Editor.Draw(CouleurFond.WithAlpha(0.4));
 petitchiffrerouge.Print(string_tracker_edited_dat,videoX+20,videoY+90);
 }
-}       
+}
 }
 
 return(0);
@@ -32,7 +74,7 @@ int Set_Filtering_Image()
 int hauteur_cadre_filter_image=0;
 if(ocv_calcul_mode==0)
 {hauteur_cadre_filter_image=180;}
-else{hauteur_cadre_filter_image=130;} 
+else{hauteur_cadre_filter_image=130;}
 Rect Background_Thres(Vec2D(videoX+30, videoY+70),Vec2D(265,hauteur_cadre_filter_image));
 
 Background_Thres.SetRoundness(5);
@@ -46,15 +88,15 @@ Curseur_Thres.Draw(CouleurSurvol);
 Line(videoX+40, videoY+160,videoX+277,videoY+160,2.0).Draw( CouleurSurvol);
 Rect Curseur_Erode(Vec2D(videoX+20+(erode_level*25), videoY+150),Vec2D(40,25));
 Curseur_Erode.SetRoundness(7.5);
-Curseur_Erode.Draw(CouleurSurvol);  
+Curseur_Erode.Draw(CouleurSurvol);
 
 
 Rect Curseur_div(Vec2D(videoX+20+(div_facteur), videoY+210),Vec2D(40,25));
 Curseur_div.SetRoundness(7.5);
 if(ocv_calcul_mode==0)
 {
-Line(videoX+40, videoY+220,videoX+277,videoY+220,2.0).Draw( CouleurSurvol);                     
-Curseur_div.Draw(CouleurSurvol); 
+Line(videoX+40, videoY+220,videoX+277,videoY+220,2.0).Draw( CouleurSurvol);
+Curseur_div.Draw(CouleurSurvol);
 }
 
 sprintf(string_threshold_is,"Threshold: %d / 255 :",threshold_level);
@@ -119,30 +161,30 @@ int tracking_print_to_screen()
 {
 //AFFICHAGE CAM et calculs///////////////////////////////////////////////////////////
 if(g_capture!=0 && camera_is_on==1 )
-{                  
+{
                    if(last_ticker_video!=ticks_for_video)
                    {
                    frame = cvQueryFrame(g_capture);
- 
+
                    if(flip_image==1)
                    {cvConvertImage(frame,frame,CV_CVTIMG_FLIP);}
-                   
-  
+
+
                    cvCvtColor(frame,onech_temoin,CV_BGR2GRAY);//recup dans un grayscale du actual frame
- 
+
                    Trackers();
-             
+
                    if(ocv_calcul_mode==0 )
-                   { 
-                   cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);  
+                   {
+                   cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);
                    cvCopyImage(onech_temoin,affichage);
                    }
                    else if(ocv_calcul_mode==1 )
-                   { 
-                   cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);  
+                   {
+                   cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);
                    cvCopyImage(onech_temoin,affichage);
                    }
-                   
+
                    last_ticker_video=ticks_for_video;
 
 Point::StartFastDrawing();
@@ -154,12 +196,12 @@ Point::StartFastDrawing();
                    recup_val_pix_video=(int)cvGetReal1D(affichage,pix_x+(pix_y*video_size_x));
                    Rgba CouleurPixel(recup_val_pix_video,recup_val_pix_video,recup_val_pix_video);
                    Point( Vec2D(videoX+15+pix_x,videoY+61+pix_y)).DrawFast(CouleurPixel);
-                   }   
+                   }
                    }
 Point::FinishFastDrawing();
                    }
-}     
- return(0);   
+}
+ return(0);
 }
 
 
@@ -168,43 +210,43 @@ Point::FinishFastDrawing();
 
 int Interface_video_window(int WindowVideoX,int WindowVideoY)
 {
-//background window  
+//background window
 if(video_size_x>=352 && video_size_y>=288)
 {
 frame_video_x=video_size_x; frame_video_y=video_size_y;
 }
-else {frame_video_x=352; frame_video_y=288;}    
-    
-//background window  
+else {frame_video_x=352; frame_video_y=288;}
+
+//background window
 Rect VideoBackground(Vec2D ( WindowVideoX, WindowVideoY ), Vec2D ( frame_video_x+35,frame_video_y+460));
 VideoBackground.SetRoundness(15);
 VideoBackground.SetLineWidth(triple_epaisseur_ligne_fader);
 VideoBackground.Draw(CouleurFond);
 if(window_focus_id==904)
 {
-VideoBackground.DrawOutline(CouleurFader); 
+VideoBackground.DrawOutline(CouleurFader);
 }
 else
 {
-VideoBackground.DrawOutline(CouleurLigne);    
-} 
+VideoBackground.DrawOutline(CouleurLigne);
+}
 
 //FPS CALIBRATION///////////////////////////////////////////////////////////////
 Rect FPSVideo(Vec2D(WindowVideoX+120+(fps_video_rate*3), WindowVideoY+10), Vec2D ( 60,25));
 FPSVideo.SetRoundness(10);
 FPSVideo.SetLineWidth(epaisseur_ligne_fader);
 Line(WindowVideoX+150, WindowVideoY+45,WindowVideoX+330, WindowVideoY+45,2.0).Draw(CouleurLigne);
-Line(WindowVideoX+150+(fps_video_rate*3), WindowVideoY+35,WindowVideoX+150+(fps_video_rate*3), WindowVideoY+45,2.0).Draw(CouleurLigne);	
+Line(WindowVideoX+150+(fps_video_rate*3), WindowVideoY+35,WindowVideoX+150+(fps_video_rate*3), WindowVideoY+45,2.0).Draw(CouleurLigne);
 FPSVideo.Draw(CouleurFond);
 neuro.Print(ol::ToString(fps_video_rate),WindowVideoX+145+(fps_video_rate*3), WindowVideoY+30);
 FPSVideo.DrawOutline(CouleurLigne);
 /////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////
 tracking_print_to_screen();
 //cadre image
-Rect PourtourImage(Vec2D (videoX+15, videoY+60 ), Vec2D ( frame_video_x,frame_video_y));    
-PourtourImage.DrawOutline(CouleurLigne); 
+Rect PourtourImage(Vec2D (videoX+15, videoY+60 ), Vec2D ( frame_video_x,frame_video_y));
+PourtourImage.DrawOutline(CouleurLigne);
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ShowTrackers();
 
@@ -216,10 +258,10 @@ sprintf(chif_ttr,"%d",tracker_level[tracking_dock_selected][trZ]);
 petitchiffre.Print(chif_ttr,videoX+30+(trZ*60),videoY+61+video_size_y+15);
 sprintf(chif_ttr,"%d",tracker_level[tracking_dock_selected][trZ+6]);
 petitchiffre.Print(chif_ttr,videoX+30+(trZ*60),videoY+61+video_size_y+35);
-}            
+}
 
 
-//tracking zones 
+//tracking zones
 for (int ct=0;ct<6;ct++)
 {
 //ligne 1
@@ -244,7 +286,7 @@ if(tracking_spaces_on_off[tracking_dock_selected][ct+6]==1)
 {
 TrackerTwo.Draw(CouleurFader);
  if(tracker_to_edit==(ct+6) && (edit_tracker==1 || move_tracker==1) )
- {TrackerTwo.Draw(CouleurBlind);} 
+ {TrackerTwo.Draw(CouleurBlind);}
  TrackerTwo.DrawOutline(CouleurFader);
 }
 sprintf(chif_ttr,"%d",ct+1);
@@ -254,7 +296,7 @@ petitchiffre.Print(chif_ttr,WindowVideoX+35+(ct*60),WindowVideoY+frame_video_y+2
 
 if( Midi_Faders_Affectation_Type!=0)
 {
-if(mouse_x> WindowVideoX+20+(ct*60) && mouse_x< WindowVideoX+70+(ct*60))  
+if(mouse_x> WindowVideoX+20+(ct*60) && mouse_x< WindowVideoX+70+(ct*60))
 {
         if(mouse_y>WindowVideoY+frame_video_y+200 && mouse_y<WindowVideoY+frame_video_y+230)
         {
@@ -286,7 +328,7 @@ break;
 petitchiffre.Print(string_ocv_mode,WindowVideoX+35,WindowVideoY+frame_video_y+170);
 OcvMode.DrawOutline(CouleurLigne);
 
-Rect TakeSnap(Vec2D (WindowVideoX+100, WindowVideoY+frame_video_y+150 ), Vec2D (60,30));        
+Rect TakeSnap(Vec2D (WindowVideoX+100, WindowVideoY+frame_video_y+150 ), Vec2D (60,30));
 TakeSnap.SetRoundness(7.5);
 TakeSnap.SetLineWidth(epaisseur_ligne_fader);
 TakeSnap.DrawOutline(CouleurLigne);
@@ -324,14 +366,14 @@ DockingTracker.SetLineWidth(epaisseur_ligne_fader);
 
 if(tracking_dock_selected==ct)
 {
-DockingTracker.Draw(CouleurFader);                              
+DockingTracker.Draw(CouleurFader);
 }
 DockingTracker.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)
 {
 if(mouse_x>WindowVideoX+20+(ct*70) && mouse_x<WindowVideoX+80+(ct*70) && mouse_y>WindowVideoY+frame_video_y+370 && mouse_y<WindowVideoY+frame_video_y+400)
 {
-DockingTracker.DrawOutline(CouleurBlind); 
+DockingTracker.DrawOutline(CouleurBlind);
 }
 }
 
@@ -341,35 +383,35 @@ petitchiffre.Print(chif_ttr,WindowVideoX+40+(ct*70),WindowVideoY+frame_video_y+3
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //boutons de mode
-//tracking zones 
+//tracking zones
 petitchiffre.Print("ROI editing:",WindowVideoX+30,WindowVideoY+frame_video_y+300);
 //boutons de mode pour editer / deplacer les 12 trackers
 
-Rect EditTrack(Vec2D (WindowVideoX+30, WindowVideoY+frame_video_y+310 ), Vec2D (60,30));        
+Rect EditTrack(Vec2D (WindowVideoX+30, WindowVideoY+frame_video_y+310 ), Vec2D (60,30));
 EditTrack.SetRoundness(7.5);
 EditTrack.SetLineWidth(epaisseur_ligne_fader);
-Rect MoveTrack(Vec2D (WindowVideoX+110, WindowVideoY+frame_video_y+310 ), Vec2D (60,30));        
+Rect MoveTrack(Vec2D (WindowVideoX+110, WindowVideoY+frame_video_y+310 ), Vec2D (60,30));
 MoveTrack.SetRoundness(7.5);
 MoveTrack.SetLineWidth(epaisseur_ligne_fader);
 
-EditTrack.DrawOutline(CouleurLigne); 
-MoveTrack.DrawOutline(CouleurLigne); 
+EditTrack.DrawOutline(CouleurLigne);
+MoveTrack.DrawOutline(CouleurLigne);
 
 
-EditTrack.DrawOutline(CouleurLigne); 
+EditTrack.DrawOutline(CouleurLigne);
 if(edit_tracker==1)
 {
 ocvfilter_is_on=0;
 EditTrack.Draw(CouleurBlind);
-EditTrack.DrawOutline(CouleurFader); 
+EditTrack.DrawOutline(CouleurFader);
 }
 
-MoveTrack.DrawOutline(CouleurLigne);    
+MoveTrack.DrawOutline(CouleurLigne);
 if(move_tracker==1)
 {
 ocvfilter_is_on=0;
 MoveTrack.Draw(CouleurFader);
-MoveTrack.DrawOutline(CouleurBlind); 
+MoveTrack.DrawOutline(CouleurBlind);
 }
 
 petitchiffre.Print("SIZE",videoX+45,videoY+frame_video_y+327);
@@ -378,10 +420,10 @@ petitchiffre.Print("MOVE",videoX+120,videoY+frame_video_y+327);
 
 
 //INDEX DECAY TRACKER
-Rect DecaySlider( Vec2D(videoX+190+index_decay_tracker,videoY+frame_video_y+310),Vec2D(20,30)); 
+Rect DecaySlider( Vec2D(videoX+190+index_decay_tracker,videoY+frame_video_y+310),Vec2D(20,30));
 DecaySlider.SetRoundness(5);
 
-Rect BackSliderDecay( Vec2D(videoX+190,videoY+frame_video_y+310),Vec2D(147,30)); 
+Rect BackSliderDecay( Vec2D(videoX+190,videoY+frame_video_y+310),Vec2D(147,30));
 BackSliderDecay.SetRoundness(7.5);
 BackSliderDecay.DrawOutline(CouleurLigne.WithAlpha(0.5));
 
@@ -416,9 +458,9 @@ DMidiOut.DrawOutline(CouleurLigne);
 raccrochage_midi_visuel_horizontal (videoX+200,videoY+frame_video_y+310, 498,127,30);
 
 //AFFECT MODE POUR DOCKS
-Rect AffectVideoTo( Vec2D(videoX+(frame_video_y/2)-25,videoY+frame_video_y+417),Vec2D(130,30)); 
+Rect AffectVideoTo( Vec2D(videoX+(frame_video_y/2)-25,videoY+frame_video_y+417),Vec2D(130,30));
 AffectVideoTo.SetRoundness(15);
-AffectVideoTo.SetLineWidth(epaisseur_ligne_fader); 
+AffectVideoTo.SetLineWidth(epaisseur_ligne_fader);
 
  if (index_affect_video_tracking_to_dock==1){AffectVideoTo.Draw(CouleurFader);}
 AffectVideoTo.DrawOutline(CouleurLigne);
@@ -426,5 +468,5 @@ AffectVideoTo.DrawOutline(CouleurLigne);
 petitchiffre.Print("AFFECT TO DOCK",videoX+(frame_video_y/2)-10, videoY+frame_video_y+437);
 
 
-return(0);    
+return(0);
 }

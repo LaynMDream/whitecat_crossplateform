@@ -1,4 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
 
+/**
+
+* \file mover_spline6.cpp
+* \brief {trajectory fonctions for motor spot}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Calcul de la trajectoire de déplacement du projecteur motorisé entre deux points
+*   Calcul of the mouvement of a motorised spot between two points
+*
+**/
 
 /* calculates the distance between two nodes */
 fixed node_dist(NODE n1, NODE n2)
@@ -28,22 +68,22 @@ NODE dummy_node(NODE node, NODE prev)
 
 /* calculates a set of node tangents */
 void calc_tangents(void)
-{  
-     
+{
+
      //pas touche prepa tangentes OK pour sens en avant
    int i;
-   
+
    nodes[0] = dummy_node(nodes[node_count+1], nodes[node_count]);//node et previous
    nodes[node_count+1] = dummy_node(nodes[node_count], nodes[0]);
-   
+
    node_count++;
 
   for (i=1; i<node_count-1; i++)
       nodes[i].tangent = fixatan2(itofix(nodes[i+1].y - nodes[i-1].y),
 				  itofix(nodes[i+1].x - nodes[i-1].x));
-				  
-				  
- 			  
+
+
+
 }
 
 
@@ -108,20 +148,20 @@ int draw_splines(int move_selected)
    int io;
      nodes[0] = dummy_node(nodes[node_count+1], nodes[node_count]);//node et previous
    for (io=1; io<node_count; io++)
-   {  
+   {
       nodes[io].x=(dock_move_xy[move_selected][io][0]+xmover_window+20);
       nodes[io].y=(dock_move_xy[move_selected][io][1]+ymover_window+20);
    }
 
    for (io=1; io<node_count-1; io++)
    {
-    draw_spline(nodes[io], nodes[io+1]);    
-   } 
-  
-   
-  // goback to begin  
+    draw_spline(nodes[io], nodes[io+1]);
+   }
+
+
+  // goback to begin
   draw_spline(nodes[node_count], nodes[1]);
-   
+
 return(0);
 }
 
@@ -152,47 +192,47 @@ int Prepare_Cross_Spline(int move_selected)
  actual_step_node=dock_move_actual_step[move_selected];
 
  //si tracker pas à l endroit de la memoire
- if(mover_params[0][0]!=(dock_move_xy[move_selected][actual_step_node][0]+xmover_window+20) || mover_params[1][0]!=(dock_move_xy[move_selected][actual_step_node][1]+ymover_window+20)) 
+ if(mover_params[0][0]!=(dock_move_xy[move_selected][actual_step_node][0]+xmover_window+20) || mover_params[1][0]!=(dock_move_xy[move_selected][actual_step_node][1]+ymover_window+20))
  {    nodes[actual_step_node].x=mover_params[0][0]+xmover_window+20;
       nodes[actual_step_node].y=mover_params[1][0]+ymover_window+20;
  }
- 
- 
- 
+
+
+
  //next step et raffraichissement xy pour cycle mode
   next_step_node=next_step[move_selected];
   if(next_step_node>dock_moves_contains_steps[move_selected]){next_step_node=1;}
   nodes[next_step_node].x=(dock_move_xy[move_selected][next_step_node][0]+xmover_window+20);
   nodes[next_step_node].y=(dock_move_xy[move_selected][next_step_node][1]+ymover_window+20);
 
- 
-  //dans le cas d un goto  
+
+  //dans le cas d un goto
  if(GotoMoves[move_selected][actual_step_node]!=0 && index_move_forward==1)
  {
  numero_de_dock_goto_spline=GotoMoves[move_selected][actual_step_node];
  next_step_node=Moves_Inpoint[numero_de_dock_goto_spline];
  nodes[next_step_node].x=(dock_move_xy[numero_de_dock_goto_spline][next_step_node][0]+xmover_window+20);
- nodes[next_step_node].y=(dock_move_xy[numero_de_dock_goto_spline][next_step_node][1]+ymover_window+20);  
+ nodes[next_step_node].y=(dock_move_xy[numero_de_dock_goto_spline][next_step_node][1]+ymover_window+20);
  for(int ro=1;ro<dock_moves_contains_steps[numero_de_dock_goto_spline];ro++)
  {
   if(ro!=actual_step_node)
   {
   nodes[ro].x=(dock_move_xy[numero_de_dock_goto_spline][ro][0]+xmover_window+20);
-  nodes[ro].y=(dock_move_xy[numero_de_dock_goto_spline][ro][1]+ymover_window+20);       
+  nodes[ro].y=(dock_move_xy[numero_de_dock_goto_spline][ro][1]+ymover_window+20);
   }
  }
  }
- 
-// pas besoin de re calcul des tangentes, il est fait pour l affichage. 			  
+
+// pas besoin de re calcul des tangentes, il est fait pour l affichage.
  get_control_points(nodes[actual_step_node],nodes[next_step_node],points);
 
- 
+
  if(index_move_back==1)
  { get_control_points_backward(nodes[actual_step_node],nodes[next_step_node],points);}
  calc_spline(points, SPLINE_MAX_RESOLUTION,  my_spline_path_X, my_spline_path_Y);
- 
+
  actual_spline_tick=0.0;
- spline_tick_fraction=((float)SPLINE_MAX_RESOLUTION)/dock_time[dock_move_selected][(dock_move_actual_step[dock_move_selected])];  
- return(0);   
+ spline_tick_fraction=((float)SPLINE_MAX_RESOLUTION)/dock_time[dock_move_selected][(dock_move_actual_step[dock_move_selected])];
+ return(0);
 }
 

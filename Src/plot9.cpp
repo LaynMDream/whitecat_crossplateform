@@ -1,8 +1,49 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file plot9.cpp
+* \brief {Plot GUI fonctions}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions GUI de dessin de la fenêtre plot
+*   GUI fonctions for the plot window
+*
+**/
 
 
 int draw_channel_of_symbol( int calc, int symb, int plotx, int ploty)
 {
-    
+
 
 
  Circle ChannelProp(Vec2D(plotx,ploty),12);
@@ -14,7 +55,7 @@ int draw_channel_of_symbol( int calc, int symb, int plotx, int ploty)
  case 1:
  ChannelProp.Draw(CouleurFader);
  break;
- }  
+ }
  ChannelProp.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
  if(symbol_channel_is[calc][symb]<10)
  {
@@ -24,12 +65,12 @@ int draw_channel_of_symbol( int calc, int symb, int plotx, int ploty)
  {
  petitchiffrenoir.Print(ol::ToString(symbol_channel_is[calc][symb] ), (int)(plotx-6),(int)(ploty+3));
  }
- else 
+ else
  {
-  petitchiffrenoir.Print(ol::ToString(symbol_channel_is[calc][symb] ), plotx-11,ploty+3);   
+  petitchiffrenoir.Print(ol::ToString(symbol_channel_is[calc][symb] ), plotx-11,ploty+3);
  }
 
- return(0);   
+ return(0);
 }
 
 int draw_gels_of_a_symbol(int calc, int symb, int plotx, int ploty)
@@ -59,7 +100,7 @@ break;
 petitchiffrenoir.Print(temp_plot_info,plotx+10,(int)(ploty+(i*10)));
 }
 }
- return(0);   
+ return(0);
 }
 
 int draw_line_to_channel_of_symbol(int x1, int y1, int x2, int y2, int way)//way= 0 left to right 1= Right to left 2= up to down 3= down to up
@@ -67,26 +108,26 @@ int draw_line_to_channel_of_symbol(int x1, int y1, int x2, int y2, int way)//way
 
 switch(way)
 {
-case 0:           
+case 0:
 Line(Vec2D(x1,y1),Vec2D(x1,y2)).Draw(CouleurPlotLine.WithAlpha(0.5));
 Line(Vec2D(x1,y2),Vec2D(x2,y2)).Draw(CouleurPlotLine.WithAlpha(0.5));
 break;
-case 1:           
+case 1:
 Line(Vec2D(x2,y2),Vec2D(x1,y2)).Draw(CouleurPlotLine.WithAlpha(0.5));
 Line(Vec2D(x1,y2),Vec2D(x1,y1)).Draw(CouleurPlotLine.WithAlpha(0.5));
 break;
-case 2:           
+case 2:
 Line(Vec2D(x1,y1),Vec2D(x2,y1)).Draw(CouleurPlotLine.WithAlpha(0.5));
 Line(Vec2D(x2,y1),Vec2D(x2,y2)).Draw(CouleurPlotLine.WithAlpha(0.5));
 break;
-case 3:           
+case 3:
 Line(Vec2D(x2,y2),Vec2D(x2,y1)).Draw(CouleurPlotLine.WithAlpha(0.5));
 Line(Vec2D(x2,y1),Vec2D(x1,y1)).Draw(CouleurPlotLine.WithAlpha(0.5));
 break;
 default:
 break;
 }
- return(0);   
+ return(0);
 }
 
 
@@ -95,7 +136,7 @@ int plot_draw_symbol_pc( int plotx, int ploty, float size_symbol, float  angle_p
 float taille_x=40.0*size_symbol;
 float taille_y=40.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -120,7 +161,7 @@ lentille.Draw(CouleurFader);
 }
 
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_fresnel( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol , int plot_calc_number_is)
@@ -151,7 +192,7 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 }
 
-return(0);   
+return(0);
 }
 
 
@@ -170,7 +211,7 @@ carcasse.SetPivot(Vec2D(plotx,ploty));
 carcasse.RotateBy(angle_pc*(6.5));
 
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 
@@ -188,7 +229,7 @@ lentille.DrawSlice(CouleurPlotLine, PI,PI);
 
 carcasse.DrawOutline(CouleurPlotLine);
 
-return(0);   
+return(0);
 }
 
 
@@ -206,7 +247,7 @@ carcasse.SetPivot(Vec2D(plotx,ploty));
 carcasse.RotateBy(angle_pc*(6.5));
 
 
-Circle lentille(Vec2D(plotx,ploty),taille_x); 
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 
@@ -229,11 +270,11 @@ carcasse.Draw(CouleurFader);
 }
 lentille.DrawSlice(CouleurPlotLine, PI,PI);
 
-carcasse.DrawOutline(CouleurPlotLine);    
+carcasse.DrawOutline(CouleurPlotLine);
 
 foc.DrawOutline(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 
@@ -269,10 +310,10 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 }
 lentille.DrawSlice(CouleurPlotLine, PI,PI);
-carcasse.DrawOutline(CouleurPlotLine);    
+carcasse.DrawOutline(CouleurPlotLine);
 foc.DrawOutline(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_decoupe_1(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -310,11 +351,11 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 poignee.Draw(CouleurFader);
 }
-poignee.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);    
+poignee.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
 fenetre.DrawOutline(CouleurPlotLine);
 
-return(0);   
+return(0);
 }
 
 int plot_draw_symbol_decoupe_2(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -360,13 +401,13 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 poignee.Draw(CouleurFader);
 }
-carcasse.DrawOutline(CouleurPlotLine);    
-poignee.DrawOutline(CouleurPlotLine);    
+carcasse.DrawOutline(CouleurPlotLine);
+poignee.DrawOutline(CouleurPlotLine);
 fenetre.DrawOutline(CouleurPlotLine);
 
 foc.DrawOutline(CouleurPlotLine);
 
-return(0);   
+return(0);
 }
 
 
@@ -414,12 +455,12 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 poignee.Draw(CouleurFader);
 }
-carcasse.DrawOutline(CouleurPlotLine);    
-poignee.DrawOutline(CouleurPlotLine);    
+carcasse.DrawOutline(CouleurPlotLine);
+poignee.DrawOutline(CouleurPlotLine);
 fenetre.DrawOutline(CouleurPlotLine);
 foc.DrawOutline(CouleurPlotLine);
 
-return(0);   
+return(0);
 }
 
 int plot_draw_symbol_Par_1( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -427,7 +468,7 @@ int plot_draw_symbol_Par_1( int plotx, int ploty, float size_symbol, float  angl
 float taille_x=40.0*size_symbol;
 float taille_y=40.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -452,7 +493,7 @@ carcasse.Draw(CouleurFader);
 lentille.Draw(CouleurFader);
 }
 
- return(0);   
+ return(0);
 }
 
 
@@ -462,7 +503,7 @@ int plot_draw_symbol_Par_2( int plotx, int ploty, float size_symbol, float  angl
 float taille_x=40.0*size_symbol;
 float taille_y=40.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -486,7 +527,7 @@ carcasse.Draw(CouleurFader);
 lentille.Draw(CouleurFader);
 }
 
- return(0);   
+ return(0);
 }
 
 
@@ -495,7 +536,7 @@ int plot_draw_symbol_Par_3( int plotx, int ploty, float size_symbol, float  angl
 float taille_x=40.0*size_symbol;
 float taille_y=40.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -515,7 +556,7 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 }
 
- return(0);   
+ return(0);
 }
 
 
@@ -524,7 +565,7 @@ int plot_draw_symbol_Par_4( int plotx, int ploty, float size_symbol, float  angl
 float taille_x=40.0*size_symbol;
 float taille_y=40.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -542,7 +583,7 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 lentille.DrawSlice(CouleurFader,0, PI);
 }
 
- return(0);   
+ return(0);
 }
 
 
@@ -575,7 +616,7 @@ lampe.SetPivot(Vec2D(plotx,ploty));
 lampe.RotateBy(angle_pc*(6.5));
 lampe.Draw(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_Horiziode_sym( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -607,7 +648,7 @@ lampe.SetPivot(Vec2D(plotx,ploty));
 lampe.RotateBy(angle_pc*(6.5));
 lampe.Draw(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_BT( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -616,7 +657,7 @@ float taille_x=40.0*size_symbol;
 float taille_y=40.0*size_symbol;
 
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -640,7 +681,7 @@ carcasse.DrawOutline(CouleurFader);
 lentille.DrawSlice(CouleurFader,0,PI);
 }
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_T8( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -676,7 +717,7 @@ ourlet.DrawOutline(CouleurPlotLine);
 }
 
 
-return(0);   
+return(0);
 }
 
 
@@ -714,7 +755,7 @@ ourlet.Draw(CouleurPlotFill);
 ourlet.MoveTo(Vec2D(plotx-(txcl),ploty-(tycl)));
 ourlet.Draw(CouleurPlotFill);
 
-return(0);   
+return(0);
 }
 
 int plot_draw_symbol_Svoboda( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -754,7 +795,7 @@ svobe2.Draw(CouleurFader);
 
 
 
-return(0);   
+return(0);
 }
 
 int plot_draw_symbol_ACL( int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -770,9 +811,9 @@ for (int r=-2;r<2;r++)
 txcl= cos(angle_pc*-6.5)*(rayon+(18*size_symbol));
 tycl = sin(angle_pc*-6.5)*(rayon+(18*size_symbol));
 plot_draw_symbol_Par_4((int)(plotx+(txcl*r/2)), (int)(ploty+(tycl*r/2)),size_symbol,  angle_pc, num_symbol, plot_calc_number_is);
-}   
+}
 
-return(0);   
+return(0);
 }
 
 
@@ -787,7 +828,7 @@ carcasse.Add(Vec2D(plotx-(taille_x/2),ploty+(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/2),ploty+(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/2),ploty-(taille_y/2)));
 carcasse.SetPivot(Vec2D(plotx,ploty));
-carcasse.RotateBy(angle_pc*(6.5));    
+carcasse.RotateBy(angle_pc*(6.5));
 
 Poly Side1;
 Side1.Add(Vec2D(plotx-(taille_x/2),ploty-(taille_y/2)));
@@ -817,7 +858,7 @@ Side1.Draw(CouleurPlotLine);
 
 Side2.Draw(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 
@@ -833,7 +874,7 @@ carcasse.Add(Vec2D(plotx-(taille_x/2),ploty+(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/2),ploty+(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/2),ploty-(taille_y/2)));
 carcasse.SetPivot(Vec2D(plotx,ploty));
-carcasse.RotateBy(angle_pc*(6.5));    
+carcasse.RotateBy(angle_pc*(6.5));
 
 Poly Side1;
 Side1.Add(Vec2D(plotx-(taille_x/2),ploty-(taille_y/2)));
@@ -863,7 +904,7 @@ Side1.Draw(CouleurPlotLine);
 
 Side2.Draw(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 
@@ -905,11 +946,11 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 poignee.Draw(CouleurFader);
 }
-poignee.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);    
+poignee.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
 fenetre.DrawOutline(CouleurPlotLine);
 
-return(0);   
+return(0);
 }
 
 
@@ -953,8 +994,8 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 poignee.Draw(CouleurFader);
 }
-poignee.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);    
+poignee.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
 fenetre.DrawOutline(CouleurPlotLine);
 
 return(0);
@@ -994,11 +1035,11 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 objectif.Draw(CouleurFader);
 }
-objectif.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);  
+objectif.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
 
 
-return(0);   
+return(0);
 }
 
 
@@ -1043,9 +1084,9 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 objectif.Draw(CouleurFader);
 }
-objectif.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);  
-tirroir.DrawOutline(CouleurPlotLine);    
+objectif.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
+tirroir.DrawOutline(CouleurPlotLine);
 
 return(0);
 }
@@ -1083,10 +1124,10 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse.Draw(CouleurFader);
 objectif.Draw(CouleurFader);
 }
-objectif.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);  
+objectif.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
 Panier.DrawOutline(CouleurPlotLine);
- 
+
 
 return(0);
 }
@@ -1129,7 +1170,7 @@ angle_pc+=0.125;
 
 double txcl= cos(angle_pc*-6.5)*(taille_x/3);
 double tycl = sin(angle_pc*-6.5)*(taille_x/3);
- 
+
 
 Circle Lentille(Vec2D(plotx+txcl,ploty+tycl),(8*size_symbol));
 
@@ -1143,13 +1184,13 @@ carcasse.Draw(CouleurFader);
 mirroir.Draw(CouleurFader);
 bras.Draw(CouleurFader);
 }
-mirroir.DrawOutline(CouleurPlotLine);    
-carcasse.DrawOutline(CouleurPlotLine);  
+mirroir.DrawOutline(CouleurPlotLine);
+carcasse.DrawOutline(CouleurPlotLine);
 bras.DrawOutline(CouleurPlotLine);
-Lentille.DrawOutline(CouleurPlotLine); 
+Lentille.DrawOutline(CouleurPlotLine);
 
 
-return(0);    
+return(0);
 }
 
 
@@ -1198,7 +1239,7 @@ return(0);
 
 int plot_draw_symbol_top_hat(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
 {
- 
+
 float taille_x=40.0*size_symbol;
 float taille_y=20.0*size_symbol;
 
@@ -1210,7 +1251,7 @@ carcasse.Add(Vec2D(plotx+(taille_x/4),ploty-(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/4),ploty+(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/2),ploty+(taille_y/2)));
 carcasse.SetPivot(Vec2D(plotx,ploty));
-carcasse.RotateBy(angle_pc*(6.5));   
+carcasse.RotateBy(angle_pc*(6.5));
 
 Poly carcasse2;
 carcasse2.Add(Vec2D(plotx-(taille_x/4),ploty+(taille_y/2)));
@@ -1218,7 +1259,7 @@ carcasse2.Add(Vec2D(plotx-(taille_x/4),ploty-(taille_y/2)));
 carcasse2.Add(Vec2D(plotx+(taille_x/4),ploty-(taille_y/2)));
 carcasse2.Add(Vec2D(plotx+(taille_x/4),ploty+(taille_y/2)));
 carcasse2.SetPivot(Vec2D(plotx,ploty));
-carcasse2.RotateBy(angle_pc*(6.5));   
+carcasse2.RotateBy(angle_pc*(6.5));
 
 carcasse2.Draw(CouleurPlotFill);
 
@@ -1227,14 +1268,14 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 carcasse2.Draw(CouleurFader);
 }
 carcasse.DrawOutline(CouleurPlotLine);
-    
- return(0);   
+
+ return(0);
 }
 
 
 int plot_draw_symbol_color_extender(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
 {
- 
+
 float taille_x=40.0*size_symbol;
 float taille_y=30.0*size_symbol;
 
@@ -1246,7 +1287,7 @@ carcasse.Add(Vec2D(plotx+(taille_x/4),ploty-(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/4),ploty+(taille_y/2)));
 carcasse.Add(Vec2D(plotx+(taille_x/2),ploty+(taille_y/2)));
 carcasse.SetPivot(Vec2D(plotx,ploty));
-carcasse.RotateBy(angle_pc*(6.5));   
+carcasse.RotateBy(angle_pc*(6.5));
 
 Poly carcasse2;
 carcasse2.Add(Vec2D(plotx-(taille_x/4),ploty+(taille_y/2)));
@@ -1254,7 +1295,7 @@ carcasse2.Add(Vec2D(plotx-(taille_x/4),ploty-(taille_y/2)));
 carcasse2.Add(Vec2D(plotx+(taille_x/4),ploty-(taille_y/2)));
 carcasse2.Add(Vec2D(plotx+(taille_x/4),ploty+(taille_y/2)));
 carcasse2.SetPivot(Vec2D(plotx,ploty));
-carcasse2.RotateBy(angle_pc*(6.5));   
+carcasse2.RotateBy(angle_pc*(6.5));
 
 
 Poly carcasse3;
@@ -1263,7 +1304,7 @@ carcasse3.Add(Vec2D(plotx-(taille_x/4),ploty-(taille_y/3)));
 carcasse3.Add(Vec2D(plotx+(taille_x/4),ploty-(taille_y/3)));
 carcasse3.Add(Vec2D(plotx+(taille_x/4),ploty-(taille_y/2)));
 carcasse3.SetPivot(Vec2D(plotx,ploty));
-carcasse3.RotateBy(angle_pc*(6.5));  
+carcasse3.RotateBy(angle_pc*(6.5));
 
 carcasse2.Draw(CouleurPlotFill);
 
@@ -1275,9 +1316,9 @@ carcasse2.Draw(CouleurFader);
 }
 carcasse.DrawOutline(CouleurPlotLine);
 
-carcasse3.DrawOutline(CouleurPlotLine);        
+carcasse3.DrawOutline(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_colorchanger(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -1473,7 +1514,7 @@ return(0);
 
 int plot_draw_symbol_motorized_mirror(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
 {
- 
+
 float taille_x=40.0*size_symbol;
 float taille_y=50.0*size_symbol;
 
@@ -1519,9 +1560,9 @@ carcasse2.Draw(CouleurFader);
 carcasse3.Draw(CouleurFader);
 }
 carcasse.DrawOutline(CouleurPlotLine);
-carcasse2.DrawOutline(CouleurPlotLine);   
-carcasse3.DrawOutline(CouleurPlotLine);    
- return(0);   
+carcasse2.DrawOutline(CouleurPlotLine);
+carcasse3.DrawOutline(CouleurPlotLine);
+ return(0);
 }
 
 int plot_draw_symbol_platine_de_sol(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -1543,10 +1584,10 @@ carcasse.Draw(CouleurPlotFill);
 if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 {
 carcasse.Draw(CouleurFader);
-} 
-carcasse.DrawOutline(CouleurPlotLine); 
+}
+carcasse.DrawOutline(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_littlestand(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -1597,10 +1638,10 @@ tourelle.Draw(CouleurFader);
 carcasse1.Draw(CouleurFader);
 carcasse2.Draw(CouleurFader);
 carcasse3.Draw(CouleurFader);
-}     
+}
 
 
- return(0);   
+ return(0);
 }
 
 int plot_draw_symbol_bigstand(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -1651,9 +1692,9 @@ tourelle.Draw(CouleurFader);
 carcasse1.Draw(CouleurFader);
 carcasse2.Draw(CouleurFader);
 carcasse3.Draw(CouleurFader);
-}     
+}
 
- return(0);   
+ return(0);
 }
 
 int  plot_draw_symbol_barre_de_couplage(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
@@ -1674,10 +1715,10 @@ if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 {
 tourelle.Draw(CouleurFader);
 tourelle.DrawOutline(CouleurPlotLine);
-} 
-    
-    
- return(0);   
+}
+
+
+ return(0);
 }
 
 
@@ -1741,9 +1782,9 @@ carcasse1.Draw(CouleurFader);
 carcasse2.Draw(CouleurFader);
 carcasse3.Draw(CouleurFader);
 carcasse4.Draw(CouleurFader);
-}     
+}
 
- return(0);   
+ return(0);
 }
 
 
@@ -1809,9 +1850,9 @@ side2.Draw(CouleurFader);
 barreauhaut.Draw(CouleurFader);
 barreaubas.Draw(CouleurFader);
 traverse.Draw(CouleurFader);
-}     
+}
 
- return(0);   
+ return(0);
 }
 
 
@@ -1920,8 +1961,8 @@ traverse1.Draw(CouleurFader);
 traverse2.Draw(CouleurFader);
 barreau1.Draw(CouleurFader);
 barreau2.Draw(CouleurFader);
-}     
-    
+}
+
 return(0);
 }
 
@@ -1977,9 +2018,9 @@ side1.Draw(CouleurFader);
 side2.Draw(CouleurFader);
 barreauhaut.Draw(CouleurFader);
 barreaubas.Draw(CouleurFader);
-}     
+}
 
- return(0);   
+ return(0);
 }
 
 
@@ -2045,9 +2086,9 @@ side2.Draw(CouleurFader);
 barreauhaut.Draw(CouleurFader);
 barreaubas.Draw(CouleurFader);
 traverse.Draw(CouleurFader);
-}     
+}
 
- return(0);   
+ return(0);
 }
 
 
@@ -2156,8 +2197,8 @@ traverse1.Draw(CouleurFader);
 traverse2.Draw(CouleurFader);
 barreau1.Draw(CouleurFader);
 barreau2.Draw(CouleurFader);
-}     
-    
+}
+
 return(0);
 }
 
@@ -2213,9 +2254,9 @@ side1.Draw(CouleurFader);
 side2.Draw(CouleurFader);
 barreauhaut.Draw(CouleurFader);
 barreaubas.Draw(CouleurFader);
-}     
+}
 
- return(0);   
+ return(0);
 }
 
 
@@ -2249,7 +2290,7 @@ carcasse.Draw(CouleurFader);
 carcasse.DrawOutline(CouleurPlotLine);
 }
 
-    
+
 return(0);
 }
 
@@ -2259,7 +2300,7 @@ int plot_draw_symbol_fogmachine(int plotx, int ploty, float size_symbol, float  
 float taille_x=40.0*size_symbol;
 float taille_y=20.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.RotateBy(-angle_pc*6.5);
 lentille.SetRadius(taille_x/2);
 lentille.DrawSlice(CouleurPlotLine,0, PI);
@@ -2304,7 +2345,7 @@ int plot_draw_symbol_direct(int plotx, int ploty, float size_symbol, float  angl
 float taille_x=40.0*size_symbol;
 float taille_y=20.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.Draw(CouleurPlotLine);
 if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 {
@@ -2313,17 +2354,17 @@ lentille.Draw(CouleurFader);
 }
 lentille.DrawOutline(CouleurPlotLine);
 neuromoyen.Print("D",plotx-5,ploty+5);
-    
+
 return(0);
 }
 
 int plot_draw_symbol_serviceligth(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
 {
- 
+
 float taille_x=40.0*size_symbol;
 float taille_y=20.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.Draw(CouleurPlotFill);
 if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 {
@@ -2332,17 +2373,17 @@ lentille.Draw(CouleurFader);
 }
 lentille.DrawOutline(CouleurPlotLine);
 neuromoyen.Print("S",plotx-5,ploty+5);
-       
+
 return(0);
 }
 
 int plot_draw_symbol_dimmerline(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
 {
- 
+
 float taille_x=40.0*size_symbol;
 float taille_y=20.0*size_symbol;
 
-Circle lentille(Vec2D(plotx,ploty),taille_x);  
+Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.Draw(CouleurPlotLine);
 if( symbol_is_selected[plot_calc_number_is][num_symbol]==1)
 {
@@ -2353,24 +2394,24 @@ Line(Vec2D(plotx-(taille_x/2.5),ploty-(taille_x/2.5)),Vec2D(plotx+(taille_x/2.5)
 Line(Vec2D(plotx+(taille_x/2.5),ploty-(taille_x/2.5)),Vec2D(plotx-(taille_x/2.5),ploty+(taille_x/2.5))).Draw(CouleurPlotFill);
 lentille.DrawOutline(CouleurPlotLine);
 
-       
+
 return(0);
 }
 
 
 int plot_print_neutral_symbol(int s, int plotx, int ploty)
 {
-    
+
 //affichage symbole
 switch(s)
 {
-case 0:     //PC 500 ou 650                      
+case 0:     //PC 500 ou 650
 plot_draw_symbol_pc(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-case 1:     //PC 1kw                      
+case 1:     //PC 1kw
 plot_draw_symbol_pc(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-case 2:     //PC2kw                  
+case 2:     //PC2kw
 plot_draw_symbol_pc(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 3:    //fresnel 1kw
@@ -2431,7 +2472,7 @@ case 21://par 56 CP62
  plot_draw_symbol_Par_3(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 22://Par 36
-plot_draw_symbol_Par_4(plotx, ploty , size_symbol[s], 0, 0, 0); 
+plot_draw_symbol_Par_4(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 23://par 20
 plot_draw_symbol_Par_3(plotx, ploty , size_symbol[s], 0, 0, 0);
@@ -2487,35 +2528,35 @@ break;
 case 40://Proj diapo
 plot_draw_symbol_slideprojector(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-case 41://Rétro Proj 
+case 41://Rétro Proj
 plot_draw_symbol_retroprojector(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 42://volets
-plot_draw_symbol_barndoors(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_barndoors(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 43://tophat
-plot_draw_symbol_top_hat(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_top_hat(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 44://color extender
-plot_draw_symbol_color_extender(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_color_extender(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 45://color changer
-plot_draw_symbol_colorchanger(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_colorchanger(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 46://jalousie
-plot_draw_symbol_jalousie(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_jalousie(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 47://iris
-plot_draw_symbol_iris(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_iris(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 48://gobo
-plot_draw_symbol_goboholder(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_goboholder(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 49://shutter
-plot_draw_symbol_shutter(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_shutter(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 50://MOTORIZED MIRROR
-plot_draw_symbol_motorized_mirror(plotx, ploty , size_symbol[s], 0, 0, 0);     
+plot_draw_symbol_motorized_mirror(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 51://smoke machine
 plot_draw_symbol_smokemachine(plotx, ploty , size_symbol[s], 0, 0, 0);
@@ -2539,13 +2580,13 @@ break;
 case 57://pied
 plot_draw_symbol_littlestand(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-case 58://grand pied 
+case 58://grand pied
 plot_draw_symbol_bigstand(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-case 59://barre de couplage 
+case 59://barre de couplage
 plot_draw_symbol_barre_de_couplage(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-case 60://Echelle 
+case 60://Echelle
 plot_draw_symbol_echelle(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
 case 61://pont 50 1m
@@ -2570,7 +2611,7 @@ default:
 break;
 }
 
- return(0);   
+ return(0);
 }
 
 //////////////////////MENUS/////////////////////////////////////////////////////
@@ -2579,11 +2620,11 @@ int plot_symbol_list(int plotx,int ploty)
 {
 
 Rect PlotSymbList(Vec2D(plotx,ploty),Vec2D(205,140));
-PlotSymbList.SetRoundness(15); 
+PlotSymbList.SetRoundness(15);
 PlotSymbList.Draw(CouleurBleuProcedure.WithAlpha(0.3));
-PlotSymbList.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+PlotSymbList.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 
-Rect UnderName(Vec2D(plotx+10,ploty+5),Vec2D(185,20));   
+Rect UnderName(Vec2D(plotx+10,ploty+5),Vec2D(185,20));
 UnderName.SetRoundness(5);
 switch(index_edit_symbol_plot)
 {
@@ -2594,7 +2635,7 @@ case 1:
 UnderName.Draw(CouleurSurvol);
 break;
 }
-UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 petitchiffrenoir.Print(symbol_nickname[symbol_selected_type],plotx+12,ploty+18);
 //up
 Line(Vec2D(plotx+12,ploty+50),Vec2D(plotx+28,ploty+50)).Draw(CouleurPlotLine);
@@ -2607,7 +2648,7 @@ Line(Vec2D(plotx+12,ploty+50),Vec2D(plotx+28,ploty+50)).Draw(CouleurBlind);
 Line(Vec2D(plotx+12,ploty+50),Vec2D(plotx+20,ploty+36)).Draw(CouleurBlind);
 Line(Vec2D(plotx+28,ploty+50),Vec2D(plotx+20,ploty+36)).Draw(CouleurBlind);
 show_type_midi(1596,"Plot List Up");
-}    
+}
 //down
 Line(Vec2D(plotx+12,ploty+69),Vec2D(plotx+28,ploty+69)).Draw(CouleurPlotLine);
 Line(Vec2D(plotx+12,ploty+69),Vec2D(plotx+20,ploty+83)).Draw(CouleurPlotLine);
@@ -2620,7 +2661,7 @@ Line(Vec2D(plotx+12,ploty+69),Vec2D(plotx+28,ploty+69)).Draw(CouleurBlind);
 Line(Vec2D(plotx+12,ploty+69),Vec2D(plotx+20,ploty+83)).Draw(CouleurBlind);
 Line(Vec2D(plotx+28,ploty+69),Vec2D(plotx+20,ploty+83)).Draw(CouleurBlind);
 show_type_midi(1597,"Plot List Up");
-}    
+}
 Rect SliderSel(Vec2D(plotx+3,ploty+30),Vec2D(5,64));
 Rect SliderVel(Vec2D(plotx+3,ploty+30+(64-(symbol_selected_type/2))),Vec2D(5,(symbol_selected_type/2)));
 SliderSel.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
@@ -2630,7 +2671,7 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+3 && mouse_x<plotx+8 && mouse_y>plot
 {
 SliderSel.DrawOutline(CouleurBlind);
 show_type_midi(1598,"Plot List CC");
-}    
+}
 
 petitchiffrenoir.Print(ol::ToString(symbol_selected_type),plotx+13,ploty+62);
 
@@ -2652,7 +2693,7 @@ case 1:
 global_sizer_level.Draw(CouleurBlind);
 break;
 }
-global_sizer_frame.DrawOutline(CouleurPlotLine);   
+global_sizer_frame.DrawOutline(CouleurPlotLine);
 
 
 //slider size of symbol
@@ -2669,30 +2710,30 @@ case 1:
 symbol_sizer_level.Draw(CouleurFader);
 break;
 }
-symbol_sizer_frame.DrawOutline(CouleurPlotLine);   
+symbol_sizer_frame.DrawOutline(CouleurPlotLine);
 
 Rect edit_symbol_frame(Vec2D(plotx+40,ploty+80),Vec2D(105,20));
-edit_symbol_frame.SetRoundness(5); 
-edit_symbol_frame.Draw(CouleurPlotFill);  
+edit_symbol_frame.SetRoundness(5);
+edit_symbol_frame.Draw(CouleurPlotFill);
 edit_symbol_frame.Draw(CouleurBleuProcedure.WithAlpha(0.3));
 edit_symbol_frame.Draw(CouleurBlind.WithAlpha(index_edit_symbol_plot));
-edit_symbol_frame.DrawOutline(CouleurPlotLine);   
+edit_symbol_frame.DrawOutline(CouleurPlotLine);
 petitchiffrenoir.Print("Edit the Symbol",plotx+45,ploty+92);
 
 Rect add_symbol_frame(Vec2D(plotx+40,ploty+110),Vec2D(80,20));
-add_symbol_frame.SetRoundness(5); 
-add_symbol_frame.Draw(CouleurPlotFill); 
+add_symbol_frame.SetRoundness(5);
+add_symbol_frame.Draw(CouleurPlotFill);
 add_symbol_frame.Draw(CouleurBleuProcedure.WithAlpha(0.3));
-add_symbol_frame.DrawOutline(CouleurPlotLine);   
+add_symbol_frame.DrawOutline(CouleurPlotLine);
 petitchiffrenoir.Print("Add To Plot",plotx+45,ploty+122);
 petitchiffrenoir.Print(ol::ToString(nbre_symbols_on_plot[view_plot_calc_number_is]),plotx+15,ploty+122);
 
 if(window_focus_id==W_PLOT && mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<ploty+110+20
 && Midi_Faders_Affectation_Type!=0)
 {
-add_symbol_frame.DrawOutline(CouleurBlind);  
+add_symbol_frame.DrawOutline(CouleurBlind);
 show_type_midi(1600,"Plot Add Symbol");
-}  
+}
 
 
 
@@ -2704,7 +2745,7 @@ BSel.Draw(CouleurBleuProcedure.WithAlpha(0.3));
 BSel.DrawOutline(CouleurPlotLine);
 if(window_focus_id==W_PLOT && mouse_x>plotx+130 && mouse_x<plotx+130+65 && mouse_y>ploty+105 && mouse_y<ploty+105+28)
 {
-BSel.DrawOutline(CouleurPlotFill.WithAlpha(0.5));                     
+BSel.DrawOutline(CouleurPlotFill.WithAlpha(0.5));
 }
 petitchiffrenoir.Print("Select ID",plotx+135,ploty+115);
 petitchiffrenoir.Print(ol::ToString(symbol_id_to_select),plotx+150,ploty+127);
@@ -2712,13 +2753,13 @@ petitchiffrenoir.Print(ol::ToString(symbol_id_to_select),plotx+150,ploty+127);
 
 
 
- return(0);   
+ return(0);
 }
 
 
 int plot_draw_shape_line(int plotx1, int ploty1, int plotx2, int ploty2, float sizeshape,  float alphashape, int colorpattern, bool isselected)
 {
-Rgba TmpColor; 
+Rgba TmpColor;
 
 switch(isselected)
 {
@@ -2726,42 +2767,42 @@ case 0:
 switch(colorpattern)
 {
 case 1://jaune
-TmpColor=CouleurYellowFgroup;     
+TmpColor=CouleurYellowFgroup;
 break;
 case 2: //Rouge
-TmpColor=CouleurRed;     
+TmpColor=CouleurRed;
 break;
 case 3: //Vert
-TmpColor=CouleurGreen;  
+TmpColor=CouleurGreen;
 break;
 case 4: //blue
 TmpColor=CouleurBleuProcedure;
 break;
 default:
-TmpColor=CouleurPlotLine;  
+TmpColor=CouleurPlotLine;
 break;
 }
 
 Line(Vec2D(plotx1,ploty1),Vec2D(plotx2,ploty2),sizeshape).Draw(TmpColor.WithAlpha(alphashape));
-     
+
 break;
 case 1:
-Line(Vec2D(plotx1,ploty1),Vec2D(plotx2,ploty2),sizeshape).Draw(CouleurFader);     
+Line(Vec2D(plotx1,ploty1),Vec2D(plotx2,ploty2),sizeshape).Draw(CouleurFader);
 break;
 }
 if(index_edit_light_plot==1 && index_menus_lighting_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind); 
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 Rect(Vec2D(plotx2-5,ploty2-5),Vec2D(10,10)).Draw(CouleurPlotLine.WithAlpha(handle_selected_for_line_editing*isselected));
 Rect(Vec2D(plotx2-5,ploty2-5),Vec2D(10,10)).DrawOutline(CouleurPlotLine);
 Line(Vec2D(plotx2-5,ploty2-5),Vec2D(plotx2+5,ploty2+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx2+5,ploty2-5),Vec2D(plotx2-5,ploty2+5)).Draw(CouleurBlind);                
+Line(Vec2D(plotx2+5,ploty2-5),Vec2D(plotx2-5,ploty2+5)).Draw(CouleurBlind);
 }
 
 
 
- return(0);   
+ return(0);
 }
 
 
@@ -2771,14 +2812,14 @@ int plot_draw_shape_stripline(float plotx1, float ploty1, float plotx2, float pl
 {
 
 
-glLineWidth (sizeshape);   
+glLineWidth (sizeshape);
 switch(typeofline)
 {
 case 0:
 glLineStipple (1, 0x0101);  /*  dotted  */
 break;
 case 1:
-glLineStipple (4, 0x0101);  
+glLineStipple (4, 0x0101);
 break;
 case 2:
 glLineStipple (3, 0x1F03);
@@ -2790,7 +2831,7 @@ case 4:
 glLineStipple (3, 0x00FF);  /*  dashed  */
 break;
 default:
-break; 
+break;
 }
 
 switch(isselected)
@@ -2799,28 +2840,28 @@ case 0:
 switch(colorpattern)
 {
 case 1://jaune
-glColor4f(1.0,0.7,0.0,alphag);     
+glColor4f(1.0,0.7,0.0,alphag);
 break;
 case 2: //Rouge
-glColor4f(0.6,0.0,0.0,alphag);    
+glColor4f(0.6,0.0,0.0,alphag);
 break;
 case 3: //Vert
-glColor4f(0.0,0.6,0.0,alphag);  
+glColor4f(0.0,0.6,0.0,alphag);
 break;
 case 4: //Bleu
-glColor4f(0.0,0.2,0.5,alphag);  
+glColor4f(0.0,0.2,0.5,alphag);
 break;
 default:
-glColor4f(Color_plotline,Color_plotline,Color_plotline,alphag);   
+glColor4f(Color_plotline,Color_plotline,Color_plotline,alphag);
 break;
 }
-break;                  
+break;
 case 1:
 glColor4f(1.0,0.4,0.0,1.0);
 break;
-}      
+}
 
-glEnable (GL_LINE_STIPPLE);          
+glEnable (GL_LINE_STIPPLE);
 drawStippleLine(plotx1,ploty1,plotx2,ploty2);
 glDisable (GL_LINE_STIPPLE);
 
@@ -2829,11 +2870,11 @@ if(index_edit_light_plot==1 && index_menus_lighting_plot==1 && show_handle==1)//
 {
 
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind); 
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 Rect(Vec2D(plotx2-5,ploty2-5),Vec2D(10,10)).Draw(CouleurPlotLine.WithAlpha(isselected));
 Rect(Vec2D(plotx2-5,ploty2-5),Vec2D(10,10)).DrawOutline(CouleurPlotLine);
 Line(Vec2D(plotx2-5,ploty2-5),Vec2D(plotx2+5,ploty2+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx2+5,ploty2-5),Vec2D(plotx2-5,ploty2+5)).Draw(CouleurBlind);               
+Line(Vec2D(plotx2+5,ploty2-5),Vec2D(plotx2-5,ploty2+5)).Draw(CouleurBlind);
 }
 
 return(0);
@@ -2852,7 +2893,7 @@ ShapeRect.RotateBy(shaperotation);
 
 if(isselected==1)
 {
-ShapeRect.DrawOutline(CouleurFader);             
+ShapeRect.DrawOutline(CouleurFader);
 }
 else
 {
@@ -2878,10 +2919,10 @@ break;
 if(index_edit_light_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);             
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 }
 
-return(0);   
+return(0);
 }
 
 int plot_draw_shape_curtain(int plotx1, int ploty1, int plotx2, int ploty2, float sizeshape,  float alphashape,int colorpattern, bool isselected)
@@ -2895,12 +2936,12 @@ double angle_ligne= atan2(ploty2 - ploty1, plotx2 - plotx1);
 bool inversion=0;
 
 for(int i=0;i<nbre_de_cercles;i++)
-{  
+{
 inversion=toggle(inversion);
 Circle ourlet(0, 0, sizeshape);
 ourlet.MoveTo(Vec2D(plotx1+cos(angle_ligne)*sizeshape+(correctionx*i),ploty1+sin(angle_ligne)*sizeshape+(correctiony*i)));
 ourlet.RotateBy(angle_ligne + PI*inversion);
-Rgba TmpColor; 
+Rgba TmpColor;
 
 switch(isselected)
 {
@@ -2908,19 +2949,19 @@ case 0:
 switch(colorpattern)
 {
 case 1://jaune
-TmpColor=CouleurYellowFgroup;     
+TmpColor=CouleurYellowFgroup;
 break;
 case 2: //Rouge
-TmpColor=CouleurRed;     
+TmpColor=CouleurRed;
 break;
 case 3: //Vert
-TmpColor=CouleurGreen;  
+TmpColor=CouleurGreen;
 break;
 case 4: //blue
 TmpColor=CouleurBleuProcedure;
 break;
 default:
-TmpColor=CouleurPlotLine;  
+TmpColor=CouleurPlotLine;
 break;
 }
 ourlet.DrawSlice(TmpColor.WithAlpha(general_alpha_for_shape),0, PI);
@@ -2933,11 +2974,11 @@ break;
 if( index_edit_light_plot==1 && index_menus_lighting_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind); 
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 Rect(Vec2D(plotx2-5,ploty2-5),Vec2D(10,10)).Draw(CouleurPlotLine.WithAlpha(handle_selected_for_line_editing*isselected));
 Rect(Vec2D(plotx2-5,ploty2-5),Vec2D(10,10)).DrawOutline(CouleurPlotLine);
 Line(Vec2D(plotx2-5,ploty2-5),Vec2D(plotx2+5,ploty2+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx2+5,ploty2-5),Vec2D(plotx2-5,ploty2+5)).Draw(CouleurBlind);               
+Line(Vec2D(plotx2+5,ploty2-5),Vec2D(plotx2-5,ploty2+5)).Draw(CouleurBlind);
 }
 return(0);
 }
@@ -2949,9 +2990,9 @@ Circle ShapeCirc(plotx1, ploty1,sizeshape);
 
 if(isselected==1)
 {
-ShapeCirc.DrawOutline(CouleurFader);                
+ShapeCirc.DrawOutline(CouleurFader);
 }
-else 
+else
 {
 
 switch(colorpattern)
@@ -2974,24 +3015,24 @@ break;
 if( index_edit_light_plot==1 && index_menus_lighting_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);             
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 }
- return(0);   
+ return(0);
 }
 
 int plot_draw_slice(int plotx1, int ploty1, float sizeshape, float opening_angle, float shaperotation, float alphashape,   int colorpattern, bool isselected)
 
 {
 
-Circle arcdecercle(Vec2D(plotx1,ploty1),sizeshape);  
+Circle arcdecercle(Vec2D(plotx1,ploty1),sizeshape);
 arcdecercle.RotateBy(shaperotation*6.5);
 arcdecercle.SetRadius(sizeshape/2);
 
 if(isselected==1)
 {
-arcdecercle.DrawSlice(CouleurFader,0,opening_angle);          
+arcdecercle.DrawSlice(CouleurFader,0,opening_angle);
 }
-else 
+else
 {
 
 switch(colorpattern)
@@ -3014,9 +3055,9 @@ break;
 if( index_edit_light_plot==1 && index_menus_lighting_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);             
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 }
- return(0);   
+ return(0);
 }
 
 
@@ -3039,9 +3080,9 @@ mypoly.RotateBy(shaperotation*6.5);
 
 if(isselected==1)
 {
-mypoly.DrawOutline(CouleurFader);              
+mypoly.DrawOutline(CouleurFader);
 }
-else 
+else
 {
 
 switch(colorpattern)
@@ -3064,7 +3105,7 @@ break;
 if( index_edit_light_plot==1 && index_menus_lighting_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx1-5,ploty1-5),Vec2D(plotx1+5,ploty1+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);             
+Line(Vec2D(plotx1+5,ploty1-5),Vec2D(plotx1-5,ploty1+5)).Draw(CouleurBlind);
 }
 return(0);
 }
@@ -3073,80 +3114,80 @@ return(0);
 int plot_draw_text(int plotx,int ploty, int fontsize,int fonttype,  char text[25],float alphatext, bool isselected)
 {
 
-    
+
 int xsi=0;
 int ysi=0;
 switch(fonttype)
-{          
-case 0:   
+{
+case 0:
 xsi=minichiffrenoir.FirstLineWidth( text );
-ysi=minichiffrenoir.FirstLineHeight( text ); 
-minichiffrenoir.Print(text,plotx,ploty); 
+ysi=minichiffrenoir.FirstLineHeight( text );
+minichiffrenoir.Print(text,plotx,ploty);
 break;
-case 1:    
+case 1:
 xsi=minichiffre.FirstLineWidth( text );
 ysi=minichiffre.FirstLineHeight( text );
-minichiffre.Print(text,plotx,ploty); 
+minichiffre.Print(text,plotx,ploty);
 break;
-case 2:    
+case 2:
 xsi=minichiffrerouge.FirstLineWidth( text );
 ysi=minichiffrerouge.FirstLineHeight( text );
-minichiffrerouge.Print(text,plotx,ploty); 
+minichiffrerouge.Print(text,plotx,ploty);
 break;
-case 3:    
+case 3:
 xsi=petitchiffrenoir.FirstLineWidth( text );
 ysi=petitchiffrenoir.FirstLineHeight( text );
-petitchiffrenoir.Print(text,plotx,ploty); 
+petitchiffrenoir.Print(text,plotx,ploty);
 break;
-case 4:    
+case 4:
 xsi=petitchiffre.FirstLineWidth( text );
 ysi=petitchiffre.FirstLineHeight( text );
-petitchiffre.Print(text,plotx,ploty); 
+petitchiffre.Print(text,plotx,ploty);
 break;
-case 5:    
+case 5:
 xsi=petitchiffrerouge.FirstLineWidth( text );
-ysi=petitchiffrerouge.FirstLineHeight( text ); 
+ysi=petitchiffrerouge.FirstLineHeight( text );
 petitchiffrerouge.Print(text,plotx,ploty);
 break;
-case 6:   
+case 6:
 xsi=petitdoomInspekt.FirstLineWidth( text );
 ysi=petitdoomInspekt.FirstLineHeight( text );
-petitdoomInspekt.Print(text,plotx,ploty); 
+petitdoomInspekt.Print(text,plotx,ploty);
 break;
-case 7:    
+case 7:
 xsi=neuromoyen.FirstLineWidth( text );
 ysi=neuromoyen.FirstLineHeight( text );
-neuromoyen.Print(text,plotx,ploty); 
+neuromoyen.Print(text,plotx,ploty);
 break;
-case 8:    
+case 8:
 xsi=neuro.FirstLineWidth( text );
 ysi=neuro.FirstLineHeight( text );
-neuro.Print(text,plotx,ploty); 
+neuro.Print(text,plotx,ploty);
 break;
 case 9:
 xsi=petitdoomblanc.FirstLineWidth( text );
-ysi=petitdoomblanc.FirstLineHeight( text );    
-petitdoomblanc.Print(text,plotx,ploty); 
+ysi=petitdoomblanc.FirstLineHeight( text );
+petitdoomblanc.Print(text,plotx,ploty);
 break;
-case 10: 
+case 10:
 xsi=doomblanc.FirstLineWidth( text );
 ysi=doomblanc.FirstLineHeight( text );
-doomblanc.Print(text,plotx,ploty); 
-break; 
-case 11: 
+doomblanc.Print(text,plotx,ploty);
+break;
+case 11:
 xsi=doom.FirstLineWidth( text );
 ysi=doom.FirstLineHeight( text );
-doom.Print(text,plotx,ploty); 
+doom.Print(text,plotx,ploty);
 break;
-case 12:  
+case 12:
 xsi=doomrouge.FirstLineWidth( text );
 ysi=doomrouge.FirstLineHeight( text );
-doomrouge.Print(text,plotx,ploty); 
-break; 
+doomrouge.Print(text,plotx,ploty);
+break;
 case 13:
 xsi=neuroTitle.FirstLineWidth( text );
-ysi=neuroTitle.FirstLineHeight( text );    
-neuroTitle.Print(text,plotx,ploty); 
+ysi=neuroTitle.FirstLineHeight( text );
+neuroTitle.Print(text,plotx,ploty);
 break;
 default:
 break;
@@ -3155,27 +3196,27 @@ break;
 if(isselected==1)
 {
 Rect BoxB(Vec2D(plotx,ploty-ysi),Vec2D(xsi,ysi));
-BoxB.DrawOutline(CouleurBlind);              
+BoxB.DrawOutline(CouleurBlind);
 }
 if( index_edit_light_plot==1 && index_menus_lighting_plot==1)//visualition du centre projo
 {
 Line(Vec2D(plotx-5,ploty-5),Vec2D(plotx+5,ploty+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx+5,ploty-5),Vec2D(plotx-5,ploty+5)).Draw(CouleurBlind);             
+Line(Vec2D(plotx+5,ploty-5),Vec2D(plotx-5,ploty+5)).Draw(CouleurBlind);
 }
 
 
-return(0);   
-}    
+return(0);
+}
 
 int plot_shape_list(int plotx,int ploty)
 {
 
 Rect PlotSymbList(Vec2D(plotx,ploty),Vec2D(205,140));
-PlotSymbList.SetRoundness(15); 
+PlotSymbList.SetRoundness(15);
 PlotSymbList.Draw(CouleurBleuProcedure.WithAlpha(0.3));
-PlotSymbList.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+PlotSymbList.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 
-Rect UnderName(Vec2D(plotx+10,ploty+5),Vec2D(185,20));   
+Rect UnderName(Vec2D(plotx+10,ploty+5),Vec2D(185,20));
 UnderName.SetRoundness(5);
 switch(index_edit_symbol_plot)
 {
@@ -3186,7 +3227,7 @@ case 1:
 UnderName.Draw(CouleurSurvol);
 break;
 }
-UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 petitchiffrenoir.Print(shape_nickname[shape_selected_type],plotx+12,ploty+18);
 //up
 Line(Vec2D(plotx+12,ploty+50),Vec2D(plotx+28,ploty+50)).Draw(CouleurPlotLine);
@@ -3200,7 +3241,7 @@ Line(Vec2D(plotx+12,ploty+50),Vec2D(plotx+28,ploty+50)).Draw(CouleurBlind);
 Line(Vec2D(plotx+12,ploty+50),Vec2D(plotx+20,ploty+36)).Draw(CouleurBlind);
 Line(Vec2D(plotx+28,ploty+50),Vec2D(plotx+20,ploty+36)).Draw(CouleurBlind);
 show_type_midi(1596,"Plot List Up");
-}    
+}
 
 
 //down
@@ -3216,7 +3257,7 @@ Line(Vec2D(plotx+12,ploty+69),Vec2D(plotx+28,ploty+69)).Draw(CouleurBlind);
 Line(Vec2D(plotx+12,ploty+69),Vec2D(plotx+20,ploty+83)).Draw(CouleurBlind);
 Line(Vec2D(plotx+28,ploty+69),Vec2D(plotx+20,ploty+83)).Draw(CouleurBlind);
 show_type_midi(1597,"Plot List Down");
-}    
+}
 
 
 Rect SliderSel(Vec2D(plotx+3,ploty+30),Vec2D(5,64));
@@ -3229,19 +3270,19 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+3 && mouse_x<plotx+8 && mouse_y>plot
 {
 SliderSel.DrawOutline(CouleurBlind);
 show_type_midi(1598,"Plot List CC");
-}   
+}
 
 Rect add_symbol_frame(Vec2D(plotx+40,ploty+110),Vec2D(80,20));
-add_symbol_frame.SetRoundness(5); 
-add_symbol_frame.DrawOutline(CouleurPlotLine);   
+add_symbol_frame.SetRoundness(5);
+add_symbol_frame.DrawOutline(CouleurPlotLine);
 petitchiffrenoir.Print("Add To Plot",plotx+45,ploty+122);
 petitchiffrenoir.Print(ol::ToString(nbre_shapes_on_plot),plotx+15,ploty+122);
 if(window_focus_id==W_PLOT && mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<ploty+110+20
 &&  Midi_Faders_Affectation_Type!=0)
 {
-add_symbol_frame.DrawOutline(CouleurBlind);  
+add_symbol_frame.DrawOutline(CouleurBlind);
 show_type_midi(1600,"Plot Add Symbol");
-}  
+}
 
 //affichage shape
 switch(shape_selected_type)
@@ -3249,22 +3290,22 @@ switch(shape_selected_type)
 case 0:    //curtain
 plot_draw_shape_curtain(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/5 ,  1.0,color_pattern_selected, 0);
 break;
-case 1:     //ligne  plain                    
+case 1:     //ligne  plain
 plot_draw_shape_line(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/10 ,  1.0, color_pattern_selected , 0);
 break;
 case 2:     //stripline 1               int plotx1, int ploty1, int plotx2, int ploty2, float sizeshape,  float alphag, short typeofline,col pattern, bool isselected, bool edit extrem)
 plot_draw_shape_stripline(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/10 ,1.0, 0,  color_pattern_selected ,0, 1);
 break;
-case 3:     //stripline 2                 
+case 3:     //stripline 2
 plot_draw_shape_stripline(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/10 ,1.0, 1,  color_pattern_selected ,0, 1);
 break;
-case 4:     //stripline 3                 
+case 4:     //stripline 3
 plot_draw_shape_stripline(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/10 ,1.0, 2,  color_pattern_selected ,0, 1);
 break;
-case 5:     //stripline 4                 
+case 5:     //stripline 4
 plot_draw_shape_stripline(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/10 ,1.0, 3, color_pattern_selected , 0, 1);
 break;
-case 6:     //stripline 5                 
+case 6:     //stripline 5
 plot_draw_shape_stripline(plotx+50, ploty+55 , plotx+200, ploty+55, general_shape_size_to_apply/10 ,1.0, 4,  color_pattern_selected ,0, 1);
 break;
 case 7://plot_draw_rectangle(int plotx1, int ploty1, int shapesizex, int shapesizey, float shaperotation, float alphashape,  int colorpattern, bool isselected)
@@ -3280,7 +3321,7 @@ case 10://polygon int plotx1, int ploty1, float sizeshape, float shaperotation,i
 plot_draw_polygon(plotx+120,ploty+60, 40,angle_shape_selected,nbre_branches_polygon, 1.0, color_pattern_selected,0);
 break;
 case 11://(int plotx,int ploty, float fontsize,int fonttype,  char *text,float alphatext, bool isselected)
-plot_draw_text(plotx+120,ploty+60,(int)general_shape_size_to_apply,fonttype_selected,"TEXT",1.0, 0);     
+plot_draw_text(plotx+120,ploty+60,(int)general_shape_size_to_apply,fonttype_selected,"TEXT",1.0, 0);
 break;
 default:
 break;
@@ -3291,12 +3332,12 @@ BSel.SetRoundness(4);
 BSel.DrawOutline(CouleurPlotLine);
 if(window_focus_id==W_PLOT && mouse_x>plotx+130 && mouse_x<plotx+195 && mouse_y>ploty+105 && mouse_y<ploty+133)
 {
-BSel.DrawOutline(CouleurPlotFill.WithAlpha(0.5));                     
+BSel.DrawOutline(CouleurPlotFill.WithAlpha(0.5));
 }
 petitchiffrenoir.Print("Select ID",plotx+135,ploty+115);
 petitchiffrenoir.Print(ol::ToString(shape_id_to_select),plotx+150,ploty+127);
 
-return(0);   
+return(0);
 }
 
 
@@ -3304,9 +3345,9 @@ return(0);
 int shape_edition(int plotx, int ploty)
 {
 Rect PlotShEd(Vec2D(plotx,ploty),Vec2D(200,400));
-PlotShEd.SetRoundness(15); 
+PlotShEd.SetRoundness(15);
 PlotShEd.Draw(CouleurBleuProcedure.WithAlpha(0.4));
-PlotShEd.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+PlotShEd.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 petitchiffrenoir.Print("SELECTED SHAPES:",plotx+10,ploty+15);
 Line(Vec2D(plotx+10,ploty+20),Vec2D(plotx+130,ploty+20)).Draw(CouleurPlotLine);
 
@@ -3323,7 +3364,7 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+10 && mouse_x<plotx+110 && mouse_y>p
 {
 RotateFrame.DrawOutline(CouleurBlind);
 show_type_midi(1601,"Plot Rotate");
-}    
+}
 
 Rect OverRot(Vec2D(plotx+76,ploty+22),Vec2D(60,15));
 OverRot.SetRoundness(4);
@@ -3342,8 +3383,8 @@ AnglePos.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 if(window_focus_id==W_PLOT && mouse_x>plotx+140+(c*15) && mouse_x<plotx+150+(c*15) && mouse_y>ploty+10+(l*15) && mouse_y<ploty+20+(l*15) )
 {
 AnglePos.Draw(CouleurFader);
-}    
-}            
+}
+}
 }
 AnglePos.MoveTo(Vec2D(plotx+155,ploty+25));
 AnglePos.Draw(CouleurPlotFill);
@@ -3365,17 +3406,17 @@ MySymbAction.Draw(CouleurPlotLine.WithAlpha(0.5));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && index_click_inside_relativ_xy==0
 && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) && mouse_y>ploty+60+(l*20) && mouse_y<ploty+78+(l*20))
 {
-MySymbAction.DrawOutline(CouleurLigne.WithAlpha(0.5));                           
+MySymbAction.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 switch(c+(l*3))
 {
 case 0:
-if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) && mouse_y>ploty+60+(l*20) && mouse_y<ploty+78+(l*20) 
+if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) && mouse_y>ploty+60+(l*20) && mouse_y<ploty+78+(l*20)
 && Midi_Faders_Affectation_Type!=0)
 {
 MySymbAction.DrawOutline(CouleurBlind);
 show_type_midi(1602,"Plot Dub");
-}    
+}
 petitchiffre.Print("Dub",plotx+20+(c*65),ploty+72+(l*20));
 break;
 case 1:
@@ -3384,7 +3425,7 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) 
 {
 MySymbAction.DrawOutline(CouleurBlind);
 show_type_midi(1603,"Plot Delete");
-}    
+}
 petitchiffre.Print("Delete",plotx+10+(c*65),ploty+72+(l*20));
 break;
 case 2:
@@ -3393,21 +3434,21 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) 
 {
 MySymbAction.DrawOutline(CouleurBlind);
 show_type_midi(1604,"Plot Unselect");
-}    
+}
 petitchiffre.Print("UnSelect",plotx+7+(c*65),ploty+72+(l*20));
-break;  
+break;
 case 3:
 petitchiffre.Print("Down",plotx+15+(c*65),ploty+72+(l*20));
-break;     
+break;
 case 4:
 petitchiffre.Print("Top",plotx+22+(c*65),ploty+72+(l*20));
 break;
 case 5:
-petitchiffre.Print("Grp/unGr.",plotx+7+(c*65),ploty+72+(l*20));     
-break;     
+petitchiffre.Print("Grp/unGr.",plotx+7+(c*65),ploty+72+(l*20));
+break;
 default:
-break;   
-}         
+break;
+}
 }
 }
 
@@ -3417,7 +3458,7 @@ MySymbAlign.SetRoundness(5);
 for(int c=0;c<4;c++)
 {
  MySymbAlign.MoveTo(Vec2D(plotx+10+(c*45),ploty+110));
- MySymbAlign.Draw(CouleurBleuProcedure.WithAlpha(0.5));        
+ MySymbAlign.Draw(CouleurBleuProcedure.WithAlpha(0.5));
  switch(c)
 {
 case 0:
@@ -3428,13 +3469,13 @@ petitchiffre.Print("AlignY",plotx+10+(c*45),ploty+122);
 break;
 case 2:
 petitchiffre.Print("<-X->",plotx+15+(c*45),ploty+122);
-break;     
+break;
 case 3:
 petitchiffre.Print("<-Y->",plotx+15+(c*45),ploty+122);
-break;           
+break;
 default:
-break;   
-} 
+break;
+}
 }
 
 petitchiffrenoir.Print("Shape General Size",plotx+10,ploty+147);
@@ -3459,7 +3500,7 @@ case 1:
 symbol_sizer_level.Draw(CouleurFader);
 break;
 }
-symbol_sizer_frame.DrawOutline(CouleurPlotLine); 
+symbol_sizer_frame.DrawOutline(CouleurPlotLine);
 
 Rect MySHBox(Vec2D(0,0),Vec2D(45,20));
 MySHBox.SetRoundness(5);
@@ -3487,7 +3528,7 @@ MySHBox.Draw(CouleurBleuProcedure);
 break;
 default:
 break;
-}                         
+}
 }
 else
 {
@@ -3519,13 +3560,13 @@ petitchiffrenoir.Print("Size X",plotx+10,ploty+225);
 MySHBox.MoveTo(Vec2D(plotx+10,ploty+230));
 MySHBox.Draw(CouleurPlotLine.WithAlpha(0.4));
 MySHBox.Draw(CouleurFader.WithAlpha(index_adjusting_shape_x));
-petitchiffrenoir.Print(ol::ToString(shape_rect_size_x),plotx+15,ploty+242);     
+petitchiffrenoir.Print(ol::ToString(shape_rect_size_x),plotx+15,ploty+242);
 petitchiffrenoir.Print("Size Y",plotx+100,ploty+225);
 MySHBox.MoveTo(Vec2D(plotx+100,ploty+230));
 MySHBox.Draw(CouleurPlotLine.WithAlpha(0.4));
 MySHBox.Draw(CouleurFader.WithAlpha(index_adjusting_shape_y));
-petitchiffrenoir.Print(ol::ToString(shape_rect_size_y),plotx+105,ploty+242);  
-break;                           
+petitchiffrenoir.Print(ol::ToString(shape_rect_size_y),plotx+105,ploty+242);
+break;
 case 8://circle
 petitchiffrenoir.Print("Color Pattern",plotx+10,ploty+185);
 petitchiffrenoir.Print(ol::ToString(color_pattern_selected),plotx+100,ploty+185);
@@ -3603,13 +3644,13 @@ break;
 petitchiffrenoir.Print("Polygon Number of Points",plotx+10,ploty+225);
 MySHBox.MoveTo(Vec2D(plotx+10,ploty+230));
 MySHBox.Draw(CouleurPlotLine.WithAlpha(0.4));
-petitchiffrenoir.Print(ol::ToString(nbre_branches_polygon),plotx+15,ploty+242);    
+petitchiffrenoir.Print(ol::ToString(nbre_branches_polygon),plotx+15,ploty+242);
 break;
 case 11:
 petitchiffrenoir.Print("Font Number",plotx+10,ploty+225);
 MySHBox.MoveTo(Vec2D(plotx+10,ploty+230));
 MySHBox.Draw(CouleurPlotLine.WithAlpha(0.4));
-petitchiffrenoir.Print(ol::ToString(fonttype_selected),plotx+15,ploty+242);    
+petitchiffrenoir.Print(ol::ToString(fonttype_selected),plotx+15,ploty+242);
 break;
 default:
 break;
@@ -3624,11 +3665,11 @@ petitchiffrenoir.Print(ol::ToString(index_last_shape_selected),plotx+135,ploty+2
 Rect PlotOptionsEdit_Long(Vec2D(plotx+10,ploty+275),Vec2D(175,18));
 PlotOptionsEdit_Long.SetRoundness(3);
 PlotOptionsEdit_Long.Draw(CouleurPlotFill.WithAlpha(0.3));
-PlotOptionsEdit_Long.DrawOutline(CouleurPlotLine);         
+PlotOptionsEdit_Long.DrawOutline(CouleurPlotLine);
 
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+10 && mouse_x<plotx+185 && mouse_y>ploty+275 && mouse_y<ploty+293)
 {
-PlotOptionsEdit_Long.DrawOutline(CouleurPlotFill.WithAlpha(0.9));                           
+PlotOptionsEdit_Long.DrawOutline(CouleurPlotFill.WithAlpha(0.9));
 }
 petitchiffrenoir.Print(shape_legend_name[index_last_shape_selected],plotx+15,ploty+287);
 
@@ -3638,7 +3679,7 @@ AeraDrawAdjust.DrawOutline(CouleurPlotLine.WithAlpha(0.3));
 
 if(index_click_inside_relativ_xy==1 )
 {
-AeraDrawAdjust.SetLineWidth(2.0);                                    
+AeraDrawAdjust.SetLineWidth(2.0);
 AeraDrawAdjust.DrawOutline(CouleurFader);
 AeraDrawAdjust.Draw(CouleurBlind.WithAlpha(0.3));
 sprintf(TextPlot,"%d . %d",rlativ_xm,rlativ_ym);
@@ -3654,7 +3695,7 @@ Rect ShapeLevel(Vec2D(plotx+5,ploty+380),Vec2D((general_alpha_for_shape*100),10)
 ShapeLevel.Draw(CouleurPlotLine);
 ShapeFrame.DrawOutline(CouleurPlotLine);
 
- return(0);   
+ return(0);
 }
 
 int symbol_edition_options(int plotx, int ploty)
@@ -3678,7 +3719,7 @@ PlotOptionView.MoveTo(Vec2D(plotx+5,ploty+70+(20*l)));
 PlotOptionView.DrawOutline(CouleurPlotLine);
 switch(l)
 {
-case 0: 
+case 0:
 sprintf(TextPlot,"CHANNEL");
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+100,ploty+65+(20*l)));
 PlotOptionsEdit_Little.Draw(CouleurPlotLine.WithAlpha(0.2));
@@ -3686,27 +3727,27 @@ petitchiffrenoir.Print(ol::ToString(symbol_channel_is[view_plot_calc_number_is][
 
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+100 && mouse_x<plotx+150 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+83+(20*l) )
 {
-PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));                            
+PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 break;
-case 1: 
+case 1:
 sprintf(TextPlot,"");
 PlotOptionsEdit_Long.MoveTo(Vec2D(plotx+20,ploty+65+(20*l)));
 PlotOptionsEdit_Long.Draw(CouleurPlotLine.WithAlpha(0.2));
 petitchiffrenoir.Print( descriptif_projecteurs[(symbol_channel_is[view_plot_calc_number_is][last_selected_symbol_is])],plotx+25,ploty+78+(20*l));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+20 && mouse_x<plotx+195 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+83+(20*l) )
 {
-PlotOptionsEdit_Long.DrawOutline(CouleurLigne.WithAlpha(0.5));                            
+PlotOptionsEdit_Long.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 break;
-case 2: 
+case 2:
 sprintf(TextPlot,"GEL 1:");
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+70,ploty+65+(20*l)));
 PlotOptionsEdit_Little.Draw(CouleurPlotLine.WithAlpha(0.2));
 petitchiffrenoir.Print(ol::ToString(gelat[view_plot_calc_number_is][last_selected_symbol_is][0]),plotx+75,ploty+78+(20*l));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+70 && mouse_x<plotx+120 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+83+(20*l) )
 {
-PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));                            
+PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+130,ploty+65+(20*l)));
 switch(gelat_family[view_plot_calc_number_is][last_selected_symbol_is][0])
@@ -3728,18 +3769,18 @@ sprintf(gelat_marque,"Apollo");
 PlotOptionsEdit_Little.Draw(CouleurSelection.WithAlpha(0.5));
 break;
 default:
-break;                                                                       
+break;
 }
 petitchiffrenoir.Print(gelat_marque,plotx+135,ploty+78+(20*l));
 break;
-case 3: 
+case 3:
 sprintf(TextPlot,"GEL 2:");
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+70,ploty+65+(20*l)));
 PlotOptionsEdit_Little.Draw(CouleurPlotLine.WithAlpha(0.2));
 petitchiffrenoir.Print(ol::ToString(gelat[view_plot_calc_number_is][last_selected_symbol_is][1]),plotx+75,ploty+78+(20*l));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+70 && mouse_x<plotx+120 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+83+(20*l) )
 {
-PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));                            
+PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+130,ploty+65+(20*l)));
 switch(gelat_family[view_plot_calc_number_is][last_selected_symbol_is][1])
@@ -3761,19 +3802,19 @@ sprintf(gelat_marque,"Apollo");
 PlotOptionsEdit_Little.Draw(CouleurSelection.WithAlpha(0.5));
 break;
 default:
-break;                                                                       
+break;
 }
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+130,ploty+65+(20*l)));
 petitchiffrenoir.Print(gelat_marque,plotx+135,ploty+78+(20*l));
 break;
-case 4: 
+case 4:
 sprintf(TextPlot,"GEL 3:");
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+70,ploty+65+(20*l)));
 PlotOptionsEdit_Little.Draw(CouleurPlotLine.WithAlpha(0.2));
 petitchiffrenoir.Print(ol::ToString(gelat[view_plot_calc_number_is][last_selected_symbol_is][2]),plotx+75,ploty+78+(20*l));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+70 && mouse_x<plotx+120 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+83+(20*l) )
 {
-PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));                            
+PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+130,ploty+65+(20*l)));
 switch(gelat_family[view_plot_calc_number_is][last_selected_symbol_is][2])
@@ -3795,17 +3836,17 @@ sprintf(gelat_marque,"Apollo");
 PlotOptionsEdit_Little.Draw(CouleurSelection.WithAlpha(0.5));
 break;
 default:
-break;                                                                       
+break;
 }
 petitchiffrenoir.Print(gelat_marque,plotx+135,ploty+78+(20*l));
 break;
-case 5: 
+case 5:
 sprintf(TextPlot,"DIMMER:");
 PlotOptionsEdit_Little.MoveTo(Vec2D(plotx+100,ploty+65+(20*l)));
 PlotOptionsEdit_Little.Draw(CouleurPlotLine.WithAlpha(0.2));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>plotx+100 && mouse_x<plotx+150 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+83+(20*l))
 {
-PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));                            
+PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 petitchiffrenoir.Print(ol::ToString(symbol_dimmer_is[view_plot_calc_number_is][last_selected_symbol_is]),plotx+105,ploty+78+(20*l));
 break;
@@ -3814,11 +3855,11 @@ sprintf(TextPlot,"SHOW SYMBOL ID");
 break;
 case 7:
 sprintf(TextPlot,"NOTES");
-break;   
+break;
 default:
 sprintf(TextPlot,"-");
-break;        
-}    
+break;
+}
 PlotOptionView.Draw(CouleurPlotLine.WithAlpha(plot_show_options[l]));
 petitchiffrenoir.Print(TextPlot,plotx+25,ploty+78+(20*l));
 }
@@ -3833,7 +3874,7 @@ Not.Draw(CouleurPlotLine.WithAlpha(0.3));
 petitchiffrenoir.Print(symbol_note[view_plot_calc_number_is][last_selected_symbol_is][n],plotx+8,ploty+238+(n*20));
 if(window_focus_id==W_PLOT && mouse_x>plotx+5 && mouse_x<plotx+200 && mouse_y>ploty+225+(n*20) && mouse_y<ploty+243+(n*20))
 {
-Not.DrawOutline(CouleurPlotLine.WithAlpha(0.6));                           
+Not.DrawOutline(CouleurPlotLine.WithAlpha(0.6));
 }
 }
 
@@ -3844,13 +3885,13 @@ SizeNot.DrawOutline(CouleurPlotLine);
 petitchiffrenoir.Print("Size",plotx+115,ploty+218);
 
 //logique
-index_edit_relativ_xy=0;   
+index_edit_relativ_xy=0;
 for(int i=0;i<5;i++)
 {
 if(adjust_xy_type[i]==1)
 {
-index_edit_relativ_xy=1;      
-break;            
+index_edit_relativ_xy=1;
+break;
 }
 }
 //////////// ADJUST origigne y + 215 pour adjust xy
@@ -3864,9 +3905,9 @@ petitchiffrenoir.Print("Adjust XY",plotx+115,ploty+315);
 for(int i=0;i<5;i++)
 {
 PlotOptionView.MoveTo(Vec2D(plotx+5,ploty+320+(20*i)));
-PlotOptionView.Draw(CouleurPlotLine.WithAlpha(adjust_xy_type[i]));                    
+PlotOptionView.Draw(CouleurPlotLine.WithAlpha(adjust_xy_type[i]));
 
-PlotOptionView.DrawOutline(CouleurPlotLine.WithAlpha(0.5));        
+PlotOptionView.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 switch(i)
 {
 case 0:
@@ -3886,12 +3927,12 @@ sprintf(TextPlot,"Notes");
 break;
 default:
 sprintf(TextPlot,"-");
-break;        
-}    
+break;
+}
 if( window_focus_id==W_PLOT && mouse_x>plotx+5 && mouse_x<plotx+15 && mouse_y>ploty+320+(20*i) && mouse_y<ploty+330+(20*i) &&
  Midi_Faders_Affectation_Type!=0)
 {
-PlotOptionView.DrawOutline(CouleurBlind); 
+PlotOptionView.DrawOutline(CouleurBlind);
 
 show_type_midi(1610+i, TextPlot);
 }
@@ -3903,7 +3944,7 @@ AeraDrawAdjust.DrawOutline(CouleurPlotLine.WithAlpha(0.3));
 
 if(index_click_inside_relativ_xy==1 )
 {
-AeraDrawAdjust.SetLineWidth(2.0);                                    
+AeraDrawAdjust.SetLineWidth(2.0);
 AeraDrawAdjust.DrawOutline(CouleurFader);
 
 }
@@ -3920,17 +3961,17 @@ Rect PresetBox(Vec2D(0,0),Vec2D(10,10));
 for(int pr=0;pr<8;pr++)
 {
 PresetBox.MoveTo(Vec2D(plotx+30+(20*pr),ploty+430));
-PresetBox.Draw(CouleurFader.WithAlpha(plot_light_preset_on_click[pr]));     //visu de la sélection du preset  
+PresetBox.Draw(CouleurFader.WithAlpha(plot_light_preset_on_click[pr]));     //visu de la sélection du preset
 if(last_xyrelativ_preset==pr){if(plot_light_preset_on_click[pr]>0.0){plot_light_preset_on_click[pr]-=0.2;}}
-PresetBox.DrawOutline(CouleurPlotLine.WithAlpha(0.5)); 
+PresetBox.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 
-if(window_focus_id==W_PLOT &&  mouse_x>plotx+30+(20*pr) && mouse_x<plotx+40+(20*pr) && mouse_y>ploty+430 && mouse_y<ploty+440 
+if(window_focus_id==W_PLOT &&  mouse_x>plotx+30+(20*pr) && mouse_x<plotx+40+(20*pr) && mouse_y>ploty+430 && mouse_y<ploty+440
  && Midi_Faders_Affectation_Type!=0)
 {
-PresetBox.DrawOutline(CouleurBlind); 
+PresetBox.DrawOutline(CouleurBlind);
 char tmppp[24];
 sprintf(tmppp,"Plot Preset %d",pr+1);
-show_type_midi(1615+pr,tmppp);    
+show_type_midi(1615+pr,tmppp);
 }
 
 
@@ -3948,7 +3989,7 @@ PlotOptionsEdit_LittleM.SetRoundness(3);
 PlotOptionsEdit_LittleM.Draw(CouleurPlotLine.WithAlpha(0.5));
 petitchiffrenoir.Print("Clear Patch !",plotx+115,ploty+463);
 
- return(0);   
+ return(0);
 }
 
 
@@ -3964,8 +4005,8 @@ petitchiffrenoir.Print("Clear Patch !",plotx+115,ploty+463);
 int plot_symbol_edition(int plotx,int ploty)
 {
 Rect PlotSymbEd(Vec2D(plotx,ploty),Vec2D(200,520));
-PlotSymbEd.SetRoundness(15); 
-PlotSymbEd.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+PlotSymbEd.SetRoundness(15);
+PlotSymbEd.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 petitchiffrenoir.Print("SELECTED SYMBOLS:",plotx+10,ploty+15);
 Line(Vec2D(plotx+10,ploty+20),Vec2D(plotx+130,ploty+20)).Draw(CouleurPlotLine);
 
@@ -3982,7 +4023,7 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+10 && mouse_x<plotx+110 && mouse_y>p
 {
 RotateFrame.DrawOutline(CouleurBlind);
 show_type_midi(1601,"Plot Rotate");
-}    
+}
 
 
 
@@ -4002,8 +4043,8 @@ AnglePos.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 if( window_focus_id==W_PLOT && mouse_x>plotx+140+(c*15) && mouse_x<plotx+150+(c*15) && mouse_y>ploty+10+(l*15) && mouse_y<ploty+20+(l*15) )
 {
 AnglePos.Draw(CouleurFader);
-}    
-}            
+}
+}
 }
 AnglePos.MoveTo(Vec2D(plotx+155,ploty+25));
 AnglePos.Draw(CouleurPlotFill);
@@ -4024,7 +4065,7 @@ MySymbAction.Draw(CouleurPlotLine.WithAlpha(0.5));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && index_click_inside_relativ_xy==0
 && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) && mouse_y>ploty+60+(l*20) && mouse_y<ploty+78)
 {
-MySymbAction.DrawOutline(CouleurLigne.WithAlpha(0.5));                           
+MySymbAction.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 
 
@@ -4036,7 +4077,7 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) 
 {
 MySymbAction.DrawOutline(CouleurBlind);
 show_type_midi(1602,"Plot Dub");
-}    
+}
 petitchiffre.Print("Dub",plotx+20+(c*65),ploty+72+(l*20));
 break;
 case 1:
@@ -4045,7 +4086,7 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) 
 {
 MySymbAction.DrawOutline(CouleurBlind);
 show_type_midi(1603,"Plot Delete");
-}         
+}
 petitchiffre.Print("Delete",plotx+10+(c*65),ploty+72+(l*20));
 break;
 case 2:
@@ -4054,22 +4095,22 @@ if(window_focus_id==W_PLOT && mouse_x>plotx+5+(c*65) && mouse_x<plotx+65+(c*65) 
 {
 MySymbAction.DrawOutline(CouleurBlind);
 show_type_midi(1604,"Plot SendTo");
-}    
+}
 MySymbAction.Draw(CouleurFader.WithAlpha(index_plot_send_to_mode));
 petitchiffre.Print("SendTo",plotx+10+(c*65),ploty+72+(l*20));
-break;     
+break;
 case 3:
 petitchiffre.Print("Down",plotx+15+(c*65),ploty+72+(l*20));
-break;     
+break;
 case 4:
 petitchiffre.Print("Top",plotx+22+(c*65),ploty+72+(l*20));
 break;
 case 5:
-petitchiffre.Print("Grp/unGrp",plotx+7+(c*65),ploty+72+(l*20));     
-break;       
+petitchiffre.Print("Grp/unGrp",plotx+7+(c*65),ploty+72+(l*20));
+break;
 default:
-break;   
-}         
+break;
+}
 }
 }
 
@@ -4079,7 +4120,7 @@ Rect MySymbAlign(Vec2D(plotx+5,ploty+80),Vec2D(40,18));
 for(int c=0;c<4;c++)
 {
  MySymbAlign.MoveTo(Vec2D(plotx+10+(c*45),ploty+110));
- MySymbAlign.Draw(CouleurBleuProcedure.WithAlpha(0.5));        
+ MySymbAlign.Draw(CouleurBleuProcedure.WithAlpha(0.5));
  switch(c)
 {
 case 0:
@@ -4090,13 +4131,13 @@ petitchiffre.Print("AlignY",plotx+10+(c*45),ploty+122);
 break;
 case 2:
 petitchiffre.Print("<-X->",plotx+15+(c*45),ploty+122);
-break;     
+break;
 case 3:
 petitchiffre.Print("<-Y->",plotx+15+(c*45),ploty+122);
-break;           
+break;
 default:
-break;   
-} 
+break;
+}
 }
 return(0);
 }
@@ -4104,9 +4145,9 @@ return(0);
 int plot_menu_bar(int plotx, int ploty)
 {
 Rect edit_frame(Vec2D(plotx,ploty),Vec2D(35,20));
-edit_frame.SetRoundness(5); 
+edit_frame.SetRoundness(5);
 edit_frame.Draw(CouleurBlind.WithAlpha(index_edit_light_plot));
-edit_frame.DrawOutline(CouleurPlotLine);   
+edit_frame.DrawOutline(CouleurPlotLine);
 petitchiffrenoir.Print("Edit",plotx+5,ploty+12);
 
 Rect LayerNum(Vec2D(plotx+45,ploty),Vec2D(10,10));
@@ -4115,19 +4156,19 @@ for(int i=0;i<4;i++)
 LayerNum.MoveTo(Vec2D(plotx+45+(i*15),ploty-5));
 LayerNum.DrawOutline(CouleurPlotLine);
 if(show_calc_number[i]==1)
-{LayerNum.Draw(CouleurFader);} 
+{LayerNum.Draw(CouleurFader);}
 
 if( window_focus_id==W_PLOT && mouse_x>plotx+45+(i*15) && mouse_x<plotx+55+(i*15) && mouse_y>ploty-5 && mouse_y<ploty+5 &&
  Midi_Faders_Affectation_Type!=0)
 {
-LayerNum.DrawOutline(CouleurBlind); 
+LayerNum.DrawOutline(CouleurBlind);
 char tmmppp[24];
 sprintf(tmmppp,"Plot Layer %d", i+1);
 show_type_midi(1605+i,  tmmppp);
 }
 LayerNum.MoveTo(Vec2D(plotx+45+(i*15),ploty+10));
 if(view_plot_calc_number_is==i)
-{LayerNum.Draw(CouleurPlotLine);} 
+{LayerNum.Draw(CouleurPlotLine);}
 LayerNum.DrawOutline(CouleurLigne.WithAlpha(0.3));
 
 }
@@ -4139,8 +4180,8 @@ LayerNum.DrawOutline(CouleurPlotLine);
 if( window_focus_id==W_PLOT && mouse_x>plotx+110 && mouse_x<plotx+120 && mouse_y>ploty+2 && mouse_y<ploty+12 &&
 Midi_Faders_Affectation_Type!=0)
 {
- LayerNum.DrawOutline(CouleurBlind);    
- show_type_midi(1609, "Plot Layer mode");                 
+ LayerNum.DrawOutline(CouleurBlind);
+ show_type_midi(1609, "Plot Layer mode");
 }
 
 
@@ -4154,21 +4195,21 @@ switch(index_menus_lighting_plot)
 {
 case 0:
      petitchiffre.Print("BACKGROUND",plotx+140,ploty+10);
-break;     
+break;
 case 1:
      petitchiffre.Print("SHAPES",plotx+157,ploty+10);
-break;        
+break;
 case 2:
      petitchiffre.Print("SYMBOLS",plotx+150,ploty+10);
-break;  
+break;
 case 3:
      petitchiffre.Print("LEGEND",plotx+160,ploty+10);
-break;     
+break;
 case 4:
-     petitchiffre.Print("THE PLOT",plotx+155,ploty+10); 
+     petitchiffre.Print("THE PLOT",plotx+155,ploty+10);
 break;
 default:
-break;                 
+break;
 }
 
 
@@ -4200,10 +4241,10 @@ if(index_menus_lighting_plot!=4)
 Canvas::SetClipping(plotx,ploty-10,plot_window_x_size-position_plan_x,ploty+50);
 Rect Export(Vec2D(plotx+620,ploty-5),Vec2D(100,20));
 Export.SetRoundness(5);
-if(index_show_button_export>0.0){index_show_button_export-=0.1; if(index_show_button_export<0.0){index_show_button_export=0.0;}}  
-             
+if(index_show_button_export>0.0){index_show_button_export-=0.1; if(index_show_button_export<0.0){index_show_button_export=0.0;}}
+
 Export.Draw(CouleurFader.WithAlpha(index_show_button_export));
-  
+
 Export.DrawOutline(CouleurPlotLine);
 petitchiffrenoir.Print("Export View As",plotx+625,ploty+8);
 
@@ -4212,14 +4253,14 @@ NameExport.SetRoundness(5);
 NameExport.Draw(CouleurBleuProcedure.WithAlpha(0.2));
 if(window_focus_id==W_PLOT && mouse_x>plotx+730 && mouse_x<plotx+950 && mouse_x<plotx+plot_window_x_size-position_plan_x && mouse_y>ploty-5 && mouse_y<ploty+15)
 {
- NameExport.DrawOutline(CouleurLigne.WithAlpha(0.5));                      
+ NameExport.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 petitchiffrenoir.Print( plot_name_of_capture, plotx+730+5,ploty+8);
 Canvas::DisableClipping();
 }
 
 
-return(0);   
+return(0);
 }
 
 
@@ -4244,10 +4285,10 @@ OverFile.SetRoundness(7.5);
 if(strcmp( Name_of_plane_is,list_import_plans[importplan_selected])==0 && (importplan_selected==(y+line_importplan)))
 {OverFile.Draw(CouleurFond.WithAlpha(0.5));}
 
-petitchiffrenoir.Print(list_import_plans[line_importplan+y],xrep+10,yrep+187+(y*20));    
+petitchiffrenoir.Print(list_import_plans[line_importplan+y],xrep+10,yrep+187+(y*20));
 if(window_focus_id==W_PLOT &&  index_editing_theatre_plan==0 && mouse_x>xrep+5 && mouse_x<xrep+155 && mouse_y>(yrep+175+(y*20)) && mouse_y<(yrep+190+(y*20)))
 {
-OverFile.DrawOutline(CouleurLigne);                  
+OverFile.DrawOutline(CouleurLigne);
 }
 
 }
@@ -4273,7 +4314,7 @@ petitchiffre.Print("Rescan !",xrep+155,yrep+357);
 
 if( window_focus_id==W_PLOT &&  index_editing_theatre_plan==0 && mouse_x>xrep+150 && mouse_x<xrep+210 && mouse_y>(yrep+345) && mouse_y<(yrep+365))
 {
-BoutonRescan.DrawOutline(CouleurLigne);    
+BoutonRescan.DrawOutline(CouleurLigne);
 }
 
 return(0);
@@ -4283,9 +4324,9 @@ int menu_plan(int plotx, int ploty)
 {
 
 Rect PlotSymbList(Vec2D(plotx,ploty),Vec2D(205,220));
-PlotSymbList.SetRoundness(15); 
-PlotSymbList.Draw(CouleurBleuProcedure.WithAlpha(0.4)); 
-PlotSymbList.DrawOutline(CouleurPlotLine.WithAlpha(0.4));    
+PlotSymbList.SetRoundness(15);
+PlotSymbList.Draw(CouleurBleuProcedure.WithAlpha(0.4));
+PlotSymbList.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 
 
 petitchiffrenoir.Print("BACKGROUND:",plotx+10,ploty+15);
@@ -4296,7 +4337,7 @@ petitchiffrenoir.Print("Theatre Picture",plotx+5,ploty+40);
 petitchiffrenoir.Print("Ratio:",plotx+110,ploty+40);
 petitchiffrenoir.Print(ol::ToString(ratio_lock_plot_scale),plotx+150,ploty+40);
 
-Rect UnderName(Vec2D(plotx+5,ploty+50),Vec2D(190,20));   
+Rect UnderName(Vec2D(plotx+5,ploty+50),Vec2D(190,20));
 UnderName.SetRoundness(5);
 UnderName.Draw(CouleurFond);
 Canvas::SetClipping( plotx+5,ploty+50,plotx+195,ploty+70);
@@ -4309,38 +4350,38 @@ GridBGSelector.SetRoundness(3.0);
 for(int i=0;i<4;i++)
 {
 
-GridBGSelector.MoveTo(Vec2D(plotx+5+(50*i),ploty+90));       
-GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));  
+GridBGSelector.MoveTo(Vec2D(plotx+5+(50*i),ploty+90));
+GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
 
 if(window_focus_id==W_PLOT && mouse_x>plotx+5+(50*i) && mouse_x<plotx+50+(50*i) && mouse_y>ploty+90 && mouse_y<ploty+110)
 {GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.3));}
 
 if(i+1==editing_plan_data_type)
 {
-GridBGSelector.Draw(CouleurFader);                               
+GridBGSelector.Draw(CouleurFader);
 }
 switch(i)
 {
 case 0:
 petitchiffrenoir.Print("X",plotx+20+(50*i),ploty+85);
 sprintf(coodr,"%d",position_relative_plan_theatre[0]);
-break; 
+break;
 case 1:
 petitchiffrenoir.Print("Y",plotx+20+(50*i),ploty+85);
 sprintf(coodr,"%d",position_relative_plan_theatre[1]);
-break;            
+break;
 case 2:
 petitchiffrenoir.Print("Scale X",plotx+5+(50*i),ploty+85);
 sprintf(coodr,"%d",taille_relative_plan_theatre[0]);
-break;        
+break;
 case 3:
 petitchiffrenoir.Print("Scale Y",plotx+5+(50*i),ploty+85);
 sprintf(coodr,"%d",taille_relative_plan_theatre[1]);
-break;     
+break;
 default:
-break;  
-}    
-petitchiffrenoir.Print(coodr, plotx+15+(50*i), ploty+102);  
+break;
+}
+petitchiffrenoir.Print(coodr, plotx+15+(50*i), ploty+102);
 }
 
 Line(Vec2D(plotx+130,ploty+110),Vec2D(plotx+130,ploty+115)).Draw(CouleurPlotLine);
@@ -4372,14 +4413,14 @@ AnglePos.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 if(window_focus_id==W_PLOT &&  mouse_x>plotx+140+(c*15) && mouse_x<plotx+150+(c*15) && mouse_y>ploty+125+(l*15) && mouse_y<ploty+135+(l*15) )
 {
 AnglePos.Draw(CouleurFader);
-}    
-}            
+}
+}
 }
 AnglePos.MoveTo(Vec2D(plotx+155,ploty+140));
 AnglePos.Draw(CouleurPlotFill);
 AnglePos.DrawOutline(CouleurPlotFill);
-AnglePos.Draw(CouleurBleuProcedure.WithAlpha(0.4)); 
-AnglePos.DrawOutline(CouleurBleuProcedure.WithAlpha(0.4)); 
+AnglePos.Draw(CouleurBleuProcedure.WithAlpha(0.4));
+AnglePos.DrawOutline(CouleurBleuProcedure.WithAlpha(0.4));
 //alpha plan
 petitchiffrenoir.Print("Alpha Picture",plotx+5,ploty+170);
 petitchiffrenoir.Print(ol::ToString(alpha_plan),plotx+95,ploty+170);
@@ -4401,14 +4442,14 @@ GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
 switch(plot_grid_type)
 {
 case 0:
-petitchiffrenoir.Print("Dots",plotx+105,ploty+210);    
+petitchiffrenoir.Print("Dots",plotx+105,ploty+210);
 break;
 case 1:
-petitchiffrenoir.Print("Line",plotx+105,ploty+210);    
-break;                      
+petitchiffrenoir.Print("Line",plotx+105,ploty+210);
+break;
 }
 
-petitchiffrenoir.Print("Alpha Grid",plotx+145,ploty+195);  
+petitchiffrenoir.Print("Alpha Grid",plotx+145,ploty+195);
 
 Rect AlphaG(Vec2D(plotx+150,ploty+200),Vec2D(50,10));
 AlphaG.DrawOutline(CouleurPlotLine);
@@ -4421,35 +4462,35 @@ deroule_repertoire_plans(plotx-5,ploty+80,"Plans");
 //taille de la fenetre
 
 Rect PlotSize(Vec2D(plotx,ploty+450),Vec2D(205,65));
-PlotSize.SetRoundness(7.5); 
-PlotSize.Draw(CouleurBleuProcedure.WithAlpha(0.4)); 
-PlotSize.DrawOutline(CouleurPlotLine.WithAlpha(0.4));  
+PlotSize.SetRoundness(7.5);
+PlotSize.Draw(CouleurBleuProcedure.WithAlpha(0.4));
+PlotSize.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 
 petitchiffrenoir.Print("Plot Window:",plotx+10,ploty+465);
 
-GridBGSelector.MoveTo(Vec2D(plotx+5,ploty+480)); 
-GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));  
+GridBGSelector.MoveTo(Vec2D(plotx+5,ploty+480));
+GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
 petitchiffrenoir.Print("Size X",plotx+7,ploty+478);
 if(window_focus_id==W_PLOT && mouse_x>plotx+5 && mouse_x<plotx+45 && mouse_y>ploty+480 && mouse_y<ploty+500)
 {
-GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.5));                     
+GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
-if(editing_plot_sizex==1){GridBGSelector.Draw(CouleurFader);}     
+if(editing_plot_sizex==1){GridBGSelector.Draw(CouleurFader);}
 petitchiffrenoir.Print(ol::ToString(plot_window_x_size),plotx+10,ploty+493);
 
 
-GridBGSelector.MoveTo(Vec2D(plotx+55,ploty+480)); 
+GridBGSelector.MoveTo(Vec2D(plotx+55,ploty+480));
 GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
-petitchiffrenoir.Print("Size Y",plotx+7+50,ploty+478);  
+petitchiffrenoir.Print("Size Y",plotx+7+50,ploty+478);
 if(window_focus_id==W_PLOT && mouse_x>plotx+55 && mouse_x<plotx+95 && mouse_y>ploty+480 && mouse_y<ploty+500)
 {
-GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.5));                     
+GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 if(editing_plot_sizey==1){GridBGSelector.Draw(CouleurFader);}
-petitchiffrenoir.Print(ol::ToString(plot_window_y_size),plotx+60,ploty+493);   
+petitchiffrenoir.Print(ol::ToString(plot_window_y_size),plotx+60,ploty+493);
 
 
-GridBGSelector.MoveTo(Vec2D(plotx+105,ploty+480)); 
+GridBGSelector.MoveTo(Vec2D(plotx+105,ploty+480));
 GridBGSelector.Draw(CouleurPlotFill);
 GridBGSelector.DrawOutline(CouleurLigne);
 if(plot_editing_color_background==1)
@@ -4457,14 +4498,14 @@ if(plot_editing_color_background==1)
 petitchiffrenoir.Print("BkgCol",plotx+107,ploty+478);
 
 
-GridBGSelector.MoveTo(Vec2D(plotx+155,ploty+480)); 
+GridBGSelector.MoveTo(Vec2D(plotx+155,ploty+480));
 GridBGSelector.Draw(CouleurPlotLine);
 GridBGSelector.DrawOutline(CouleurLigne);
 if(plot_editing_color_line==1)
 {GridBGSelector.Draw(CouleurFader);}
 petitchiffrenoir.Print("LineCol",plotx+157,ploty+478);
 
- return(0);   
+ return(0);
 }
 
 
@@ -4488,7 +4529,7 @@ plot_draw_shape_stripline(plotx+(i*plot_quadrillage_size)+reliquatx,ploty,plotx+
 break;
 case 1:
 Line
-(Vec2D(plotx+(i*plot_quadrillage_size)+reliquatx,ploty),Vec2D(plotx+(i*plot_quadrillage_size)+reliquatx,ploty+(plot_window_y_size-position_plan_y))).Draw(CouleurPlotLine.WithAlpha(alpha_grille));      
+(Vec2D(plotx+(i*plot_quadrillage_size)+reliquatx,ploty),Vec2D(plotx+(i*plot_quadrillage_size)+reliquatx,ploty+(plot_window_y_size-position_plan_y))).Draw(CouleurPlotLine.WithAlpha(alpha_grille));
 break;
 }
 }
@@ -4501,13 +4542,13 @@ plot_draw_shape_stripline(plotx,ploty+(i*plot_quadrillage_size)+reliquaty,plotx+
 break;
 case 1:
 Line
-(Vec2D(plotx,ploty+(i*plot_quadrillage_size)+reliquaty),Vec2D(plotx+(plot_window_x_size-position_plan_x),ploty+(i*plot_quadrillage_size)+reliquaty)).Draw(CouleurPlotLine.WithAlpha(alpha_grille));      
+(Vec2D(plotx,ploty+(i*plot_quadrillage_size)+reliquaty),Vec2D(plotx+(plot_window_x_size-position_plan_x),ploty+(i*plot_quadrillage_size)+reliquaty)).Draw(CouleurPlotLine.WithAlpha(alpha_grille));
 }
 }
 }
 
 
-return(0);   
+return(0);
 }
 
 
@@ -4524,22 +4565,22 @@ switch(shape_type[i])
 case 0:    //curtain
 plot_draw_shape_curtain(plotx+ shape_position[i][0], ploty+shape_position[i][1] ,  plotx+shape_position[i][2], ploty+shape_position[i][3], shape_attributes[i][0]/5 ,  general_alpha_for_shape,shape_color_type[i] ,shape_selected[i]);
 break;
-case 1:     //ligne  plain                    
+case 1:     //ligne  plain
 plot_draw_shape_line(plotx+ shape_position[i][0],  ploty+shape_position[i][1] , plotx+ shape_position[i][2],ploty+shape_position[i][3], shape_attributes[i][0]/10,  general_alpha_for_shape, shape_color_type[i],shape_selected[i]);
 break;
 case 2:     //stripline 1  int plotx1, int ploty1, int plotx2, int ploty2, float sizeshape,  float alphag, short typeofline,int col pattren bool isselected, bool extreme)
 plot_draw_shape_stripline(plotx+ shape_position[i][0],  ploty+shape_position[i][1] , plotx+ shape_position[i][2],ploty+shape_position[i][3], shape_attributes[i][0]/10,  general_alpha_for_shape,0, shape_color_type[i] ,shape_selected[i], 1);
 break;
-case 3:     //stripline 2                 
+case 3:     //stripline 2
 plot_draw_shape_stripline(plotx+ shape_position[i][0],  ploty+shape_position[i][1] , plotx+ shape_position[i][2],ploty+shape_position[i][3], shape_attributes[i][0]/10,  general_alpha_for_shape,1, shape_color_type[i] ,shape_selected[i], 1);
 break;
-case 4:     //stripline 3                 
+case 4:     //stripline 3
 plot_draw_shape_stripline(plotx+ shape_position[i][0],  ploty+shape_position[i][1] , plotx+ shape_position[i][2],ploty+shape_position[i][3], shape_attributes[i][0]/10,  general_alpha_for_shape,2, shape_color_type[i] ,shape_selected[i], 1);
 break;
-case 5:     //stripline 4                 
+case 5:     //stripline 4
 plot_draw_shape_stripline(plotx+ shape_position[i][0],  ploty+shape_position[i][1] , plotx+ shape_position[i][2],ploty+shape_position[i][3], shape_attributes[i][0]/10,  general_alpha_for_shape,3, shape_color_type[i] ,shape_selected[i], 1);
 break;
-case 6:     //stripline 5                 
+case 6:     //stripline 5
 plot_draw_shape_stripline(plotx+ shape_position[i][0],  ploty+shape_position[i][1] , plotx+ shape_position[i][2],ploty+shape_position[i][3], shape_attributes[i][0]/10,  general_alpha_for_shape,4, shape_color_type[i] ,shape_selected[i], 1);
 break;
 case 7://plot_draw_rectangle(int plotx1, int ploty1, int shapesizex, int shapesizey, float shaperotation, float alphashape,  int colorpattern, bool isselected)
@@ -4555,25 +4596,25 @@ case 10://polygon int plotx1, int ploty1, float sizeshape, float shaperotation,i
 plot_draw_polygon(plotx+shape_position[i][0],  ploty+shape_position[i][1], shape_attributes[i][0]*5,shape_attributes[i][1],(int)shape_attributes[i][2], general_alpha_for_shape,shape_color_type[i],shape_selected[i]);
 break;
 case 11://(int plotx,int ploty, float fontsize,int fonttype,  char *text,float alphatext, bool isselected)
-plot_draw_text(plotx+shape_position[i][0],  ploty+shape_position[i][1],(int)shape_attributes[i][0],(int)shape_attributes[i][2],shape_legend_name[i],general_alpha_for_shape, shape_selected[i]);     
+plot_draw_text(plotx+shape_position[i][0],  ploty+shape_position[i][1],(int)shape_attributes[i][0],(int)shape_attributes[i][2],shape_legend_name[i],general_alpha_for_shape, shape_selected[i]);
 break;
 default:
-break;                                           
-}    
+break;
+}
 
 if(index_show_shape_id==1)
 {
-petitchiffrenoir.Print(ol::ToString(i), plotx+shape_position[i][0]+10,  ploty+shape_position[i][1]+10);     
+petitchiffrenoir.Print(ol::ToString(i), plotx+shape_position[i][0]+10,  ploty+shape_position[i][1]+10);
 if(shape_groups[i]!=0)
 {
 char Gr[8];
 sprintf(Gr,"Gr. %d",shape_groups[i]);
-petitchiffrenoir.Print(Gr, plotx+shape_position[i][0]+10,  ploty+shape_position[i][1]+20);                           
-}                   
+petitchiffrenoir.Print(Gr, plotx+shape_position[i][0]+10,  ploty+shape_position[i][1]+20);
 }
-if(shape_type[i]!=11){petitchiffrenoir.Print(shape_legend_name[i], plotx+shape_position[i][0]+shape_relativ_position_legend_name[i][0],  ploty+shape_position[i][1]+shape_relativ_position_legend_name[i][1]);}      
 }
- return(0);   
+if(shape_type[i]!=11){petitchiffrenoir.Print(shape_legend_name[i], plotx+shape_position[i][0]+shape_relativ_position_legend_name[i][0],  ploty+shape_position[i][1]+shape_relativ_position_legend_name[i][1]);}
+}
+ return(0);
 }
 
 
@@ -4585,13 +4626,13 @@ for(int i=1;i<=nbre_symbols_on_plot[plot_calc_number_is];i++)
 //affichage symbole
 switch(symbol_type[plot_calc_number_is][i])
 {
-case 0:     //PC 500 ou 650                      
+case 0:     //PC 500 ou 650
 plot_draw_symbol_pc(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
-case 1:     //PC 1kw                      
+case 1:     //PC 1kw
 plot_draw_symbol_pc(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
-case 2:     //PC2kw                  
+case 2:     //PC2kw
 plot_draw_symbol_pc(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i],i, plot_calc_number_is);
 break;
 case 3:    //fresnel 1kw
@@ -4712,19 +4753,19 @@ case 41://retro projector
 plot_draw_symbol_retroprojector(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 42://volets
-plot_draw_symbol_barndoors(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);  
+plot_draw_symbol_barndoors(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 43://tophat
-plot_draw_symbol_top_hat(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);  
+plot_draw_symbol_top_hat(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 44://color extender
-plot_draw_symbol_color_extender(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);  
+plot_draw_symbol_color_extender(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 45://color changer
 plot_draw_symbol_colorchanger(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 46://jalousie
-plot_draw_symbol_jalousie(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);    
+plot_draw_symbol_jalousie(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 47://iris
 plot_draw_symbol_iris(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
@@ -4733,10 +4774,10 @@ case 48://gobo
 plot_draw_symbol_goboholder(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 49://shutter
-plot_draw_symbol_shutter(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);  
+plot_draw_symbol_shutter(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 50://mirror
-plot_draw_symbol_motorized_mirror(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);  
+plot_draw_symbol_motorized_mirror(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 51://smoke machine
 plot_draw_symbol_smokemachine(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
@@ -4759,13 +4800,13 @@ break;
 case 57://pied
 plot_draw_symbol_littlestand(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
-case 58://grand pied 
+case 58://grand pied
 plot_draw_symbol_bigstand(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
-case 59://barre de couplage 
+case 59://barre de couplage
 plot_draw_symbol_barre_de_couplage(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
-case 60://Echelle 
+case 60://Echelle
 plot_draw_symbol_echelle(plotx+pos_symbol[plot_calc_number_is][i][0], ploty+pos_symbol[plot_calc_number_is][i][1], size_symbol[(symbol_type[plot_calc_number_is][i])]*global_symbol_size,  angle_symbol[plot_calc_number_is][i], i, plot_calc_number_is);
 break;
 case 61://pont 50 1m
@@ -4789,13 +4830,13 @@ break;
 
 default:
 break;
-}   
+}
 
 
 if( index_edit_light_plot==1 && (index_menus_lighting_plot==2 || index_menus_lighting_plot==4))//visualition du centre projo
 {
 Line(Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]-5,ploty+pos_symbol[plot_calc_number_is][i][1]-5),Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]+5,ploty+pos_symbol[plot_calc_number_is][i][1]+5)).Draw(CouleurBlind);
-Line(Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]+5,ploty+pos_symbol[plot_calc_number_is][i][1]-5),Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]-5,ploty+pos_symbol[plot_calc_number_is][i][1]+5)).Draw(CouleurBlind);    
+Line(Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]+5,ploty+pos_symbol[plot_calc_number_is][i][1]-5),Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]-5,ploty+pos_symbol[plot_calc_number_is][i][1]+5)).Draw(CouleurBlind);
 if(plot_show_options[6]==1)
 {
 petitchiffrenoir.Print(ol::ToString(i),plotx+pos_symbol[plot_calc_number_is][i][0],ploty+pos_symbol[plot_calc_number_is][i][1]);
@@ -4811,18 +4852,18 @@ petitchiffrenoir.Print(temp_txt_grp,plotx+pos_symbol[plot_calc_number_is][i][0],
 if( plot_show_options[7]==1)
 {
 switch(plot_name_text_size)
-{    
+{
 case 0:
 for(int n=0;n<4;n++)
 {
-petitchiffrenoir.Print(symbol_note[plot_calc_number_is][i][n], plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is][i][4][0],ploty+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][4][1]+(n*10)); 
+petitchiffrenoir.Print(symbol_note[plot_calc_number_is][i][n], plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is][i][4][0],ploty+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][4][1]+(n*10));
 }
 break;
 case 1:
 for(int n=0;n<4;n++)
 {
-minichiffre.Print(symbol_note[plot_calc_number_is][i][n], plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is][i][4][0],ploty+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][4][1]+(n*10)); 
-}     
+minichiffre.Print(symbol_note[plot_calc_number_is][i][n], plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is][i][4][0],ploty+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][4][1]+(n*10));
+}
 break;
 }
 }
@@ -4839,11 +4880,11 @@ if(plot_show_options[0]==1)
 
 if(symbol_is_linked_to[plot_calc_number_is][i]==0)
 {
-                                                 
+
 if(relatif_plot_xy[plot_calc_number_is][i][0][0]<0) way=1; //( right to left)
-draw_line_to_channel_of_symbol(plotx+pos_symbol[plot_calc_number_is][i][0],ploty+pos_symbol[plot_calc_number_is][i][1], 
+draw_line_to_channel_of_symbol(plotx+pos_symbol[plot_calc_number_is][i][0],ploty+pos_symbol[plot_calc_number_is][i][1],
 plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is][i][0][0],
-ploty+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][0][1], way);     
+ploty+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][0][1], way);
 
 draw_channel_of_symbol(plot_calc_number_is,i,
 plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is][i][0][0],
@@ -4860,7 +4901,7 @@ plotx+pos_symbol[plot_calc_number_is][i][0],
 ploty+pos_symbol[plot_calc_number_is][i][1],
 plotx+pos_symbol[plot_calc_number_is][dest_s][0]+relatif_plot_xy[plot_calc_number_is][dest_s][0][0],
 ploty+pos_symbol[plot_calc_number_is][dest_s][1]+relatif_plot_xy[plot_calc_number_is][dest_s][0][1],
- 0); 
+ 0);
 }
 
 
@@ -4875,7 +4916,7 @@ plotx+pos_symbol[plot_calc_number_is][i][0]-50+relatif_plot_xy[plot_calc_number_
 break;
 case 1:
 minichiffre.Print(descriptif_projecteurs[(symbol_channel_is[plot_calc_number_is][i])],
-plotx+pos_symbol[plot_calc_number_is][i][0]-50+relatif_plot_xy[plot_calc_number_is][i][1][0],(ploty+50+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][1][1]));     
+plotx+pos_symbol[plot_calc_number_is][i][0]-50+relatif_plot_xy[plot_calc_number_is][i][1][0],(ploty+50+pos_symbol[plot_calc_number_is][i][1]+relatif_plot_xy[plot_calc_number_is][i][1][1]));
 break;
 }
 }
@@ -4894,7 +4935,7 @@ plotx+pos_symbol[plot_calc_number_is][i][0]+relatif_plot_xy[plot_calc_number_is]
 
 }
 
-return(0);   
+return(0);
 }
 
 int plot_draw_levels(int plotx, int ploty, int plot_calc_number_is)
@@ -4902,7 +4943,7 @@ int plot_draw_levels(int plotx, int ploty, int plot_calc_number_is)
 
 for(int i=1;i<=nbre_symbols_on_plot[plot_calc_number_is];i++)
 {
- 
+
 if(plot_index_show_levels==1 && symbol_channel_is[plot_calc_number_is][i]!=0 && symbol_channel_is[plot_calc_number_is][i]<513 )
 {
 char lev[8];
@@ -4910,9 +4951,9 @@ Rect etiquette(Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]-15,ploty+pos_sy
 etiquette.SetRoundness(5);
 switch(index_blind)
 {
-case 0:       
+case 0:
 if(bufferSequenciel[( symbol_channel_is[plot_calc_number_is][i])]>0)
-{           
+{
 switch(dmx_view)
 {
 case 0://stage et faders
@@ -4924,11 +4965,11 @@ break;
 }
 etiquette.Draw(CouleurPlotLine.WithAlpha(0.2));
 etiquette.Draw(CouleurBleuProcedure.WithAlpha(((float)(bufferSequenciel[( symbol_channel_is[plot_calc_number_is][i])])/255)));
-petitchiffre.Print(lev,plotx+pos_symbol[plot_calc_number_is][i][0]-10,ploty+pos_symbol[plot_calc_number_is][i][1]-20);    
+petitchiffre.Print(lev,plotx+pos_symbol[plot_calc_number_is][i][0]-10,ploty+pos_symbol[plot_calc_number_is][i][1]-20);
 }
 if( plot_index_show_levels_from_faders==1 && bufferFaders[( symbol_channel_is[plot_calc_number_is][i])]>0)
 {
-etiquette.MoveTo(Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]-15,ploty+pos_symbol[plot_calc_number_is][i][1]-55));    
+etiquette.MoveTo(Vec2D(plotx+pos_symbol[plot_calc_number_is][i][0]-15,ploty+pos_symbol[plot_calc_number_is][i][1]-55));
 switch(dmx_view)
 {
 case 0:
@@ -4941,8 +4982,8 @@ break;
 etiquette.Draw(CouleurPlotLine.WithAlpha(0.2));
 etiquette.Draw(CouleurFader.WithAlpha(((float)(bufferFaders[( symbol_channel_is[plot_calc_number_is][i])])/255)));
 etiquette.DrawOutline(CouleurPlotLine.WithAlpha(0.8));
-petitchiffre.Print(lev,plotx+pos_symbol[plot_calc_number_is][i][0]-10,ploty+pos_symbol[plot_calc_number_is][i][1]-40);  
-} 
+petitchiffre.Print(lev,plotx+pos_symbol[plot_calc_number_is][i][0]-10,ploty+pos_symbol[plot_calc_number_is][i][1]-40);
+}
 break;
 case 1://blind
 if(bufferBlind[( symbol_channel_is[plot_calc_number_is][i])]>0)
@@ -4958,14 +4999,14 @@ break;
 }
 etiquette.Draw(CouleurPlotLine.WithAlpha(0.2));
 etiquette.Draw(CouleurBlind.WithAlpha(((float)(bufferBlind[( symbol_channel_is[plot_calc_number_is][i])])/255)));
-petitchiffre.Print(lev,plotx+pos_symbol[plot_calc_number_is][i][0]-10,ploty+pos_symbol[plot_calc_number_is][i][1]-20);  
-}       
+petitchiffre.Print(lev,plotx+pos_symbol[plot_calc_number_is][i][0]-10,ploty+pos_symbol[plot_calc_number_is][i][1]-20);
+}
 break;
 }
 }
-                  
+
 }
-return(0);   
+return(0);
 }
 
 int plot_draw_plan_bitmap(int xplot, int yplot, float alphaplan)
@@ -4973,17 +5014,17 @@ int plot_draw_plan_bitmap(int xplot, int yplot, float alphaplan)
 
 LightPlanBitmapMain.BlitTransformed(xplot+position_relative_plan_theatre[0], yplot+position_relative_plan_theatre[1],taille_relative_plan_theatre[0],taille_relative_plan_theatre[1],orientation_plan_theatre*6.5,alphaplan);
 
-return(0);   
+return(0);
 }
 
 
 
 int plot_draw_legend(int xplot, int yplot)
 {
-   
-   
+
+
 Rect CadreDescriptif(Vec2D(xplot,yplot),Vec2D(180,25));
-CadreDescriptif.SetRoundness(7.5); 
+CadreDescriptif.SetRoundness(7.5);
 CadreDescriptif.Draw(CouleurBlind.WithAlpha(0.5));
 neuromoyen.Print("Spots & Symbols List" ,xplot+5,yplot+14);
 
@@ -5010,8 +5051,8 @@ refth=i+(cl*16);
 typap=index_list_appareils_pour_la_legende[refth];
 if(refth<nbre_symbols_differents_sur_plot)
 {
-petitchiffrenoir.Print(ol::ToString(plot_list_appareils[typap]),xplot+(200*cl),yplot+40+(i*15));    
-petitchiffrenoir.Print(symbol_nickname[typap],xplot+30+(200*cl),yplot+40+(i*15));                                
+petitchiffrenoir.Print(ol::ToString(plot_list_appareils[typap]),xplot+(200*cl),yplot+40+(i*15));
+petitchiffrenoir.Print(symbol_nickname[typap],xplot+30+(200*cl),yplot+40+(i*15));
 }
 }
 }
@@ -5030,10 +5071,10 @@ if(refth<nbre_symbols_differents_sur_plot)
 {
 thx= xplot+70+(cl*220);
 the_ecrat+= 35+ (int)(plot_ecartement_legende[typap]*size_symbol[typap]);
-thy= yplot+50+the_ecrat; 
+thy= yplot+50+the_ecrat;
 plot_print_neutral_symbol(typap,thx,thy   );
-petitchiffrenoir.Print(ol::ToString(plot_list_appareils[typap]),thx+40,thy);    
-petitchiffrenoir.Print(symbol_nickname[typap],thx+60,thy);                                
+petitchiffrenoir.Print(ol::ToString(plot_list_appareils[typap]),thx+40,thy);
+petitchiffrenoir.Print(symbol_nickname[typap],thx+60,thy);
 }
 }
 }
@@ -5058,16 +5099,16 @@ for(int ln=0;ln<24;ln++)
 petitchiffrenoir.Print(Geo[ln+(cl*ln)],xplot+thx+(cl*200),yplot+40+(ln*10));
 }
 }
- return(0);   
+ return(0);
 }
 
 
 int plot_legend_menu(int xplot, int yplot)
 {
-Rect Undernamelist(Vec2D(xplot+10,yplot),Vec2D(185,10+(25*18)));  
+Rect Undernamelist(Vec2D(xplot+10,yplot),Vec2D(185,10+(25*18)));
 Undernamelist.SetRoundness(5);
 Undernamelist.Draw(CouleurPlotLine.WithAlpha(0.05));
-Rect UnderName(Vec2D(xplot+10,yplot+5),Vec2D(185,20));   
+Rect UnderName(Vec2D(xplot+10,yplot+5),Vec2D(185,20));
 UnderName.SetRoundness(5);
 for(int i=0;i<18;i++)
 {
@@ -5075,33 +5116,33 @@ UnderName.MoveTo(Vec2D(xplot+10,yplot+(i*25)));
 petitchiffrenoir.Print(plot_renseignements[i],xplot+15,yplot+15+(i*25));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>xplot+10 && mouse_x<xplot+195 && mouse_y>yplot+5+(i*25) && mouse_y<yplot+25+(i*25))
 {
-UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.6));     
+UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.6));
 if(mouse_b&1 && mouse_released==0)
 {
 sprintf(plot_renseignements[i],numeric);
 reset_numeric_entry();numeric_postext=0;
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;            
-}                       
+mouse_released=1;
+}
 }
 }
 
 UnderName.MoveTo(Vec2D(xplot+10,yplot+470));
-UnderName.Draw(CouleurPlotLine.WithAlpha(0.05)); 
+UnderName.Draw(CouleurPlotLine.WithAlpha(0.05));
 Line(Vec2D(xplot+10, yplot+505), Vec2D(xplot+10 + plot_quadrillage_size, yplot+505)).Draw(CouleurPlotLine);
-Line(Vec2D(xplot+10, yplot+495), Vec2D(xplot+10 , yplot+515)).Draw(CouleurPlotLine);    
-Line(Vec2D(xplot+10+ plot_quadrillage_size, yplot+495), Vec2D(xplot+10+ plot_quadrillage_size , yplot+515)).Draw(CouleurPlotLine);  
+Line(Vec2D(xplot+10, yplot+495), Vec2D(xplot+10 , yplot+515)).Draw(CouleurPlotLine);
+Line(Vec2D(xplot+10+ plot_quadrillage_size, yplot+495), Vec2D(xplot+10+ plot_quadrillage_size , yplot+515)).Draw(CouleurPlotLine);
 petitchiffrenoir.Print(plot_renseignements[19],xplot+15,yplot+483);
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>xplot+10 && mouse_x<xplot+195 && mouse_y>yplot+470 && mouse_y<yplot+490)
 {
-UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.6));   
+UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.6));
 if(mouse_b&1 && mouse_released==0)
 {
 sprintf(plot_renseignements[19],numeric);
 reset_numeric_entry();numeric_postext=0;
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;            
-}                             
+mouse_released=1;
+}
 }
 
 petitchiffrenoir.Print(plot_renseignements[20],xplot+15,yplot+540);
@@ -5120,8 +5161,8 @@ petitchiffrenoir.Print(" LIST MODE",xplot+15,yplot+592);
 break;
 case 1://appareils
 Mode.Draw(CouleurFader);
-petitchiffrenoir.Print("LEGEND MODE",xplot+15,yplot+592);    
-break;                   
+petitchiffrenoir.Print("LEGEND MODE",xplot+15,yplot+592);
+break;
 }
 
 if(window_focus_id==W_PLOT && mouse_x>xplot+10 && mouse_x<xplot+105 && mouse_y>yplot+580 && mouse_y<yplot+600)
@@ -5130,11 +5171,11 @@ Mode.DrawOutline(CouleurLigne.WithAlpha(0.6));
 if(mouse_button==1 && mouse_released==0)
 {
 legend_view=toggle(legend_view);
-mouse_released=1;                   
+mouse_released=1;
 }
 }
 
-return(0);   
+return(0);
 }
 
 int Plot_window(int plotx, int ploty)
@@ -5142,20 +5183,20 @@ int Plot_window(int plotx, int ploty)
 
 Rect PlotPanel(Vec2D(plotx,  ploty), Vec2D( plot_window_x_size,plot_window_y_size));
 PlotPanel.SetRoundness(15);
-PlotPanel.SetLineWidth(triple_epaisseur_ligne_fader);  
-PlotPanel.Draw(CouleurPlotFill); 
+PlotPanel.SetLineWidth(triple_epaisseur_ligne_fader);
+PlotPanel.Draw(CouleurPlotFill);
 Rect PlotBehindMove(Vec2D(plotx+3,ploty+5),Vec2D(220,40));
 PlotBehindMove.SetRoundness(15);
 PlotBehindMove.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_PLOT)
 {
-PlotPanel.DrawOutline(CouleurFader); 
-}    
+PlotPanel.DrawOutline(CouleurFader);
+}
 else {PlotPanel.DrawOutline(CouleurLigne); }
-neuro.Print("LIGHT PLOT",plotx+100,ploty+30);   
+neuro.Print("LIGHT PLOT",plotx+100,ploty+30);
 
-petitchiffrenoir.SetColor( CouleurPlotLine ); 
-minichiffre.SetColor( CouleurPlotLine ); 
+petitchiffrenoir.SetColor( CouleurPlotLine );
+minichiffre.SetColor( CouleurPlotLine );
 
 plot_menu_bar(plotx+230,ploty+10);//menus generaux de plot
 
@@ -5173,7 +5214,7 @@ plot_shape_list(plotx+10, ploty+50);
 shape_edition(plotx+10, ploty+200);//editeur des props du shape
 //logical_shape_edition(plotx+10, ploty+200);
 break;
-case 2://symbols                                          
+case 2://symbols
 plot_symbol_list(plotx+10, ploty+50);//selecteur symbol
 //logical_plot_symbol_list(plotx+10, ploty+50);
 plot_symbol_edition(plotx+10, ploty+200);//editeur de symbol
@@ -5219,9 +5260,9 @@ plot_draw_legend(plotx+position_plan_x+plot_view_port_x-plot_correcteur_portx,pl
 Canvas::DisableClipping();
 
 
-petitchiffrenoir.SetColor( Rgba::BLACK ); 
-minichiffre.SetColor( Rgba::WHITE ); 
-return(0);   
+petitchiffrenoir.SetColor( Rgba::BLACK );
+minichiffre.SetColor( Rgba::WHITE );
+return(0);
 }
 
 

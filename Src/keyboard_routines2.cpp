@@ -1,3 +1,46 @@
+
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file keyboard_routines2.cpp
+* \brief {keyboard shortcut}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions core pour gérer les raccourcis clavier dans whitecat
+*   Core fonctions for keyboard shortcut
+*
+ **/
+
 #include <allegro.h>
 
 
@@ -6,27 +49,27 @@ int recall_config_page()
 switch(config_page_is)
 {
 case 0:
-break;                      
+break;
 case 1:
 index_config_dmx=1;
-break; 
+break;
 case 2:
-index_config_midi=1;     
+index_config_midi=1;
 break;
 case 3:
-index_config_network=1;     
+index_config_network=1;
 break;
 case 4:
-index_setup_gfx=1;     
+index_setup_gfx=1;
 break;
 case 5:
-index_config_arduino=1;     
+index_config_arduino=1;
 break;
 case 6:
-index_config_general=1;     
+index_config_general=1;
 break;
 }
- return(0);   
+ return(0);
 }
 
 
@@ -37,14 +80,14 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
 if ( keypressed())
 {
 
-int chi = readkey(); 
+int chi = readkey();
 scan_ascii_is=(chi & 0xff);//prend pas en compte touches fonctions
 scan_allegro_key_is=(chi >> 8);//prend en compte tout le monde mais à redistribuer fr et anglais
 
 
-switch (chi >> 8)  
-{	
-    
+switch (chi >> 8)
+{
+
 
 case KEY_ESC://nettoyage chaine de caractere et deselection totale
 
@@ -63,46 +106,46 @@ else if(window_focus_id==W_ASKCONFIRM)
  substract_a_window(previous_window_focus_id);
  mouse_released=1;
  window_focus_id=previous_window_focus_id;
- add_a_window(window_focus_id);      
+ add_a_window(window_focus_id);
 }
 sprintf(string_key_id,list_keyname[9]);
 break;
 
 ///////////////////////PAGE UP DOWN POUR FENETRES /////////////////////////////
-case KEY_PGUP: 
+case KEY_PGUP:
 sprintf(string_key_id,list_keyname[0]);
 key_switch_window_up();
-break; 
-case KEY_PGDN: 
+break;
+case KEY_PGDN:
 sprintf(string_key_id,list_keyname[0]);
 key_switch_window_down();
-break; 
+break;
 //////////////////SPECIAL KEYS ////////////////////////////////////////////////
 case  KEY_TILDE://carré
 if(window_focus_id==W_PLOT) {index_move_plot_view_port=toggle(index_move_plot_view_port);}
 break;
 
 case KEY_F1://dock mode
-if (key_shifts & KB_CTRL_FLAG  || index_false_control==1) 
+if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
 {
 reset_indexs_confirmation();
-index_ask_confirm=1; 
+index_ask_confirm=1;
 index_do_overrecord_mem=1;
 clear_keybuf();
 
 }
-else if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1) 
+else if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
 {
 int mem_to_rec=(int)(atof(numeric)*10);
 
 reset_indexs_confirmation();
-index_ask_confirm=1; 
+index_ask_confirm=1;
 index_do_create_mem=1;
 }
 else
 {
 index_do_report=0;
-index_do_modify=0; 
+index_do_modify=0;
 index_main_clear=0;
 index_do_dock=toggle(index_do_dock);
 
@@ -110,7 +153,7 @@ switch (window_focus_id)
 {
 case W_CHASERS:
 index_affect_chaser_to_dock=index_do_dock;
-break;   
+break;
 case W_GRID:
 for(int i=0;i<4;i++)
 {
@@ -121,8 +164,8 @@ gridplayer_to_affect_is=i; break;
 }
 break;
 case W_MOVER:
-index_affect_to_dock_mover=index_do_dock;     
-break;    
+index_affect_to_dock_mover=index_do_dock;
+break;
 case W_DRAW:
 index_affect_draw_to_dock=index_do_dock;
 break;
@@ -130,13 +173,13 @@ case W_ECHO:
 index_affect_echo_to_dock=index_do_dock;
 break;
 case W_TIME:
-index_affect_time=index_do_dock;   
+index_affect_time=index_do_dock;
 break;
 case W_TRACKINGVIDEO:
-index_affect_video_tracking_to_dock=index_do_dock; 
+index_affect_video_tracking_to_dock=index_do_dock;
 break;
 case W_TRICHROMY:
-index_affect_color_to_dock=index_do_dock; 
+index_affect_color_to_dock=index_do_dock;
 break;
 case W_AUDIO:
 index_affect_audio_to_dock=index_do_dock;
@@ -145,79 +188,79 @@ audio_type_for_dock_affectation_is=0;
 break;
 case W_CFGMENU:
 if(config_page_is==1) { index_affect_dmxin=index_do_dock; }
-else if(config_page_is==3) {index_do_affect_net_to_dock=index_do_dock; } 
+else if(config_page_is==3) {index_do_affect_net_to_dock=index_do_dock; }
 break;
 default:
-break;      
+break;
 }
 
 }
 break;
-      
+
 case KEY_F2:
 index_do_dock=0;
 index_do_report=0;
 index_main_clear=0;
-index_do_modify=toggle(index_do_modify);;      
-break;      
+index_do_modify=toggle(index_do_modify);;
+break;
 
 case KEY_F3:
-if (key_shifts & KB_CTRL_FLAG  || index_false_control==1) 
+if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
 {
 index_do_dock=0;
-index_do_modify=0; 
+index_do_modify=0;
 index_main_clear=0;
 index_do_report=1;
 reset_indexs_confirmation();
-index_ask_confirm=1; 
-index_do_overecord_mem_plus_faders=1;               
-}     
+index_ask_confirm=1;
+index_do_overecord_mem_plus_faders=1;
+}
 else if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1) //creation mémoires en mode merge Faders / seq
 {
 index_do_dock=0;
-index_do_modify=0; 
+index_do_modify=0;
 index_main_clear=0;
 index_do_report=1;
 int mem_to_rec=(int)(atof(numeric)*10);
 reset_indexs_confirmation();
-index_ask_confirm=1; 
+index_ask_confirm=1;
 index_do_create_mem_plus_faders=1;
 }
 else
 {
 index_do_dock=0;
-index_do_modify=0; 
+index_do_modify=0;
 index_main_clear=0;
-index_do_report=toggle(index_do_report); 
+index_do_report=toggle(index_do_report);
 }
-break;  
+break;
 
 case KEY_F4:
 index_do_dock=0;
-index_do_modify=0; 
-index_do_report=0;     
+index_do_modify=0;
+index_do_report=0;
 index_main_clear=toggle(index_main_clear);
-break;  
+break;
 
 case KEY_F5:
               index_type=toggle(index_type);
               sprintf(numeric,"");numeric_postext=0;
-break; 
+break;
 
 case KEY_F6:
-         if(index_time==0){add_a_window(W_TIME);  } 
+         if(index_time==0){add_a_window(W_TIME);  }
            else {   substract_a_window(W_TIME); }
-break;  
+break;
 
 case KEY_F7:
-if(index_trichro_window==0){add_a_window(W_TRICHROMY);} 
+if(index_trichro_window==0){add_a_window(W_TRICHROMY);}
 else  { substract_a_window(W_TRICHROMY);  }
-break;  
+break;
 
 case KEY_F8:
-  if(index_video_window==0){ add_a_window(W_TRACKINGVIDEO); } 
+  if(index_video_window==0){ add_a_window(W_TRACKINGVIDEO); }
  else{ substract_a_window(W_TRACKINGVIDEO);}
-break;  
+break;
 
 case KEY_F9:
           if(index_window_sequentiel==0){;add_a_window(W_SEQUENCIEL);}
@@ -235,37 +278,37 @@ if(index_show_faders==0){add_a_window(W_FADERS);}
 else {substract_a_window(W_FADERS);}
 }
 
-break;  
+break;
 
 case KEY_F11:
 if (key_shifts & KB_SHIFT_FLAG  || index_false_shift==1) //CONFIG
 {
 if(index_show_config_window==0){add_a_window(W_CFGMENU);}
-else {substract_a_window(W_CFGMENU);}     
+else {substract_a_window(W_CFGMENU);}
 }
-else if (key_shifts & KB_CTRL_FLAG  || index_false_control==1 ) 
+else if (key_shifts & KB_CTRL_FLAG  || index_false_control==1 )
 {index_blind=toggle(index_blind);   }
 else
 {
 if(index_show_banger_window==0)
           {add_a_window(W_BANGER);mouse_level_for_event=mouse_z;mouse_level_for_banger=mouse_z;}
-          else {substract_a_window(W_BANGER);}       
+          else {substract_a_window(W_BANGER);}
 }
-break;  
-              
+break;
+
 case KEY_F12://black out
 
-if (key_shifts & KB_CTRL_FLAG  || index_false_control==1) 
+if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
 {
 index_ask_confirm=1;index_do_quit_with_save=1;
 }
 
-else if (key_shifts & KB_SHIFT_FLAG   || index_false_shift==1) 
+else if (key_shifts & KB_SHIFT_FLAG   || index_false_shift==1)
 {
 for (int i=0;i<12;i++)
 {
 specify_who_to_save_load[i]=0;}
-reset_save_load_report_string();     
+reset_save_load_report_string();
 index_ask_confirm=1;index_do_quit_without_save=1;
 }
 
@@ -274,19 +317,19 @@ else
 if(index_blind==0)
 {
 for (int rs=0;rs<513;rs++)
-{bufferSaisie[rs]=0;Selected_Channel[rs]=0;   }   
-sprintf(string_Last_Order,">> Black Out done for On Stage channels");      
-}     
+{bufferSaisie[rs]=0;Selected_Channel[rs]=0;   }
+sprintf(string_Last_Order,">> Black Out done for On Stage channels");
+}
 else if(index_blind==1)
 {
 for (int rs=0;rs<513;rs++)
-{bufferBlind[rs]=0; Selected_Channel[rs]=0;   }    
-sprintf(string_Last_Order,">> Black Out done for On Blind channels");                       
+{bufferBlind[rs]=0; Selected_Channel[rs]=0;   }
+sprintf(string_Last_Order,">> Black Out done for On Blind channels");
 }
-             
+
 substract_channel_selection_to_layers_plot();
-}  
-break;    
+}
+break;
 
 
 case KEY_UP:
@@ -302,12 +345,12 @@ break;
 case KEY_ENTER :
 key_affectation();
 sprintf(string_key_id,list_keyname[3]);
-break; 
+break;
 
 case KEY_ENTER_PAD:
 key_affectation();
 sprintf(string_key_id,list_keyname[4]);
-break; 
+break;
 
 case KEY_EQUALS://+
 key_add_ch();
@@ -336,9 +379,9 @@ if(numeric_postext>0)
 key_thruth();
 sprintf(string_key_id,list_keyname[10]);
 }
-else 
+else
 {
-if(window_focus_id==W_PLOT) {index_tab_on=toggle(index_tab_on); }  
+if(window_focus_id==W_PLOT) {index_tab_on=toggle(index_tab_on); }
 }
 break;
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -346,7 +389,7 @@ break;
 
 ////////////////////TEXT TYPING OR FUNCTIONS CALLING//////////////////////////////////////////
 
-case KEY_SPACE: 
+case KEY_SPACE:
               if (index_type==0)
              {
              key_go();
@@ -358,17 +401,17 @@ case KEY_SPACE:
              }
        sprintf(string_key_id,list_keyname[11]);
        break;
-             
-         
+
+
 
         case KEY_Q: //lettre a
         if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
         {
         if(index_show_audio_window==0){add_a_window(W_AUDIO);}
         else {substract_a_window(W_AUDIO);}
-        reset_audio_indexs_to_dock();       
+        reset_audio_indexs_to_dock();
         }
-        else 
+        else
         {
 
              if(index_type==0)
@@ -382,7 +425,7 @@ case KEY_SPACE:
              }
          }
          sprintf(string_key_id,list_keyname[12]);
-         break;  
+         break;
        case KEY_B:
            if (index_type==0)
            {
@@ -395,11 +438,11 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[13]);
            break;
-           
+
         case KEY_C:
             if (index_type==0)
-           { 
-            if (key_shifts & KB_CTRL_FLAG  || index_false_control==1) 
+           {
+            if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
             {
             if(numeric_postext==0)
             {
@@ -407,18 +450,18 @@ case KEY_SPACE:
             }
             else
             {
-            snap_mem_to_copy();  
+            snap_mem_to_copy();
             }
-            } 
-            else  if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1) 
+            }
+            else  if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
             {
-            if(index_window_chasers==0){add_a_window(W_CHASERS);} 
+            if(index_window_chasers==0){add_a_window(W_CHASERS);}
             else {substract_a_window(W_CHASERS);}
-            } 
+            }
            else
            {
            key_roi(8);         }
-           } 
+           }
            else if (index_type==1)
            {
            numeric[numeric_postext]='C';
@@ -426,7 +469,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[14]);
            break;
-           
+
         case KEY_D://dock mode on
            if(index_type==0)
            {
@@ -439,7 +482,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[15]);
            break;
-           
+
         case KEY_E:
             if (index_type==0)
            {
@@ -452,13 +495,13 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[16]);
            break;
-           
+
         case KEY_F:
            if(index_type==0)
            {
            key_roi(3);
            }
-           
+
            else if (index_type==1)
            {
            numeric[numeric_postext]='F';
@@ -466,20 +509,20 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[17]);
            break;
-           
+
         case KEY_G:
             if (index_type==0)
            {
            if ((key_shifts & KB_CTRL_FLAG || index_false_control==1 ) && numeric_postext>0)
            {
-           //GET CHANNELS FROM A MEMORY     
+           //GET CHANNELS FROM A MEMORY
            int mem_to_take=(int)(atof(numeric)*10);
            if(MemoiresExistantes[mem_to_take]==1)
            {
-           Get_channels_from_memory(mem_to_take);  
+           Get_channels_from_memory(mem_to_take);
            }
-           else {sprintf(string_Last_Order,"Get Sel. channel from %d.%d: mem doesn't exist",mem_to_take/10,mem_to_take%10);}   
-           } 
+           else {sprintf(string_Last_Order,"Get Sel. channel from %d.%d: mem doesn't exist",mem_to_take/10,mem_to_take%10);}
+           }
            else {key_roi(4);}
            }
            else if (index_type==1)
@@ -489,23 +532,23 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[18]);
            break;
-           
+
            case KEY_H:
 
             if (index_type==0)
            {
-           key_roi(5);   
+           key_roi(5);
            }
            else if (index_type==1)
            {
            numeric[numeric_postext]='H';
            numeric_postext++;
            }
-           
+
            sprintf(string_key_id,list_keyname[19]);
            break;
-        
-        case KEY_I:    
+
+        case KEY_I:
            if(index_type==0) //full
            {
            key_full();
@@ -517,12 +560,12 @@ case KEY_SPACE:
            }
          sprintf(string_key_id,list_keyname[20]);
            break;
-           
+
         case KEY_J:
            if (index_type==0)
            {
            key_time_out();
-           }        
+           }
            if (index_type==1)
            {
            numeric[numeric_postext]='J';
@@ -530,7 +573,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[21]);
            break;
-           
+
         case KEY_K:
             if (index_type==0)
            {
@@ -543,7 +586,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[22]);
            break;
-           
+
         case KEY_L://in + out
            if(index_type==0)
            {
@@ -556,27 +599,27 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[23]);
            break;
-        
+
         case KEY_SEMICOLON:
            if(index_type==0)//le M qui est point en clavier americain
            {
-           if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1) 
+           if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
            { if(index_show_mover_window=0){add_a_window(W_MOVER);}
            else {substract_a_window(W_MOVER);}}
            }
            else if(index_type==1)
            {
            numeric[numeric_postext]='M';
-           numeric_postext++;     
+           numeric_postext++;
            }
            sprintf(string_key_id,list_keyname[38]);
-           break;  
-                
+           break;
+
         case KEY_N:
            if (index_type==0)
            {
-           key_roi(11);          
-           } 
+           key_roi(11);
+           }
            else if (index_type==1)
            {
            numeric[numeric_postext]='N';
@@ -584,12 +627,12 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[24]);
            break;
-           
+
         case KEY_O:
-       
-         
+
+
            if(index_type==0)
-           { 
+           {
            key_at_zero();
            }
            else if (index_type==1)
@@ -599,19 +642,19 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[25]);
            break;
-           
+
         case KEY_P:
 
-          if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1) 
+          if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
            {
            if(index_patch_window==0){add_a_window(W_PATCH);}
-           else {substract_a_window(W_PATCH);} 
-           } 
+           else {substract_a_window(W_PATCH);}
+           }
            else{
            if (index_type==0)
            {
              if(index_visual_pad==0){add_a_window(W_NUMPAD);}
-             else {substract_a_window(W_NUMPAD);}  
+             else {substract_a_window(W_NUMPAD);}
            }
            else if (index_type==1)
            {
@@ -633,8 +676,8 @@ case KEY_SPACE:
            numeric_postext++;
            }
            sprintf(string_key_id,list_keyname[26]);
-           break;        
-  
+           break;
+
         case KEY_R://report mode on
         if(index_type==0 )
         {
@@ -647,11 +690,11 @@ case KEY_SPACE:
         }
         sprintf(string_key_id,list_keyname[27]);
            break;
-           
+
         case KEY_S:
             if (index_type==0)
            {
-           if (key_shifts & KB_CTRL_FLAG  || index_false_control==1) 
+           if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
            {
            if(index_is_saving==0){index_save_global_is=1;index_do_quick_save=1;}
            }
@@ -667,7 +710,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[28]);
            break;
-           
+
        case KEY_T:
            if(index_type==0)
            {
@@ -677,10 +720,10 @@ case KEY_SPACE:
            {
            numeric[numeric_postext]='T';
            numeric_postext++;
-           }         
+           }
            sprintf(string_key_id,list_keyname[29]);
            break;
-           
+
         case KEY_U://inverse selection
            if (index_type==0)
            {
@@ -693,11 +736,11 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[30]);
            break;
-           
+
         case KEY_V:
            if (index_type==0)
            {
-           if (key_shifts & KB_CTRL_FLAG  || index_false_control==1) 
+           if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
            {
            if(numeric_postext==0)
             {
@@ -705,11 +748,11 @@ case KEY_SPACE:
             }
             else//si chiffre de mem tapée
             {
-            index_copy_mem_in=1; 
+            index_copy_mem_in=1;
             index_ask_confirm=1;
-            
-            }              
-           } 
+
+            }
+           }
            else
            {
            //les aires de tracking cam
@@ -723,7 +766,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[31]);
            break;
-           
+
         case KEY_Z://w
            if (index_type==0)
            {
@@ -733,7 +776,7 @@ case KEY_SPACE:
            }
            else{//les aires de tracking cam
            key_roi(6);
-           }        
+           }
            }
            else if (index_type==1)
            {
@@ -742,7 +785,7 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[32]);
            break;
-           
+
         case KEY_X:
            if (index_type==0)
            {
@@ -750,7 +793,7 @@ case KEY_SPACE:
            {
            key_forward();
            }
-          
+
            else{//les aires de tracking cam
            key_roi(7);
            }
@@ -762,9 +805,9 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[33]);
            break;
-           
-        case KEY_Y://select all 
-          
+
+        case KEY_Y://select all
+
           if (index_type==0)
            {
           key_select_all();
@@ -776,20 +819,20 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[34]);
            break;
-           
+
         case KEY_W://z
            if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
              {
              //ctrl Z reload mem as recorded
              index_do_reload_mem=1;
-             index_ask_confirm=1;                   
+             index_ask_confirm=1;
              }
              else if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
              {
              //ctrl Z resurrect mem as recorded
-             mem_to_resurrect=(int)(atof(numeric)*10);   
-             index_do_resurrect_mem=1;  
-             index_ask_confirm=1;                            
+             mem_to_resurrect=(int)(atof(numeric)*10);
+             index_do_resurrect_mem=1;
+             index_ask_confirm=1;
              }
            else
            {
@@ -805,23 +848,23 @@ case KEY_SPACE:
            }
            sprintf(string_key_id,list_keyname[35]);
            break;
-           
+
     case KEY_LEFT:
-    key_left(); 
+    key_left();
     sprintf(string_key_id,list_keyname[36]);
     break;
-       
+
        case KEY_RIGHT:
        key_right();
        sprintf(string_key_id,list_keyname[37]);
        break;
-      
+
       case KEY_DEL:
-      if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1) 
+      if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
       {
-      reset_indexs_confirmation(); 
-      index_do_delete_mem=1;  
-      index_ask_confirm=1;       
+      reset_indexs_confirmation();
+      index_do_delete_mem=1;
+      index_ask_confirm=1;
       }
       break;
 //////////////////////ENTREES NUMERIQUES COMMUNES//////////////////////////////////////////
@@ -906,7 +949,7 @@ break;
 case KEY_9_PAD:
 numeric[numeric_postext]='9';
 numeric_postext++;
-break;   
+break;
 
 case KEY_COMMA:
 numeric[numeric_postext]='.';
@@ -929,17 +972,17 @@ numeric[numeric_postext]=' ';
 numeric_postext--;
 numeric[numeric_postext]=' ';
 if (numeric_postext<0) {numeric_postext=0;}
-break;   
+break;
 
 ////////////////////MISE EN MEMOIRES DES FENETRES ET TOGGLE/////////////////////
 case KEY_PRTSCR:
-key_printscreen();              
-break; 
+key_printscreen();
+break;
 
 default:
-      
+
 break;
-}  
+}
 for(int u=0;u<nbre_key_persos;u++)
 {
 //keys persos
@@ -957,15 +1000,15 @@ sprintf(string_key_id,"Ch +");//max 16 char
 break;
 case 2://CH-
 key_minus_ch();
-sprintf(string_key_id,"Ch -");//max 16 char     
+sprintf(string_key_id,"Ch -");//max 16 char
 break;
 case 3://CH THRUTH
 key_thruth();
-sprintf(string_key_id,"To Ch");//max 16 char     
+sprintf(string_key_id,"To Ch");//max 16 char
 break;
 case 4://CLEAR
 key_unselect_ch();
-sprintf(string_key_id,"Clear");//max 16 char        
+sprintf(string_key_id,"Clear");//max 16 char
 break;
 default:
 break;
@@ -975,15 +1018,15 @@ break;
 
 
 
-   
+
 //protections
 
 if (numeric_postext>maxchar_numeric){numeric[numeric_postext]=' ';numeric_postext=maxchar_numeric-1;}
 
-if (numeric_postext<0) {numeric_postext=0;} 
+if (numeric_postext<0) {numeric_postext=0;}
 
 
-       
+
 }
 sprintf(string_numeric_entry,"<< %s",numeric);
 
@@ -995,9 +1038,9 @@ if(index_do_quick_save==1 )
       sprintf(string_Last_Order,">> Show Saved at %s", tmp_time);
       index_do_quick_save=0;
       }
-      
+
 poll_keyboard();
-      
-return(0);  
+
+return(0);
 }
 

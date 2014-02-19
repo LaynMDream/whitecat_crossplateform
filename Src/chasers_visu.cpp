@@ -1,3 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file chasers_visu.cpp
+* \brief {file for the GUI window of the chasers}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Gère les fonction GUI de la fenêtre des chenillards
+*   GUI fonctions for the chasers
+*
+ **/
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -78,12 +119,12 @@ int set_forward_sens_view(int xp, int yp, bool state)
 Rect FwdSens(Vec2D(xp,yp),Vec2D(20,20));
 FwdSens.SetRoundness(4);
 
-if(state==1){FwdSens.Draw(CouleurFader);}    
+if(state==1){FwdSens.Draw(CouleurFader);}
 FwdSens.DrawOutline(CouleurLigne);
 
-Line(Vec2D(xp+4,yp+10),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+12,yp+7),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+12,yp+13),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);      
+Line(Vec2D(xp+4,yp+10),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+12,yp+7),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+12,yp+13),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
 
 if(mouse_x>xp && mouse_x<xp+20 && mouse_y>yp && mouse_y<yp+20)
 {
@@ -91,8 +132,8 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
 {
 FwdSens.DrawOutline(CouleurBlind);
 }
-}    
- return(0);   
+}
+ return(0);
 }
 
 
@@ -102,12 +143,12 @@ int set_backward_sens_view(int xp, int yp, bool state)
 Rect BckSens(Vec2D(xp,yp),Vec2D(20,20));
 BckSens.SetRoundness(4);
 
-if(state==1){BckSens.Draw(CouleurFader);}    
+if(state==1){BckSens.Draw(CouleurFader);}
 BckSens.DrawOutline(CouleurLigne);
 
-Line(Vec2D(xp+4,yp+10),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+10,yp+7),Vec2D(xp+4,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+10,yp+13),Vec2D(xp+4,yp+10)).Draw(CouleurLigne);      
+Line(Vec2D(xp+4,yp+10),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+10,yp+7),Vec2D(xp+4,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+10,yp+13),Vec2D(xp+4,yp+10)).Draw(CouleurLigne);
 
 if(mouse_x>xp && mouse_x<xp+20 && mouse_y>yp && mouse_y<yp+20)
 {
@@ -115,8 +156,8 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 BckSens.DrawOutline(CouleurBlind);
 }
-}    
- return(0);   
+}
+ return(0);
 }
 
 
@@ -126,14 +167,14 @@ int set_back_and_forward_sens_view(int xp, int yp, bool state)
 Rect BckFwdSens(Vec2D(xp,yp),Vec2D(20,20));
 BckFwdSens.SetRoundness(4);
 
-if(state==1){BckFwdSens.Draw(CouleurFader);}    
+if(state==1){BckFwdSens.Draw(CouleurFader);}
 BckFwdSens.DrawOutline(CouleurLigne);
 
-Line(Vec2D(xp+2,yp+10),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+15,yp+7),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+15,yp+13),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);      
-Line(Vec2D(xp+6,yp+7),Vec2D(xp+2,yp+10)).Draw(CouleurLigne);    
-Line(Vec2D(xp+6,yp+13),Vec2D(xp+2,yp+10)).Draw(CouleurLigne);      
+Line(Vec2D(xp+2,yp+10),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+15,yp+7),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+15,yp+13),Vec2D(xp+18,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+6,yp+7),Vec2D(xp+2,yp+10)).Draw(CouleurLigne);
+Line(Vec2D(xp+6,yp+13),Vec2D(xp+2,yp+10)).Draw(CouleurLigne);
 
 if(mouse_x>xp && mouse_x<xp+20 && mouse_y>yp && mouse_y<yp+20)
 {
@@ -141,8 +182,8 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 BckFwdSens.DrawOutline(CouleurBlind);
 }
-}    
- return(0);   
+}
+ return(0);
 }
 
 
@@ -164,7 +205,7 @@ Btrack_up.DrawOutline(CouleurBlind);
 }
 }
 
-return(0);   
+return(0);
 }
 
 
@@ -185,7 +226,7 @@ Btrack_stay.DrawOutline(CouleurBlind);
 }
 }
 
-return(0);   
+return(0);
 }
 
 
@@ -205,7 +246,7 @@ Btrack_stay.DrawOutline(CouleurBlind);
 }
 }
 
-return(0);   
+return(0);
 }
 
 
@@ -233,12 +274,12 @@ tChazeMinus.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0  && window_focus_id==923)//config midi
 {
 if( mouse_x>xcha+8 && mouse_x<xcha+32 && mouse_y>ycha+13 && mouse_y<ycha+37)
-{tChazeMinus.DrawOutline(CouleurBlind);}    
+{tChazeMinus.DrawOutline(CouleurBlind);}
 if(mouse_x>xcha+8 && mouse_x<xcha+32 && mouse_y>ycha+43 && mouse_y<ycha+67)
-{tChazePlus.DrawOutline(CouleurBlind);}                   
-}    
-    
-return(0);    
+{tChazePlus.DrawOutline(CouleurBlind);}
+}
+
+return(0);
 }
 
 int bouton_view_launchpad_pos(int xcha, int ycha, bool state)
@@ -260,12 +301,12 @@ LchChazeMinus.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0 && window_focus_id==923)//config midi
 {
 if( mouse_x>xcha+8 && mouse_x<xcha+32 && mouse_y>ycha+13 && mouse_y<ycha+37)
-{LchChazeMinus.DrawOutline(CouleurBlind);}    
+{LchChazeMinus.DrawOutline(CouleurBlind);}
 if(mouse_x>xcha+38 && mouse_x<xcha+62 && mouse_y>ycha+13 && mouse_y<ycha+37)
-{LchChazePlus.DrawOutline(CouleurBlind);}                   
-}    
-    
-return(0);    
+{LchChazePlus.DrawOutline(CouleurBlind);}
+}
+
+return(0);
 }
 
 
@@ -276,13 +317,13 @@ return(0);
 
 int Track_draw(int xp, int yp,int num_track)
 {
-    
+
 //track selected
 Rect Btrack_sel(Vec2D(xp,yp),Vec2D(20,20));
-Btrack_sel.SetRoundness(4);    
-Btrack_sel.SetLineWidth(1);  
+Btrack_sel.SetRoundness(4);
+Btrack_sel.SetLineWidth(1);
 
- 
+
 if( track_is_on[chaser_selected][num_track]==1){Btrack_sel.Draw(CouleurGreen);}
 Btrack_sel.DrawOutline(CouleurLigne);
 
@@ -305,7 +346,7 @@ if(TrackTypeIs[chaser_selected][num_track]==1)
 {
 char str_ty[16];
 sprintf(str_ty,"Mem. %.1f",(float (TrackHasMem[chaser_selected][num_track])/10));
-petitpetitchiffrerouge.Print(str_ty,xp+30,yp+32);                                             
+petitpetitchiffrerouge.Print(str_ty,xp+30,yp+32);
 }
 //master
 Rect track_fader(Vec2D(xp+30,yp),Vec2D(127,10));
@@ -319,7 +360,7 @@ if(mouse_x>=xp+30 && mouse_x<=xp+157 && mouse_y>yp && mouse_y<yp+10 && Midi_Fade
 }
 else
 {
- track_fader.DrawOutline(CouleurLigne);   
+ track_fader.DrawOutline(CouleurLigne);
 }
 petitpetitchiffre.Print(ol::ToString(track_level[chaser_selected][num_track]),xp+190,yp+25);
 
@@ -354,7 +395,7 @@ switch(chaser_step_operation[chaser_selected][num_track][chcase])
  break;
  case 3:
  TCase.Draw(CouleurRed);
- break;       
+ break;
 }
 TCase.DrawOutline(CouleurFond);
 
@@ -378,7 +419,7 @@ TCase.DrawOutline(CouleurLigne);}
 }
 }
 }
-return(0);   
+return(0);
 }
 
 
@@ -396,12 +437,12 @@ int chaser_window(int xcha,int ycha)
 
 Rect ChaserPanel(Vec2D(xcha,  ycha), Vec2D( 620,(160+(nbre_track_visualisables*40))));
 ChaserPanel.SetRoundness(15);
-ChaserPanel.SetLineWidth(triple_epaisseur_ligne_fader);  
-ChaserPanel.Draw(CouleurFond); 
+ChaserPanel.SetLineWidth(triple_epaisseur_ligne_fader);
+ChaserPanel.Draw(CouleurFond);
 if(window_focus_id==W_CHASERS)
 {
-ChaserPanel.DrawOutline(CouleurFader); 
-}    
+ChaserPanel.DrawOutline(CouleurFader);
+}
 else {ChaserPanel.DrawOutline(CouleurLigne); }
 neuro.Print("CHASERS",xcha+100,ycha+30);
 
@@ -421,9 +462,9 @@ ChazeMinus.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0  && window_focus_id==923)//config midi
 {
 if( mouse_x>xcha+208 && mouse_x<xcha+232 && mouse_y>ycha+13 && mouse_y<ycha+37)
-{ChazeMinus.DrawOutline(CouleurBlind);}    
+{ChazeMinus.DrawOutline(CouleurBlind);}
 if(mouse_x>xcha+288 && mouse_x<xcha+312 && mouse_y>ycha+13 && mouse_y<ycha+37)
-{ChazePlus.DrawOutline(CouleurBlind);}                   
+{ChazePlus.DrawOutline(CouleurBlind);}
 }
 
 //////////////////////TEXT////////////////////////////////////////////
@@ -441,7 +482,7 @@ Rect ChazeEditEnable( Vec2D((xcha+560),(ycha+10)),Vec2D(50,20));
 ChazeEditEnable.SetRoundness(7.5);
 if(index_enable_edit_chaser==1)
 {
-ChazeEditEnable.Draw(CouleurFader);                                 
+ChazeEditEnable.Draw(CouleurFader);
 }
 ChazeEditEnable.DrawOutline(CouleurLigne);
 petitchiffre.Print("edit",xcha+570 ,ycha+22);
@@ -458,7 +499,7 @@ play_button_view(xcha+10,ycha+50,chaser_is_playing[chaser_selected]);
 if(mouse_x>xcha+40 && mouse_x<xcha+60 && mouse_y>ycha+50 && mouse_y<ycha+70 && window_focus_id==923 && mouse_button==1 && mouse_released==0)
 {
 seek_button_view(xcha+40,ycha+50,1);//seek , affichage avant le bouton
-mouse_released=1;                   
+mouse_released=1;
 }
 seek_button_view(xcha+40,ycha+50,0);
 
@@ -512,8 +553,8 @@ if(mouse_x>xcha+10 && mouse_x<xcha+30 && mouse_y>ycha+80 && mouse_y<ycha+100 && 
 {
 if(mouse_button==1 && mouse_released==0)
 {
-bouton_text_view(xcha+10, ycha+80,"all", 1);               
-}                   
+bouton_text_view(xcha+10, ycha+80,"all", 1);
+}
 }
 bouton_text_view(xcha+10, ycha+80,"all", 0);
 
@@ -523,8 +564,8 @@ if(mouse_x>xcha+40 && mouse_x<xcha+60 && mouse_y>ycha+80 && mouse_y<ycha+100 && 
 {
 if(mouse_button==1 && mouse_released==0)
 {
-bouton_text_view(xcha+40, ycha+80,"inv", 1);                
-}                   
+bouton_text_view(xcha+40, ycha+80,"inv", 1);
+}
 }
 bouton_text_view(xcha+40, ycha+80,"inv", 0);
 
@@ -533,8 +574,8 @@ if(mouse_x>xcha+70 && mouse_x<xcha+90 && mouse_y>ycha+80 && mouse_y<ycha+100 && 
 {
 if(mouse_button==1 && mouse_released==0)
 {
-bouton_text_view(xcha+70, ycha+80,"off", 1);                
-}                   
+bouton_text_view(xcha+70, ycha+80,"off", 1);
+}
 }
 bouton_text_view(xcha+70, ycha+80,"off", 0);
 
@@ -551,10 +592,10 @@ if(mouse_x>xcha+110+(po*30) && mouse_x<xcha+150+(po*30) && mouse_y>ycha+80 && mo
 {
 if(mouse_button==1 && mouse_released==0)
 {
-bouton_text_view(xcha+110+(po*30), ycha+80,tl, 1);        
-}                   
+bouton_text_view(xcha+110+(po*30), ycha+80,tl, 1);
 }
-bouton_text_view(xcha+110+(po*30), ycha+80,tl, 0);        
+}
+bouton_text_view(xcha+110+(po*30), ycha+80,tl, 0);
 }
 /////////////////OPTIONS
 
@@ -629,7 +670,7 @@ default:
 bouton_track_up(xcha+245, ycha+80, 0);
 bouton_track_stay(xcha+295, ycha+80, 0);
 bouton_track_down(xcha+345, ycha+80, 0);
-break;       
+break;
 }
 
 
@@ -686,7 +727,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 if(mouse_x>xcha+175 && mouse_x<xcha+175+(nbre_de_cases_par_track*12) && mouse_y>ycha+145 && mouse_y<ycha+155)
 {
 TimelineChaser.DrawOutline(CouleurBlind);
-  
+
 }
 }
 
@@ -727,7 +768,7 @@ LaunchpadAllowB.DrawOutline(CouleurLigne);
 petitpetitchiffre.Print("LchPad",xcha+411,ycha+65);
 
 
-//refresh midi 
+//refresh midi
 Rect refreshMidiB(Vec2D(xcha+520,ycha+50),Vec2D(40,20));
 refreshMidiB.SetRoundness(5);
 refreshMidiB.Draw(CouleurSurvol.WithAlpha( refresh_midi_chasers));
@@ -735,7 +776,7 @@ refreshMidiB.DrawOutline(CouleurLigne);
 petitpetitchiffre.Print("Refresh",xcha+520,ycha+58);
 petitpetitchiffre.Print("Midi",xcha+527,ycha+67);
 
-return(0);   
+return(0);
 }
 
 

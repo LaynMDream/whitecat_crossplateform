@@ -1,3 +1,45 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file save_show_13.cpp
+* \brief {save and load fonctions}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions de sauvegarde et de rappel
+*   Save and Load fonctions
+*
+**/
+
 //modes d enregistrement
 const char file_save_preset[24]={"save_personnal_cfg.whc"};
 int save_preset_size=80*4;//bool preset_specify_who_to_save_load[80][4];
@@ -48,9 +90,9 @@ int fader_stoppos_size=48;//unsigned char LevelStopPos[48];
 const char file_fader_stoppos_is[24]={"faders_bstopos.whc"};
 int fader_stopposB_size=48;//bool ActionnateStopOn[48]; // au cahrgement bien verifier les activations
 const char file_fader_ston_is[24]={"faders_StOn.whc"};
-int fader_ston_size=48;//bool StopPosOn[48]; // 
+int fader_ston_size=48;//bool StopPosOn[48]; //
 const char file_fader_curve[24]={"faders_curve.whc"};
-int fader_curve_size=48;//int FaderCurves[48]; // 
+int fader_curve_size=48;//int FaderCurves[48]; //
 const char file_fader_preset_selection[24]={"faders_prst_sel.whc"};
 int fader_prst_sel_size=8*48;//bool minifaders_preset_selection[8][48];
 const char file_chaser_to_fader[24]={"faders_chaser.whc"};
@@ -78,7 +120,7 @@ int dock_color_xy_size=8*2;//int x_y_picker_par_colordock[8][2];//stockage des c
 const char file_dock_color_angle[24]={"dockcolor_angle.whc"};
 int dock_color_angle_size=8;//float angle_hue_par_colordock[8];//picker par coordonnées angles
 const char file_dock_color_picker[24]={"dockcolor_picker.whc"};
-int dock_color_picker_size=8*4;//int picker_trichro[8][4];//stockage des niveaux RVB YELLOW 
+int dock_color_picker_size=8*4;//int picker_trichro[8][4];//stockage des niveaux RVB YELLOW
 const char file_dock_color_ch[24]={"dockcolor_ch.whc"};
 int dock_color_ch_size=8*4*514;//bool dock_color_channels[8][4][514];//trichro sur curcuits
 const char file_dock_color_buffer[24]={"dockcolor_buffer.whc"};
@@ -116,13 +158,13 @@ const char file_midi_properties[24]={"midi_properties.whc"};
 int midi_properties_size=16*128;//int midi_change_vel_type[16][128]
 //LFOS
 const char file_dock_times[24]={"dock_times.whc"};
-int dock_times_size=49*6*4;//float time_per_dock[49][6][4];//WAIT IN- IN - WAIT OUT- OUT - 
+int dock_times_size=49*6*4;//float time_per_dock[49][6][4];//WAIT IN- IN - WAIT OUT- OUT -
 const char file_is_for_loop_selected[24]={"dock_loop.whc"};
 int size_is_for_loop_selected=49*6;//bool is_dock_for_lfo_selected[49][6]; // selection nbre de cycle du LFO loop
 const char file_lfo_speed[24]={"lfo_speed.whc"};
 int size_lfo_speed=49;//int lfo_speed[49];
 const char file_lfo_mode_is[24]={"lfo_mode.whc"};
-int size_lfo_mode_is=49;//int lfo_mode_is[49];// //0 NO LFO- 1 UP ONCE - 2 DOWN ONCE 
+int size_lfo_mode_is=49;//int lfo_mode_is[49];// //0 NO LFO- 1 UP ONCE - 2 DOWN ONCE
 const char file_lfo_cycle_on[24]={"lfo_cycle.whc"};
 int size_lfo_cycle_on=49;//bool lfo_cycle_is_on[49];// SAW up down
 const char file_lfo_do_next_step[24]={"lfo_next_step.whc"};
@@ -206,13 +248,13 @@ int excluded_chan_size=514; //bool Channels_excluded_from_grand_master[514];
 const char file_bangers_names[24]={"banger_names.whc"};//
 int banger_name_size=128*25;//char bangers_name[128][25];//128 bangers
 const char file_bangers_types[24]={"banger_types.whc"};//
-int banger_types_size=128*6;//int bangers_type[128][6];//128 bangers // 6 events par banger 
+int banger_types_size=128*6;//int bangers_type[128][6];//128 bangers // 6 events par banger
 const char file_bangers_actions[24]={"banger_actions.whc"};//
 int banger_actions_size=128*6;//int bangers_action[128][6];//num action demandée
 const char file_bangers_values[24]={"banger_values.whc"};//
 int banger_values_size=128*6*2;//int bangers_params[128][6][2];//0 param1 / 1 param2
 const char file_bangers_times[24]={"banger_times.whc"};//
-int banger_times_size=128*6*2;//int bangers_delay[128][6];//delays 
+int banger_times_size=128*6*2;//int bangers_delay[128][6];//delays
 const char file_bangers_alarms[24]={"banger_alarms.whc"};//
 int banger_alarm_size=128*25;//char string_alarm[128][25];//une alarm par banger
 
@@ -221,7 +263,7 @@ int banger_alarm_size=128*25;//char string_alarm[128][25];//une alarm par banger
 const char file_arduino_dig_typ[24]={"arduino_IO_typ.whc"};//
 int arduino_dig_typ_size=128;//int arduino_digital_type[128]
 const char file_arduino_dig_affect[24]={"arduino_IO_aff.whc"};//
-int arduino_dig_aff_size=128*2;//arduino_digital_function_input[128][2];//Action // Val  
+int arduino_dig_aff_size=128*2;//arduino_digital_function_input[128][2];//Action // Val
 const char file_arduino_an_typ[24]={"arduino_AN_typ.whc"};//
 int arduino_an_typ_size=64;//int arduino_analog_function_input[64];
 const char file_arduino_an_aff[24]={"arduino_AN_aff.whc"};//
@@ -296,7 +338,7 @@ const char file_icat_posliders[24]={"icat_posliders.whc"}; //int iCat_pos_slider
 int icat_posliders_size=8*48*2;
 const char file_icat_orsliders[24]={"icat_orsliders.whc"}; //bool iCat_orientation_slider[8][24];//0 vertical 1 horizontal
 int icat_orsliders_size=8*48;
-const char file_icat_typsliders[24]={"icat_typsliders.whc"}; //int iCat_affectation_slider_type_is[8][24];//type 1 faders, 2 sequentiel, 3 audio family 
+const char file_icat_typsliders[24]={"icat_typsliders.whc"}; //int iCat_affectation_slider_type_is[8][24];//type 1 faders, 2 sequentiel, 3 audio family
 int icat_typsliders_size=8*48;
 const char file_icat_valsliders[24]={"icat_valsliders.whc"}; //int iCat_affectation_slider_value_is[8][24];//valeur de la famille 1/48 stage/preset/accel
 int icat_valsliders_size=8*48;
@@ -312,7 +354,7 @@ const char file_icat_pobutton[24]={"icat_pobutton.whc"}; //int iCat_pos_bouton[8
 int icat_pobutton_size=8*48*2;
 const char file_icat_size_buttons[24]={"icat_sizebutton.whc"};//int ratio_iCat_button[8][48];//multiplicateur des proportions du bouton. 1 / 2 / 3
 int icat_sizebuttons_size=8*48;
-const char file_icat_typbutton[24]={"icat_typbutton.whc"}; //int iCat_affectation_bouton_type_is[8][48];//type faders, sequentiel, audio family 
+const char file_icat_typbutton[24]={"icat_typbutton.whc"}; //int iCat_affectation_bouton_type_is[8][48];//type faders, sequentiel, audio family
 int icat_typbutton_size=8*48;
 const char file_icat_actbutton[24]={"icat_actbutton.whc"}; //int iCat_affectation_bouton_action_is[8][48];//action par type: UP DOWN GO GO BACK etc
 int icat_actbutton_size=8*48;
@@ -326,7 +368,7 @@ const char file_icat_posstr[24]={"icat_posstring.whc"}; //int iCat_pos_string[8]
 int icat_posstr_size=8*24*2;
 const char file_icat_sizestr[24]={"icat_sizestr.whc"}; //int ratio_iCat_string[8][24];//multiplicateur des proportions du bouton. 1 / 2 / 3
 int icat_sizestr_size=8*24;
-const char file_icat_typstr[24]={"icat_typstr.whc"}; //int iCat_affectation_string_type_is[8][24];//type string: feedback / sequenciel mems 
+const char file_icat_typstr[24]={"icat_typstr.whc"}; //int iCat_affectation_string_type_is[8][24];//type string: feedback / sequenciel mems
 int icat_typstr_size=8*24;
 const char file_icat_actstr[24]={"icat_actstr.whc"}; //int iCat_affectation_string_action_is[8][24];//
 int icat_actstr_size=8*24;
@@ -378,7 +420,7 @@ const char file_grid_levels_4[24]={"grids_levels_4.whc"};
 int grid_levels_size=32*1024*513;//unsigned char grid_levels[128][1024][513];128/4
 
 const char file_grid_times[24]={"grids_times.whc"};
-int grid_times_size=128*1024*4;//float grid_times[128][1024][4];//0=DIN 1=IN 2=DOUT 3=OUT 
+int grid_times_size=128*1024*4;//float grid_times[128][1024][4];//0=DIN 1=IN 2=DOUT 3=OUT
 const char file_grid_goto[24]={"grids_goto.whc"};
 int grid_goto_size=128*1024*2;//int grid_goto[128][1024][2];//0 grid 1 step
 const char file_grid_seekpos[24]={"grids_seekpos.whc"};
@@ -511,24 +553,24 @@ int echo_presets_size=24*513;//float snap_echo_to_recall[24][513];
 ////////////////////////////////////////////////////////////////////////////////
 int On_Open_name_of_directory()
 {
-    get_executable_name(mondirectory,sizeof(mondirectory));   
-    replace_filename(mondirectory,mondirectory,"",sizeof(mondirectory)); 
+    get_executable_name(mondirectory,sizeof(mondirectory));
+    replace_filename(mondirectory,mondirectory,"",sizeof(mondirectory));
 
     return(0);
 }
 
 
 int get_current_time()
-{  
+{
       time_t timestamp;
-      struct tm * t; 
+      struct tm * t;
       timestamp = time(NULL);
       t = localtime(&timestamp);
-      
-      
+
+
       sprintf(tmp_time,"%02uh %02umin %02usec", t->tm_hour, t->tm_min, t->tm_sec);
-      
- return(0);   
+
+ return(0);
 }
 
 
@@ -537,13 +579,13 @@ int get_current_time()
 int load_midipreset()
 {
 char temp_folder_midi[256];
-sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name); 	 
-chdir(temp_folder_midi);   
+sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name);
+chdir(temp_folder_midi);
 FILE *fpm;
-    
+
 if ((fpm=fopen(file_midi_affectation, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_affectation);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_affectation);
 if (fread(miditable, sizeof(int),midi_affectation_size, fpm) !=midi_affectation_size)
@@ -553,7 +595,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_affectati
 
 if ((fpm=fopen(file_midi_send_out, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_send_out);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_send_out);
 if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fpm) !=midi_send_out_size)
@@ -564,10 +606,10 @@ load_Fader_state_to_midi_array();
 fclose(fpm);
 //REROLL
 sprintf(rep,"");
-sprintf(rep,"%s",mondirectory); 	 
-chdir (rep);        
-    
- return(0);   
+sprintf(rep,"%s",mondirectory);
+chdir (rep);
+
+ return(0);
 }
 
 
@@ -575,9 +617,9 @@ int Show_report_save_load()
 {
 Rect Report_Save_Load(Vec2D(report_SL_X, report_SL_Y), Vec2D( 350,160));
 Report_Save_Load.SetRoundness(15);
-Report_Save_Load.SetLineWidth(epaisseur_ligne_fader*3); 
-Report_Save_Load.Draw(CouleurFond); 
-Report_Save_Load.DrawOutline(CouleurLigne);     
+Report_Save_Load.SetLineWidth(epaisseur_ligne_fader*3);
+Report_Save_Load.Draw(CouleurFond);
+Report_Save_Load.DrawOutline(CouleurLigne);
 if(window_focus_id==W_SAVEREPORT){Report_Save_Load.DrawOutline(CouleurFader);}
 
 //+ minus debug
@@ -595,11 +637,11 @@ Rect AlarmFile(Vec2D((report_SL_X+5),(report_SL_Y+52+(10*co))),Vec2D(300,12));
 AlarmFile.SetRoundness(5);
 if(b_report_error[co+position_view_line]==1)
 {
- AlarmFile.Draw(Rgba::RED.WithAlpha(alpha_blinker));                    
+ AlarmFile.Draw(Rgba::RED.WithAlpha(alpha_blinker));
 }
 petitchiffre.Print( ol::ToString(co+position_view_line),(report_SL_X+5), (report_SL_Y+60+(10*co)));
 petitchiffre.Print( string_save_load_report[co+position_view_line],(report_SL_X+30), (report_SL_Y+60+(10*co)));
-}   
+}
 
 MinusPosMyRep.Draw(CouleurFond);
 PlusPosMyRep.Draw(CouleurFond);
@@ -611,25 +653,25 @@ if(mouse_x>report_SL_X+290 && mouse_x<report_SL_X+340)
 //-
  if( mouse_y>report_SL_Y+76 && mouse_y<report_SL_Y+96)
  {
-  MinusPosMyRep.Draw(CouleurSurvol);   
+  MinusPosMyRep.Draw(CouleurSurvol);
   if(mouse_button==1 &&  mouse_released==0 )
   {
   MinusPosMyRep.Draw(CouleurFader);
   position_view_line-=5;
-  if(position_view_line<0) {position_view_line=0;  }         
+  if(position_view_line<0) {position_view_line=0;  }
   }
- } 
+ }
 //+
  if( mouse_y>report_SL_Y+106 && mouse_y<report_SL_Y+136)
  {
-  PlusPosMyRep.Draw(CouleurSurvol);   
+  PlusPosMyRep.Draw(CouleurSurvol);
   if(mouse_button==1 &&  mouse_released==0 )
   {
   PlusPosMyRep.Draw(CouleurFader);
   position_view_line+=5;
-  if(position_view_line>(255-10)) {position_view_line=(255-10);  }   
+  if(position_view_line>(255-10)) {position_view_line=(255-10);  }
   }
- } 
+ }
 
 }
 
@@ -639,7 +681,7 @@ MinusPosMyRep.DrawOutline(CouleurLigne);
 PlusPosMyRep.DrawOutline(CouleurLigne);
 petitchiffre.Print("line -",report_SL_X+300, report_SL_Y+90);
 petitchiffre.Print("line +",report_SL_X+300, report_SL_Y+120);
-                          
+
 
 
 
@@ -647,7 +689,7 @@ petitchiffre.Print( mondirectory,(report_SL_X+10+90), (report_SL_Y+20));
 petitchiffre.Print( nomduspectacle,(report_SL_X+10+90), (report_SL_Y+35));
 
 
-return(0);    
+return(0);
 }
 
 
@@ -662,20 +704,20 @@ int load_onstart_config()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"!config_onstart.txt");
-	}	
-	else 
+	}
+	else
 	{
     //premiere ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"! config_onstart.txt");
 	}
-	
+
 	fscanf( cfg_file , "%d / %d / %d / %d /\n" ,  &load_camera_on_start, &open_arduino_on_open , &enable_iCat, &expert_mode);
 
-	fclose( cfg_file );	
+	fclose( cfg_file );
     }
-return(0);  
+return(0);
 }
 
 int load_screen_config()
@@ -687,21 +729,21 @@ int load_screen_config()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"!config_screens.txt");
-	}	
-	else 
+	}
+	else
 	{
     //premiere ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"! config_screens.txt");
 	}
-	
+
 	fscanf( cfg_file , "%d %d %d / %d %d / %d %d\n" ,  &index_multiplescreen, &index_borderwindow, &index_fullscreen, &largeur_ecran, &hauteur_ecran, &posX_mainwindow, &posY_mainwindow);
 
 
-	fclose( cfg_file );	
+	fclose( cfg_file );
     }
-return(0);  
+return(0);
 }
 
 
@@ -715,8 +757,8 @@ int load_core_config()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"!config_core.txt");
-	}	
-	else 
+	}
+	else
 	{
     //premiere ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
@@ -745,12 +787,12 @@ int load_core_config()
 	}
 	else
 	{
-    fscanf( cfg_file , "%d / %d /\n",&BPS_RATE,&dmxINrate); 
+    fscanf( cfg_file , "%d / %d /\n",&BPS_RATE,&dmxINrate);
     }
-    
-	fclose( cfg_file );	
+
+	fclose( cfg_file );
     }
-return(0);  
+return(0);
 }
 
 
@@ -766,7 +808,7 @@ fprintf(fpp,"#arguments: do faders (0-1) /do cuelist (0-1) / do bangers (0-1)/ d
 fprintf(fpp, "%d / %d / %d / %d / %d / %d / %d / %d / %d /\n" ,core_do_calculations[0],core_do_calculations[1],core_do_calculations[2],
     core_do_calculations[3],core_do_calculations[4],core_do_calculations[5],core_do_calculations[6],core_do_calculations[7], core_do_calculations[8]  );
 fprintf(fpp,"#arguments: BPS RATE (25-200, should be 50) / DMX IN RATE (25-50) / \n");
-fprintf(fpp, "%d / %d /\n",BPS_RATE,dmxINrate);    
+fprintf(fpp, "%d / %d /\n",BPS_RATE,dmxINrate);
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved config_core.txt");
 
 }
@@ -777,7 +819,7 @@ if( !fpp )
 	{
 	 sprintf(string_save_load_report[idf],"!user/config_core.txt");
    }
-return(0);    
+return(0);
 }
 
 
@@ -798,7 +840,7 @@ if( !fpp )
 	{
 	 sprintf(string_save_load_report[idf],"!user/config_onstart.txt");
    }
-return(0);    
+return(0);
 }
 
 
@@ -817,7 +859,7 @@ if( !fpp )
 	{
 	 sprintf(string_save_load_report[idf],"!user/config_screens.txt");
    }
-return(0);    
+return(0);
 }
 
 
@@ -835,7 +877,7 @@ if( !fpp )
 	{
 	 sprintf(string_save_load_report[idf],"!user/launchpad_lighting.txt");
    }
-return(0);    
+return(0);
 }
 
 
@@ -848,33 +890,33 @@ int Load_Launchpad_RetroLight()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"! launchpad_lighting.txt");
-	}	
-	else 
+	}
+	else
 	{
     //premiere ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"! launchpad_lighting.txt");
 	}
-	
+
 	fscanf( cfg_file ,  "%d / %d  / %d / %d / %d / %d /\n" ,  &lch_orange, &lch_green, &lch_yellow, &lch_red, &lch_ambre, &lch_orange_fonce);
 
-	fclose( cfg_file );	
+	fclose( cfg_file );
     }
-    
+
     launchpad_color[0]=lch_orange;//63;
     launchpad_color[1]=lch_green;//60;
     launchpad_color[2]=lch_yellow;//62;
     launchpad_color[3]=lch_red;//15;
     launchpad_color[4]=lch_ambre;//31;
-    launchpad_color[5]=lch_orange_fonce;//30;    
-return(0);  
+    launchpad_color[5]=lch_orange_fonce;//30;
+return(0);
 }
 
 
 int save_draw_preset_config()
 {
-    
+
 FILE *fpp;
 if(fpp=fopen("draw_presets_states.txt","w"))//etait wb
 {
@@ -887,7 +929,7 @@ fprintf(fpp,"#arguments 2ndLine :GPL NUM ( 1 to 4 ) / Offset ( 1 to 513 ) / posi
 fprintf(fpp, "M %d / %f / %f / %f / %d /\n",draw_mode[i],draw_level_to_do[i],draw_tilt_to_do[i],draw_ghost_to_do[i],draw_brush_type[i]);
 fprintf(fpp, "G %d / %d / %d / %d / %d /\n",draw_get_gpl[i],draw_offset_gpl[i], index_case[i],draw_centre_x[i], draw_centre_y[i]);
 }
-fclose(fpp);  
+fclose(fpp);
 sprintf(string_save_load_report[idf],"Saved draw_presets_states.txt");
 }
 if( !fpp )
@@ -897,7 +939,7 @@ if( !fpp )
 
 
 
-return(0);    
+return(0);
 }
 
 
@@ -909,40 +951,40 @@ int load_draw_preset_config()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"!draw_presets_states.txt");
-	}	
-	
-	else 
+	}
+
+	else
 	{
-      
+
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
-	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}	
-         
+	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}
+
     for(int i=0;i<6;i++)
     {
-            
+
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
-	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}	
-	   
+	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}
+
    	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
-	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}	
-	
+	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}
+
     fscanf( cfg_file , "M %d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_tilt_to_do[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
-   
+
     fscanf( cfg_file , "G %d / %d / %d / %d / %d /\n" ,&draw_get_gpl[i],&draw_offset_gpl[i], &index_case[i], &draw_centre_x[i], &draw_centre_y[i]);
-    
+
     previous_draw_mode[i]=draw_mode[i];
     draw_get_gpl[i]=constrain_int_data_to_this_range(draw_get_gpl[i],1,4);
     draw_offset_gpl[i]=constrain_int_data_to_this_range(draw_offset_gpl[i],1,512);
-    
+
     if(draw_level_to_do[i]>1.0){draw_level_to_do[i]=1.0;}
     if(draw_tilt_to_do[i]>1.0){draw_tilt_to_do[i]=1.0;}
-    if(draw_ghost_to_do[i]>1.0){draw_ghost_to_do[i]=1.0;} 
- 
+    if(draw_ghost_to_do[i]>1.0){draw_ghost_to_do[i]=1.0;}
+
     }
-    fclose( cfg_file );	
+    fclose( cfg_file );
     }
-    
-return(0);  
+
+return(0);
 }
 
 
@@ -961,7 +1003,7 @@ if( !fpp )
    }
 
 
-return(0);    
+return(0);
 }
 
 
@@ -974,19 +1016,19 @@ int load_arduino_config()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"!arduino.txt");
-	}	
-	else 
+	}
+	else
 	{
     //premiere ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"! arduino.txt");
 	}
-	
+
 fscanf( cfg_file , "%d / %d / %d / %d / %d / %d /\n" ,  &arduino_com0, &arduino_baud_rate0, &ARDUINO_RATE, &arduino_max_digital,  &arduino_max_out_digi, &arduino_max_analog );
-	fclose( cfg_file );	
+	fclose( cfg_file );
     }
-return(0);  
+return(0);
 }
 
 
@@ -1000,7 +1042,7 @@ int Load_Window_Conf()
 	if( !cfg_file )
 	{
 	 sprintf(string_save_load_report[idf],"!config_windows.txt");
-	}	
+	}
 else
 {
 //premiere ligne les args
@@ -1042,9 +1084,9 @@ else
     fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d / %d %d / %d %d /\n",&X_gui_iCat,&Y_gui_iCat,&grider_window_x,&grider_window_y, &x_plot, &y_plot, &x_mainmenu, &y_mainmenu , &x_Wdraw, &y_Wdraw, &x_echo, &y_echo);
 
 
-	fclose( cfg_file );	
+	fclose( cfg_file );
 }
-return(0);  
+return(0);
 }
 
 
@@ -1055,7 +1097,7 @@ int Load_Sequenciel_Conf()
     int it=0;
 	cfg_file = fopen("sequenciel.txt", "rt" );
 	if( !cfg_file )
-	{	 sprintf(string_save_load_report[idf],"Error on opening Sequenciel.txt"); b_report_error[idf]=1;	}	
+	{	 sprintf(string_save_load_report[idf],"Error on opening Sequenciel.txt"); b_report_error[idf]=1;	}
 	else {
     sprintf(string_save_load_report[idf],"Sequenciel.txt opened");
 //premiere ligne les args
@@ -1065,14 +1107,14 @@ int Load_Sequenciel_Conf()
 	fscanf( cfg_file , "%d / %d / %d / %d / %d /\n" ,  &position_onstage, &position_preset, &niveauX1, &niveauX2, &crossfade_speed);
     fscanf( cfg_file , "%f /\n" ,  &default_time);
     fscanf( cfg_file , "%d %d /\n" ,  &go_channel_is, &pause_channel_is);
-	fclose( cfg_file );	
+	fclose( cfg_file );
 	}
 midi_levels[491]=niveauX1/2;
 midi_levels[492]=127-(niveauX2/2);
-midi_levels[493]=crossfade_speed; 
-   if(go_channel_is<1 || ( go_channel_is> 512)){go_channel_is=0;} 
-   if(pause_channel_is<1 || ( pause_channel_is> 512)){pause_channel_is=0;} 
-return(0);  
+midi_levels[493]=crossfade_speed;
+   if(go_channel_is<1 || ( go_channel_is> 512)){go_channel_is=0;}
+   if(pause_channel_is<1 || ( pause_channel_is> 512)){pause_channel_is=0;}
+return(0);
 }
 
 int Load_setup_conf()
@@ -1082,7 +1124,7 @@ int Load_setup_conf()
     int it=0;
 	cfg_file = fopen("user/general_set_up.txt", "rt" );
 	if( !cfg_file )
-	{	 sprintf(string_save_load_report[idf],"Error on opening user/general_set_up.txt"); b_report_error[idf]=1;	}	
+	{	 sprintf(string_save_load_report[idf],"Error on opening user/general_set_up.txt"); b_report_error[idf]=1;	}
 	else {
     sprintf(string_save_load_report[idf],"user/general_set_up.txt opened");
 //premiere ligne les args
@@ -1096,12 +1138,12 @@ int Load_setup_conf()
 	{
      sprintf(string_save_load_report[idf],"Error reading general_set_up.txt");
 	}
-    fscanf( cfg_file , "%d / %d / %d /\n",&automatic_time_for_save, &index_nbre_players_visibles, &LargeurEspaceFaderSize); 
+    fscanf( cfg_file , "%d / %d / %d /\n",&automatic_time_for_save, &index_nbre_players_visibles, &LargeurEspaceFaderSize);
 
-	fclose( cfg_file );	
+	fclose( cfg_file );
 	}
-	
-if(LargeurEspaceFaderSize<1024 ){LargeurEspaceFaderSize=1024;} 
+
+if(LargeurEspaceFaderSize<1024 ){LargeurEspaceFaderSize=1024;}
 if(LargeurEspaceFaderSize>largeur_ecran){LargeurEspaceFaderSize=largeur_ecran;}
 
 return(0);
@@ -1113,7 +1155,7 @@ FILE *fpi;
 if(fpi=fopen("user/general_set_up.txt","w"))//etait wb
 {
 fprintf(fpi,"#arguments: default step level / level wheel absolute mode / channel check level / dimmer check level / blink on mem change /  midi auto desaffect / dmx view / preloaded sounds / bang stay time\n");
-fprintf(fpi,"%d / %d / %d / %d / %d / %d / %d / %d / %.1f /\n",default_step_level, wheellevel_absolutemode, check_channel_level, dimmer_check_level, 
+fprintf(fpi,"%d / %d / %d / %d / %d / %d / %d / %d / %.1f /\n",default_step_level, wheellevel_absolutemode, check_channel_level, dimmer_check_level,
                                                              index_blink_change_memories, index_midi_auto_desaffect, dmx_view, index_preloaded_sounds,  default_time_of_the_bang);
 fprintf(fpi,"#arguments: autosave time in sec / nbr audioplayers / fader space width /\n");
 fprintf(fpi,"%d / %d / %d /\n",automatic_time_for_save, index_nbre_players_visibles, LargeurEspaceFaderSize);
@@ -1121,7 +1163,7 @@ fclose(fpi);
 }
 
 sprintf(string_save_load_report[idf],"Saved /general_set_up.txt");
-return(0);     
+return(0);
 }
 
 
@@ -1145,7 +1187,7 @@ if( !fpp )
 	{
 	 sprintf(string_save_load_report[idf],"!plot_plan_config.txt");
    }
-return(0);    
+return(0);
 }
 
 
@@ -1156,17 +1198,17 @@ int Load_Plot_Plan_config()
     int it=0;
 	cfg_file = fopen("plot_plan_config.txt", "rt" );
 	if( !cfg_file )
-	{	 sprintf(string_save_load_report[idf],"Error on opening plot_plan_config.txt"); b_report_error[idf]=1;	}	
-	else 
+	{	 sprintf(string_save_load_report[idf],"Error on opening plot_plan_config.txt"); b_report_error[idf]=1;	}
+	else
     {
-    //lecture ouverture fichier ok     
+    //lecture ouverture fichier ok
     sprintf(string_save_load_report[idf],"plot_plan_config.txt opened");
-    
+
 //premiere ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{     sprintf(string_save_load_report[idf],"Error on reading plot_plan_config.txt");b_report_error[idf]=1; 	}
     else {sprintf(string_save_load_report[idf],"plot_plan_config.txt readed");}
-//2eme ligne    
+//2eme ligne
 	fscanf( cfg_file , "%s\n" , &Name_of_plane_is);
 //args
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
@@ -1183,7 +1225,7 @@ int Load_Plot_Plan_config()
 //6eme
     fscanf( cfg_file , "%d / %d / %d / %d / %d / %f / %f / %d / %d / %d / %f / %f / %f / %d /\n",&plot_quadrillage_size,&plot_window_x_size,&plot_window_y_size, &plot_view_port_x, &plot_view_port_y, &Color_plotline, &Color_plotfill, &nbre_shapes_on_plot, &index_show_shape_id, &plot_grid_type, &alpha_grille, &general_alpha_for_shape, &ratio_lock_plot_scale, &mode_relatif_xy_solo);
 
-	fclose( cfg_file );	
+	fclose( cfg_file );
 	}
 
 if(plot_window_x_size<840){plot_window_x_size=840;}
@@ -1236,14 +1278,14 @@ index_report_customs[32]=echo_selected;
 index_report_customs[33]=index_allow_multicore;
 index_report_customs[34]=allow_artnet_in;
 index_report_customs[35]=window_focus_id;
-index_report_customs[36]=recall_windows_focus_id; 
+index_report_customs[36]=recall_windows_focus_id;
 index_report_customs[37]=index_config_network;
 index_report_customs[38]=index_setup_gfx;
 index_report_customs[39]=core_to_assign;
 //index_report_customs[40]=index_show_config_window;
 //index_report_customs[41]=index_grider_window;
-index_report_customs[42]=show_global_view_grider;    
-index_report_customs[43]=enable_launchpad; 
+index_report_customs[42]=show_global_view_grider;
+index_report_customs[43]=enable_launchpad;
 //index_report_customs[44]=index_show_wizard_window;
 index_report_customs[45]=config_page_is;
 //index_report_customs[46]=index_show_minifaders;
@@ -1316,9 +1358,9 @@ index_setup_gfx=index_report_customs[38];
 core_to_assign=index_report_customs[39];
 //index_show_config_window=index_report_customs[40];
 //index_grider_window=index_report_customs[41];
-show_global_view_grider=index_report_customs[42];    
-enable_launchpad=index_report_customs[43]; 
-//index_show_wizard_window=index_report_customs[44]; 
+show_global_view_grider=index_report_customs[42];
+enable_launchpad=index_report_customs[43];
+//index_show_wizard_window=index_report_customs[44];
 config_page_is=index_report_customs[45];
 //index_show_minifaders=index_report_customs[46];
 //index_window_chasers=index_report_customs[47];
@@ -1361,27 +1403,27 @@ if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_all
 switch(config_page_is)
 {
 case 0:
-break;                      
+break;
 case 1:
 index_config_dmx=1;
-break; 
+break;
 case 2:
-index_config_midi=1;     
+index_config_midi=1;
 break;
 case 3:
-index_config_network=1;     
+index_config_network=1;
 break;
 case 4:
-index_setup_gfx=1;     
+index_setup_gfx=1;
 break;
 case 5:
-index_config_arduino=1;     
+index_config_arduino=1;
 break;
 case 6:
-index_config_general=1;     
+index_config_general=1;
 break;
 case 7:
-index_config_core=1;     
+index_config_core=1;
 break;
 }
 
@@ -1407,14 +1449,14 @@ int load_show_coming_from()
     int it=0;
 	cfg_file = fopen("user/show_coming_from.txt", "rt" );
 	if( !cfg_file )
-	{	 sprintf(string_save_load_report[idf],"Error on opening user/show_coming_from.txt"); b_report_error[idf]=1;	}	
+	{	 sprintf(string_save_load_report[idf],"Error on opening user/show_coming_from.txt"); b_report_error[idf]=1;	}
 	else {
     sprintf(string_save_load_report[idf],"user/show_coming_from.txt opened");}
 	fgets( my_show_is_coming_from , sizeof( my_show_is_coming_from ) ,cfg_file ) ;
 	fclose( cfg_file );
     sprintf(string_save_load_report[idf],"loaded show_coming_from.txt");
- 
- return(0);   
+
+ return(0);
 }
 
 
@@ -1439,10 +1481,10 @@ fprintf(fpi,"#arguments: X Y position of windows: iCatBuilder / Grider / Plot / 
 fprintf(fpi,"%d %d / %d %d / %d %d / %d %d / %d %d / %d %d /\n",X_gui_iCat,Y_gui_iCat,grider_window_x,grider_window_y, x_plot, y_plot, x_mainmenu, y_mainmenu, x_Wdraw,y_Wdraw,x_echo,y_echo);
 
 fclose(fpi);
-}  
+}
 sprintf(string_save_load_report[idf],"Saved config_windows.txt");
 
-return(0);    
+return(0);
 }
 
 
@@ -1450,12 +1492,12 @@ return(0);
 
 int Load_User_Profile()
 {
- 
+
 FILE *fpA;
 
 if ((fpA=fopen(file_color_profile, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_color_profile);}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_color_profile);
 if (fread( couleurs_user, sizeof(float), color_profile_size, fpA) !=color_profile_size)
@@ -1466,46 +1508,46 @@ fclose(fpA);
  for(int tmp=0;tmp<12;tmp++)
  {
   Rgba TmpColor (couleurs_user[tmp][0],couleurs_user[tmp][1],couleurs_user[tmp][2]);
- 
+
   switch (tmp)
  {
  case 0:
  CouleurUser1=TmpColor;
- break;    
+ break;
  case 1:
  CouleurUser2=TmpColor;
- break; 
+ break;
  case 2:
  CouleurUser3=TmpColor;
- break; 
+ break;
  case 3:
  CouleurUser4=TmpColor;
- break; 
+ break;
  case 4:
  CouleurUser5=TmpColor;
- break; 
+ break;
  case 5:
  CouleurUser6=TmpColor;
- break; 
+ break;
  case 6:
  CouleurUser7=TmpColor;
- break; 
+ break;
  case 7:
  CouleurUser8=TmpColor;
- break; 
+ break;
  case 8:
  CouleurUser9=TmpColor;
- break; 
+ break;
  case 9:
  CouleurUser10=TmpColor;
- break; 
+ break;
  case 10:
  CouleurUser11=TmpColor;
- break; 
+ break;
  case 11:
  CouleurUser12=TmpColor;
- break; 
- }                            
+ break;
+ }
 }
 return(0);
 }
@@ -1523,8 +1565,8 @@ fprintf(fpo,"%d %d /\n", go_channel_is,pause_channel_is);
 sprintf(string_save_load_report[idf],"Saved sequenciel.txt");
 fclose(fpo); }
 else {sprintf(string_save_load_report[idf],"Error on sequenciel.txt");b_report_error[idf]=1;}
- 
-return(0);    
+
+return(0);
 }
 
 int Save_audiofiles_cues()
@@ -1543,24 +1585,24 @@ fprintf(fpo,"%s / %d / %d\n",list_audio_files[i],audiofile_cue_in_out_pos[i][0],
 }
 }
 sprintf(string_save_load_report[idf],"Saved %s",tmp_audio_f);
-fclose(fpo); 
+fclose(fpo);
 }
 
 else {sprintf(string_save_load_report[idf],"Error on audio_cues_in_out.txt");b_report_error[idf]=1;}
-   
-    
- return(0);   
+
+
+ return(0);
 }
 
 
-int Load_Audio_Conf() 
+int Load_Audio_Conf()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
     int it=0;
 	cfg_file = fopen("audio_conf.txt", "rt" );
 	if( !cfg_file )
-	{	 sprintf(string_save_load_report[idf],"Error on opening Sequenciel.txt"); b_report_error[idf]=1;	}	
+	{	 sprintf(string_save_load_report[idf],"Error on opening Sequenciel.txt"); b_report_error[idf]=1;	}
 	else {
     sprintf(string_save_load_report[idf],"audio_conf.txt opened");
 //premiere ligne les args
@@ -1570,8 +1612,8 @@ int Load_Audio_Conf()
 	fscanf( cfg_file , "%s\n" ,  &audio_folder);
 	fclose( cfg_file );
     }
-	
- 
+
+
 return(0);
 }
 
@@ -1584,11 +1626,11 @@ if(fpo=fopen("audio_conf.txt","w"))
 fprintf(fpo,"#arguments: audiofolder\n");
 fprintf(fpo,"%s\n",audio_folder);
 sprintf(string_save_load_report[idf],"Saved audio_conf.txt");
-fclose(fpo); 
+fclose(fpo);
 }
 else {sprintf(string_save_load_report[idf],"Error on audio_conf.txt");b_report_error[idf]=1; fclose(fpo);}
- 
-return(0);    
+
+return(0);
 }
 
 //save
@@ -1599,13 +1641,13 @@ index_is_saving=1;
 save_load_print_to_screen("Saving ...");
 
 //index_show_save_load_report=1;
-sprintf(rep,"%s\%s\%s",mondirectory,rep_saves,nomduspectacle); 	 
+sprintf(rep,"%s\%s\%s",mondirectory,rep_saves,nomduspectacle);
 //LPSECURITY_ATTRIBUTES attr;
 //attr=NULL;
 //CreateDirectory(rep,attr);
 mkdir (rep);
 //chmod (rep,0777);
-chdir (rep);    
+chdir (rep);
 clear_report_string();
 idf=0;
 //sprintf(string_debug,"entree:%s", rep);
@@ -1618,7 +1660,7 @@ fprintf(fpo,"%s\n",versionis);
 sprintf(string_save_load_report[idf],"Saved whitecat_version.txt");
 }
 else {sprintf(string_save_load_report[idf],"Error on whitecat_version.txt");b_report_error[idf]=1; }
-fclose(fpo); 
+fclose(fpo);
 
  idf++;
 ////////////////////////////////////////////////////////////////////////////////
@@ -1633,24 +1675,24 @@ FILE *fp=NULL;
 
 
 
-if(specify_who_to_save_load[0]==1) ///MEMOIRES////////////////////////////////////////////////////////////                               
+if(specify_who_to_save_load[0]==1) ///MEMOIRES////////////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_mem_existantes, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mem_existantes); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_mem_existantes);
 if (fwrite(MemoiresExistantes, sizeof(bool),mem_existantes_size, fp) !=  mem_existantes_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_mem_existantes); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mem_existantes);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_memories, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_memories); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_memories);
 if (fwrite(Memoires, sizeof(unsigned char),memories_size, fp) !=  memories_size)
@@ -1658,11 +1700,11 @@ if (fwrite(Memoires, sizeof(unsigned char),memories_size, fp) !=  memories_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_memories);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_text_mems, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_text_mems); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_text_mems);
 if (fwrite(descriptif_memoires, sizeof(char),text_mems_size, fp) !=  text_mems_size)
@@ -1670,11 +1712,11 @@ if (fwrite(descriptif_memoires, sizeof(char),text_mems_size, fp) !=  text_mems_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_text_mems);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_text_annots, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_text_annots); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_text_annots);
 if (fwrite(annotation_memoires, sizeof(char),text_annots_size, fp) !=  text_annots_size)
@@ -1682,11 +1724,11 @@ if (fwrite(annotation_memoires, sizeof(char),text_annots_size, fp) !=  text_anno
 else sprintf(string_save_load_report[idf],"Saved file %s", file_text_annots);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mem_detruites, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mem_detruites); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_mem_detruites);
 if (fwrite(MemoiresDetruites, sizeof(bool),mem_deleted_size, fp) !=  mem_deleted_size)
@@ -1694,11 +1736,11 @@ if (fwrite(MemoiresDetruites, sizeof(bool),mem_deleted_size, fp) !=  mem_deleted
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_mem_detruites);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mem_exclues, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mem_exclues); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_mem_exclues);
 if (fwrite(MemoiresExclues, sizeof(bool),mem_exclues_size, fp) !=  mem_exclues_size)
@@ -1710,14 +1752,14 @@ fclose(fp);
 
 
 Save_Sequenciel_Conf();
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[1]==1) ///////////MEMOIRES TIMES///////////////////////////////////////////////
 {
 if ((fp=fopen( file_times_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_times_mem); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_times_mem);
 if (fwrite(Times_Memoires, sizeof(float),times_mems_size, fp) !=  times_mems_size)
@@ -1725,14 +1767,14 @@ if (fwrite(Times_Memoires, sizeof(float),times_mems_size, fp) !=  times_mems_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_times_mem);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[2]==1)  ///////////MEMOIRES LINKS //////////////////////////////////////////////
 {
 if ((fp=fopen( file_link_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_link_mem); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_link_mem);
 if (fwrite(Links_Memoires, sizeof(bool),link_mem_size, fp) !=  link_mem_size)
@@ -1740,14 +1782,14 @@ if (fwrite(Links_Memoires, sizeof(bool),link_mem_size, fp) !=  link_mem_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_link_mem);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[3]==1) ///////////MEMOIRES: nums de bangers affectés//////////////////////////
 {
 if ((fp=fopen( file_banger_call_in_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_banger_call_in_mem); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_banger_call_in_mem);
 if (fwrite(Banger_Memoire, sizeof(int),bang_mem_size, fp) !=  bang_mem_size)
@@ -1755,14 +1797,14 @@ if (fwrite(Banger_Memoire, sizeof(int),bang_mem_size, fp) !=  bang_mem_size)
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_banger_call_in_mem);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[4]==1) /////////////MEMOIRES: manual ratio/////////////////////////////////////
 {
 if ((fp=fopen( file_manual_ratio_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_manual_ratio_mem); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_manual_ratio_mem);
 if (fwrite(ratio_cross_manuel, sizeof(int),ratio_mem_size, fp) !=  ratio_mem_size)
@@ -1770,14 +1812,14 @@ if (fwrite(ratio_cross_manuel, sizeof(int),ratio_mem_size, fp) !=  ratio_mem_siz
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_manual_ratio_mem);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[5]==1)  ////////////Channels LIST//////////////////////////////////////////////
 {
 if ((fp=fopen(file_spotlist, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_spotlist); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_spotlist);
 if (fwrite( descriptif_projecteurs, sizeof(char),spotlist_size, fp) !=  spotlist_size)
@@ -1786,11 +1828,11 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_spotlist);
 fclose(fp);
 }
  idf++;
- 
- 
+
+
  if ((fp=fopen(file_chan_macro_on, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_on); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chan_macro_on);
 if (fwrite(  macro_channel_on, sizeof(bool),chan_macro_on_size, fp) !=  chan_macro_on_size)
@@ -1799,11 +1841,11 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chan_macro_on);
 fclose(fp);
 }
  idf++;
- 
- 
+
+
   if ((fp=fopen(file_chan_macro_reaction, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_reaction); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chan_macro_reaction);
 if (fwrite(  channel_macro_reaction, sizeof(int),chan_macro_reaction_size, fp) !=  chan_macro_reaction_size)
@@ -1812,12 +1854,12 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chan_macro_react
 fclose(fp);
 }
  idf++;
- 
- 
- 
+
+
+
    if ((fp=fopen(file_chan_macro_action, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_action); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chan_macro_action);
 if (fwrite(  channel_macro_action, sizeof(int),chan_macro_action_size, fp) !=  chan_macro_action_size)
@@ -1826,10 +1868,10 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chan_macro_actio
 fclose(fp);
 }
  idf++;
- 
+
   if ((fp=fopen(file_chan_macro_val, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_val); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chan_macro_val);
 if (fwrite(  channel_macro_val, sizeof(int),chan_macro_val_size, fp) !=  chan_macro_val_size)
@@ -1838,10 +1880,10 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chan_macro_val);
 fclose(fp);
 }
  idf++;
- 
+
   if ((fp=fopen(file_chview_ch, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_ch); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chview_ch);
 if (fwrite(  Channel_View_ROUTING, sizeof(int),chview_ch_size, fp) !=  chview_ch_size)
@@ -1850,10 +1892,10 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chview_ch);
 fclose(fp);
 }
  idf++;
- 
+
   if ((fp=fopen(file_chview_name, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_name); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chview_name);
 if (fwrite(  channel_view_Name, sizeof(char),chview_name_size, fp) !=  chview_name_size)
@@ -1862,10 +1904,10 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chview_name);
 fclose(fp);
 }
  idf++;
- 
+
    if ((fp=fopen(file_chview_linktype, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_linktype); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chview_linktype);
 if (fwrite(  channel_view_link_type, sizeof(int), chview_linktype_size, fp) !=  chview_linktype_size)
@@ -1874,11 +1916,11 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chview_linktype)
 fclose(fp);
 }
  idf++;
-  
- 
+
+
     if ((fp=fopen(file_chview_linkref, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_linkref); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chview_linkref);
 if (fwrite(  channel_view_link_ref, sizeof(int), chview_linkref_size, fp) !=  chview_linkref_size)
@@ -1887,11 +1929,11 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chview_linkref);
 fclose(fp);
 }
  idf++;
- 
-  
+
+
   if ((fp=fopen(file_chview_view, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_view); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chview_view);
 if (fwrite(  Channel_View_MODE, sizeof(bool), chview_view_size, fp) !=  chview_view_size)
@@ -1900,7 +1942,7 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_chview_view);
 fclose(fp);
 }
  idf++;
- 
+
  //fin list
 }
 
@@ -1909,7 +1951,7 @@ if(specify_who_to_save_load[6]==1)  ////////////Channels Direct Chan////////////
 {
 if ((fp=fopen( file_direct_channel, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_direct_channel); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_direct_channel);
 if (fwrite(FaderDirectChan, sizeof(int),fader_direct_chan_size, fp) != fader_direct_chan_size)
@@ -1917,14 +1959,14 @@ if (fwrite(FaderDirectChan, sizeof(int),fader_direct_chan_size, fp) != fader_dir
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_direct_channel);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[7]==1)  ////////////FREEZE STATE//////////////////////////////////////////////////
 {
 if ((fp=fopen(file_dofreeze, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dofreeze); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_dofreeze);
 if (fwrite( freeze_array, sizeof(bool), dofreeze_size, fp) !=   dofreeze_size)
@@ -1932,10 +1974,10 @@ if (fwrite( freeze_array, sizeof(bool), dofreeze_size, fp) !=   dofreeze_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dofreeze);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_freeze_state, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_freeze_state); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_freeze_state);
 if (fwrite( freeze_state, sizeof(unsigned char), freezestate_size, fp) !=   freezestate_size)
@@ -1943,10 +1985,10 @@ if (fwrite( freeze_state, sizeof(unsigned char), freezestate_size, fp) !=   free
 else sprintf(string_save_load_report[idf],"Saved file %s", file_freeze_state);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_excluded_chan, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_excluded_chan); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_excluded_chan);
 if (fwrite(Channels_excluded_from_grand_master, sizeof(bool), excluded_chan_size, fp) !=   excluded_chan_size)
@@ -1954,8 +1996,8 @@ if (fwrite(Channels_excluded_from_grand_master, sizeof(bool), excluded_chan_size
 else sprintf(string_save_load_report[idf],"Saved file %s", file_excluded_chan);
 fclose(fp);
 }
- idf++;  
- 
+ idf++;
+
 }
 
 
@@ -1965,7 +2007,7 @@ if(specify_who_to_save_load[8]==1)  /////PATCH CHANNELS ////////////////////////
 {
 if ((fp=fopen( file_patch_channels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_patch_channels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_patch_channels);
 if (fwrite(Patch, sizeof(int),patch_channels_size, fp) != patch_channels_size)
@@ -1973,14 +2015,14 @@ if (fwrite(Patch, sizeof(int),patch_channels_size, fp) != patch_channels_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_patch_channels);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
-if(specify_who_to_save_load[9]==1)  /////PATCH LTP / HTP//////////////////////////////////////////////////// 
+if(specify_who_to_save_load[9]==1)  /////PATCH LTP / HTP////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_patch_ltp, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_patch_ltp); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_patch_ltp);
 if (fwrite(dimmer_type, sizeof(bool),patch_ltp_size, fp) != patch_ltp_size)
@@ -1988,10 +2030,10 @@ if (fwrite(dimmer_type, sizeof(bool),patch_ltp_size, fp) != patch_ltp_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_patch_ltp);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_patch_curves, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_patch_curves); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_patch_curves);
 if (fwrite(curves, sizeof(int),patch_curves_size, fp) != patch_curves_size)
@@ -1999,14 +2041,14 @@ if (fwrite(curves, sizeof(int),patch_curves_size, fp) != patch_curves_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_patch_curves);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[10]==1)  //////PATCH CURVES/////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_curve_ctrl_pt, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_curve_ctrl_pt); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_curve_ctrl_pt);
 if (fwrite(curve_ctrl_pt, sizeof(int),curve_ctrl_size, fp) != curve_ctrl_size)
@@ -2014,10 +2056,10 @@ if (fwrite(curve_ctrl_pt, sizeof(int),curve_ctrl_size, fp) != curve_ctrl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_curve_ctrl_pt);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_curve_spline_level, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_curve_spline_level); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_curve_spline_level);
 if (fwrite(the_curve_spline_level, sizeof(int),curve_spline_level_size, fp) != curve_spline_level_size)
@@ -2025,25 +2067,25 @@ if (fwrite(the_curve_spline_level, sizeof(int),curve_spline_level_size, fp) != c
 else sprintf(string_save_load_report[idf],"Saved file %s", file_curve_spline_level);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_curve_matrix, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_curve_matrix); b_report_error[idf]=1;}
-else 
-{     
+else
+{
 sprintf(string_save_load_report[idf],"Opened file %s",file_curve_matrix);
 if (fwrite(curve_report, sizeof(int),curve_matrix_size, fp) != curve_matrix_size)
 { sprintf(string_save_load_report[idf],"Error writting %s",file_curve_matrix); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s",file_curve_matrix);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[11]==1)  //////////////BANGER///////////////////////////////////////////////////
 {
 if ((fp=fopen(file_bangers_names, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_names); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_names);
 if (fwrite( bangers_name, sizeof(char), banger_name_size, fp) !=   banger_name_size)
@@ -2051,10 +2093,10 @@ if (fwrite( bangers_name, sizeof(char), banger_name_size, fp) !=   banger_name_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_bangers_names);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_bangers_types, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_types); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_types);
 if (fwrite( bangers_type, sizeof(int),banger_types_size, fp) !=   banger_types_size)
@@ -2062,10 +2104,10 @@ if (fwrite( bangers_type, sizeof(int),banger_types_size, fp) !=   banger_types_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_bangers_types);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_bangers_actions, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_actions); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_actions);
 if (fwrite( bangers_action, sizeof(int),banger_actions_size, fp) !=  banger_actions_size)
@@ -2073,10 +2115,10 @@ if (fwrite( bangers_action, sizeof(int),banger_actions_size, fp) !=  banger_acti
 else sprintf(string_save_load_report[idf],"Saved file %s", file_bangers_actions);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_bangers_values, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_values); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_values);
 if (fwrite( bangers_params, sizeof(int), banger_values_size, fp) !=   banger_values_size)
@@ -2084,10 +2126,10 @@ if (fwrite( bangers_params, sizeof(int), banger_values_size, fp) !=   banger_val
 else sprintf(string_save_load_report[idf],"Saved file %s",file_bangers_values);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_bangers_times, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_times); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_times);
 if (fwrite( bangers_delay, sizeof(float), banger_times_size, fp) !=  banger_times_size)
@@ -2095,10 +2137,10 @@ if (fwrite( bangers_delay, sizeof(float), banger_times_size, fp) !=  banger_time
 else sprintf(string_save_load_report[idf],"Saved file %s",file_bangers_times);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen(file_bangers_alarms, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_bangers_alarms); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_alarms);
 if (fwrite(string_alarm, sizeof(char), banger_alarm_size, fp) != banger_alarm_size)
@@ -2106,14 +2148,14 @@ if (fwrite(string_alarm, sizeof(char), banger_alarm_size, fp) != banger_alarm_si
 else sprintf(string_save_load_report[idf],"Saved file %s",file_bangers_alarms);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[12]==1) /////////////FADERS contents///////////////////////////////////////////
 {
 if ((fp=fopen( file_faders_state, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_faders_state); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_faders_state);
 if (fwrite(Fader, sizeof(unsigned char), faders_saving_size, fp) != faders_saving_size)
@@ -2121,10 +2163,10 @@ if (fwrite(Fader, sizeof(unsigned char), faders_saving_size, fp) != faders_savin
 else sprintf(string_save_load_report[idf],"Saved file %s", file_faders_state);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_selected, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_selected); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_selected);
 if (fwrite(DockIsSelected, sizeof(bool), dock_selected_size, fp) != dock_selected_size)
@@ -2132,10 +2174,10 @@ if (fwrite(DockIsSelected, sizeof(bool), dock_selected_size, fp) != dock_selecte
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_selected);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_type, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_type); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_type);
 if (fwrite(DockTypeIs, sizeof(unsigned char), dock_type_size, fp) != dock_type_size)
@@ -2143,10 +2185,10 @@ if (fwrite(DockTypeIs, sizeof(unsigned char), dock_type_size, fp) != dock_type_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_type);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_net, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_net); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_net);
 if (fwrite(DockNetIs, sizeof(unsigned char), dock_net_size, fp) != dock_net_size)
@@ -2154,10 +2196,10 @@ if (fwrite(DockNetIs, sizeof(unsigned char), dock_net_size, fp) != dock_net_size
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_net);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_name, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_name); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_name);
 if (fwrite(DockName, sizeof(char), dock_name_size, fp) != dock_name_size)
@@ -2165,10 +2207,10 @@ if (fwrite(DockName, sizeof(char), dock_name_size, fp) != dock_name_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_name);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_channels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_channels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_channels);
 if (fwrite(FaderDockContains, sizeof(unsigned char), dock_channels_size, fp) != dock_channels_size)
@@ -2176,10 +2218,10 @@ if (fwrite(FaderDockContains, sizeof(unsigned char), dock_channels_size, fp) != 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_channels);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_fader_locked, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_locked); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_locked);
 if (fwrite(FaderLocked, sizeof(bool), fader_locked_size, fp) != fader_locked_size)
@@ -2187,10 +2229,10 @@ if (fwrite(FaderLocked, sizeof(bool), fader_locked_size, fp) != fader_locked_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_fader_locked);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_fader_locked_full, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_locked_full); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_locked_full);
 if (fwrite(LockFader_is_FullLevel, sizeof(bool), fader_locked_full_size, fp) != fader_locked_full_size)
@@ -2198,10 +2240,10 @@ if (fwrite(LockFader_is_FullLevel, sizeof(bool), fader_locked_full_size, fp) != 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_fader_locked_full);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_fader_before_lock, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_before_lock); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_before_lock);
 if (fwrite(StateOfFaderBeforeLock, sizeof(unsigned char), fader_before_lock_size, fp) != fader_before_lock_size)
@@ -2209,10 +2251,10 @@ if (fwrite(StateOfFaderBeforeLock, sizeof(unsigned char), fader_before_lock_size
 else sprintf(string_save_load_report[idf],"Saved file %s", file_fader_before_lock);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_color_to_dock, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_color_to_dock); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_color_to_dock);
 if (fwrite(colorpreset_linked_to_dock, sizeof(int), fader_color_to_dock_size, fp) != fader_color_to_dock_size)
@@ -2220,21 +2262,21 @@ if (fwrite(colorpreset_linked_to_dock, sizeof(int), fader_color_to_dock_size, fp
 else sprintf(string_save_load_report[idf],"Saved file %s", file_color_to_dock);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_fader_audio, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_audio); b_report_error[idf]=1;}
-else 
+else
 {
 int temp_array_audio[48*3][6];
 for(int u=0;u<48;u++)
 {
 for(int l=0;l<6;l++)
 {
-temp_array_audio[u][l]=DockHasAudioVolume[u][l];   
-temp_array_audio[u+48][l]=DockHasAudioPan[u][l];  
-temp_array_audio[u+96][l]=DockHasAudioPitch[u][l];     
-}        
+temp_array_audio[u][l]=DockHasAudioVolume[u][l];
+temp_array_audio[u+48][l]=DockHasAudioPan[u][l];
+temp_array_audio[u+96][l]=DockHasAudioPitch[u][l];
+}
 }
 sprintf(string_save_load_report[idf],"Opened file %s",file_fader_audio);
 if (fwrite(temp_array_audio, sizeof(int), fader_audio_size, fp) != fader_audio_size)
@@ -2242,12 +2284,12 @@ if (fwrite(temp_array_audio, sizeof(int), fader_audio_size, fp) != fader_audio_s
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_audio);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_chaser_to_fader, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_to_fader); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chaser_to_fader);
 if (fwrite( ChaserAffectedToDck, sizeof(int),fader_chaser_to_fader_size, fp) != fader_chaser_to_fader_size)
@@ -2255,12 +2297,12 @@ if (fwrite( ChaserAffectedToDck, sizeof(int),fader_chaser_to_fader_size, fp) != 
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_to_fader);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen(  file_mem_to_dock, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mem_to_dock); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mem_to_dock);
 if (fwrite(DockHasMem, sizeof(int), fader_mem_to_dock_size, fp) != fader_mem_to_dock_size)
@@ -2268,11 +2310,11 @@ if (fwrite(DockHasMem, sizeof(int), fader_mem_to_dock_size, fp) != fader_mem_to_
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_mem_to_dock);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
 if ((fp=fopen(  file_fader_fx, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_fx); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_fx);
 if (fwrite(fader_mode_with_buffers, sizeof(int), fader_fx_size, fp) != fader_fx_size)
@@ -2280,12 +2322,12 @@ if (fwrite(fader_mode_with_buffers, sizeof(int), fader_fx_size, fp) != fader_fx_
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_fx);
 fclose(fp);
 }
- idf++; 
-  
+ idf++;
+
 
 if ((fp=fopen(  file_fader_route_fx, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_route_fx); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_route_fx);
 if (fwrite(fader_fx_route, sizeof(bool), fader_route_fx_size, fp) != fader_route_fx_size)
@@ -2293,11 +2335,11 @@ if (fwrite(fader_fx_route, sizeof(bool), fader_route_fx_size, fp) != fader_route
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_route_fx);
 fclose(fp);
 }
- idf++;  
-  
+ idf++;
+
 if ((fp=fopen(  file_fader_fgroup, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_fgroup); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_fgroup);
 if (fwrite(fgroup, sizeof(bool),fader_fgroup_size, fp) !=fader_fgroup_size)
@@ -2305,11 +2347,11 @@ if (fwrite(fgroup, sizeof(bool),fader_fgroup_size, fp) !=fader_fgroup_size)
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_fgroup);
 fclose(fp);
 }
- idf++;    
+ idf++;
 
 if ((fp=fopen(  file_fader_draw, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_draw); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_draw);
 if (fwrite(DrawAffectedToDck, sizeof(int),fader_draw_size, fp) !=fader_draw_size)
@@ -2317,12 +2359,12 @@ if (fwrite(DrawAffectedToDck, sizeof(int),fader_draw_size, fp) !=fader_draw_size
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_draw);
 fclose(fp);
 }
- idf++;  
+ idf++;
 
 
 if ((fp=fopen(  file_fader_echo, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_echo); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_fader_echo);
 if (fwrite(echo_affected_to_dock, sizeof(int),fader_echo_size, fp) !=fader_echo_size)
@@ -2330,15 +2372,15 @@ if (fwrite(echo_affected_to_dock, sizeof(int),fader_echo_size, fp) !=fader_echo_
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_echo);
 fclose(fp);
 }
- idf++;  
- 
+ idf++;
+
 }
 
 if(specify_who_to_save_load[13]==1)  //Faders LFOS//////////////////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_dock_times, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_dock_times); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_times);
 if (fwrite(time_per_dock, sizeof(float),dock_times_size, fp) != dock_times_size)
@@ -2346,10 +2388,10 @@ if (fwrite(time_per_dock, sizeof(float),dock_times_size, fp) != dock_times_size)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_dock_times);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_is_for_loop_selected, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_is_for_loop_selected); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_is_for_loop_selected);
 if (fwrite(is_dock_for_lfo_selected, sizeof(bool),size_is_for_loop_selected, fp) != size_is_for_loop_selected)
@@ -2357,10 +2399,10 @@ if (fwrite(is_dock_for_lfo_selected, sizeof(bool),size_is_for_loop_selected, fp)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_is_for_loop_selected);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lfo_speed, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lfo_speed); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_lfo_speed);
 if (fwrite(lfo_speed, sizeof(int),size_lfo_speed, fp) != size_lfo_speed)
@@ -2368,10 +2410,10 @@ if (fwrite(lfo_speed, sizeof(int),size_lfo_speed, fp) != size_lfo_speed)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_lfo_speed);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lfo_mode_is, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lfo_mode_is); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_lfo_mode_is);
 if (fwrite(lfo_mode_is, sizeof(int),size_lfo_mode_is, fp) !=  size_lfo_mode_is)
@@ -2379,10 +2421,10 @@ if (fwrite(lfo_mode_is, sizeof(int),size_lfo_mode_is, fp) !=  size_lfo_mode_is)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lfo_mode_is);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lfo_cycle_on, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lfo_cycle_on); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_lfo_cycle_on);
 if (fwrite(lfo_cycle_is_on, sizeof(bool),size_lfo_cycle_on, fp) !=  size_lfo_cycle_on)
@@ -2390,10 +2432,10 @@ if (fwrite(lfo_cycle_is_on, sizeof(bool),size_lfo_cycle_on, fp) !=  size_lfo_cyc
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lfo_cycle_on);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lfo_do_next_step, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lfo_do_next_step); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_lfo_do_next_step);
 if (fwrite(lfo_do_next_step, sizeof(bool),size_lfo_do_next_step, fp) !=  size_lfo_do_next_step)
@@ -2401,10 +2443,10 @@ if (fwrite(lfo_do_next_step, sizeof(bool),size_lfo_do_next_step, fp) !=  size_lf
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lfo_do_next_step);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lfo_loop_step, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lfo_loop_step); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_lfo_loop_step);
 if (fwrite(lfo_cycle_steps, sizeof(bool),size_lfo_loop_step, fp) !=  size_lfo_loop_step)
@@ -2412,11 +2454,11 @@ if (fwrite(lfo_cycle_steps, sizeof(bool),size_lfo_loop_step, fp) !=  size_lfo_lo
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lfo_loop_step);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_fader_stoppos_levels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_stoppos_levels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_stoppos_levels);
 if (fwrite(LevelStopPos, sizeof(unsigned char),fader_stoppos_size, fp) !=  fader_stoppos_size)
@@ -2424,11 +2466,11 @@ if (fwrite(LevelStopPos, sizeof(unsigned char),fader_stoppos_size, fp) !=  fader
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_stoppos_levels);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_fader_stoppos_is, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_stoppos_is); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_stoppos_is);
 if (fwrite(ActionnateStopOn, sizeof(bool),fader_stopposB_size, fp) != fader_stopposB_size)
@@ -2436,11 +2478,11 @@ if (fwrite(ActionnateStopOn, sizeof(bool),fader_stopposB_size, fp) != fader_stop
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_stoppos_is);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_fader_ston_is, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_ston_is); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_ston_is);
 if (fwrite(StopPosOn, sizeof(bool),fader_ston_size, fp) != fader_ston_size)
@@ -2448,12 +2490,12 @@ if (fwrite(StopPosOn, sizeof(bool),fader_ston_size, fp) != fader_ston_size)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_ston_is);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen( file_fader_chas_autolaunch, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_chas_autolaunch); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_chas_autolaunch);
 if (fwrite(autolaunch, sizeof(bool),fader_chas_autolaucnh_size, fp) !=fader_chas_autolaucnh_size)
@@ -2461,12 +2503,12 @@ if (fwrite(autolaunch, sizeof(bool),fader_chas_autolaucnh_size, fp) !=fader_chas
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_chas_autolaunch);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 //grid affectation
 if ((fp=fopen( file_fader_grid_affect, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_grid_affect); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_grid_affect);
 if (fwrite(faders_dock_grid_affectation, sizeof(int),fader_grid_affect_size, fp) !=fader_grid_affect_size)
@@ -2481,7 +2523,7 @@ if(specify_who_to_save_load[14]==1) ////////FADER CURVES////////////////////////
 {
 if ((fp=fopen( file_fader_curve, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_curve); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_curve);
 if (fwrite(FaderCurves, sizeof(int),fader_curve_size, fp) != fader_curve_size)
@@ -2489,13 +2531,13 @@ if (fwrite(FaderCurves, sizeof(int),fader_curve_size, fp) != fader_curve_size)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_curve);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 if(specify_who_to_save_load[15]==1)  ///////Minifaders Presets et LOCKS Presets////////////////////////////////////
 {
 if ((fp=fopen( file_fader_preset_selection, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_preset_selection); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_fader_preset_selection);
 if (fwrite(minifaders_preset_selection, sizeof(bool),fader_prst_sel_size, fp) != fader_prst_sel_size)
@@ -2503,10 +2545,10 @@ if (fwrite(minifaders_preset_selection, sizeof(bool),fader_prst_sel_size, fp) !=
 else sprintf(string_save_load_report[idf],"Saved file %s",file_fader_preset_selection);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lock_preset_is, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_is); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_lock_preset_is);
 if (fwrite(lock_preset, sizeof(bool), fader_lock_preset_is_size, fp) != fader_lock_preset_is_size)
@@ -2514,10 +2556,10 @@ if (fwrite(lock_preset, sizeof(bool), fader_lock_preset_is_size, fp) != fader_lo
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lock_preset_is);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lock_preset_state, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_state); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_lock_preset_state);
 if (fwrite(FaderLocked_Preset, sizeof(bool), fader_lock_preset_state_size, fp) != fader_lock_preset_state_size)
@@ -2525,10 +2567,10 @@ if (fwrite(FaderLocked_Preset, sizeof(bool), fader_lock_preset_state_size, fp) !
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lock_preset_state);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lock_preset_masteris, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_masteris); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_lock_preset_masteris);
 if (fwrite(LockFader_is_FullLevel_Preset, sizeof(bool), fader_lock_preset_masteris_size, fp) != fader_lock_preset_masteris_size)
@@ -2536,10 +2578,10 @@ if (fwrite(LockFader_is_FullLevel_Preset, sizeof(bool), fader_lock_preset_master
 else sprintf(string_save_load_report[idf],"Saved file %s",file_lock_preset_masteris);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_lock_preset_levels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_levels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_lock_preset_levels);
 if (fwrite(StateOfFaderBeforeLock_Preset, sizeof(unsigned char), fader_lock_preset_levels_size, fp) != fader_lock_preset_levels_size)
@@ -2547,14 +2589,14 @@ if (fwrite(StateOfFaderBeforeLock_Preset, sizeof(unsigned char), fader_lock_pres
 else sprintf(string_save_load_report[idf],"Saved file %s",file_lock_preset_levels);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[16]==1) ///////////////////////////////////CHASERS//////////////////////////////
 {
 if ((fp=fopen( file_chaser_name, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_name); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_name);
 if (fwrite(chaser_name, sizeof(char),chaser_name_size, fp) != chaser_name_size)
@@ -2562,11 +2604,11 @@ if (fwrite(chaser_name, sizeof(char),chaser_name_size, fp) != chaser_name_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_chaser_name);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_chaser_timeunit, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_timeunit); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_timeunit);
 if (fwrite(time_unit, sizeof(float),chaser_timeunit_size, fp) !=chaser_timeunit_size)
@@ -2574,13 +2616,13 @@ if (fwrite(time_unit, sizeof(float),chaser_timeunit_size, fp) !=chaser_timeunit_
 else sprintf(string_save_load_report[idf],"Saved file %s", file_chaser_timeunit);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 
 if ((fp=fopen(file_chaser_stepop, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_stepop); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_stepop);
 if (fwrite( chaser_step_operation, sizeof(int),chaser_stepop_size, fp) !=chaser_stepop_size)
@@ -2588,11 +2630,11 @@ if (fwrite( chaser_step_operation, sizeof(int),chaser_stepop_size, fp) !=chaser_
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_stepop);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_chaser_play, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_play); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_play);
 if (fwrite( chaser_is_playing, sizeof(bool),chaser_isplaying_size, fp) !=chaser_isplaying_size)
@@ -2600,11 +2642,11 @@ if (fwrite( chaser_is_playing, sizeof(bool),chaser_isplaying_size, fp) !=chaser_
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_play);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_chaser_loop, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_loop); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_loop);
 if (fwrite( chaser_is_in_loop, sizeof(bool), chaser_loop_size, fp) != chaser_loop_size)
@@ -2612,11 +2654,11 @@ if (fwrite( chaser_is_in_loop, sizeof(bool), chaser_loop_size, fp) != chaser_loo
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_loop);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_chaser_way, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_way); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_chaser_way);
 if (fwrite( chaser_way, sizeof(bool),chaser_way_size, fp) != chaser_way_size)
@@ -2624,12 +2666,12 @@ if (fwrite( chaser_way, sizeof(bool),chaser_way_size, fp) != chaser_way_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_chaser_way);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen(  file_chaser_allerretour, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_chaser_allerretour); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_chaser_allerretour);
 if (fwrite( chaser_aller_retour, sizeof(bool),chaser_allerretour_size, fp) != chaser_allerretour_size)
@@ -2637,12 +2679,12 @@ if (fwrite( chaser_aller_retour, sizeof(bool),chaser_allerretour_size, fp) != ch
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_chaser_allerretour);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen( file_chaser_trackon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_trackon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_trackon);
 if (fwrite( track_is_on, sizeof(bool),chaser_trackon_size, fp) != chaser_trackon_size)
@@ -2650,11 +2692,11 @@ if (fwrite( track_is_on, sizeof(bool),chaser_trackon_size, fp) != chaser_trackon
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_trackon);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_chaser_tracklevel, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_tracklevel); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_tracklevel);
 if (fwrite( track_level, sizeof(int),chaser_track_level_size, fp) != chaser_track_level_size)
@@ -2662,11 +2704,11 @@ if (fwrite( track_level, sizeof(int),chaser_track_level_size, fp) != chaser_trac
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_tracklevel);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_chaser_trackview, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_trackview); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_trackview);
 if (fwrite( position_affichage_track_num, sizeof(int),chaser_trackview_size, fp) != chaser_trackview_size)
@@ -2674,11 +2716,11 @@ if (fwrite( position_affichage_track_num, sizeof(int),chaser_trackview_size, fp)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_trackview);
 fclose(fp);
 }
- idf++; 
-                              
+ idf++;
+
 if ((fp=fopen( file_chaser_tracktype, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_tracktype); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_tracktype);
 if (fwrite( TrackTypeIs, sizeof(int),chaser_tracktype_size, fp) != chaser_tracktype_size)
@@ -2686,12 +2728,12 @@ if (fwrite( TrackTypeIs, sizeof(int),chaser_tracktype_size, fp) != chaser_trackt
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_tracktype);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
-                              
+
 if ((fp=fopen( file_chaser_trackcontent, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_trackcontent); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_trackcontent);
 if (fwrite(  TrackContains, sizeof(int),chaser_trackcontent_size, fp) != chaser_trackcontent_size)
@@ -2699,11 +2741,11 @@ if (fwrite(  TrackContains, sizeof(int),chaser_trackcontent_size, fp) != chaser_
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_trackcontent);
 fclose(fp);
 }
- idf++;     
+ idf++;
 
 if ((fp=fopen( file_chaser_stepis, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_stepis); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_stepis);
 if (fwrite(  chaser_step_is, sizeof(int),chaser_stepis_size, fp) != chaser_stepis_size)
@@ -2711,11 +2753,11 @@ if (fwrite(  chaser_step_is, sizeof(int),chaser_stepis_size, fp) != chaser_stepi
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_stepis);
 fclose(fp);
 }
- idf++;     
+ idf++;
 
 if ((fp=fopen( file_chaser_beginstep, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_beginstep); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_beginstep);
 if (fwrite( chaser_begin_step_is, sizeof(int),chaser_stepbeg_size, fp) != chaser_stepbeg_size)
@@ -2723,11 +2765,11 @@ if (fwrite( chaser_begin_step_is, sizeof(int),chaser_stepbeg_size, fp) != chaser
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_beginstep);
 fclose(fp);
 }
- idf++;     
+ idf++;
 
 if ((fp=fopen( file_chaser_endstep, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_endstep); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_chaser_endstep);
 if (fwrite(chaser_end_step_is, sizeof(int),chaser_stepend_size, fp) !=chaser_stepend_size)
@@ -2735,12 +2777,12 @@ if (fwrite(chaser_end_step_is, sizeof(int),chaser_stepend_size, fp) !=chaser_ste
 else sprintf(string_save_load_report[idf],"Saved file %s", file_chaser_endstep);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 
 if ((fp=fopen( file_chaser_timemode, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_timemode); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_timemode);
 if (fwrite(chaser_time_mode, sizeof(bool),chaser_timemode_size, fp) !=chaser_timemode_size)
@@ -2748,12 +2790,12 @@ if (fwrite(chaser_time_mode, sizeof(bool),chaser_timemode_size, fp) !=chaser_tim
 else sprintf(string_save_load_report[idf],"Saved file %s", file_chaser_timemode);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 
 if ((fp=fopen( file_chaser_lastaffect, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_lastaffect); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_lastaffect);
 if (fwrite( view_chaser_affected_to_fader, sizeof(int),chaser_lastaffect_size, fp) !=chaser_lastaffect_size)
@@ -2761,11 +2803,11 @@ if (fwrite( view_chaser_affected_to_fader, sizeof(int),chaser_lastaffect_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_lastaffect);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 if ((fp=fopen( file_chaser_trrackname, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_trrackname); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_trrackname);
 if (fwrite( chaser_track_name, sizeof(char),chaser_tracksname_size, fp) !=chaser_tracksname_size)
@@ -2773,11 +2815,11 @@ if (fwrite( chaser_track_name, sizeof(char),chaser_tracksname_size, fp) !=chaser
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_trrackname);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 if ((fp=fopen( file_chaser_presets, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_presets); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_presets);
 if (fwrite( chaser_preset, sizeof(bool),chaser_presets_size, fp) !=chaser_presets_size)
@@ -2785,12 +2827,12 @@ if (fwrite( chaser_preset, sizeof(bool),chaser_presets_size, fp) !=chaser_preset
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_presets);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 
 if ((fp=fopen( file_chaser_lchpad_pos, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_lchpad_pos); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_lchpad_pos);
 if (fwrite( chaser_step_launchpad, sizeof(int),chaser_lchpad_pos_size, fp) !=chaser_lchpad_pos_size)
@@ -2798,11 +2840,11 @@ if (fwrite( chaser_step_launchpad, sizeof(int),chaser_lchpad_pos_size, fp) !=cha
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_lchpad_pos);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 if ((fp=fopen(file_chaser_acceleroslave, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_acceleroslave); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_acceleroslave);
 if (fwrite( index_slave_chaser_to_accelerometre, sizeof(bool),chaser_acceleroslave_size, fp) !=chaser_acceleroslave_size)
@@ -2810,11 +2852,11 @@ if (fwrite( index_slave_chaser_to_accelerometre, sizeof(bool),chaser_accelerosla
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_acceleroslave);
 fclose(fp);
 }
- idf++;   
+ idf++;
 
 if ((fp=fopen(file_chaser_has_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_has_mem); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_chaser_has_mem);
 if (fwrite( TrackHasMem, sizeof(int),chaser_has_mem_size, fp) !=chaser_has_mem_size)
@@ -2822,14 +2864,14 @@ if (fwrite( TrackHasMem, sizeof(int),chaser_has_mem_size, fp) !=chaser_has_mem_s
 else sprintf(string_save_load_report[idf],"Saved file %s",file_chaser_has_mem);
 fclose(fp);
 }
- idf++;   
+ idf++;
 }
 
 if(specify_who_to_save_load[17]==1)  ///////MIDI AFFECTATION/////////////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_midi_affectation, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_midi_affectation); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_midi_affectation);
 if (fwrite(miditable, sizeof(int),midi_affectation_size, fp) != midi_affectation_size)
@@ -2837,10 +2879,10 @@ if (fwrite(miditable, sizeof(int),midi_affectation_size, fp) != midi_affectation
 else sprintf(string_save_load_report[idf],"Saved file %s",file_midi_affectation);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_midi_send_out, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_midi_send_out); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_midi_send_out);
 if (fwrite(midi_send_out, sizeof(bool),midi_send_out_size, fp) != midi_send_out_size)
@@ -2848,14 +2890,14 @@ if (fwrite(midi_send_out, sizeof(bool),midi_send_out_size, fp) != midi_send_out_
 else sprintf(string_save_load_report[idf],"Saved file %s",file_midi_send_out);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[18]==1)  ////////////MIDI cheat midi ///////////////////////////////////////////
 {
 if ((fp=fopen( file_midi_properties, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_midi_properties); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_midi_properties);
 if (fwrite(midi_change_vel_type, sizeof(int),midi_properties_size, fp) != midi_properties_size)
@@ -2863,14 +2905,14 @@ if (fwrite(midi_change_vel_type, sizeof(int),midi_properties_size, fp) != midi_p
 else sprintf(string_save_load_report[idf],"Saved file %s",file_midi_properties);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[19]==1)  ///////////////////TRICHRO////////////////////////////////////////////////
 {
 if ((fp=fopen( file_dock_color_type, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_type); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_type);
 if (fwrite(dock_color_type, sizeof(bool), dock_color_type_size, fp) != dock_color_type_size)
@@ -2878,10 +2920,10 @@ if (fwrite(dock_color_type, sizeof(bool), dock_color_type_size, fp) != dock_colo
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_color_type);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_color_xy, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_xy); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_xy);
 if (fwrite(x_y_picker_par_colordock, sizeof(int), dock_color_xy_size, fp) != dock_color_xy_size)
@@ -2889,10 +2931,10 @@ if (fwrite(x_y_picker_par_colordock, sizeof(int), dock_color_xy_size, fp) != doc
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_color_xy);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_color_angle, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_angle); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_angle);
 if (fwrite(angle_hue_par_colordock, sizeof(float), dock_color_angle_size, fp) != dock_color_angle_size)
@@ -2900,10 +2942,10 @@ if (fwrite(angle_hue_par_colordock, sizeof(float), dock_color_angle_size, fp) !=
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_color_angle);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_color_picker, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_picker); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_picker);
 if (fwrite(picker_trichro, sizeof(int), dock_color_picker_size, fp) != dock_color_picker_size)
@@ -2911,10 +2953,10 @@ if (fwrite(picker_trichro, sizeof(int), dock_color_picker_size, fp) != dock_colo
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_color_picker);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_color_ch, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_ch); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_dock_color_ch);
 if (fwrite(dock_color_channels, sizeof(bool), dock_color_ch_size, fp) != dock_color_ch_size)
@@ -2922,10 +2964,10 @@ if (fwrite(dock_color_channels, sizeof(bool), dock_color_ch_size, fp) != dock_co
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_color_ch);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_dock_color_buffer, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_buffer); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_dock_color_buffer);
 if (fwrite(dock_color_buffer_C, sizeof(unsigned char), dock_color_buffer_size, fp) != dock_color_buffer_size)
@@ -2933,14 +2975,14 @@ if (fwrite(dock_color_buffer_C, sizeof(unsigned char), dock_color_buffer_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_color_buffer);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[20]==1)  //////////VIDEO TRACKING //////////////////////////////////////////////
 {
 if ((fp=fopen( file_video_channels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_video_channels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_video_channels);
 if (fwrite(tracking_contents, sizeof(bool), video_channels_size, fp) != video_channels_size)
@@ -2948,10 +2990,10 @@ if (fwrite(tracking_contents, sizeof(bool), video_channels_size, fp) != video_ch
 else sprintf(string_save_load_report[idf],"Saved file %s", file_video_channels);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_video_xy, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_video_xy); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_video_xy);
 if (fwrite(tracking_coordonates, sizeof(int), video_xy_size, fp) != video_xy_size)
@@ -2959,10 +3001,10 @@ if (fwrite(tracking_coordonates, sizeof(int), video_xy_size, fp) != video_xy_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_video_xy);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_video_spaces_on, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_video_spaces_on); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_video_spaces_on);
 if (fwrite(tracking_spaces_on_off, sizeof(bool), video_spaces_on_size, fp) != video_spaces_on_size)
@@ -2970,10 +3012,10 @@ if (fwrite(tracking_spaces_on_off, sizeof(bool), video_spaces_on_size, fp) != vi
 else sprintf(string_save_load_report[idf],"Saved file %s", file_video_spaces_on);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_camera_modes, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_camera_modes); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_camera_modes);
 if (fwrite(camera_modes_and_settings, sizeof(int), camera_modes_size, fp) != camera_modes_size)
@@ -2981,14 +3023,14 @@ if (fwrite(camera_modes_and_settings, sizeof(int), camera_modes_size, fp) != cam
 else sprintf(string_save_load_report[idf],"Saved file %s", file_camera_modes);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[21]==1)  //////ARDUINO//////////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_arduino_dig_typ, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_dig_typ); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_dig_typ);
 if (fwrite(  arduino_digital_type, sizeof(int),arduino_dig_typ_size, fp) !=  arduino_dig_typ_size)
@@ -2996,11 +3038,11 @@ if (fwrite(  arduino_digital_type, sizeof(int),arduino_dig_typ_size, fp) !=  ard
 else sprintf(string_save_load_report[idf],"Saved file %s", file_arduino_dig_typ);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_arduino_dig_affect, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_dig_affect); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_dig_affect);
 if (fwrite(  arduino_digital_function_input, sizeof(int),arduino_dig_aff_size, fp) !=  arduino_dig_aff_size)
@@ -3008,12 +3050,12 @@ if (fwrite(  arduino_digital_function_input, sizeof(int),arduino_dig_aff_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_arduino_dig_affect);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen( file_arduino_an_typ, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_an_typ); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_an_typ);
 if (fwrite(  arduino_analog_function_input, sizeof(int),arduino_an_typ_size, fp) !=  arduino_an_typ_size)
@@ -3021,12 +3063,12 @@ if (fwrite(  arduino_analog_function_input, sizeof(int),arduino_an_typ_size, fp)
 else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_an_typ);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen( file_arduino_an_aff, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_an_aff); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_an_aff);
 if (fwrite( arduino_analog_attribution_input, sizeof(int),arduino_an_aff_size, fp) !=  arduino_an_aff_size)
@@ -3034,12 +3076,12 @@ if (fwrite( arduino_analog_attribution_input, sizeof(int),arduino_an_aff_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_an_aff);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen( file_arduino_dig_out, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_dig_out); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_dig_out);
 if (fwrite( arduino_digital_function_output, sizeof(int),arduino_dig_out_size, fp) != arduino_dig_out_size)
@@ -3047,23 +3089,23 @@ if (fwrite( arduino_digital_function_output, sizeof(int),arduino_dig_out_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_dig_out);
 fclose(fp);
 }
- idf++; 
+ idf++;
 Save_Arduino_Config();
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[22]==1)  ////////////AUDIO CONF/////////////////////////////////////////////////
 {
-//autoload autopause                                     
+//autoload autopause
 bool temp_audio_array[8];
 for(int i=0;i<4;i++)
 {
 temp_audio_array[i]=audio_autoload[i];
-temp_audio_array[i+4]=audio_autopause[i];        
+temp_audio_array[i+4]=audio_autopause[i];
 }
 if ((fp=fopen( file_audio_autoloadpause, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_audio_autoloadpause); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_audio_autoloadpause);
 if (fwrite( temp_audio_array, sizeof(bool),audio_autoloadpause_size, fp) != audio_autoloadpause_size)
@@ -3071,12 +3113,12 @@ if (fwrite( temp_audio_array, sizeof(bool),audio_autoloadpause_size, fp) != audi
 else sprintf(string_save_load_report[idf],"Saved file %s",file_audio_autoloadpause);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 //file number
 if ((fp=fopen( file_audio_filenumber, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_audio_filenumber); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_audio_filenumber);
 if (fwrite( player_has_file_coming_from_pos, sizeof(int),audio_filenumber_size, fp) != audio_filenumber_size)
@@ -3084,16 +3126,16 @@ if (fwrite( player_has_file_coming_from_pos, sizeof(int),audio_filenumber_size, 
 else sprintf(string_save_load_report[idf],"Saved file %s",file_audio_filenumber);
 fclose(fp);
 }
-idf++; 
-                               
+idf++;
+
 //player position
 for(int i=0;i<4;i++)
 {
-player_position_on_save[i]= position_of_file_in_player[i];        
+player_position_on_save[i]= position_of_file_in_player[i];
 }
 if ((fp=fopen( file_audio_playerposition, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_audio_playerposition); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_audio_playerposition);
 if (fwrite( player_position_on_save, sizeof(int),audio_playerposition_size, fp) != audio_playerposition_size)
@@ -3101,22 +3143,22 @@ if (fwrite( player_position_on_save, sizeof(int),audio_playerposition_size, fp) 
 else sprintf(string_save_load_report[idf],"Saved file %s",file_audio_playerposition);
 fclose(fp);
 }
-idf++; 
-               
-               
-                                
-                                     
+idf++;
+
+
+
+
 Save_Audio_Conf()  ;
-idf++;                                 
+idf++;
 }
-                                 
+
 
 if(specify_who_to_save_load[23]==1)  //////////iCAT///////////////////////////////////////////////////////
 {
 
 if ((fp=fopen( file_icat_nbsliders, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbsliders); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_icat_nbsliders);
 if (fwrite( iCat_nbre_de_sliders, sizeof(int), icat_nbsliders_size, fp) != icat_nbsliders_size)
@@ -3124,11 +3166,11 @@ if (fwrite( iCat_nbre_de_sliders, sizeof(int), icat_nbsliders_size, fp) != icat_
 else sprintf(string_save_load_report[idf],"Saved file %s",file_icat_nbsliders);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_icat_posliders, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_posliders); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_icat_posliders);
 if (fwrite(  iCat_pos_slider, sizeof(int),icat_posliders_size, fp) != icat_posliders_size)
@@ -3136,11 +3178,11 @@ if (fwrite(  iCat_pos_slider, sizeof(int),icat_posliders_size, fp) != icat_posli
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_posliders);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_icat_orsliders, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_orsliders); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_icat_orsliders);
 if (fwrite(  iCat_orientation_slider, sizeof(bool),icat_orsliders_size, fp) !=icat_orsliders_size)
@@ -3148,11 +3190,11 @@ if (fwrite(  iCat_orientation_slider, sizeof(bool),icat_orsliders_size, fp) !=ic
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_orsliders);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_typsliders, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_typsliders); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_icat_typsliders);
 if (fwrite(  iCat_affectation_slider_type_is, sizeof(int),icat_typsliders_size, fp) !=icat_typsliders_size)
@@ -3160,11 +3202,11 @@ if (fwrite(  iCat_affectation_slider_type_is, sizeof(int),icat_typsliders_size, 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_typsliders);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_valsliders, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_valsliders); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_icat_valsliders);
 if (fwrite( iCat_affectation_slider_value_is, sizeof(int),icat_valsliders_size, fp) !=icat_valsliders_size)
@@ -3172,12 +3214,12 @@ if (fwrite( iCat_affectation_slider_value_is, sizeof(int),icat_valsliders_size, 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_valsliders);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen(file_icat_size_sliders, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_size_sliders); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_icat_size_sliders);
 if (fwrite( ratio_iCat_slider, sizeof(int),icat_sizesliders_size, fp) !=icat_sizesliders_size)
@@ -3185,11 +3227,11 @@ if (fwrite( ratio_iCat_slider, sizeof(int),icat_sizesliders_size, fp) !=icat_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_size_sliders);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_orientpage, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_orientpage); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_icat_orientpage);
 if (fwrite( iCat_preset_orientation, sizeof(int),icat_orpage_size, fp) !=icat_orpage_size)
@@ -3197,13 +3239,13 @@ if (fwrite( iCat_preset_orientation, sizeof(int),icat_orpage_size, fp) !=icat_or
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_orientpage);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 //boutons
 if ((fp=fopen(file_icat_nbbutton, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbbutton); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_icat_nbbutton);
 if (fwrite( iCat_nbre_de_boutons, sizeof(int),icat_nbbutton_size, fp) !=icat_nbbutton_size)
@@ -3211,11 +3253,11 @@ if (fwrite( iCat_nbre_de_boutons, sizeof(int),icat_nbbutton_size, fp) !=icat_nbb
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_nbbutton);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_pobutton, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_pobutton); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_pobutton);
 if (fwrite( iCat_pos_bouton, sizeof(int),icat_pobutton_size, fp) !=icat_pobutton_size)
@@ -3223,11 +3265,11 @@ if (fwrite( iCat_pos_bouton, sizeof(int),icat_pobutton_size, fp) !=icat_pobutton
 else sprintf(string_save_load_report[idf],"Saved file %s",file_icat_pobutton);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_size_buttons, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_size_buttons); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_size_buttons);
 if (fwrite( ratio_iCat_button, sizeof(int),icat_sizebuttons_size, fp) !=icat_sizebuttons_size)
@@ -3235,11 +3277,11 @@ if (fwrite( ratio_iCat_button, sizeof(int),icat_sizebuttons_size, fp) !=icat_siz
 else sprintf(string_save_load_report[idf],"Saved file %s",file_icat_size_buttons);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_icat_typbutton, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_typbutton); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_icat_typbutton);
 if (fwrite(  iCat_affectation_bouton_type_is, sizeof(int), icat_typbutton_size, fp) != icat_typbutton_size)
@@ -3247,11 +3289,11 @@ if (fwrite(  iCat_affectation_bouton_type_is, sizeof(int), icat_typbutton_size, 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_typbutton);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_actbutton, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_actbutton); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_actbutton);
 if (fwrite( iCat_affectation_bouton_action_is, sizeof(int),icat_actbutton_size, fp) !=icat_actbutton_size)
@@ -3259,11 +3301,11 @@ if (fwrite( iCat_affectation_bouton_action_is, sizeof(int),icat_actbutton_size, 
 else sprintf(string_save_load_report[idf],"Saved file %s",file_icat_actbutton);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_valbutton, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_valbutton); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_valbutton);
 if (fwrite( iCat_affectation_bouton_value_is, sizeof(int),icat_valbutton_size, fp) !=icat_valbutton_size)
@@ -3271,12 +3313,12 @@ if (fwrite( iCat_affectation_bouton_value_is, sizeof(int),icat_valbutton_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_valbutton);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 ///strings
 if ((fp=fopen(file_icat_nbstr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbstr); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_nbstr);
 if (fwrite( iCat_nbre_de_strings, sizeof(int),icat_nbstr_size, fp) !=icat_nbstr_size)
@@ -3284,11 +3326,11 @@ if (fwrite( iCat_nbre_de_strings, sizeof(int),icat_nbstr_size, fp) !=icat_nbstr_
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_nbstr);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_posstr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_posstr); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_posstr);
 if (fwrite( iCat_pos_string, sizeof(int),icat_posstr_size, fp) !=icat_posstr_size)
@@ -3296,11 +3338,11 @@ if (fwrite( iCat_pos_string, sizeof(int),icat_posstr_size, fp) !=icat_posstr_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_posstr);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_sizestr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_sizestr); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_sizestr);
 if (fwrite( ratio_iCat_string, sizeof(int),icat_sizestr_size, fp) !=icat_sizestr_size)
@@ -3308,12 +3350,12 @@ if (fwrite( ratio_iCat_string, sizeof(int),icat_sizestr_size, fp) !=icat_sizestr
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_sizestr);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen(file_icat_typstr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_typstr); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_typstr);
 if (fwrite(iCat_affectation_string_type_is, sizeof(int),icat_typstr_size, fp) !=icat_typstr_size)
@@ -3321,11 +3363,11 @@ if (fwrite(iCat_affectation_string_type_is, sizeof(int),icat_typstr_size, fp) !=
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_typstr);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_actstr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_actstr); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_actstr);
 if (fwrite(iCat_affectation_string_action_is, sizeof(int),icat_actstr_size, fp) !=icat_actstr_size)
@@ -3333,11 +3375,11 @@ if (fwrite(iCat_affectation_string_action_is, sizeof(int),icat_actstr_size, fp) 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_actstr);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen(file_icat_valstr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_valstr); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_valstr);
 if (fwrite(iCat_affectation_string_value_is, sizeof(int),icat_valstr_size, fp) !=icat_valstr_size)
@@ -3345,11 +3387,11 @@ if (fwrite(iCat_affectation_string_value_is, sizeof(int),icat_valstr_size, fp) !
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_valstr);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
  if ((fp=fopen(file_icat_nbzon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbzon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_nbzon);
 if (fwrite(iCat_nbre_de_tracking_zone, sizeof(int),icat_nbzon_size, fp) !=icat_nbzon_size)
@@ -3357,11 +3399,11 @@ if (fwrite(iCat_nbre_de_tracking_zone, sizeof(int),icat_nbzon_size, fp) !=icat_n
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_nbzon);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
   if ((fp=fopen(file_icat_poszon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_poszon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_poszon);
 if (fwrite(iCat_pos_trackzone, sizeof(int),icat_poszon_size, fp) !=icat_poszon_size)
@@ -3369,11 +3411,11 @@ if (fwrite(iCat_pos_trackzone, sizeof(int),icat_poszon_size, fp) !=icat_poszon_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_poszon);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
  if ((fp=fopen(file_icat_sizezon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_sizezon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_sizezon);
 if (fwrite(ratio_iCat_trackzone, sizeof(int),icat_sizezon_size, fp) !=icat_sizezon_size)
@@ -3381,11 +3423,11 @@ if (fwrite(ratio_iCat_trackzone, sizeof(int),icat_sizezon_size, fp) !=icat_sizez
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_sizezon);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
   if ((fp=fopen(file_icat_typzon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_typzon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_typzon);
 if (fwrite(iCat_trackzone_type_is, sizeof(int),icat_typzon_size, fp) !=icat_typzon_size)
@@ -3393,12 +3435,12 @@ if (fwrite(iCat_trackzone_type_is, sizeof(int),icat_typzon_size, fp) !=icat_typz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_typzon);
 fclose(fp);
 }
- idf++; 
- 
- 
+ idf++;
+
+
    if ((fp=fopen(file_icat_valzon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_valzon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_valzon);
 if (fwrite(iCat_trackzone_affectation_is, sizeof(int),icat_valzon_size, fp) !=icat_valzon_size)
@@ -3406,13 +3448,13 @@ if (fwrite(iCat_trackzone_affectation_is, sizeof(int),icat_valzon_size, fp) !=ic
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_valzon);
 fclose(fp);
 }
- idf++; 
- 
- 
- 
+ idf++;
+
+
+
    if ((fp=fopen(file_icat_posTRCKzon, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_posTRCKzon); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_icat_posTRCKzon);
 if (fwrite( pos_iCat_tracker, sizeof(int),icat_posTRCKzon_size, fp) !=icat_posTRCKzon_size)
@@ -3420,16 +3462,16 @@ if (fwrite( pos_iCat_tracker, sizeof(int),icat_posTRCKzon_size, fp) !=icat_posTR
 else sprintf(string_save_load_report[idf],"Saved file %s", file_icat_posTRCKzon);
 fclose(fp);
 }
- idf++; 
- 
- 
+ idf++;
+
+
 }
 
 if(specify_who_to_save_load[24]==1)  //POS WINDOWS USER/////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_pos_fenetres, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_pos_fenetres); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_pos_fenetres);
 if (fwrite(windows_position, sizeof(int),index_pos_fenetre_size, fp) !=  index_pos_fenetre_size)
@@ -3437,14 +3479,14 @@ if (fwrite(windows_position, sizeof(int),index_pos_fenetre_size, fp) !=  index_p
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_pos_fenetres);
 fclose(fp);
 }
- idf++; 
+ idf++;
 Save_Window_Conf();//position
 
- idf++; 
+ idf++;
  //window conf
  if ((fp=fopen( file_windows, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_windows); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_windows);
 if (fwrite(window_opened, sizeof(int),windows_size, fp) != windows_size)
@@ -3453,14 +3495,14 @@ else sprintf(string_save_load_report[idf],"Saved file %s",  file_windows);
 fclose(fp);
 }
 idf++;
- 
+
 }
 
 if(specify_who_to_save_load[25]==1)  ///USER COLOR PROFILE//////////////////////////////////////////////////
 {
 if ((fp=fopen( file_color_profile, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_color_profile); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_color_profile);
 if (fwrite( couleurs_user, sizeof(float),color_profile_size, fp) !=  color_profile_size)
@@ -3468,14 +3510,14 @@ if (fwrite( couleurs_user, sizeof(float),color_profile_size, fp) !=  color_profi
 else sprintf(string_save_load_report[idf],"Saved file %s", file_color_profile);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[26]==1)  //KBD ASCII MAPING/////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_kbd_ascii_map, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_kbd_ascii_map); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_kbd_ascii_map);
 if (fwrite( mapping_temporaire, sizeof(int),kbd_ascii_map_size, fp) !=kbd_ascii_map_size)
@@ -3483,16 +3525,16 @@ if (fwrite( mapping_temporaire, sizeof(int),kbd_ascii_map_size, fp) !=kbd_ascii_
 else sprintf(string_save_load_report[idf],"Saved file %s",file_kbd_ascii_map);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
-if(specify_who_to_save_load[27]==1)   //////////INDEXES/////////////////////////////////////////////////////                              
+if(specify_who_to_save_load[27]==1)   //////////INDEXES/////////////////////////////////////////////////////
 {
 write_indexes();//preparation du tableau
 
 if ((fp=fopen( file_divers_index, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_divers_index); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_divers_index);
 if (fwrite(index_report_customs, sizeof(int),index_size, fp) !=  index_size)
@@ -3500,15 +3542,15 @@ if (fwrite(index_report_customs, sizeof(int),index_size, fp) !=  index_size)
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_divers_index);
 fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[28]==1)  ////////////MOVER////////////////////////////////////////////////////////
 {
-///////////////mems//////////////////////////////////////////////////////////// 	
+///////////////mems////////////////////////////////////////////////////////////
 if ((fp=fopen( file_mover_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mover_mem); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_mem);
 if (fwrite(dock_move_xy, sizeof(int), mover_mem_saving_size, fp) != mover_mem_saving_size)
@@ -3516,11 +3558,11 @@ if (fwrite(dock_move_xy, sizeof(int), mover_mem_saving_size, fp) != mover_mem_sa
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_mem);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_mem16b, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mover_mem16b);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_mem16b);
 if (fwrite(dock_move_xy_16b, sizeof(int), mover_mem_saving_size, fp) != mover_mem_saving_size)
@@ -3528,7 +3570,7 @@ if (fwrite(dock_move_xy_16b, sizeof(int), mover_mem_saving_size, fp) != mover_me
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_mem16b);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_numbersteps, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mover_numbersteps);b_report_error[idf]=1;}
@@ -3540,7 +3582,7 @@ if (fwrite(dock_moves_contains_steps, sizeof(int), mover_little_32file_size, fp)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_numbersteps);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_stepis, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mover_stepis);b_report_error[idf]=1;}
@@ -3552,7 +3594,7 @@ if (fwrite(dock_move_actual_step, sizeof(int), mover_little_32file_size, fp) != 
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_stepis);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 valeurs_diverses[0]=invX_on;
@@ -3568,9 +3610,9 @@ valeurs_diverses[9]=joy_sensitivity;*/
 //valeurs_diverses[10]=iris_on;
 //valeurs_diverses[11]=joystick_on;
 //valeurs_diverses[12]=allow_slider_for_sensitivity;
-valeurs_diverses[13]=position_defaut[0];  
-valeurs_diverses[14]=position_defaut[1];   
-valeurs_diverses[15]=index_spline; 
+valeurs_diverses[13]=position_defaut[0];
+valeurs_diverses[14]=position_defaut[1];
+valeurs_diverses[15]=index_spline;
 
 if ((fp=fopen( file_mover_divers, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mover_divers);b_report_error[idf]=1;}
@@ -3582,11 +3624,11 @@ if (fwrite(valeurs_diverses, sizeof(int), mover_little_32file_size, fp) != mover
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_divers);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_spline_ratio, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mover_spline_ratio);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_spline_ratio);
 if (fwrite(spline_ratio, sizeof(float), mover_little_32file_size, fp) != mover_little_32file_size)
@@ -3594,11 +3636,11 @@ if (fwrite(spline_ratio, sizeof(float), mover_little_32file_size, fp) != mover_l
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_spline_ratio);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_asservis_mem, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_asservis_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_asservis_mem);
 if (fwrite(dock_asservis, sizeof(int), mover_asservis_saving_size, fp) != mover_asservis_saving_size)
@@ -3606,24 +3648,24 @@ if (fwrite(dock_asservis, sizeof(int), mover_asservis_saving_size, fp) != mover_
 else sprintf(string_save_load_report[idf],"Saved file %s", file_asservis_mem);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 
 if ((fp=fopen( file_mover_time, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mover_time);b_report_error[idf]=1;}
-else 
-{ 
+else
+{
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_time);
 if (fwrite(dock_time, sizeof(int), mover_time_size, fp) != mover_time_size)
 { sprintf(string_save_load_report[idf],"Error writting %s", file_mover_time);b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_time);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_autostop, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mover_autostop);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_autostop);
 if (fwrite(move_auto_stop, sizeof(bool), mover_autostop_size, fp) != mover_autostop_size)
@@ -3631,11 +3673,11 @@ if (fwrite(move_auto_stop, sizeof(bool), mover_autostop_size, fp) != mover_autos
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_autostop);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_goto, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mover_goto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_goto);
 if (fwrite(GotoMoves, sizeof(int), mover_goto_size, fp) != mover_goto_size)
@@ -3643,11 +3685,11 @@ if (fwrite(GotoMoves, sizeof(int), mover_goto_size, fp) != mover_goto_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_goto);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 if ((fp=fopen( file_mover_into, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mover_into);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_into);
 if (fwrite(Moves_Inpoint, sizeof(int), mover_little_32file_size, fp) != mover_little_32file_size)
@@ -3655,11 +3697,11 @@ if (fwrite(Moves_Inpoint, sizeof(int), mover_little_32file_size, fp) != mover_li
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_into);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
  if ((fp=fopen( file_mover_params, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mover_params);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_mover_params);
 if (fwrite(mover_params_adresses, sizeof(int), mover_param_size, fp) != mover_param_size)
@@ -3667,8 +3709,8 @@ if (fwrite(mover_params_adresses, sizeof(int), mover_param_size, fp) != mover_pa
 else sprintf(string_save_load_report[idf],"Saved file %s", file_mover_params);
 fclose(fp);
 }
- idf++; 
- 
+ idf++;
+
 
 
 }
@@ -3681,7 +3723,7 @@ if(specify_who_to_save_load[29]==1)
 /*
 if ((fp=fopen( file_grid_levels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_levels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_levels);
 if (fwrite(grid_levels, sizeof(unsigned char), grid_levels_size, fp) != grid_levels_size)
@@ -3699,14 +3741,14 @@ for (int st=0;st<1024;st++)
 {
 for (int ct=0;ct<513;ct++)
 {
-temp_grid_levels_for_save[iu][st][ct]=grid_levels[iu][st][ct];   
-}    
-}        
+temp_grid_levels_for_save[iu][st][ct]=grid_levels[iu][st][ct];
+}
+}
 }
 
 if ((fp=fopen( file_grid_levels_1, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_levels_1);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_levels_1);
 if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) != grid_levels_size)
@@ -3714,7 +3756,7 @@ if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_levels_1);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 for(int i=0;i<32;i++)
 {
@@ -3722,13 +3764,13 @@ for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-temp_grid_levels_for_save[i][s][c]=grid_levels[32+i][s][c];   
-}    
-}        
+temp_grid_levels_for_save[i][s][c]=grid_levels[32+i][s][c];
+}
+}
 }
 if ((fp=fopen( file_grid_levels_2, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_levels_2);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_levels_2);
 if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) != grid_levels_size)
@@ -3736,20 +3778,20 @@ if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_levels_2);
 fclose(fp);
 }
-idf++; 
+idf++;
 for(int i=0;i<32;i++)
 {
 for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-temp_grid_levels_for_save[i][s][c]=grid_levels[64+i][s][c];   
-}    
-}        
+temp_grid_levels_for_save[i][s][c]=grid_levels[64+i][s][c];
+}
+}
 }
 if ((fp=fopen( file_grid_levels_3, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_levels_3);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_levels_3);
 if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) != grid_levels_size)
@@ -3757,20 +3799,20 @@ if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_levels_3);
 fclose(fp);
 }
-idf++; 
+idf++;
 for(int i=0;i<32;i++)
 {
 for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-temp_grid_levels_for_save[i][s][c]=grid_levels[96+i][s][c];   
-}    
-}        
+temp_grid_levels_for_save[i][s][c]=grid_levels[96+i][s][c];
+}
+}
 }
 if ((fp=fopen( file_grid_levels_4, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_levels_4);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_levels_4);
 if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) != grid_levels_size)
@@ -3778,12 +3820,12 @@ if (fwrite(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_levels_4);
 fclose(fp);
 }
-idf++; 
+idf++;
 //fin des 4 grid levels
 
 if ((fp=fopen( file_grid_times, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_times);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_times);
 if (fwrite(grid_times, sizeof(float), grid_times_size, fp) != grid_times_size)
@@ -3791,10 +3833,10 @@ if (fwrite(grid_times, sizeof(float), grid_times_size, fp) != grid_times_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_times);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_grid_goto, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_goto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_goto);
 if (fwrite(grid_goto, sizeof(int), grid_goto_size, fp) != grid_goto_size)
@@ -3802,10 +3844,10 @@ if (fwrite(grid_goto, sizeof(int), grid_goto_size, fp) != grid_goto_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_goto);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_grid_seekpos, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_seekpos);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_seekpos);
 if (fwrite(grid_seekpos, sizeof(int), grid_seekpos_size, fp) != grid_seekpos_size)
@@ -3813,10 +3855,10 @@ if (fwrite(grid_seekpos, sizeof(int), grid_seekpos_size, fp) != grid_seekpos_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_seekpos);
 fclose(fp);
 }
- idf++; 
+ idf++;
  if ((fp=fopen( file_grid_stoplay, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_stoplay);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_stoplay);
 if (fwrite(grid_stoplay, sizeof(bool), grid_stoplay_size, fp) != grid_stoplay_size)
@@ -3824,10 +3866,10 @@ if (fwrite(grid_stoplay, sizeof(bool), grid_stoplay_size, fp) != grid_stoplay_si
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_stoplay);
 fclose(fp);
 }
- idf++; 
+ idf++;
   if ((fp=fopen( file_grid_names, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_names);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_names);
 if (fwrite(grider_name, sizeof(char), grid_names_size, fp) != grid_names_size)
@@ -3835,12 +3877,12 @@ if (fwrite(grider_name, sizeof(char), grid_names_size, fp) != grid_names_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_names);
 fclose(fp);
 }
- idf++; 
+ idf++;
 
 //les grids players
 if ((fp=fopen( file_gridpl_grid, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_grid);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_grid);
 if (fwrite(index_grider_selected, sizeof(int), gridpl_size, fp) != gridpl_size)
@@ -3848,10 +3890,10 @@ if (fwrite(index_grider_selected, sizeof(int), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_grid);
 fclose(fp);
 }
- idf++; 
+ idf++;
 if ((fp=fopen( file_gridpl_step, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_step);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_step);
 if (fwrite(index_grider_step_is, sizeof(int), gridpl_size, fp) != gridpl_size)
@@ -3859,10 +3901,10 @@ if (fwrite(index_grider_step_is, sizeof(int), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_step);
 fclose(fp);
 }
-idf++;  
+idf++;
 if ((fp=fopen( file_gridpl_autost, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_autost);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_autost);
 if (fwrite(grider_autostopmode, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3870,10 +3912,10 @@ if (fwrite(grider_autostopmode, sizeof(bool), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_autost);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_gridpl_goto, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_goto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_goto);
 if (fwrite(grider_goto_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3881,10 +3923,10 @@ if (fwrite(grider_goto_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_goto);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_gridpl_seekto, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_seekto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_seekto);
 if (fwrite(grider_seekto_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3892,10 +3934,10 @@ if (fwrite(grider_seekto_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_seekto);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_gridpl_stpl, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_stpl);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_stpl);
 if (fwrite(grider_stoplay_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3903,10 +3945,10 @@ if (fwrite(grider_stoplay_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_stpl);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_gridpl_slave, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_slave);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_slave);
 if (fwrite(grid_player_slave, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3914,10 +3956,10 @@ if (fwrite(grid_player_slave, sizeof(bool), gridpl_size, fp) != gridpl_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_slave);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_gridpl_show, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_show);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_show);
 if (fwrite( index_show_grid_player, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3925,10 +3967,10 @@ if (fwrite( index_show_grid_player, sizeof(bool), gridpl_size, fp) != gridpl_siz
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_show);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_gridpl_accel, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_accel);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_accel);
 if (fwrite( grid_crossfade_speed, sizeof(int), gridpl_size, fp) != gridpl_size)
@@ -3939,7 +3981,7 @@ fclose(fp);
 idf++;
 if ((fp=fopen( file_gridpl_countmod, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_countmod);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_countmod);
 if (fwrite( grider_count_mode, sizeof(bool), gridpl_size, fp) != gridpl_size)
@@ -3951,7 +3993,7 @@ idf++;
 
 if ((fp=fopen( file_gridpl_snapfader, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_snapfader);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_snapfader);
 if (fwrite( GplSnapFader, sizeof(int), gridpl_snapfader_size, fp) != gridpl_snapfader_size)
@@ -3968,7 +4010,7 @@ grider_conf[1]=grider_nb_col;
 grider_conf[2]=grider_nb_row;
 if ((fp=fopen( file_grider_conf, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grider_conf);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grider_conf);
 if (fwrite( grider_conf, sizeof(int), grider_conf_size, fp) != grider_conf_size)
@@ -3976,7 +4018,7 @@ if (fwrite( grider_conf, sizeof(int), grider_conf_size, fp) != grider_conf_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grider_conf);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 int grider_report_cross[8];
 for(int gr=0;gr<4;gr++)
@@ -3986,7 +4028,7 @@ grider_report_cross[gr+4]=grid_niveauX2[gr];
 }
 if ((fp=fopen(file_gridpl_crosslv, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_gridpl_crosslv);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_gridpl_crosslv);
 if (fwrite( grider_report_cross, sizeof(int), gridpl_croslv_size, fp) != gridpl_croslv_size)
@@ -3994,12 +4036,12 @@ if (fwrite( grider_report_cross, sizeof(int), gridpl_croslv_size, fp) != gridpl_
 else sprintf(string_save_load_report[idf],"Saved file %s", file_gridpl_crosslv);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen(file_grid_count, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_count);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_count);
 if (fwrite( grid_count, sizeof(int), grid_count_size, fp) !=grid_count_size)
@@ -4007,11 +4049,11 @@ if (fwrite( grid_count, sizeof(int), grid_count_size, fp) !=grid_count_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_count);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_grided_count, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grided_count);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grided_count);
 if (fwrite( grid_counted_times, sizeof(int), grid_counted_size, fp) !=grid_counted_size)
@@ -4019,7 +4061,7 @@ if (fwrite( grid_counted_times, sizeof(int), grid_counted_size, fp) !=grid_count
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grided_count);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 
 }//fin grid
@@ -4030,7 +4072,7 @@ if(specify_who_to_save_load[30]==1)
 {
 if ((fp=fopen(file_grid_in_mems, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_grid_in_mems);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_grid_in_mems);
 if (fwrite( set_from_seq_gridplayer1_next_step, sizeof(int),grid_in_mems_size, fp) !=grid_in_mems_size)
@@ -4038,7 +4080,7 @@ if (fwrite( set_from_seq_gridplayer1_next_step, sizeof(int),grid_in_mems_size, f
 else sprintf(string_save_load_report[idf],"Saved file %s", file_grid_in_mems);
 fclose(fp);
 }
-idf++; 
+idf++;
 }
 rest(10);
 
@@ -4048,7 +4090,7 @@ if(specify_who_to_save_load[31]==1)
 {
 if ((fp=fopen(file_lib_sizes_symbol, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lib_sizes_symbol);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_lib_sizes_symbol);
 if (fwrite(  size_symbol, sizeof(float),lib_sizes_symbol_size, fp) !=lib_sizes_symbol_size)
@@ -4056,10 +4098,10 @@ if (fwrite(  size_symbol, sizeof(float),lib_sizes_symbol_size, fp) !=lib_sizes_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lib_sizes_symbol);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_lib_names_symbol, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lib_names_symbol);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_lib_names_symbol);
 if (fwrite(  symbol_nickname, sizeof(char),lib_names_symbol_size, fp) !=lib_names_symbol_size)
@@ -4067,10 +4109,10 @@ if (fwrite(  symbol_nickname, sizeof(char),lib_names_symbol_size, fp) !=lib_name
 else sprintf(string_save_load_report[idf],"Saved file %s", file_lib_names_symbol);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_plot_angles, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_angles);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_angles);
 if (fwrite(  angle_symbol, sizeof(float),plot_angle_size, fp) !=plot_angle_size)
@@ -4078,10 +4120,10 @@ if (fwrite(  angle_symbol, sizeof(float),plot_angle_size, fp) !=plot_angle_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_angles);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_plot_positions, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_positions);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_positions);
 if (fwrite(  pos_symbol, sizeof(int),plot_positions_size, fp) !=plot_positions_size)
@@ -4089,10 +4131,10 @@ if (fwrite(  pos_symbol, sizeof(int),plot_positions_size, fp) !=plot_positions_s
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_positions);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_plot_nbr_symbols, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_nbr_symbols);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_angles);
 if (fwrite(  nbre_symbols_on_plot, sizeof(int),plot_nbr_symbols_size, fp) !=plot_nbr_symbols_size)
@@ -4100,10 +4142,10 @@ if (fwrite(  nbre_symbols_on_plot, sizeof(int),plot_nbr_symbols_size, fp) !=plot
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_nbr_symbols);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_plot_typ, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_typ);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_typ);
 if (fwrite(  symbol_type, sizeof(int),plot_typ_size, fp) !=plot_typ_size)
@@ -4111,11 +4153,11 @@ if (fwrite(  symbol_type, sizeof(int),plot_typ_size, fp) !=plot_typ_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_typ);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_chan, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_chan);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_chan);
 if (fwrite(  symbol_channel_is, sizeof(int),plot_chan_size, fp) !=plot_chan_size)
@@ -4123,11 +4165,11 @@ if (fwrite(  symbol_channel_is, sizeof(int),plot_chan_size, fp) !=plot_chan_size
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_chan);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_dim, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_dim);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_dim);
 if (fwrite(  symbol_dimmer_is, sizeof(int),plot_dim_size, fp) !=plot_dim_size)
@@ -4135,11 +4177,11 @@ if (fwrite(  symbol_dimmer_is, sizeof(int),plot_dim_size, fp) !=plot_dim_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_dim);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_gels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_gels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_gels);
 if (fwrite(  gelat, sizeof(int),plot_gels_size, fp) !=plot_gels_size)
@@ -4147,11 +4189,11 @@ if (fwrite(  gelat, sizeof(int),plot_gels_size, fp) !=plot_gels_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_gels);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_gels_t, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_gels_t);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_gels_t);
 if (fwrite(  gelat_family, sizeof(int),plot_gels_t_size, fp) !=plot_gels_t_size)
@@ -4159,11 +4201,11 @@ if (fwrite(  gelat_family, sizeof(int),plot_gels_t_size, fp) !=plot_gels_t_size)
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_gels_t);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_view, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_view);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_view);
 if (fwrite(  show_calc_number, sizeof(bool),plot_view_size, fp) !=plot_view_size)
@@ -4171,11 +4213,11 @@ if (fwrite(  show_calc_number, sizeof(bool),plot_view_size, fp) !=plot_view_size
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_view);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_options_view, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_options_view);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_options_view);
 if (fwrite(  plot_show_options, sizeof(bool),plot_view_options_size, fp) !=plot_view_options_size)
@@ -4183,11 +4225,11 @@ if (fwrite(  plot_show_options, sizeof(bool),plot_view_options_size, fp) !=plot_
 else sprintf(string_save_load_report[idf],"Saved file %s", file_plot_options_view);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_opt_xy, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_opt_xy);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_opt_xy);
 if (fwrite( relatif_plot_xy, sizeof(int),plot_opt_xy_size, fp) !=plot_opt_xy_size)
@@ -4200,7 +4242,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_type, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_type);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_type);
 if (fwrite( shape_type, sizeof(int),plot_shape_type_size, fp) !=plot_shape_type_size)
@@ -4212,7 +4254,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_attr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_attr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_attr);
 if (fwrite( shape_attributes, sizeof(float),plot_shape_attr_size, fp) !=plot_shape_attr_size)
@@ -4224,7 +4266,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_pos, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_pos);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_pos);
 if (fwrite( shape_position, sizeof(int),plot_shape_pos_size, fp) !=plot_shape_pos_size)
@@ -4236,7 +4278,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_legend_name, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_legend_name);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_legend_name);
 if (fwrite( shape_legend_name, sizeof(char),plot_shape_legend_name_size, fp) !=plot_shape_legend_name_size)
@@ -4248,7 +4290,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_relativ_xy, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_relativ_xy);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_relativ_xy);
 if (fwrite( shape_relativ_position_legend_name, sizeof(int),plot_shape_relativ_xy_size, fp) !=plot_shape_relativ_xy_size)
@@ -4260,7 +4302,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_color_type, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_color_type);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_color_type);
 if (fwrite( shape_color_type, sizeof(int),plot_shape_color_type_size, fp) !=plot_shape_color_type_size)
@@ -4272,7 +4314,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_groups, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_groups);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_shape_groups);
 if (fwrite( shape_groups, sizeof(int),plot_shape_groups_size, fp) !=plot_shape_groups_size)
@@ -4284,7 +4326,7 @@ idf++;
 
 if ((fp=fopen(file_plot_symbols_relativgroups, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_symbols_relativgroups);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_symbols_relativgroups);
 if (fwrite( plot_relativxy_preset, sizeof(int),plot_symbols_relativgroups_size, fp) !=plot_symbols_relativgroups_size)
@@ -4296,7 +4338,7 @@ idf++;
 
 if ((fp=fopen(file_plot_symbols_notes, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_symbols_notes);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_symbols_notes);
 if (fwrite( symbol_note, sizeof(char),plot_symbols_notes_size, fp) !=plot_symbols_notes_size)
@@ -4308,7 +4350,7 @@ idf++;
 
 if ((fp=fopen(file_plot_legend, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_legend);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_legend);
 if (fwrite( plot_renseignements, sizeof(char),plot_legend_size, fp) !=plot_legend_size)
@@ -4320,7 +4362,7 @@ idf++;
 
 if ((fp=fopen(file_plot_symb_linked, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_symb_linked);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_plot_symb_linked);
 if (fwrite( symbol_is_linked_to, sizeof(int),plot_symb_linked_size, fp) !=plot_symb_linked_size)
@@ -4339,46 +4381,46 @@ if(specify_who_to_save_load[32]==1)
 {
 if ((fp=fopen( file_draw_presetsz, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_draw_presetsz); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_draw_presetsz);
 if (fwrite(draw_preset_parameters, sizeof(int),draw_presetsz_size, fp) !=  draw_presetsz_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_draw_presetsz); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_draw_presetsz);
 fclose(fp);
 }
-idf++;                                  
-           
+idf++;
+
 if ((fp=fopen( file_draw_levels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_draw_levels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_draw_levels);
 if (fwrite(draw_preset_levels, sizeof(float),draw_levels_size, fp) !=  draw_levels_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_draw_levels); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_draw_levels);
 fclose(fp);
 }
-idf++;                                  
-  
+idf++;
+
 if ((fp=fopen( file_draw_chrouting, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_draw_chrouting); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_draw_chrouting);
 if (fwrite(draw_preset_channel_routing, sizeof(int),draw_chrouting_size, fp) !=  draw_chrouting_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_draw_chrouting); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_draw_chrouting);
 fclose(fp);
 }
-idf++;                     
+idf++;
 
-           
-save_draw_preset_config();   
-idf++;    
+
+save_draw_preset_config();
+idf++;
 
 }
 
@@ -4388,108 +4430,108 @@ if(specify_who_to_save_load[33]==1)
 {
 if ((fp=fopen( file_echo_pointing_fader, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_pointing_fader); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_pointing_fader);
 if (fwrite(echo_pointing_fader_num, sizeof(int),echo_pointing_fader_size, fp) !=  echo_pointing_fader_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_pointing_fader); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_pointing_fader);
 fclose(fp);
 }
-idf++;     
+idf++;
 
 if ((fp=fopen( file_echo_echo_mode, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_echo_mode); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_echo_mode);
 if (fwrite(echo_is_echo_mode, sizeof(bool),echo_echo_mode_size, fp) !=  echo_echo_mode_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_echo_mode); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_echo_mode);
 fclose(fp);
 }
-idf++;             
+idf++;
 
 if ((fp=fopen( file_echo_global_param, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_global_param); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_global_param);
 if (fwrite(echo_global_params, sizeof(float),echo_global_param_size, fp) !=  echo_global_param_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_global_param); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_global_param);
 fclose(fp);
 }
-idf++;             
+idf++;
 
 if ((fp=fopen( file_echo_channel_man_mode, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_channel_man_mode); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_channel_man_mode);
 if (fwrite(echo_channel_manipulate_mode, sizeof(bool),echo_channel_man_mode_size, fp) !=  echo_channel_man_mode_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_channel_man_mode); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_channel_man_mode);
 fclose(fp);
 }
-idf++;     
-                
+idf++;
+
 if ((fp=fopen( file_echo_chan_pos, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_chan_pos); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_chan_pos);
 if (fwrite(echo_grid_channel_position, sizeof(int),echo_chan_pos_size, fp) !=  echo_chan_pos_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_chan_pos); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_chan_pos);
 fclose(fp);
 }
-idf++;     
+idf++;
 
 if ((fp=fopen( file_echo_levels, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_levels); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_levels);
 if (fwrite(echo_levels, sizeof(float),echo_levels_size, fp) !=  echo_levels_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_levels); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_levels);
 fclose(fp);
 }
-idf++;   
-              
+idf++;
+
 
 if ((fp=fopen( file_echo_bounce, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_bounce); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_bounce);
 if (fwrite(do_bounce, sizeof(bool),echo_bounce_size, fp) !=  echo_bounce_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_bounce); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_bounce);
 fclose(fp);
 }
-idf++;   
+idf++;
 
 if ((fp=fopen( file_echo_presets, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_presets); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_echo_presets);
 if (fwrite(snap_echo_to_recall, sizeof(float),echo_presets_size, fp) !=  echo_presets_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_echo_presets); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_echo_presets);
 fclose(fp);
 }
-idf++;   
+idf++;
 }
 
 
@@ -4500,47 +4542,47 @@ if(specify_who_to_save_load[35]==1)
 
 if ((fp=fopen( file_save_preset, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_save_preset); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_save_preset);
 if (fwrite(preset_specify_who_to_save_load, sizeof(bool),save_preset_size, fp) !=  save_preset_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_save_preset); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_save_preset);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_save_pdf, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_save_pdf); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",  file_save_pdf);
 if (fwrite(specify_who_to_save_PDF, sizeof(bool),save_pdf_size, fp) !=  save_pdf_size)
-{ 
+{
 sprintf(string_save_load_report[idf],"Error writting %s", file_save_pdf); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_save_pdf);
 fclose(fp);
 }
-idf++; 
-                                   
+idf++;
+
 }
 
 
 //reroll
 sprintf(rep,"");
-sprintf(rep,"%s",mondirectory); 	 
-chdir (rep);    
+sprintf(rep,"%s",mondirectory);
+chdir (rep);
 
 //hors boucle
 Save_Launchpad_RetroLight();
 
-if(specify_who_to_save_load[22]==1) 
+if(specify_who_to_save_load[22]==1)
 {Save_audiofiles_cues(); idf++; }
 //reroll
 sprintf(rep,"");
-sprintf(rep,"%s",mondirectory); 	 
-chdir (rep);  
+sprintf(rep,"%s",mondirectory);
+chdir (rep);
 detect_error_on_save_load();
 if(there_is_an_error_on_save_load==1){index_show_save_load_report=1;} else {index_show_save_load_report=0;}
 
@@ -4569,53 +4611,53 @@ if(specify_who_to_save_load[0]==1)/////MEMOIRES/////////////////////////////////
 save_load_print_to_screen("Loading Memories");
 if ((fp=fopen( file_mem_existantes, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mem_existantes);  b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mem_existantes);
 if (fread(MemoiresExistantes, sizeof(bool),mem_existantes_size, fp) !=mem_existantes_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s", file_mem_existantes);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_mem_existantes); 
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_mem_existantes);
 fclose(fp);
 }
 
-idf++; 
+idf++;
 if ((fp=fopen( file_memories, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_memories);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_memories);
 if (fread(Memoires, sizeof(unsigned char), memories_size, fp) != memories_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s", file_memories);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_memories); 
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_memories);
 fclose(fp);
 }
 idf++;
 if ((fp=fopen(  file_text_mems, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_text_mems);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_text_mems);
 if (fread(descriptif_memoires, sizeof(char), text_mems_size, fp) != text_mems_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",  file_text_mems);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_text_mems); 
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_text_mems);
 fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(  file_text_annots, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_text_annots);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_text_annots);
 if (fread(annotation_memoires, sizeof(char), text_annots_size, fp) != text_annots_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",  file_text_annots);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_text_annots); 
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_text_annots);
 fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_mem_detruites, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mem_detruites);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_mem_detruites);
 if (fread(MemoiresDetruites, sizeof(bool), mem_deleted_size, fp) != mem_deleted_size)
@@ -4623,11 +4665,11 @@ if (fread(MemoiresDetruites, sizeof(bool), mem_deleted_size, fp) != mem_deleted_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_mem_detruites);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_mem_exclues, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_mem_exclues);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_mem_exclues);
 if (fread(MemoiresExclues, sizeof(bool), mem_exclues_size, fp) != mem_exclues_size)
@@ -4635,10 +4677,10 @@ if (fread(MemoiresExclues, sizeof(bool), mem_exclues_size, fp) != mem_exclues_si
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_mem_exclues);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 Load_Sequenciel_Conf();
-idf++; 
+idf++;
 
 
 //rafraichissement potards midi
@@ -4654,7 +4696,7 @@ if(specify_who_to_save_load[1]==1)///////MEMOIRES TIMES/////////////////////////
 {
 if ((fp=fopen(  file_times_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_times_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_times_mem);
 if (fread(Times_Memoires, sizeof(float), times_mems_size, fp) != times_mems_size)
@@ -4662,7 +4704,7 @@ if (fread(Times_Memoires, sizeof(float), times_mems_size, fp) != times_mems_size
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_times_mem);
  fclose(fp);
 }
-idf++; 
+idf++;
 }
 
 
@@ -4670,7 +4712,7 @@ if(specify_who_to_save_load[2]==1)/////MEMOIRES LINKS///////////////////////////
 {
 if ((fp=fopen(  file_link_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_link_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_link_mem);
 if (fread(Links_Memoires, sizeof(bool), link_mem_size, fp) != link_mem_size)
@@ -4682,10 +4724,10 @@ idf++;
 }
 
 if(specify_who_to_save_load[3]==1)/////MEMOIRES BANGER///////////////////////////
-{ 
+{
 if ((fp=fopen(  file_banger_call_in_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_banger_call_in_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_banger_call_in_mem);
 if (fread( Banger_Memoire, sizeof(int), bang_mem_size, fp) != bang_mem_size)
@@ -4693,14 +4735,14 @@ if (fread( Banger_Memoire, sizeof(int), bang_mem_size, fp) != bang_mem_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_banger_call_in_mem);
  fclose(fp);
 }
-idf++; 
+idf++;
 }
 
 if(specify_who_to_save_load[4]==1)/////MEMOIRES ratio manuel////////////////////
-{ 
+{
 if ((fp=fopen(  file_manual_ratio_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_manual_ratio_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_manual_ratio_mem);
 if (fread(ratio_cross_manuel, sizeof(int), ratio_mem_size, fp) != ratio_mem_size)
@@ -4708,15 +4750,15 @@ if (fread(ratio_cross_manuel, sizeof(int), ratio_mem_size, fp) != ratio_mem_size
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_manual_ratio_mem);
  fclose(fp);
 }
-idf++; 
+idf++;
 }
 
 
 if(specify_who_to_save_load[5]==1)/////channels LIST////////////////////
-{ 
+{
 if ((fp=fopen(  file_spotlist, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_spotlist);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_spotlist);
 if (fread(descriptif_projecteurs, sizeof(char), spotlist_size, fp) !=spotlist_size)
@@ -4724,11 +4766,11 @@ if (fread(descriptif_projecteurs, sizeof(char), spotlist_size, fp) !=spotlist_si
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_spotlist);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chan_macro_on, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_on);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chan_macro_on);
 if (fread(macro_channel_on, sizeof(bool), chan_macro_on_size, fp) !=chan_macro_on_size)
@@ -4736,11 +4778,11 @@ if (fread(macro_channel_on, sizeof(bool), chan_macro_on_size, fp) !=chan_macro_o
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chan_macro_on);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chan_macro_reaction, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_reaction);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chan_macro_reaction);
 if (fread(channel_macro_reaction, sizeof(int), chan_macro_reaction_size, fp) !=chan_macro_reaction_size)
@@ -4748,11 +4790,11 @@ if (fread(channel_macro_reaction, sizeof(int), chan_macro_reaction_size, fp) !=c
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chan_macro_reaction);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chan_macro_action, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_action);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chan_macro_reaction);
 if (fread(channel_macro_action, sizeof(int), chan_macro_action_size, fp) !=chan_macro_action_size)
@@ -4760,11 +4802,11 @@ if (fread(channel_macro_action, sizeof(int), chan_macro_action_size, fp) !=chan_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chan_macro_action);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chan_macro_val, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chan_macro_val);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chan_macro_val);
 if (fread(channel_macro_val, sizeof(int), chan_macro_val_size, fp) !=chan_macro_val_size)
@@ -4772,11 +4814,11 @@ if (fread(channel_macro_val, sizeof(int), chan_macro_val_size, fp) !=chan_macro_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chan_macro_val);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chview_ch, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_ch);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chview_ch);
 if (fread(Channel_View_ROUTING, sizeof(int), chview_ch_size, fp) !=chview_ch_size)
@@ -4784,11 +4826,11 @@ if (fread(Channel_View_ROUTING, sizeof(int), chview_ch_size, fp) !=chview_ch_siz
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chview_ch);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chview_name, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_name);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chview_name);
 if (fread( channel_view_Name, sizeof(char), chview_name_size, fp) !=chview_name_size)
@@ -4796,11 +4838,11 @@ if (fread( channel_view_Name, sizeof(char), chview_name_size, fp) !=chview_name_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chview_name);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chview_linktype, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_linktype);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chview_linktype);
 if (fread( channel_view_link_type, sizeof(int), chview_linktype_size, fp) !=chview_linktype_size)
@@ -4808,11 +4850,11 @@ if (fread( channel_view_link_type, sizeof(int), chview_linktype_size, fp) !=chvi
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chview_linktype);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chview_linkref, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_linkref);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chview_linkref);
 if (fread( channel_view_link_ref, sizeof(int), chview_linkref_size, fp) !=chview_linkref_size)
@@ -4820,11 +4862,11 @@ if (fread( channel_view_link_ref, sizeof(int), chview_linkref_size, fp) !=chview
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chview_linkref);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_chview_view, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chview_view);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chview_view);
 if (fread( Channel_View_MODE, sizeof(bool), chview_view_size, fp) !=chview_view_size)
@@ -4832,9 +4874,9 @@ if (fread( Channel_View_MODE, sizeof(bool), chview_view_size, fp) !=chview_view_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chview_view);
  fclose(fp);
 }
-idf++; 
+idf++;
 
- 
+
 for(int i=0;i<nbre_de_vues_circuits;i++)
 {
 count_number_of_channels_in_view(i);
@@ -4844,10 +4886,10 @@ count_number_of_channels_in_view(i);
 }
 
 if(specify_who_to_save_load[6]==1)/////Channels Direct Channels/////////////////
-{ 
+{
 if ((fp=fopen(  file_direct_channel, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_direct_channel);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",    file_direct_channel);
 if (fread(FaderDirectChan, sizeof(int), fader_direct_chan_size, fp) != fader_direct_chan_size)
@@ -4864,15 +4906,15 @@ if(FaderDirectChan[i][j]>512){FaderDirectChan[i][j]=512;}
 }
 }
 }
-idf++; 
+idf++;
 }
 
 
 if(specify_who_to_save_load[7]==1)/////Channels Freeze/////////////////////////
-{ 
+{
 if ((fp=fopen(  file_dofreeze, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dofreeze);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_dofreeze);
 if (fread(freeze_array, sizeof(bool), dofreeze_size, fp) !=dofreeze_size)
@@ -4880,10 +4922,10 @@ if (fread(freeze_array, sizeof(bool), dofreeze_size, fp) !=dofreeze_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_dofreeze);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(  file_freeze_state, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_freeze_state);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_freeze_state);
 if (fread(freeze_state, sizeof(unsigned char), freezestate_size, fp) !=freezestate_size)
@@ -4891,10 +4933,10 @@ if (fread(freeze_state, sizeof(unsigned char), freezestate_size, fp) !=freezesta
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_freeze_state);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(  file_excluded_chan, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_excluded_chan);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_excluded_chan);
 if (fread(Channels_excluded_from_grand_master, sizeof(bool), excluded_chan_size, fp) !=excluded_chan_size)
@@ -4907,11 +4949,11 @@ idf++;
 }
 
 if(specify_who_to_save_load[8]==1)/////Patch circuits/////////////////////////////////
-{ 
+{
 save_load_print_to_screen("Loading Patch");
 if ((fp=fopen( file_patch_channels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_patch_channels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_patch_channels);
 if (fread(Patch, sizeof(int),patch_channels_size, fp) !=patch_channels_size)
@@ -4920,15 +4962,15 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",  file_patch_channels
  fclose(fp);
 }
 generate_channel_view_list_from_patched_circuits();
-idf++; 
+idf++;
 }
 
 
 if(specify_who_to_save_load[9]==1)/////Patch LTP-HTP/////////////////////////////////
-{ 
+{
 if ((fp=fopen(file_patch_ltp, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_patch_ltp);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_patch_ltp);
 if (fread(dimmer_type, sizeof(bool),patch_ltp_size, fp) !=patch_ltp_size)
@@ -4936,15 +4978,15 @@ if (fread(dimmer_type, sizeof(bool),patch_ltp_size, fp) !=patch_ltp_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_patch_ltp);
  fclose(fp);
 }
-idf++; 
+idf++;
 }
 
 
 if(specify_who_to_save_load[10]==1)/////Patch curves///////////////////////////
-{ 
+{
 if ((fp=fopen(file_patch_curves, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_patch_curves);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_patch_curves);
 if (fread(curves, sizeof(int),patch_curves_size, fp) !=patch_curves_size)
@@ -4952,10 +4994,10 @@ if (fread(curves, sizeof(int),patch_curves_size, fp) !=patch_curves_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_patch_curves);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_curve_ctrl_pt, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_curve_ctrl_pt);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_curve_ctrl_pt);
 if (fread(curve_ctrl_pt, sizeof(int),curve_ctrl_size, fp) !=curve_ctrl_size)
@@ -4963,10 +5005,10 @@ if (fread(curve_ctrl_pt, sizeof(int),curve_ctrl_size, fp) !=curve_ctrl_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_curve_ctrl_pt);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_curve_spline_level, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_curve_spline_level);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_curve_spline_level);
 if (fread(the_curve_spline_level, sizeof(int),curve_spline_level_size, fp) !=curve_spline_level_size)
@@ -4974,10 +5016,10 @@ if (fread(the_curve_spline_level, sizeof(int),curve_spline_level_size, fp) !=cur
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_curve_spline_level);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_curve_matrix, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_curve_matrix);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_curve_matrix);
 if (fread(curve_report, sizeof(int),curve_matrix_size, fp) !=curve_matrix_size)
@@ -4985,8 +5027,8 @@ if (fread(curve_report, sizeof(int),curve_matrix_size, fp) !=curve_matrix_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_curve_matrix);
  fclose(fp);
 }
-index_curve_spline_level=the_curve_spline_level[curve_selected];  
-idf++; 
+index_curve_spline_level=the_curve_spline_level[curve_selected];
+idf++;
 rest(10);
 }
 
@@ -4994,10 +5036,10 @@ rest(10);
 
 
 if(specify_who_to_save_load[11]==1)/////Banger//////////////////////////////////
-{ 
+{
 if ((fp=fopen( file_bangers_names, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_names);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_names);
 if (fread(bangers_name, sizeof(char), banger_name_size, fp) !=banger_name_size)
@@ -5005,11 +5047,11 @@ if (fread(bangers_name, sizeof(char), banger_name_size, fp) !=banger_name_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_names);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_bangers_types, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_types);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_types);
 if (fread(bangers_type, sizeof(int), banger_types_size, fp) !=banger_types_size)
@@ -5017,11 +5059,11 @@ if (fread(bangers_type, sizeof(int), banger_types_size, fp) !=banger_types_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_types);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_bangers_actions, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_actions);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_actions);
 if (fread(bangers_action, sizeof(int), banger_actions_size, fp) !=banger_actions_size)
@@ -5029,12 +5071,12 @@ if (fread(bangers_action, sizeof(int), banger_actions_size, fp) !=banger_actions
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_actions);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_bangers_values, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_values);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_values);
 if (fread(bangers_params, sizeof(int), banger_values_size, fp) !=banger_values_size)
@@ -5042,12 +5084,12 @@ if (fread(bangers_params, sizeof(int), banger_values_size, fp) !=banger_values_s
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_values);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_bangers_times, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_values);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_times);
 if (fread(bangers_delay, sizeof(float), banger_times_size, fp) !=banger_times_size)
@@ -5055,12 +5097,12 @@ if (fread(bangers_delay, sizeof(float), banger_times_size, fp) !=banger_times_si
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_times);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_bangers_alarms, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_alarms);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_alarms);
 if (fread(string_alarm, sizeof(char), banger_alarm_size, fp) !=banger_alarm_size)
@@ -5068,7 +5110,7 @@ if (fread(string_alarm, sizeof(char), banger_alarm_size, fp) !=banger_alarm_size
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_alarms);
  fclose(fp);
 }
-idf++; 
+idf++;
 }
 
 
@@ -5078,7 +5120,7 @@ save_load_print_to_screen("Loading Faders");
 
 if ((fp=fopen(file_faders_state, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_faders_state);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_faders_state);
 if (fread(Fader, sizeof(unsigned char),faders_saving_size, fp) !=faders_saving_size)
@@ -5086,10 +5128,10 @@ if (fread(Fader, sizeof(unsigned char),faders_saving_size, fp) !=faders_saving_s
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_faders_state);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_dock_selected, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_selected);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_dock_selected);
 if (fread(DockIsSelected, sizeof(bool),dock_selected_size, fp) !=dock_selected_size)
@@ -5098,10 +5140,10 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_selected);
  fclose(fp);
 }
 
-idf++; 
+idf++;
 if ((fp=fopen(file_dock_type, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_type);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_dock_type);
 if (fread(DockTypeIs, sizeof(unsigned char),dock_type_size, fp) !=dock_type_size)
@@ -5109,10 +5151,10 @@ if (fread(DockTypeIs, sizeof(unsigned char),dock_type_size, fp) !=dock_type_size
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_type);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_dock_net, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_net);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_dock_net);
 if (fread(DockNetIs, sizeof(unsigned char),dock_net_size, fp) !=dock_net_size)
@@ -5120,10 +5162,10 @@ if (fread(DockNetIs, sizeof(unsigned char),dock_net_size, fp) !=dock_net_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_net);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_dock_name, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_name);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_dock_name);
 if (fread(DockName, sizeof(char),dock_name_size, fp) !=dock_name_size)
@@ -5131,10 +5173,10 @@ if (fread(DockName, sizeof(char),dock_name_size, fp) !=dock_name_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_name);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_dock_channels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_channels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_dock_channels);
 if (fread(FaderDockContains, sizeof(unsigned char),dock_channels_size, fp) !=dock_channels_size)
@@ -5142,10 +5184,10 @@ if (fread(FaderDockContains, sizeof(unsigned char),dock_channels_size, fp) !=doc
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_channels);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_fader_locked, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_locked);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_locked);
 if (fread(FaderLocked, sizeof(bool),fader_locked_size, fp) !=fader_locked_size)
@@ -5153,10 +5195,10 @@ if (fread(FaderLocked, sizeof(bool),fader_locked_size, fp) !=fader_locked_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_locked);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_fader_locked_full, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_locked_full);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_locked_full);
 if (fread(LockFader_is_FullLevel, sizeof(bool),fader_locked_full_size, fp) !=fader_locked_full_size)
@@ -5164,10 +5206,10 @@ if (fread(LockFader_is_FullLevel, sizeof(bool),fader_locked_full_size, fp) !=fad
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_locked_full);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_fader_before_lock, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_before_lock);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_before_lock);
 if (fread(StateOfFaderBeforeLock, sizeof(unsigned char),fader_before_lock_size, fp) !=fader_before_lock_size)
@@ -5175,10 +5217,10 @@ if (fread(StateOfFaderBeforeLock, sizeof(unsigned char),fader_before_lock_size, 
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_before_lock);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_color_to_dock, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_color_to_dock);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_color_to_dock);
 if (fread(colorpreset_linked_to_dock, sizeof(int),fader_color_to_dock_size, fp) !=fader_color_to_dock_size)
@@ -5186,37 +5228,37 @@ if (fread(colorpreset_linked_to_dock, sizeof(int),fader_color_to_dock_size, fp) 
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_color_to_dock);
  fclose(fp);
 }
-idf++; 
+idf++;
 //Audio dans faders
 if ((fp=fopen( file_fader_audio, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_fader_audio);b_report_error[idf]=1;}
-else 
+else
 {
 int temp_array_audio[48*3][6];
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_audio);
 if (fread(temp_array_audio, sizeof(int),fader_audio_size, fp) !=fader_audio_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",  file_fader_audio);b_report_error[idf]=1;}
-else 
+else
 {sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_audio);
 //rafraichissement tableau
 for(int u=0;u<48;u++)
 {
 for(int l=0;l<6;l++)
 {
-DockHasAudioVolume[u][l]=temp_array_audio[u][l];   
-DockHasAudioPan[u][l]=temp_array_audio[u+48][l];  
-DockHasAudioPitch[u][l]=temp_array_audio[u+96][l];     
-}        
+DockHasAudioVolume[u][l]=temp_array_audio[u][l];
+DockHasAudioPan[u][l]=temp_array_audio[u+48][l];
+DockHasAudioPitch[u][l]=temp_array_audio[u+96][l];
+}
 }
 }
  fclose(fp);
 }
 //
-idf++; 
+idf++;
 
 if ((fp=fopen( file_chaser_to_fader, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_to_fader);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_chaser_to_fader);
 if (fread(ChaserAffectedToDck, sizeof(int),fader_chaser_to_fader_size, fp) !=fader_chaser_to_fader_size)
@@ -5224,12 +5266,12 @@ if (fread(ChaserAffectedToDck, sizeof(int),fader_chaser_to_fader_size, fp) !=fad
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_to_fader);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen(file_mem_to_dock, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_mem_to_dock);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_mem_to_dock);
 if (fread(DockHasMem, sizeof(int),fader_mem_to_dock_size, fp) !=fader_mem_to_dock_size)
@@ -5237,12 +5279,12 @@ if (fread(DockHasMem, sizeof(int),fader_mem_to_dock_size, fp) !=fader_mem_to_doc
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_mem_to_dock);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen(file_fader_grid_affect, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_grid_affect);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_grid_affect);
 if (fread(faders_dock_grid_affectation, sizeof(int),fader_grid_affect_size, fp) !=fader_grid_affect_size)
@@ -5250,11 +5292,11 @@ if (fread(faders_dock_grid_affectation, sizeof(int),fader_grid_affect_size, fp) 
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_grid_affect);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_fader_fx, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_fx);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_fx);
 if (fread(fader_mode_with_buffers, sizeof(int),fader_fx_size, fp) !=fader_fx_size)
@@ -5262,12 +5304,12 @@ if (fread(fader_mode_with_buffers, sizeof(int),fader_fx_size, fp) !=fader_fx_siz
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_fx);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen(file_fader_route_fx, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_route_fx);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_route_fx);
 if (fread(fader_fx_route, sizeof(bool),fader_route_fx_size, fp) !=fader_route_fx_size)
@@ -5275,11 +5317,11 @@ if (fread(fader_fx_route, sizeof(bool),fader_route_fx_size, fp) !=fader_route_fx
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_fader_route_fx);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_fader_fgroup, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_fgroup);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_fader_fgroup);
 if (fread(fgroup, sizeof(bool),fader_fgroup_size, fp) !=fader_fgroup_size)
@@ -5287,12 +5329,12 @@ if (fread(fgroup, sizeof(bool),fader_fgroup_size, fp) !=fader_fgroup_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_fgroup);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen(file_fader_draw, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_draw);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_fader_draw);
 if (fread(DrawAffectedToDck, sizeof(int),fader_draw_size, fp) !=fader_draw_size)
@@ -5300,12 +5342,12 @@ if (fread(DrawAffectedToDck, sizeof(int),fader_draw_size, fp) !=fader_draw_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_draw);
  fclose(fp);
 }
-idf++; 
+idf++;
 recalculate_draw_sizes(draw_preset_selected);
 
 if ((fp=fopen(file_fader_echo, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_echo);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_fader_echo);
 if (fread(echo_affected_to_dock, sizeof(int),fader_echo_size, fp) !=fader_echo_size)
@@ -5313,7 +5355,7 @@ if (fread(echo_affected_to_dock, sizeof(int),fader_echo_size, fp) !=fader_echo_s
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_echo);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 }
@@ -5333,10 +5375,10 @@ if (fread(time_per_dock, sizeof(float),dock_times_size, fp) !=dock_times_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_dock_times);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_is_for_loop_selected, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_is_for_loop_selected);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_is_for_loop_selected);
 if (fread(is_dock_for_lfo_selected, sizeof(bool),size_is_for_loop_selected, fp) !=size_is_for_loop_selected)
@@ -5344,10 +5386,10 @@ if (fread(is_dock_for_lfo_selected, sizeof(bool),size_is_for_loop_selected, fp) 
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_is_for_loop_selected);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_lfo_speed, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lfo_speed);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_lfo_speed);
 if (fread(lfo_speed, sizeof(int),size_lfo_speed, fp) != size_lfo_speed)
@@ -5355,10 +5397,10 @@ if (fread(lfo_speed, sizeof(int),size_lfo_speed, fp) != size_lfo_speed)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lfo_speed);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_lfo_mode_is, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lfo_mode_is);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_lfo_mode_is);
 if (fread(lfo_mode_is, sizeof(int),size_lfo_mode_is, fp) !=size_lfo_mode_is)
@@ -5366,10 +5408,10 @@ if (fread(lfo_mode_is, sizeof(int),size_lfo_mode_is, fp) !=size_lfo_mode_is)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lfo_mode_is);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_lfo_cycle_on, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lfo_cycle_on);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_lfo_cycle_on);
 if (fread(lfo_cycle_is_on, sizeof(bool),size_lfo_cycle_on, fp) !=size_lfo_cycle_on)
@@ -5377,10 +5419,10 @@ if (fread(lfo_cycle_is_on, sizeof(bool),size_lfo_cycle_on, fp) !=size_lfo_cycle_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lfo_cycle_on);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_lfo_do_next_step, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lfo_do_next_step);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_lfo_do_next_step);
 if (fread(lfo_do_next_step, sizeof(bool),size_lfo_do_next_step, fp) !=size_lfo_do_next_step)
@@ -5388,10 +5430,10 @@ if (fread(lfo_do_next_step, sizeof(bool),size_lfo_do_next_step, fp) !=size_lfo_d
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_lfo_do_next_step);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_lfo_loop_step, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_lfo_loop_step);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_lfo_loop_step);
 if (fread(lfo_cycle_steps, sizeof(bool),size_lfo_loop_step, fp) !=size_lfo_loop_step)
@@ -5399,10 +5441,10 @@ if (fread(lfo_cycle_steps, sizeof(bool),size_lfo_loop_step, fp) !=size_lfo_loop_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_lfo_loop_step);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_fader_stoppos_levels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_stoppos_levels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_stoppos_levels);
 if (fread(LevelStopPos, sizeof(unsigned char),fader_stoppos_size, fp) !=fader_stoppos_size)
@@ -5410,12 +5452,12 @@ if (fread(LevelStopPos, sizeof(unsigned char),fader_stoppos_size, fp) !=fader_st
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_stoppos_levels);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen(file_fader_stoppos_is, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_stoppos_is);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_stoppos_is);
 if (fread(ActionnateStopOn, sizeof(bool),fader_stopposB_size, fp) !=fader_stopposB_size)
@@ -5423,11 +5465,11 @@ if (fread(ActionnateStopOn, sizeof(bool),fader_stopposB_size, fp) !=fader_stoppo
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_stoppos_is);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_fader_ston_is, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_ston_is);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_ston_is);
 if (fread(StopPosOn, sizeof(bool),fader_ston_size, fp) !=fader_ston_size)
@@ -5435,11 +5477,11 @@ if (fread(StopPosOn, sizeof(bool),fader_ston_size, fp) !=fader_ston_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_ston_is);
  fclose(fp);
 }
-idf++;                                   
+idf++;
 
 if ((fp=fopen(file_fader_chas_autolaunch, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_chas_autolaunch);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_chas_autolaunch);
 if (fread( autolaunch, sizeof(bool),fader_chas_autolaucnh_size, fp) !=fader_chas_autolaucnh_size)
@@ -5447,7 +5489,7 @@ if (fread( autolaunch, sizeof(bool),fader_chas_autolaucnh_size, fp) !=fader_chas
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_chas_autolaunch);
  fclose(fp);
 }
-idf++;    
+idf++;
 
 
 }
@@ -5456,7 +5498,7 @@ if(specify_who_to_save_load[14]==1) ////FADERS Curves/////////////////////////
 {
 if ((fp=fopen(file_fader_curve, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_curve);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_curve);
 if (fread(FaderCurves, sizeof(int),fader_curve_size, fp) !=fader_curve_size)
@@ -5464,7 +5506,7 @@ if (fread(FaderCurves, sizeof(int),fader_curve_size, fp) !=fader_curve_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_curve);
  fclose(fp);
 }
-idf++;                                    
+idf++;
 }
 
 
@@ -5472,7 +5514,7 @@ if(specify_who_to_save_load[15]==1) ////FADERS Preset and LOCK PST//////////////
 {
 if ((fp=fopen( file_lock_preset_is, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_is);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_lock_preset_is);
 if (fread(lock_preset, sizeof(bool),fader_lock_preset_is_size, fp) !=fader_lock_preset_is_size)
@@ -5480,10 +5522,10 @@ if (fread(lock_preset, sizeof(bool),fader_lock_preset_is_size, fp) !=fader_lock_
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_lock_preset_is);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_lock_preset_state, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_state);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_lock_preset_state);
 if (fread(FaderLocked_Preset, sizeof(bool),fader_lock_preset_state_size, fp) !=fader_lock_preset_state_size)
@@ -5491,10 +5533,10 @@ if (fread(FaderLocked_Preset, sizeof(bool),fader_lock_preset_state_size, fp) !=f
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_lock_preset_state);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_lock_preset_masteris, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_masteris);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_lock_preset_masteris);
 if (fread(LockFader_is_FullLevel_Preset, sizeof(bool),fader_lock_preset_masteris_size, fp) !=fader_lock_preset_masteris_size)
@@ -5502,10 +5544,10 @@ if (fread(LockFader_is_FullLevel_Preset, sizeof(bool),fader_lock_preset_masteris
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lock_preset_masteris);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_lock_preset_levels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lock_preset_levels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_lock_preset_levels);
 if (fread(StateOfFaderBeforeLock_Preset, sizeof(unsigned char),fader_lock_preset_levels_size, fp) !=fader_lock_preset_levels_size)
@@ -5513,7 +5555,7 @@ if (fread(StateOfFaderBeforeLock_Preset, sizeof(unsigned char),fader_lock_preset
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lock_preset_levels);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 for(int d=0;d<8;d++)//detect preset and load state
 {
@@ -5524,7 +5566,7 @@ do_lock_preset(d); break;
 }
 if ((fp=fopen(file_fader_preset_selection, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_preset_selection);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_fader_preset_selection);
 if (fread(minifaders_preset_selection, sizeof(bool),fader_prst_sel_size, fp) !=fader_prst_sel_size)
@@ -5533,7 +5575,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_preset_sel
  fclose(fp);
 }
 
-idf++; 
+idf++;
 rest(10);
 }
 
@@ -5544,7 +5586,7 @@ if(specify_who_to_save_load[16]==1)/////////////CHASERS/////////////////////////
 {
 if ((fp=fopen(  file_chaser_name, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_name);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chaser_name);
 if (fread(chaser_name, sizeof(char), chaser_name_size, fp) !=chaser_name_size)
@@ -5552,11 +5594,11 @@ if (fread(chaser_name, sizeof(char), chaser_name_size, fp) !=chaser_name_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_name);
  fclose(fp);
 }
-idf++;                                   
-         
+idf++;
+
 if ((fp=fopen(  file_chaser_timeunit, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_timeunit);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chaser_timeunit);
 if (fread(time_unit, sizeof(float), chaser_timeunit_size, fp) !=chaser_timeunit_size)
@@ -5564,12 +5606,12 @@ if (fread(time_unit, sizeof(float), chaser_timeunit_size, fp) !=chaser_timeunit_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_timeunit);
  fclose(fp);
 }
-idf++;   
-              
+idf++;
+
 
 if ((fp=fopen(  file_chaser_stepop, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_stepop);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_chaser_stepop);
 if (fread(chaser_step_operation, sizeof(int),chaser_stepop_size, fp) !=chaser_stepop_size)
@@ -5577,11 +5619,11 @@ if (fread(chaser_step_operation, sizeof(int),chaser_stepop_size, fp) !=chaser_st
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_stepop);
  fclose(fp);
 }
-idf++;   
-                            
+idf++;
+
 if ((fp=fopen(  file_chaser_play, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_play);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_play);
 if (fread(chaser_is_playing, sizeof(bool),chaser_isplaying_size, fp) !=chaser_isplaying_size)
@@ -5589,12 +5631,12 @@ if (fread(chaser_is_playing, sizeof(bool),chaser_isplaying_size, fp) !=chaser_is
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_play);
  fclose(fp);
 }
-idf++;   
+idf++;
 
-         
+
 if ((fp=fopen(  file_chaser_loop, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_loop);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_chaser_loop);
 if (fread(chaser_is_in_loop, sizeof(bool),chaser_loop_size, fp) !=chaser_loop_size)
@@ -5602,11 +5644,11 @@ if (fread(chaser_is_in_loop, sizeof(bool),chaser_loop_size, fp) !=chaser_loop_si
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_loop);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 if ((fp=fopen(  file_chaser_way, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_way);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_chaser_way);
 if (fread(chaser_way, sizeof(bool), chaser_way_size, fp) != chaser_way_size)
@@ -5614,11 +5656,11 @@ if (fread(chaser_way, sizeof(bool), chaser_way_size, fp) != chaser_way_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_way);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 if ((fp=fopen(file_chaser_allerretour, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_allerretour);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_chaser_allerretour);
 if (fread(chaser_aller_retour, sizeof(bool),chaser_allerretour_size, fp) != chaser_allerretour_size)
@@ -5626,7 +5668,7 @@ if (fread(chaser_aller_retour, sizeof(bool),chaser_allerretour_size, fp) != chas
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_allerretour);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 
@@ -5635,7 +5677,7 @@ idf++;
 
 if ((fp=fopen(   file_chaser_trackon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_trackon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_trackon);
 if (fread(track_is_on, sizeof(bool), chaser_trackon_size, fp) != chaser_trackon_size)
@@ -5643,12 +5685,12 @@ if (fread(track_is_on, sizeof(bool), chaser_trackon_size, fp) != chaser_trackon_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_trackon);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 if ((fp=fopen(   file_chaser_tracklevel, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_tracklevel);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_tracklevel);
 if (fread(track_level, sizeof(int), chaser_track_level_size, fp) != chaser_track_level_size)
@@ -5656,11 +5698,11 @@ if (fread(track_level, sizeof(int), chaser_track_level_size, fp) != chaser_track
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_tracklevel);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 if ((fp=fopen(   file_chaser_trackview, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_trackview);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_trackview);
 if (fread( position_affichage_track_num, sizeof(int),chaser_trackview_size, fp) != chaser_trackview_size)
@@ -5673,7 +5715,7 @@ idf++;
 
 if ((fp=fopen(   file_chaser_tracktype, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_tracktype);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_tracktype);
 if (fread(TrackTypeIs, sizeof(int),chaser_tracktype_size, fp) !=chaser_tracktype_size)
@@ -5681,11 +5723,11 @@ if (fread(TrackTypeIs, sizeof(int),chaser_tracktype_size, fp) !=chaser_tracktype
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_tracktype);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_chaser_trackcontent, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_trackcontent);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_trackcontent);
 if (fread( TrackContains, sizeof(int), chaser_trackcontent_size, fp) != chaser_trackcontent_size)
@@ -5693,11 +5735,11 @@ if (fread( TrackContains, sizeof(int), chaser_trackcontent_size, fp) != chaser_t
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_trackcontent);
  fclose(fp);
 }
-idf++;       
-     
+idf++;
+
 if ((fp=fopen( file_chaser_stepis, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_stepis);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_chaser_stepis);
 if (fread(chaser_step_is, sizeof(int), chaser_stepis_size, fp) != chaser_stepis_size)
@@ -5705,11 +5747,11 @@ if (fread(chaser_step_is, sizeof(int), chaser_stepis_size, fp) != chaser_stepis_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_stepis);
  fclose(fp);
 }
-idf++;       
-     
+idf++;
+
 if ((fp=fopen(file_chaser_beginstep, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_beginstep);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_chaser_beginstep);
 if (fread(chaser_begin_step_is, sizeof(int),chaser_stepbeg_size, fp) != chaser_stepbeg_size)
@@ -5717,12 +5759,12 @@ if (fread(chaser_begin_step_is, sizeof(int),chaser_stepbeg_size, fp) != chaser_s
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_beginstep);
  fclose(fp);
 }
-idf++;       
-    
-    
+idf++;
+
+
 if ((fp=fopen(file_chaser_endstep, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_endstep);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_chaser_endstep);
 if (fread(chaser_end_step_is, sizeof(int),chaser_stepend_size, fp) !=chaser_stepend_size)
@@ -5730,12 +5772,12 @@ if (fread(chaser_end_step_is, sizeof(int),chaser_stepend_size, fp) !=chaser_step
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_endstep);
  fclose(fp);
 }
-idf++;    
-        
-        
+idf++;
+
+
 if ((fp=fopen(file_chaser_timemode, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_timemode);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_chaser_timemode);
 if (fread(chaser_time_mode, sizeof(bool),chaser_timemode_size, fp) !=chaser_timemode_size)
@@ -5743,11 +5785,11 @@ if (fread(chaser_time_mode, sizeof(bool),chaser_timemode_size, fp) !=chaser_time
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_timemode);
  fclose(fp);
 }
-idf++;    
-                
+idf++;
+
 if ((fp=fopen(file_chaser_lastaffect, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_lastaffect);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_chaser_lastaffect);
 if (fread(view_chaser_affected_to_fader, sizeof(int), chaser_lastaffect_size, fp) != chaser_lastaffect_size)
@@ -5755,12 +5797,12 @@ if (fread(view_chaser_affected_to_fader, sizeof(int), chaser_lastaffect_size, fp
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_lastaffect);
  fclose(fp);
 }
-idf++;                
-  
-  
+idf++;
+
+
 if ((fp=fopen(file_chaser_trrackname, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_trrackname);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_chaser_trrackname);
 if (fread(chaser_track_name, sizeof(char), chaser_tracksname_size, fp) != chaser_tracksname_size)
@@ -5768,12 +5810,12 @@ if (fread(chaser_track_name, sizeof(char), chaser_tracksname_size, fp) != chaser
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_trrackname);
  fclose(fp);
 }
-idf++;                
-    
+idf++;
+
 
 if ((fp=fopen(file_chaser_presets, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_chaser_presets);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_chaser_presets);
 if (fread(chaser_preset, sizeof(bool), chaser_presets_size, fp) != chaser_presets_size)
@@ -5781,12 +5823,12 @@ if (fread(chaser_preset, sizeof(bool), chaser_presets_size, fp) != chaser_preset
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_chaser_presets);
  fclose(fp);
 }
-idf++;                
+idf++;
 
 
 if ((fp=fopen( file_chaser_lchpad_pos, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_chaser_lchpad_pos);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_chaser_lchpad_pos);
 if (fread( chaser_step_launchpad, sizeof(int), chaser_lchpad_pos_size, fp) != chaser_lchpad_pos_size)
@@ -5794,12 +5836,12 @@ if (fread( chaser_step_launchpad, sizeof(int), chaser_lchpad_pos_size, fp) != ch
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_chaser_lchpad_pos);
  fclose(fp);
 }
-idf++;                
+idf++;
 
 
 if ((fp=fopen(  file_chaser_acceleroslave, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_chaser_acceleroslave);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_acceleroslave);
 if (fread(index_slave_chaser_to_accelerometre, sizeof(bool), chaser_acceleroslave_size, fp) != chaser_acceleroslave_size)
@@ -5807,11 +5849,11 @@ if (fread(index_slave_chaser_to_accelerometre, sizeof(bool), chaser_acceleroslav
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_chaser_acceleroslave);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 if ((fp=fopen(  file_chaser_has_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_chaser_has_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_chaser_has_mem);
 if (fread(TrackHasMem, sizeof(int), chaser_has_mem_size, fp) != chaser_has_mem_size)
@@ -5819,7 +5861,7 @@ if (fread(TrackHasMem, sizeof(int), chaser_has_mem_size, fp) != chaser_has_mem_s
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_chaser_has_mem);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 }
 
@@ -5829,11 +5871,11 @@ if(specify_who_to_save_load[17]==1) /////////////MIDI AFFECTATION///////////////
 
 save_load_print_to_screen("Loading Midi Config");
 //QuitMidi() ;
-//InitMidi();//init avant les appels de fichiers	
+//InitMidi();//init avant les appels de fichiers
 //midi_init_sepecial_case_key_on();
 if ((fp=fopen(file_midi_affectation, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_affectation);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_affectation);
 if (fread(miditable, sizeof(int),midi_affectation_size, fp) !=midi_affectation_size)
@@ -5841,10 +5883,10 @@ if (fread(miditable, sizeof(int),midi_affectation_size, fp) !=midi_affectation_s
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_affectation);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen(file_midi_send_out, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_send_out);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_send_out);
 if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fp) !=midi_send_out_size)
@@ -5852,7 +5894,7 @@ if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fp) !=midi_send_out_si
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_send_out);
  fclose(fp);
 }
-idf++; 
+idf++;
 load_Fader_state_to_midi_array();//report des valeurs Faders dans le tableau midi_levels
 }
 
@@ -5861,7 +5903,7 @@ if(specify_who_to_save_load[18]==1) /////////////MIDI cheat///////////////
 {
 if ((fp=fopen(file_midi_properties, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_properties);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_properties);
 if (fread( midi_change_vel_type, sizeof(int),midi_properties_size, fp) !=midi_properties_size)
@@ -5869,7 +5911,7 @@ if (fread( midi_change_vel_type, sizeof(int),midi_properties_size, fp) !=midi_pr
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_properties);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 rest(10);
 }
@@ -5880,7 +5922,7 @@ save_load_print_to_screen("Loading Trichromy");
 
 if ((fp=fopen( file_dock_color_type, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_type);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_type);
 if (fread(dock_color_type, sizeof(bool), dock_color_type_size, fp) != dock_color_type_size)
@@ -5888,10 +5930,10 @@ if (fread(dock_color_type, sizeof(bool), dock_color_type_size, fp) != dock_color
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_color_type);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_dock_color_xy, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_xy);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_xy);
 if (fread(x_y_picker_par_colordock, sizeof(int), dock_color_xy_size, fp) != dock_color_xy_size)
@@ -5899,10 +5941,10 @@ if (fread(x_y_picker_par_colordock, sizeof(int), dock_color_xy_size, fp) != dock
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_color_xy);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_dock_color_angle, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_angle);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_angle);
 if (fread(angle_hue_par_colordock, sizeof(float), dock_color_angle_size, fp) != dock_color_angle_size)
@@ -5910,10 +5952,10 @@ if (fread(angle_hue_par_colordock, sizeof(float), dock_color_angle_size, fp) != 
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_color_angle);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_dock_color_picker, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_picker);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s", file_dock_color_picker);
 if (fread(picker_trichro, sizeof(int), dock_color_picker_size, fp) != dock_color_picker_size)
@@ -5921,10 +5963,10 @@ if (fread(picker_trichro, sizeof(int), dock_color_picker_size, fp) != dock_color
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_color_picker);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_dock_color_ch, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_ch);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_dock_color_ch);
 if (fread(dock_color_channels, sizeof(bool), dock_color_ch_size, fp) != dock_color_ch_size)
@@ -5932,10 +5974,10 @@ if (fread(dock_color_channels, sizeof(bool), dock_color_ch_size, fp) != dock_col
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_color_ch);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_dock_color_buffer, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_color_buffer);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_dock_color_buffer);
 if (fread(dock_color_buffer_C, sizeof(unsigned char), dock_color_buffer_size, fp) != dock_color_buffer_size)
@@ -5943,16 +5985,16 @@ if (fread(dock_color_buffer_C, sizeof(unsigned char), dock_color_buffer_size, fp
 else  sprintf(string_save_load_report[idf],"Loaded file %s", file_dock_color_buffer);
  fclose(fp);
 }
-idf++; 
+idf++;
  load_etat_picker_dans_dockcolor(0);//rafraichissement du premier dock color
   //puis mise à l afihage ok du curseur hue
   vx = cos(angle_snap)*125;
   vy = sin(angle_snap)*125;
   position_curseur_hue_x= xtrichro_window+vx;
-  position_curseur_hue_y=ytrichro_window+vy ; 
+  position_curseur_hue_y=ytrichro_window+vy ;
  rest(10);
 }
-////////////////////////////////////////////////////////////////////////////////  
+////////////////////////////////////////////////////////////////////////////////
 //////////////VIDEO TRACKING////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 if(specify_who_to_save_load[20]==1)/////////////TRACKING VIDEO//////////////////
@@ -5961,7 +6003,7 @@ save_load_print_to_screen("Loading Video Tracking");
 
 if ((fp=fopen( file_video_channels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_video_channels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_video_channels);
 if (fread( tracking_contents, sizeof(bool),video_channels_size, fp) !=video_channels_size)
@@ -5969,10 +6011,10 @@ if (fread( tracking_contents, sizeof(bool),video_channels_size, fp) !=video_chan
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_video_channels);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_video_xy, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_video_xy);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_video_xy);
 if (fread( tracking_coordonates, sizeof(int),video_xy_size, fp) !=video_xy_size)
@@ -5980,10 +6022,10 @@ if (fread( tracking_coordonates, sizeof(int),video_xy_size, fp) !=video_xy_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_video_xy);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_video_spaces_on, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_video_spaces_on);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_video_spaces_on);
 if (fread(tracking_spaces_on_off, sizeof(bool),video_spaces_on_size, fp) !=video_spaces_on_size)
@@ -5991,10 +6033,10 @@ if (fread(tracking_spaces_on_off, sizeof(bool),video_spaces_on_size, fp) !=video
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_video_spaces_on);
  fclose(fp);
 }
-idf++; 
+idf++;
 if ((fp=fopen( file_camera_modes, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_camera_modes);b_report_error[idf]=1;}
-else  
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_camera_modes);
 if (fread(camera_modes_and_settings, sizeof(int),camera_modes_size, fp) !=camera_modes_size)
@@ -6002,23 +6044,23 @@ if (fread(camera_modes_and_settings, sizeof(int),camera_modes_size, fp) !=camera
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_camera_modes);
  fclose(fp);
 }
-idf++; 
+idf++;
 refresh_ocv_settings();
 
 }
 
 ///////////////////TIME////////////////////////////////////////////////////////
 //pour pos curseur
-refresh_time_cursor(); 
+refresh_time_cursor();
 
 ////////////////////////////////////////////////////////////////////////////////
 
 
-if(specify_who_to_save_load[27]==1)/////////////////INDEXES///////////////////// 
+if(specify_who_to_save_load[27]==1)/////////////////INDEXES/////////////////////
 {
 if ((fp=fopen(  file_divers_index, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_divers_index);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_divers_index);
 if (fread(index_report_customs, sizeof(int), index_size, fp) != index_size)
@@ -6030,10 +6072,10 @@ idf++;
 }
 
 if(specify_who_to_save_load[24]==1)/////POS window user////////////////////////////////////////
-{ 
+{
 if ((fp=fopen(  file_pos_fenetres, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_pos_fenetres);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_pos_fenetres);
 if (fread(windows_position, sizeof(int), index_pos_fenetre_size, fp) !=index_pos_fenetre_size)
@@ -6041,11 +6083,11 @@ if (fread(windows_position, sizeof(int), index_pos_fenetre_size, fp) !=index_pos
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_pos_fenetres);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_windows, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_windows);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_windows);
 if (fread( window_opened, sizeof(int), windows_size, fp) !=windows_size)
@@ -6053,7 +6095,7 @@ if (fread( window_opened, sizeof(int), windows_size, fp) !=windows_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_windows);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 write_window_indexes_from_list_of_windows();
 rest(10);
@@ -6064,17 +6106,17 @@ refresh_decay();
 Load_User_Profile();
 
 if(specify_who_to_save_load[22]==1)//AUDIO CONF//////////////////////////////////
-{          
+{
 
 Load_Audio_Conf();
-idf++; 
+idf++;
 
 //audio autoload autopause
 
 bool temp_audio_array[8];
 if ((fp=fopen(  file_audio_autoloadpause, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_audio_autoloadpause);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_audio_autoloadpause);
 if (fread( temp_audio_array, sizeof(bool), audio_autoloadpause_size, fp) !=audio_autoloadpause_size)
@@ -6086,14 +6128,14 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",file_audio_autoloadpa
 for(int i=0;i<4;i++)
 {
  audio_autoload[i]=temp_audio_array[i];
- audio_autopause[i]=temp_audio_array[i+4];       
+ audio_autopause[i]=temp_audio_array[i+4];
 }
-idf++; 
+idf++;
 
 //audio file number
 if ((fp=fopen(  file_audio_filenumber, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_audio_filenumber);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_audio_filenumber);
 if (fread( player_has_file_coming_from_pos, sizeof(int), audio_filenumber_size, fp) !=audio_filenumber_size)
@@ -6103,12 +6145,12 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",file_audio_filenumber
 }
 
 
-idf++; 
+idf++;
 //position player
 
 if ((fp=fopen(  file_audio_playerposition, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_audio_playerposition);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_audio_playerposition);
 if (fread( player_position_on_save, sizeof(int), audio_playerposition_size, fp) !=audio_playerposition_size)
@@ -6118,8 +6160,8 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",file_audio_playerposi
 }
 
 
-idf++; 
-           
+idf++;
+
 }
 
 if(specify_who_to_save_load[21]==1)///ARDUINO////////////////////////////////////
@@ -6128,7 +6170,7 @@ load_arduino_config();
 
 if ((fp=fopen(  file_arduino_dig_typ, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_dig_typ);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_arduino_dig_typ);
 if (fread(arduino_digital_type, sizeof(int), arduino_dig_typ_size, fp) !=arduino_dig_typ_size)
@@ -6136,11 +6178,11 @@ if (fread(arduino_digital_type, sizeof(int), arduino_dig_typ_size, fp) !=arduino
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_dig_typ);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_arduino_dig_affect, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_dig_affect);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_arduino_dig_affect);
 if (fread(arduino_digital_function_input, sizeof(int), arduino_dig_aff_size, fp) !=arduino_dig_aff_size)
@@ -6148,11 +6190,11 @@ if (fread(arduino_digital_function_input, sizeof(int), arduino_dig_aff_size, fp)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_dig_affect);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_arduino_an_typ, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_an_typ);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_arduino_an_typ);
 if (fread(arduino_analog_function_input, sizeof(int), arduino_an_typ_size, fp) !=arduino_an_typ_size)
@@ -6160,11 +6202,11 @@ if (fread(arduino_analog_function_input, sizeof(int), arduino_an_typ_size, fp) !
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_an_typ);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_arduino_an_aff, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_an_aff);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_arduino_an_aff);
 if (fread(arduino_analog_attribution_input, sizeof(int),arduino_an_aff_size, fp) !=arduino_an_aff_size)
@@ -6172,11 +6214,11 @@ if (fread(arduino_analog_attribution_input, sizeof(int),arduino_an_aff_size, fp)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_an_aff);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(  file_arduino_dig_out, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_dig_out);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_arduino_dig_out);
 if (fread( arduino_digital_function_output, sizeof(int),arduino_dig_out_size, fp) !=arduino_dig_out_size)
@@ -6184,15 +6226,15 @@ if (fread( arduino_digital_function_output, sizeof(int),arduino_dig_out_size, fp
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_arduino_dig_out);
  fclose(fp);
 }
-idf++;                         
-}                                        
+idf++;
+}
 
 
 if(specify_who_to_save_load[25]==1)  ///USER COLOR PROFILE//////////////////////////////////////////////////
 {
 if ((fp=fopen( file_color_profile, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_color_profile); b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",   file_color_profile);
 if (fread( couleurs_user, sizeof(int),color_profile_size, fp) !=  color_profile_size)
@@ -6200,14 +6242,14 @@ if (fread( couleurs_user, sizeof(int),color_profile_size, fp) !=  color_profile_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_color_profile);
  fclose(fp);
 }
- idf++; 
+ idf++;
 }
 
 if(specify_who_to_save_load[26]==1)//////clavier ascii remaping/////////////////
 {
 if ((fp=fopen(  file_kbd_ascii_map, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_kbd_ascii_map);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_kbd_ascii_map);
 if (fread(mapping_temporaire, sizeof(int),kbd_ascii_map_size, fp) !=kbd_ascii_map_size)
@@ -6215,15 +6257,15 @@ if (fread(mapping_temporaire, sizeof(int),kbd_ascii_map_size, fp) !=kbd_ascii_ma
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_kbd_ascii_map);
  fclose(fp);
 }
-idf++;                         
-}     
+idf++;
+}
 
 
 if(specify_who_to_save_load[23]==1)////////ICAT//////////////////////////////////
 {
 if ((fp=fopen(  file_icat_nbsliders, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_nbsliders);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_icat_nbsliders);
 if (fread(iCat_nbre_de_sliders, sizeof(int),icat_nbsliders_size, fp) !=icat_nbsliders_size)
@@ -6231,11 +6273,11 @@ if (fread(iCat_nbre_de_sliders, sizeof(int),icat_nbsliders_size, fp) !=icat_nbsl
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_icat_nbsliders);
  fclose(fp);
 }
-idf++;                         
-          
+idf++;
+
 if ((fp=fopen(  file_icat_posliders, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_posliders);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_icat_posliders);
 if (fread(iCat_pos_slider, sizeof(int),icat_posliders_size, fp) !=icat_posliders_size)
@@ -6243,11 +6285,11 @@ if (fread(iCat_pos_slider, sizeof(int),icat_posliders_size, fp) !=icat_posliders
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_icat_posliders);
  fclose(fp);
 }
-idf++;                         
-       
+idf++;
+
 if ((fp=fopen(  file_icat_orsliders, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_orsliders);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_icat_orsliders);
 if (fread(iCat_orientation_slider, sizeof(bool),icat_orsliders_size, fp) !=icat_orsliders_size)
@@ -6255,11 +6297,11 @@ if (fread(iCat_orientation_slider, sizeof(bool),icat_orsliders_size, fp) !=icat_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_icat_orsliders);
  fclose(fp);
 }
-idf++;                         
+idf++;
 
 if ((fp=fopen(  file_icat_typsliders, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_typsliders);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_icat_typsliders);
 if (fread(iCat_affectation_slider_type_is  , sizeof(int),icat_typsliders_size, fp) !=icat_typsliders_size)
@@ -6267,12 +6309,12 @@ if (fread(iCat_affectation_slider_type_is  , sizeof(int),icat_typsliders_size, f
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_icat_typsliders);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 if ((fp=fopen( file_icat_valsliders, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_icat_valsliders);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_icat_valsliders);
 if (fread( iCat_affectation_slider_value_is, sizeof(int),icat_valsliders_size, fp) !=icat_valsliders_size)
@@ -6280,12 +6322,12 @@ if (fread( iCat_affectation_slider_value_is, sizeof(int),icat_valsliders_size, f
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_icat_valsliders);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 if ((fp=fopen( file_icat_size_sliders, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_size_sliders);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_size_sliders);
 if (fread( ratio_iCat_slider, sizeof(int),icat_sizesliders_size, fp) !=icat_sizesliders_size)
@@ -6293,12 +6335,12 @@ if (fread( ratio_iCat_slider, sizeof(int),icat_sizesliders_size, fp) !=icat_size
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_size_sliders);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 if ((fp=fopen( file_icat_orientpage, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_orientpage);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_orientpage);
 if (fread(  iCat_preset_orientation, sizeof(int),icat_orpage_size, fp) !=icat_orpage_size)
@@ -6306,11 +6348,11 @@ if (fread(  iCat_preset_orientation, sizeof(int),icat_orpage_size, fp) !=icat_or
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_orientpage);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 if(iCat_preset_orientation[iCatPageis]==0)
    {
-    L_tablier_iCat=160;H_tablier_iCat=240;                                         
+    L_tablier_iCat=160;H_tablier_iCat=240;
    }
    else {L_tablier_iCat=240;H_tablier_iCat=160;}
 
@@ -6319,7 +6361,7 @@ if(iCat_preset_orientation[iCatPageis]==0)
 
 if ((fp=fopen( file_icat_nbbutton, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbbutton);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_nbbutton);
 if (fread( iCat_nbre_de_boutons, sizeof(int),icat_nbbutton_size, fp) !=icat_nbbutton_size)
@@ -6327,12 +6369,12 @@ if (fread( iCat_nbre_de_boutons, sizeof(int),icat_nbbutton_size, fp) !=icat_nbbu
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_nbbutton);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 if ((fp=fopen( file_icat_pobutton, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_pobutton);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_pobutton);
 if (fread(  iCat_pos_bouton, sizeof(int),icat_pobutton_size, fp) !=icat_pobutton_size)
@@ -6340,11 +6382,11 @@ if (fread(  iCat_pos_bouton, sizeof(int),icat_pobutton_size, fp) !=icat_pobutton
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_pobutton);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_icat_size_buttons, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_size_buttons);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_size_buttons);
 if (fread(   ratio_iCat_button, sizeof(int),icat_sizebuttons_size, fp) !=icat_sizebuttons_size)
@@ -6352,11 +6394,11 @@ if (fread(   ratio_iCat_button, sizeof(int),icat_sizebuttons_size, fp) !=icat_si
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_size_buttons);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 if ((fp=fopen( file_icat_typbutton, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_typbutton);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_typbutton);
 if (fread(   iCat_affectation_bouton_type_is, sizeof(int),icat_typbutton_size, fp) !=icat_typbutton_size)
@@ -6364,12 +6406,12 @@ if (fread(   iCat_affectation_bouton_type_is, sizeof(int),icat_typbutton_size, f
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_typbutton);
  fclose(fp);
 }
-idf++;   
+idf++;
 
 
 if ((fp=fopen( file_icat_actbutton, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_actbutton);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_actbutton);
 if (fread(  iCat_affectation_bouton_action_is, sizeof(int),icat_actbutton_size, fp) !=icat_actbutton_size)
@@ -6377,11 +6419,11 @@ if (fread(  iCat_affectation_bouton_action_is, sizeof(int),icat_actbutton_size, 
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_actbutton);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_icat_valbutton, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_valbutton);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_valbutton);
 if (fread(  iCat_affectation_bouton_value_is, sizeof(int),icat_valbutton_size, fp) !=icat_valbutton_size)
@@ -6389,13 +6431,13 @@ if (fread(  iCat_affectation_bouton_value_is, sizeof(int),icat_valbutton_size, f
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_valbutton);
  fclose(fp);
 }
-idf++;   
-  
+idf++;
+
 
 //strings
 if ((fp=fopen( file_icat_nbstr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbstr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_nbstr);
 if (fread(  iCat_nbre_de_strings, sizeof(int),icat_nbstr_size, fp) !=icat_nbstr_size)
@@ -6403,11 +6445,11 @@ if (fread(  iCat_nbre_de_strings, sizeof(int),icat_nbstr_size, fp) !=icat_nbstr_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_nbstr);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_icat_posstr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_posstr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_posstr);
 if (fread(  iCat_pos_string, sizeof(int),icat_posstr_size, fp) !=icat_posstr_size)
@@ -6415,11 +6457,11 @@ if (fread(  iCat_pos_string, sizeof(int),icat_posstr_size, fp) !=icat_posstr_siz
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_posstr);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_icat_sizestr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_sizestr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_sizestr);
 if (fread( ratio_iCat_string, sizeof(int),icat_sizestr_size, fp) !=icat_sizestr_size)
@@ -6427,13 +6469,13 @@ if (fread( ratio_iCat_string, sizeof(int),icat_sizestr_size, fp) !=icat_sizestr_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_sizestr);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 
 if ((fp=fopen( file_icat_typstr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_typstr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_typstr);
 if (fread( iCat_affectation_string_type_is, sizeof(int),icat_typstr_size, fp) !=icat_typstr_size)
@@ -6441,12 +6483,12 @@ if (fread( iCat_affectation_string_type_is, sizeof(int),icat_typstr_size, fp) !=
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_typstr);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_icat_actstr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_actstr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_actstr);
 if (fread(  iCat_affectation_string_action_is, sizeof(int),icat_actstr_size, fp) !=icat_actstr_size)
@@ -6454,12 +6496,12 @@ if (fread(  iCat_affectation_string_action_is, sizeof(int),icat_actstr_size, fp)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_actstr);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_icat_valstr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_valstr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_actstr);
 if (fread(   iCat_affectation_string_value_is, sizeof(int),icat_valstr_size, fp) !=icat_valstr_size)
@@ -6467,12 +6509,12 @@ if (fread(   iCat_affectation_string_value_is, sizeof(int),icat_valstr_size, fp)
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_valstr);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_icat_nbzon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbzon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_nbzon);
 if (fread(  iCat_nbre_de_tracking_zone, sizeof(int),icat_nbzon_size, fp) !=icat_nbzon_size)
@@ -6480,11 +6522,11 @@ if (fread(  iCat_nbre_de_tracking_zone, sizeof(int),icat_nbzon_size, fp) !=icat_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_nbzon);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_icat_poszon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_poszon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_poszon);
 if (fread(  iCat_pos_trackzone, sizeof(int),icat_poszon_size, fp) !=icat_poszon_size)
@@ -6492,12 +6534,12 @@ if (fread(  iCat_pos_trackzone, sizeof(int),icat_poszon_size, fp) !=icat_poszon_
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_poszon);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_icat_sizezon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_sizezon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_sizezon);
 if (fread(  ratio_iCat_trackzone, sizeof(int),icat_sizezon_size, fp) !=icat_sizezon_size)
@@ -6505,12 +6547,12 @@ if (fread(  ratio_iCat_trackzone, sizeof(int),icat_sizezon_size, fp) !=icat_size
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_sizezon);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 if ((fp=fopen( file_icat_typzon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_typzon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_typzon);
 if (fread(  iCat_trackzone_type_is, sizeof(int),icat_typzon_size, fp) !=icat_typzon_size)
@@ -6518,11 +6560,11 @@ if (fread(  iCat_trackzone_type_is, sizeof(int),icat_typzon_size, fp) !=icat_typ
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_typzon);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_icat_valzon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_valzon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_valzon);
 if (fread(  iCat_trackzone_affectation_is, sizeof(int),icat_valzon_size, fp) !=icat_valzon_size)
@@ -6530,11 +6572,11 @@ if (fread(  iCat_trackzone_affectation_is, sizeof(int),icat_valzon_size, fp) !=i
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_valzon);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen( file_icat_posTRCKzon, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_posTRCKzon);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_icat_posTRCKzon);
 if (fread( pos_iCat_tracker, sizeof(int),icat_posTRCKzon_size, fp) !=icat_posTRCKzon_size)
@@ -6542,7 +6584,7 @@ if (fread( pos_iCat_tracker, sizeof(int),icat_posTRCKzon_size, fp) !=icat_posTRC
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_icat_posTRCKzon);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 
 
@@ -6552,7 +6594,7 @@ if(specify_who_to_save_load[28]==1) //////////MOVER/////////////////////////////
 {
 if ((fp=fopen( file_mover_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mover_mem);
 if (fread(dock_move_xy, sizeof(int),mover_mem_saving_size, fp) !=mover_mem_saving_size)
@@ -6564,7 +6606,7 @@ idf++;
 
 if ((fp=fopen( file_mover_mem16b, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_mem16b);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mover_mem16b);
 if (fread(dock_move_xy_16b, sizeof(int),mover_mem_saving_size, fp) !=mover_mem_saving_size)
@@ -6576,7 +6618,7 @@ idf++;
 //nb steps
 if ((fp=fopen( file_mover_numbersteps, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_numbersteps);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mover_numbersteps);
 if (fread(dock_moves_contains_steps, sizeof(int), mover_little_32file_size, fp) != mover_little_32file_size)
@@ -6588,7 +6630,7 @@ idf++;
 //actual step is
 if ((fp=fopen( file_mover_stepis, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_stepis);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mover_stepis);
 if (fread(dock_move_actual_step, sizeof(int), mover_little_32file_size, fp) != mover_little_32file_size)
@@ -6600,7 +6642,7 @@ idf++;
 //divers
 if ((fp=fopen( file_mover_divers, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_divers);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mover_divers);
 if (fread(valeurs_diverses, sizeof(int), mover_little_32file_size, fp) != mover_little_32file_size)
@@ -6612,7 +6654,7 @@ idf++;
 //ratio spline
 if ((fp=fopen( file_mover_spline_ratio, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_spline_ratio);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_mover_spline_ratio);
 if (fread(spline_ratio, sizeof(float), mover_little_32file_size, fp) != mover_little_32file_size)
@@ -6624,7 +6666,7 @@ idf++;
 //iris flous divers parametres asservis
 if ((fp=fopen( file_asservis_mem, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_asservis_mem);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_asservis_mem);
 if (fread(dock_asservis, sizeof(float), mover_asservis_saving_size, fp) != mover_asservis_saving_size)
@@ -6636,7 +6678,7 @@ idf++;
 //times
 if ((fp=fopen( file_mover_time, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_time);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_mover_time);
 if (fread(dock_time, sizeof(float), mover_time_size, fp) != mover_time_size)
@@ -6648,7 +6690,7 @@ idf++;
 //autostop
 if ((fp=fopen( file_mover_autostop, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_autostop);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_mover_autostop);
 if (fread(move_auto_stop, sizeof(bool), mover_autostop_size, fp) != mover_autostop_size)
@@ -6660,7 +6702,7 @@ idf++;
 //gotos
 if ((fp=fopen( file_mover_goto, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_goto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_mover_goto);
 if (fread(GotoMoves, sizeof(int), mover_goto_size, fp) != mover_goto_size)
@@ -6672,7 +6714,7 @@ idf++;
 //intos
 if ((fp=fopen( file_mover_into, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_into);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_mover_into);
 if (fread(Moves_Inpoint, sizeof(int), mover_little_32file_size, fp) !=mover_little_32file_size)
@@ -6685,7 +6727,7 @@ idf++;
 
 if ((fp=fopen( file_mover_params, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_mover_params);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_mover_params);
 if (fread(mover_params_adresses, sizeof(int), mover_param_size, fp) !=mover_param_size)
@@ -6715,9 +6757,9 @@ index_rescale_signal=valeurs_diverses[8];*/
 //iris_on=valeurs_diverses[10];
 //joystick_on=valeurs_diverses[11];
 //allow_slider_for_sensitivity=valeurs_diverses[12];
-position_defaut[0]=valeurs_diverses[13];  
-position_defaut[1]=valeurs_diverses[14]; 
-index_spline=valeurs_diverses[15]; 
+position_defaut[0]=valeurs_diverses[13];
+position_defaut[1]=valeurs_diverses[14];
+index_spline=valeurs_diverses[15];
 
 Tracker_splinelevel=(int)((spline_ratio[dock_move_selected]+1)*100);
 sprintf(string_zero_point_is,"Offset X %d Y %d",position_defaut[0],position_defaut[1]);
@@ -6739,7 +6781,7 @@ if(specify_who_to_save_load[29]==1)
 
 if ((fp=fopen( file_grid_levels_1, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_levels_1);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_levels_1);
 if (fread(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) !=grid_levels_size)
@@ -6754,14 +6796,14 @@ for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-grid_levels[i][s][c]=temp_grid_levels_for_save[i][s][c];   
-}    
-}        
+grid_levels[i][s][c]=temp_grid_levels_for_save[i][s][c];
+}
+}
 }
 
 if ((fp=fopen( file_grid_levels_2, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_levels_2);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_levels_2);
 if (fread(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) !=grid_levels_size)
@@ -6776,13 +6818,13 @@ for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-grid_levels[i+32][s][c]=temp_grid_levels_for_save[i][s][c];   
-}    
-}        
+grid_levels[i+32][s][c]=temp_grid_levels_for_save[i][s][c];
+}
+}
 }
 if ((fp=fopen( file_grid_levels_3, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_levels_3);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_levels_3);
 if (fread(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) !=grid_levels_size)
@@ -6797,13 +6839,13 @@ for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-grid_levels[i+64][s][c]=temp_grid_levels_for_save[i][s][c];   
-}    
-}        
+grid_levels[i+64][s][c]=temp_grid_levels_for_save[i][s][c];
+}
+}
 }
 if ((fp=fopen( file_grid_levels_4, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_levels_4);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_levels_4);
 if (fread(temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size, fp) !=grid_levels_size)
@@ -6818,9 +6860,9 @@ for (int s=0;s<1024;s++)
 {
 for (int c=0;c<513;c++)
 {
-grid_levels[i+96][s][c]=temp_grid_levels_for_save[i][s][c];   
-}    
-}        
+grid_levels[i+96][s][c]=temp_grid_levels_for_save[i][s][c];
+}
+}
 }
 
 
@@ -6831,7 +6873,7 @@ grid_levels[i+96][s][c]=temp_grid_levels_for_save[i][s][c];
 
 if ((fp=fopen( file_grid_times, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_times);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_times);
 if (fread(grid_times, sizeof(float), grid_times_size, fp) !=grid_times_size)
@@ -6843,7 +6885,7 @@ idf++;
 
 if ((fp=fopen( file_grid_goto, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_goto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_goto);
 if (fread(grid_goto, sizeof(int), grid_goto_size, fp) !=grid_goto_size)
@@ -6854,7 +6896,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_grid_goto);
 idf++;
 if ((fp=fopen( file_grid_seekpos, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_seekpos);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_seekpos);
 if (fread(grid_seekpos, sizeof(int), grid_seekpos_size, fp) !=grid_seekpos_size)
@@ -6865,7 +6907,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_grid_seekpos);
 idf++;
 if ((fp=fopen( file_grid_stoplay, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_stoplay);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_stoplay);
 if (fread(grid_stoplay, sizeof(bool), grid_stoplay_size, fp) !=grid_stoplay_size)
@@ -6876,7 +6918,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_grid_stoplay);
 idf++;
 if ((fp=fopen( file_grid_names, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",  file_grid_names);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_names);
 if (fread(grider_name, sizeof(char), grid_names_size, fp) !=grid_names_size)
@@ -6889,7 +6931,7 @@ idf++;
 //les grids players
 if ((fp=fopen( file_gridpl_grid, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_grid);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_grid);
 if (fread(index_grider_selected, sizeof(int),gridpl_size, fp) !=gridpl_size)
@@ -6900,7 +6942,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_grid);
 idf++;
 if ((fp=fopen( file_gridpl_step, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_step);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_step);
 if (fread(index_grider_step_is, sizeof(int),gridpl_size, fp) !=gridpl_size)
@@ -6911,7 +6953,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_step);
 idf++;
 if ((fp=fopen( file_gridpl_autost, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_autost);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_autost);
 if (fread(grider_autostopmode, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -6922,7 +6964,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_autost);
 idf++;
 if ((fp=fopen( file_gridpl_goto, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_goto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_goto);
 if (fread(grider_goto_mode, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -6933,7 +6975,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_goto);
 idf++;
 if ((fp=fopen( file_gridpl_seekto, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_seekto);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_seekto);
 if (fread(grider_seekto_mode, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -6944,7 +6986,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_seekto);
 idf++;
 if ((fp=fopen( file_gridpl_stpl, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_stpl);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_stpl);
 if (fread(grider_stoplay_mode, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -6955,7 +6997,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_stpl);
 idf++;
 if ((fp=fopen( file_gridpl_slave, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_slave);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_slave);
 if (fread(grid_player_slave, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -6966,7 +7008,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_slave);
 idf++;
 if ((fp=fopen( file_gridpl_show, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_show);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_show);
 if (fread(index_show_grid_player, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -6977,7 +7019,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_show);
 idf++;
 if ((fp=fopen( file_gridpl_accel, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_accel);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_accel);
 if (fread(grid_crossfade_speed, sizeof(int),gridpl_size, fp) !=gridpl_size)
@@ -6988,7 +7030,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_accel);
 idf++;
 if ((fp=fopen( file_gridpl_countmod, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_countmod);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_countmod);
 if (fread(grider_count_mode, sizeof(bool),gridpl_size, fp) !=gridpl_size)
@@ -7000,7 +7042,7 @@ idf++;
 
 if ((fp=fopen( file_gridpl_snapfader, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_snapfader);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_snapfader);
 if (fread(GplSnapFader, sizeof(int),gridpl_snapfader_size, fp) !=gridpl_snapfader_size)
@@ -7015,7 +7057,7 @@ idf++;
 int grider_conf[3];
 if ((fp=fopen( file_grider_conf, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_grider_conf);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grider_conf);
 if (fread(grider_conf, sizeof(int),grider_conf_size, fp) !=grider_conf_size)
@@ -7035,7 +7077,7 @@ if(grider_begin_channel_is>512){grider_begin_channel_is=1;}
 int grider_report_cross[8];
 if ((fp=fopen( file_gridpl_crosslv, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_crosslv);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_gridpl_crosslv);
 if (fread(grider_report_cross, sizeof(int),gridpl_croslv_size, fp) !=gridpl_croslv_size)
@@ -7053,7 +7095,7 @@ grid_floatX2[gr]=(float)grid_niveauX2[gr];
 idf++;
 if ((fp=fopen( file_grid_count, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_grid_count);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_grid_count);
 if (fread(grid_count, sizeof(int),grid_count_size, fp) !=grid_count_size)
@@ -7064,7 +7106,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_grid_count);
 idf++;
 if ((fp=fopen( file_grided_count, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_grided_count);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_grided_count);
 if (fread(grid_counted_times, sizeof(int),grid_counted_size, fp) !=grid_counted_size)
@@ -7083,7 +7125,7 @@ if(specify_who_to_save_load[30]==1)
 
 if ((fp=fopen( file_grid_in_mems, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_grid_in_mems);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_grid_in_mems);
 if (fread(set_from_seq_gridplayer1_next_step, sizeof(int),grid_in_mems_size, fp) !=grid_in_mems_size)
@@ -7091,7 +7133,7 @@ if (fread(set_from_seq_gridplayer1_next_step, sizeof(int),grid_in_mems_size, fp)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_grid_in_mems);
  fclose(fp);
 }
-idf++;                                   
+idf++;
 }
 
 
@@ -7103,29 +7145,29 @@ if(specify_who_to_save_load[35]==1)
 
 if ((fp=fopen( file_save_preset, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_save_preset);  b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_save_preset);
 if (fread(preset_specify_who_to_save_load, sizeof(bool),save_preset_size, fp) !=save_preset_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s", file_save_preset);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_save_preset); 
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_save_preset);
 fclose(fp);
 }
 
-idf++; 
+idf++;
 
 if ((fp=fopen( file_save_pdf, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_save_pdf);  b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",  file_save_pdf);
 if (fread(specify_who_to_save_PDF, sizeof(bool),save_pdf_size, fp) !=save_pdf_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s", file_save_pdf);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_save_pdf); 
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_save_pdf);
 fclose(fp);
 }
 
-idf++; 
+idf++;
 }
 
 
@@ -7135,7 +7177,7 @@ if(specify_who_to_save_load[32]==1)
 
 if ((fp=fopen( file_draw_presetsz, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_draw_presetsz);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_draw_presetsz);
 if (fread( draw_preset_parameters, sizeof(int),draw_presetsz_size, fp) !=draw_presetsz_size)
@@ -7143,11 +7185,11 @@ if (fread( draw_preset_parameters, sizeof(int),draw_presetsz_size, fp) !=draw_pr
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_draw_presetsz);
  fclose(fp);
 }
-idf++;       
+idf++;
 
 if ((fp=fopen( file_draw_levels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_draw_levels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_draw_levels);
 if (fread( draw_preset_levels, sizeof(float),draw_levels_size, fp) !=draw_levels_size)
@@ -7155,12 +7197,12 @@ if (fread( draw_preset_levels, sizeof(float),draw_levels_size, fp) !=draw_levels
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_draw_levels);
  fclose(fp);
 }
-idf++;       
+idf++;
 
 
 if ((fp=fopen( file_draw_chrouting, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_draw_chrouting);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_draw_chrouting);
 if (fread( draw_preset_channel_routing, sizeof(int),draw_chrouting_size, fp) !=draw_chrouting_size)
@@ -7168,7 +7210,7 @@ if (fread( draw_preset_channel_routing, sizeof(int),draw_chrouting_size, fp) !=d
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_draw_chrouting);
 fclose(fp);
 }
-idf++;  
+idf++;
 
 load_draw_preset_config();
 idf++;
@@ -7180,7 +7222,7 @@ if(specify_who_to_save_load[33]==1)
 
 if ((fp=fopen( file_echo_pointing_fader, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_pointing_fader);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_pointing_fader);
 if (fread( echo_pointing_fader_num, sizeof(int),echo_pointing_fader_size, fp) !=echo_pointing_fader_size)
@@ -7188,11 +7230,11 @@ if (fread( echo_pointing_fader_num, sizeof(int),echo_pointing_fader_size, fp) !=
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_pointing_fader);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_echo_echo_mode, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_echo_mode);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_echo_mode);
 if (fread( echo_is_echo_mode, sizeof(bool),echo_echo_mode_size, fp) !=echo_echo_mode_size)
@@ -7200,11 +7242,11 @@ if (fread( echo_is_echo_mode, sizeof(bool),echo_echo_mode_size, fp) !=echo_echo_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_echo_mode);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_echo_global_param, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_global_param);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_global_param);
 if (fread( echo_global_params, sizeof(float),echo_global_param_size, fp) !=echo_global_param_size)
@@ -7212,11 +7254,11 @@ if (fread( echo_global_params, sizeof(float),echo_global_param_size, fp) !=echo_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_global_param);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_echo_channel_man_mode, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_channel_man_mode);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_channel_man_mode);
 if (fread( echo_channel_manipulate_mode, sizeof(bool),echo_channel_man_mode_size, fp) !=echo_channel_man_mode_size)
@@ -7224,11 +7266,11 @@ if (fread( echo_channel_manipulate_mode, sizeof(bool),echo_channel_man_mode_size
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_channel_man_mode);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_echo_chan_pos, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_chan_pos);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_chan_pos);
 if (fread( echo_grid_channel_position, sizeof(int),echo_chan_pos_size, fp) !=echo_chan_pos_size)
@@ -7236,11 +7278,11 @@ if (fread( echo_grid_channel_position, sizeof(int),echo_chan_pos_size, fp) !=ech
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_chan_pos);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_echo_levels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_levels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_levels);
 if (fread( echo_levels, sizeof(float),echo_levels_size, fp) !=echo_levels_size)
@@ -7248,12 +7290,12 @@ if (fread( echo_levels, sizeof(float),echo_levels_size, fp) !=echo_levels_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_levels);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 
 if ((fp=fopen( file_echo_bounce, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_bounce);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_bounce);
 if (fread( do_bounce, sizeof(bool),echo_bounce_size, fp) !=echo_bounce_size)
@@ -7261,11 +7303,11 @@ if (fread( do_bounce, sizeof(bool),echo_bounce_size, fp) !=echo_bounce_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_bounce);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen( file_echo_presets, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_echo_presets);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_echo_presets);
 if (fread( snap_echo_to_recall, sizeof(float),echo_presets_size, fp) !=echo_presets_size)
@@ -7273,10 +7315,10 @@ if (fread( snap_echo_to_recall, sizeof(float),echo_presets_size, fp) !=echo_pres
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_echo_presets);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 }
-  
+
 
 
 //////LIGHTING PLOT en dernier because repertoires
@@ -7285,7 +7327,7 @@ if(specify_who_to_save_load[31]==1)
 
 if ((fp=fopen( file_lib_sizes_symbol, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lib_sizes_symbol);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_lib_sizes_symbol);
 if (fread( size_symbol, sizeof(float),lib_sizes_symbol_size, fp) !=lib_sizes_symbol_size)
@@ -7293,11 +7335,11 @@ if (fread( size_symbol, sizeof(float),lib_sizes_symbol_size, fp) !=lib_sizes_sym
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lib_sizes_symbol);
  fclose(fp);
 }
-idf++;       
+idf++;
 
 if ((fp=fopen(file_lib_names_symbol, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_lib_names_symbol);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s", file_lib_names_symbol);
 if (fread( symbol_nickname, sizeof(char),lib_names_symbol_size, fp) !=lib_names_symbol_size)
@@ -7305,11 +7347,11 @@ if (fread( symbol_nickname, sizeof(char),lib_names_symbol_size, fp) !=lib_names_
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_lib_names_symbol);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen(file_plot_angles, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_angles);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_angles);
 if (fread( angle_symbol, sizeof(float),plot_angle_size, fp) !=plot_angle_size)
@@ -7317,11 +7359,11 @@ if (fread( angle_symbol, sizeof(float),plot_angle_size, fp) !=plot_angle_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_angles);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen(file_plot_positions, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_positions);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_positions);
 if (fread( pos_symbol, sizeof(int),plot_positions_size, fp) !=plot_positions_size)
@@ -7329,12 +7371,12 @@ if (fread( pos_symbol, sizeof(int),plot_positions_size, fp) !=plot_positions_siz
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_positions);
  fclose(fp);
 }
-idf++;  
-      
-      
+idf++;
+
+
 if ((fp=fopen(file_plot_nbr_symbols, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_nbr_symbols);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_nbr_symbols);
 if (fread(nbre_symbols_on_plot, sizeof(int),plot_nbr_symbols_size, fp) !=plot_nbr_symbols_size)
@@ -7342,11 +7384,11 @@ if (fread(nbre_symbols_on_plot, sizeof(int),plot_nbr_symbols_size, fp) !=plot_nb
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_nbr_symbols);
  fclose(fp);
 }
-idf++;  
-                           
+idf++;
+
 if ((fp=fopen(file_plot_typ, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_typ);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_typ);
 if (fread(symbol_type, sizeof(int),plot_typ_size, fp) !=plot_typ_size)
@@ -7354,11 +7396,11 @@ if (fread(symbol_type, sizeof(int),plot_typ_size, fp) !=plot_typ_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_typ);
  fclose(fp);
 }
-idf++;  
+idf++;
 
 if ((fp=fopen(file_plot_chan, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_chan);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_chan);
 if (fread(symbol_channel_is, sizeof(int),plot_chan_size, fp) !=plot_chan_size)
@@ -7366,11 +7408,11 @@ if (fread(symbol_channel_is, sizeof(int),plot_chan_size, fp) !=plot_chan_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_chan);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_dim, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_dim);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_dim);
 if (fread(symbol_dimmer_is, sizeof(int),plot_dim_size, fp) !=plot_dim_size)
@@ -7378,11 +7420,11 @@ if (fread(symbol_dimmer_is, sizeof(int),plot_dim_size, fp) !=plot_dim_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_dim);
  fclose(fp);
 }
-idf++;                        
+idf++;
 
 if ((fp=fopen(file_plot_gels, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_gels);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_gels);
 if (fread(gelat, sizeof(int),plot_gels_size, fp) !=plot_gels_size)
@@ -7390,11 +7432,11 @@ if (fread(gelat, sizeof(int),plot_gels_size, fp) !=plot_gels_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_gels);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_gels_t, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_gels_t);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_gels_t);
 if (fread(gelat_family, sizeof(int),plot_gels_t_size, fp) !=plot_gels_t_size)
@@ -7402,11 +7444,11 @@ if (fread(gelat_family, sizeof(int),plot_gels_t_size, fp) !=plot_gels_t_size)
 else sprintf(string_save_load_report[idf],"Loaded file %s", file_plot_gels_t);
  fclose(fp);
 }
-idf++; 
+idf++;
 
 if ((fp=fopen(file_plot_view, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_view);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_gels_t);
 if (fread(show_calc_number, sizeof(bool),plot_view_size, fp) !=plot_view_size)
@@ -7418,7 +7460,7 @@ idf++;
 
 if ((fp=fopen(file_plot_options_view, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_options_view);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_options_view);
 if (fread( plot_show_options, sizeof(bool),plot_view_options_size, fp) !=plot_view_options_size)
@@ -7430,7 +7472,7 @@ idf++;
 
 if ((fp=fopen(file_plot_opt_xy, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_opt_xy);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_options_view);
 if (fread( relatif_plot_xy, sizeof(int),plot_opt_xy_size, fp) !=plot_opt_xy_size)
@@ -7442,7 +7484,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_type, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_type);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_type);
 if (fread( shape_type, sizeof(int),plot_shape_type_size, fp) !=plot_shape_type_size)
@@ -7454,7 +7496,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_attr, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_attr);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_attr);
 if (fread( shape_attributes, sizeof(float),plot_shape_attr_size, fp) !=plot_shape_attr_size)
@@ -7466,7 +7508,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_pos, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_pos);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_pos);
 if (fread( shape_position, sizeof(int),plot_shape_pos_size, fp) !=plot_shape_pos_size)
@@ -7478,7 +7520,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_legend_name, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_legend_name);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_legend_name);
 if (fread( shape_legend_name, sizeof(char),plot_shape_legend_name_size, fp) !=plot_shape_legend_name_size)
@@ -7490,7 +7532,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_relativ_xy, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_relativ_xy);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_relativ_xy);
 if (fread( shape_relativ_position_legend_name, sizeof(int),plot_shape_relativ_xy_size, fp) !=plot_shape_relativ_xy_size)
@@ -7502,7 +7544,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_color_type, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_color_type);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_color_type);
 if (fread( shape_color_type, sizeof(int),plot_shape_color_type_size, fp) !=plot_shape_color_type_size)
@@ -7514,7 +7556,7 @@ idf++;
 
 if ((fp=fopen(file_plot_shape_groups, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_shape_groups);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_shape_groups);
 if (fread( shape_groups, sizeof(int),plot_shape_groups_size, fp) !=plot_shape_groups_size)
@@ -7526,7 +7568,7 @@ idf++;
 
 if ((fp=fopen(file_plot_symbols_relativgroups, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_symbols_relativgroups);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_symbols_relativgroups);
 if (fread(  plot_relativxy_preset, sizeof(int),plot_symbols_relativgroups_size, fp) !=plot_symbols_relativgroups_size)
@@ -7539,7 +7581,7 @@ idf++;
 
 if ((fp=fopen(file_plot_symbols_notes, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_symbols_notes);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_symbols_notes);
 if (fread( symbol_note, sizeof(char),plot_symbols_notes_size, fp) !=plot_symbols_notes_size)
@@ -7552,7 +7594,7 @@ idf++;
 
 if ((fp=fopen(file_plot_legend, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_legend);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_legend);
 if (fread(plot_renseignements, sizeof(char),plot_legend_size, fp) !=plot_legend_size)
@@ -7564,7 +7606,7 @@ idf++;
 
 if ((fp=fopen(file_plot_symb_linked, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_plot_symb_linked);b_report_error[idf]=1;}
-else 
+else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",file_plot_symb_linked);
 if (fread(symbol_is_linked_to, sizeof(int),plot_symb_linked_size, fp) !=plot_symb_linked_size)
@@ -7580,8 +7622,8 @@ plot_generate_appareils_list();
 
 
 
-sprintf(rep,"%s",mondirectory); 	 
-chdir (rep); 
+sprintf(rep,"%s",mondirectory);
+chdir (rep);
 scan_planfolder();
 sprintf(rep,"%s\%s\%s",mondirectory,rep_saves,nomduspectacle);
 chdir (rep);
@@ -7607,8 +7649,8 @@ LoadWhiteCatColorProfil();// pas de fichiers, juste raffraichissement
 rest(10);
 
 //reroll à garder pour pas larguer midishare
-sprintf(rep,"%s",mondirectory); 	 
-chdir (rep);  
+sprintf(rep,"%s",mondirectory);
+chdir (rep);
 
 Load_Launchpad_RetroLight();
 
@@ -7616,16 +7658,16 @@ if(specify_who_to_save_load[22]==1)
 {
 scan_audiofolder();
 Load_audiofiles_cues();
-sprintf(rep,"%s",mondirectory); 	 
-chdir (rep);  
+sprintf(rep,"%s",mondirectory);
+chdir (rep);
 
 for(int i=0;i<4;i++)
 {
- audiofile_selected=player_has_file_coming_from_pos[i]; 
- sprintf(audiofile_name,list_audio_files[audiofile_selected]); 
+ audiofile_selected=player_has_file_coming_from_pos[i];
+ sprintf(audiofile_name,list_audio_files[audiofile_selected]);
  if(strcmp (audiofile_name,"")==1)
- {     
- AffectSoundFile(i); 
+ {
+ AffectSoundFile(i);
  }
 
 rest(10);
@@ -7644,9 +7686,9 @@ initiate_windows();
 
 
 if(there_is_an_error_on_save_load==1){index_show_save_load_report=1;there_is_change_on_show_save_state=1;    } else {index_show_save_load_report=0;there_is_change_on_show_save_state=0;    }
-  
 
-return(0);  
+
+return(0);
 }
 
 
@@ -7664,7 +7706,7 @@ timer_save_tmp=0;
 sprintf(my_show_is_coming_from,"Saved in %s",nomduspectacle);//pour retracer d ou vient la conduite
 idf++;
 write_show_coming_from();
-sprintf(nomduspectacle,vieux_nomduspectacle);                               
+sprintf(nomduspectacle,vieux_nomduspectacle);
 index_is_saving=0;
 return(0);
 }
@@ -7679,7 +7721,7 @@ sprintf(nomduspectacle,name_of_show);
 Load_Show();
 sprintf(string_Last_Order,">> Loaded %s  at %s",name_of_show,tmp_time);
 timer_save_tmp=0;
-sprintf(nomduspectacle,vieux_nomduspectacle);                               
+sprintf(nomduspectacle,vieux_nomduspectacle);
 index_is_saving=0;
 index_show_save_load_report=1;
 sprintf(my_show_is_coming_from,"Loaded from in %s",name_of_show);//pour retracer d ou vient la conduite
@@ -7698,13 +7740,13 @@ specify_who_to_save_load[3]=1;
 specify_who_to_save_load[4]=1;
 index_is_saving=1;
 Load_Show();
-timer_save_tmp=0;                           
+timer_save_tmp=0;
 index_is_saving=0;
 //remise en etat du systeme
 set_all_saves_indexes_at(1);
 index_save_global_is=1;
 
-return(0);    
+return(0);
 }
 
 

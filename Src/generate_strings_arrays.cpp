@@ -1,4 +1,45 @@
-        
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file generate_strings_arrays.cpp
+* \brief {fonctions to create strings array}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions pour créer des tableaux de chaines de caractères
+*   Fonctions to create strings array
+*
+ **/
+
 int generate_help_file_engl()
 {
 //reset tableau
@@ -6,10 +47,10 @@ for(int l=0;l<1024;l++)
 {
  sprintf(TblHelp[l][0],"");
  sprintf(TblHelp[l][1],"");
- sprintf(TblHelp[l][2],""); 
- btitle_help[l]=0;      
-}    
-    
+ sprintf(TblHelp[l][2],"");
+ btitle_help[l]=0;
+}
+
 int post=0;
 int Hch_pos=0; int Hmem_pos=0; int Hpatch_pos=0; int Hvideo_pos=0; int Hhowfader_pos=0; int Hhowtrichro_pos=0; int Hhowvideo_pos=0;
 int Hhowsequences_pos=0; int Hglobal_pos=0;
@@ -479,7 +520,7 @@ btitle_help[Hhowvideo_pos]=1;
 btitle_help[Hhowsequences_pos]=1;
 
 
-return(0);   
+return(0);
 }
 
 
@@ -490,10 +531,10 @@ for(int l=0;l<1024;l++)
 {
  sprintf(TblHelp[l][0],"");
  sprintf(TblHelp[l][1],"");
- sprintf(TblHelp[l][2],""); 
- btitle_help[l]=0;      
-}    
-    
+ sprintf(TblHelp[l][2],"");
+ btitle_help[l]=0;
+}
+
 int post=0;
 int Hch_pos=0; int Hmem_pos=0; int Hpatch_pos=0; int Hvideo_pos=0; int Hhowfader_pos=0; int Hhowtrichro_pos=0; int Hhowvideo_pos=0;
 int Hhowsequences_pos=0; int Hglobal_pos=0;
@@ -996,5 +1037,5 @@ btitle_help[Hhowsequences_pos]=1;
 
 
 
-return(0);   
+return(0);
 }

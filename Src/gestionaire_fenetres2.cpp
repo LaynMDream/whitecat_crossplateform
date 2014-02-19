@@ -1,4 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
 
+/**
+
+* \file gestionaire_fenetres2.cpp
+* \brief {GUI fonctions to manage windows in whitecat}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Fonctions pour gérer les différentes fenêtres dans whitecat
+*   GUI fonctions to manage windows in whitecat
+*
+ **/
 
 int reset_config_indexes()
 {
@@ -9,18 +49,18 @@ index_setup_gfx=0;
 index_config_arduino=0;
 index_config_general=0;
 index_config_core=0;
- return(0);   
+ return(0);
 }
 
 int clear_non_desired_values_in_window_list()
 {
-    
+
 for(int i=0;i<63;i++)
 {
 if(window_opened[i] >max_window_identity_is+1){window_opened[i]=0;} //+1 règle bug de rwanoux et jaques alpha 0.8.3
-if(window_opened[i] <900){window_opened[i]=0;}          
+if(window_opened[i] <900){window_opened[i]=0;}
 }
- return(0);   
+ return(0);
 }
 
 
@@ -31,7 +71,7 @@ for(int i=0;i<63;i++)
   window_opened[i]=0;
   temp_report_window[i]=0;
 }
- return(0);   
+ return(0);
 }
 
 int check_nbre_opened_windows()
@@ -42,9 +82,9 @@ for(int i=0;i<63;i++)
 if(window_opened[i]>=900)
 {
 nbre_windows++;
-}        
 }
- return(nbre_windows);   
+}
+ return(nbre_windows);
 }
 
 int add_a_window(int id)
@@ -57,11 +97,11 @@ int add_a_window(int id)
  }
 
 int temp_report_window[65];
- 
+
  for(int i=0;i<63;i++)
  {
-  temp_report_window[i+1]=window_opened[i];  
-  window_opened[i]=0;     
+  temp_report_window[i+1]=window_opened[i];
+  window_opened[i]=0;
  }
 
  int pos=0;//etait 1 dans precedente version
@@ -69,14 +109,14 @@ int temp_report_window[65];
  {
  if(temp_report_window[i]!=0)
  {
- window_opened[pos]=temp_report_window[i];  
+ window_opened[pos]=temp_report_window[i];
  pos++;
- }     
+ }
  }
  window_opened[0]=id;
  window_focus_id=window_who_is_on_top();
 
- 
+
  switch(id)
  {
  case W_SAVEREPORT:
@@ -99,11 +139,11 @@ int temp_report_window[65];
  break;
  case W_PATCH:
       index_patch_window=1;index_enable_curve_editing=0;
-      index_patch_overide=0; 
-      reset_check_grada_overide_dimmers();   
+      index_patch_overide=0;
+      reset_check_grada_overide_dimmers();
  break;
  case W_TIME:
-      index_time=1; 
+      index_time=1;
  break;
  case W_SEQUENCIEL:
       index_window_sequentiel=1;
@@ -129,8 +169,8 @@ int temp_report_window[65];
        index_save_global_is=1;
        for (int r=0;r<72;r++)
        {
-       specify_who_to_save_load[r]=1;    
-       } 
+       specify_who_to_save_load[r]=1;
+       }
  break;
  case W_MAINMENU:
       index_show_main_menu=1;
@@ -141,7 +181,7 @@ int temp_report_window[65];
  case W_ALARM:
  break;
  case W_AUDIO:
-      index_show_audio_window=1;reset_audio_indexs_to_dock(); 
+      index_show_audio_window=1;reset_audio_indexs_to_dock();
  break;
  case W_CFGMENU:
       reset_config_indexes();
@@ -162,13 +202,13 @@ int temp_report_window[65];
         break;
         case 5:
              index_config_arduino=1;
-        break;        
+        break;
         case 6:
              index_config_general=1;
-        break;        
+        break;
         case 7:
              index_config_core=1;
-        break;                
+        break;
         default:
         break;
       }
@@ -194,16 +234,16 @@ int temp_report_window[65];
       index_grider_window=1;
       for(int i=0;i<4;i++)
       {grid_affect_to_dock[i]=0;}
- break;    
+ break;
  case W_MY_WINDOW:
       index_my_window=1;
- break;    
+ break;
  default:
  break;
  }
 clear_non_desired_values_in_window_list();
 
-return(0);   
+return(0);
 }
 
 
@@ -215,8 +255,8 @@ int initiate_windows()
  for(int i=0;i<63;i++)
  {
   if(window_opened[i]>=900)
-  {add_a_window(window_opened[i]);}                   
- }   
+  {add_a_window(window_opened[i]);}
+ }
  window_focus_id=window_opened[0];
 
  return(0);
@@ -228,7 +268,7 @@ int window_bring_to_front(int num_window)
 int temp_window[64];
 for(int i=0;i<63;i++)
 {
-temp_window[i]=window_opened[i];        
+temp_window[i]=window_opened[i];
 }
 int pos=1;
 for(int i=0;i<63;i++)
@@ -236,15 +276,15 @@ for(int i=0;i<63;i++)
 if(temp_window[i]>=900 && temp_window[i]!=num_window)
 {
  window_opened[pos]=temp_window[i];
- pos++;                  
-}  
+ pos++;
+}
 else{window_opened[pos]=0;}//enlevage des doublons
 
 if( window_opened[pos]==num_window)   {window_opened[pos]=0;}//enlevement des doublons sur vauban
-} 
+}
 window_opened[0]=num_window;
 window_focus_id=num_window;
-return(num_window);    
+return(num_window);
 }
 
 
@@ -254,11 +294,11 @@ int check_save_load_report_window()
 switch(index_show_save_load_report)
 {
 case 0:
-substract_a_window(W_SAVEREPORT);  
+substract_a_window(W_SAVEREPORT);
 break;
 case 1:
-add_a_window(W_SAVEREPORT); 
+add_a_window(W_SAVEREPORT);
 break;
 }
-return(0); 
+return(0);
 }

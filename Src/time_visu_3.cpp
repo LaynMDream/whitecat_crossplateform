@@ -1,86 +1,127 @@
 
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file time_visu_3.cpp
+* \brief {GUI fonctions for the time window}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   GUI fonctions pour la fenêtre time
+*   GUI fonctions for the time window
+*
+**/
 
 int print_time_reperes(int the_time_wheel_datatype)//affichage des chiffres sur le tableau de bord
 {
 
 if(the_time_wheel_datatype==1 || the_time_wheel_datatype==0 )//SECONDES OR MINUTES
 {
-petitpetitchiffre.Print("0",xtime_window+246,ytime_window+149); 
+petitpetitchiffre.Print("0",xtime_window+246,ytime_window+149);
 petitpetitchiffre.Print("3",xtime_window+244,ytime_window+185);
 petitpetitchiffre.Print("5",xtime_window+231,ytime_window+205);
 petitpetitchiffre.Print("7",xtime_window+217,ytime_window+224);
-petitpetitchiffre.Print("10",xtime_window+196,ytime_window+233); 
+petitpetitchiffre.Print("10",xtime_window+196,ytime_window+233);
 petitpetitchiffre.Print("15",xtime_window+140,ytime_window+249);
-petitpetitchiffre.Print("20",xtime_window+103,ytime_window+236);  
-petitpetitchiffre.Print("25",xtime_window+65,ytime_window+205); 
-petitpetitchiffre.Print("30",xtime_window+46,ytime_window+159); 
-petitpetitchiffre.Print("35",xtime_window+52,ytime_window+112); 
-petitpetitchiffre.Print("40",xtime_window+82,ytime_window+69); 
-petitpetitchiffre.Print("45",xtime_window+126,ytime_window+48); 
-petitpetitchiffre.Print("50",xtime_window+166,ytime_window+55); 
-petitpetitchiffre.Print("55",xtime_window+215,ytime_window+77); 
-petitpetitchiffre.Print("59",xtime_window+241,ytime_window+118); 
+petitpetitchiffre.Print("20",xtime_window+103,ytime_window+236);
+petitpetitchiffre.Print("25",xtime_window+65,ytime_window+205);
+petitpetitchiffre.Print("30",xtime_window+46,ytime_window+159);
+petitpetitchiffre.Print("35",xtime_window+52,ytime_window+112);
+petitpetitchiffre.Print("40",xtime_window+82,ytime_window+69);
+petitpetitchiffre.Print("45",xtime_window+126,ytime_window+48);
+petitpetitchiffre.Print("50",xtime_window+166,ytime_window+55);
+petitpetitchiffre.Print("55",xtime_window+215,ytime_window+77);
+petitpetitchiffre.Print("59",xtime_window+241,ytime_window+118);
 }
 if(the_time_wheel_datatype==2)//dixiemes
 {
-petitpetitchiffre.Print("00",xtime_window+246,ytime_window+147); 
+petitpetitchiffre.Print("00",xtime_window+246,ytime_window+147);
 petitpetitchiffre.Print("10",xtime_window+228,ytime_window+208);
-petitpetitchiffre.Print("20",xtime_window+178,ytime_window+242); 
-petitpetitchiffre.Print("30",xtime_window+119,ytime_window+242); 
-petitpetitchiffre.Print("40",xtime_window+71,ytime_window+213); 
+petitpetitchiffre.Print("20",xtime_window+178,ytime_window+242);
+petitpetitchiffre.Print("30",xtime_window+119,ytime_window+242);
+petitpetitchiffre.Print("40",xtime_window+71,ytime_window+213);
 petitpetitchiffre.Print("50",xtime_window+47,ytime_window+160);
-petitpetitchiffre.Print("60",xtime_window+58,ytime_window+99); 
-petitpetitchiffre.Print("70",xtime_window+97,ytime_window+59); 
-petitpetitchiffre.Print("80",xtime_window+154,ytime_window+46); 
-petitpetitchiffre.Print("90",xtime_window+210,ytime_window+69);  
+petitpetitchiffre.Print("60",xtime_window+58,ytime_window+99);
+petitpetitchiffre.Print("70",xtime_window+97,ytime_window+59);
+petitpetitchiffre.Print("80",xtime_window+154,ytime_window+46);
+petitpetitchiffre.Print("90",xtime_window+210,ytime_window+69);
 }
- return(0);   
+ return(0);
 }
 
 
 
 int Time_Window(int xtime, int ytime, int timerayon)
 {
- 
-//background window  
+
+//background window
 Rect TimeWindow(Vec2D (xtime, ytime ), Vec2D ( 370,300));
 TimeWindow.SetRoundness(15);
-TimeWindow.SetLineWidth(triple_epaisseur_ligne_fader); 
+TimeWindow.SetLineWidth(triple_epaisseur_ligne_fader);
 TimeWindow.Draw(CouleurFond);
 if(window_focus_id==908)
 {
-TimeWindow.DrawOutline(CouleurFader); 
+TimeWindow.DrawOutline(CouleurFader);
 }
 else
 {
-TimeWindow.DrawOutline(CouleurLigne);    
+TimeWindow.DrawOutline(CouleurLigne);
 }
 /////////////////////////////////////////////////////////////////////////////////
-Circle monTrajetTime0( Vec2D(xtime+150, ytime+150), 115); 
+Circle monTrajetTime0( Vec2D(xtime+150, ytime+150), 115);
  monTrajetTime0.SetLineWidth(epaisseur_ligne_fader);
  monTrajetTime0.DrawOutline( CouleurBleuProcedure);
- 
-Circle monTrajetTime2( Vec2D(xtime+150, ytime+150), 85); 
+
+Circle monTrajetTime2( Vec2D(xtime+150, ytime+150), 85);
  monTrajetTime2.SetLineWidth(epaisseur_ligne_fader);
  monTrajetTime2.Draw(CouleurBleuProcedure.WithAlpha(0.5));
- 
+
  //AFFECTATION MIDI Fader
 
 if( Midi_Faders_Affectation_Type!=0 && window_focus_id==W_TIME)
 {
  if(mouse_x>xtime+150  && mouse_x< xtime+250 && mouse_y>ytime+150 && mouse_y<ytime+250 )
- {  
+ {
  monTrajetTime0.DrawOutline(CouleurBlind);
- }   
+ }
 }
 
  if(show_im_recording_a_time==1)
  {
  monTrajetTime2.Draw(CouleurFader);
  }
- 
+
  //affichage du pointeur de temps
- Circle monCurseurTime( Vec2D(position_curseur_time_x-4, position_curseur_time_y-4), 8 ); 
+ Circle monCurseurTime( Vec2D(position_curseur_time_x-4, position_curseur_time_y-4), 8 );
  monCurseurTime.SetLineWidth(epaisseur_ligne_fader);
  monCurseurTime.DrawOutline( CouleurBlind );
 
@@ -99,15 +140,15 @@ Rect SetTimeWheelMode(Vec2D(xtime+120,ytime+80),Vec2D(60,20));
 SetTimeWheelMode.SetRoundness(7.5);
 SetTimeWheelMode.SetLineWidth(epaisseur_ligne_fader);
 
-SetTimeWheelMode.DrawOutline(CouleurLigne);  
+SetTimeWheelMode.DrawOutline(CouleurLigne);
 
 if(  window_focus_id==W_TIME && mouse_x>xtime+120 && mouse_x<xtime+180 && mouse_y>ytime+80 && mouse_y<ytime+100)
 {
 if( Midi_Faders_Affectation_Type!=0)
 {SetTimeWheelMode.DrawOutline(CouleurBlind); }
-else {SetTimeWheelMode.Draw(CouleurSurvol);   }     
-} 
- 
+else {SetTimeWheelMode.Draw(CouleurSurvol);   }
+}
+
 Line(Vec2D(xtime+150,ytime+100),Vec2D(Vec2D(xtime+150,ytime+115))).Draw(CouleurLigne);
 if(time_wheel_datatype_is==0)//minutes
 {
@@ -134,11 +175,11 @@ petitchiffre.Print("1/100",xtime+135,ytime+95);
 
 
 //////////////////////////CHRONO//////////////////////////////////////////////////
-Circle DoChrono( Vec2D(xtime+140, ytime+190), 15); 
+Circle DoChrono( Vec2D(xtime+140, ytime+190), 15);
 DoChrono.SetLineWidth(epaisseur_ligne_fader);
 DoChrono.Draw(CouleurBleuProcedure.WithAlpha(0.4));
- 
-Circle ResetChrono( Vec2D(xtime+180, ytime+200), 8); 
+
+Circle ResetChrono( Vec2D(xtime+180, ytime+200), 8);
 ResetChrono.SetLineWidth(epaisseur_ligne_fader);
 ResetChrono.Draw(CouleurBleuProcedure.WithAlpha(0.4));
 
@@ -150,24 +191,24 @@ if(window_focus_id==W_TIME && mouse_x>xtime+125 && mouse_x<xtime+155 && mouse_y>
 {
 if(Midi_Faders_Affectation_Type!=0)
 {
-DoChrono.DrawOutline(CouleurBlind);     
+DoChrono.DrawOutline(CouleurBlind);
 }
 else
 {
-DoChrono.Draw(CouleurSurvol);       
+DoChrono.Draw(CouleurSurvol);
 }
 }
- 
+
 if(window_focus_id==W_TIME && mouse_x>xtime+172 && mouse_x<xtime+188 && mouse_y>ytime+192 && mouse_y<ytime+208)
 {
 if(Midi_Faders_Affectation_Type!=0)
 {
-ResetChrono.DrawOutline(CouleurBlind);   
+ResetChrono.DrawOutline(CouleurBlind);
 }
 else
 {
-ResetChrono.Draw(CouleurSurvol);   
-}          
+ResetChrono.Draw(CouleurSurvol);
+}
 }
 
 petitpetitchiffre.Print("CHRONO",xtime+90,ytime+190);
@@ -223,23 +264,23 @@ if(mouse_x>xtime+300 && mouse_x<xtime+350)
 {
 //DIN
 if(mouse_y>ytime+120 && mouse_y<ytime+150)
-{       
-SetTimeDIn.DrawOutline(CouleurBlind);                 
+{
+SetTimeDIn.DrawOutline(CouleurBlind);
 }
 //IN
 if(mouse_y>ytime+20 && mouse_y<ytime+50)
 {
-SetTimeIn.DrawOutline(CouleurBlind);   
+SetTimeIn.DrawOutline(CouleurBlind);
 }
 //DOUT
 if(mouse_y>ytime+170 && mouse_y<ytime+200)
 {
-SetTimeDOut.DrawOutline(CouleurBlind);   
+SetTimeDOut.DrawOutline(CouleurBlind);
 }
 //OUT
 if(mouse_y>ytime+70 && mouse_y<ytime+100)
 {
-SetTimeOut.DrawOutline(CouleurBlind);   
+SetTimeOut.DrawOutline(CouleurBlind);
 }
 }
 }
@@ -257,7 +298,7 @@ TapTempo.SetLineWidth(demi_epaisseur_ligne_fader);
 if(do_light_tap_tempo==1)
 {
 TapTempo.Draw(CouleurFader);
-do_light_tap_tempo=0;                         
+do_light_tap_tempo=0;
 }
 TapTempo.DrawOutline(CouleurLigne);
 if(window_focus_id==W_TIME && mouse_x>xtime+310 && mouse_x<xtime+350 && mouse_y>ytime+210 && mouse_y<ytime+240)
@@ -272,7 +313,7 @@ if(index_recording_tap_tempo==1)
 RecTempo.DrawOutline(CouleurLigne);
 if(window_focus_id==W_TIME && mouse_x>xtime+285 && mouse_x<xtime+300 && mouse_y>ytime+210 && mouse_y<ytime+225)
 {
-RecTempo.DrawOutline(CouleurBlind);                      
+RecTempo.DrawOutline(CouleurBlind);
 }
 petitpetitchiffre.Print("R",xtime+288,ytime+220);
 petitpetitchiffre.Print("Tempo",xtime+310,ytime+225);
@@ -286,7 +327,7 @@ if(do_light_send_tap==1)
 TapSend.DrawOutline(CouleurLigne);
 if(window_focus_id==W_TIME && mouse_x>xtime+265 && mouse_x<xtime+280 && mouse_y>ytime+210 && mouse_y<ytime+225  )
 {
-TapSend.DrawOutline(CouleurBlind);                    
+TapSend.DrawOutline(CouleurBlind);
 }
 petitpetitchiffre.Print("S",xtime+268,ytime+220);
 
@@ -306,7 +347,7 @@ if(window_focus_id==W_TIME && Midi_Faders_Affectation_Type!=0)
 {
 if(mouse_x>xtime+280 && mouse_x<xtime+350 && mouse_y>ytime+260 && mouse_y<ytime+290)
 {
-TimeAffect.DrawOutline(CouleurBlind);                        
+TimeAffect.DrawOutline(CouleurBlind);
 }
 }
 petitchiffre.Print("AFFECT",xtime+290,ytime+280);
@@ -319,5 +360,5 @@ button_midi_out_visu( xtime+250, ytime+250,758);
 //liaison visuelle au fader du cercle midi out
 Line (Vec2D( xtime+231,ytime+231),Vec2D( xtime+245,ytime+245)).Draw(CouleurLigne);
 
-return(0);   
+return(0);
 }

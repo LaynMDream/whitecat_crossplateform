@@ -1,3 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file Call_everybody_5.cpp
+* \brief {no idea}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Aucune idée à quoi sert ce fichier
+*   No idea what it does
+*
+ **/
 
 int reset_other_index_cfg()
 {
@@ -9,11 +50,11 @@ index_do_affect_net_to_dock=0;
 index_config_network=0;
 receive_from_trichro=0;
 index_show_config_window=0;
-return(0);   
+return(0);
 }
 
 
-int do_logical_FunctionBoxChannel(int fx,int fy, int flarg, int fhaut, int space) 
+int do_logical_FunctionBoxChannel(int fx,int fy, int flarg, int fhaut, int space)
 {
 for (int df=0;df<5;df++)
 {
@@ -32,14 +73,14 @@ switch(miditable[0][682])
   case 2: sprintf(thetypinfo,"Key Off");break;
   case 4: sprintf(thetypinfo,"Ctrl Change");break;
   }
-sprintf(string_last_midi_id,"NumPad ALL is Ch: %d Pitch: %d Typ: %s" ,miditable[1][682],miditable[2][682],thetypinfo);  
+sprintf(string_last_midi_id,"NumPad ALL is Ch: %d Pitch: %d Typ: %s" ,miditable[1][682],miditable[2][682],thetypinfo);
 attribute_midi_solo_affectation(682,Midi_Faders_Affectation_Mode);
 }
-else 
+else
 {
 simulate_keypress(KEY_Y<<8);
 }
-break;  
+break;
 case 1://inverse sel
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -50,13 +91,13 @@ switch(miditable[0][683])
   case 2: sprintf(thetypinfo,"Key Off");break;
   case 4: sprintf(thetypinfo,"Ctrl Change");break;
   }
-sprintf(string_last_midi_id,"NumPad INV is Ch: %d Pitch: %d Typ: %s" ,miditable[1][683],miditable[2][683],thetypinfo);  
+sprintf(string_last_midi_id,"NumPad INV is Ch: %d Pitch: %d Typ: %s" ,miditable[1][683],miditable[2][683],thetypinfo);
 attribute_midi_solo_affectation(683,Midi_Faders_Affectation_Mode);
 }
-else  
+else
 {
 simulate_keypress(KEY_U<<8);
-}  
+}
 break;
 
 case 2: //to channel funct
@@ -69,16 +110,16 @@ switch(miditable[0][684])
   case 2: sprintf(thetypinfo,"Key Off");break;
   case 4: sprintf(thetypinfo,"Ctrl Change");break;
   }
-sprintf(string_last_midi_id,"NumPad Thru is Ch: %d Pitch: %d Typ: %s" ,miditable[1][684],miditable[2][684],thetypinfo);  
+sprintf(string_last_midi_id,"NumPad Thru is Ch: %d Pitch: %d Typ: %s" ,miditable[1][684],miditable[2][684],thetypinfo);
 attribute_midi_solo_affectation(684,Midi_Faders_Affectation_Mode);
 }
-else 
+else
 {
 simulate_keypress(KEY_TAB<<8);
 }
 break;
 case 3:
-channel_copy();     
+channel_copy();
 break;
 case 4:
 channel_paste();
@@ -86,12 +127,12 @@ break;
 }
 mouse_released=1;
 }
-}    
-return(0);    
+}
+return(0);
 }
 
 
-int FunctionBoxChannel(int fx,int fy, int flarg, int fhaut, int space) 
+int FunctionBoxChannel(int fx,int fy, int flarg, int fhaut, int space)
 {
 for (int df=0;df<5;df++)
 {
@@ -104,7 +145,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
  if(mouse_x>fx && mouse_x<fx+flarg && mouse_y>fy + (df*fhaut)+ (space*df) && mouse_y<fy + (df*fhaut)+ (space*df)+fhaut)
   {
   FunctionChThr.DrawOutline(CouleurBlind);
-  }                        
+  }
 }
 switch(df)
 {
@@ -135,8 +176,8 @@ break;
 
 }
 
-}    
-return(0);    
+}
+return(0);
 }
 
 
@@ -145,16 +186,16 @@ return(0);
 
 int do_logical_Menus( int xmenu, int ymenu)
 {
-if(window_focus_id==W_MAINMENU)  
+if(window_focus_id==W_MAINMENU)
 {
 //AUTOCLOSE
 if(mouse_x> xmenu+330 && mouse_x< xmenu+360 && mouse_y>ymenu+8  && mouse_y<ymenu+23 && mouse_button==1 && mouse_released==0)
 {
 index_text_auto_close=toggle(index_text_auto_close);
-mouse_released=1;             
-}                      
-                        
-                        
+mouse_released=1;
+}
+
+
 int IDmidi=0; int IDcommand=0;
 char nom_commande[24];
 char raccourci_commande[24];
@@ -200,9 +241,9 @@ stae=index_menu_save;
 break;
 default:
 break;
-}        
+}
  command_button_logical(xmenu+10,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi,IDcommand);// int x, inty ,bool state, char *textedesc, int midiaffectation
-}  
+}
 
 
 
@@ -255,9 +296,9 @@ stae= index_my_window;
 break;
 default:
 break;
-}        
+}
 command_button_logical(xmenu+80,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi,IDcommand);// int x, inty ,bool state, char *textedesc, int midiaffectation
-}     
+}
 
 
 //3ème colonne grands blocs
@@ -303,9 +344,9 @@ break;
 
 default:
 break;
-}        
+}
 command_button_logical(xmenu+150,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi,IDcommand);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
 
 
@@ -357,9 +398,9 @@ sprintf(raccourci_commande,"");
 break;
 default:
 break;
-}        
+}
 command_button_logical(xmenu+220,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi,IDcommand);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
 
 
@@ -405,12 +446,12 @@ stae=index_do_quit_with_save;
 break;
 default:
 break;
-}        
+}
 command_button_logical(xmenu+290,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi,IDcommand);// int x, inty ,bool state, char *textedesc, int midiaffectation
 }
-//fin condition focus + souris 
+//fin condition focus + souris
 }
- return(0);   
+ return(0);
 }
 
 
@@ -422,7 +463,7 @@ MyMainMenu.Draw(CouleurFond);
 MyMainMenu.SetLineWidth(5);
 if(window_focus_id==W_MAINMENU)
 {
-MyMainMenu.DrawOutline(CouleurFader);    
+MyMainMenu.DrawOutline(CouleurFader);
 }
 else {MyMainMenu.DrawOutline(CouleurLigne); }
 neuro.Print("MENUS",xmenu+100,ymenu+30);
@@ -431,7 +472,7 @@ neuro.Print("MENUS",xmenu+100,ymenu+30);
 // TEXT autoclose
 Rect Autoclose( Vec2D( xmenu+330,ymenu+8), Vec2D ( 30,15));
 Autoclose.SetRoundness(5);
-Autoclose.Draw(CouleurBlind.WithAlpha(index_text_auto_close));   
+Autoclose.Draw(CouleurBlind.WithAlpha(index_text_auto_close));
 Autoclose.DrawOutline(CouleurLigne);
 petitchiffre.Print("Text",xmenu+295, ymenu+20);
 petitchiffre.Print("AutoClose",xmenu+295, ymenu+34);
@@ -490,9 +531,9 @@ stae=index_menu_save;
 break;
 default:
 break;
-}        
+}
 command_button_view(xmenu+10,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
 //2ème colonne Circuit relatif
 for(int cl=0;cl<6;cl++)
@@ -543,9 +584,9 @@ stae= index_my_window;
 break;
 default:
 break;
-}        
+}
 command_button_view(xmenu+80,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
 
 //3ème colonne grands blocs
@@ -591,9 +632,9 @@ break;
 
 default:
 break;
-}        
+}
 command_button_view(xmenu+150,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
 
 //4ème colonne grands blocs
@@ -634,7 +675,7 @@ IDmidi=747;
 IDcommand=cl+30;
 sprintf(nom_commande,"NAME");
 sprintf(raccourci_commande,"F5");
-stae=index_type;     
+stae=index_type;
 break;
 case 5:
 IDmidi=1659;
@@ -645,9 +686,9 @@ stae=index_draw_window;
 break;
 default:
 break;
-}        
+}
 command_button_view(xmenu+220,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
 //5ème colonne grands blocs
 for(int cl=0;cl<5;cl++)
@@ -692,11 +733,11 @@ stae=index_do_quit_with_save;
 break;
 default:
 break;
-}        
+}
 command_button_view(xmenu+290,ymenu+50+(cl*25),stae,nom_commande,raccourci_commande,IDmidi);// int x, inty ,bool state, char *textedesc, int midiaffectation
-} 
+}
 
-return(0);   
+return(0);
 }
 
 

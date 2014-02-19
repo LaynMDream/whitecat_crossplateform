@@ -1,3 +1,44 @@
+/*-------------------------------------------------------------------------------------------------------------
+                                 |
+          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+       WWWWWWWWWWWWWWW           |
+     WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
+    WWWWWWWWWWWWWWWWWCWWWW       |
+   WWWWWWWWWWWWWWWWW tWWWWW      | White Cat is free software: you can redistribute it and/or modify
+  WWWW   WWWWWWWWWW  tWWWWWW     | it under the terms of the GNU General Public License as published by
+ WWWWWt              tWWWWWWa    | the Free Software Foundation, either version 2 of the License, or
+ WWWWWW               WWWWWWW    | (at your option) any later version.
+WWWWWWWW              WWWWWWW    |
+WWWWWWWW               WWWWWWW   | White Cat is distributed in the hope that it will be useful,
+WWWWWWW               WWWWWWWW   | but WITHOUT ANY WARRANTY; without even the implied warranty of
+WWWWWWW      CWWW    W WWWWWWW   | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+WWWWWWW            aW  WWWWWWW   | GNU General Public License for more details.
+WWWWWWWW           C  WWWWWWWW   |
+ WWWWWWWW            CWWWWWWW    | You should have received a copy of the GNU General Public License
+ WWWWWWWWW          WWWWWWWWW    | along with White Cat.  If not, see <http://www.gnu.org/licenses/>.
+  WWWWWWWWWWC    CWWWWWWWWWW     |
+   WWWWWWWWWWWWWWWWWWWWWWWW      |
+    WWWWWWWWWWWWWWWWWWWWWW       |
+      WWWWWWWWWWWWWWWWWWa        |
+        WWWWWWWWWWWWWWW          |
+           WWWWWWWWt             |
+                                 |
+---------------------------------------------------------------------------------------------------------------*/
+
+/**
+
+* \file dmx_enttec_pro.cpp
+* \brief {send dmx fonctions to the enttec usb pro}
+* \author Christoph Guillermet
+* \version {0.8.5.2}
+* \date {19/02/2014}
+
+ White Cat {- categorie} {- sous categorie {- sous categorie}}
+
+*   Gère les envoie du data dmx et autre fonction vers l'enttec usb pro, specifique pour windows
+*   send dmx data and other fonctions to the enttec usb pro, only for windows
+*
+ **/
 //enttec pro
 //pour code enttec pro:
 #include <process.h>
@@ -273,7 +314,7 @@ com_handle_ = NULL;
         DWORD       DeviceNameLen, KeyNameLen;
         char		KeyName[256];
 		int idmx ;
-        if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM", 0, KEY_QUERY_VALUE, &hKey) != ERROR_SUCCESS) 
+        if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM", 0, KEY_QUERY_VALUE, &hKey) != ERROR_SUCCESS)
         {
 			 sprintf(string_display_dmx_params,"No VCOM drivers installed !");
              return(0);
@@ -286,19 +327,19 @@ com_handle_ = NULL;
 
 			if ((!strncmp(KeyName,"\\Device\\VCP",11)) && idmx!=arduino_com0)
 			{
-                index_init_dmx_ok=1;     
-                istheresomeone_in_enttecpro=idmx;     
-                break;                                 
+                index_init_dmx_ok=1;
+                istheresomeone_in_enttecpro=idmx;
+                break;
 				// we found a serial COM device, COM port "idmx"
 			}
 
-			DeviceName[0] = 0;       
-                     
+			DeviceName[0] = 0;
+
             idmx++;
 		}
-		
-		
-		
+
+
+
 		RegCloseKey(hKey);
 
 		if (idmx == 50)
@@ -309,30 +350,30 @@ com_handle_ = NULL;
 	sprintf(string_display_dmx_params,"ENTTEC PRO Out is on : %s",DeviceName);
 	}
 
-return(0);            
+return(0);
 }
 
 int Open_EnttecProOut()
 {
  	char com_str[10];
-	sprintf(com_str,"%s:",DeviceName); 
+	sprintf(com_str,"%s:",DeviceName);
 	LPSTR lpszPortName = _T(com_str);
 	com_handle_ = CreateFile(
-		lpszPortName, 
-		GENERIC_READ | GENERIC_WRITE, 
-		0,								// DWORD dwShareMode, 
-		NULL,							// LPSECURITY_ATTRIBUTES lpSecurityAttributes, 
-		OPEN_EXISTING,					// DWORD dwCreationDispostion, 
-		0, //FILE_FLAG_OVERLAPPED,		// DWORD dwFlagsAndAttributes, 
+		lpszPortName,
+		GENERIC_READ | GENERIC_WRITE,
+		0,								// DWORD dwShareMode,
+		NULL,							// LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+		OPEN_EXISTING,					// DWORD dwCreationDispostion,
+		0, //FILE_FLAG_OVERLAPPED,		// DWORD dwFlagsAndAttributes,
 		NULL							// HANDLE hTemplateFile
 	);
-	
+
 	int iRet = (int)(com_handle_ );
-	
+
 	if (iRet<0)
 	{
     com_handle_ = NULL;
-    index_init_dmx_ok=0; 
+    index_init_dmx_ok=0;
 	sprintf(string_display_dmx_params,"Impossible to open ENTTEC PRO Out, is it PLUGGED ?");
     return(0);
 	}
@@ -343,17 +384,17 @@ int Open_EnttecProOut()
 	// flush rx & tx buffers
 	res = FlushFileBuffers(com_handle_);
 	if (!res)
-	{ 
+	{
     sprintf(string_display_dmx_params,"ENTTEC PRO Out: Flush file buffers failed...");
 	CloseHandle(com_handle_); com_handle_ = NULL;
 	return(0);
 	}
-return(0);	   
+return(0);
 }
 
 int Close_EnttecProOut()
 {
-CloseHandle(com_handle_); com_handle_ = NULL; 
+CloseHandle(com_handle_); com_handle_ = NULL;
 sprintf(string_display_dmx_params,"ENTTEC PRO OUT : Closed...");
 return(0);
 }
@@ -368,7 +409,7 @@ com_handle_IN = NULL;
         DWORD       DeviceNameLenIN, KeyNameLenIN;
         char		KeyNameIN[256];
 		int idmxIN ;
-        if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM", 0, KEY_QUERY_VALUE, &hKeyIN) != ERROR_SUCCESS) 
+        if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DEVICEMAP\\SERIALCOMM", 0, KEY_QUERY_VALUE, &hKeyIN) != ERROR_SUCCESS)
         {
 			 sprintf(string_display_dmx_params,"Impossible to load DLL");return(0);
         }
@@ -381,13 +422,13 @@ com_handle_IN = NULL;
 			if (!strncmp(KeyNameIN,"\\Device\\VCP",11))
 			{
                 sprintf(string_display_dmx_params,"detected Vcom in %d!",idmxIN);
-                index_init_EnttecPROIN_ok=1;  
+                index_init_EnttecPROIN_ok=1;
                 vcom_inposition_is=idmxIN;
 				// we found a serial COM device, COM port "idmx"
 				break;
 			}
 
-			DeviceNameIN[0] = 0;                     
+			DeviceNameIN[0] = 0;
             idmxIN++;
 		}
 		RegCloseKey(hKeyIN);
@@ -399,33 +440,33 @@ com_handle_IN = NULL;
 		}
 	sprintf(string_display_dmx_params,"Founded Enttec Pro In :%s",DeviceNameIN);
 	}
- return(0);   
+ return(0);
 }
 
 int Open_ProIn()
 {
  	char com_str[10];
-	sprintf(com_str,"%s:",DeviceNameIN); 
+	sprintf(com_str,"%s:",DeviceNameIN);
 	LPSTR lpszPortName = _T(com_str);
 	com_handle_IN = CreateFile(
-		lpszPortName, 
-		GENERIC_READ | GENERIC_WRITE, 
-		0,								// DWORD dwShareMode, 
-		NULL,							// LPSECURITY_ATTRIBUTES lpSecurityAttributes, 
-		OPEN_EXISTING,					// DWORD dwCreationDispostion, 
-		0, //FILE_FLAG_OVERLAPPED,		// DWORD dwFlagsAndAttributes, 
+		lpszPortName,
+		GENERIC_READ | GENERIC_WRITE,
+		0,								// DWORD dwShareMode,
+		NULL,							// LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+		OPEN_EXISTING,					// DWORD dwCreationDispostion,
+		0, //FILE_FLAG_OVERLAPPED,		// DWORD dwFlagsAndAttributes,
 		NULL							// HANDLE hTemplateFile
 	);
-	
+
 	int iRetIn = (int)(com_handle_IN );
-	
+
 	if (iRetIn<0)
 	{
     com_handle_IN = NULL;
 	sprintf(string_display_dmx_params,"Impossible to open interface, is it PLUGGED ?");
     return(0);
 	}
-	 else {sprintf(string_display_dmx_params,"Enttec Pro IN  %s is now Open",DeviceNameIN);} 
+	 else {sprintf(string_display_dmx_params,"Enttec Pro IN  %s is now Open",DeviceNameIN);}
 
 	// SetCommState & Timeout
     Enttec_Pro_SetCommParamsIN();
@@ -433,19 +474,19 @@ int Open_ProIn()
 	// flush rx & tx buffers
 	resIn = FlushFileBuffers(com_handle_IN);
 	if (!resIn)
-	{ 
+	{
     sprintf(string_display_dmx_params,"\ENTTEC PRO IN %s: Flush file buffers failed...",DeviceNameIN);
 	CloseHandle(com_handle_IN); com_handle_IN = NULL;
 	return(0);
 	}
-	index_init_EnttecPROIN_ok=1;  
-    return(0);   
+	index_init_EnttecPROIN_ok=1;
+    return(0);
 }
 
 int Close_ProIn()
 {
  CloseHandle(com_handle_IN); com_handle_IN = NULL;
  sprintf(string_display_dmx_params,"Enttec Pro IN %s is now closed",DeviceNameIN) ;
- index_init_EnttecPROIN_ok=0;  
- return(0);   
+ index_init_EnttecPROIN_ok=0;
+ return(0);
 }
