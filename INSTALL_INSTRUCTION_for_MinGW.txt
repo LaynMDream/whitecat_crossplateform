@@ -1,8 +1,8 @@
 For Windows with MinGW gcc install:
 
 Copy whitecat_crossplateform to c:/ if it is copy somewhere else you must change the path during the compilation of the librarie whith <path of whitecat_crossplateform> insted of C:\whitecat_crossplateform
-download the lib folder at https://github.com/AntonLanghoff/whitecatlib and copy it to C:/whitecat_crossplateform
-download the build folder at https://github.com/AntonLanghoff/whitecatbuild and copy it to C:/whitecat_crossplateform
+download the lib folder at https://github.com/AntonLanghoff/whitecatlib and copy the lib folder to C:/whitecat_crossplateform
+download the build folder at https://github.com/AntonLanghoff/whitecatbuild and copy thue build folder to C:/whitecat_crossplateform
 
 In the DEVKIT/Windows folder:
 
@@ -35,7 +35,8 @@ add or modify the PATH variable whith C:\MinGW\bin;C:\MinGW;C:\Python27;C:\MinGW
 add or modify the ALLEGRO variable with C:\MinGW
 add or modify the MINGDIR variable with C:\MinGW
 add or modify the PKG_CONFIG_PATH variable with C:\MinGW
-add or modify the OPENCV_DIR variable with c:\MinGW\opencv2.4.8\x86\mingw
+add or modify the OPENCV_DIR variable with C:\MinGW\opencv2.4.8\x86\mingw
+add or modify the PYTHONPATH variable with C:\Python27 or your python path
 
 To build the librarie environement follow all the folowing steps or replace your C:/MinGW by the one in https://github.com/AntonLanghoff/MinGW it is cut in 9 files, you must combine them with 7zip
 
@@ -108,12 +109,6 @@ cd <path to freetypeMinGW folder>
 mingw32-make
 mingw32-make install
 
-open in c:/MinGW/msys/1.0/msys.bat to open an terminal
-type:
-cd <path of libsource/openlayer-2.1-source\dependance\freetype-2.5.2\freetype-2.5.2>
-./configure --prefix=/c/mingw
-make
-make install
 
 8-install Openlayer
 
@@ -136,7 +131,7 @@ uncompress opencv-2.4.8.zip in lib/libsource/openCV-2.4.8/unix
 lunch cmake gui
 as source C:/whitecat_crossplateform/lib/libsource/openCV-2.4.8/unix/opencv-2.4.8/opencv-2.4.8
 as build C:/whitecat_crossplateform/lib/libsource/openCV-2.4.8/unix/opencv-2.4.8/opencv-2.4.8/build
--BuilD_Doc, BuilD_JASPER, BUILD_JPEG, BUILD_OPENEXR, BUILD_PACKAGE, BUILD_PERF_TESTS, BUILD_PNG, BUILD_SHARED_LIB, BUILD_TIFF, BUILD_WITH_DEBUG_INFO, and all BUILD_opencv is on
+-BuilD_Doc, BuilD_JASPER, BUILD_JPEG, BUILD_OPENEXR, BUILD_PACKAGE, BUILD_PERF_TESTS, BUILD_PNG, BUILD_SHARED_LIB, BUILD_TIFF, BUILD_WITH_DEBUG_INFO, and all BUILD_opencv expect world is on
 
 -CMAKE_INSTALL_PREFIX C:/MinGW/opencv2.4.8
 
@@ -167,7 +162,29 @@ cd <path of libsource/libharu-2.0.8>
 make -f script/Makefile.mingw
 make install
 
+12-install Serial_master
+to install the python catkin dep package:
+lunch a command prompt and type cd <your pytohn2.7/Scripts> 
+type: 
+easy_install.exe catkin_pkg
+easy_install.exe empy
+easy_install.exe nose
 
+
+to install catkin
+lunch CMake GUI
+as source select: <path to lib/libsource/catkin-indigo-devel>
+as build select: <path to lib/libsource/catkin-indigo-devel/build>
+CMAKE_BUILD_TYPE RelWithDebInfo
+CMAKE_INSTALL_PREFIX C:/MinGW
+BUILD_SHARED_LIBS is uncheck
+configure
+generate
+
+in a console
+cd <path to lib/libsource/catkin-indigo-devel/build>
+mingw32-make
+mingw32-make install
 
 lunch C:\whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform
 l'exe whitecat est dans le dossier build/mingw_build/white_cat
