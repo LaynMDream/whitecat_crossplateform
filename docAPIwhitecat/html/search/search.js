@@ -15,7 +15,7 @@ var indexSectionsWithContent =
   5: "cdn",
   6: "w",
   7: "w",
-  8: "abcdfgilmoprsv",
+  8: "abcdfgilmoprsvw",
   9: "r"
 };
 

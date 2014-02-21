@@ -11,6 +11,7 @@ var whitecat_8h =
     [ "pwm_limit", "whitecat_8h.html#ab9787ffdda6fa87c37062362d5ba5da7", null ],
     [ "short_get_high_byte", "whitecat_8h.html#a9c5ddab04e54d11504f0810b3193aa0f", null ],
     [ "short_get_low_byte", "whitecat_8h.html#ae4e6c6f48e224528f3bf837f2443553c", null ],
+    [ "WhiteMicrosoft", "whitecat_8h.html#a97b66f1468ddd4c67934e4dc1bb64bf4", null ],
     [ "curve_node", "whitecat_8h.html#a381b962aa4b8e005d1aa81578168a052", null ],
     [ "NODE", "whitecat_8h.html#a9d970b08e044815c86f3f84999755bdd", null ],
     [ "WINDOW", "whitecat_8h.html#a5233c989a91a39f8630900f1d3c23ba5", [

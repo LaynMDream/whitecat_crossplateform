@@ -17,17 +17,8 @@ click in the instalation menu on  Apply changes
 
 3-install codeblocks-13.12-setup.exe
 
-4-install 7zip
 
-5-install GetGnuWin32-0.6.3.exe in DEVKIT/windows folder
-open GetGnuWin32 and open in it download.bat
-open install.bat
-copy gnuwin32 folder to C:\MinGW
-in C:\MinGW\gnuwin32 run update-link.bat
-
-7-install opencodecs_0.85.17777.exe
-
-8-make a right click on the Computer icon on the start menu, select propriety, click on advanced system, on the tab environement variable, 
+4-make a right click on the Computer icon on the start menu, select propriety, click on advanced system, on the tab environement variable, 
 user variable:
 in the Path variableadd at the end ;C:\MinGW\bin 
 in system variable:
@@ -37,6 +28,20 @@ add or modify the MINGDIR variable with C:\MinGW
 add or modify the PKG_CONFIG_PATH variable with C:\MinGW
 add or modify the OPENCV_DIR variable with C:\MinGW\opencv2.4.8\x86\mingw
 add or modify the PYTHONPATH variable with C:\Python27 or your python path
+
+Follow all the next steps to build the librairies yourself or just lunch whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform\Whitecat_precompiled_relativ_lib.cbp
+
+
+5-install 7zip
+
+6-install GetGnuWin32-0.6.3.exe in DEVKIT/windows folder
+open GetGnuWin32 and open in it download.bat
+open install.bat
+copy gnuwin32 folder to C:\MinGW
+in C:\MinGW\gnuwin32 run update-link.bat
+
+7-install opencodecs_0.85.17777.exe
+
 
 To build the librarie environement follow all the folowing steps or replace your C:/MinGW by the one in https://github.com/AntonLanghoff/MinGW it is cut in 9 files, you must combine them with 7zip
 
@@ -186,6 +191,6 @@ cd <path to lib/libsource/catkin-indigo-devel/build>
 mingw32-make
 mingw32-make install
 
-lunch C:\whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform
+lunch C:\whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform\Whitecat_Crossplatform.cbp
 l'exe whitecat est dans le dossier build/mingw_build/white_cat
 

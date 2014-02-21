@@ -31,6 +31,7 @@ var searchData=
   ['wheellevel_5fabsolutemode',['wheellevel_absolutemode',['../whitecat_8h.html#adcc002dcbf09212826eab2c95a6ac5e2',1,'whitecat.h']]],
   ['whitecat_2eh',['whitecat.h',['../whitecat_8h.html',1,'']]],
   ['whitecat_5fprivate_2eh',['WhiteCat_private.h',['../_white_cat__private_8h.html',1,'']]],
+  ['whitemicrosoft',['WhiteMicrosoft',['../whitecat_8h.html#a97b66f1468ddd4c67934e4dc1bb64bf4',1,'whitecat.h']]],
   ['width',['width',['../saves__export__pdf2_8cpp.html#a4f29c3b2841b17180ba269809503cc9a',1,'saves_export_pdf2.cpp']]],
   ['window',['WINDOW',['../whitecat_8h.html#a5233c989a91a39f8630900f1d3c23ba5',1,'whitecat.h']]],
   ['window_5fbring_5fto_5ffront',['window_bring_to_front',['../gestionaire__fenetres2_8cpp.html#ac3bd0e2081750b56f44edcd478f0e2bf',1,'gestionaire_fenetres2.cpp']]],

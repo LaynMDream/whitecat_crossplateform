@@ -16445,6 +16445,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>WhiteMicrosoft</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>whitecat_8h.html</Path>
+    <Anchor>a97b66f1468ddd4c67934e4dc1bb64bf4</Anchor>
+    <DeclaredIn>whitecat.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MAX_curve_nodeS</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>

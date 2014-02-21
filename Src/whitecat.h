@@ -35,11 +35,15 @@ WWWWWWWW           C  WWWWWWWW   |
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
-*   Header qui contient toute les variables globales déclarées dans whitecat
+*   Header qui contient toutes les variables globales déclarées dans whitecat
 *
 *   Header for all the global variables used in whitecat
 *
 */
+
+#include "Crossplateform.h"
+
+
 
 char versionis[72]={"Beta 0.8.4.14 - 6 janv 2014"};
 char nickname_version[48]={"OPEN VERSION"};
