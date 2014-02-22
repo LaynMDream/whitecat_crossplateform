@@ -4,7 +4,7 @@
 #include <windows.h> // include for version info constants
 
 
-A ICON "WhiteCat_crossplateform.ico"
+A ICON "WhiteCat_crossplateform_with_relativ_lib.ico"
 
 //
 // TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
