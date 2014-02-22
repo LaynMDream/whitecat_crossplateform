@@ -4,24 +4,20 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-RES      = ../../build/mingw_build/white_cat/obj/WhiteCat_private.res
-OBJ      = ../../build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o $(RES)
-LINKOBJ  = ../../build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o $(RES)
-LIBS     = -L"C:/MinGW/lib" -L"C:/MinGW/lib" -L"../../lib/windows/audiere-1.9.4-win32/lib" -L"../../lib/windows/enttec_pro" -L"../../lib/windows/midishare/librairies" -L"../../lib/windows/odmxusb_terry" -L"C:/MinGW/opencv2.4.8/x86/mingw/staticlib" -L"C:/MinGW/opencv2.4.8/x86/mingw/lib" -mwindows -lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lpthreadGC2 -lwsock32 -liphlpapi -lpng12.dll -lz -lhpdf ../../lib/windows/odmxusb_terry/FTD2XX.lib ../../lib/windows/enttec_pro/ftd2xx.lib ../../lib/windows/midishare/libraries/mshare32.lib ../../lib/windows/audiere-1.9.4-win32/lib/audiere.lib C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjasper.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjpeg.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibpng.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibtiff.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_calib3d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_contrib248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_core248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_features2d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_flann248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_gpu248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_highgui248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_imgproc248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_legacy248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ml248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_nonfree248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_objdetect248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ocl248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_photo248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_stitching248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_superres248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ts248.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_video248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_videostab248.dll.a C:/MinGW/lib/libz.a -pg
-INCS     = -I"C:/MinGW/include" -I"../../lib/windows/audiere-1.9.4-win32/include" -I"../../lib/windows/Cserial" -I"../../lib/windows/dashard" -I"../../lib/windows/enttec_pro" -I"../../lib/windows/midishare/include" -I"../../lib/windows/odmxusb_terry" -I"C:/MinGW/include" -I"../../Src" -I"C:/MinGW/opencv2.4.8/include" -I"C:/MinGW/include/libharu"
-CXXINCS  = -I"C:/MinGW/include" -I"../../lib/windows/audiere-1.9.4-win32/include" -I"../../lib/windows/Cserial" -I"../../lib/windows/dashard" -I"../../lib/windows/enttec_pro" -I"../../lib/windows/midishare/include" -I"../../lib/windows/odmxusb_terry" -I"C:/MinGW/include" -I"../../Src" -I"C:/MinGW/opencv2.4.8/include" -I"C:/MinGW/include/libharu"
-BIN      = ../../build/mingw_build/white_cat/white_cat_0_8_5_1_withdevc.exe
+RES      = ../../whitecatbuild/build/mingw_build/white_cat/obj/WhiteCat_private.res
+OBJ      = ../../whitecatbuild/build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o $(RES)
+LINKOBJ  = ../../whitecatbuild/build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o $(RES)
+LIBS     = -L"C:/MinGW/lib" -L"C:/MinGW/lib" -L"../../whitecatlib/lib/windows/audiere-1.9.4-win32/lib" -L"../../whitecatlib/lib/windows/enttec_pro" -L"../../whitecatlib/lib/windows/midishare/librairies" -L"../../whitecatlib/lib/windows/odmxusb_terry" -L"C:/MinGW/opencv2.4.8/x86/mingw/staticlib" -L"C:/MinGW/opencv2.4.8/x86/mingw/lib" -mwindows -lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lpthreadGC2 -lwsock32 -liphlpapi -lpng12.dll -lz -lhpdf ../../whitecatlib/lib/windows/odmxusb_terry/FTD2XX.lib ../../whitecatlib/lib/windows/enttec_pro/ftd2xx.lib ../../whitecatlib/lib/windows/midishare/libraries/mshare32.lib ../../whitecatlib/lib/windows/audiere-1.9.4-win32/lib/audiere.lib C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjasper.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibjpeg.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibpng.a C:/MinGW/opencv2.4.8/x86/mingw/staticlib/liblibtiff.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_calib3d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_contrib248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_core248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_features2d248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_flann248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_gpu248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_highgui248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_imgproc248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_legacy248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ml248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_nonfree248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_objdetect248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ocl248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_photo248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_stitching248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_superres248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_ts248.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_video248.dll.a C:/MinGW/opencv2.4.8/x86/mingw/lib/libopencv_videostab248.dll.a C:/MinGW/lib/libz.a -pg
+INCS     = -I"C:/MinGW/include" -I"../../whitecatlib/lib/windows/audiere-1.9.4-win32/include" -I"../../whitecatlib/lib/windows/Cserial" -I"../../whitecatlib/lib/windows/dashard" -I"../../whitecatlib/lib/windows/enttec_pro" -I"../../whitecatlib/lib/windows/midishare/include" -I"../../whitecatlib/lib/windows/odmxusb_terry" -I"C:/MinGW/include" -I"../../Src" -I"C:/MinGW/opencv2.4.8/include" -I"C:/MinGW/include/libharu"
+CXXINCS  = -I"C:/MinGW/include" -I"../../whitecatlib/lib/windows/audiere-1.9.4-win32/include" -I"../../whitecatlib/lib/windows/Cserial" -I"../../whitecatlib/lib/windows/dashard" -I"../../whitecatlib/lib/windows/enttec_pro" -I"../../whitecatlib/lib/windows/midishare/include" -I"../../whitecatlib/lib/windows/odmxusb_terry" -I"C:/MinGW/include" -I"../../Src" -I"C:/MinGW/opencv2.4.8/include" -I"C:/MinGW/include/libharu"
+BIN      = ../../whitecatbuild/build/mingw_build/white_cat/white_cat_0_8_5_1_withdevc.exe
 CXXFLAGS = $(CXXINCS) -pg
 CFLAGS   = $(INCS) -pg
-RM       = -del
+RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
 
 all: all-before $(BIN) all-after
-
-clean : 
-	-del $(OBJ) $(BIN)
-	echo Clean done
 
 clean: clean-custom
 	${RM} $(OBJ) $(BIN)
@@ -29,8 +25,8 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-../../build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o: ../../Src/MAIN_janv_2014_opensource_kbd.cpp
-	$(CPP) -c ../../Src/MAIN_janv_2014_opensource_kbd.cpp -o ../../build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o $(CXXFLAGS)
+../../whitecatbuild/build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o: ../../Src/MAIN_janv_2014_opensource_kbd.cpp
+	$(CPP) -c ../../Src/MAIN_janv_2014_opensource_kbd.cpp -o ../../whitecatbuild/build/mingw_build/white_cat/obj/MAIN_janv_2014_opensource_kbd.o $(CXXFLAGS)
 
-../../build/mingw_build/white_cat/obj/WhiteCat_private.res: WhiteCat_private.rc 
-	$(WINDRES) -i WhiteCat_private.rc --input-format=rc -o ../../build/mingw_build/white_cat/obj/WhiteCat_private.res -O coff 
+../../whitecatbuild/build/mingw_build/white_cat/obj/WhiteCat_private.res: WhiteCat_private.rc 
+	$(WINDRES) -i WhiteCat_private.rc --input-format=rc -o ../../whitecatbuild/build/mingw_build/white_cat/obj/WhiteCat_private.res -O coff 

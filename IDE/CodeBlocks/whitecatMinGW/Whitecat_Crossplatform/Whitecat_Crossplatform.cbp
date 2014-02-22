@@ -9,9 +9,9 @@
 		<Build>
 			<Target title="Debug">
 				<Option platforms="Windows;" />
-				<Option output="../../../../build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../build/mingw_build/white_cat" />
-				<Option object_output="../../../../build/mingw_build/obj" />
+				<Option output="../../../../whitecatbuild/build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../../whitecatbuild/build/mingw_build/white_cat" />
+				<Option object_output="../../../../whitecatbuild/build/mingw_build/obj" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -20,21 +20,21 @@
 			</Target>
 			<Target title="Release">
 				<Option platforms="Windows;" />
-				<Option output="../../../../build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../build/mingw_build/white_cat" />
-				<Option object_output="../../../../build/mingw_build/obj" />
+				<Option output="../../../../whitecatbuild/build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../../whitecatbuild/build/mingw_build/white_cat" />
+				<Option object_output="../../../../whitecatbuild/build/mingw_build/obj" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="../../../../lib/windows/audiere-1.9.4-win32/include" />
-			<Add directory="../../../../lib/windows/Cserial" />
-			<Add directory="../../../../lib/windows/dashard" />
-			<Add directory="../../../../lib/windows/enttec_pro" />
-			<Add directory="../../../../lib/windows/midishare/include" />
-			<Add directory="../../../../lib/windows/odmxusb_terry" />
+			<Add directory="../../../../whitecatlib/lib/windows/audiere-1.9.4-win32/include" />
+			<Add directory="../../../../whitecatlib/lib/windows/Cserial" />
+			<Add directory="../../../../whitecatlib/lib/windows/dashard" />
+			<Add directory="../../../../whitecatlib/lib/windows/enttec_pro" />
+			<Add directory="../../../../whitecatlib/lib/windows/midishare/include" />
+			<Add directory="../../../../whitecatlib/lib/windows/odmxusb_terry" />
 			<Add directory="C:/MinGW/include" />
 			<Add directory="../../../../Src" />
 			<Add directory="C:/MinGW/opencv2.4.8/include" />
@@ -47,10 +47,10 @@
 			<Add library="winmm" />
 			<Add library="ole32" />
 			<Add library="dxguid" />
-			<Add library="..\..\..\..\lib\windows\odmxusb_terry\FTD2XX.lib" />
-			<Add library="..\..\..\..\lib\windows\enttec_pro\ftd2xx.lib" />
-			<Add library="..\..\..\..\lib\windows\midishare\libraries\mshare32.lib" />
-			<Add library="..\..\..\..\lib\windows\audiere-1.9.4-win32\lib\audiere.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\odmxusb_terry\FTD2XX.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\enttec_pro\ftd2xx.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\midishare\libraries\mshare32.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\audiere-1.9.4-win32\lib\audiere.lib" />
 			<Add library="C:\MinGW\opencv2.4.8\x86\mingw\staticlib\liblibjasper.a" />
 			<Add library="C:\MinGW\opencv2.4.8\x86\mingw\staticlib\liblibjpeg.a" />
 			<Add library="C:\MinGW\opencv2.4.8\x86\mingw\staticlib\liblibpng.a" />
@@ -76,10 +76,10 @@
 			<Add library="C:\MinGW\opencv2.4.8\x86\mingw\lib\libopencv_videostab248.dll.a" />
 			<Add library="z" />
 			<Add directory="C:/MinGW/lib" />
-			<Add directory="../../../../lib/windows/audiere-1.9.4-win32/lib" />
-			<Add directory="../../../../lib/windows/enttec_pro" />
-			<Add directory="../../../../lib/windows/midishare/libraries" />
-			<Add directory="../../../../lib/windows/odmxusb_terry" />
+			<Add directory="../../../../whitecatlib/lib/windows/audiere-1.9.4-win32/lib" />
+			<Add directory="../../../../whitecatlib/lib/windows/enttec_pro" />
+			<Add directory="../../../../whitecatlib/lib/windows/midishare/libraries" />
+			<Add directory="../../../../whitecatlib/lib/windows/odmxusb_terry" />
 			<Add directory="C:/MinGW/opencv2.4.8/x86/mingw/lib" />
 			<Add directory="C:/MinGW/opencv2.4.8/x86/mingw/staticlib" />
 		</Linker>

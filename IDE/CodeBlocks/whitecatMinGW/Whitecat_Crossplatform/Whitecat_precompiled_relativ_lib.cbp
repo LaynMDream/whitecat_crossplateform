@@ -9,9 +9,9 @@
 		<Build>
 			<Target title="Debug">
 				<Option platforms="Windows;" />
-				<Option output="../../../../build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../build/mingw_build/white_cat" />
-				<Option object_output="../../../../build/mingw_build/obj" />
+				<Option output="../../../../whitecatbuild/build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../../whitecatbuild/build/mingw_build/white_cat" />
+				<Option object_output="../../../../whitecatbuild/build/mingw_build/obj" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -20,22 +20,22 @@
 			</Target>
 			<Target title="Release">
 				<Option platforms="Windows;" />
-				<Option output="../../../../build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../build/mingw_build/white_cat" />
-				<Option object_output="../../../../build/mingw_build/obj" />
+				<Option output="../../../../whitecatbuild/build/mingw_build/white_cat/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../../whitecatbuild/build/mingw_build/white_cat" />
+				<Option object_output="../../../../whitecatbuild/build/mingw_build/obj" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="../../../../lib/windows/audiere-1.9.4-win32/include" />
-			<Add directory="../../../../lib/windows/Cserial" />
-			<Add directory="../../../../lib/windows/dashard" />
-			<Add directory="../../../../lib/windows/enttec_pro" />
-			<Add directory="../../../../lib/windows/midishare/include" />
-			<Add directory="../../../../lib/windows/odmxusb_terry" />
-			<Add directory="../../../../lib/windows/compiledlibsforGCC4_8_1/include" />
+			<Add directory="../../../../whitecatlib/lib/windows/audiere-1.9.4-win32/include" />
+			<Add directory="../../../../whitecatlib/lib/windows/Cserial" />
+			<Add directory="../../../../whitecatlib/lib/windows/dashard" />
+			<Add directory="../../../../whitecatlib/lib/windows/enttec_pro" />
+			<Add directory="../../../../whitecatlib/lib/windows/midishare/include" />
+			<Add directory="../../../../whitecatlib/lib/windows/odmxusb_terry" />
+			<Add directory="../../../../whitecatlib/lib/windows/compiledlibsforGCC4_8_1/include" />
 			<Add directory="../../../../Src" />
 		</Compiler>
 		<Linker>
@@ -45,36 +45,36 @@
 			<Add library="winmm" />
 			<Add library="ole32" />
 			<Add library="dxguid" />
-			<Add library="..\..\..\..\lib\windows\odmxusb_terry\FTD2XX.lib" />
-			<Add library="..\..\..\..\lib\windows\enttec_pro\ftd2xx.lib" />
-			<Add library="..\..\..\..\lib\windows\midishare\libraries\mshare32.lib" />
-			<Add library="..\..\..\..\lib\windows\audiere-1.9.4-win32\lib\audiere.lib" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_calib3d248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_contrib248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_core248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_features2d248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_flann248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_gpu248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_highgui248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_imgproc248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_legacy248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_ml248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_nonfree248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_objdetect248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_ocl248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_photo248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_stitching248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_superres248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_ts248.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_video248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_videostab248.dll.a" />
-			<Add library="..\..\..\..\lib\windows\compiledlibsforGCC4_8_1\lib\libz.a" />
-			<Add directory="../../../../lib/windows/compiledlibsforGCC4_8_1/lib" />
-			<Add directory="../../../../lib/windows/audiere-1.9.4-win32/lib" />
-			<Add directory="../../../../lib/windows/enttec_pro" />
-			<Add directory="../../../../lib/windows/midishare/libraries" />
-			<Add directory="../../../../lib/windows/odmxusb_terry" />
-			<Add directory="../../../../lib/windows/compiledlibsforGCC4_8_1/x86/mingw/lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\odmxusb_terry\FTD2XX.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\enttec_pro\ftd2xx.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\midishare\libraries\mshare32.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\audiere-1.9.4-win32\lib\audiere.lib" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_calib3d248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_contrib248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_core248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_features2d248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_flann248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_gpu248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_highgui248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_imgproc248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_legacy248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_ml248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_nonfree248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_objdetect248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_ocl248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_photo248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_stitching248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_superres248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_ts248.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_video248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_videostab248.dll.a" />
+			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\lib\libz.a" />
+			<Add directory="../../../../whitecatlib/lib/windows/compiledlibsforGCC4_8_1/lib" />
+			<Add directory="../../../../whitecatlib/lib/windows/audiere-1.9.4-win32/lib" />
+			<Add directory="../../../../whitecatlib/lib/windows/enttec_pro" />
+			<Add directory="../../../../whitecatlib/lib/windows/midishare/libraries" />
+			<Add directory="../../../../whitecatlib/lib/windows/odmxusb_terry" />
+			<Add directory="../../../../whitecatlib/lib/windows/compiledlibsforGCC4_8_1/x86/mingw/lib" />
 		</Linker>
 		<Unit filename="../../../../Src/CFG_config_panel_8.cpp">
 			<Option target="&lt;{~None~}&gt;" />
