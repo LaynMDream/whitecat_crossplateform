@@ -29,7 +29,7 @@ add or modify the PKG_CONFIG_PATH variable with C:\MinGW
 add or modify the OPENCV_DIR variable with C:\MinGW\opencv2.4.8\x86\mingw
 add or modify the PYTHONPATH variable with C:\Python27 or your python path
 
-Follow all the next steps to build the librairies yourself or just lunch whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform\Whitecat_precompiled_relativ_lib.cbp
+Follow all the next steps to build the librairies yourself or just lunch whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform\Whitecat_precompiled_relativ_lib.cbp or install dev-C++ as mentioned in INSTALL_With_DEV_C++.txt and lunch whitecat_crossplateform\IDE\DEV-C++\WhiteCat_crossplateform_with_relativ_lib.dev
 
 
 5-install 7zip
