@@ -2,10 +2,13 @@
 *.layout
 
 # lib folder
+whitecatlib/
 lib/
 
 # build folder
+whitecatbuild/
 build/
+
 
 # Compiled Object files
 *.slo
