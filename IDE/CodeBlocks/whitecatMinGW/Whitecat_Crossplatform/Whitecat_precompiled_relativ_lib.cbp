@@ -39,7 +39,7 @@
 			<Add directory="../../../../Src" />
 		</Compiler>
 		<Linker>
-			<Add option="-lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lpthreadGC2 -lwsock32 -liphlpapi -lpng12.dll -lz -lhpdf" />
+			<Add option="-lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lwsock32  -liphlpapi -lpng12.dll -lz -lhpdf" />
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 			<Add library="winmm" />
@@ -69,6 +69,7 @@
 			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_video248.dll.a" />
 			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\x86\mingw\lib\libopencv_videostab248.dll.a" />
 			<Add library="..\..\..\..\whitecatlib\lib\windows\compiledlibsforGCC4_8_1\lib\libz.a" />
+			<Add library="zlib" />
 			<Add directory="../../../../whitecatlib/lib/windows/compiledlibsforGCC4_8_1/lib" />
 			<Add directory="../../../../whitecatlib/lib/windows/audiere-1.9.4-win32/lib" />
 			<Add directory="../../../../whitecatlib/lib/windows/enttec_pro" />

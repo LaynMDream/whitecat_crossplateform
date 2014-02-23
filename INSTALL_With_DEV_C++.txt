@@ -1,7 +1,9 @@
-follow the INSTALL_INSTRUCTION_for_MINGW.txt
-install Dev-Cpp 5.6.1 No Compiler Setup.exe int the DEVKIT/Windows folder
-open dev c++
-in the Tools/Compiler Options create a compiler ou called MinGW 
+-Install MinGW with GCC4.8.1 in C:/MinGW with all the basic package, with the mingw-get-setup.exe inside the DEVKIT folder
+-install Dev-Cpp 5.6.1 No Compiler Setup.exe int the DEVKIT/Windows folder
+-clone inside the whitecat_crossplateform folder the whitecatbuild and whitecatlib repository at https://github.com/ChristophGuillermet/whitecatbuild and https://github.com/ChristophGuillermet/whitecatlib
+
+-open dev c++
+-in the Tools/Compiler Options create a compiler and name it MinGW: 
 add in MinGW compiler tab Directories
 Binaries to C:\MinGW\bin
 Librairies to C:\MinGW\lib
@@ -20,7 +22,9 @@ gprof = gprof.exe
 
 in the Makefile tab uncheck Use fast but imperfect dependency generation
 
-open WhiteCat_crossplateform.dev in IDE/DEV-C++
+open WhiteCat_crossplateform_with_relativ_lib.dev in IDE/DEV-C++
 and in the Project Options/Compiler select MinGW
 
 Click Compile and run 
+
+the clean and rebuild fonction bug in devc++ because of mingw32-make used as make file. I do not find already why. It is recommended to use codeblocks.
