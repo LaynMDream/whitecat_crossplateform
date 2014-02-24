@@ -1,5 +1,4 @@
-/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
-/* DO NOT EDIT ! */
+
 /*-------------------------------------------------------------------------------------------------------------
                                  |
           CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
