@@ -119,7 +119,8 @@ int Box_IP_routing ( int macx, int macy)
 
     if(mouse_x>macx+100 && mouse_x<macx+110 )
     {
-    if(mouse_button==1 && mouse_released==0 && strcmp(IP_detected_dmxOUT[u],"-")==1)
+	//sab 25/02/2014 - strcmp (s1,s2) - old MingGW return -1 (s1<s2) ; 0 (s1=s2) ; +1 (s1>s2)
+    if(mouse_button==1 && mouse_released==0 && strcmp(IP_detected_dmxOUT[u],"-")>0)
     {
     sprintf(IP_artnet_IN,IP_detected_dmxOUT[u]);
     index_re_init_serveur_artnet=1;
@@ -130,7 +131,8 @@ int Box_IP_routing ( int macx, int macy)
 
     else if(mouse_x>macx+130 && mouse_x<macx+140 )
     {
-    if(mouse_button==1 && mouse_released==0 && strcmp(IP_detected_dmxOUT[u],"-")==1)
+    //sab 25/02/2014 - strcmp (s1,s2) - old MingGW return -1 (s1<s2) ; 0 (s1=s2) ; +1 (s1>s2)
+    if(mouse_button==1 && mouse_released==0 && strcmp(IP_detected_dmxOUT[u],"-")>0)
     {
     sprintf(IP_artnet_OUT,IP_detected_dmxOUT[u]);
     index_re_init_client_artnet=1;
@@ -141,7 +143,8 @@ int Box_IP_routing ( int macx, int macy)
 
     else if(mouse_x>macx+165 && mouse_x<macx+175 )
     {
-    if(mouse_button==1 && mouse_released==0 && strcmp(IP_detected_dmxOUT[u],"-")==1)
+    //sab 25/02/2014 - strcmp (s1,s2) - old MingGW return -1 (s1<s2) ; 0 (s1=s2) ; +1 (s1>s2)
+    if(mouse_button==1 && mouse_released==0 && strcmp(IP_detected_dmxOUT[u],"-")>0)
     {
     sprintf(IP_fantastick,IP_detected_dmxOUT[u]);
     index_ask_reinit_FS_client=1;

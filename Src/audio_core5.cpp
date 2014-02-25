@@ -430,7 +430,8 @@ if(audio_autoload[lect]==1)//chargement auto
 audiofile_selected=player_has_file_coming_from_pos[lect]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(audiofile_name)>0)
 {
 AffectSoundFile(lect);
 if(audio_autopause[lect]==0)//autostop
@@ -1177,7 +1178,8 @@ else
 audiofile_selected=player_has_file_coming_from_pos[numero]-1;
 if(audiofile_selected<1){audiofile_selected=1;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(audiofile_name)>0)
 {
 AffectSoundFile(numero);
 }
@@ -1198,7 +1200,8 @@ else
 audiofile_selected=player_has_file_coming_from_pos[numero]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(audiofile_name)>0)
 {
 AffectSoundFile(numero);
 }
@@ -1227,7 +1230,8 @@ if(numeric_postext==0)
 audiofile_selected=player_has_file_coming_from_pos[numero]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(audiofile_name)>0)
 {
 AffectSoundFile(numero);
 }
@@ -1239,7 +1243,8 @@ if(nu<127  && nu>0)
 {
 audiofile_selected=nu;
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(audiofile_name)>0)
 {
 AffectSoundFile(numero);
 }

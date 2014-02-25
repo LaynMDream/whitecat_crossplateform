@@ -676,7 +676,8 @@ if(window_focus_id==W_SAVE && mouse_x>xrep+40 && mouse_x<xrep+110 && mouse_y>yre
 if(mouse_button==1 && mouse_released==0)
 {
 
-if(strcmp(savefile_name,"")==0){sprintf(savefile_name,"unnamed");}
+//sab 25/02/2014 - default file/directory name
+if(strlen(savefile_name)<1){sprintf(savefile_name,"unnamed");}
 index_do_saveshow=1;
 index_ask_confirm=1;
 mouse_released=1;
@@ -690,12 +691,13 @@ if(window_focus_id==W_SAVE && mouse_x>xrep+140 && mouse_x<xrep+210 && mouse_y>yr
 if(mouse_button==1 && mouse_released==0)
 {
 
-if(strcmp(savefile_name,"")==1)
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(savefile_name)>0)
 {
-index_do_loadshow=1;
-index_ask_confirm=1;
+index_do_loadshow=true;
+index_ask_confirm=true;
 }
-mouse_released=1;
+mouse_released=true;
 }
 }
 

@@ -1580,7 +1580,8 @@ if(fpo=fopen(tmp_audio_f,"w"))
 fprintf(fpo,"#arguments: audiofilename / cuein / cueout\n");
 for(int i=1;i<127;i++)
 {
-if(strcmp(list_audio_files[i],"")==1)//si aps iren en nom de fichier
+//sab 25/02/2014 - names of directories or files must at least be one character long
+if(strlen(list_audio_files[i])>0)// if a name is provide
 {
 fprintf(fpo,"%s / %d / %d\n",list_audio_files[i],audiofile_cue_in_out_pos[i][0],audiofile_cue_in_out_pos[i][1]);
 }
@@ -7666,7 +7667,8 @@ for(int i=0;i<4;i++)
 {
  audiofile_selected=player_has_file_coming_from_pos[i];
  sprintf(audiofile_name,list_audio_files[audiofile_selected]);
- if(strcmp (audiofile_name,"")==1)
+ //sab 25/02/2014 - names of directories or files must at least be one character long
+ if(strlen(audiofile_name)>0)
  {
  AffectSoundFile(i);
  }

@@ -2968,7 +2968,8 @@ if(param1_is>=0 && param1_is<5)
      audiofile_selected=player_has_file_coming_from_pos[param1_is]-1;
      if(audiofile_selected<1){audiofile_selected=1;}
      sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-     if(strcmp (audiofile_name,"")==1)
+     //sab 25/02/2014 - names of directories or files must at least be one character long
+     if(strlen(audiofile_name)>0)
      {
      AffectSoundFile(param1_is);
      }
@@ -2977,7 +2978,8 @@ if(param1_is>=0 && param1_is<5)
      audiofile_selected=player_has_file_coming_from_pos[param1_is]+1;
      if(audiofile_selected>=127){audiofile_selected=126;}
      sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-     if(strcmp (audiofile_name,"")==1)
+     //sab 25/02/2014 - names of directories or files must at least be one character long
+	 if(strlen(audiofile_name)>0)
      {
      AffectSoundFile(param1_is);
      }
