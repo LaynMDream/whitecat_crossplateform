@@ -2,6 +2,7 @@
 
 -clone inside the whitecat_crossplateform folder the whitecatbuild and whitecatlib repository found at https://github.com/ChristophGuillermet/whitecatbuild and https://github.com/ChristophGuillermet/whitecatlib
  (see the wiki http://www.le-chat-noir-numerique.fr/whitecat/dokuwiki/doku.php?id=recettes_pour_git for more instruction about git and whitecat in french)
+or get directly the lighter prebuild "MinGW4.8.1Devit.zip" and copy the content of the zip inside the new whitecat_crossplateform folder.
 
 -open codeblocks
 
@@ -17,8 +18,7 @@ Resource compiler = windres.exe
 Make program = mingw32-make.exe
 
 
--open Whitecat_precompiled_relativ_lib.cbp in whitecat_crossplateform/IDE/CodeBlocks/whitecatMinGW/Whitecat_Crossplateform
-
+-open Whitecat_precompiled_relativ_lib.cbp in whitecat_crossplateform/IDE/CodeBlocks/whitecatMinGW
 
 -Click rebuild and after Compile and run 
 
