@@ -11,7 +11,7 @@ build/
 
 # ignore folders
 DEVKIT/
-doc_ol
+doc_ol/
 
 # Compiled Object files
 *.slo
