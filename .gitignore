@@ -9,6 +9,8 @@ lib/
 whitecatbuild/
 build/
 
+# devkit folder
+DEVKIT/
 
 # Compiled Object files
 *.slo
