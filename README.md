@@ -31,6 +31,7 @@ along with White Cat.  If not, see<http://www.gnu.org/licenses/>.
 To start coding quickly:
 ==============
 In windows :
+
 -Follow the PREBUILD_INSTALL_WITH_CODEBLOCKS_AND_MINGW4.8.1.txt or the PREBUILD_INSTALL_With_DEV_C++_AND_MINGW4.8.1.txt
 
 - if you want build yourself the libraries for an other plateform or compilator than MinGW4.8.1, you can get inspiration from the BUILD_LIBRARIES_INSTRUCTIONS_for_MinGW.txt
