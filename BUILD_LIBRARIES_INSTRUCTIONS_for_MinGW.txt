@@ -1,13 +1,14 @@
 For Windows with MinGW gcc install:
 
-Copy whitecat_crossplateform to c:/ if it is copy somewhere else you must change the path during the compilation of the librarie whith <path of whitecat_crossplateform> insted of C:\whitecat_crossplateform
-clone inside the whitecat_crossplateform the following two repository.
+clone whitecat_crossplateform to c:/ if it is cloned somewhere else you must change the path during the compilation of the librarie whith <path of whitecat_crossplateform> insted of C:\whitecat_crossplateform
+
+clone inside the whitecat_crossplateform the following two repository, whitecatlib and whitecatbuild.
 To do that, open the git shell and tape:
 cd <path of whitecat_crossplateform folder>
 git clone git@github.com:ChristophGuillermet/whitecatlib.git
 git clone git@github.com:ChristophGuillermet/whitecatbuild.git
 
-In the DEVKIT/Windows folder:
+In the DEVKIT/Windows folder (you can know download it from the release 0.5.8.3 of the whitecat_crossplateform repository) :
 
 1- lunch mingw-get-setup.exe install it on C:/MinGW
 In the dialogue box check mark for instatlation all the basic setup package+ all the package listed in the file MinGWpackageinstalled.rtf
@@ -194,6 +195,8 @@ cd <path to lib/libsource/catkin-indigo-devel/build>
 mingw32-make
 mingw32-make install
 
-lunch C:\whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform\Whitecat_Crossplatform.cbp
-l'exe whitecat est dans le dossier build/mingw_build/white_cat
+lunch C:\whitecat_crossplateform\IDE\CodeBlocks\whitecatMinGW\Whitecat_Crossplatform.cbp
+l'exe whitecat est dans le dossier whitecatbuild/build/mingw_build/white_cat
+
+If it's work for you to build on an other plateform, please send a zip with the libs and the build.
 
