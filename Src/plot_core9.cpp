@@ -224,6 +224,10 @@ index_geo++;
 }
 
 
+/**
+Set list and number of symbols to be shown on Light Plot - (Tab :) Legend
+Depends on user's choice of showned "Light Plot layers" (alias "calc" with show status at true :: show_calc_number[l]==1)
+**/
 int plot_generate_appareils_list()
 {
 plot_reset_list_appareils();
@@ -231,7 +235,8 @@ for(int l=0;l<4;l++)
 {
 if(show_calc_number[l]==1)
 {
-for (int i=1;i<nbre_symbols_on_plot[l];i++)
+//sab 23/02/2014 : Correction de "erreur sur le comptage des projos sur light plot" /
+for (int i=0;i<=nbre_symbols_on_plot[l];i++)
 {
 plot_show_typ_appareil[(symbol_type[l][i])]=1;
 plot_list_appareils[(symbol_type[l][i])]++;
