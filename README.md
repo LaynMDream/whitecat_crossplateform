@@ -11,11 +11,7 @@ It can play sound, controle Arduino and Arduino HF prototype for electronique de
 To start using the cat
 ====================
 -At http://www.le-chat-noir-numerique.fr/whitecat/dokuwiki/doku.php you can find in the wiki a very completed doc on the wiki page, a more short doc in english doc is also available on this page
-<<<<<<< HEAD
 -on the wesite of whitecat, http://www.le-chat-noir-numerique.fr, the forum is very useful, and there is some vidÃ©o tutorials
-=======
--on the wesite of whitecat, http://www.le-chat-noir-numerique.fr, the forum is very useful, and there is some vidéo tutorials
->>>>>>> Big change, Change the path of codeblocks projects and dev C++, update of readme files
 -can download the last beta release at http://www.le-chat-noir-numerique.fr/release or from the main page, just uncompress the zip at C:/ and enjoy.
 
 Licence
@@ -35,10 +31,6 @@ along with White Cat.  If not, see<http://www.gnu.org/licenses/>.
 To start coding quickly:
 ==============
 In windows :
-<<<<<<< HEAD
-
-=======
->>>>>>> Big change, Change the path of codeblocks projects and dev C++, update of readme files
 -Follow the PREBUILD_INSTALL_WITH_CODEBLOCKS_AND_MINGW4.8.1.txt or the PREBUILD_INSTALL_With_DEV_C++_AND_MINGW4.8.1.txt
 
 - if you want build yourself the libraries for an other plateform or compilator than MinGW4.8.1, you can get inspiration from the BUILD_LIBRARIES_INSTRUCTIONS_for_MinGW.txt
@@ -70,8 +62,5 @@ The builds of whitecat from the whitecatbuild repository at https://github.com/C
 
 If you are french, for how to use git a tuto is at http://www.le-chat-noir-numerique.fr/whitecat/dokuwiki/doku.php?id=recettes_pour_git
 
-<<<<<<< HEAD
 This two folder must cloned or copy inside the whitecat_crossplateform folder but you may find some lighter Prebuilds for this two repository for your environement at :
-=======
-This two folder must cloned or copy inside the whitecat_crossplateform folder but you may find some lighter Prebuilds for this two repository for your environement at :
->>>>>>> Big change, Change the path of codeblocks projects and dev C++, update of readme files
+
