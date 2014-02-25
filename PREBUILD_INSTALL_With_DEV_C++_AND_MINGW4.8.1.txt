@@ -1,10 +1,13 @@
 -Install MinGW with GCC4.8.1 in C:/MinGW with all the basic package, with the mingw-get-setup.exe
 -install Dev-Cpp 5.6.1 No Compiler Setup.exe
 
--clone inside the whitecat_crossplateform folder the whitecatbuild and whitecatlib repository at https://github.com/ChristophGuillermet/whitecatbuild and https://github.com/ChristophGuillermet/whitecatlib
-or get directly the lighter prebuild "MinGW4.8.1Devit.zip" and copy the content of the zip inside the new whitecat_crossplateform folder.
-
+-get directly the lighter prebuild "MinGW4.8.1libandbuild.zip" and copy the content of the zip inside the new whitecat_crossplateform folder.
+or
+clone inside the whitecat_crossplateform folder the whitecatbuild and whitecatlib repository at https://github.com/ChristophGuillermet/whitecatbuild and https://github.com/ChristophGuillermet/whitecatlib
+to get the updates and eventualy push some
+ 
 -open dev c++
+
 -in the Tools/Compiler Options create a compiler and name it MinGW: 
 add in MinGW compiler tab Directories
 Binaries to C:\MinGW\bin
@@ -24,7 +27,7 @@ gprof = gprof.exe
 
 in the Makefile tab uncheck Use fast but imperfect dependency generation
 
-open WhiteCat_crossplateform_with_relativ_lib.dev in IDE/DEV-C++
+-open WhiteCat_crossplateform_with_relativ_lib.dev in IDE/DEV-C++
 and in the Project Options/Compiler select MinGW
 
 Click Compile and run 
