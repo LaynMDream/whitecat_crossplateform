@@ -690,7 +690,7 @@ if(window_focus_id==W_SAVE && mouse_x>xrep+140 && mouse_x<xrep+210 && mouse_y>yr
 if(mouse_button==1 && mouse_released==0)
 {
 
-if(strcmp(savefile_name,"")==1)
+if(strcmp(savefile_name,"")!=0)
 {
 index_do_loadshow=1;
 index_ask_confirm=1;
