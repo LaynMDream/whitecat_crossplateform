@@ -993,7 +993,7 @@ for(int i=0;i<4;i++)
 {
  audiofile_selected=player_has_file_coming_from_pos[i];
  sprintf(audiofile_name,list_audio_files[audiofile_selected]);
- if(strcmp (audiofile_name,"")==1)
+ if(strcmp (audiofile_name,"")!=0)
  {
  AffectSoundFile(i);
  }
@@ -1001,7 +1001,7 @@ rest(10);
 }
 
 
-if(index_loading_a_sound_file==0)
+if(index_loading_a_sound_file!=0)
 {
 for(int i=0;i<4;i++)
 {

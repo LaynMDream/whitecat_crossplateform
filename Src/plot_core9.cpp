@@ -231,7 +231,7 @@ for(int l=0;l<4;l++)
 {
 if(show_calc_number[l]==1)
 {
-for (int i=1;i<nbre_symbols_on_plot[l];i++)
+for (int i=0;i<=nbre_symbols_on_plot[l];i++)
 {
 plot_show_typ_appareil[(symbol_type[l][i])]=1;
 plot_list_appareils[(symbol_type[l][i])]++;

@@ -3373,7 +3373,7 @@ if( audiofile_selected>0  && audiofile_selected<127 )
 {
 
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(lect);
 }
@@ -3392,7 +3392,7 @@ audiofile_selected=player_has_file_coming_from_pos[lect]-1;
 player_has_file_coming_from_pos[lect]=audiofile_selected;
 if(audiofile_selected<1){audiofile_selected=1;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(lect);
 }
@@ -3412,7 +3412,7 @@ audiofile_selected=player_has_file_coming_from_pos[lect]+1;
 player_has_file_coming_from_pos[lect]=audiofile_selected;
 if(audiofile_selected>=audio_number_total_in_folder){audiofile_selected=audio_number_total_in_folder;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1 )
+if(strcmp (audiofile_name,"")!=0 )
 {
 AffectSoundFile(lect);
 }

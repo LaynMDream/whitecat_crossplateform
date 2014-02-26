@@ -430,7 +430,7 @@ if(audio_autoload[lect]==1)//chargement auto
 audiofile_selected=player_has_file_coming_from_pos[lect]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(lect);
 if(audio_autopause[lect]==0)//autostop
@@ -530,7 +530,7 @@ if(audio_autoload[0]==1)//chargement auto
 player1->stop();
 audiofile_selected=player_has_file_coming_from_pos[0]+1;
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(0);
 if(audio_autopause[0]==1)//autostop
@@ -1177,7 +1177,7 @@ else
 audiofile_selected=player_has_file_coming_from_pos[numero]-1;
 if(audiofile_selected<1){audiofile_selected=1;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(numero);
 }
@@ -1198,7 +1198,7 @@ else
 audiofile_selected=player_has_file_coming_from_pos[numero]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(numero);
 }
@@ -1227,7 +1227,7 @@ if(numeric_postext==0)
 audiofile_selected=player_has_file_coming_from_pos[numero]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(numero);
 }
@@ -1239,7 +1239,7 @@ if(nu<127  && nu>0)
 {
 audiofile_selected=nu;
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-if(strcmp (audiofile_name,"")==1)
+if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(numero);
 }

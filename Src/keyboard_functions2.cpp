@@ -1075,7 +1075,7 @@ int key_thruth()
              }
             }
 
-            if(strcmp(string_monitor_patch,"")==1)
+            if(strcmp(string_monitor_patch,"")!=0)
             {
             char * pch;
             pch = strstr(string_monitor_patch, " TO ");

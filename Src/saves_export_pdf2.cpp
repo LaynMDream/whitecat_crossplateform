@@ -1638,7 +1638,7 @@ sprintf(gellist,"");
 sprintf(header_export,"");
 for(int no=0;no<4;no++)
 {
-if(strcmp(symbol_note[c][s][no],"")==1)
+if(strcmp(symbol_note[c][s][no],"")!=0)
 {
 sprintf(header_export,"Note %d:  %s",no+1,symbol_note[c][s][no]);
 draw_info(page, 130, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
