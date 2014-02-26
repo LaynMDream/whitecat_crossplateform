@@ -11,7 +11,7 @@ It can play sound, controle Arduino and Arduino HF prototype for electronique de
 To start using the cat
 ====================
 -At http://www.le-chat-noir-numerique.fr/whitecat/dokuwiki/doku.php you can find in the wiki a very completed doc on the wiki page, a more short doc in english doc is also available on this page
--on the wesite of whitecat, http://www.le-chat-noir-numerique.fr, the forum is very useful, and there is some vidéo tutorials
+-on the wesite of whitecat, http://www.le-chat-noir-numerique.fr, the forum is very useful, and there is some vidï¿½o tutorials
 -can download the last beta release at http://www.le-chat-noir-numerique.fr/release or from the main page, just uncompress the zip at C:/ and enjoy.
 
 Licence
@@ -62,4 +62,4 @@ The builds of whitecat from the whitecatbuild repository at https://github.com/C
 
 If you are french, for how to use git a tuto is at http://www.le-chat-noir-numerique.fr/whitecat/dokuwiki/doku.php?id=recettes_pour_git
 
-This two folder must cloned or copy inside the whitecat_crossplateform folder but you may find some lighter Prebuilds for this two repository for your environement at :
+This two folder must cloned or copy inside the whitecat_crossplateform folder but you may find some lighter Prebuilds for this two repository for your environement at : http://www.le-chat-noir-numerique.fr/coding/
