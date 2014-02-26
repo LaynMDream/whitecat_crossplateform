@@ -1075,12 +1075,11 @@ int key_thruth()
              }
             }
 
-            //sab 25/02/2014 - reset if not null
-            if(strlen(string_monitor_patch)>0)
+            if(strcmp(string_monitor_patch,"")==1)
             {
             char * pch;
             pch = strstr(string_monitor_patch, " TO ");
-            if(pch!=NULL){sprintf(string_monitor_patch,"");}
+            if(pch!=0){sprintf(string_monitor_patch,"");}
             else
             {
             strcat(string_monitor_patch," TO ");

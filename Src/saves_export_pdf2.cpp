@@ -1638,8 +1638,7 @@ sprintf(gellist,"");
 sprintf(header_export,"");
 for(int no=0;no<4;no++)
 {
-//sab 25/02/2014 - string not empty - export it
-if(strlen(symbol_note[c][s][no])>0)
+if(strcmp(symbol_note[c][s][no],"")==1)
 {
 sprintf(header_export,"Note %d:  %s",no+1,symbol_note[c][s][no]);
 draw_info(page, 130, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
@@ -3734,8 +3733,7 @@ draw_title(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 
 for(int u=1;u<127;u++)
 {
-//sab 25/02/2014 - string not empty - export it
-if(strlen(list_audio_files[u])>0)
+if(strcmp(list_audio_files[u],"")!=0)
 {
  sprintf(header_export,"-%d : %s",u,list_audio_files[u]);
 

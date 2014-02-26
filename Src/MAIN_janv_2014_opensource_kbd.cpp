@@ -993,8 +993,7 @@ for(int i=0;i<4;i++)
 {
  audiofile_selected=player_has_file_coming_from_pos[i];
  sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-//sab 25/02/2014 - names of directories or files must at least be one character long
- if(strlen(audiofile_name)>0)
+ if(strcmp (audiofile_name,"")==1)
  {
  AffectSoundFile(i);
  }
