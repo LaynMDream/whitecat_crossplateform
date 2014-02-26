@@ -5,13 +5,13 @@
 #define WHITECAT_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"0.8.5.3"
+#define VER_STRING	"0.8.5.4"
 #define VER_MAJOR	0
 #define VER_MINOR	8
 #define VER_RELEASE	5
-#define VER_BUILD	3
+#define VER_BUILD	4
 #define COMPANY_NAME	"www.le-chat-noir-numerique.fr"
-#define FILE_VERSION	"0.8.5.3"
+#define FILE_VERSION	"0.8.5.4"
 #define FILE_DESCRIPTION	"White Cat: a dmx lighting board for theatre dance and music"
 #define INTERNAL_NAME	""
 #define LEGAL_COPYRIGHT	"(c)Christoph Guillermet"
