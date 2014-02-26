@@ -1,5 +1,6 @@
-#ignore codeblocks layout
+#ignore IDE layouts and depend
 *.layout
+*.depend
 
 # lib folder
 whitecatlib/
