@@ -3,13 +3,13 @@ WhiteCat Lighting Board isa free lighting desk for windows, based on GPL v2 or a
 First release open source ! version 0.8.4.
 
 To install and compile:
-Download (https://github.com/AntonLanghoff/whitecat_crossplateform) and clone it somewhere
-download at https://github.com/AntonLanghoff/whitecatlib and copy it in whitecat_crossplateform folder
-download at https://github.com/AntonLanghoff/whitecatbuild and copy it in whitecat_crossplateform folder
+Download (https://github.com/ChristophGuillermet/whitecat_crossplateform) and clone it somewhere
 
-Follow the INSTALL_INSTRUCTION_for_MinGW.txt
+inspire from BUILD_LIBRARIES_INSTRUCTIONS_for_MinGW.txt if you want build yourself the librarie
 
-You can now open the Whitecat_Crossplatform.cbp project whitecat_crossplateform/IDE/CodeBlocks/whitecatMinGW, and compile a new exe ( rebuild).
-your exe will be in whitecat_crossplateform/build/mingw_build/white_cat/Whitecat_Crossplatform.exe
+or follow the PREBUILD_INSTALL_WITH_CODEBLOCKS_AND_MINGW4.8.1.txt
+
+
+your exe will be in whitecat_crossplateform/whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform.exe
 =======
 
