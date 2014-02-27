@@ -676,7 +676,7 @@ if(window_focus_id==W_SAVE && mouse_x>xrep+40 && mouse_x<xrep+110 && mouse_y>yre
 if(mouse_button==1 && mouse_released==0)
 {
 
-if(strcmp(savefile_name,"")==0){sprintf(savefile_name,"unnamed");}
+if(strlen(savefile_name)==0){sprintf(savefile_name,"unnamed");}
 index_do_saveshow=1;
 index_ask_confirm=1;
 mouse_released=1;
