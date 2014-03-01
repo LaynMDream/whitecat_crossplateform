@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="../../Src" name="0">
+      <in>CFG_config_panel_8.cpp</in>
+      <in>CFG_screen.cpp</in>
+      <in>CORE_6.cpp</in>
+      <in>Call_everybody_5.cpp</in>
+      <in>Crossplateform.h</in>
+      <in>Draw3.cpp</in>
+      <in>MAIN_janv_2014_opensource_kbd.cpp</in>
+      <in>WhiteCat_private.h</in>
+      <in>arduino_6_UNO.cpp</in>
+      <in>arduino_core_6_UNO.cpp</in>
+      <in>arduino_device_core.cpp</in>
+      <in>audio_core5.cpp</in>
+      <in>audio_visu4.cpp</in>
+      <in>banger_core_8.cpp</in>
+      <in>banger_visu_8.cpp</in>
+      <in>channels_10_visu.cpp</in>
+      <in>channels_9_core.cpp</in>
+      <in>chasers_core_5.cpp</in>
+      <in>chasers_visu.cpp</in>
+      <in>dmx_enttec_pro.cpp</in>
+      <in>dmx_enttec_pro_FTDI.cpp</in>
+      <in>dmx_ftdi_IN_test_enttec_pro.cpp</in>
+      <in>dmx_functions_13.cpp</in>
+      <in>dmx_sunlite.cpp</in>
+      <in>echo3.cpp</in>
+      <in>faders_core_24.cpp</in>
+      <in>faders_operations.cpp</in>
+      <in>faders_visuels_26.cpp</in>
+      <in>generate_strings_arrays.cpp</in>
+      <in>gestionaire_fenetres2.cpp</in>
+      <in>grand_master.cpp</in>
+      <in>graphics_rebuild1.cpp</in>
+      <in>grider8.cpp</in>
+      <in>grider_calculs8.cpp</in>
+      <in>grider_core8.cpp</in>
+      <in>gui_boutons_rebuild1.cpp</in>
+      <in>help_2.cpp</in>
+      <in>iCat14.cpp</in>
+      <in>icat_core14.cpp</in>
+      <in>keyboard_functions2.cpp</in>
+      <in>keyboard_routines2.cpp</in>
+      <in>list_proj_core.cpp</in>
+      <in>list_proj_visu.cpp</in>
+      <in>logicals_intres.cpp</in>
+      <in>midi_13.cpp</in>
+      <in>midi_CORE.cpp</in>
+      <in>midi_launchpad.cpp</in>
+      <in>minifaders_core.cpp</in>
+      <in>minifaders_visu.cpp</in>
+      <in>mover_2013.cpp</in>
+      <in>mover_spline6.cpp</in>
+      <in>my_window_file_sample.cpp</in>
+      <in>my_window_file_sample.h</in>
+      <in>network_MAC_adress_3.cpp</in>
+      <in>network_artnet_3.cpp</in>
+      <in>numpad_core.cpp</in>
+      <in>numpad_visuel.cpp</in>
+      <in>patch_core.cpp</in>
+      <in>patch_splines_2.cpp</in>
+      <in>patch_visu.cpp</in>
+      <in>plot.cpp</in>
+      <in>plot9.cpp</in>
+      <in>plot_core9.cpp</in>
+      <in>procs_visuels_rebuild1.cpp</in>
+      <in>save_show_13.cpp</in>
+      <in>saves_export_import.cpp</in>
+      <in>saves_export_pdf2.cpp</in>
+      <in>saves_menu_8.cpp</in>
+      <in>sequentiel_6_core.cpp</in>
+      <in>sequentiel_7_visu.cpp</in>
+      <in>time_core_3.cpp</in>
+      <in>time_visu_3.cpp</in>
+      <in>tracker_main14nov.cpp</in>
+      <in>trichro_core2.cpp</in>
+      <in>trichro_visu2.cpp</in>
+      <in>video_tracking_core.cpp</in>
+      <in>video_tracking_visu.cpp</in>
+      <in>whitecat.h</in>
+      <in>wizard.cpp</in>
+      <in>wizard_operations.cpp</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>../../Src/whitecat.make</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>../../Src</Elem>
+  </sourceRootList>
+  <projectmakefile>../../Src/whitecat.make</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../../Src</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f whitecat.make</buildCommand>
+          <cleanCommand>${MAKE} -f whitecat.make clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="../../Src/CFG_config_panel_8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/CFG_screen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/CORE_6.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/Call_everybody_5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/Crossplateform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../../Src/Draw3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/MAIN_janv_2014_opensource_kbd.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../Src/WhiteCat_private.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../../Src/arduino_6_UNO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/arduino_core_6_UNO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/arduino_device_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/audio_core5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/audio_visu4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/banger_core_8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/banger_visu_8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/channels_10_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/channels_9_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/chasers_core_5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/chasers_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/dmx_enttec_pro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/dmx_enttec_pro_FTDI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/dmx_ftdi_IN_test_enttec_pro.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../Src/dmx_functions_13.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/dmx_sunlite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/echo3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/faders_core_24.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/faders_operations.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/faders_visuels_26.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/generate_strings_arrays.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../Src/gestionaire_fenetres2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../Src/grand_master.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/graphics_rebuild1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/grider8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/grider_calculs8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/grider_core8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/gui_boutons_rebuild1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/help_2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/iCat14.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/icat_core14.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/keyboard_functions2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/keyboard_routines2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/list_proj_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/list_proj_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/logicals_intres.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/midi_13.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/midi_CORE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/midi_launchpad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/minifaders_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/minifaders_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/mover_2013.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/mover_spline6.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/my_window_file_sample.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../Src/my_window_file_sample.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../../Src/network_MAC_adress_3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/network_artnet_3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/numpad_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/numpad_visuel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/patch_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/patch_splines_2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/patch_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/plot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/plot9.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/plot_core9.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/procs_visuels_rebuild1.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../Src/save_show_13.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/saves_export_import.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/saves_export_pdf2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/saves_menu_8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/sequentiel_6_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/sequentiel_7_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/time_core_3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/time_visu_3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/tracker_main14nov.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/trichro_core2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/trichro_visu2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/video_tracking_core.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/video_tracking_visu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/whitecat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../../Src/wizard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../../Src/wizard_operations.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
