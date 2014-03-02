@@ -628,7 +628,8 @@ show_type_midi(1593, "MidiOUT Faders");
  return(0);
 }
 
-int command_button_view( int xcom, int ycom, int isstate, char *desc, char *shortcut, int IDmidi)
+//sab 02/03/2014 int command_button_view( int xcom, int ycom, int isstate, char *desc, char *shortcut, int IDmidi)
+void command_button_view( int xcom, int ycom, int isstate, const std::string desc, const std::string shortcut, int IDmidi)
 {
 Rect Command(Vec2D(xcom,ycom),Vec2D(65,20));
 Command.SetRoundness(5);
@@ -723,10 +724,11 @@ Command.DrawOutline(CouleurBlind);}
 }
 
 petitpetitchiffre.Print(desc,xcom+5,ycom+12);
-return(0);
+//sab 02/03/2014 return(0);
 }
 
-int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
+//sab 02/03/2014 int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
+void command_button_logical( int xcom, int ycom, int isstate, const std::string desc, const std::string raccourci, int IDmidi, int thecommand)
 {
 if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT) && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && mouse_released==0)
 {
@@ -1052,5 +1054,6 @@ mouse_released=1;
 
 
 
- return(0);
+//sab 02/03/2014  return(0);
 }
+
