@@ -568,7 +568,7 @@ chdir(rep);
 	int flagcue= -1;
 	int flagpatch= -1;
 	int flagsub=-1;
-	int flaggroup=-1;
+//sab 02/03/2014 unused	int flaggroup=-1;
 	int first_cue_from_import=0;//detect sequenciel
 
 
@@ -596,7 +596,7 @@ chdir(rep);
 						cue = (int)(tmpcueval*10);
 						MemoiresExistantes[cue]=1;
 	                    if(first_cue_from_import==0){first_cue_from_import=cue;}
-						flagcue=1;flagsub=-1;flagpatch=-1;	flaggroup=-1;
+						flagcue=1;flagsub=-1;flagpatch=-1;	//sab 02/03/2014 unused	flaggroup=-1;
 
 
                     }
@@ -604,7 +604,7 @@ chdir(rep);
  			    if(strncmp(line,"Patch 1",7)==0)
 					{
                     sprintf(string_save_load_report[2],"Importing Patch");
-    	            flagcue=-1;flagsub=-1;flagpatch=1;	flaggroup=-1;
+    	            flagcue=-1;flagsub=-1;flagpatch=1;	//sab 02/03/2014 unused	flaggroup=-1;
 
                 }//fin patch
 
@@ -613,14 +613,15 @@ chdir(rep);
 				if (strncmp(line, "Sub",3)==0)
 					{	sprintf(string_save_load_report[3],"Importing Subs");
 						sub= (int)strtof(line+4,NULL);
-						flagsub=1;flagcue=-1;flagpatch=-1;	flaggroup=-1;
+						flagsub=1;flagcue=-1;flagpatch=-1;	//sab 02/03/2014 unused	flaggroup=-1;
                     }
 
                  //group
 				if (strncmp(line, "Group",4)==0)
 				{
                   sprintf(string_save_load_report[4],"Importing Groups");
-                  flaggroup=1;flagcue=1;flagsub=-1;flagpatch=-1;	}
+                  //sab 02/03/2014 unused	flaggroup=1;
+                  flagcue=1;flagsub=-1;flagpatch=-1;	}
 
 
 

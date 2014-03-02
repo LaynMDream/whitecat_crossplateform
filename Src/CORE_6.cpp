@@ -1899,8 +1899,9 @@ int reset_index_affect_midi()
 }
 
 //sab 02/03/2014 int show_type_midi(int control, char *command)
-void show_type_midi(int control, char *command)
+void show_type_midi(int control, const std::string command)
 {
+
     switch(miditable[0][control])
     {
 //midi report
@@ -1921,7 +1922,7 @@ void show_type_midi(int control, char *command)
         strcpy(thetypinfo,"");
         break;
     }
-    sprintf(string_last_midi_id,"%s selected is Ch: %d Pitch: %d Typ: %s" ,command, miditable[1][control],miditable[2][control],thetypinfo);
+    sprintf(string_last_midi_id,"%s selected is Ch: %d Pitch: %d Typ: %s" ,command.c_str(), miditable[1][control],miditable[2][control],thetypinfo);
     sprintf(string_shortview_midi,"%s %d/%d",thetypinfo ,miditable[1][control],miditable[2][control]);
 //sab 02/03/2014     return(0);
 }
