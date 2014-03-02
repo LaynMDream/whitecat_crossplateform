@@ -763,7 +763,7 @@ return(0);
 int do_scroll_fader_space()
 {
 scroll_target_val=goto_scroll_faderspace;
-float old_position_faderspace=scroll_faderspace;
+//sab 02/03/2014 unused var float old_position_faderspace=scroll_faderspace;
 if(index_stop_move!=1)
 {
   float scroll_decay_constant = 0.8;

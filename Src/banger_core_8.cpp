@@ -1495,8 +1495,8 @@ int param2_is=0;
 int the_fader_is=0;
 int the_icatpage_is=0;
 int numgridpl=0;
-int numgrid=0;
-int numstep=0;
+//sab 02/03/2014 unused var int numgrid=0;
+//sab 02/03/2014 unused var int numstep=0;
 switch (bangers_type[banger_num][event_num])
 {
 case 0:
@@ -2532,7 +2532,7 @@ if(param1_is>=0 && param1_is<5)
       break;
       }
 
-     sprintf(audiofile_name,"");
+     strcpy(audiofile_name,"");
      AffectSoundFile(param1_is);
      player_ignited[param1_is]=0;
      player_is_onloop[param1_is]=0;
@@ -4020,7 +4020,7 @@ switch(bangers_action[banger_num][event_num])
      {
      grider_goto_mode[numgridpl]=param2_is;
       if(param2_is==1){sprintf(string_event,"GridPl %d MacroGoto /On",numgridpl+1);}
-     else{sprintf(string_event,"GridPl %d MacroGoto %d /Off",numgridpl+1);}
+     else{sprintf(string_event,"GridPl %d MacroGoto /Off",numgridpl+1);}
      }
      }
      break;
@@ -4032,7 +4032,7 @@ switch(bangers_action[banger_num][event_num])
      {
      grider_seekto_mode[numgridpl]=param2_is;
      if(param2_is==1){sprintf(string_event,"GridPl %d MacroSeek /On",numgridpl+1);}
-     else{sprintf(string_event,"GridPl %d MacroSeek %d /Off",numgridpl+1);}
+     else{sprintf(string_event,"GridPl %d MacroSeek /Off",numgridpl+1);}
      }
      }
      break;
@@ -4044,7 +4044,7 @@ switch(bangers_action[banger_num][event_num])
      {
      grider_stoplay_mode[numgridpl]=param2_is;
      if(param2_is==1){sprintf(string_event,"GridPl %d MacroStopPlay /On",numgridpl+1);}
-     else{sprintf(string_event,"GridPl %d MacroStopPlay %d /Off",numgridpl+1);}
+     else{sprintf(string_event,"GridPl %d MacroStopPlay /Off",numgridpl+1);}
      }
      }
      break;
