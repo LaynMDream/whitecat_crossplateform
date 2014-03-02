@@ -45,7 +45,7 @@ int do_reset_all_listproj()
 {
 for (int r=0;r<514;r++)
 {
- sprintf(descriptif_projecteurs[r],"");
+ strcpy(descriptif_projecteurs[r],"");
  descriptif_projecteurs[r][0]='\0';
 }
  return(0);
@@ -66,7 +66,7 @@ chdir(rep);
 ////////////////////////////////////////////////////////////////////////////////
 
 	char line [512];
-	int n=0;
+//sab 02/03/2014 unused var	int n=0;
 	int cue=0;
 	float down=0.0;
 	float up=0.0;
@@ -74,9 +74,9 @@ chdir(rep);
 	int level=0;//garder en int sinon la lecture ne se fait pas !
 	float autogotime=0.0;
     int dimmer=0;
-	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
+//sab 02/03/2014 unused var	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
 	char *temp;
-	char *string_text;
+//sab 02/03/2014 unused var	char *string_text;
 	int sub=0;
 	int ok= -1;
 	int flagcue= -1;
@@ -226,7 +226,8 @@ chdir(rep);
 				if(strncmp(line,"DOWN",4)==0)
 					{
 					down=(float)strtof(line+5,NULL);
-					time_per_dock[sub_f][sub_d][3]==down;
+					//sab 02/03/2014 IMPACT time_per_dock[sub_f][sub_d][3]==down;
+					time_per_dock[sub_f][sub_d][3]=down;
 
 					}
 				if(strncmp(line,"UP",2)==0)
@@ -551,7 +552,7 @@ chdir(rep);
 ////////////////////////////////////////////////////////////////////////////////
 
 	char line [256];
-	int n=0;
+//sab 02/03/2014 unused var	int n=0;
 	int cue=0;
 	float down=0.0;
 	float up=0.0;
@@ -559,9 +560,9 @@ chdir(rep);
 	int level=0;//garder en int sinon la lecture ne se fait pas !
 	float autogotime=0.0;
     int dimmer=0;
-	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
+//sab 02/03/2014 unused var	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
 	char *temp;
-	char *string_text;
+//sab 02/03/2014 unused var	char *string_text;
 	int sub=0;
 	int ok= -1;
 	int flagcue= -1;
@@ -689,7 +690,7 @@ chdir(rep);
 
     	        if(strncmp(line,"Patch 1",7)==0)
 				{
-               char temp_ch[24],temp_dim[24];
+               //sab 02/03/2014 unused var char temp_ch[24],temp_dim[24];
 					temp= strtok(line+7," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
@@ -739,7 +740,8 @@ chdir(rep);
                 if(strncmp(line,"Down",4)==0)
 					{
 					down=(float)strtof(line+5,NULL);
-					time_per_dock[sub_f][sub_d][3]==down;
+					//sab 02/03/2014 IMPACT time_per_dock[sub_f][sub_d][3]==down;
+					time_per_dock[sub_f][sub_d][3]=down;
 
 					}
 				if(strncmp(line,"$$WAIT",6)==0)
