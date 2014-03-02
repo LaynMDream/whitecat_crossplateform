@@ -694,11 +694,7 @@ bool index_auto_mute_cuelist_speed=0;
 bool index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
-//sab 02/03/2014 MidiName	AppliName = "white cat";
-// code half reported into midi_core.cpp
-MidiName	AppliName ;
-char* AppliMidiName;
-
+MidiName	AppliName = "white cat";
 char	  	TblLibEv[256][20];
 char my_midi_string[64];
 char my_midi_original_string[64];
