@@ -102,7 +102,7 @@ Canvas::DisableClipping();
 
 else
 {
-int index_posView=0;
+//sab 02/03/2014 unused var int index_posView=0;
 int pos_y_vision=0;
 Canvas::SetClipping(XChannels,ChannelYMenu+hauteur_ChannelMenu ,XChannels+600 , hauteur_ecran);
 for(int i=0;i<nbre_de_vues_circuits;i++)
@@ -289,8 +289,11 @@ return(0);
 
 }
 
-int  Procedure(char procedure_title[64],char procedure_subtitle[120])
+//sab 02/03/2014 int  Procedure(char procedure_title[64],char procedure_subtitle[120])
+void  Procedure(const std::string title,const std::string subtitle)
 {
+const std::string procedure_title 		= title.substr (0,64);
+const std::string procedure_subtitle 	= subtitle.substr (0,120);
 
 Rect ProcedureAera( Vec2D( window_proc_x, window_proc_y), Vec2D ( 400,70));
 ProcedureAera.SetRoundness(15);
@@ -298,27 +301,36 @@ ProcedureAera.Draw(CouleurBleuProcedure);
 ProcedureAera.DrawOutline(CouleurLigne);
 neuro.Print(procedure_title, window_proc_x+120,window_proc_y+20);
 petitchiffre.Print( procedure_subtitle,window_proc_x+20, window_proc_y+45);
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 int DoMouse()
 {
+	float fx, fy;
 
+	fx = (mouse_x-1);
+	fy = (mouse_y-1);
 	V3D_f mousev1 =
 	{
-		 mouse_x-1,mouse_y-1, 0,
+		 fx,fy, 0.,
 		0., 0.,
 		makecol(255, 127, 0) // black vertex
 	};
+
+	fx = (mouse_x+20);
+	fy = (mouse_y+30);
 	V3D_f mousev2 =
 	{
-		mouse_x+20,mouse_y+30, 0,
+		fx,fy, 0.,
 		0., 0.,
 		makecol(125, 0, 0) // white vertex
 	};
+
+	fx = (mouse_x+30);
+	fy = (mouse_y+10);
 	V3D_f mousev3 =
 	{
-		mouse_x+30,mouse_y+10, 0,
+		fx,fy, 0.,
 		0., 0.,
 		makecol(125, 0,0) // color vertex
 	};
