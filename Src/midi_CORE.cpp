@@ -145,6 +145,10 @@ if ( !MidiShare())
 sprintf (string_Last_Order,"MidiShare not available\n");
 }
 InitTblLibEv();
+//sab 02/03/2014
+strcpy(AppliMidiName,"white cat");
+MidiName	AppliName = AppliMidiName;
+
 myRefNum = MidiOpen(AppliName);
 if (myRefNum < 0) {sprintf(string_Last_Order,"MidiOpen failed!");}
 

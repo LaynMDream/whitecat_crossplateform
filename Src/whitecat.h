@@ -51,7 +51,8 @@ char nickname_version[48]={"OPEN VERSION"};
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
 char rep[255];//repertoire avec arborescence complete du fichier
-char mondirectory[200];//endroit de l exe
+//sab 02/03/2014 char mondirectory[200];//endroit de l exe
+char mondirectory[512];/** Directory where is the executable file - Répertoire où se trouve l'exécutable **/
 char working_nameis[120];
 char rep_saves[10]={"saves\\"};
 char nomduspectacle[48]={"last_save\\"};
@@ -242,14 +243,19 @@ bool index_moving_y_slide=0;
 
 int dock_used_by_fader_is[48];
 int previous_dock_used[48];//pour autolaunch sur banger, dock + - et animations
-unsigned char Fader[48];
-unsigned char Fader_before[48];//pour icat
-unsigned char Fader_previous[48];//pour chasers autolaunch. très certainement à re organiser les backups d 'états de manière plus générale
+//sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
+unsigned int Fader[48];
+unsigned int Fader_before[48];//pour icat
+unsigned int Fader_previous[48];//pour chasers autolaunch. très certainement à re organiser les backups d 'états de manière plus générale
+
 bool DockIsSelected[48][6];
-unsigned char DockTypeIs[48][6];//0: dock de niveau normal // 1: linké au couleurs de la trichro
+
+//sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
+unsigned int DockTypeIs[48][6];//0: dock de niveau normal // 1: linké au couleurs de la trichro
 // 2:artnet IN // 3: DMX IN //4 video // 5 memoire // 6 lecteur audio volume 7 pan 8 picth / 9 :vide et clearé / 10: direct chan mode
 // 11:FX // 12: Grid // 13: groupe de faders // 14:Mover // 15: Draw // 16: echo
-unsigned char DockNetIs[48][6]; // numero Universe artnet(0 à 15) ou Config Port UDP(0 à 5) to listen
+unsigned int DockNetIs[48][6]; // numero Universe artnet(0 à 15) ou Config Port UDP(0 à 5) to listen
+
 char string_docktypnet[8];//affiche du numero artnet ou udp, variable string
 char string_docktypmem[8];
 char string_docktypaudiovol[8];
@@ -300,8 +306,10 @@ int start_time_for_delays[49];
 int actual_time;
 //StopPOs
 bool StopPosOn[48];
-unsigned char LevelStopPos[48];
-unsigned char PreviousLevelStopPos[48];//pour banger back
+//sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
+unsigned int LevelStopPos[48];
+unsigned int PreviousLevelStopPos[48];//pour banger back
+
 bool ActionnateStopOn[48];//activation du mode stop on
 bool do_light_setpos[48];
 
@@ -686,7 +694,11 @@ bool index_auto_mute_cuelist_speed=0;
 bool index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
-MidiName	AppliName = "white cat";
+//sab 02/03/2014 MidiName	AppliName = "white cat";
+// code half reported into midi_core.cpp
+MidiName	AppliName ;
+char* AppliMidiName;
+
 char	  	TblLibEv[256][20];
 char my_midi_string[64];
 char my_midi_original_string[64];
