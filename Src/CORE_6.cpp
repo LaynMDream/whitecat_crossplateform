@@ -1898,7 +1898,8 @@ int reset_index_affect_midi()
     return(0);
 }
 
-int show_type_midi(int control, char *command)
+//sab 02/03/2014 int show_type_midi(int control, char *command)
+void show_type_midi(int control, char *command)
 {
     switch(miditable[0][control])
     {
@@ -1922,7 +1923,7 @@ int show_type_midi(int control, char *command)
     }
     sprintf(string_last_midi_id,"%s selected is Ch: %d Pitch: %d Typ: %s" ,command, miditable[1][control],miditable[2][control],thetypinfo);
     sprintf(string_shortview_midi,"%s %d/%d",thetypinfo ,miditable[1][control],miditable[2][control]);
-    return(0);
+//sab 02/03/2014     return(0);
 }
 
 
