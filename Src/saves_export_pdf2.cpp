@@ -276,7 +276,7 @@ HPDF_Page_SetFontAndSize (page, def_font, 4);
 
 float colRr, colGg, colBb;
 int the_ch=0;
-bool print_level=false;
+//sab 02/03/2014 unused var bool print_level=false;
 HPDF_REAL xp=0;
 HPDF_REAL yp=0;
 
@@ -290,16 +290,16 @@ if(grid_levels[gr][ste][the_ch]!=0)
 {
 
 
-print_level=false;
+//sab 02/03/2014 unused var print_level=false;
 
 //couleurs
 if(grid_levels[gr][ste][the_ch]==255)
 {
-colRr=1.0; colGg=0.5; colBb=0.0;  print_level=false;
+colRr=1.0; colGg=0.5; colBb=0.0;  //sab 02/03/2014 unused var print_level=false;
 }
 else
 {
-colRr=0.0; colGg=1.0; colBb=0.0;    print_level=true;
+colRr=0.0; colGg=1.0; colBb=0.0;   //sab 02/03/2014 unused var  print_level=true;
 }
 xp=xx+(col*6);
 yp=yy- (ligne*6);
