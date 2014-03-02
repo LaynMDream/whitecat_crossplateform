@@ -243,10 +243,10 @@ bool index_moving_y_slide=0;
 
 int dock_used_by_fader_is[48];
 int previous_dock_used[48];//pour autolaunch sur banger, dock + - et animations
-//sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
-unsigned int Fader[48];
-unsigned int Fader_before[48];//pour icat
-unsigned int Fader_previous[48];//pour chasers autolaunch. très certainement à re organiser les backups d 'états de manière plus générale
+//RETOUR ARRIERE : plante chargement contenu dépasse max attendu  :-( - fichier icat  à creuser  surement dans la lecture //sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
+unsigned char Fader[48];
+unsigned char Fader_before[48];//pour icat
+unsigned char Fader_previous[48];//pour chasers autolaunch. très certainement à re organiser les backups d 'états de manière plus générale
 
 bool DockIsSelected[48][6];
 
@@ -1141,13 +1141,16 @@ bool SchwzMemoiresExistantes[5011];
 char Schwzdescriptif_mem[5011][13];
 int SchwzPatch[513];
 int Schwzshadow_sub[8][5][121];
-int SchwzMemoires_size= 121*5011;
-int SchwzMemTime_size= 5011*4;
-int SchwzPatch_size=513*1;
-int SchwzMemoiresExistantes_size=5011*1;
-int Schwzautogo_size=5011*1;
-int Schwzdescriptif_size=5011*13;
-int Schwzsize_of_shadow_sub=40*121;
+
+//sab 02/03/2014 unsigned
+unsigned int SchwzMemoires_size= 121*5011;
+unsigned int SchwzMemTime_size= 5011*4;
+unsigned int SchwzPatch_size=513*1;
+unsigned int SchwzMemoiresExistantes_size=5011*1;
+unsigned int Schwzautogo_size=5011*1;
+unsigned int Schwzdescriptif_size=5011*13;
+unsigned int Schwzsize_of_shadow_sub=40*121;
+
 bool isSchwz=0, isASCII=0, isPdf=0, isAlq=0;
 
 
