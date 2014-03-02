@@ -127,7 +127,7 @@ HPDF_Page_SetRGBStroke (page, 0.0, 0.5, 0.5);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 
  return(0);
@@ -225,7 +225,7 @@ HPDF_Page_SetRGBStroke (page, 0.5, 0.5, 0.5);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 
 bool check_there_is_someone_in_grid(int grd)
@@ -276,7 +276,7 @@ HPDF_Page_SetFontAndSize (page, def_font, 4);
 
 float colRr, colGg, colBb;
 int the_ch=0;
-bool print_level=0;
+bool print_level=false;
 HPDF_REAL xp=0;
 HPDF_REAL yp=0;
 
@@ -290,16 +290,16 @@ if(grid_levels[gr][ste][the_ch]!=0)
 {
 
 
-print_level=0;
+print_level=false;
 
 //couleurs
 if(grid_levels[gr][ste][the_ch]==255)
 {
-colRr=1.0; colGg=0.5; colBb=0.0;  print_level=0;
+colRr=1.0; colGg=0.5; colBb=0.0;  print_level=false;
 }
 else
 {
-colRr=0.0; colGg=1.0; colBb=0.0;    print_level=1;
+colRr=0.0; colGg=1.0; colBb=0.0;    print_level=true;
 }
 xp=xx+(col*6);
 yp=yy- (ligne*6);
@@ -353,7 +353,7 @@ char the_out[12];
 char the_delay_in[12];
 char the_delay_out[12];
 
-sprintf(header_export,"");//nettoyage pour les temps
+strcpy(header_export,"");//nettoyage pour les temps
 
 affichage_time_format(grid_times[grd][stp][1]);//in
 sprintf(the_in,string_conversion_timeis);
@@ -368,13 +368,13 @@ if(grid_times[grd][stp][0]>0){sprintf(header_export,"d. %s",the_delay_in);}
 strcat(header_export," IN ");
 strcat(header_export,the_in);
 draw_info(page,xx ,yy-6,header_export);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 if(grid_times[grd][stp][2]>0){sprintf(header_export,"d. %s",the_delay_out);}
 strcat(header_export," OUT ");
 strcat(header_export,the_out);
 draw_info(page,xx ,yy-12,header_export);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 if(grid_goto[grd][stp][0]!=-1 || grid_goto[grd][stp][1]!=-1)
 {
@@ -504,7 +504,7 @@ HPDF_Page_SetRGBStroke (page, 0.0, 0.4, 0.9);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 
 sprintf(header_export,"Echo Preset: %d",pr +1);
@@ -570,7 +570,7 @@ HPDF_Page_SetRGBStroke (page, 0.0, 0.7, 0.7);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 
 sprintf(header_export,"Draw Matrix: %d",pr +1);
@@ -711,7 +711,7 @@ HPDF_Page_SetGrayStroke (page, 0.5);
 HPDF_Page_SetRGBFill (page, 0.0, 0.0, 0.0);//couleur remplissage
 
 
-int dr_ch=0;
+//sab 02/03/2014 unused var int dr_ch=0;
 HPDF_Page_SetFontAndSize (page, def_font, 4);
 for(int l=0;l<draw_preset_parameters[pr][1];l++)
 {
@@ -737,10 +737,10 @@ HPDF_Page_SetRGBStroke (page, 0.0, 0.5, 0.0);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 
-sprintf(header_export,"Channels Configuration Grid:" );
+strcpy(header_export,"Channels Configuration Grid:" );
 draw_title(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 
 
@@ -786,7 +786,7 @@ HPDF_Page_SetRGBFill (page, 0.0, 0.0, 0.0);//couleur remplissage
     }
 
 
-int dr_ch=0;
+//sab 02/03/2014 unused var int dr_ch=0;
 HPDF_Page_SetFontAndSize (page, def_font, 7);
 for(int l=0;l<grider_nb_row;l++)
 {
@@ -811,7 +811,7 @@ HPDF_Page_SetRGBStroke (page, 0.5, 0.5, 0.5);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 //
 for(int gd=0;gd<127;gd++)
@@ -838,7 +838,7 @@ HPDF_Page_SetRGBStroke (page, 0.0, 0.5, 0.0);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 sprintf(header_export,"CHASER %d",chaser_num+1 );
 draw_title(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
@@ -1022,7 +1022,7 @@ if(there_is_someone_inside_this_track==1 && TrackTypeIs[chaser_num][t]==0)//si q
 sprintf(header_export,"Track: %d  / Description: %s",t+1,chaser_track_name[chaser_num][t]);
 draw_title(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");
+strcpy(header_export,"");
 if(cmptline_pdf>max_ligne_pdf)
 {
 sprintf(header_export,"page %d", num_page_pdf);
@@ -1033,14 +1033,14 @@ HPDF_Page_SetRGBStroke (page, 0.5, 0.5, 0.5);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 comptch=0;
 for(int c=1;c<513;c++)
 {
 if(TrackContains[chaser_num][t][c]!=0)
 {
-if(comptch==0){cmptline_pdf++; sprintf(header_export,"");}//retour ligne après 10 circuits
+if(comptch==0){cmptline_pdf++; strcpy(header_export,"");}//retour ligne après 10 circuits
 
 switch(dmx_view)
 {
@@ -1068,13 +1068,13 @@ HPDF_Page_SetRGBStroke (page, 0.8, 0.0, 0.0);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 }
 }
 }
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
-sprintf(header_export,"");
+strcpy(header_export,"");
 cmptline_pdf++;
 }//fin si quelqu un dedans en mode circuits
 else if( TrackTypeIs[chaser_num][t]==1)//si mémoire affectée à piste
@@ -1082,7 +1082,7 @@ else if( TrackTypeIs[chaser_num][t]==1)//si mémoire affectée à piste
 sprintf(header_export,"Track: %d  / Description: %s",t+1,chaser_track_name[chaser_num][t]);
 draw_title(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");
+strcpy(header_export,"");
 if(cmptline_pdf>max_ligne_pdf)
 {
 sprintf(header_export,"page %d", num_page_pdf);
@@ -1093,12 +1093,12 @@ HPDF_Page_SetRGBStroke (page, 0.5, 0.5, 0.5);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 cmptline_pdf++;
 sprintf(header_export,"Contains Mem. %.1f",(float (TrackHasMem[chaser_num][t])/10));
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
-sprintf(header_export,"");
+strcpy(header_export,"");
 cmptline_pdf++;
 }
 cmptline_pdf++;
@@ -1600,8 +1600,8 @@ for (int s=1;s<=nbre_symbols_on_plot[c];s++)
 {
 if(symbol_channel_is[c][s]==ch)//report des symboles correspondant au circuit
 {
-sprintf(gellist,"");
-sprintf(gely,"");
+strcpy(gellist,"");
+strcpy(gely,"");
 for(int g=0;g<3;g++)//3 slots de gelat par symbol
 {
 if( gelat[c][s][g]!=0)//si une gelat non zero
@@ -1623,19 +1623,19 @@ case 3:
 sprintf(gely," Apollo %d", gelat[c][s][g]);
 break;
 default:
-sprintf(gely,"");
+strcpy(gely,"");
 break;
 }
 strcat(gellist,gely);
-sprintf(gely,"");
+strcpy(gely,"");
 }
 }
 sprintf(header_export,"%s %s \n",symbol_nickname[ ( symbol_type[c][s] ) ],gellist);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(gellist,"");
-sprintf(header_export,"");
+strcpy(gellist,"");
+strcpy(header_export,"");
 for(int no=0;no<4;no++)
 {
 if(strcmp(symbol_note[c][s][no],"")!=0)
@@ -1644,7 +1644,7 @@ sprintf(header_export,"Note %d:  %s",no+1,symbol_note[c][s][no]);
 draw_info(page, 130, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 }
 }
@@ -2447,7 +2447,7 @@ width = HPDF_Page_GetWidth (page);
     HPDF_Page_EndText (page);
 
 debut_lignes=(height -30);
-HPDF_REAL nbre_de_lignes_pdf=(height -30)/10;
+//sab 02/03/2014 unused var HPDF_REAL nbre_de_lignes_pdf=(height -30)/10;
 
 /* header logiciel */
     HPDF_Page_BeginText (page);
@@ -2494,27 +2494,27 @@ cmptline_pdf++;
 sprintf(header_export,"Stage: d:%.1f  OUT: %.1f  | Memory: d:%.1f  IN: %.1f", Times_Memoires[m][2], Times_Memoires[m][3],Times_Memoires[m][0],Times_Memoires[m][1]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean pour la boucle
+strcpy(header_export,"");//clean pour la boucle
 if(Links_Memoires[m]==1)
 {
-sprintf(header_export,"Link to next Mem ");
+strcpy(header_export,"Link to next Mem ");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 draw_fleche_link( page, 70, debut_lignes -(position_ligne1 +(cmptline_pdf*12))+10);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean pour la boucle
+strcpy(header_export,"");//clean pour la boucle
 if(Banger_Memoire[m]!=0)
 {
 sprintf(header_export,"Banger %d     - %s",Banger_Memoire[m],bangers_name[(Banger_Memoire[m])-1]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean pour la boucle
+strcpy(header_export,"");//clean pour la boucle
 for(int c=1;c<513;c++)
 {
 if(Memoires[m][c]>0)
 {
-if(comptch==0){cmptline_pdf++; sprintf(header_export,"");}//retour ligne après 10 circuits
+if(comptch==0){cmptline_pdf++; strcpy(header_export,"");}//retour ligne après 10 circuits
 sprintf(little_header,"%d=%d   ",c,(int)((float)(Memoires[m][c])/2.55));
 strcat(header_export,little_header);
 comptch++;
@@ -2530,9 +2530,9 @@ verification_fin_de_page();
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);//fin de la recherche
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");//clean pour la boucle
+strcpy(header_export,"");//clean pour la boucle
 }
-sprintf(header_export,"");//clean pour la boucle
+strcpy(header_export,"");//clean pour la boucle
 }
 
 ////////////////////SEPARATION GRANDE PARTIE////////////////////////////////////
@@ -2564,14 +2564,14 @@ sprintf(header_export,"Channel View %d [%d]: %s", v+1,channel_number_in_View[v],
 draw_title(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");
+strcpy(header_export,"");
 for(int chm=0;chm<513;chm++)
 {
 
 if(check_presence_of_A_channel_in_A_view(v,chm)==1)
 {
 
- if(comptch==0){cmptline_pdf++; sprintf(header_export,"");}//retour ligne après 10 circuits
+ if(comptch==0){cmptline_pdf++; strcpy(header_export,"");}//retour ligne après 10 circuits
  if(chm<100)  {sprintf(little_header,"%d  -  ",chm);}
  else {sprintf(little_header,"%d - ",chm);}
  strcat(header_export,little_header);
@@ -2590,10 +2590,10 @@ if(check_presence_of_A_channel_in_A_view(v,chm)==1)
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);//fin de la recherche
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");//clean pour la boucle
+strcpy(header_export,"");//clean pour la boucle
 comptch=0;
 }
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 //fin vues
 }
@@ -2650,7 +2650,7 @@ if(specify_who_to_save_PDF[3]==1)
 draw_section (page, 100,debut_lignes -(position_ligne1 +(cmptline_pdf*12)), "Patch per channels", 1.0,0.0,0.0);
 
 int cmptdim=0;
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 bool someone_ISpatched=0;
 for(int circ=1;circ<513;circ++)
@@ -2669,7 +2669,7 @@ sprintf(header_export,"Channel %d -> Dim.",circ);
         {
         cmptdim=0;
         draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
-        sprintf(header_export,"");
+        strcpy(header_export,"");
         cmptline_pdf++;
         verification_fin_de_page();
         }
@@ -2682,7 +2682,7 @@ cmptline_pdf++;
 verification_fin_de_page();
 cmptdim=0;
 }
-sprintf(header_export,"");
+strcpy(header_export,"");
 someone_ISpatched=0;
 cmptdim=0;
 }
@@ -2699,7 +2699,7 @@ draw_section (page, 100,debut_lignes -(position_ligne1 +(cmptline_pdf*12)), "Pat
 int cmptdim=0;
 for (int cpatch=1; cpatch<513; cpatch++)
 {
-if(cmptdim==0){cmptline_pdf++; sprintf(header_export,"");}//retour ligne après 10 circuits
+if(cmptdim==0){cmptline_pdf++; strcpy(header_export,"");}//retour ligne après 10 circuits
 sprintf(little_header,"Dim.%d=Ch.%d [%d]    ",cpatch, Patch[cpatch], curves[cpatch]+1);
 strcat(header_export,little_header);
 cmptdim++;
@@ -2709,7 +2709,7 @@ cmptdim=0;
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");
+strcpy(header_export,"");
 }
 }
 
@@ -2725,7 +2725,7 @@ if(specify_who_to_save_PDF[5]==1)
 {
 draw_section (page, 100,debut_lignes -(position_ligne1 +(cmptline_pdf*12)), "Banger", 1.0,0.0,0.0);
 
-sprintf(header_export,"");
+strcpy(header_export,"");
 //////////////////Procedure bangers//////////////////////////////////////
 bool there_is_someone_in_banger=0;
 char header_banger_action[64];
@@ -2742,7 +2742,7 @@ sprintf(header_export,"Banger %d / %s",f+1, bangers_name[f]);
 draw_title(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 for(int bg=0;bg<6;bg++)
 {
 //affichage genres types
@@ -3710,9 +3710,9 @@ verification_fin_de_page();
 }
 }
 there_is_someone_in_banger=0;//pour check des autres bangers
-sprintf(header_export,"");
-sprintf(header_banger_action,"");
-sprintf(header_banger_typ,"");
+strcpy(header_export,"");
+strcpy(header_banger_action,"");
+strcpy(header_banger_typ,"");
 }
 //////////FIN BLOCK BANGER//////////////////////////////////////////////////
 cmptline_pdf++;
@@ -3780,7 +3780,7 @@ sprintf(header_export,"FADER %d ",f+1);
 draw_title(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 ///////////////////////////paramétrages actuels du fader/////////////////////////////////
 sprintf(header_export,"Curve [%d] ",FaderCurves[f]+1);
 draw_info(page, 50, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
@@ -3863,7 +3863,7 @@ break;
 }
 cmptline_pdf++;
 verification_fin_de_page();
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
 ///////////////////////////////////////////////////////////////////////////////
 for(int d=0;d<6;d++)
@@ -3884,11 +3884,11 @@ draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 if(is_dock_for_lfo_selected[f][d]==1)
 {
-sprintf(header_export,"Dock Loop ON");
+strcpy(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 for(int c=1;c<513;c++)
 {
 if(FaderDockContains[f][d][c]>0)
@@ -3896,7 +3896,7 @@ if(FaderDockContains[f][d][c]>0)
 if(comptch==0)
 {
 cmptline_pdf++;
-sprintf(header_export,"");
+strcpy(header_export,"");
 }//retour ligne après 10 circuits
 
 sprintf(little_header,"%d=%d   ",c,(int)((float)(FaderDockContains[f][d][c])/2.55));
@@ -3927,11 +3927,11 @@ draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 if(is_dock_for_lfo_selected[f][d]==1)
 {
-sprintf(header_export,"Dock Loop ON");
+strcpy(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
 
 for (int fo=0;fo<8;fo++)
@@ -3943,7 +3943,7 @@ if(colorpreset_linked_to_dock[fo][1]==d)
 sprintf(header_export,"Trichromy preset %d \n",fo+1);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 }
 }
 }
@@ -3965,11 +3965,11 @@ sprintf(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 sprintf(header_export,"Art-Net Sub 0, Universe %d ",DockNetIs[f][d]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 
 break;
 
@@ -3989,12 +3989,12 @@ sprintf(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
-sprintf(header_export,"Dmx-IN ");
+strcpy(header_export,"Dmx-IN ");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 case 4://video
@@ -4009,17 +4009,17 @@ draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 if(is_dock_for_lfo_selected[f][d]==1)
 {
-sprintf(header_export,"Dock Loop ON");
+strcpy(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
-sprintf(header_export,"Video-tracking ");
+strcpy(header_export,"Video-tracking ");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 
@@ -4039,13 +4039,13 @@ sprintf(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
 sprintf(header_export,"Memory: %d.%d ",DockHasMem[f][d]/10,DockHasMem[f][d]%10);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 case 6://audio volume
@@ -4060,17 +4060,17 @@ draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 if(is_dock_for_lfo_selected[f][d]==1)
 {
-sprintf(header_export,"Dock Loop ON");
+strcpy(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
 sprintf(header_export,"Audio Volume Player %d  ",DockHasAudioVolume[f][d]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 case 7://audio pan
@@ -4085,17 +4085,17 @@ draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 if(is_dock_for_lfo_selected[f][d]==1)
 {
-sprintf(header_export,"Dock Loop ON");
+strcpy(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
 sprintf(header_export,"Audio Pan Player %d  ",DockHasAudioPan[f][d]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 case 8://audio pitch
 comptch=0;
@@ -4109,17 +4109,17 @@ draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 if(is_dock_for_lfo_selected[f][d]==1)
 {
-sprintf(header_export,"Dock Loop ON");
+strcpy(header_export,"Dock Loop ON");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 }
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 cmptline_pdf++;
 sprintf(header_export,"Audio Pitch Player %d  ",DockHasAudioPitch[f][d]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 /*
  case 9://no content
@@ -4138,7 +4138,7 @@ cmptline_pdf++;
 sprintf(header_export,"Direct Channel : %d",FaderDirectChan[f][d]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 case 11://fx
@@ -4153,7 +4153,7 @@ cmptline_pdf++;
 sprintf(header_export,"Chaser : %d",ChaserAffectedToDck[f][d]+1);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 case 12://grid
@@ -4168,7 +4168,7 @@ cmptline_pdf++;
 sprintf(header_export,"GridPlayer : %d",faders_dock_grid_affectation[f][d]+1);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 
 case 13://fgroup
@@ -4180,10 +4180,10 @@ cmptline_pdf++;
 sprintf(header_export,"dIn:%.1f  IN: %.1f  | dOUT:%.1f  OUT: %.1f", time_per_dock[f][d][0],time_per_dock[f][d][1],time_per_dock[f][d][2],time_per_dock[f][d][3]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"Fgroup containing faders:");
+strcpy(header_export,"Fgroup containing faders:");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 for(int ifo=0;ifo<48;ifo++)
 {
 if(fgroup[f][d][ifo]==1){strcat(header_export," %d -");}
@@ -4201,10 +4201,10 @@ cmptline_pdf++;
 sprintf(header_export,"dIn:%.1f  IN: %.1f  | dOUT:%.1f  OUT: %.1f", time_per_dock[f][d][0],time_per_dock[f][d][1],time_per_dock[f][d][2],time_per_dock[f][d][3]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"Mover");
+strcpy(header_export,"Mover");
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-sprintf(header_export,"");//clean
+strcpy(header_export,"");//clean
 break;
 default:
 break;
@@ -4260,7 +4260,7 @@ HPDF_Page_SetRGBStroke (page, 0.0, 0.5, 0.5);//couleur ligne
 HPDF_Page_BeginText (page);
 HPDF_Page_SetFontAndSize (page, def_font, 10);
 HPDF_Page_EndText (page);
-sprintf(header_export,"");
+strcpy(header_export,"");
 
 }
 
@@ -4348,8 +4348,8 @@ if(comptch>12)
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
 comptch=0;
-sprintf(little_header,"");
-sprintf(header_export,"");
+strcpy(little_header,"");
+strcpy(header_export,"");
 }
 }
 }
@@ -4448,8 +4448,8 @@ draw_info(page, 120, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_e
 cmptline_pdf++;
 verification_fin_de_page();
 comptch=0;
-sprintf(little_header,"");
-sprintf(header_export,"");
+strcpy(little_header,"");
+strcpy(header_export,"");
 }
 }
 }
@@ -4582,34 +4582,34 @@ case 1: //fader up
 sprintf(little_header,"Fader %d UP", arduino_digital_function_input[i][1]);
 break;
 case 2://fader down
-sprintf(little_header,"Fader: DOWN", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d DOWN", arduino_digital_function_input[i][1]);
 break;
 case 3://Fader saw
-sprintf(little_header,"Fader: SAW", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d SAW", arduino_digital_function_input[i][1]);
 break;
 case 4:
-sprintf(little_header,"Fader: ToPREVDock", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d ToPREVDock", arduino_digital_function_input[i][1]);
 break;
 case 5:
-sprintf(little_header,"Fader: ToNEXTDock", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d ToNEXTDock", arduino_digital_function_input[i][1]);
 break;
 case 6:
-sprintf(little_header,"Fader: Up/Down", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d Up/Down", arduino_digital_function_input[i][1]);
 break;
 case 7:
-sprintf(little_header,"Fader: LOCK", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d LOCK", arduino_digital_function_input[i][1]);
 break;
 case 8:
-sprintf(little_header,"Fader: FLASH", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d FLASH", arduino_digital_function_input[i][1]);
 break;
 case 9:
-sprintf(little_header,"Fader: All at 0", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d All at 0", arduino_digital_function_input[i][1]);
 break;
 case 10:
-sprintf(little_header,"Fader: L/Unloop dock", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d L/Unloop dock", arduino_digital_function_input[i][1]);
 break;
 case 11:
-sprintf(little_header,"Fader: L/Unloop all", arduino_digital_function_input[i][1]);
+sprintf(little_header,"Fader: %d L/Unloop all", arduino_digital_function_input[i][1]);
 break;
 case 12:
 sprintf(little_header,"Seq: GO");
@@ -4733,7 +4733,7 @@ verification_fin_de_page();
 
 for(int i=0;i<=arduino_max_analog;i++)
 {
-sprintf(header_export,"");
+strcpy(header_export,"");
 switch(arduino_analog_function_input[i])
 {
 case 0://desafected
