@@ -55,7 +55,7 @@ int scan_savesfolder()
             {
             isDir=true;
             // check if it's a dir or a file
-            for(int a=0;a<strlen(f.name);a++)
+            for(unsigned int a=0;a<strlen(f.name);a++)
             {
                 if(f.name[a]=='.')
                 {
@@ -78,11 +78,12 @@ chdir (rep);
 return(0);
 }
 
-int scan_importfolder(char *subdir)
+//sab 02/03/2014 int scan_importfolder(char *subdir)
+void scan_importfolder(const char* subdir)
 {
 for(int i=0;i<127;i++)
 {
- sprintf(list_import_files[i],"");
+ strcpy(list_import_files[i],"");
 }
 
     struct al_ffblk f;
@@ -110,7 +111,7 @@ for(int i=0;i<127;i++)
 //REROLL
 sprintf(rep,"%s\\",mondirectory);
 chdir (rep);
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 
@@ -199,7 +200,7 @@ else if(strcmp(importfile_name,"..")==0){scan_importfolder("");line_import=0;}
 else
 {
             // check if it's a dir or a file
-          for(int a=0;a<strlen(importfile_name);a++)
+          for(unsigned int a=0;a<strlen(importfile_name);a++)
           {
            if( importfile_name[a]=='.')
            {
@@ -254,9 +255,10 @@ return(0);
 
 
 
-int deroule_repertoire_export_import(int xrep, int yrep, char name_of_rep[25])
+//sab 02/03/2014 int deroule_repertoire_export_import(int xrep, int yrep, char name_of_rep[25])
+void deroule_repertoire_export_import(int xrep, int yrep, const std::string label)
 {
-
+const std::string name_of_rep = label.substr(0,25);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 petitchiffre.Print("Content of import_export folder:",xrep+10,yrep+170);
 Rect BackDeroule(Vec2D(xrep,yrep+155),Vec2D(245,185));
@@ -379,13 +381,14 @@ LoadExport.Draw(CouleurSurvol);
 petitchiffre.Print("LOAD",xrep+155,yrep+410);
 LoadExport.DrawOutline(CouleurLigne);
 }
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 
-int do_logical_deroule_repertoire_export_import(int xrep, int yrep, char name_of_rep[25])
+//sab 02/03/2014 -> void -> std::string
+void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::string label)
 {
-
+const std::string name_of_rep 		= label.substr (0,25);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 
 for (int y=0;y<8;y++)
@@ -505,7 +508,7 @@ mouse_released=1;
 }
 }
 }
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 
@@ -514,9 +517,10 @@ return(0);
 ////////////////////////////////////////////////////////////////////////////////
 
 
-int deroule_repertoire_classical_save(int xrep, int yrep, char name_of_rep[25])
+//sab 02/03/2014 int deroule_repertoire_classical_save(int xrep, int yrep, char name_of_rep[25])
+void deroule_repertoire_classical_save(int xrep, int yrep, const std::string label)
 {
-
+const std::string name_of_rep = label.substr(0,25);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 petitchiffre.Print("Content of SAVES folder:",xrep+10,yrep+170);
 Rect BackDeroule(Vec2D(xrep,yrep+155),Vec2D(245,185));
@@ -603,13 +607,14 @@ petitchiffre.Print("RESET",xrep+295,yrep+410);
 ResetB.DrawOutline(CouleurLigne);
 
 
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 
-int do_logical_deroule_repertoire_classical_save(int xrep, int yrep, char name_of_rep[25])
+//sab 02/03/2014 int do_logical_deroule_repertoire_classical_save(int xrep, int yrep, char name_of_rep[25])
+void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std::string label)
 {
-
+const std::string name_of_rep = label.substr(0,25);
 
 for (int y=0;y<8;y++)
 {
@@ -712,7 +717,7 @@ index_ask_confirm=1;
 mouse_released=1;
 }
 }
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 
