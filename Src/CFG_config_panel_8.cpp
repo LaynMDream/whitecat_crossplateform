@@ -598,7 +598,7 @@ if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+365 && mouse_x<cfgnetw_X+365
 UnderParam.DrawOutline(CouleurLevel);
 if(mouse_button==1 && mouse_released==0)
 {
-int param_data_in=0;
+//sab 02/03/2014 unused var int param_data_in=0;
 
 switch(oi)//action souris
 {
@@ -1341,7 +1341,7 @@ int save_network_settings()
 FILE *fp;
 char rep_conf_ntwk[256];
 sprintf(rep_conf_ntwk,"%s\\user\\config_network.txt",mondirectory);
-if(fp=fopen(rep_conf_ntwk,"w"))
+if((fp=fopen(rep_conf_ntwk,"w")))
 {
 
 fprintf(fp,"#arguments: Receive art-net Socket  \n");
@@ -1368,8 +1368,8 @@ int load_network_conf()
 FILE *cfg_file = NULL ;
 char read_buff[ 512 ] ;
 
-    char motcleinterfaceis[24];
-    int it=0;
+    //sab 02/03/2014 unused var char motcleinterfaceis[24];
+    //sab 02/03/2014 unused var int it=0;
 	cfg_file = fopen("user\\config_network.txt", "rt" );
 	if( !cfg_file )
 	{
@@ -1383,11 +1383,13 @@ char read_buff[ 512 ] ;
      sprintf(string_save_load_report[idf],"! config_network.txt");
      return 1;
 	}
-	fscanf( cfg_file , "%s\n" ,  &IP_artnet_IN );
+	//sab 02/03/2014 fscanf( cfg_file , "%s\n" ,  &IP_artnet_IN );
+	fscanf( cfg_file , "%s\n" ,  IP_artnet_IN );
 
 	fgets( read_buff , sizeof( read_buff ) ,cfg_file );
 
-	fscanf( cfg_file , "%s\n" ,  &IP_artnet_OUT );
+	//sab 02/03/2014 fscanf( cfg_file , "%s\n" ,  &IP_artnet_OUT );
+	fscanf( cfg_file , "%s\n" ,  IP_artnet_OUT );
 
 	fgets( read_buff , sizeof( read_buff ) ,cfg_file );
 
@@ -1395,11 +1397,13 @@ char read_buff[ 512 ] ;
 
 	fgets( read_buff , sizeof( read_buff ) ,cfg_file );
 
-	fscanf( cfg_file , "%s\n" ,  &IP_fantastick );
+	//sab 02/03/2014 fscanf( cfg_file , "%s\n" ,  &IP_fantastick );
+	fscanf( cfg_file , "%s\n" ,  IP_fantastick );
 
 	fgets( read_buff , sizeof( read_buff ) ,cfg_file );
 
-	fscanf( cfg_file , "%s\n" ,  &specified_fs_ip );
+	//sab 02/03/2014 fscanf( cfg_file , "%s\n" ,  &specified_fs_ip );
+	fscanf( cfg_file , "%s\n" ,  specified_fs_ip );
 
 	fgets( read_buff , sizeof( read_buff ) ,cfg_file );
 

@@ -125,7 +125,7 @@ int ClearDock(int fad, int dk)
    index_type_of_time_to_affect[1]=0;
    index_type_of_time_to_affect[3]=0;
  //nettoyage du descriptif
- sprintf(DockName[fad][dk],"");
+ strcpy(DockName[fad][dk],"");
  DockName[fad][dk][24]='\0';
  //boucle lfo
  is_dock_for_lfo_selected[fad][dk]=0;

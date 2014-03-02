@@ -565,7 +565,7 @@ if(index_quit==0 && index_is_saving==0)
 
  if(allow_artnet_in==1 && artnet_serveur_is_initialized==1 )
       {
-      if(bytesreceived=recvfrom(sock,artnet_message,sizeof(artnet_message),0,(SOCKADDR*)&sinServ,&sinsizeServ)>0)
+      if((bytesreceived=recvfrom(sock,artnet_message,sizeof(artnet_message),0,(SOCKADDR*)&sinServ,&sinsizeServ)>0))
       {receiving_bytes=1;ReceiveArtDmx();}
       else {receiving_bytes=0;}
       }
@@ -1057,7 +1057,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     main_actions_on_screen();
     break;
     case 1:
-      if(bytesreceived=recvfrom(sock,artpollreply_message,sizeof(artpollreply_message),0,(SOCKADDR*)&sinS,&sinsize)!=0)
+      if((bytesreceived = recvfrom(sock,artpollreply_message,sizeof(artpollreply_message),0,(SOCKADDR*)&sinS,&sinsize)!=0))
       {      AnalyseArtPollReply();      }
       Procedure("Art-Net Polling","Please wait 3 seconds, polling network ...");
     break;

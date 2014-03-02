@@ -1303,7 +1303,9 @@ case 746://clear
 break;
 case 747:       //NAME
                index_type=toggle(index_type);
-               sprintf(numeric,"");numeric_postext=0;
+               //sab 02/03/2014 sprintf(numeric,"");numeric_postext=0;
+               strcpy(numeric,"");
+               numeric_postext=0;
 break;
 case 748://TIME
           if(index_time==0){add_a_window(W_TIME);  }
@@ -2611,7 +2613,8 @@ case 1338: //numeric pad
  else {substract_a_window(W_NUMPAD);}
 break;
 case 1339: //Mover
- if(index_show_mover_window=0){add_a_window(W_MOVER);}
+	//sab 02/03/2014 IMPACT if(index_show_mover_window=0){add_a_window(W_MOVER);}
+ if(index_show_mover_window==0){add_a_window(W_MOVER);}
  else {substract_a_window(W_MOVER);}
 break;
 case 1340: //grider
@@ -3584,7 +3587,7 @@ static char * EvAquire ( MidiEvPtr e)
 pascal void Display ( MidiEvPtr e)
 {
 
-	char s[120];
+	//sab 02/03/2014 unused var char s[120];
 
 	if (e) {
 		EvAquire (e);
@@ -3653,8 +3656,8 @@ int PrintSlotsInfosDevices(short driverRef)
 
     if (MidiGetDriverInfos (driverRef, &dInfos))
     {
-      short     i, j; SlotRefNum slotRef;
-
+      short     i;
+      SlotRefNum slotRef;
 
         char temp_device_name[64];
         sprintf(string_nbre_de_devices,"Founded: %d",dInfos.slots);
