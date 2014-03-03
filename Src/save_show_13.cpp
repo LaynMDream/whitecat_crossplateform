@@ -555,7 +555,7 @@ unsigned int echo_presets_size=24*513;//float snap_echo_to_recall[24][513];
 ////////////////////////////////////////////////////////////////////////////////
 /**
 Set Global mondirectory : Execution directory
-Détermine mondirectory : le répertoire d'exécution
+ - Détermine mondirectory : le répertoire d'exécution
 **/
 void On_Open_name_of_directory()
 {
