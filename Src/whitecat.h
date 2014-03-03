@@ -52,8 +52,7 @@ bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initiali
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
 char rep[255];//repertoire avec arborescence complete du fichier
 //sab 02/03/2014 char mondirectory[200];//endroit de l exe
-/** Directory where is the executable file - Répertoire où se trouve l'exécutable **/
-char mondirectory[512];
+char mondirectory[512];/** Directory where is the executable file - Répertoire où se trouve l'exécutable **/
 char working_nameis[120];
 char rep_saves[10]={"saves\\"};
 char nomduspectacle[48]={"last_save\\"};
