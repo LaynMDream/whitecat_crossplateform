@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.5.3}
+* \date {04/03/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,8 +45,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.4.14 - 6 janv 2014"};
-char nickname_version[48]={"OPEN VERSION"};
+char versionis[72]={"Beta 0.8.5.3 - 4 mars 2014"};
+char nickname_version[48]={"ANTON POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -123,9 +123,9 @@ float angle_souris=0.0,transparence_souris=1.0;
 int config_color_style_is=0;
 float size_faders=0.8;
 //screens
-int index_borderwindow=0;
-int index_multiplescreen=0;
-int index_fullscreen=0;
+bool index_borderwindow=0;
+bool index_multiplescreen=0;
+bool index_fullscreen=0;
 int posX_mainwindow=0;//placement fenetre sur bureau
 int posY_mainwindow=0;
 int index_report_customs[128]; //report des fentres on off, du view dmx, theme couleur etc etc

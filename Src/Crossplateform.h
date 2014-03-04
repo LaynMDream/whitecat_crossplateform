@@ -34,7 +34,7 @@ WWWWWWWW           C  WWWWWWWW   |
 * \brief {header file for the spécifique crossplateform fonction of whitecat}
 * \author Anton L
 * \version {0.8.5.3}
-* \date {19/02/2014}
+* \date {04/03/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
