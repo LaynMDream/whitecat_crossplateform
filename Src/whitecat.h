@@ -121,9 +121,9 @@ float angle_souris=0.0,transparence_souris=1.0;
 int config_color_style_is=0;
 float size_faders=0.8;
 //screens
-int index_borderwindow=0;
-int index_multiplescreen=0;
-int index_fullscreen=0;
+bool index_borderwindow=0;
+bool index_multiplescreen=0;
+bool index_fullscreen=0;
 int posX_mainwindow=0;//placement fenetre sur bureau
 int posY_mainwindow=0;
 int index_report_customs[128]; //report des fentres on off, du view dmx, theme couleur etc etc

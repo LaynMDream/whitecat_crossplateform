@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1393456724 source:c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
+1393969030 source:c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -1148,78 +1148,78 @@
 1393457132 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\whitecat.h
+1393969752 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\whitecat.h
 	"Crossplateform.h"
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\crossplateform.h
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\crossplateform.h
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\my_window_file_sample.h
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\patch_splines_2.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grider_calculs8.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grider_calculs8.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\midi_core.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\core_6.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\core_6.cpp
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\saves_export_pdf2.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\saves_export_pdf2.cpp
 	<setjmp.h>
 	"hpdf.h"
 
 1379878920 c:\mingw\include\setjmp.h
 	<_mingw.h>
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\saves_export_import.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\saves_export_import.cpp
 
-1393462173 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\saves_menu_8.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\saves_menu_8.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grider_core8.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grider_core8.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\wizard_operations.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\wizard_operations.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\faders_operations.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\faders_operations.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\chasers_core_5.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\chasers_core_5.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\mover_spline6.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\mover_2013.cpp
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\plot_core9.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\plot_core9.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\plot9.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\plot9.cpp
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\audio_core5.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\audio_core5.cpp
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\save_show_13.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\save_show_13.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\network_artnet_3.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\network_artnet_3.cpp
 	<winsock2.h>
 
 1379879798 c:\mingw\include\winsock2.h
 	<_mingw.h>
 	<windows.h>
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\logicals_intres.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\logicals_intres.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\channels_9_core.cpp
 	<allegro.h>
 	<OpenLayer.hpp>
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\wizard.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\wizard.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grand_master.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\faders_core_24.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\faders_core_24.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\audio_visu4.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\icat_core14.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\icat_core14.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\arduino_device_core.cpp
 	"serial.cpp"
@@ -1229,11 +1229,11 @@
 
 1393457127 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.h
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\banger_core_8.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\banger_core_8.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\banger_visu_8.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\call_everybody_5.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\call_everybody_5.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\patch_core.cpp
 
@@ -1251,20 +1251,20 @@
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\numpad_visuel.cpp
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\keyboard_functions2.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\keyboard_functions2.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\keyboard_routines2.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\keyboard_routines2.cpp
 	<allegro.h>
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\minifaders_core.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\minifaders_core.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\minifaders_visu.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\minifaders_visu.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\faders_visuels_26.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\faders_visuels_26.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\channels_10_visu.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\channels_10_visu.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\video_tracking_core.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\video_tracking_core.cpp
 	"opencv2/opencv.hpp"
 	"opencv/cv.h"
 	"opencv/highgui.h"
@@ -1718,29 +1718,29 @@
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\list_proj_core.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\list_proj_visu.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\list_proj_visu.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\sequentiel_6_core.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\sequentiel_6_core.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\icat14.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\icat14.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\network_mac_adress_3.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\midi_launchpad.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grider8.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\grider8.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\sequentiel_7_visu.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\sequentiel_7_visu.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\draw3.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\echo3.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\echo3.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\my_window_file_sample.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\dmx_functions_13.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
 	<odmxusb.h>
 	<dmx_enttec_pro.cpp>
@@ -1784,19 +1784,19 @@
 
 1393457130 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\dashard\_dashard.h
 
-1393456724 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\midi_13.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\midi_13.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\cfg_screen.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\cfg_screen.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\arduino_core_6_uno.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\arduino_6_uno.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\cfg_config_panel_8.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\cfg_config_panel_8.cpp
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\chasers_visu.cpp
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\graphics_rebuild1.cpp
+1393969030 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\graphics_rebuild1.cpp
 
 1393457519 source:c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\whitecat_private.rc
 	<windows.h>
