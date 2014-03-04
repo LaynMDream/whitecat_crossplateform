@@ -3820,7 +3820,7 @@ zone_is_controlled_by_point[iCatPageis][sl]=tp;
 
 
 
-if(fsMx==fsEx && fsMy==fsEy || fsBx==fsEx && fsBy==fsEy )//pour la relache n egale pas 0
+if((fsMx==fsEx && fsMy==fsEy) || (fsBx==fsEx && fsBy==fsEy) )//pour la relache n egale pas 0
 {
 zone_is_touched[iCatPageis][sl]=0;
 if(dragging_draw==0 )//si pas de la souris

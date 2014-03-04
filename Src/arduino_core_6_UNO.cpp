@@ -249,7 +249,7 @@ int vfader=0;
 for(int p=0;p<=arduino_max_digital;p++)
 {
 
-if(arduino_digital_type[p]==1||arduino_digital_type[p]==2||arduino_digital_type[p]==7  && digital_data_from_arduino[p]!= previous_digital_data_from_arduino[p] )//si l'affectation est type INPUT
+if((arduino_digital_type[p]==1||arduino_digital_type[p]==2||arduino_digital_type[p]==7)  && digital_data_from_arduino[p]!= previous_digital_data_from_arduino[p] )//si l'affectation est type INPUT
 //et qu il y a une différence d'état
 {
 switch(arduino_digital_function_input[p][0])
@@ -646,7 +646,7 @@ if(need_send_pwm==0)
 
 if(index_send_pwm_data==1 && need_send_pwm==0)
 {
-sprintf(temp_send_pwm,"");
+sprintf(temp_send_pwm,"%s","");
 temp_send_pwm[0]='P';temp_send_pwm[1]='W';temp_send_pwm[2]='/';
 
 for(int k=0;k<=arduino_max_digital;k++)
@@ -662,7 +662,8 @@ temp_send_pwm[(3+arduino_max_digital+2)]='D';
 temp_send_pwm[(3+arduino_max_digital+3)]='/';
 temp_send_pwm[(3+arduino_max_digital+4)]='\0';
 
-int nBytesSendtoArduino=serial0.SendData(temp_send_pwm,sizeof(temp_send_pwm));
+//ne pas enlever !
+nBytesSendtoArduino=serial0.SendData(temp_send_pwm,sizeof(temp_send_pwm));
 }
 
  return(0);
@@ -724,7 +725,7 @@ previous_digital_data_to_arduino[p]=digital_data_to_arduino[p]; }
 
 if(index_send_digital_data)
 {
-sprintf(arduino_order,"");
+sprintf(arduino_order,"%s","");
 temp_send[0]='D';temp_send[1]='O';temp_send[2]='/';
 
 for(int k=0;k<=arduino_max_digital;k++)
@@ -745,8 +746,9 @@ temp_send[(3+arduino_max_digital+2)]='D';
 temp_send[(3+arduino_max_digital+3)]='/';
 temp_send[(3+arduino_max_digital+4)]='\0';
 
+//ne pas enlever
 if(need_send_pwm==1)
-{int nBytesSendtoArduino=serial0.SendData(temp_send,sizeof(temp_send));}
+{nBytesSendtoArduino=serial0.SendData(temp_send,sizeof(temp_send));}
 
 }
 
@@ -772,7 +774,7 @@ for(int p=0;p<=arduino_max_digital;p++)
   type_pin[p]= arduino_digital_type[p];
 }
 
-sprintf(temp_send_config,"");
+sprintf(temp_send_config,"%s","");
 temp_send_config[0]='C';temp_send_config[1]='O';temp_send_config[2]='/';
 
 for(int k=0;k<=arduino_max_digital;k++)
@@ -819,7 +821,7 @@ temp_send_config[(3+arduino_max_digital+1)]='E';
 temp_send_config[(3+arduino_max_digital+2)]='D';
 temp_send_config[(3+arduino_max_digital+3)]='/';
 temp_send_config[(3+arduino_max_digital+4)]='\0';
-int nBytesSendtoArduino=serial0.SendData(temp_send_config,sizeof(temp_send_config));
+nBytesSendtoArduino=serial0.SendData(temp_send_config,sizeof(temp_send_config));
 }
 index_send_arduino_config=0;
 index_send_pwm_data=1;

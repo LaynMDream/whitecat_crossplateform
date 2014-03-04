@@ -300,7 +300,7 @@ chdir(rep);
 FILE *fp=NULL;
 
 
-if(fp=fopen(importfile_name,"wt"))
+if((fp=fopen(importfile_name,"wt")))
 {
     fprintf(fp,"MANUFACTURER WHITE CAT (c)CHRISTOPH GUILLERMET\n");
     fprintf(fp,"%s\n",versionis);

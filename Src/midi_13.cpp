@@ -237,23 +237,23 @@ if(control>47 && control <=95 && miditable[0][control]==4)
                int dockused=detect_dock_used(control-48);
                DockIsSelected[control-48][dockused]=0;
 
-               if(midi_levels[control]>=0 && midi_levels[control]<=5 || midi_levels[control]>=36 && midi_levels[control]<=41
-                  || midi_levels[control]>=72 && midi_levels[control]<=77 || midi_levels[control]>=108 && midi_levels[control]<=110 )
+               if((midi_levels[control]>=0 && midi_levels[control]<=5) || (midi_levels[control]>=36 && midi_levels[control]<=41)
+                  ||(midi_levels[control]>=72 && midi_levels[control]<=77) ||( midi_levels[control]>=108 && midi_levels[control]<=110 ))
                {dockused=0;}
-               if(midi_levels[control]>=6 && midi_levels[control]<=11 || midi_levels[control]>=42 && midi_levels[control]<=47
-                  || midi_levels[control]>=78 && midi_levels[control]<=83 || midi_levels[control]>=111 && midi_levels[control]<=113 )
+               if((midi_levels[control]>=6 && midi_levels[control]<=11) || (midi_levels[control]>=42 && midi_levels[control]<=47)
+                  || (midi_levels[control]>=78 && midi_levels[control]<=83) || (midi_levels[control]>=111 && midi_levels[control]<=113) )
                {dockused=1;}
-               if(midi_levels[control]>=12 && midi_levels[control]<=17 || midi_levels[control]>=48 && midi_levels[control]<=53
-                  || midi_levels[control]>=84 && midi_levels[control]<=89 || midi_levels[control]>=114 && midi_levels[control]<=117 )
+               if((midi_levels[control]>=12 && midi_levels[control]<=17) || (midi_levels[control]>=48 && midi_levels[control]<=53)
+                  || (midi_levels[control]>=84 && midi_levels[control]<=89) || (midi_levels[control]>=114 && midi_levels[control]<=117) )
                {dockused=2;}
-               if(midi_levels[control]>=18 && midi_levels[control]<=23 || midi_levels[control]>=54 && midi_levels[control]<=59
-                  || midi_levels[control]>=90 && midi_levels[control]<=95 || midi_levels[control]>=118 && midi_levels[control]<=121 )
+               if((midi_levels[control]>=18 && midi_levels[control]<=23) || ( midi_levels[control]>=54 && midi_levels[control]<=59)
+                  || (midi_levels[control]>=90 && midi_levels[control]<=95) || (midi_levels[control]>=118 && midi_levels[control]<=121) )
                {dockused=3;}
-               if(midi_levels[control]>=24 && midi_levels[control]<=29 || midi_levels[control]>=60 && midi_levels[control]<=65
-                  || midi_levels[control]>=96 && midi_levels[control]<=101 || midi_levels[control]>=122 && midi_levels[control]<=124 )
+               if((midi_levels[control]>=24 && midi_levels[control]<=29) || (midi_levels[control]>=60 && midi_levels[control]<=65)
+                  || (midi_levels[control]>=96 && midi_levels[control]<=101) || (midi_levels[control]>=122 && midi_levels[control]<=124) )
                {dockused=4;}
-               if(midi_levels[control]>=30 && midi_levels[control]<=35 || midi_levels[control]>=66 && midi_levels[control]<=71
-                  || midi_levels[control]>=102 && midi_levels[control]<=107 || midi_levels[control]>=125 && midi_levels[control]<=127 )
+               if((midi_levels[control]>=30 && midi_levels[control]<=35) ||(midi_levels[control]>=66 && midi_levels[control]<=71)
+                  || (midi_levels[control]>=102 && midi_levels[control]<=107) || (midi_levels[control]>=125 && midi_levels[control]<=127) )
                {dockused=5;}
 
                DockIsSelected[control-48][dockused]=1;
@@ -3465,7 +3465,7 @@ miditable[1][i]==ischan && miditable[2][i]==ispitch && ischan!=999 && istyp!=999
          val_raccrochage_midi[i]=isvel;
          if(index_midi_auto_demute==1 && is_raccrochage_midi_remote[i]==1 && val_raccrochage_midi[i]==midi_levels[i])
          {is_raccrochage_midi_remote[i]=0;}
-         if(is_raccrochage_midi_remote[i]==0 || miditable[0][1277]==istyp && miditable[1][1277]==ischan && miditable[2][1277]==ispitch  )
+         if((is_raccrochage_midi_remote[i]==0|| miditable[0][1277]==istyp) && miditable[1][1277]==ischan && miditable[2][1277]==ispitch  )
          {
          midi_levels[i]=isvel;
          do_midi_job(i);
@@ -3480,7 +3480,7 @@ else
     )//enlevé le typ pour simplifier les histoires de flash
     {
      val_raccrochage_midi[i]=isvel;
-     if(is_raccrochage_midi_remote[i]==0 || miditable[0][1277]==istyp && miditable[1][1277]==ischan && miditable[2][1277]==ispitch  )
+     if((is_raccrochage_midi_remote[i]==0 || miditable[0][1277]==istyp  ) && miditable[1][1277]==ischan && miditable[2][1277]==ispitch  )
      {
      midi_levels[i]=isvel;
      do_midi_job(i);

@@ -1448,7 +1448,7 @@ int arduino_max_devices=1;
 bool index_send_arduino_config=0;//
 float index_do_light_send_config=1.0;
 int nBytesReadArduino0=0;
-
+int nBytesSendtoArduino=0;
 char arduino_order[4];//l ordre a envoyer se compose de trois lettres, un slash, un EOL
 
 int arduino_com0=4;

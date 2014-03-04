@@ -606,37 +606,7 @@ case 0:
 sprintf(header_export,"DOT brush selected");
 break;
 case 1:
-sprintf(header_export,"LINE brush selected");
-break;
-case 2:
-sprintf(header_export,"CROSS brush selected");
-break;
-case 3:
-sprintf(header_export,"CROSS EXT brush selected");
-break;
-case 4:
-sprintf(header_export,"CIRCLE brush selected");
-break;
-case 5:
-sprintf(header_export,"CIRCLE OUTLINED brush selected");
-break;
-case 6:
-sprintf(header_export,"TRIANGLE brush selected");
-break;
-case 7:
-sprintf(header_export,"TRIANGLE OUTLINED brush selected");
-break;
-case 8:
-sprintf(header_export,"SQUARE brush selected");
-break;
-case 9:
-sprintf(header_export,"SQUARE OUTLINED brush selected");
-break;
-case 10:
-sprintf(header_export,"RECTANGLE brush selected");
-break;
-case 11:
-sprintf(header_export,"RECTANGLE OUTLINED brush selected");
+sprintf(header_export,"GRIDPLAYER selected");
 break;
 default:
 break;
