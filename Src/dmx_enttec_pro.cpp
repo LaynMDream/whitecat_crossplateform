@@ -154,7 +154,7 @@ int Enttec_Pro_SetCommParams()
 
 
 // send a packet, overlapped code has not been implemented yet
-int Enttec_Pro_SendData(int label, unsigned char *data, int length, LPOVERLAPPED lpOverlapped)
+int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPOVERLAPPED lpOverlapped)
 {
 
 //label is SEND_DMX_RDM_TX
