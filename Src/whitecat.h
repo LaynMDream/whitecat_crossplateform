@@ -123,9 +123,9 @@ float angle_souris=0.0,transparence_souris=1.0;
 int config_color_style_is=0;
 float size_faders=0.8;
 //screens
-bool index_borderwindow=0;
-bool index_multiplescreen=0;
-bool index_fullscreen=0;
+int index_borderwindow=0;
+int index_multiplescreen=0;
+int index_fullscreen=0;
 int posX_mainwindow=0;//placement fenetre sur bureau
 int posY_mainwindow=0;
 int index_report_customs[128]; //report des fentres on off, du view dmx, theme couleur etc etc
@@ -358,7 +358,7 @@ int minifader_lockpreset_is=0;
 int over_minifader=0;
 /////////////////////////////CHANNELS///////////////////////////////////////////
 int scroll_channelspace=0;
-bool dmx_view=0;//0 pourcentage 1 dmx
+int dmx_view=0;//0 pourcentage 1 dmx
 unsigned char bufferSaisie[514]; // le 0 n est pas pris, le 512 est en  513
 unsigned char bufferBlind[514];
 unsigned char bufferFaders[514];
@@ -509,10 +509,10 @@ char string_threshold_is[24];
 char string_erode_is[24];
 char string_blur_is[24];
 char string_div_is[24];
-bool flip_image=1;
-bool threshold_on=1;
-bool erode_mode=0;
-bool blur_on=0;
+int flip_image=1;
+int threshold_on=1;
+int erode_mode=0;
+int blur_on=0;
 double pixels_changed=0;
 double old_pixels_changed=0;
 double nbre_pixels_changed=0;
@@ -523,7 +523,7 @@ int index_count_trackers=0;
 int frame_video_x, frame_video_y;
 int video_size_x=352 , video_size_y=288;
 bool camera_is_on=0;
-bool load_camera_on_start=0;
+int load_camera_on_start=0;
 int camera_original_fps_is=15;
 float display_fps;
 //6 tracking docks // 12 espaces de tracking par tracking dock//
@@ -587,7 +587,7 @@ float pad_vy;
 float angle_snap_pad;
 float position_curseur_pad_x;
 float position_curseur_pad_y;
-bool wheellevel_absolutemode=0;
+int wheellevel_absolutemode=0;
 int previous_level_wheel=1;
 int absolute_level_wheel=0;//icat
 int previous_absolute_level_wheel=0;//icat
@@ -692,7 +692,7 @@ char savefile_name[72];
 //////////////////////MIDI/:////////////////////////////////////////////////////
 bool index_midi_mute=0;
 bool index_auto_mute_cuelist_speed=0;
-bool index_midi_auto_desaffect=0;
+int index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
 MidiName	AppliName = "white cat";
@@ -807,7 +807,7 @@ bool index_text_auto_close=0;
 float Times_Memoires[10000][4];//0=DIN 1=IN 2=DOUT 3=OUT
 bool Links_Memoires[10000];
 bool index_link_is_on=0;
-bool  index_blink_change_memories=0;// si on demande d afficher les changements entre sequenciel modifie ( sc-preset) et les mémoires
+int  index_blink_change_memories=0;// si on demande d afficher les changements entre sequenciel modifie ( sc-preset) et les mémoires
 float default_time=3.0;
 int niveauX1=255;
 int niveauX2=0;
@@ -943,7 +943,7 @@ char ReceivedArtPollReplyBuffer[240];
 char ArtShortName [ShortNameLength]= {"white_cat"};
 char ArtLongName[LongNameLength]= {"a PC Lighting Application "};
 char ArtNodeReport[NodeReportLength]= {"Is everything ok ?"};
-bool index_broadcast=0;
+int index_broadcast=0;
 
 int count_artopoll_received=0;
 ///RECEPTION ART-NET
@@ -1285,7 +1285,7 @@ char audio_folder[25]={"demo"};
 char temp_audio_folder[25];
 char sound_files[4][72];
 char soundfile_temp_loader[256+72];
-bool  index_preloaded_sounds=1;//pas chargés
+int  index_preloaded_sounds=1;//pas chargés
 int length_of_file_in_player[4];
 int position_of_file_in_player[4];
 int player_loop_out_position[4];
@@ -1442,7 +1442,7 @@ int core_to_assign=0;
 
 
 //////ARDUINO/////////////////////////////////
-bool open_arduino_on_open=0;
+int open_arduino_on_open=0;
 char string_Arduino_status[128];
 int arduino_max_devices=1;
 bool index_send_arduino_config=0;//
@@ -1739,7 +1739,7 @@ int before_mover_params[48][2];
 bool tracker_16b_edit=0; // pour souris sur tracker aera= Fine et iris etc...
 
 ////////// ICAT //////////
-bool enable_iCat=0;
+int enable_iCat=0;
 bool receiving_bytes_iCat=0;//pour visu data in
 bool index_window_gui_iCat=0;
 char iphone_fonts[12][25];//12 fonts possibles
@@ -2041,7 +2041,7 @@ int core_user_define_nb_chasers=128;
 int core_user_define_nb_tracks_per_chasers=24;
 int core_user_define_nb_gridplayers=4;
 int core_user_define_nb_bangers=128;
-bool core_do_calculations[24];
+int core_do_calculations[24];
 
 //////////////////////////////////////
 int mouse_level_for_banger=0;
@@ -2236,7 +2236,7 @@ bool plot_editing_color_line=0;
 bool plot_index_show_levels=1;
 bool plot_index_show_levels_from_faders=1;
 
-bool plot_grid_type=0;//0 petits ppoints, 1 ligne pleine)
+int plot_grid_type=0;//0 petits ppoints, 1 ligne pleine)
 float alpha_grille=0.5;
 
 float Color_plotline=0.0;
@@ -2247,7 +2247,7 @@ int nbre_shapes_on_plot=0;
 const short max_shape_type=11;
 char shape_nickname[max_shape_type+1][25];//12 Shapes
 
-bool lock_background_proportions=0;
+int lock_background_proportions=0;
 
 int shape_selected_type=0;
 float general_shape_size_to_apply=1.0;
@@ -2280,7 +2280,7 @@ int stored_plot_shape_position[nbre_symbol_per_layer][4];//temp pour bougeage
 
 bool index_ask_general_clear_on_plot=0;//pour confirm logical
 int editing_shape_line_number=0;
-bool index_show_shape_id=0;
+int index_show_shape_id=0;
 int index_last_shape_selected=0;
 int nbre_branches_polygon=6;
 
@@ -2311,7 +2311,7 @@ bool index_ask_record_preset_relativ=0;
 int xyrelativ_preset=999;
 
 int plot_relativxy_preset[8][4][2];
-bool mode_relatif_xy_solo=0;
+int mode_relatif_xy_solo=0;
 
 int number_of_shapes_groups=0;
 
@@ -2389,7 +2389,7 @@ int size_y_mainmenu=200;
 
 
 
-bool expert_mode=0;//confirmations ou pas de record etc...
+int expert_mode=0;//confirmations ou pas de record etc...
 bool index_show_first_dim=0;
 int show_first_dim_array[514][4];//pour affichage du premier grada patché au circuit
 bool show_more_than_one_dim[514];
@@ -2436,7 +2436,7 @@ int draw_preset_channel_routing[6][500];
 int draw_preset_selected=0;
 int previous_draw_preset_selected=-1;//icat
 
-bool draw_brush_type[6]; //point / GPL
+int draw_brush_type[6]; //point / GPL
 int draw_mode[6];//0= draw 1= erase 2= solo 3=ghost
 float draw_level_to_do[6];
 float draw_tilt_to_do[6];

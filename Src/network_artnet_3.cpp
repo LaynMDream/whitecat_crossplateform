@@ -222,7 +222,7 @@ char read_buff[ 512 ] ;
 	}
 
 
-fscanf( cfg_file , "%d %d \n" ,  &index_broadcast , &Univers  );
+fscanf( cfg_file , "%d %d /\n" ,  &index_broadcast , &Univers  );
 /* on saute la ligne de commentaire */
 fgets( read_buff , sizeof( read_buff ) , cfg_file );
 //deuxieme ligne des args
