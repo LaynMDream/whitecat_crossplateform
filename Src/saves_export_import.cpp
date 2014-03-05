@@ -151,8 +151,8 @@ chdir(rep);
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2p\n",&chan,&level);
-							Memoires[cue][chan]=(unsigned char)level ;
+							sscanf(temp,"%d/H%2d\n",&chan,&level);
+							Memoires[cue][chan]=(unsigned char)level;
 							temp=strtok(NULL," ");
 						    }
 					}
@@ -249,7 +249,7 @@ chdir(rep);
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2p\n",&chan,&level);
+							sscanf(temp,"%d/H%2d\n",&chan,&level);
                             if(chan<513)
                             {
                             FaderDockContains[sub_f][sub_d][chan]=(unsigned char)level ;
