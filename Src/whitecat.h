@@ -695,7 +695,8 @@ bool index_auto_mute_cuelist_speed=0;
 int index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
-MidiName	AppliName = "white cat";
+MidiName AppliName = "white cat";
+
 char	  	TblLibEv[256][20];
 char my_midi_string[64];
 char my_midi_original_string[64];
