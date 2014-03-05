@@ -76,7 +76,7 @@ int open_sunlite()
  dasusbcommand = (DasUsbCommand) GetProcAddress(hLibSunlite, "DasUsbCommand");
  if (dasusbcommand == NULL)
  {
-    sprintf(string_display_dmx_params,"Impossible to Get ProcAdress DASHARD: %d",dasusbcommand );
+    sprintf(string_display_dmx_params,"Impossible to Get ProcAdress DASHARD");
   }
 //open device
 
