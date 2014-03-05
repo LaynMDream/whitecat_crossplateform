@@ -997,7 +997,7 @@ short DataLength=512;
 int Dim (HeaderLength + DataLength) ;//largeur de l envoi
 int Univers=0;
 bool index_do_light_diode_artnet=0;
-bool index_artnet_doubledmx=0;
+int index_artnet_doubledmx=0;
 bool artnet_serveur_is_initialized=0;
 //////////////////RESEAUX DETECTION////////////////////////////////////////////
 char IP_detected_dmxOUT[8][24];

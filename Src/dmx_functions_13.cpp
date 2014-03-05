@@ -223,8 +223,8 @@ if(index_init_dmx_ok==1 )
  }
     if (pUsbDmx!= NULL)
 		{
-	    int iRet;
-		iRet = pUsbDmx->get_dmx_device_count();
+	    /*int iRet;
+		iRet = pUsbDmx->get_dmx_device_count();*/
    	    pUsbDmx->send_dmx_packet(DmxBlockEnttecOpen);
         }
   break;
