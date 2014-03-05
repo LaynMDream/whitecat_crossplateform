@@ -70,7 +70,7 @@ int open_sunlite()
   hLibSunlite = LoadLibrary("DasHard2006.dll");
  if (hLibSunlite == NULL)
  {
-     sprintf(string_display_dmx_params,"Impossible to load sunlite DLL: %s", hLibSunlite);
+     sprintf(string_display_dmx_params,"Impossible to load sunlite DLL");
  }
 
  dasusbcommand = (DasUsbCommand) GetProcAddress(hLibSunlite, "DasUsbCommand");
