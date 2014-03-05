@@ -746,7 +746,7 @@ int load_screen_config()
      sprintf(string_save_load_report[idf],"! config_screens.txt");
 	}
 
-	fscanf( cfg_file , "%d %d %d / %d %d / %d %d\n" ,  &index_multiplescreen, &index_borderwindow, &index_fullscreen, &largeur_ecran, &hauteur_ecran, &posX_mainwindow, &posY_mainwindow);
+	fscanf( cfg_file , "%d / %d / %d / %d / %d / %d / %d /\n" ,  &index_multiplescreen, &index_borderwindow, &index_fullscreen, &largeur_ecran, &hauteur_ecran, &posX_mainwindow, &posY_mainwindow);
 
 
 	fclose( cfg_file );
@@ -775,7 +775,7 @@ int load_core_config()
 	}
 	else
 	{
-	fscanf( cfg_file , "%d %d %d %d %d %d %d /\n"  , &core_user_define_nb_faders, &core_user_define_nb_docks , &core_user_define_nb_chasers, &core_user_define_nb_tracks_per_chasers, &core_user_define_nb_gridplayers, &core_user_define_nb_bangers, &core_user_define_nb_echo);
+	fscanf( cfg_file , "%d / %d / %d / %d / %d / %d / %d /\n"  , &core_user_define_nb_faders, &core_user_define_nb_docks , &core_user_define_nb_chasers, &core_user_define_nb_tracks_per_chasers, &core_user_define_nb_gridplayers, &core_user_define_nb_bangers, &core_user_define_nb_echo);
     }
     //deuxieme ligne les args
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
@@ -784,7 +784,7 @@ int load_core_config()
 	}
 	else
 	{
-	fscanf( cfg_file , "%d %d %d %d %d %d %d %d %d /\n"  ,&core_do_calculations[0],&core_do_calculations[1],&core_do_calculations[2],
+	fscanf( cfg_file , "%d / %d / %d / %d / %d / %d / %d / %d / %d /\n"  ,&core_do_calculations[0],&core_do_calculations[1],&core_do_calculations[2],
     &core_do_calculations[3],&core_do_calculations[4],&core_do_calculations[5],&core_do_calculations[6],&core_do_calculations[7],&core_do_calculations[8]  );
     }
     //troisieme ligne les args
@@ -794,7 +794,7 @@ int load_core_config()
 	}
 	else
 	{
-    fscanf( cfg_file , "%d %d /\n",&BPS_RATE,&dmxINrate);
+    fscanf( cfg_file , "%d / %d /\n",&BPS_RATE,&dmxINrate);
     }
 
 	fclose( cfg_file );
@@ -809,13 +809,13 @@ FILE *fpp;
 if((fpp=fopen("user/config_core.txt","w")))//etait wb
 {
 fprintf(fpp,"#arguments: nb_faders / nb_docks / nb_chasers/ nb_tracks per chasers / nb_gridplayers / nb_bangers /\n");
-fprintf(fpp, "%d %d %d %d %d %d %d /\n" , core_user_define_nb_faders, core_user_define_nb_docks ,core_user_define_nb_chasers,
+fprintf(fpp, "%d / %d / %d / %d / %d / %d / %d /\n" , core_user_define_nb_faders, core_user_define_nb_docks ,core_user_define_nb_chasers,
 core_user_define_nb_tracks_per_chasers,core_user_define_nb_gridplayers,core_user_define_nb_bangers,core_user_define_nb_echo);
 fprintf(fpp,"#arguments: do faders (0-1) /do cuelist (0-1) / do bangers (0-1)/ do trichro (0-1) / do videotracking (0-1) / do chasers (0/1) / do Grid (0-1) /\n");
-fprintf(fpp, "%d %d %d %d %d %d %d %d %d /\n" ,core_do_calculations[0],core_do_calculations[1],core_do_calculations[2],
+fprintf(fpp, "%d / %d / %d / %d / %d / %d / %d / %d / %d /\n" ,core_do_calculations[0],core_do_calculations[1],core_do_calculations[2],
     core_do_calculations[3],core_do_calculations[4],core_do_calculations[5],core_do_calculations[6],core_do_calculations[7], core_do_calculations[8]  );
 fprintf(fpp,"#arguments: BPS RATE (25-200, should be 50) / DMX IN RATE (25-50) / \n");
-fprintf(fpp, "%d %d /\n",BPS_RATE,dmxINrate);
+fprintf(fpp, "%d / %d /\n",BPS_RATE,dmxINrate);
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved config_core.txt");
 
 }
@@ -838,7 +838,7 @@ FILE *fpp;
 if((fpp=fopen("user/config_onstart.txt","w")))//etait wb
 {
 fprintf(fpp,"#arguments:values 0-1: open camera / open arduino / open iCat server / expert_mode /\n");
-fprintf(fpp, "%d %d %d %d /\n" ,  load_camera_on_start, open_arduino_on_open , enable_iCat, expert_mode);
+fprintf(fpp, "%d / %d / %d / %d /\n" ,  load_camera_on_start, open_arduino_on_open , enable_iCat, expert_mode);
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved config_onstart.txt");
 }
 
@@ -857,7 +857,7 @@ FILE *fpp;
 if((fpp=fopen("user/config_screens.txt","w")))//etait wb
 {
 fprintf(fpp,"#arguments: multiplescreen/ borderwindow / fullscreen / largeur_ecran / hauteur_ecran / pos_x / pos_y\n");
-fprintf(fpp, "%d %d %d %d %d %d %d /\n" ,  index_multiplescreen, index_borderwindow, index_fullscreen, largeur_ecran, hauteur_ecran, posX_mainwindow, posY_mainwindow);
+fprintf(fpp, "%d / %d / %d / %d / %d / %d / %d /\n" ,  index_multiplescreen, index_borderwindow, index_fullscreen, largeur_ecran, hauteur_ecran, posX_mainwindow, posY_mainwindow);
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved config_screen.txt");
 }
 
@@ -876,7 +876,7 @@ FILE *fpp;
 if((fpp=fopen("user/launchpad_lighting.txt","w")))//etait wb
 {
 fprintf(fpp,"#arguments: orange / green / yellow / red  / ambre / dark orange /\n");
-fprintf(fpp, "%d %d  %d %d %d %d /\n" ,  lch_orange, lch_green, lch_yellow, lch_red, lch_ambre, lch_orange_fonce);
+fprintf(fpp, "%d / %d / %d / %d / %d / %d /\n" ,  lch_orange, lch_green, lch_yellow, lch_red, lch_ambre, lch_orange_fonce);
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved launchpad_lighting.txt");
 }
 
@@ -906,7 +906,7 @@ int Load_Launchpad_RetroLight()
      sprintf(string_save_load_report[idf],"! launchpad_lighting.txt");
 	}
 
-	fscanf( cfg_file ,  "%d %d %d %d %d %d /\n" ,  &lch_orange, &lch_green, &lch_yellow, &lch_red, &lch_ambre, &lch_orange_fonce);
+	fscanf( cfg_file ,  "%d / %d / %d / %d / %d / %d /\n" ,  &lch_orange, &lch_green, &lch_yellow, &lch_red, &lch_ambre, &lch_orange_fonce);
 
 	fclose( cfg_file );
     }
@@ -933,8 +933,8 @@ for(int i=0;i<6;i++)
 {
 fprintf(fpp,"#arguments Preset %d:MODE (0 to 3) / LEVEL (float) / TILT (float)/ SIZE (float)/ GHOST (float) / BRUSH TYPE (int) /\n",i+1);
 fprintf(fpp,"#arguments 2ndLine :GPL NUM ( 1 to 4 ) / Offset ( 1 to 513 ) / position point / col / row /\n");
-fprintf(fpp, "M %d %f %f %f %d /\n",draw_mode[i],draw_level_to_do[i],draw_tilt_to_do[i],draw_ghost_to_do[i],draw_brush_type[i]);
-fprintf(fpp, "G %d %d %d %d %d /\n",draw_get_gpl[i],draw_offset_gpl[i], index_case[i],draw_centre_x[i], draw_centre_y[i]);
+fprintf(fpp, "M %d / %f / %f / %f / %d /\n",draw_mode[i],draw_level_to_do[i],draw_tilt_to_do[i],draw_ghost_to_do[i],draw_brush_type[i]);
+fprintf(fpp, "G %d / %d / %d / %d / %d /\n",draw_get_gpl[i],draw_offset_gpl[i], index_case[i],draw_centre_x[i], draw_centre_y[i]);
 }
 fclose(fpp);
 sprintf(string_save_load_report[idf],"Saved draw_presets_states.txt");
@@ -975,9 +975,9 @@ int load_draw_preset_config()
    	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}
 
-    fscanf( cfg_file , "%d %f %f %f %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_tilt_to_do[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
+    fscanf( cfg_file , "%d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_tilt_to_do[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
 
-    fscanf( cfg_file , "G %d %d %d %d %d /\n" ,&draw_get_gpl[i],&draw_offset_gpl[i], &index_case[i], &draw_centre_x[i], &draw_centre_y[i]);
+    fscanf( cfg_file , "%d / %d / %d / %d / %d /\n" ,&draw_get_gpl[i],&draw_offset_gpl[i], &index_case[i], &draw_centre_x[i], &draw_centre_y[i]);
 
     previous_draw_mode[i]=draw_mode[i];
     draw_get_gpl[i]=constrain_int_data_to_this_range(draw_get_gpl[i],1,4);
@@ -1057,38 +1057,38 @@ else
 	{
      sprintf(string_save_load_report[idf],"! config_windows.txt");
 	}
-	fscanf( cfg_file , "%d  %d / %d %d / %d %d / %d %d /\n" ,  &xtrichro_window, &ytrichro_window, &xnum_window,&ynum_window,&videoX,&videoY, &xpatch_window, &ypatch_window);
+	fscanf( cfg_file , "%d / %d / %d / %d / %d / %d / %d / %d /\n" ,  &xtrichro_window, &ytrichro_window, &xnum_window,&ynum_window,&videoX,&videoY, &xpatch_window, &ypatch_window);
 //2eme ligne
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
 	}
-    fscanf( cfg_file , "%d  %d / %d %d / %d %d /\n" ,  &report_SL_X, &report_SL_Y , &xtime_window, &ytime_window,&xseq_window, &yseq_window);
+    fscanf( cfg_file , "%d / %d / %d / %d / %d / %d /\n" ,  &report_SL_X, &report_SL_Y , &xtime_window, &ytime_window,&xseq_window, &yseq_window);
 //3eme ligne
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
 	}
-    fscanf( cfg_file ,"%d / %d %d / %d %d /\n",&YFader, &XConfirm, &YConfirm, &xsave_window, &ysave_window );
+    fscanf( cfg_file ,"%d / %d / %d / %d / %d /\n",&YFader, &XConfirm, &YConfirm, &xsave_window, &ysave_window );
 //4eme ligne
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
 	}
-    fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d /\n",&XAlarm,&YAlarm,&XAudio,&YAudio, &window_cfgX, &window_cfgY, &X_banger, &Y_banger);
+    fscanf( cfg_file ,"%d / %d / %d / %d / %d / %d / %d / %d /\n",&XAlarm,&YAlarm,&XAudio,&YAudio, &window_cfgX, &window_cfgY, &X_banger, &Y_banger);
 //5eme ligne
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
 	}
-    fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d / %d %d /\n",&Xwizard,&Ywizard,&xMinifaders,&yMinifaders, &Xlistproj, &Ylistproj, &Xchasers, &Ychasers,&xmover_window, &ymover_window);
+    fscanf( cfg_file ,"%d / %d / %d / %d / %d / %d / %d / %d / %d / %d /\n",&Xwizard,&Ywizard,&xMinifaders,&yMinifaders, &Xlistproj, &Ylistproj, &Xchasers, &Ychasers,&xmover_window, &ymover_window);
 
 //6eme ligne
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
 	}
-    fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d / %d %d / %d %d /\n",&X_gui_iCat,&Y_gui_iCat,&grider_window_x,&grider_window_y, &x_plot, &y_plot, &x_mainmenu, &y_mainmenu , &x_Wdraw, &y_Wdraw, &x_echo, &y_echo);
+    fscanf( cfg_file ,"%d / %d / %d / %d / %d / %d / %d / %d / %d / %d / %d / %d /\n",&X_gui_iCat,&Y_gui_iCat,&grider_window_x,&grider_window_y, &x_plot, &y_plot, &x_mainmenu, &y_mainmenu , &x_Wdraw, &y_Wdraw, &x_echo, &y_echo);
 
 
 	fclose( cfg_file );
@@ -1113,7 +1113,7 @@ int Load_Sequenciel_Conf()
     else {sprintf(string_save_load_report[idf],"Sequenciel.txt readed");}
 	fscanf( cfg_file , "%d / %d / %d / %d / %d /\n" ,  &position_onstage, &position_preset, &niveauX1, &niveauX2, &crossfade_speed);
     fscanf( cfg_file , "%f /\n" ,  &default_time);
-    fscanf( cfg_file , "%d %d /\n" ,  &go_channel_is, &pause_channel_is);
+    fscanf( cfg_file , "%d / %d /\n" ,  &go_channel_is, &pause_channel_is);
 	fclose( cfg_file );
 	}
 midi_levels[491]=niveauX1/2;
@@ -1138,7 +1138,7 @@ int Load_setup_conf()
 	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{     sprintf(string_save_load_report[idf],"Error on reading user/general_set_up.txt");b_report_error[idf]=1; 	}
     else {sprintf(string_save_load_report[idf],"user/general_set_up.txt readed");}
-	fscanf( cfg_file , "%d %d %d %d %d %d %d %d %f /\n" , &default_step_level, &wheellevel_absolutemode, &check_channel_level,
+	fscanf( cfg_file , "%d / %d / %d / %d / %d / %d / %d / %d / %f /\n" , &default_step_level, &wheellevel_absolutemode, &check_channel_level,
                      &dimmer_check_level, &index_blink_change_memories, &index_midi_auto_desaffect, &dmx_view, &index_preloaded_sounds, &default_time_of_the_bang);
 //2eme ligne
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
@@ -1162,7 +1162,7 @@ FILE *fpi;
 if((fpi=fopen("user/general_set_up.txt","w")))//etait wb
 {
 fprintf(fpi,"#arguments: default step level / level wheel absolute mode / channel check level / dimmer check level / blink on mem change /  midi auto desaffect / dmx view / preloaded sounds / bang stay time\n");
-fprintf(fpi,"%d / %d / %d / %d / %d / %d / %d / %d / %.1f /\n",default_step_level, wheellevel_absolutemode, check_channel_level, dimmer_check_level,
+fprintf(fpi,"%d / %d / %d / %d / %d / %d / %d / %d / %f /\n",default_step_level, wheellevel_absolutemode, check_channel_level, dimmer_check_level,
                                                              index_blink_change_memories, index_midi_auto_desaffect, dmx_view, index_preloaded_sounds,  default_time_of_the_bang);
 fprintf(fpi,"#arguments: autosave time in sec / nbr audioplayers / fader space width /\n");
 fprintf(fpi,"%d / %d / %d /\n",automatic_time_for_save, index_nbre_players_visibles, LargeurEspaceFaderSize);
@@ -1223,14 +1223,14 @@ int Load_Plot_Plan_config()
      sprintf(string_save_load_report[idf],"Error plot_plan_config.txt");
 	}
 //4eme
-    fscanf( cfg_file , "%d %d %d %d %f %f %d %f /\n" ,&position_relative_plan_theatre[0],&position_relative_plan_theatre[1],&taille_relative_plan_theatre[0],&taille_relative_plan_theatre[1],&orientation_plan_theatre,&alpha_plan, &lock_background_proportions, &global_symbol_size);
+    fscanf( cfg_file , "%d / %d / %d / %d / %f / %f / %d / %f /\n" ,&position_relative_plan_theatre[0],&position_relative_plan_theatre[1],&taille_relative_plan_theatre[0],&taille_relative_plan_theatre[1],&orientation_plan_theatre,&alpha_plan, &lock_background_proportions, &global_symbol_size);
 //args
 	if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"Error plot_plan_config.txt");
 	}
 //6eme
-    fscanf( cfg_file , "%d %d %d %d %d %f %f %d %d %d %f %f %f %d /\n",&plot_quadrillage_size,&plot_window_x_size,&plot_window_y_size, &plot_view_port_x, &plot_view_port_y, &Color_plotline, &Color_plotfill, &nbre_shapes_on_plot, &index_show_shape_id, &plot_grid_type, &alpha_grille, &general_alpha_for_shape, &ratio_lock_plot_scale, &mode_relatif_xy_solo);
+    fscanf( cfg_file , "%d / %d / %d / %d / %d / %f / %f / %d / %d / %d / %f / %f / %f / %d /\n",&plot_quadrillage_size,&plot_window_x_size,&plot_window_y_size, &plot_view_port_x, &plot_view_port_y, &Color_plotline, &Color_plotfill, &nbre_shapes_on_plot, &index_show_shape_id, &plot_grid_type, &alpha_grille, &general_alpha_for_shape, &ratio_lock_plot_scale, &mode_relatif_xy_solo);
 
 	fclose( cfg_file );
 	}
@@ -1475,17 +1475,17 @@ FILE *fpi;
 if((fpi=fopen("config_windows.txt","w")))//etait wb
 {
 fprintf(fpi,"#arguments: X Y position of windows: Colors / Numeric / Video / Patch /\n");
-fprintf(fpi,"%d %d / %d %d / %d %d / %d %d /\n",xtrichro_window , ytrichro_window , xnum_window , ynum_window , videoX , videoY, xpatch_window, ypatch_window);
+fprintf(fpi,"%d / %d / %d  / %d / %d / %d / %d / %d /\n",xtrichro_window , ytrichro_window , xnum_window , ynum_window , videoX , videoY, xpatch_window, ypatch_window);
 fprintf(fpi,"#arguments:  Save Load Report / Time / Sequenciel /\n");
-fprintf(fpi,"%d %d / %d %d / %d %d /\n",report_SL_X,report_SL_Y, xtime_window, ytime_window, xseq_window, yseq_window);
+fprintf(fpi,"%d / %d / %d / %d / %d / %d /\n",report_SL_X,report_SL_Y, xtime_window, ytime_window, xseq_window, yseq_window);
 fprintf(fpi,"#arguments:   FadersSpace(Y only) / Config window / Confirm Box / MiniSeq / Save Window\n");
-fprintf(fpi,"%d / %d %d / %d %d /\n",YFader, XConfirm, YConfirm,xsave_window, ysave_window );
+fprintf(fpi,"%d / %d / %d / %d / %d /\n",YFader, XConfirm, YConfirm,xsave_window, ysave_window );
 fprintf(fpi,"#arguments: X Y position of windows: Help Window / Alarm window / Config window / Banger\n");
-fprintf(fpi,"%d %d / %d %d / %d %d / %d %d /\n",XAlarm,YAlarm,XAudio,YAudio, window_cfgX, window_cfgY, X_banger,Y_banger);
+fprintf(fpi,"%d / %d / %d / %d / %d / %d / %d / %d /\n",XAlarm,YAlarm,XAudio,YAudio, window_cfgX, window_cfgY, X_banger,Y_banger);
 fprintf(fpi,"#arguments: X Y position of windows: Wizard window/ Minifaders / List / Chasers\n");
-fprintf(fpi,"%d %d / %d %d / %d %d / %d %d / %d %d /\n",Xwizard,Ywizard,xMinifaders, yMinifaders, Xlistproj, Ylistproj, Xchasers, Ychasers, xmover_window, ymover_window);
+fprintf(fpi,"%d %d / %d  / %d / %d / %d / %d / %d / %d / %d /\n",Xwizard,Ywizard,xMinifaders, yMinifaders, Xlistproj, Ylistproj, Xchasers, Ychasers, xmover_window, ymover_window);
 fprintf(fpi,"#arguments: X Y position of windows: iCatBuilder / Grider / Plot / Main Menu / Draw / Echo /\n");
-fprintf(fpi,"%d %d / %d %d / %d %d / %d %d / %d %d / %d %d /\n",X_gui_iCat,Y_gui_iCat,grider_window_x,grider_window_y, x_plot, y_plot, x_mainmenu, y_mainmenu, x_Wdraw,y_Wdraw,x_echo,y_echo);
+fprintf(fpi,"%d / %d / %d / %d / %d / %d / %d / %d / %d / %d / %d / %d /\n",X_gui_iCat,Y_gui_iCat,grider_window_x,grider_window_y, x_plot, y_plot, x_mainmenu, y_mainmenu, x_Wdraw,y_Wdraw,x_echo,y_echo);
 
 fclose(fpi);
 }
@@ -1568,7 +1568,7 @@ if((fpo=fopen("sequenciel.txt","w")))
 fprintf(fpo,"#arguments: mem_on_stage*10 / mem_on_preset*10 / master_stage / master_preset / speed /\n");
 fprintf(fpo,"%d / %d / %d / %d / %d /\n",position_onstage, position_preset,niveauX1,niveauX2,crossfade_speed);
 fprintf(fpo,"%.1f /\n",default_time);
-fprintf(fpo,"%d %d /\n", go_channel_is,pause_channel_is);
+fprintf(fpo,"%d / %d /\n", go_channel_is,pause_channel_is);
 sprintf(string_save_load_report[idf],"Saved sequenciel.txt");
 fclose(fpo); }
 else {sprintf(string_save_load_report[idf],"Error on sequenciel.txt");b_report_error[idf]=1;}

@@ -1148,7 +1148,7 @@
 1393457132 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1394030389 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\whitecat.h
+1394031438 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\whitecat.h
 	"Crossplateform.h"
 
 1393975281 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\crossplateform.h
@@ -1196,7 +1196,7 @@
 
 1393975281 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\audio_core5.cpp
 
-1394029714 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\save_show_13.cpp
+1394037505 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\save_show_13.cpp
 
 1394030389 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\network_artnet_3.cpp
 	<winsock2.h>
@@ -1224,7 +1224,7 @@
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\arduino_device_core.cpp
 	"serial.cpp"
 
-1393457127 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.cpp
+1394030738 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.cpp
 	"Serial.h"
 
 1393457127 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.h
@@ -1740,7 +1740,7 @@
 
 1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
 
-1393975281 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\dmx_functions_13.cpp
+1394031545 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
 	<odmxusb.h>
 	<dmx_enttec_pro.cpp>
@@ -1779,7 +1779,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1393057912 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\dmx_sunlite.cpp
+1394031438 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\dmx_sunlite.cpp
 	<_DasHard.h>
 
 1393457130 c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\whitecatlib\lib\windows\dashard\_dashard.h
