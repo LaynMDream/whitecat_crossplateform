@@ -107,7 +107,7 @@ int index_to_navigate_between_window=0;
 int window_opened[72];//la liste des fenetres ouvertes modification en 0.4.1 d un size 64 en size 72,
 //y compris dans save_show.cpp
 int nbre_fenetre_actives=0;
-// sab 5/03/2014 unused int temp_report_window[72];
+int temp_report_window[72];
 
 
 volatile int ticks_dixieme_for_icat_and_draw=0;
