@@ -1063,7 +1063,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d",index_fullscreen);
+sprintf(string_debug,"%d",index_midi_mute);
 
 if(there_is_change_on_show_save_state==1)
 {

@@ -87,7 +87,7 @@ nbre_windows++;
 }
  return(nbre_windows);
 }
-
+/*
 int add_a_window(int id)
 {
 
@@ -247,7 +247,44 @@ clear_non_desired_values_in_window_list();
 return(0);
 }
 
+*/
 
+int add_a_window(int id)
+{
+/* sab 05/03/2014 begin replace */
+    int push_front_into_window_opened[72];
+    int next_free_pos;
+    next_free_pos=0;
+    push_front_into_window_opened[next_free_pos]=id; // window is added on the top
+    window_focus_id=id; // window is added on the top = it gets the focus
+ //All open window are kept openin the same order (function to be rewritten with window_opened as a deque)
+ //if window added on the top, it is on the list, we skip it (no duplicate in the list)
+    for(int old_pos=0; old_pos<73; old_pos++)
+    {
+        if((window_opened[old_pos]!=id)  //id is already at the first place
+                && (window_opened[old_pos]!=0)
+                && (next_free_pos<72))    // don't overflow
+        {
+            next_free_pos= next_free_pos+1;
+            push_front_into_window_opened[next_free_pos]=window_opened[old_pos];
+        }
+    }
+    // Clean last unuse new position
+    if ((next_free_pos+1)<72)
+    {
+        for(int i=(next_free_pos+1); i<73; i++)
+        {
+            push_front_into_window_opened[i]=0;
+        }
+    }
+    //copy
+    for(int i=0; i<73; i++) //both are 72 occurences long
+    {
+        window_opened[i] = push_front_into_window_opened[i];
+    }
+/* sab 05/03/2014 end replace */
+return(0);
+}
 //substract in CORE
 
 int initiate_windows()

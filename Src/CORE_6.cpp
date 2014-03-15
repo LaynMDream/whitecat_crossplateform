@@ -5411,7 +5411,7 @@ int window_who_is_on_top()
 
 
 
-
+/*
 
 int substract_a_window(int id)
 {
@@ -5554,7 +5554,44 @@ int substract_a_window(int id)
 
     return(0);
 }
+*/
 
+int substract_a_window(int id)
+{
+/* sab 05/03/2014 begin replace */
+    int erase_window_opened[72];
+    int next_free_pos;
+    next_free_pos=0;
+//function to rewritte with window_opened as a deque
+//All open window are kept open in same order, just taking off the deque "id" window
+    for(int old_pos=0; old_pos<73; old_pos++)
+    {
+        if((window_opened[old_pos]!=id)  //id has been erase from the deque
+  && (window_opened[old_pos]!=0)  //shouldn't hapen
+  && (next_free_pos<72))    // don't overflow
+        {
+            erase_window_opened[next_free_pos]=window_opened[old_pos];
+            next_free_pos = next_free_pos+1;
+        }
+    }
+    // Clean last unuse new position
+    if ((next_free_pos+1)<72)
+    {
+        for(int i=(next_free_pos+1); i<73; i++)
+        {
+            erase_window_opened[i]=0;
+        }
+    }
+    //copy
+ for(int i=0; i<73; i++) //both are 72 occurences long
+    {
+  window_opened[i] = erase_window_opened[i];
+    }
+    //first window get focus
+    window_focus_id=window_opened[0];
+/* sab 05/03/2014 end replace */
+return(0);
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////
 int GlobInit()
 {
