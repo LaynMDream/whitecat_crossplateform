@@ -1801,7 +1801,7 @@
 1393457519 source:c:\users\bibi\documents\depot_christoph\whitecat_crossplateform\src\whitecat_private.rc
 	<windows.h>
 
-1394048980 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
+1394569484 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -2595,7 +2595,7 @@
 1393360097 c:\whitecat_crossplateform\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1394048994 c:\whitecat_crossplateform\src\whitecat.h
+1394920038 c:\whitecat_crossplateform\src\whitecat.h
 	"Crossplateform.h"
 
 1393967705 c:\whitecat_crossplateform\src\crossplateform.h
@@ -2608,7 +2608,7 @@
 
 1393270260 c:\whitecat_crossplateform\src\midi_core.cpp
 
-1393967591 c:\whitecat_crossplateform\src\core_6.cpp
+1394920287 c:\whitecat_crossplateform\src\core_6.cpp
 
 1393969709 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
 	<setjmp.h>
@@ -2618,7 +2618,7 @@
 
 1393967301 c:\whitecat_crossplateform\src\saves_menu_8.cpp
 
-1393270260 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
+1394920274 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
 
 1393969782 c:\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
 
@@ -3222,7 +3222,7 @@
 
 1393360088 c:\whitecat_crossplateform\whitecatlib\lib\windows\dashard\_dashard.h
 
-1393972033 c:\whitecat_crossplateform\src\midi_13.cpp
+1394570422 c:\whitecat_crossplateform\src\midi_13.cpp
 
 1393967301 c:\whitecat_crossplateform\src\cfg_screen.cpp
 
