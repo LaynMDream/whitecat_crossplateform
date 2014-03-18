@@ -31,14 +31,14 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file WhiteCat_private.rc
 * \brief {number of version and details}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.5.8}
+* \date {18/03/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
-*   Modifier ce fichier pour créer une nouvelle release. Changer juste le numéro de version et la date et verifier le fichier WhiteCat_private.h
-*
-*   Modify this file to create a new release of whitecat. Change just the number of version and the date and verify the file WhiteCat_private.h
+*   Compilation des libraries sources sous MinGW gcc4.8.1, création d'un dépot partagé,précriture de la doc doxygen, ecriture des readme et pas à pas, création de projet codeblocks et devc++ par Anton
+*   Création d'un projet netbeans par Ruis Serge et important travail de debug des sources d'origin
+*   Important debug des sources d'origin par Christoph.
 *
 */
 
@@ -51,8 +51,8 @@ A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "WhiteCat_OpenVersion.ico"
 // TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
 //
 1 VERSIONINFO
-FILEVERSION 0,8,5,6
-PRODUCTVERSION 0,8,5,6
+FILEVERSION 0,8,5,8
+PRODUCTVERSION 0,8,5,8
 FILETYPE VFT_APP
 {
   BLOCK "StringFileInfo"
@@ -60,14 +60,14 @@ FILETYPE VFT_APP
     BLOCK "040904E4"
     {
       VALUE "CompanyName", "www.le-chat-noir-numerique.fr"
-      VALUE "FileVersion", "0.8.5.4"
+      VALUE "FileVersion", "0.8.5.8"
       VALUE "FileDescription", "White Cat: a dmx lighting board for theatre dance and music"
       VALUE "InternalName", ""
       VALUE "LegalCopyright", "(c)Christoph Guillermet"
       VALUE "LegalTrademarks", "(r)White Cat is  INPI's registered trademark"
       VALUE "OriginalFilename", ""
       VALUE "ProductName", "White Cat Lighting Board, Spring version"
-      VALUE "ProductVersion", "05 mars 2014"
+      VALUE "ProductVersion", "18 mars 2014"
     }
   }
   BLOCK "VarFileInfo"

@@ -9,11 +9,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option platforms="Windows;" />
-<<<<<<< HEAD
-				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform 0857" prefix_auto="1" extension_auto="1" />
-=======
-				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform_0856" prefix_auto="1" extension_auto="1" />
->>>>>>> 483235de2974080969422ce8000b3a49011182d4
+				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../whitecatbuild/build/white_cat_for_mingw" />
 				<Option object_output="../../../whitecatbuild/build/white_cat_for_mingw/obj" />
 				<Option type="0" />
@@ -24,7 +20,7 @@
 			</Target>
 			<Target title="Release">
 				<Option platforms="Windows;" />
-				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform_0856" prefix_auto="1" extension_auto="1" />
+				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="../../../whitecatbuild/build/white_cat_for_mingw/white_cat" />
 				<Option object_output="../../../whitecatbuild/build/white_cat_for_mingw/obj" />
 				<Option type="0" />

@@ -32,7 +32,7 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file WhiteCat_private.h
 * \brief {number of version and details}
 * \author Christoph Guillermet
-* \version {0.8.5.4}
+* \version {0.8.5.8}
 * \date {19/02/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
@@ -47,19 +47,19 @@ WWWWWWWW           C  WWWWWWWW   |
 #define WHITECAT_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"0.8.5.6"
+#define VER_STRING	"0.8.5.8"
 #define VER_MAJOR	0
 #define VER_MINOR	8
 #define VER_RELEASE	5
-#define VER_BUILD	6
+#define VER_BUILD	8
 #define COMPANY_NAME	"www.le-chat-noir-numerique.fr"
-#define FILE_VERSION	"Alpha 0.8.5.6"
+#define FILE_VERSION	"Alpha 0.8.5.8"
 #define FILE_DESCRIPTION	"White Cat: a dmx lighting board for theatre dance and music"
 #define INTERNAL_NAME	""
 #define LEGAL_COPYRIGHT	"(c)Christoph Guillermet"
 #define LEGAL_TRADEMARKS	"(r)White Cat is  INPI's registered trademark"
 #define ORIGINAL_FILENAME	""
 #define PRODUCT_NAME	"White Cat Lighting Board, Spring version"
-#define PRODUCT_VERSION	"05 mars 2014"
+#define PRODUCT_VERSION	"18 mars 2014"
 
 #endif /*WHITECAT_PRIVATE_H*/

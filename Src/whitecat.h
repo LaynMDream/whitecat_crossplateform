@@ -45,8 +45,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.5.3 - 4 mars 2014"};
-char nickname_version[48]={"ANTON POWER"};
+char versionis[72]={"Beta 0.8.5.8 - 4 mars 2014"};
+char nickname_version[48]={"ANTON RUIS SERGE AND CHRISTOPH POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
