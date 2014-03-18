@@ -3033,7 +3033,7 @@ fclose(fp);
  idf++;
 }
 
-if(specify_who_to_save_load[21]==1)  //////ARDUINO//////////////////////////////////////////////////////////
+if(specify_who_to_save_load[21]==1)  //ARDUINO//////////////////////////////////////////////////////////
 {
 if ((fp=fopen( file_arduino_dig_typ, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_dig_typ); b_report_error[idf]=1;}
@@ -3322,7 +3322,7 @@ fclose(fp);
 }
  idf++;
 
-///strings
+//strings
 if ((fp=fopen(file_icat_nbstr, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s",file_icat_nbstr); b_report_error[idf]=1;}
 else
@@ -3505,7 +3505,7 @@ idf++;
 
 }
 
-if(specify_who_to_save_load[25]==1)  ///USER COLOR PROFILE//////////////////////////////////////////////////
+if(specify_who_to_save_load[25]==1)  //USER COLOR PROFILE//////////////////////////////////////////////////
 {
 if ((fp=fopen( file_color_profile, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_color_profile); b_report_error[idf]=1;}
@@ -4607,12 +4607,12 @@ reset_error_on_save_load();
 reset_all_bangers();
 clear_report_string();
 idf=0;
-//////////POUR RAFRAICHIR CORRECTEMENT LES VARIABLES DE POSITIONS DE FENETRES ( TIME WHEEL COLOR WHEEL) AVANT CALCULS
+//POUR RAFRAICHIR CORRECTEMENT LES VARIABLES DE POSITIONS DE FENETRES ( TIME WHEEL COLOR WHEEL) AVANT CALCULS
 Load_Window_Conf();
 
 
 
-if(specify_who_to_save_load[0]==1)/////MEMOIRES/////////////////////////////////
+if(specify_who_to_save_load[0]==1)//MEMOIRES/////////////////////////////////
 {
 
 save_load_print_to_screen("Loading Memories");
@@ -4761,7 +4761,7 @@ idf++;
 }
 
 
-if(specify_who_to_save_load[5]==1)/////channels LIST////////////////////
+if(specify_who_to_save_load[5]==1)//channels LIST////////////////////
 {
 if ((fp=fopen(  file_spotlist, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_spotlist);b_report_error[idf]=1;}

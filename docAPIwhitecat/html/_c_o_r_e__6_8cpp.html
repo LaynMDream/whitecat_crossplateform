@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">WhitecatAPI
-   &#160;<span id="projectnumber">0.8.5.2</span>
+   &#160;<span id="projectnumber">0.8.5.8</span>
    </div>
   </td>
  </tr>
@@ -266,8 +266,8 @@ Fonctions</h2></td></tr>
 <tr class="separator:aa6f6d52757e4af2364c17c3e9dee8095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0680ece0d847c84e5ca5a320688411db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a0680ece0d847c84e5ca5a320688411db">reset_index_affect_midi</a> ()</td></tr>
 <tr class="separator:a0680ece0d847c84e5ca5a320688411db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a216215e15a6bc259316f7a1275f2c51f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a216215e15a6bc259316f7a1275f2c51f">show_type_midi</a> (int control, char *command)</td></tr>
-<tr class="separator:a216215e15a6bc259316f7a1275f2c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3680de15f6ccf838397bde99d246125a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a">show_type_midi</a> (int control, const std::string command)</td></tr>
+<tr class="separator:a3680de15f6ccf838397bde99d246125a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dbe2a93b1ce714d4d4bebfddbb276cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd">attribute_midi_to_control</a> (int faderis, int typaction, int modeaction)</td></tr>
 <tr class="separator:a1dbe2a93b1ce714d4d4bebfddbb276cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7187a2df52460607db81f8bf0500953"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953">attribute_midi_solo_affectation</a> (int faderis, int modeaction)</td></tr>
@@ -290,8 +290,8 @@ Fonctions</h2></td></tr>
 <tr class="separator:abf5e6474418e358207296e79c1047a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9596b6b33071db6c7bccd3999afce05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#ac9596b6b33071db6c7bccd3999afce05">detect_actual_master_lock_is</a> ()</td></tr>
 <tr class="separator:ac9596b6b33071db6c7bccd3999afce05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d86d36baee2087390aa0594c0e420a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a3d86d36baee2087390aa0594c0e420a9">save_load_print_to_screen</a> (char string_print_to_screen[64])</td></tr>
-<tr class="separator:a3d86d36baee2087390aa0594c0e420a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ffa1025184678936494e68a31f35042"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a7ffa1025184678936494e68a31f35042">save_load_print_to_screen</a> (const std::string label)</td></tr>
+<tr class="separator:a7ffa1025184678936494e68a31f35042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2b888928cf5cee88a6be48ee89a8b32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#ad2b888928cf5cee88a6be48ee89a8b32">minifader_selection_record</a> (int mf_preset_is)</td></tr>
 <tr class="separator:ad2b888928cf5cee88a6be48ee89a8b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a8ed3ddb8cd4df022cbc0abd7aa848a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_o_r_e__6_8cpp.html#a1a8ed3ddb8cd4df022cbc0abd7aa848a">minifader_selection_clear</a> (int mf_preset_is)</td></tr>
@@ -2868,15 +2868,15 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3d86d36baee2087390aa0594c0e420a9"></a>
+<a class="anchor" id="a7ffa1025184678936494e68a31f35042"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int save_load_print_to_screen </td>
+          <td class="memname">void save_load_print_to_screen </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>string_print_to_screen</em>[64]</td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3244,12 +3244,12 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a216215e15a6bc259316f7a1275f2c51f"></a>
+<a class="anchor" id="a3680de15f6ccf838397bde99d246125a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int show_type_midi </td>
+          <td class="memname">void show_type_midi </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>control</em>, </td>
@@ -3257,7 +3257,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const std::string&#160;</td>
           <td class="paramname"><em>command</em>&#160;</td>
         </tr>
         <tr>
@@ -3487,7 +3487,7 @@ Fonctions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_c_o_r_e__6_8cpp.html">CORE_6.cpp</a></li>
-    <li class="footer">Généré le Vendredi 21 Février 2014 18:28:12 pour WhitecatAPI par
+    <li class="footer">Généré le Mardi 18 Mars 2014 12:53:49 pour WhitecatAPI par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

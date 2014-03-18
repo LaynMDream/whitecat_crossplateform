@@ -7,5 +7,6 @@ var searchData=
   ['channels_5f9_5fcore_2ecpp',['channels_9_core.cpp',['../channels__9__core_8cpp.html',1,'']]],
   ['chasers_5fcore_5f5_2ecpp',['chasers_core_5.cpp',['../chasers__core__5_8cpp.html',1,'']]],
   ['chasers_5fvisu_2ecpp',['chasers_visu.cpp',['../chasers__visu_8cpp.html',1,'']]],
-  ['core_5f6_2ecpp',['CORE_6.cpp',['../_c_o_r_e__6_8cpp.html',1,'']]]
+  ['core_5f6_2ecpp',['CORE_6.cpp',['../_c_o_r_e__6_8cpp.html',1,'']]],
+  ['crossplateform_2eh',['Crossplateform.h',['../_crossplateform_8h.html',1,'']]]
 ];

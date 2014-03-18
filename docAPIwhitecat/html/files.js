@@ -15,6 +15,7 @@ var files =
     [ "chasers_core_5.cpp", "chasers__core__5_8cpp.html", "chasers__core__5_8cpp" ],
     [ "chasers_visu.cpp", "chasers__visu_8cpp.html", "chasers__visu_8cpp" ],
     [ "CORE_6.cpp", "_c_o_r_e__6_8cpp.html", "_c_o_r_e__6_8cpp" ],
+    [ "Crossplateform.h", "_crossplateform_8h.html", "_crossplateform_8h" ],
     [ "dmx_enttec_pro.cpp", "dmx__enttec__pro_8cpp.html", "dmx__enttec__pro_8cpp" ],
     [ "dmx_enttec_pro_FTDI.cpp", "dmx__enttec__pro___f_t_d_i_8cpp.html", "dmx__enttec__pro___f_t_d_i_8cpp" ],
     [ "dmx_ftdi_IN_test_enttec_pro.cpp", "dmx__ftdi___i_n__test__enttec__pro_8cpp.html", "dmx__ftdi___i_n__test__enttec__pro_8cpp" ],

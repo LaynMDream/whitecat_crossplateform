@@ -1468,7 +1468,7 @@ do_core_config(cfg_X,cfg_Y,largeurCFGwindow,hauteurCFGwindow);
 sprintf(string_title_panel_config,"CORE CONFIGURATION");
 petitchiffre.Print( string_title_panel_config,cfg_X+20, cfg_Y+20);
 }
-///BOUTON DE SAUVEGARDE DE CONF
+//BOUTON DE SAUVEGARDE DE CONF
 if( index_config_dmx==1 || index_config_network==1 || index_config_general==1 ||  index_config_core==1)
 {
 Rect SaveCFG( Vec2D((cfg_X+largeurCFGwindow-110),(cfg_Y+hauteurCFGwindow-40)),Vec2D(90,30));

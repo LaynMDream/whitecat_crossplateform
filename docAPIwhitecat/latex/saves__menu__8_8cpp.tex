@@ -11,7 +11,7 @@
 \item 
 int \hyperlink{saves__menu__8_8cpp_aa54ed73e914394a0efe1c45930c72cbd}{scan\-\_\-savesfolder} ()
 \item 
-int \hyperlink{saves__menu__8_8cpp_a3f270d52c65b3f35dea5064b5dd6cae3}{scan\-\_\-importfolder} (char $\ast$subdir)
+void \hyperlink{saves__menu__8_8cpp_aa97cd577bd2f433780569b3a20136d23}{scan\-\_\-importfolder} (const char $\ast$subdir)
 \item 
 int \hyperlink{saves__menu__8_8cpp_abc8db3ce3121c47cf4760e3692cecd7b}{choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load} (int xs, int ys)
 \item 
@@ -19,13 +19,13 @@ int \hyperlink{saves__menu__8_8cpp_a7632db539835664d84c7e8b03d67bc57}{do\-\_\-lo
 \item 
 int \hyperlink{saves__menu__8_8cpp_a5828c46601c5450312f7d66f44576006}{check\-\_\-import\-\_\-type} ()
 \item 
-int \hyperlink{saves__menu__8_8cpp_a3c822fc3db1719e6b79b044ac5d2dafa}{deroule\-\_\-repertoire\-\_\-export\-\_\-import} (int xrep, int yrep, char name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]})
+void \hyperlink{saves__menu__8_8cpp_ae4661dad9546a3606a2eca51ea6edb84}{deroule\-\_\-repertoire\-\_\-export\-\_\-import} (int xrep, int yrep, const std\-::string label)
 \item 
-int \hyperlink{saves__menu__8_8cpp_aa796e36801e48a3eb44fde6b4741bd5f}{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import} (int xrep, int yrep, char name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]})
+void \hyperlink{saves__menu__8_8cpp_ad69a6a5f22f46792e578ebff56fedccf}{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import} (int xrep, int yrep, const std\-::string label)
 \item 
-int \hyperlink{saves__menu__8_8cpp_a5114cb63ff4bae28258cf52c990ea284}{deroule\-\_\-repertoire\-\_\-classical\-\_\-save} (int xrep, int yrep, char name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]})
+void \hyperlink{saves__menu__8_8cpp_a1735fdbcef85ec932d1fc512a924ef0f}{deroule\-\_\-repertoire\-\_\-classical\-\_\-save} (int xrep, int yrep, const std\-::string label)
 \item 
-int \hyperlink{saves__menu__8_8cpp_a2b21d5294085f2a953080fd635b005cd}{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save} (int xrep, int yrep, char name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]})
+void \hyperlink{saves__menu__8_8cpp_a3e840863ce8c1e9b10b79353b9bffb66}{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save} (int xrep, int yrep, const std\-::string label)
 \item 
 int \hyperlink{saves__menu__8_8cpp_af8da6d8d0e955c60e46e5822933e0461}{selecteur\-\_\-\-P\-D\-F\-\_\-save\-\_\-solo\-\_\-global} (int xrep, int yrep)
 \item 
@@ -73,24 +73,24 @@ G\-U\-I window of save and load menu
 \item[{int}]{ys}
 \end{DoxyParamCaption}
 )}}\label{saves__menu__8_8cpp_abc8db3ce3121c47cf4760e3692cecd7b}
-\hypertarget{saves__menu__8_8cpp_a5114cb63ff4bae28258cf52c990ea284}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!deroule\-\_\-repertoire\-\_\-classical\-\_\-save@{deroule\-\_\-repertoire\-\_\-classical\-\_\-save}}
+\hypertarget{saves__menu__8_8cpp_a1735fdbcef85ec932d1fc512a924ef0f}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!deroule\-\_\-repertoire\-\_\-classical\-\_\-save@{deroule\-\_\-repertoire\-\_\-classical\-\_\-save}}
 \index{deroule\-\_\-repertoire\-\_\-classical\-\_\-save@{deroule\-\_\-repertoire\-\_\-classical\-\_\-save}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
-\subsubsection[{deroule\-\_\-repertoire\-\_\-classical\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}int deroule\-\_\-repertoire\-\_\-classical\-\_\-save (
+\subsubsection[{deroule\-\_\-repertoire\-\_\-classical\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}void deroule\-\_\-repertoire\-\_\-classical\-\_\-save (
 \begin{DoxyParamCaption}
 \item[{int}]{xrep, }
 \item[{int}]{yrep, }
-\item[{char}]{name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]}}
+\item[{const std\-::string}]{label}
 \end{DoxyParamCaption}
-)}}\label{saves__menu__8_8cpp_a5114cb63ff4bae28258cf52c990ea284}
-\hypertarget{saves__menu__8_8cpp_a3c822fc3db1719e6b79b044ac5d2dafa}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!deroule\-\_\-repertoire\-\_\-export\-\_\-import@{deroule\-\_\-repertoire\-\_\-export\-\_\-import}}
+)}}\label{saves__menu__8_8cpp_a1735fdbcef85ec932d1fc512a924ef0f}
+\hypertarget{saves__menu__8_8cpp_ae4661dad9546a3606a2eca51ea6edb84}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!deroule\-\_\-repertoire\-\_\-export\-\_\-import@{deroule\-\_\-repertoire\-\_\-export\-\_\-import}}
 \index{deroule\-\_\-repertoire\-\_\-export\-\_\-import@{deroule\-\_\-repertoire\-\_\-export\-\_\-import}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
-\subsubsection[{deroule\-\_\-repertoire\-\_\-export\-\_\-import}]{\setlength{\rightskip}{0pt plus 5cm}int deroule\-\_\-repertoire\-\_\-export\-\_\-import (
+\subsubsection[{deroule\-\_\-repertoire\-\_\-export\-\_\-import}]{\setlength{\rightskip}{0pt plus 5cm}void deroule\-\_\-repertoire\-\_\-export\-\_\-import (
 \begin{DoxyParamCaption}
 \item[{int}]{xrep, }
 \item[{int}]{yrep, }
-\item[{char}]{name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]}}
+\item[{const std\-::string}]{label}
 \end{DoxyParamCaption}
-)}}\label{saves__menu__8_8cpp_a3c822fc3db1719e6b79b044ac5d2dafa}
+)}}\label{saves__menu__8_8cpp_ae4661dad9546a3606a2eca51ea6edb84}
 \hypertarget{saves__menu__8_8cpp_a7632db539835664d84c7e8b03d67bc57}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!do\-\_\-logical\-\_\-choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load@{do\-\_\-logical\-\_\-choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load}}
 \index{do\-\_\-logical\-\_\-choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load@{do\-\_\-logical\-\_\-choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
 \subsubsection[{do\-\_\-logical\-\_\-choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}int do\-\_\-logical\-\_\-choose\-\_\-personnal\-\_\-preset\-\_\-binary\-\_\-save\-\_\-load (
@@ -99,24 +99,24 @@ G\-U\-I window of save and load menu
 \item[{int}]{ys}
 \end{DoxyParamCaption}
 )}}\label{saves__menu__8_8cpp_a7632db539835664d84c7e8b03d67bc57}
-\hypertarget{saves__menu__8_8cpp_a2b21d5294085f2a953080fd635b005cd}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save@{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save}}
+\hypertarget{saves__menu__8_8cpp_a3e840863ce8c1e9b10b79353b9bffb66}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save@{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save}}
 \index{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save@{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
-\subsubsection[{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}int do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save (
+\subsubsection[{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-classical\-\_\-save (
 \begin{DoxyParamCaption}
 \item[{int}]{xrep, }
 \item[{int}]{yrep, }
-\item[{char}]{name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]}}
+\item[{const std\-::string}]{label}
 \end{DoxyParamCaption}
-)}}\label{saves__menu__8_8cpp_a2b21d5294085f2a953080fd635b005cd}
-\hypertarget{saves__menu__8_8cpp_aa796e36801e48a3eb44fde6b4741bd5f}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import@{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import}}
+)}}\label{saves__menu__8_8cpp_a3e840863ce8c1e9b10b79353b9bffb66}
+\hypertarget{saves__menu__8_8cpp_ad69a6a5f22f46792e578ebff56fedccf}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import@{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import}}
 \index{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import@{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
-\subsubsection[{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import}]{\setlength{\rightskip}{0pt plus 5cm}int do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import (
+\subsubsection[{do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-logical\-\_\-deroule\-\_\-repertoire\-\_\-export\-\_\-import (
 \begin{DoxyParamCaption}
 \item[{int}]{xrep, }
 \item[{int}]{yrep, }
-\item[{char}]{name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]}}
+\item[{const std\-::string}]{label}
 \end{DoxyParamCaption}
-)}}\label{saves__menu__8_8cpp_aa796e36801e48a3eb44fde6b4741bd5f}
+)}}\label{saves__menu__8_8cpp_ad69a6a5f22f46792e578ebff56fedccf}
 \hypertarget{saves__menu__8_8cpp_ac4526c35f3b27bd8b798cda6a3320ea1}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!do\-\_\-logical\-\_\-\-Save\-\_\-\-Menu@{do\-\_\-logical\-\_\-\-Save\-\_\-\-Menu}}
 \index{do\-\_\-logical\-\_\-\-Save\-\_\-\-Menu@{do\-\_\-logical\-\_\-\-Save\-\_\-\-Menu}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
 \subsubsection[{do\-\_\-logical\-\_\-\-Save\-\_\-\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}int do\-\_\-logical\-\_\-\-Save\-\_\-\-Menu (
@@ -149,13 +149,13 @@ G\-U\-I window of save and load menu
 \item[{int}]{ysave}
 \end{DoxyParamCaption}
 )}}\label{saves__menu__8_8cpp_ab664e456062080cd8085b1e4aac15cea}
-\hypertarget{saves__menu__8_8cpp_a3f270d52c65b3f35dea5064b5dd6cae3}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!scan\-\_\-importfolder@{scan\-\_\-importfolder}}
+\hypertarget{saves__menu__8_8cpp_aa97cd577bd2f433780569b3a20136d23}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!scan\-\_\-importfolder@{scan\-\_\-importfolder}}
 \index{scan\-\_\-importfolder@{scan\-\_\-importfolder}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
-\subsubsection[{scan\-\_\-importfolder}]{\setlength{\rightskip}{0pt plus 5cm}int scan\-\_\-importfolder (
+\subsubsection[{scan\-\_\-importfolder}]{\setlength{\rightskip}{0pt plus 5cm}void scan\-\_\-importfolder (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{subdir}
+\item[{const char $\ast$}]{subdir}
 \end{DoxyParamCaption}
-)}}\label{saves__menu__8_8cpp_a3f270d52c65b3f35dea5064b5dd6cae3}
+)}}\label{saves__menu__8_8cpp_aa97cd577bd2f433780569b3a20136d23}
 \hypertarget{saves__menu__8_8cpp_aa54ed73e914394a0efe1c45930c72cbd}{\index{saves\-\_\-menu\-\_\-8.\-cpp@{saves\-\_\-menu\-\_\-8.\-cpp}!scan\-\_\-savesfolder@{scan\-\_\-savesfolder}}
 \index{scan\-\_\-savesfolder@{scan\-\_\-savesfolder}!saves_menu_8.cpp@{saves\-\_\-menu\-\_\-8.\-cpp}}
 \subsubsection[{scan\-\_\-savesfolder}]{\setlength{\rightskip}{0pt plus 5cm}int scan\-\_\-savesfolder (

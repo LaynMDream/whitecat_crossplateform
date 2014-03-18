@@ -40,10 +40,10 @@ WWWWWWWW           C  WWWWWWWW   |
 *   Exemple to create a new module window
 *
 
-* ///////////////////////////////////////////////////////////////////////////////////////////////////
-* /////////////////CREER UNE FENETRE C EST LE PLUS .... NEBULEUX ////////////////////////////////////
-* ////////////////////PETIT PAS A PAS EN MODE TUNNEL/////////////////////////////////////////////////
-* //////////////////////////////////////////////////////////////////////////////////////////////////
+* /
+* /                         CREER UNE FENETRE C EST LE PLUS .... NEBULEUX
+* /                                 PETIT PAS A PAS EN MODE TUNNEL
+* /
 
 * Dans un premier temps vous pouvez directement modifier My_window_file_sample.cpp .
 * C est un gabarit actif dans whitecat. Passer à ce moment directement au point 5 pour essayer.

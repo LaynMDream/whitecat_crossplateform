@@ -228,7 +228,7 @@ player_seek_position[player]=audiofile_cue_in_out_pos[audiofile_selected][0];
 }
 //audiofile_selected=0;//reset du name si jamais click
 //sprintf(audiofile_name,"");//reset du name si jamais click
-index_loading_a_sound_file=0;//permet le rafraichissement des dixièmes
+index_loading_a_sound_file=0;//permet le rafraichissement des dixiÃ¨mes
 
 return(0);
 }
@@ -1706,7 +1706,7 @@ if(line_audio+24<128){line_audio++;mouse_released=1;}
 }
 }
 
-///RESCAN FOLDER
+//RESCAN FOLDER
 
     if(mouse_x>xb+230 && mouse_x<xb+230+50 && mouse_y>yb+10 && mouse_y<yb+10+20)
     {

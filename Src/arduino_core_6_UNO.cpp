@@ -55,7 +55,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-///le volatile int dans arduino car possibilité de changer le rate d appel de la fonction read
+//le volatile int dans arduino car possibilitÃ© de changer le rate d appel de la fonction read
 volatile int ticks_arduino=0;
 int old_ticks_arduino=0;
 void ticker_arduino()
@@ -80,7 +80,7 @@ if(analog_data_from_arduino[p]!=previous_analog_data_from_arduino[p])
 {
 switch(arduino_analog_function_input[p])
 {
-case 1://affectation à un fader
+case 1://affectation Ã  un fader
 
 vfader=arduino_analog_attribution_input[p];
 Fader[vfader]=analog_data_from_arduino[p];
@@ -138,7 +138,7 @@ if(midi_send_out[492]==1){index_send_midi_out[492]=1;}
 }
 }
 
-//remise à jour du crossfade
+//remise Ã  jour du crossfade
 if(temp_ardniveauX1==0 && temp_ardniveauX2==255)
 {
 index_go=0; index_go_back=0; index_pause=0;
@@ -250,7 +250,7 @@ for(int p=0;p<=arduino_max_digital;p++)
 {
 
 if((arduino_digital_type[p]==1||arduino_digital_type[p]==2||arduino_digital_type[p]==7)  && digital_data_from_arduino[p]!= previous_digital_data_from_arduino[p] )//si l'affectation est type INPUT
-//et qu il y a une différence d'état
+//et qu il y a une diffÃ©rence d'Ã©tat
 {
 switch(arduino_digital_function_input[p][0])
 {
@@ -336,7 +336,7 @@ previous_digital_data_from_arduino[p]=toggle(previous_digital_data_from_arduino[
 }
 break;
 case 7://Fader: LOCK
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 vfader=(arduino_digital_function_input[p][1]-1);
  switch(FaderLocked[vfader])
@@ -355,7 +355,7 @@ vfader=(arduino_digital_function_input[p][1]-1);
    break;
    case 1:
    FaderLocked[vfader]=0;
-   //remise à plat du niveau
+   //remise Ã  plat du niveau
    Fader[vfader]=(unsigned char)((((float)(StateOfFaderBeforeLock[vfader]))/255)*locklevel);
    midi_levels[vfader]=(int)(((float)Fader[vfader])/2);
    sprintf(string_Last_Order,">> UNLOCKED Fader %d",vfader+1);
@@ -369,7 +369,7 @@ vfader=(arduino_digital_function_input[p][1]-1);
 FaderIsFlash[vfader]=digital_data_from_arduino[p];
 break;
 case 9://Fader: All at 0
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 vfader=(arduino_digital_function_input[p][1]-1);
            Fader[vfader]=0;
@@ -392,7 +392,7 @@ previous_digital_data_from_arduino[p]=toggle(previous_digital_data_from_arduino[
 }
 break;
 case 10://Fader: L/Unloop dock
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 vfader=(arduino_digital_function_input[p][1]-1);
 is_dock_for_lfo_selected[vfader][(dock_used_by_fader_is[vfader])]=toggle(is_dock_for_lfo_selected[vfader][(dock_used_by_fader_is[vfader])]);
@@ -400,7 +400,7 @@ is_dock_for_lfo_selected[vfader][(dock_used_by_fader_is[vfader])]=toggle(is_dock
 digital_data_from_arduino[p]=toggle(digital_data_from_arduino[p]);
 break;
 case 11://Fader: L/Unloop all
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 vfader=(arduino_digital_function_input[p][1]-1);
 for(int d=0;d<6;d++)
@@ -411,7 +411,7 @@ previous_digital_data_from_arduino[p]=toggle(previous_digital_data_from_arduino[
 }
 break;
 case 12://Seq: GO
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 do_go_function();
 do_send_bang();
@@ -419,7 +419,7 @@ previous_digital_data_from_arduino[p]=toggle(previous_digital_data_from_arduino[
 }
 break;
 case 13://Seq: GO BACK
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 do_go_back_function();
 int banger_back_is=Banger_Memoire[position_preset]-1;
@@ -428,7 +428,7 @@ previous_digital_data_from_arduino[p]=toggle(previous_digital_data_from_arduino[
 }
 break;
 case 14://Seq: JUMP
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 do_double_go_function();
 do_send_bang();
@@ -436,7 +436,7 @@ previous_digital_data_from_arduino[p]=toggle(previous_digital_data_from_arduino[
 }
 break;
 case 15://Seq: SHIFT-W
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 index_go=0;index_pause=0; index_go_back=0;
 detect_mem_preset_previous();
@@ -447,7 +447,7 @@ someone_changed_in_sequences=1;//icat
 }
 break;
 case 16://Seq: SHIFT-X
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 index_go=0;index_pause=0; index_go_back=0;
 detect_next_preset();
@@ -458,7 +458,7 @@ someone_changed_in_sequences=1;//icat
 }
 break;
 case 17:////As Key-On CH0 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,0,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -466,7 +466,7 @@ simulate_midi(2,0,arduino_digital_function_input[p][1],0);
 }
 break;
 case 18:////As Key-On CH1 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,1,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -474,7 +474,7 @@ simulate_midi(2,1,arduino_digital_function_input[p][1],0);
 }
 break;
 case 19:////As Key-On CH2 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,2,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -482,7 +482,7 @@ simulate_midi(2,3,arduino_digital_function_input[p][1],0);
 }
 break;
 case 20:////As Key-On CH3 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,3,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -490,7 +490,7 @@ simulate_midi(2,4,arduino_digital_function_input[p][1],0);
 }
 break;
 case 21:////As Key-On CH4 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,4,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -498,7 +498,7 @@ simulate_midi(2,4,arduino_digital_function_input[p][1],0);
 }
 break;
 case 22:////As Key-On CH5 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,5,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -506,7 +506,7 @@ simulate_midi(2,5,arduino_digital_function_input[p][1],0);
 }
 break;
 case 23:////As Key-On CH6 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,6,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -514,7 +514,7 @@ simulate_midi(2,6,arduino_digital_function_input[p][1],0);
 }
 break;
 case 24:////As Key-On CH7 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,7,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -522,7 +522,7 @@ simulate_midi(2,7,arduino_digital_function_input[p][1],0);
 }
 break;
 case 25:////As Key-On CH8 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,8,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -530,7 +530,7 @@ simulate_midi(2,8,arduino_digital_function_input[p][1],0);
 }
 break;
 case 26:////As Key-On CH9 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,9,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -538,7 +538,7 @@ simulate_midi(2,9,arduino_digital_function_input[p][1],0);
 }
 break;
 case 27:////As Key-On CH10 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,10,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -546,7 +546,7 @@ simulate_midi(2,10,arduino_digital_function_input[p][1],0);
 }
 break;
 case 28:////As Key-On CH11 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,11,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -554,7 +554,7 @@ simulate_midi(2,11,arduino_digital_function_input[p][1],0);
 }
 break;
 case 29:////As Key-On CH12 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,12,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -562,7 +562,7 @@ simulate_midi(2,12,arduino_digital_function_input[p][1],0);
 }
 break;
 case 30:////As Key-On CH13 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,13,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -570,7 +570,7 @@ simulate_midi(2,13,arduino_digital_function_input[p][1],0);
 }
 break;
 case 31:////As Key-On CH14 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,14,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -578,7 +578,7 @@ simulate_midi(2,14,arduino_digital_function_input[p][1],0);
 }
 break;
 case 32:////As Key-On CH15 P:
-if(digital_data_from_arduino[p]==1) //si appuyé
+if(digital_data_from_arduino[p]==1) //si appuyÃ©
 {
 simulate_midi(1,15,arduino_digital_function_input[p][1],127);
 sprintf (my_midi_string, "Arduino Chan:%-2d Pitch:%-2d Vel:%-2d Typ: %s",	ischan,ispitch,isvel, "Key-On");
@@ -653,7 +653,7 @@ for(int k=0;k<=arduino_max_digital;k++)
 {
 if(pwm_data_to_arduino[k]<255)
 {
-temp_send_pwm[3+k]=pwm_data_to_arduino[k]+1;//+1 pour éviter caractere 0
+temp_send_pwm[3+k]=pwm_data_to_arduino[k]+1;//+1 pour Ã©viter caractere 0
 }
 else {temp_send_pwm[3+k]=255;}
 }

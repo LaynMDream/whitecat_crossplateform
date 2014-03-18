@@ -854,8 +854,8 @@ mouse_released=1;
 //fin boucle des lignes
 
 
-///////////////////////IRIS zoom REMISE A PLAT//////////////////////////////////////////////
-///COPIE D UN ETAT DANS UNE BANQUE/////////////////////////////////////////////////////////
+//IRIS zoom REMISE A PLAT//////////////////////////////////////////////
+//COPIE D UN ETAT DANS UNE BANQUE/////////////////////////////////////////////////////////
 Rect ShiftIris(Vec2D(xt+5,yt+130),Vec2D(100,20));
 ShiftIris.SetRoundness(4);
 ShiftIris.Draw(CouleurFader.WithAlpha(index_copy_params));
@@ -1542,7 +1542,7 @@ InvX.DrawOutline(Rgba::WHITE);
 InvY.DrawOutline(Rgba::WHITE);
 
 
-/// OFFSET position_defaut[2]
+// OFFSET position_defaut[2]
 Rect ZeroPoint(Vec2D(x_track+40,y_track+566),Vec2D(140,25));
 ZeroPoint.SetRoundness(7.5);
 ZeroPoint.SetLineWidth(epaisseur_ligne_fader);
