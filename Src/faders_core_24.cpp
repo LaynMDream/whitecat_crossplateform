@@ -1150,7 +1150,7 @@ if(mouse_x> x+((cmptfader*espacement)+(largeur+30)-10) && mouse_x< x+((cmptfader
   mouse_released=1;
 }
 
-///RACCROCHE MIDI
+//RACCROCHE MIDI
 raccrochage_midi_logical_vertical_dmx(x+(cmptfader*espacement),y,cmptfader,largeur,255);
 //////////////////////////////////////////////////////
 if(mouse_y>(y+280) && mouse_y<(y+280+(largeur/2)+7) && mouse_x>x+(cmptfader*espacement) && mouse_x<(x+largeur+(cmptfader*espacement))
