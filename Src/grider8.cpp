@@ -58,7 +58,8 @@ next_button_view(xb+60,yb,0);
 if(window_focus_id==926 )
 {
  //Step minus
-if(window_focus_id==W_GRID &&  mouse_x>xb & mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
+//sab 0203/2014 IMPACT : if(window_focus_id==W_GRID &&  mouse_x>xb & mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
+if(window_focus_id==W_GRID &&  mouse_x>xb && mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
 {
  if(Midi_Faders_Affectation_Type!=0)
 {
@@ -75,7 +76,8 @@ if(mouse_b&1 )
 }
 }
 //Step plus
-if(window_focus_id==W_GRID && mouse_x>xb+60 & mouse_x<xb+80 && mouse_y>yb && mouse_y<yb+20 )
+//sab 0203/2014 IMPACT : if(window_focus_id==W_GRID && mouse_x>xb+60 & mouse_x<xb+80 && mouse_y>yb && mouse_y<yb+20 )
+if(window_focus_id==W_GRID && mouse_x>xb+60 && mouse_x<xb+80 && mouse_y>yb && mouse_y<yb+20 )
 {
 if(Midi_Faders_Affectation_Type!=0)
 {
@@ -105,7 +107,8 @@ if( Midi_Faders_Affectation_Type!=0)
  }
 }
 //chargement d'un pas, ou affectation d'un temps ou clear  du pas
-if(window_focus_id==W_GRID && mouse_x>xb+22 & mouse_x<xb+57 && mouse_y>yb-5 && mouse_y<yb-25 )
+//sab 0203/2014 IMPACT : if(window_focus_id==W_GRID && mouse_x>xb+22 & mouse_x<xb+57 && mouse_y>yb-5 && mouse_y<yb-25 )
+if(window_focus_id==W_GRID && mouse_x>xb+22 && mouse_x<xb+57 && mouse_y>yb-5 && mouse_y<yb-25 )
 {
 StepB.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)
@@ -460,7 +463,7 @@ Line(Vec2D(xb,yb+(lo*15)),Vec2D(xb+(grider_nb_col*15),yb+(lo*15))).Draw(CouleurL
 int tmpx=0;
 int tmpy=0;
 int tempfu=0;
-int templo=0;
+//sab 02/03/2014 unused var int templo=0;
 for(int fu=0;fu<grider_nb_col;fu++)
 {
 for(int lo=0;lo<grider_nb_row;lo++)
@@ -706,7 +709,7 @@ else if(def_nombre_grilles_previsu>15){def_nombre_grilles_previsu-=2;}
 int tmpx=0;
 int tmpy=0;
 int tempfu=0;
-int templo=0;
+//sab 0203/2014 unused var int templo=0;
 int tempstep=0;
 int tmpblx=0;
 int tmpbly=0;
@@ -734,7 +737,7 @@ for(int lo=0;lo<grider_nb_row;lo++)
 tmpx=20+xb+(fu*5)+(pos*grider_nb_col*5)+(20*pos);
 tmpy=yb+40+(lo*5);
 tempfu=fu+(lo*grider_nb_col);
-templo=0;
+//sab 0203/2014 unused var templo=0;
 tempstep=grid_step_view+pos;
 tmpblx=20+xb+(pos*grider_nb_col*5)+(20*pos);
 tmpbly=yb+60+(grider_nb_row*5);

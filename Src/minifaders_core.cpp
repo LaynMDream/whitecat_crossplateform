@@ -329,7 +329,7 @@ case 14:
 sprintf(tmp_c,"Play Embedded");
 break;
 default:
-sprintf(tmp_c,"");
+                    strcpy(tmp_c,"");
 break;
 }
 

@@ -130,7 +130,7 @@ for(int s=0;s<127;s++)
 {
 tmp_gel_list[num][t][s]=0;
 }
-sprintf(Geo[t],"");
+strcpy(Geo[t],"");
 }
 }
 
@@ -160,7 +160,7 @@ int plot_generate_gels_list()
 {
 
 plot_reset_list_gelat();
-int pos_sym=0;
+//sab 02/03/2014 unused var int pos_sym=0;
 for(int c=0;c<4;c++)
 {
 if( show_calc_number[c]==1)
@@ -207,7 +207,7 @@ case 3:
      sprintf(GelTyp,"Apollo");
 break;
 default:
-     sprintf(GelTyp,"");
+     strcpy(GelTyp,"");
 break;
 }
 sprintf(Geo[index_geo]," %s %d x %d %s",GelTyp, t , tmp_gel_list[g][t][s],symbol_nickname[s]);
@@ -271,7 +271,7 @@ int scan_planfolder()//plot
             {
             isSomeone=true; // we've found a directory!
             bool index_check_is_supported=0;
-            for(int a=0;a<strlen(f.name);a++)
+            for(unsigned int a=0;a<strlen(f.name);a++)
            {
            if( f.name[a]=='.')
            {
@@ -404,7 +404,7 @@ for(int i=0;i<4;i++)
 {
 shape_position[s][i]=0;//pour les lignes
 }
-sprintf(shape_legend_name[s],"");
+strcpy(shape_legend_name[s],"");
 shape_legend_name[s][24]='\0';
 shape_relativ_position_legend_name[s][0]=0;
 shape_relativ_position_legend_name[s][1]=0;
@@ -933,7 +933,7 @@ relatif_plot_xy[calc][s][opt][1]=0;
 }
 for(int n=0;n<4;n++)
 {
-sprintf(symbol_note[calc][s][n],"");
+strcpy(symbol_note[calc][s][n],"");
 }
 
 clear_grouped_to_symbols(calc, s);
@@ -991,7 +991,7 @@ int duplicate_selected_symbols(int calc)
 {
 int compteur=0;
 int new_position=0;
-int difference=0;// pour dub du link to
+//sab 02/03/2014 unused var int difference=0;// pour dub du link to
 
 for(int i=0;i<=nbre_symbols_on_plot[calc];i++)
 {
@@ -1010,7 +1010,7 @@ if( symbol_is_selected[calc][i]==1)
  //dub des links
  if(symbol_is_linked_to[calc][i]!=0)
  {
- difference=new_position-i;
+//sab 02/03/2014 unused var  difference=new_position-i;
  symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position];
  }
  for(int opt=0;opt<5;opt++)
@@ -1107,7 +1107,7 @@ int reorder_plan(int the_calc)
 {
 for(int s=1;s<=nbre_symbols_on_plot[the_calc];s++)
 {
-int index_to_fill=0;
+//sab 02/03/2014 unused var int index_to_fill=0;
 if(symbol_type[the_calc][s]==999)
 {
 for(int yu=s;yu<=nbre_symbols_on_plot[the_calc];yu++)

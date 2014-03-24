@@ -45,7 +45,7 @@ int do_reset_all_listproj()
 {
 for (int r=0;r<514;r++)
 {
- sprintf(descriptif_projecteurs[r],"");
+ strcpy(descriptif_projecteurs[r],"");
  descriptif_projecteurs[r][0]='\0';
 }
  return(0);
@@ -66,7 +66,7 @@ chdir(rep);
 ////////////////////////////////////////////////////////////////////////////////
 
 	char line [512];
-	int n=0;
+//sab 02/03/2014 unused var	int n=0;
 	int cue=0;
 	float down=0.0;
 	float up=0.0;
@@ -74,9 +74,9 @@ chdir(rep);
 	int level=0;//garder en int sinon la lecture ne se fait pas !
 	float autogotime=0.0;
     int dimmer=0;
-	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
+//sab 02/03/2014 unused var	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
 	char *temp;
-	char *string_text;
+//sab 02/03/2014 unused var	char *string_text;
 	int sub=0;
 	int ok= -1;
 	int flagcue= -1;
@@ -151,8 +151,8 @@ chdir(rep);
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2p\n",&chan,&level);
-							Memoires[cue][chan]=(unsigned char)level ;
+							sscanf(temp,"%d/H%2d\n",&chan,&level);
+							Memoires[cue][chan]=(unsigned char)level;
 							temp=strtok(NULL," ");
 						    }
 					}
@@ -226,7 +226,8 @@ chdir(rep);
 				if(strncmp(line,"DOWN",4)==0)
 					{
 					down=(float)strtof(line+5,NULL);
-					time_per_dock[sub_f][sub_d][3]==down;
+					//sab 02/03/2014 IMPACT time_per_dock[sub_f][sub_d][3]==down;
+					time_per_dock[sub_f][sub_d][3]=down;
 
 					}
 				if(strncmp(line,"UP",2)==0)
@@ -248,7 +249,7 @@ chdir(rep);
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2p\n",&chan,&level);
+							sscanf(temp,"%d/H%2d\n",&chan,&level);
                             if(chan<513)
                             {
                             FaderDockContains[sub_f][sub_d][chan]=(unsigned char)level ;
@@ -299,7 +300,7 @@ chdir(rep);
 FILE *fp=NULL;
 
 
-if(fp=fopen(importfile_name,"wt"))
+if((fp=fopen(importfile_name,"wt")))
 {
     fprintf(fp,"MANUFACTURER WHITE CAT (c)CHRISTOPH GUILLERMET\n");
     fprintf(fp,"%s\n",versionis);
@@ -551,7 +552,7 @@ chdir(rep);
 ////////////////////////////////////////////////////////////////////////////////
 
 	char line [256];
-	int n=0;
+//sab 02/03/2014 unused var	int n=0;
 	int cue=0;
 	float down=0.0;
 	float up=0.0;
@@ -559,15 +560,15 @@ chdir(rep);
 	int level=0;//garder en int sinon la lecture ne se fait pas !
 	float autogotime=0.0;
     int dimmer=0;
-	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
+//sab 02/03/2014 unused var	bool alarm_cue=0; bool alarm_patch_chan=0; bool alarm_patch_dim=0;
 	char *temp;
-	char *string_text;
+//sab 02/03/2014 unused var	char *string_text;
 	int sub=0;
 	int ok= -1;
 	int flagcue= -1;
 	int flagpatch= -1;
 	int flagsub=-1;
-	int flaggroup=-1;
+//sab 02/03/2014 unused	int flaggroup=-1;
 	int first_cue_from_import=0;//detect sequenciel
 
 
@@ -595,7 +596,7 @@ chdir(rep);
 						cue = (int)(tmpcueval*10);
 						MemoiresExistantes[cue]=1;
 	                    if(first_cue_from_import==0){first_cue_from_import=cue;}
-						flagcue=1;flagsub=-1;flagpatch=-1;	flaggroup=-1;
+						flagcue=1;flagsub=-1;flagpatch=-1;	//sab 02/03/2014 unused	flaggroup=-1;
 
 
                     }
@@ -603,7 +604,7 @@ chdir(rep);
  			    if(strncmp(line,"Patch 1",7)==0)
 					{
                     sprintf(string_save_load_report[2],"Importing Patch");
-    	            flagcue=-1;flagsub=-1;flagpatch=1;	flaggroup=-1;
+    	            flagcue=-1;flagsub=-1;flagpatch=1;	//sab 02/03/2014 unused	flaggroup=-1;
 
                 }//fin patch
 
@@ -612,14 +613,15 @@ chdir(rep);
 				if (strncmp(line, "Sub",3)==0)
 					{	sprintf(string_save_load_report[3],"Importing Subs");
 						sub= (int)strtof(line+4,NULL);
-						flagsub=1;flagcue=-1;flagpatch=-1;	flaggroup=-1;
+						flagsub=1;flagcue=-1;flagpatch=-1;	//sab 02/03/2014 unused	flaggroup=-1;
                     }
 
                  //group
 				if (strncmp(line, "Group",4)==0)
 				{
                   sprintf(string_save_load_report[4],"Importing Groups");
-                  flaggroup=1;flagcue=1;flagsub=-1;flagpatch=-1;	}
+                  //sab 02/03/2014 unused	flaggroup=1;
+                  flagcue=1;flagsub=-1;flagpatch=-1;	}
 
 
 
@@ -689,7 +691,7 @@ chdir(rep);
 
     	        if(strncmp(line,"Patch 1",7)==0)
 				{
-               char temp_ch[24],temp_dim[24];
+               //sab 02/03/2014 unused var char temp_ch[24],temp_dim[24];
 					temp= strtok(line+7," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
@@ -739,7 +741,8 @@ chdir(rep);
                 if(strncmp(line,"Down",4)==0)
 					{
 					down=(float)strtof(line+5,NULL);
-					time_per_dock[sub_f][sub_d][3]==down;
+					//sab 02/03/2014 IMPACT time_per_dock[sub_f][sub_d][3]==down;
+					time_per_dock[sub_f][sub_d][3]=down;
 
 					}
 				if(strncmp(line,"$$WAIT",6)==0)

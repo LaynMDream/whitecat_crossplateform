@@ -68,7 +68,7 @@ int Load_Video_Conf()
 {
     FILE *video_file = NULL ;
     char read_buff_vid[ 512 ] ;
-    int it=0;
+    //sab 02/03/2014 unused var int it=0;
 	video_file = fopen("user\\config_video.txt", "rt" );
 	if( !video_file )
 	{
@@ -102,7 +102,7 @@ return(0);
 int Save_Video_Conf()
 {
 FILE *fph;
-if(fph=fopen("user//config_video.txt","w"))
+if((fph=fopen("user//config_video.txt","w")))
 {
 fprintf(fph,"#arguments: size of image X size of image Y - Video Rate");
 fprintf(fph,"\n%d %d %d",video_size_x,video_size_y, fps_video_rate);

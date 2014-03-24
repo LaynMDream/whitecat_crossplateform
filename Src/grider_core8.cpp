@@ -47,7 +47,8 @@ int do_logical_TheStepBox(int xb,int yb, int num_grid_player)
 //STEP IS
 
 //Step minus
-if(mouse_x>xb & mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
+//sab 02/03/2014 IMPACT ? if(mouse_x>xb & mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
+if(mouse_x>xb && mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
 {
 if( mouse_released==0)
 {
@@ -63,7 +64,8 @@ else
 }
 }
  //Step plus
-if(mouse_x>xb+60 & mouse_x<xb+60+20 && mouse_y>yb && mouse_y<yb+20 )
+//sab 02/03/2014 IMPACT if(mouse_x>xb+60 & mouse_x<xb+60+20 && mouse_y>yb && mouse_y<yb+20 )
+if(mouse_x>xb+60 && mouse_x<xb+60+20 && mouse_y>yb && mouse_y<yb+20 )
 {
 if( mouse_released==0)
 {
@@ -92,7 +94,8 @@ if( mouse_released==0)
 }
 }
 //chargement d'un pas, ou affectation d'un temps ou clear  du pas
-if(mouse_x>xb+22 & mouse_x<xb+22+35 && mouse_y>yb-5 && mouse_y<yb-5+30 )
+//sab 02/03/2014 IMPACT ? if(mouse_x>xb+22 & mouse_x<xb+22+35 && mouse_y>yb-5 && mouse_y<yb-5+30 )
+if(mouse_x>xb+22 && mouse_x<xb+22+35 && mouse_y>yb-5 && mouse_y<yb-5+30 )
  {
 if( mouse_released==0)
  {

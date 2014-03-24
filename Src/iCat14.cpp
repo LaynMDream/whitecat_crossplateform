@@ -2231,8 +2231,8 @@ int check_button( int tp)
 
 int fsBx=FS_touch_point_begin[0][tp];
 int fsBy=FS_touch_point_begin[1][tp];
-int fsMx=FS_touch_point_move[0][tp];
-int fsMy=FS_touch_point_move[1][tp];
+//sab 02/03/2014 unused var int fsMx=FS_touch_point_move[0][tp];
+//sab 02/03/2014 unused var int fsMy=FS_touch_point_move[1][tp];
 int fsEx=FS_touch_point_end[0][tp];
 int fsEy=FS_touch_point_end[1][tp];
 
@@ -3549,8 +3549,8 @@ int fsBx=FS_touch_point_begin[0][tp];
 int fsBy=FS_touch_point_begin[1][tp];
 int fsMx=FS_touch_point_move[0][tp];
 int fsMy=FS_touch_point_move[1][tp];
-int fsEx=FS_touch_point_end[0][tp];
-int fsEy=FS_touch_point_end[1][tp];
+//sab 02/03/2014 unused var int fsEx=FS_touch_point_end[0][tp];
+//sab 02/03/2014 unused var int fsEy=FS_touch_point_end[1][tp];
 
 int fsTestX2=0; int fsTestY2=0;
 
@@ -3820,7 +3820,7 @@ zone_is_controlled_by_point[iCatPageis][sl]=tp;
 
 
 
-if(fsMx==fsEx && fsMy==fsEy || fsBx==fsEx && fsBy==fsEy )//pour la relache n egale pas 0
+if((fsMx==fsEx && fsMy==fsEy) || (fsBx==fsEx && fsBy==fsEy) )//pour la relache n egale pas 0
 {
 zone_is_touched[iCatPageis][sl]=0;
 if(dragging_draw==0 )//si pas de la souris
@@ -3844,12 +3844,12 @@ break;
 if(zone_is_touched[iCatPageis][sl]==1 && zone_is_controlled_by_point[iCatPageis][sl]==tp)
 {
 int pr=0;
-int centre_x=0;
-int centre_y=0;
-int drawing_on_index=0;
-int etendue_x=0;
-int etendue_y=0;
-float angleD=0.0;
+//sab 02/03/2014 unused var int centre_x=0;
+//sab 02/03/2014 unused var int centre_y=0;
+//sab 02/03/2014 unused var int drawing_on_index=0;
+//sab 02/03/2014 unused var int etendue_x=0;
+//sab 02/03/2014 unused var int etendue_y=0;
+//sab 02/03/2014 unused var float angleD=0.0;
 float ratiox=0.0;
 float ratioy=0.0;
 

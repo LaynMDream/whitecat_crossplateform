@@ -18,7 +18,7 @@ var dmx__enttec__pro_8cpp =
     [ "Detect_EnttecProIn", "dmx__enttec__pro_8cpp.html#a99cd8610d4ea2b4275c5b0ef7c9593dc", null ],
     [ "Detect_EnttecProOut", "dmx__enttec__pro_8cpp.html#a33e896c3cd1bb33a086b10cbe0ac694e", null ],
     [ "Enttec_Pro_ReceiveData", "dmx__enttec__pro_8cpp.html#a29568351e92472b4d93aacdf7a4d6d0a", null ],
-    [ "Enttec_Pro_SendData", "dmx__enttec__pro_8cpp.html#acf6216148eec62cf27a82e8cd8dcbbba", null ],
+    [ "Enttec_Pro_SendData", "dmx__enttec__pro_8cpp.html#a6a5a2ed5121b0102514b55519f421807", null ],
     [ "Enttec_Pro_SetCommParams", "dmx__enttec__pro_8cpp.html#ae444f20d2cc7a88e989ff0681053204f", null ],
     [ "Enttec_Pro_SetCommParamsIN", "dmx__enttec__pro_8cpp.html#a237a7a270b1965c63ef1d27ccfda8b78", null ],
     [ "Open_EnttecProOut", "dmx__enttec__pro_8cpp.html#ad6b2fce0a38f51413e2141e6ca8c23dc", null ],

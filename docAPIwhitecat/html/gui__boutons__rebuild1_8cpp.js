@@ -2,11 +2,11 @@ var gui__boutons__rebuild1_8cpp =
 [
     [ "autolaunch_button_view", "gui__boutons__rebuild1_8cpp.html#a1816d0599254412c089995c155e37453", null ],
     [ "bouton_on_view", "gui__boutons__rebuild1_8cpp.html#afe6597587df7b7e14cc88a0f074c2820", null ],
-    [ "bouton_text_view", "gui__boutons__rebuild1_8cpp.html#a51cd1348f414c3f15ef9666d5566ea2e", null ],
+    [ "bouton_text_view", "gui__boutons__rebuild1_8cpp.html#a9007621817b81dec7eb68ef12370c534", null ],
     [ "case_moins_view", "gui__boutons__rebuild1_8cpp.html#aabe7e4ca1f83ca56984eb02767aece7d", null ],
     [ "case_plus_view", "gui__boutons__rebuild1_8cpp.html#a61fe50bce3e45b6ebb295ba656a05b9f", null ],
-    [ "command_button_logical", "gui__boutons__rebuild1_8cpp.html#aa4c6e28a49e22bf1f067f9a1c33dc1fe", null ],
-    [ "command_button_view", "gui__boutons__rebuild1_8cpp.html#ad88b1a9e1275f953591b1bffda1116ee", null ],
+    [ "command_button_logical", "gui__boutons__rebuild1_8cpp.html#ac2c2aeb8b11c8423154756e7493228b5", null ],
+    [ "command_button_view", "gui__boutons__rebuild1_8cpp.html#a1cf102c119afcc2263522fab00590476", null ],
     [ "do_logical_rotatif", "gui__boutons__rebuild1_8cpp.html#a7a2e0a84ea7b33aa99ceecc2710df54a", null ],
     [ "loop_button_view", "gui__boutons__rebuild1_8cpp.html#a626e01752ca45b01f34b2784b4687366", null ],
     [ "midi_send_faders_button_logical", "gui__boutons__rebuild1_8cpp.html#a101e4bb454d3a0e2c08ddc62fa6c2391", null ],
@@ -31,5 +31,5 @@ var gui__boutons__rebuild1_8cpp =
     [ "raccrochage_midi_visuel_vertical_dmx_inverted", "gui__boutons__rebuild1_8cpp.html#a53ca00cc38989cbf6f620338c409b777", null ],
     [ "rotatif", "gui__boutons__rebuild1_8cpp.html#a7a940e5d2de3e61297a43cc809cce192", null ],
     [ "seek_button_view", "gui__boutons__rebuild1_8cpp.html#a49d3463d08aebc6ce155aa1baae271bd", null ],
-    [ "toggling_bar_view", "gui__boutons__rebuild1_8cpp.html#a45b7ed65909afd512ad83754b5a36274", null ]
+    [ "toggling_bar_view", "gui__boutons__rebuild1_8cpp.html#ab0ea33493c26853e0c8a8d19042043dc", null ]
 ];

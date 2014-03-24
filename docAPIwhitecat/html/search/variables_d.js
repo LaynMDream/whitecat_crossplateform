@@ -27,6 +27,7 @@ var searchData=
   ['nbre_5ftrack_5fvisualisables',['nbre_track_visualisables',['../whitecat_8h.html#aba871c7ce4b7726ecf164385fb12d2f8',1,'whitecat.h']]],
   ['nbre_5ftracks_5fpar_5fchaser',['nbre_tracks_par_chaser',['../whitecat_8h.html#a9d4cb49ef7598fd30bff208a5cfd1e8a',1,'whitecat.h']]],
   ['nbytesreadarduino0',['nBytesReadArduino0',['../whitecat_8h.html#a0dcd570e5bcf5d47799394fc39b38f26',1,'whitecat.h']]],
+  ['nbytessendtoarduino',['nBytesSendtoArduino',['../whitecat_8h.html#ad155d67582696099ef7a0c4c116a3e10',1,'whitecat.h']]],
   ['need_5fsend_5fpwm',['need_send_pwm',['../whitecat_8h.html#af945c53fbed7d83d17187e6185a3660d',1,'whitecat.h']]],
   ['network_5fout_5fis_5fselected',['network_OUT_is_selected',['../whitecat_8h.html#abf7b369adaacd533fc686a429c61ea5c',1,'whitecat.h']]],
   ['neuro',['neuro',['../tracker__main14nov_8cpp.html#a54139c7545e4823122d9d2c842c87dc1',1,'neuro():&#160;tracker_main14nov.cpp'],['../whitecat_8h.html#a54139c7545e4823122d9d2c842c87dc1',1,'neuro():&#160;whitecat.h']]],

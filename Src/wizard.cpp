@@ -51,7 +51,7 @@ for (int p=0;p<2160;p++)
 for (int ly=0;ly<36;ly++)
 {
 show_buff_wizIN[ly][72]=' ';
-sprintf(show_buff_wizIN[ly],"");
+strcpy(show_buff_wizIN[ly],"");
 for (int by=0;by<73;by++)
 {
 show_buff_wizIN[ly][by]=' ';
@@ -77,7 +77,7 @@ for (int p=0;p<2160;p++)
 for (int ly=0;ly<36;ly++)
 {
 show_buff_wizOUT[ly][72]=' ';
-sprintf(show_buff_wizOUT[ly],"");
+strcpy(show_buff_wizOUT[ly],"");
 for (int by=0;by<73;by++)
 {
 show_buff_wizOUT[ly][by]=' ';
@@ -98,7 +98,7 @@ int wizard_store_channel_in()
 number_inchannels=0;
 clear_wizard_store_ch_in();
 
-sprintf( tmp_wizbuffer,"");
+strcpy( tmp_wizbuffer,"");
 
 
 for (int w=1;w<513;w++)
@@ -119,7 +119,7 @@ number_inchannels++;
 
 for (int ly=0;ly<36;ly++)
 {
-sprintf(show_buff_wizIN[ly],"");
+strcpy(show_buff_wizIN[ly],"");
 for (int by=0;by<71;by++)
 {
 show_buff_wizIN[ly][by]=tmp_wizbuffer[(ly*71)+by];
@@ -145,7 +145,7 @@ for (int w=1;w<513;w++)
 {
 wizard_buffer_out[w]=Selected_Channel[w];
 }
-sprintf( tmp_wizbuffer,"");
+strcpy( tmp_wizbuffer,"");
 char tmpw[6];
 for (int w=1;w<513;w++)
 {
@@ -159,7 +159,7 @@ number_outchannels++;
 
 for (int ly=0;ly<36;ly++)
 {
-sprintf(show_buff_wizOUT[ly],"");
+strcpy(show_buff_wizOUT[ly],"");
 for (int by=0;by<71;by++)
 {
 show_buff_wizOUT[ly][by]=tmp_wizbuffer[(ly*71)+by];
@@ -458,7 +458,8 @@ case 0://REBUILD
      if(mod==mode_rebuild){choose_mode_rebuild.DrawOutline(CouleurLevel); }
      if(window_focus_id==W_WIZARD &&mouse_x>xb+300 && mouse_x<xb+330 && mouse_y> yb+200+(wizard_action_mem*30)+(mod*20) && mouse_y<yb+215+(wizard_action_mem*30)+(mod*20))
      {
-     if(mouse_button=1 && mouse_released==0)
+     //sab 02/03/2014 IMPACT if(mouse_button=1 && mouse_released==0)
+     if(mouse_button==1 && mouse_released==0)
      {
      mode_rebuild=mod;
      mouse_released=1;

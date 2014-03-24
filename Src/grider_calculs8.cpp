@@ -121,7 +121,9 @@ for(int st=0;st<1023;st++)
  clear_a_grid_step(grid_number,st);
  sprintf(string_Last_Order,"Cleared Grid %d", grid_number+1);
 }
-sprintf(grider_name[grid_number],"");
+//sab 02/03/2014 sprintf(grider_name[grid_number],"");
+strcpy(grider_name[grid_number],"");
+
 return(0);
 }
 
@@ -508,7 +510,9 @@ grid_counted_times[index_grider_selected[grid_pl]][index_grider_step_is[grid_pl]
 sprintf( string_grid_count[grid_pl],"%d/%d from S.%d",  grid_counted_times[index_grider_selected[grid_pl]][index_grider_step_is[grid_pl]],grid_count[index_grider_selected[grid_pl]][index_grider_step_is[grid_pl]], index_grider_step_is[grid_pl]+1);
 if(grid_counted_times[index_grider_selected[grid_pl]][index_grider_step_is[grid_pl]]>grid_count[index_grider_selected[grid_pl]][index_grider_step_is[grid_pl]])
 {
-sprintf( string_grid_count[grid_pl],"");
+//sab 02/03/2014 sprintf( string_grid_count[grid_pl],"");
+strcpy( string_grid_count[grid_pl],"");
+
 grid_counted_times[index_grider_selected[grid_pl]][index_grider_step_is[grid_pl]]=0;
 }
 }

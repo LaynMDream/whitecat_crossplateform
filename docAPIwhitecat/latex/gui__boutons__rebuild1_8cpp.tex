@@ -11,7 +11,7 @@
 \item 
 int \hyperlink{gui__boutons__rebuild1_8cpp_afe6597587df7b7e14cc88a0f074c2820}{bouton\-\_\-on\-\_\-view} (int xp, int yp, bool state)
 \item 
-int \hyperlink{gui__boutons__rebuild1_8cpp_a51cd1348f414c3f15ef9666d5566ea2e}{bouton\-\_\-text\-\_\-view} (int xp, int yp, char $\ast$dex, bool state)
+void \hyperlink{gui__boutons__rebuild1_8cpp_a9007621817b81dec7eb68ef12370c534}{bouton\-\_\-text\-\_\-view} (int xp, int yp, const std\-::string dex, bool state)
 \item 
 float \hyperlink{gui__boutons__rebuild1_8cpp_a7a2e0a84ea7b33aa99ceecc2710df54a}{do\-\_\-logical\-\_\-rotatif} (int xr, int yr, int Rrayon)
 \item 
@@ -35,7 +35,7 @@ int \hyperlink{gui__boutons__rebuild1_8cpp_aabe7e4ca1f83ca56984eb02767aece7d}{ca
 \item 
 int \hyperlink{gui__boutons__rebuild1_8cpp_a61fe50bce3e45b6ebb295ba656a05b9f}{case\-\_\-plus\-\_\-view} (int xp, int yp, bool state)
 \item 
-int \hyperlink{gui__boutons__rebuild1_8cpp_a45b7ed65909afd512ad83754b5a36274}{toggling\-\_\-bar\-\_\-view} (int xp, int yp, bool state, char $\ast$titre)
+void \hyperlink{gui__boutons__rebuild1_8cpp_ab0ea33493c26853e0c8a8d19042043dc}{toggling\-\_\-bar\-\_\-view} (int xp, int yp, bool state, const std\-::string titre)
 \item 
 int \hyperlink{gui__boutons__rebuild1_8cpp_ab21a3bdb57480d3c80b64c2da8ba3d0e}{pulse\-\_\-bar\-\_\-view} (int xp, int yp, char $\ast$titre)
 \item 
@@ -69,9 +69,9 @@ int \hyperlink{gui__boutons__rebuild1_8cpp_a101e4bb454d3a0e2c08ddc62fa6c2391}{mi
 \item 
 int \hyperlink{gui__boutons__rebuild1_8cpp_aef04760266be5bc33fa2cb13e5fedbb0}{midi\-\_\-send\-\_\-faders\-\_\-button\-\_\-visuel} (int Xb, int Yb)
 \item 
-int \hyperlink{gui__boutons__rebuild1_8cpp_ad88b1a9e1275f953591b1bffda1116ee}{command\-\_\-button\-\_\-view} (int xcom, int ycom, int isstate, char $\ast$desc, char $\ast$shortcut, int I\-Dmidi)
+void \hyperlink{gui__boutons__rebuild1_8cpp_a1cf102c119afcc2263522fab00590476}{command\-\_\-button\-\_\-view} (int xcom, int ycom, int isstate, const std\-::string desc, const std\-::string shortcut, int I\-Dmidi)
 \item 
-int \hyperlink{gui__boutons__rebuild1_8cpp_aa4c6e28a49e22bf1f067f9a1c33dc1fe}{command\-\_\-button\-\_\-logical} (int xcom, int ycom, int isstate, char $\ast$desc, char $\ast$raccourci, int I\-Dmidi, int thecommand)
+void \hyperlink{gui__boutons__rebuild1_8cpp_ac2c2aeb8b11c8423154756e7493228b5}{command\-\_\-button\-\_\-logical} (int xcom, int ycom, int isstate, const std\-::string desc, const std\-::string raccourci, int I\-Dmidi, int thecommand)
 \end{DoxyCompactItemize}
 
 
@@ -110,16 +110,16 @@ G\-U\-I fonctions to redraw buttons
 \item[{bool}]{state}
 \end{DoxyParamCaption}
 )}}\label{gui__boutons__rebuild1_8cpp_afe6597587df7b7e14cc88a0f074c2820}
-\hypertarget{gui__boutons__rebuild1_8cpp_a51cd1348f414c3f15ef9666d5566ea2e}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!bouton\-\_\-text\-\_\-view@{bouton\-\_\-text\-\_\-view}}
+\hypertarget{gui__boutons__rebuild1_8cpp_a9007621817b81dec7eb68ef12370c534}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!bouton\-\_\-text\-\_\-view@{bouton\-\_\-text\-\_\-view}}
 \index{bouton\-\_\-text\-\_\-view@{bouton\-\_\-text\-\_\-view}!gui_boutons_rebuild1.cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}}
-\subsubsection[{bouton\-\_\-text\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}int bouton\-\_\-text\-\_\-view (
+\subsubsection[{bouton\-\_\-text\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}void bouton\-\_\-text\-\_\-view (
 \begin{DoxyParamCaption}
 \item[{int}]{xp, }
 \item[{int}]{yp, }
-\item[{char $\ast$}]{dex, }
+\item[{const std\-::string}]{dex, }
 \item[{bool}]{state}
 \end{DoxyParamCaption}
-)}}\label{gui__boutons__rebuild1_8cpp_a51cd1348f414c3f15ef9666d5566ea2e}
+)}}\label{gui__boutons__rebuild1_8cpp_a9007621817b81dec7eb68ef12370c534}
 \hypertarget{gui__boutons__rebuild1_8cpp_aabe7e4ca1f83ca56984eb02767aece7d}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!case\-\_\-moins\-\_\-view@{case\-\_\-moins\-\_\-view}}
 \index{case\-\_\-moins\-\_\-view@{case\-\_\-moins\-\_\-view}!gui_boutons_rebuild1.cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}}
 \subsubsection[{case\-\_\-moins\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}int case\-\_\-moins\-\_\-view (
@@ -138,31 +138,31 @@ G\-U\-I fonctions to redraw buttons
 \item[{bool}]{state}
 \end{DoxyParamCaption}
 )}}\label{gui__boutons__rebuild1_8cpp_a61fe50bce3e45b6ebb295ba656a05b9f}
-\hypertarget{gui__boutons__rebuild1_8cpp_aa4c6e28a49e22bf1f067f9a1c33dc1fe}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!command\-\_\-button\-\_\-logical@{command\-\_\-button\-\_\-logical}}
+\hypertarget{gui__boutons__rebuild1_8cpp_ac2c2aeb8b11c8423154756e7493228b5}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!command\-\_\-button\-\_\-logical@{command\-\_\-button\-\_\-logical}}
 \index{command\-\_\-button\-\_\-logical@{command\-\_\-button\-\_\-logical}!gui_boutons_rebuild1.cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}}
-\subsubsection[{command\-\_\-button\-\_\-logical}]{\setlength{\rightskip}{0pt plus 5cm}int command\-\_\-button\-\_\-logical (
+\subsubsection[{command\-\_\-button\-\_\-logical}]{\setlength{\rightskip}{0pt plus 5cm}void command\-\_\-button\-\_\-logical (
 \begin{DoxyParamCaption}
 \item[{int}]{xcom, }
 \item[{int}]{ycom, }
 \item[{int}]{isstate, }
-\item[{char $\ast$}]{desc, }
-\item[{char $\ast$}]{raccourci, }
+\item[{const std\-::string}]{desc, }
+\item[{const std\-::string}]{raccourci, }
 \item[{int}]{I\-Dmidi, }
 \item[{int}]{thecommand}
 \end{DoxyParamCaption}
-)}}\label{gui__boutons__rebuild1_8cpp_aa4c6e28a49e22bf1f067f9a1c33dc1fe}
-\hypertarget{gui__boutons__rebuild1_8cpp_ad88b1a9e1275f953591b1bffda1116ee}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!command\-\_\-button\-\_\-view@{command\-\_\-button\-\_\-view}}
+)}}\label{gui__boutons__rebuild1_8cpp_ac2c2aeb8b11c8423154756e7493228b5}
+\hypertarget{gui__boutons__rebuild1_8cpp_a1cf102c119afcc2263522fab00590476}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!command\-\_\-button\-\_\-view@{command\-\_\-button\-\_\-view}}
 \index{command\-\_\-button\-\_\-view@{command\-\_\-button\-\_\-view}!gui_boutons_rebuild1.cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}}
-\subsubsection[{command\-\_\-button\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}int command\-\_\-button\-\_\-view (
+\subsubsection[{command\-\_\-button\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}void command\-\_\-button\-\_\-view (
 \begin{DoxyParamCaption}
 \item[{int}]{xcom, }
 \item[{int}]{ycom, }
 \item[{int}]{isstate, }
-\item[{char $\ast$}]{desc, }
-\item[{char $\ast$}]{shortcut, }
+\item[{const std\-::string}]{desc, }
+\item[{const std\-::string}]{shortcut, }
 \item[{int}]{I\-Dmidi}
 \end{DoxyParamCaption}
-)}}\label{gui__boutons__rebuild1_8cpp_ad88b1a9e1275f953591b1bffda1116ee}
+)}}\label{gui__boutons__rebuild1_8cpp_a1cf102c119afcc2263522fab00590476}
 \hypertarget{gui__boutons__rebuild1_8cpp_a7a2e0a84ea7b33aa99ceecc2710df54a}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!do\-\_\-logical\-\_\-rotatif@{do\-\_\-logical\-\_\-rotatif}}
 \index{do\-\_\-logical\-\_\-rotatif@{do\-\_\-logical\-\_\-rotatif}!gui_boutons_rebuild1.cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}}
 \subsubsection[{do\-\_\-logical\-\_\-rotatif}]{\setlength{\rightskip}{0pt plus 5cm}float do\-\_\-logical\-\_\-rotatif (
@@ -405,13 +405,13 @@ G\-U\-I fonctions to redraw buttons
 \item[{bool}]{state}
 \end{DoxyParamCaption}
 )}}\label{gui__boutons__rebuild1_8cpp_a49d3463d08aebc6ce155aa1baae271bd}
-\hypertarget{gui__boutons__rebuild1_8cpp_a45b7ed65909afd512ad83754b5a36274}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!toggling\-\_\-bar\-\_\-view@{toggling\-\_\-bar\-\_\-view}}
+\hypertarget{gui__boutons__rebuild1_8cpp_ab0ea33493c26853e0c8a8d19042043dc}{\index{gui\-\_\-boutons\-\_\-rebuild1.\-cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}!toggling\-\_\-bar\-\_\-view@{toggling\-\_\-bar\-\_\-view}}
 \index{toggling\-\_\-bar\-\_\-view@{toggling\-\_\-bar\-\_\-view}!gui_boutons_rebuild1.cpp@{gui\-\_\-boutons\-\_\-rebuild1.\-cpp}}
-\subsubsection[{toggling\-\_\-bar\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}int toggling\-\_\-bar\-\_\-view (
+\subsubsection[{toggling\-\_\-bar\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}void toggling\-\_\-bar\-\_\-view (
 \begin{DoxyParamCaption}
 \item[{int}]{xp, }
 \item[{int}]{yp, }
 \item[{bool}]{state, }
-\item[{char $\ast$}]{titre}
+\item[{const std\-::string}]{titre}
 \end{DoxyParamCaption}
-)}}\label{gui__boutons__rebuild1_8cpp_a45b7ed65909afd512ad83754b5a36274}
+)}}\label{gui__boutons__rebuild1_8cpp_ab0ea33493c26853e0c8a8d19042043dc}

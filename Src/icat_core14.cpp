@@ -149,7 +149,7 @@ return(0);
 int refresh_continuously_iCat_trackerzones()
 {
 //ok les valeurs
-int numfad=0;
+//sab 02/03/2014 unused var int numfad=0;
 int aire=0;
 int x1=0;
 int y1=0;
@@ -705,9 +705,9 @@ int refresh_continuously_iCat_buttons()
 /////////////////////////////////////////////////////////////////////////////
 //////////////////////CHECK BUTTONS
 
-int the_chaser=999;
-int the_grid_player=999;
-int the_audio_player=999;
+//sab 02/03/2014 unused var int the_chaser=999;
+//sab 02/03/2014 unused var int the_grid_player=999;
+//sab 02/03/2014 unused var int the_audio_player=999;
 int fis;
 for (int ck=1;ck<iCat_nbre_de_boutons[iCatPageis]+1;ck++)//bouton des faders
 {
@@ -937,7 +937,7 @@ fis=(constrain_int_data_to_this_range(fis,0,47));
       }
       break;
       default:
-      sprintf(StrOrderToiCat,"");
+      strcpy(StrOrderToiCat,"");
       break;
       }
 
@@ -2235,7 +2235,7 @@ nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(
       decalagex=5;
       break;
       case 3:
-      sprintf(string_temp_id,"");
+      strcpy(string_temp_id,"");
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/jump_off.jpg",id);
       decalagey=30;
       decalagex=5;
@@ -2266,7 +2266,7 @@ nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(
       decalagex=5;decalagey=5;
       break;
       default:
-      sprintf(string_temp_id,"");
+      strcpy(string_temp_id,"");
       break;
       }
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
@@ -2865,7 +2865,7 @@ case 1: //Feedback
       nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
       break;
       default:
-      sprintf(string_to_send,"");
+      strcpy(string_to_send,"");
       break;
       }
 sprintf(string_to_send, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
@@ -2879,7 +2879,7 @@ nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(
       //fin feedback
 break;
 case 2: //string sequences
-sprintf(string_to_send,"");
+strcpy(string_to_send,"");
      switch(iCat_affectation_string_action_is[iCatPageis][id])
      {
      case 1://Stage
@@ -3121,7 +3121,7 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
       sprintf(previous_string_confirmation,string_confirmation);
       break;
       default:
-      sprintf(string_to_send,"");
+      strcpy(string_to_send,"");
       break;
       }
       break;
@@ -3130,7 +3130,7 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
      if(someone_changed_in_sequences==1)
      {
      //ventilation_temps_vers_char();//pour sytrings din dout etc
-     sprintf(string_to_send,"");
+     strcpy(string_to_send,"");
       switch(iCat_affectation_string_action_is[iCatPageis][id])
       {
       case 1://Stage
@@ -3251,7 +3251,7 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
       //times changed
       if(someone_changed_in_time_sequences==1)//uniquement affichage time crossfade
       {
-      sprintf(string_to_send,"");
+      strcpy(string_to_send,"");
       switch(iCat_affectation_string_action_is[iCatPageis][id])
       {
       case 1://Stage

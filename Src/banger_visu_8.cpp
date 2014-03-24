@@ -72,7 +72,7 @@ if((nb)+(lb*8)<core_user_define_nb_bangers)
 {
 Circle BangerFeedback(Vec2D(xvis+(nb*12)+30,yvis+(lb*12)+30),5);
 BangerFeedback.DrawOutline(CouleurLigne.WithAlpha(0.5));
-if(bang_is_sended[(nb)+(lb*8)]==0 && (((nb)+(lb*8))<127))//évenement pas encore fini dans son éxécution
+if(bang_is_sended[(nb)+(lb*8)]==0 && (((nb)+(lb*8))<127))//Ã©venement pas encore fini dans son Ã©xÃ©cution
 {
 BangerFeedback.Draw(CouleurBlind.WithAlpha(alpha_blinker));
 }
@@ -171,7 +171,7 @@ if(mouse_x>xb+148 && mouse_x<xb+172 && mouse_y>yb+43 && mouse_y<yb+67)
 {BangerPlus.DrawOutline(CouleurBlind);}
 }
 
-///COPY TO////////////////////////////////
+//COPY TO////////////////////////////////
 
 Rect CopyTo( Vec2D((xb+280),(yb+10)),Vec2D(90,20));
 CopyTo.SetRoundness(7.5);
@@ -194,7 +194,7 @@ BangerEditEnable.Draw(CouleurFader);
 BangerEditEnable.DrawOutline(CouleurLigne);
 petitchiffre.Print("edit",xb+420 ,yb+22);
 
-///BANG DO IT
+//BANG DO IT
 Rect BangerIt( Vec2D((xb+410),(yb+40)),Vec2D(60,30));
 BangerIt.SetRoundness(7.5);
 if(bang_is_sended[index_banger_selected]==0)//si banger en cours de defilement

@@ -10,7 +10,7 @@ var plot_8cpp =
     [ "clear_symbol_slot", "plot_8cpp.html#a58fe8fc317633b7cfd679c95c67193b9", null ],
     [ "copy_symbol_to_emply_slot", "plot_8cpp.html#a3aa259226da63745d5e779178c8111f2", null ],
     [ "delete_selected_symbols", "plot_8cpp.html#a23e56ec233d9db7dd7dca8c52410b847", null ],
-    [ "deroule_repertoire_plans", "plot_8cpp.html#a94d1e97372fd967852ff8e5be778fba4", null ],
+    [ "deroule_repertoire_plans", "plot_8cpp.html#a3cfe2da1a534efe2c1cbb29ec7db3f80", null ],
     [ "draw_channel_of_symbol", "plot_8cpp.html#a9608f90dd2bb998cbc57b7794c18d834", null ],
     [ "draw_gels_of_a_symbol", "plot_8cpp.html#a75932a66d44fcbfcc6aefacb21aaa636", null ],
     [ "duplicate_selected_symbols", "plot_8cpp.html#a0e606b8d73e2db784589b32f412e8fe1", null ],
