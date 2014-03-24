@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">WhitecatAPI
-   &#160;<span id="projectnumber">0.8.5.2</span>
+   &#160;<span id="projectnumber">0.8.5.8</span>
    </div>
   </td>
  </tr>
@@ -242,8 +242,8 @@ Fonctions</h2></td></tr>
 <tr class="separator:a256d9949f79860f9b76680cf02a12076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba57cd1a4d2dc741ca1e702e6953ed37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#aba57cd1a4d2dc741ca1e702e6953ed37">plot_draw_polygon</a> (int plotx1, int ploty1, float sizeshape, float shaperotation, int numPoints, float alphashape, int colorpattern, bool isselected)</td></tr>
 <tr class="separator:aba57cd1a4d2dc741ca1e702e6953ed37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7caccf277e9930f99a9f5971262d92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a0e7caccf277e9930f99a9f5971262d92">plot_draw_text</a> (int plotx, int ploty, int fontsize, int fonttype, char text[25], float alphatext, bool isselected)</td></tr>
-<tr class="separator:a0e7caccf277e9930f99a9f5971262d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe99ba067db16915802483cdf3f8c7a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#abe99ba067db16915802483cdf3f8c7a4">plot_draw_text</a> (int plotx, int ploty, int fontsize, int fonttype, const std::string label, float alphatext, bool isselected)</td></tr>
+<tr class="separator:abe99ba067db16915802483cdf3f8c7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b6965809d6bc00de46fa526dda3e30c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a3b6965809d6bc00de46fa526dda3e30c">plot_shape_list</a> (int plotx, int ploty)</td></tr>
 <tr class="separator:a3b6965809d6bc00de46fa526dda3e30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cf5d52f97e600e05ca1e9ed3cfa3b93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a4cf5d52f97e600e05ca1e9ed3cfa3b93">shape_edition</a> (int plotx, int ploty)</td></tr>
@@ -254,8 +254,8 @@ Fonctions</h2></td></tr>
 <tr class="separator:ad02cf4d1adb04054a67455558848ef86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a3e34424c30cfacad4058efd30162d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a7a3e34424c30cfacad4058efd30162d6">plot_menu_bar</a> (int plotx, int ploty)</td></tr>
 <tr class="separator:a7a3e34424c30cfacad4058efd30162d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94d1e97372fd967852ff8e5be778fba4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a94d1e97372fd967852ff8e5be778fba4">deroule_repertoire_plans</a> (int xrep, int yrep, char name_of_rep[25])</td></tr>
-<tr class="separator:a94d1e97372fd967852ff8e5be778fba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cfe2da1a534efe2c1cbb29ec7db3f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a3cfe2da1a534efe2c1cbb29ec7db3f80">deroule_repertoire_plans</a> (int xrep, int yrep, const std::string label)</td></tr>
+<tr class="separator:a3cfe2da1a534efe2c1cbb29ec7db3f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf095e83e4a36f1b5492819f42657b55"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#acf095e83e4a36f1b5492819f42657b55">menu_plan</a> (int plotx, int ploty)</td></tr>
 <tr class="separator:acf095e83e4a36f1b5492819f42657b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a989bed79b79c822c5f3484fd1df8fe20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot9_8cpp.html#a989bed79b79c822c5f3484fd1df8fe20">plot_draw_plan_grid_for_view_point</a> (int plotx, int ploty, int viewpx, int viewpy)</td></tr>
@@ -284,12 +284,12 @@ Fonctions</h2></td></tr>
 <p>Fonctions GUI de dessin de la fenêtre plot</p>
 <p>GUI fonctions for the plot window </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="a94d1e97372fd967852ff8e5be778fba4"></a>
+<a class="anchor" id="a3cfe2da1a534efe2c1cbb29ec7db3f80"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int deroule_repertoire_plans </td>
+          <td class="memname">void deroule_repertoire_plans </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>xrep</em>, </td>
@@ -303,8 +303,8 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>name_of_rep</em>[25]&#160;</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3682,12 +3682,12 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0e7caccf277e9930f99a9f5971262d92"></a>
+<a class="anchor" id="abe99ba067db16915802483cdf3f8c7a4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int plot_draw_text </td>
+          <td class="memname">void plot_draw_text </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>plotx</em>, </td>
@@ -3713,8 +3713,8 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>text</em>[25], </td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3984,7 +3984,7 @@ Fonctions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="plot9_8cpp.html">plot9.cpp</a></li>
-    <li class="footer">Généré le Vendredi 21 Février 2014 18:28:13 pour WhitecatAPI par
+    <li class="footer">Généré le Mardi 18 Mars 2014 13:18:49 pour WhitecatAPI par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

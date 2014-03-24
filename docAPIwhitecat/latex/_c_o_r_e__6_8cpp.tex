@@ -161,7 +161,7 @@ int \hyperlink{_c_o_r_e__6_8cpp_aa6f6d52757e4af2364c17c3e9dee8095}{search\-\_\-a
 \item 
 int \hyperlink{_c_o_r_e__6_8cpp_a0680ece0d847c84e5ca5a320688411db}{reset\-\_\-index\-\_\-affect\-\_\-midi} ()
 \item 
-int \hyperlink{_c_o_r_e__6_8cpp_a216215e15a6bc259316f7a1275f2c51f}{show\-\_\-type\-\_\-midi} (int control, char $\ast$command)
+void \hyperlink{_c_o_r_e__6_8cpp_a3680de15f6ccf838397bde99d246125a}{show\-\_\-type\-\_\-midi} (int control, const std\-::string command)
 \item 
 int \hyperlink{_c_o_r_e__6_8cpp_a1dbe2a93b1ce714d4d4bebfddbb276cd}{attribute\-\_\-midi\-\_\-to\-\_\-control} (int faderis, int typaction, int modeaction)
 \item 
@@ -185,7 +185,7 @@ int \hyperlink{_c_o_r_e__6_8cpp_abf5e6474418e358207296e79c1047a98}{clear\-\_\-i\
 \item 
 int \hyperlink{_c_o_r_e__6_8cpp_ac9596b6b33071db6c7bccd3999afce05}{detect\-\_\-actual\-\_\-master\-\_\-lock\-\_\-is} ()
 \item 
-int \hyperlink{_c_o_r_e__6_8cpp_a3d86d36baee2087390aa0594c0e420a9}{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen} (char string\-\_\-print\-\_\-to\-\_\-screen\mbox{[}64\mbox{]})
+void \hyperlink{_c_o_r_e__6_8cpp_a7ffa1025184678936494e68a31f35042}{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen} (const std\-::string label)
 \item 
 int \hyperlink{_c_o_r_e__6_8cpp_ad2b888928cf5cee88a6be48ee89a8b32}{minifader\-\_\-selection\-\_\-record} (int mf\-\_\-preset\-\_\-is)
 \item 
@@ -1360,13 +1360,13 @@ banger//////////////////////////////////// \hypertarget{_c_o_r_e__6_8cpp_a52e736
 {}
 \end{DoxyParamCaption}
 )}}\label{_c_o_r_e__6_8cpp_ac35c1426f741de67edbc3131f4557ed1}
-\hypertarget{_c_o_r_e__6_8cpp_a3d86d36baee2087390aa0594c0e420a9}{\index{C\-O\-R\-E\-\_\-6.\-cpp@{C\-O\-R\-E\-\_\-6.\-cpp}!save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen@{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen}}
+\hypertarget{_c_o_r_e__6_8cpp_a7ffa1025184678936494e68a31f35042}{\index{C\-O\-R\-E\-\_\-6.\-cpp@{C\-O\-R\-E\-\_\-6.\-cpp}!save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen@{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen}}
 \index{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen@{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen}!CORE_6.cpp@{C\-O\-R\-E\-\_\-6.\-cpp}}
-\subsubsection[{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen}]{\setlength{\rightskip}{0pt plus 5cm}int save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen (
+\subsubsection[{save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-load\-\_\-print\-\_\-to\-\_\-screen (
 \begin{DoxyParamCaption}
-\item[{char}]{string\-\_\-print\-\_\-to\-\_\-screen\mbox{[}64\mbox{]}}
+\item[{const std\-::string}]{label}
 \end{DoxyParamCaption}
-)}}\label{_c_o_r_e__6_8cpp_a3d86d36baee2087390aa0594c0e420a9}
+)}}\label{_c_o_r_e__6_8cpp_a7ffa1025184678936494e68a31f35042}
 \hypertarget{_c_o_r_e__6_8cpp_aaeed8d0bce556dd70a3865378bfa6f0a}{\index{C\-O\-R\-E\-\_\-6.\-cpp@{C\-O\-R\-E\-\_\-6.\-cpp}!scan\-\_\-audiofolder@{scan\-\_\-audiofolder}}
 \index{scan\-\_\-audiofolder@{scan\-\_\-audiofolder}!CORE_6.cpp@{C\-O\-R\-E\-\_\-6.\-cpp}}
 \subsubsection[{scan\-\_\-audiofolder}]{\setlength{\rightskip}{0pt plus 5cm}int scan\-\_\-audiofolder (
@@ -1499,14 +1499,14 @@ banger//////////////////////////////////// \hypertarget{_c_o_r_e__6_8cpp_a52e736
 {}
 \end{DoxyParamCaption}
 )}}\label{_c_o_r_e__6_8cpp_af166a225e96cceccb765c0be242c6138}
-\hypertarget{_c_o_r_e__6_8cpp_a216215e15a6bc259316f7a1275f2c51f}{\index{C\-O\-R\-E\-\_\-6.\-cpp@{C\-O\-R\-E\-\_\-6.\-cpp}!show\-\_\-type\-\_\-midi@{show\-\_\-type\-\_\-midi}}
+\hypertarget{_c_o_r_e__6_8cpp_a3680de15f6ccf838397bde99d246125a}{\index{C\-O\-R\-E\-\_\-6.\-cpp@{C\-O\-R\-E\-\_\-6.\-cpp}!show\-\_\-type\-\_\-midi@{show\-\_\-type\-\_\-midi}}
 \index{show\-\_\-type\-\_\-midi@{show\-\_\-type\-\_\-midi}!CORE_6.cpp@{C\-O\-R\-E\-\_\-6.\-cpp}}
-\subsubsection[{show\-\_\-type\-\_\-midi}]{\setlength{\rightskip}{0pt plus 5cm}int show\-\_\-type\-\_\-midi (
+\subsubsection[{show\-\_\-type\-\_\-midi}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-type\-\_\-midi (
 \begin{DoxyParamCaption}
 \item[{int}]{control, }
-\item[{char $\ast$}]{command}
+\item[{const std\-::string}]{command}
 \end{DoxyParamCaption}
-)}}\label{_c_o_r_e__6_8cpp_a216215e15a6bc259316f7a1275f2c51f}
+)}}\label{_c_o_r_e__6_8cpp_a3680de15f6ccf838397bde99d246125a}
 \hypertarget{_c_o_r_e__6_8cpp_a7323ff870691e50a22fe13a920fed4a8}{\index{C\-O\-R\-E\-\_\-6.\-cpp@{C\-O\-R\-E\-\_\-6.\-cpp}!show\-\_\-who\-\_\-is\-\_\-in\-\_\-dock@{show\-\_\-who\-\_\-is\-\_\-in\-\_\-dock}}
 \index{show\-\_\-who\-\_\-is\-\_\-in\-\_\-dock@{show\-\_\-who\-\_\-is\-\_\-in\-\_\-dock}!CORE_6.cpp@{C\-O\-R\-E\-\_\-6.\-cpp}}
 \subsubsection[{show\-\_\-who\-\_\-is\-\_\-in\-\_\-dock}]{\setlength{\rightskip}{0pt plus 5cm}int show\-\_\-who\-\_\-is\-\_\-in\-\_\-dock (

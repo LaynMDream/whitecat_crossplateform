@@ -74,10 +74,11 @@ if(device==0)
 {
 if(arduino_device_0_is_ignited==1)
 {
-sprintf(arduino_order,"");
+sprintf(arduino_order,"%s","");
 arduino_order[0]='S';arduino_order[1]='D';arduino_order[2]='/';arduino_order[3]='\0';
 //arduino_order[3]='\0';//pour UNO [3]='\0' pour 2009 =0
-int nBytesSendtoArduino=serial0.SendData(arduino_order,4);
+//ne pa enlever nBytes
+nBytesSendtoArduino=serial0.SendData(arduino_order,4);
 //capture de l'état précédent
 for(int y=0;y<=arduino_max_digital;y++)
 {
@@ -205,7 +206,7 @@ if(position_line_io>arduino_max_digital-12)
 }
 }
 petitchiffre.Print(ol::ToString(arduino_max_digital),cfg_X+140,cfg_Y+135);
-///////////////////////////////
+
 petitchiffre.Print("LAST ANALOG:",cfg_X+20,cfg_Y+165);
 Rect MaxAnB(Vec2D(cfg_X+120,cfg_Y+150),Vec2D(50,25));
 MaxAnB.SetRoundness(7.5);
@@ -427,7 +428,7 @@ if(mouse_button==1 && mouse_released==0)
 {
 int valois=atoi(numeric);
 
-///INPUT/////////////////////////////////////////////////////////////////////
+//INPUT/////////////////
 //data Val1 range pour un input de type fader ( 0 à 11 )
 if(
 (arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==2|| arduino_digital_type[position_line_io+y]==7)
@@ -526,7 +527,7 @@ mouse_released=1;
 
 if(position_line_io+y==0)
 {
-sprintf(string_temp_def,"0:Serial",position_line_io+y);
+sprintf(string_temp_def,"0:Serial");
 sprintf(string_temp_familly,"Rx");
 OverTyp.Draw(CouleurFond);
 petitchiffre.Print(string_temp_familly,cfg_X+293,cfg_Y+43+(y*20));
@@ -535,7 +536,7 @@ petitchiffrerouge.Print(ol::ToString(digital_data_from_arduino[position_line_io+
 }
 if(position_line_io+y==1)
 {
-sprintf(string_temp_def,"1:Serial",position_line_io+y);
+sprintf(string_temp_def,"1:Serial");
 sprintf(string_temp_familly,"Tx");
 OverTyp.Draw(CouleurFond);
 petitchiffre.Print(string_temp_familly,cfg_X+293,cfg_Y+43+(y*20));

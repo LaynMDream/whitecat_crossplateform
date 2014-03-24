@@ -112,8 +112,8 @@ Wiz_Times_Memoires[pm][2]=0.0;
 Wiz_Times_Memoires[pm][3]=0.0;
 Wiz_Links_Memoires[pm]=0;
 Wiz_Banger_Memoire[pm]=0;
-sprintf(Wiz_descriptif_memoires[pm],"");
-sprintf(Wiz_annotation_memoires[pm],"");
+strcpy(Wiz_descriptif_memoires[pm],"");
+strcpy(Wiz_annotation_memoires[pm],"");
 Wiz_descriptif_memoires[pm][24]='\0';
 Wiz_annotation_memoires[pm][24]='\0';
 }
@@ -135,9 +135,9 @@ Times_Memoires[pm][2]=0.0;
 Times_Memoires[pm][3]=0.0;
 Links_Memoires[pm]=0;
 Banger_Memoire[pm]=0;
-sprintf(descriptif_memoires[pm],"");
+strcpy(descriptif_memoires[pm],"");
 descriptif_memoires[pm][24]='\0';
-sprintf(annotation_memoires[pm],"");
+strcpy(annotation_memoires[pm],"");
 annotation_memoires[pm][24]='\0';
 }
  return(0);
@@ -187,7 +187,7 @@ sprintf(Wiz_annotation_memoires[pm],annotation_memoires[pm]);
 
 int wizard_inspekt_mem()
 {
-sprintf(tmp_wizbuffer,"");
+strcpy(tmp_wizbuffer,"");
 char tmpw[8];
 
 for (int w=1;w<513;w++)
@@ -210,7 +210,7 @@ strcat(tmp_wizbuffer, tmpw);
 //splittage chaine caracters
 for (int ly=0;ly<36;ly++)
 {
-sprintf(show_buff_wizOUT[ly],"");
+strcpy(show_buff_wizOUT[ly],"");
 for (int by=0;by<71;by++)
 {
 show_buff_wizOUT[ly][by]=tmp_wizbuffer[(ly*71)+by];
@@ -238,9 +238,9 @@ Times_Memoires[pm][2]=0.0;
 Times_Memoires[pm][3]=0.0;
 Links_Memoires[pm]=0;
 Banger_Memoire[pm]=0;
-sprintf(descriptif_memoires[pm],"");
+strcpy(descriptif_memoires[pm],"");
 descriptif_memoires[pm][24]='\0';
-sprintf(annotation_memoires[pm],"");
+strcpy(annotation_memoires[pm],"");
 annotation_memoires[pm][24]='\0';
 }
 //recopie
@@ -277,11 +277,11 @@ int wizard_move_mems()
 //backup de la conduite en entier
 wizard_clear_transfert_array();
 
-bool Wiz_backup_exist_second[10000];
+//sab 02/03/2014 set but not used bool Wiz_backup_exist_second[10000];
 for(int pm=0;pm<10000;pm++)
 {
 Wiz_MemoiresExistantes[pm]=MemoiresExistantes[pm];
-Wiz_backup_exist_second[pm]=MemoiresExistantes[pm];
+//sab 02/03/2014 set but not used Wiz_backup_exist_second[pm]=MemoiresExistantes[pm];
 for(int cho=0;cho<513;cho++)
 {
 Wiz_Memoires[pm][cho]=Memoires[pm][cho];
@@ -310,9 +310,9 @@ Times_Memoires[pm][2]=0.0;
 Times_Memoires[pm][3]=0.0;
 Links_Memoires[pm]=0;
 Banger_Memoire[pm]=0;
-sprintf(descriptif_memoires[pm],"");
+strcpy(descriptif_memoires[pm],"");
 descriptif_memoires[pm][24]='\0';
-sprintf(annotation_memoires[pm],"");
+strcpy(annotation_memoires[pm],"");
 annotation_memoires[pm][24]='\0';
 }
 
@@ -598,7 +598,7 @@ if(wizard_buffer_in[co]==1)
 tmp_buff_wiz[co]=Memoires[m][co];
 please_replace[co]=1;
 Memoires[m][co]=0;
-sprintf(descriptif_projecteurs[co],"");
+strcpy(descriptif_projecteurs[co],"");
 }
 }
 //salve redistribue

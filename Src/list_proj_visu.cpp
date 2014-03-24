@@ -181,7 +181,8 @@ case 16:
 sprintf(titlemacro, "Ch>Fader Num");
 break;
 case 17:
-sprintf(titlemacro, "Ch>Stage %");
+//sab 02/03/2014  sprintf(titlemacro, "Ch>Stage %");
+strcpy(titlemacro, "Ch>Stage %");
 break;
 default:
 break;

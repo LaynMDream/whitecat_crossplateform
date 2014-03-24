@@ -434,7 +434,7 @@ int DoClearChaserTrack(int numchaser, int numtrack)
  track_is_on[numchaser][numtrack]=1;
  track_level[numchaser][numtrack]=127;
  TrackTypeIs[numchaser][numtrack]=0;
- sprintf(chaser_track_name[numchaser][numtrack],"");
+ strcpy(chaser_track_name[numchaser][numtrack],"");
  }
 sprintf(string_Last_Order,">> Cleared Track %d Chaser %d",numtrack+1,numchaser+1);
  return(0);
@@ -444,7 +444,7 @@ int DoClearAChaser(int numchaser)
 {
 chaser_operator_is=0;
 time_unit[numchaser]=1.0;
-sprintf(chaser_name[numchaser],"");
+strcpy(chaser_name[numchaser],"");
 chaser_is_playing[numchaser]=0;
 chaser_is_in_loop[numchaser]=0;
 chaser_way[numchaser]=0;

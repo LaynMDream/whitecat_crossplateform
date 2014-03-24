@@ -70,13 +70,13 @@ int open_sunlite()
   hLibSunlite = LoadLibrary("DasHard2006.dll");
  if (hLibSunlite == NULL)
  {
-     sprintf(string_display_dmx_params,"Impossible to load sunlite DLL: %s", hLibSunlite);
+     sprintf(string_display_dmx_params,"Impossible to load sunlite DLL");
  }
 
  dasusbcommand = (DasUsbCommand) GetProcAddress(hLibSunlite, "DasUsbCommand");
  if (dasusbcommand == NULL)
  {
-    sprintf(string_display_dmx_params,"Impossible to Get ProcAdress DASHARD: %d",dasusbcommand );
+    sprintf(string_display_dmx_params,"Impossible to Get ProcAdress DASHARD");
   }
 //open device
 
@@ -183,7 +183,7 @@ int Receive_sunlite_dmxIN()
 {
 if(dasusbcommand >0 && index_quit==0 && index_allow_sunlite_dmxIN==1)
 {
-int Reto=dasusbcommand(DHC_DMX2IN,512,dmxINsunlite);
+//int Reto=dasusbcommand(DHC_DMX2IN,512,dmxINsunlite);
 for (int p=0;p<512;p++)
 {
  dmxIN[p+2]=dmxINsunlite[p];   //ok +2 fonctionne tres bien de 1 à 512 compris

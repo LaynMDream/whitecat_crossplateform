@@ -45,7 +45,7 @@ int Load_audiofiles_cues()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    int it=0;
+    //sab 02/03/2014 unused int it=0;
     char tmp_audio_f[512];
     sprintf(tmp_audio_f,"audio\\%s\\audio_cues_in_out.txt",audio_folder);
 	cfg_file = fopen(tmp_audio_f, "rt" );
@@ -62,7 +62,7 @@ int Load_audiofiles_cues()
 
         else {
 
-             char *tremp;
+             //sab 02/03/2014 unused char *tremp;
              int temp_ain[128];
              int temp_aout[128];
              int index_af=0;
@@ -71,7 +71,7 @@ int Load_audiofiles_cues()
              {
 	         fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file );
              char tmp_name_f[72];
-             sscanf(read_buff_winfil , "%s / %d / %d\n" ,  &tmp_name_f,&temp_ain[index_af],&temp_aout[index_af] );
+             sscanf(read_buff_winfil , "%s / %d / %d\n" ,  tmp_name_f,&temp_ain[index_af],&temp_aout[index_af] );
 
              for(int po=0;po<127;po++)
              {
@@ -228,7 +228,7 @@ player_seek_position[player]=audiofile_cue_in_out_pos[audiofile_selected][0];
 }
 //audiofile_selected=0;//reset du name si jamais click
 //sprintf(audiofile_name,"");//reset du name si jamais click
-index_loading_a_sound_file=0;//permet le rafraichissement des dixièmes
+index_loading_a_sound_file=0;//permet le rafraichissement des dixiÃ¨mes
 
 return(0);
 }
@@ -1706,7 +1706,7 @@ if(line_audio+24<128){line_audio++;mouse_released=1;}
 }
 }
 
-///RESCAN FOLDER
+//RESCAN FOLDER
 
     if(mouse_x>xb+230 && mouse_x<xb+230+50 && mouse_y>yb+10 && mouse_y<yb+10+20)
     {

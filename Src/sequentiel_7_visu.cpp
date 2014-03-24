@@ -367,7 +367,7 @@ Line(Vec2D(x_seq+200,y_seq+165),Vec2D(x_seq+205,y_seq+160)).Draw(CouleurLigne);
 
 //LES MEMOIRES SUIVANTES USER DEFINED
 int index_nbre_mem_visues=0;
-int last_mem_visue=0;
+//sab 03/04/2014 unused var int last_mem_visue=0;
 bool turn=0;
 for(int memsearch=position_preset+1; memsearch<10000;memsearch++)
 {
@@ -742,7 +742,7 @@ GplMod.DrawOutline(CouleurLigne.WithAlpha(0.5));
 petitchiffre.Print("Gpl.1",xseq+277,yseq+60);
 
 /////menus bas
-char string_seq_function[5];
+//sab 02/03/2014 unused var char string_seq_function[5];
 Rect SeqAction(Vec2D (xseq,yseq), Vec2D ( 50,20));
 SeqAction.SetRoundness(7.5);
 

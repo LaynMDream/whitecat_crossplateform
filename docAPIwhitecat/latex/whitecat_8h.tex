@@ -6,6 +6,7 @@
 \{header file for all the global variable in whitecat\}  
 
 
+{\ttfamily \#include \char`\"{}Crossplateform.\-h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,8 +16,6 @@ struct \hyperlink{struct_n_o_d_e}{N\-O\-D\-E}
 \end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{whitecat_8h_a97b66f1468ddd4c67934e4dc1bb64bf4}{White\-Microsoft}
 \item 
 \#define \hyperlink{whitecat_8h_a694a04a45f3fe2d9299cf7e09f9c2842}{M\-A\-X\-\_\-curve\-\_\-node\-S}~8
 \item 
@@ -200,15 +199,15 @@ Rgba \hyperlink{whitecat_8h_a53146b0df4992543bd09594d4ce44f7d}{Couleur\-Plot\-Fi
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{whitecat_8h_a5fcf102e027084f163357238d141adb7}{versionis} \mbox{[}72\mbox{]} =\{\char`\"{}Beta 0.\-8.\-4.\-14 -\/ 6 janv 2014\char`\"{}\}
+char \hyperlink{whitecat_8h_a5fcf102e027084f163357238d141adb7}{versionis} \mbox{[}72\mbox{]} =\{\char`\"{}Beta 0.\-8.\-5.\-8 -\/ 4 mars 2014\char`\"{}\}
 \item 
-char \hyperlink{whitecat_8h_a6d63e36b0c0319e6b4995f2339c3242a}{nickname\-\_\-version} \mbox{[}48\mbox{]} =\{\char`\"{}O\-P\-E\-N V\-E\-R\-S\-I\-O\-N\char`\"{}\}
+char \hyperlink{whitecat_8h_a6d63e36b0c0319e6b4995f2339c3242a}{nickname\-\_\-version} \mbox{[}48\mbox{]} =\{\char`\"{}A\-N\-T\-O\-N R\-U\-I\-S S\-E\-R\-G\-E A\-N\-D C\-H\-R\-I\-S\-T\-O\-P\-H P\-O\-W\-E\-R\char`\"{}\}
 \item 
 bool \hyperlink{whitecat_8h_ac28675e9f599e4310cf860d8cd396cea}{init\-\_\-done} =0
 \item 
 char \hyperlink{whitecat_8h_adeab9e3181f9a277a30cd6a567db8586}{rep} \mbox{[}255\mbox{]}
 \item 
-char \hyperlink{whitecat_8h_a90371d832206c75d417cfacb6cf26292}{mondirectory} \mbox{[}200\mbox{]}
+char \hyperlink{whitecat_8h_a8d877db7b1b43dd03b48422174dd51e9}{mondirectory} \mbox{[}512\mbox{]}
 \item 
 char \hyperlink{whitecat_8h_a18f689bae897e084f7d0b975a113536c}{working\-\_\-nameis} \mbox{[}120\mbox{]}
 \item 
@@ -464,9 +463,9 @@ unsigned char \hyperlink{whitecat_8h_a815a1a1fbbe43f781d8822898bbe6955}{Fader\-\
 \item 
 bool \hyperlink{whitecat_8h_ae7d3a0d9a7ce6500376b472954a1c520}{Dock\-Is\-Selected} \mbox{[}48\mbox{]}\mbox{[}6\mbox{]}
 \item 
-unsigned char \hyperlink{whitecat_8h_adb99c29699380f0e77ade5b2c66ab312}{Dock\-Type\-Is} \mbox{[}48\mbox{]}\mbox{[}6\mbox{]}
+unsigned int \hyperlink{whitecat_8h_adb366b865c909655b8142e2398fd432a}{Dock\-Type\-Is} \mbox{[}48\mbox{]}\mbox{[}6\mbox{]}
 \item 
-unsigned char \hyperlink{whitecat_8h_affda9088bf3d9dc9db0e0f0df028ae08}{Dock\-Net\-Is} \mbox{[}48\mbox{]}\mbox{[}6\mbox{]}
+unsigned int \hyperlink{whitecat_8h_a57e8d50b21ca1ac943fb7f28f77ff2d8}{Dock\-Net\-Is} \mbox{[}48\mbox{]}\mbox{[}6\mbox{]}
 \item 
 char \hyperlink{whitecat_8h_ade345406491ec66edce5b9eb3dcb7276}{string\-\_\-docktypnet} \mbox{[}8\mbox{]}
 \item 
@@ -562,9 +561,9 @@ int \hyperlink{whitecat_8h_a0b66556499c2556aa698dda91f9a867c}{actual\-\_\-time}
 \item 
 bool \hyperlink{whitecat_8h_a8613cd213947fe8ce3bd0e3dc0b32ae8}{Stop\-Pos\-On} \mbox{[}48\mbox{]}
 \item 
-unsigned char \hyperlink{whitecat_8h_ab69580ea9fedb4cfd56115f64bf8ccf1}{Level\-Stop\-Pos} \mbox{[}48\mbox{]}
+unsigned int \hyperlink{whitecat_8h_a81e6ef0fe999603e6b82d5667a78ccf2}{Level\-Stop\-Pos} \mbox{[}48\mbox{]}
 \item 
-unsigned char \hyperlink{whitecat_8h_adf8cb4e1bd596e3c19fc490f4180d877}{Previous\-Level\-Stop\-Pos} \mbox{[}48\mbox{]}
+unsigned int \hyperlink{whitecat_8h_a1bbedc7ba83d1446fe6b974329bc462f}{Previous\-Level\-Stop\-Pos} \mbox{[}48\mbox{]}
 \item 
 bool \hyperlink{whitecat_8h_a1447ebe0d477833e6b3b45a65a12e37f}{Actionnate\-Stop\-On} \mbox{[}48\mbox{]}
 \item 
@@ -642,7 +641,7 @@ int \hyperlink{whitecat_8h_aaf2974f51da69518a3856015871bfc07}{over\-\_\-minifade
 \item 
 int \hyperlink{whitecat_8h_a4a9d65cd93b8b81a89f36a92657ada56}{scroll\-\_\-channelspace} =0
 \item 
-bool \hyperlink{whitecat_8h_a5bd5a5a2ce1c53c493d0e43dc108dbc0}{dmx\-\_\-view} =0
+int \hyperlink{whitecat_8h_a24c20c3f3feee50efa5244ab198c6c08}{dmx\-\_\-view} =0
 \item 
 unsigned char \hyperlink{whitecat_8h_a03a74a90e7ad720f726bbbe571ce28ef}{buffer\-Saisie} \mbox{[}514\mbox{]}
 \item 
@@ -870,13 +869,13 @@ char \hyperlink{whitecat_8h_ad8621ad0dd2005ca63b204ec5943c297}{string\-\_\-blur\
 \item 
 char \hyperlink{whitecat_8h_a8098d7b4f6be15b6075bae5a5b3dab5a}{string\-\_\-div\-\_\-is} \mbox{[}24\mbox{]}
 \item 
-bool \hyperlink{whitecat_8h_a9f0acad3e2be4c9c2a0d7563b18561d1}{flip\-\_\-image} =1
+int \hyperlink{whitecat_8h_a3dd6d6a863b368672f14f39fd203df57}{flip\-\_\-image} =1
 \item 
-bool \hyperlink{whitecat_8h_a3eeff56d623ca8dc28994f0ff6d61ea5}{threshold\-\_\-on} =1
+int \hyperlink{whitecat_8h_a343ab715ac3d2e57d9e4a99f4cda8b5a}{threshold\-\_\-on} =1
 \item 
-bool \hyperlink{whitecat_8h_a32d106de6afc31ccd7458024d06d167e}{erode\-\_\-mode} =0
+int \hyperlink{whitecat_8h_a504ec10c24c499ca940f54dd0d145b52}{erode\-\_\-mode} =0
 \item 
-bool \hyperlink{whitecat_8h_accd79bae9a3927c5f1cafdabf9f71f86}{blur\-\_\-on} =0
+int \hyperlink{whitecat_8h_a73d4c84ee20c36cbd33c8252bbeb5f49}{blur\-\_\-on} =0
 \item 
 double \hyperlink{whitecat_8h_a0d3d8f055f3e124b764dbeed0a43c3b4}{pixels\-\_\-changed} =0
 \item 
@@ -902,7 +901,7 @@ int \hyperlink{whitecat_8h_a88cf05843abb104f0bf99772ec5ff486}{video\-\_\-size\-\
 \item 
 bool \hyperlink{whitecat_8h_a0d665da9cedbf99b15c980117e50ff90}{camera\-\_\-is\-\_\-on} =0
 \item 
-bool \hyperlink{whitecat_8h_a5aa84cfbadd1b5439d9d3fc2c27e64f7}{load\-\_\-camera\-\_\-on\-\_\-start} =0
+int \hyperlink{whitecat_8h_a27a1c3e670a20d8d5137359755df5674}{load\-\_\-camera\-\_\-on\-\_\-start} =0
 \item 
 int \hyperlink{whitecat_8h_a0983cf05d4bb628e99ad8706daac6d0b}{camera\-\_\-original\-\_\-fps\-\_\-is} =15
 \item 
@@ -1014,7 +1013,7 @@ float \hyperlink{whitecat_8h_a8ac775b23c7928aedd18af65bb64d10d}{position\-\_\-cu
 \item 
 float \hyperlink{whitecat_8h_aa57dcaa1908e19a6faf55476a3fdccb1}{position\-\_\-curseur\-\_\-pad\-\_\-y}
 \item 
-bool \hyperlink{whitecat_8h_adcc002dcbf09212826eab2c95a6ac5e2}{wheellevel\-\_\-absolutemode} =0
+int \hyperlink{whitecat_8h_aeb65575fbd5ae63549f221ce5475680f}{wheellevel\-\_\-absolutemode} =0
 \item 
 int \hyperlink{whitecat_8h_a886c5014d36b7c6db2962581bc921a52}{previous\-\_\-level\-\_\-wheel} =1
 \item 
@@ -1216,7 +1215,7 @@ bool \hyperlink{whitecat_8h_a85579e51b2a50b5093d4679ce5bfba61}{index\-\_\-midi\-
 \item 
 bool \hyperlink{whitecat_8h_a4657452c703e9485c37fd4672018bbb0}{index\-\_\-auto\-\_\-mute\-\_\-cuelist\-\_\-speed} =0
 \item 
-bool \hyperlink{whitecat_8h_ae55aca56a5f9fc18bfc8ffd55fc8cb81}{index\-\_\-midi\-\_\-auto\-\_\-desaffect} =0
+int \hyperlink{whitecat_8h_a1b76c7f63997aeb5d67582be6fa436db}{index\-\_\-midi\-\_\-auto\-\_\-desaffect} =0
 \item 
 short \hyperlink{whitecat_8h_a2b1b7930b62af2183cdb1ed5e494c41e}{my\-Ref\-Num}
 \item 
@@ -1410,7 +1409,7 @@ bool \hyperlink{whitecat_8h_ab5aea9fe1c4fc86087ff1bb99de2df7b}{Links\-\_\-\-Memo
 \item 
 bool \hyperlink{whitecat_8h_a85dd92d8cd7c309be7feb3f394e67e95}{index\-\_\-link\-\_\-is\-\_\-on} =0
 \item 
-bool \hyperlink{whitecat_8h_ab078061cb017f879496df227dd40a7df}{index\-\_\-blink\-\_\-change\-\_\-memories} =0
+int \hyperlink{whitecat_8h_a4791d2991c39a65c1adeb268f632c604}{index\-\_\-blink\-\_\-change\-\_\-memories} =0
 \item 
 float \hyperlink{whitecat_8h_a1548fbd96db00274d6c559f2aca21717}{default\-\_\-time} =3.\-0
 \item 
@@ -1658,7 +1657,7 @@ char \hyperlink{whitecat_8h_a32cde1a92c4469fd32ad794b57f5e278}{Art\-Long\-Name} 
 \item 
 char \hyperlink{whitecat_8h_ae9b31013793fa1fe0d54e93516f3159f}{Art\-Node\-Report} \mbox{[}\hyperlink{whitecat_8h_a34a590fa0b3e47e2d2970e3e9be2f9f5}{Node\-Report\-Length}\mbox{]} = \{\char`\"{}Is everything ok ?\char`\"{}\}
 \item 
-bool \hyperlink{whitecat_8h_a1906fa2c0011a66cc216b1d474b4f39a}{index\-\_\-broadcast} =0
+int \hyperlink{whitecat_8h_a9452c08cf30ec596c76b652536fab46e}{index\-\_\-broadcast} =0
 \item 
 int \hyperlink{whitecat_8h_a530a9b7e9eddbcb068101a60b60443dd}{count\-\_\-artopoll\-\_\-received} =0
 \item 
@@ -1750,7 +1749,7 @@ int \hyperlink{whitecat_8h_a9943924aa225c149279c54f9ac5906e1}{Univers} =0
 \item 
 bool \hyperlink{whitecat_8h_a1eb3b15d5372c3d928c1ec04946c75bf}{index\-\_\-do\-\_\-light\-\_\-diode\-\_\-artnet} =0
 \item 
-bool \hyperlink{whitecat_8h_aaf3c256eb11c8f690a51ba01d4c442dc}{index\-\_\-artnet\-\_\-doubledmx} =0
+int \hyperlink{whitecat_8h_a739b01ff0983c438c74d2924e776dd48}{index\-\_\-artnet\-\_\-doubledmx} =0
 \item 
 bool \hyperlink{whitecat_8h_ae2ae966304a86cb093b2548858a7a2d5}{artnet\-\_\-serveur\-\_\-is\-\_\-initialized} =0
 \item 
@@ -1902,19 +1901,19 @@ int \hyperlink{whitecat_8h_a6ab60f28ed003a40d3b0a09af1507daf}{Schwz\-Patch} \mbo
 \item 
 int \hyperlink{whitecat_8h_ac14c1cba3633756a436d5580c548df2c}{Schwzshadow\-\_\-sub} \mbox{[}8\mbox{]}\mbox{[}5\mbox{]}\mbox{[}121\mbox{]}
 \item 
-int \hyperlink{whitecat_8h_a8ae793f72425464a26a4ac9e7ce09845}{Schwz\-Memoires\-\_\-size} = 121$\ast$5011
+unsigned int \hyperlink{whitecat_8h_af7aca83bba46f8e77781751df33a2888}{Schwz\-Memoires\-\_\-size} = 121$\ast$5011
 \item 
-int \hyperlink{whitecat_8h_a0b8b6289a346ecd6c1f5398fd7651785}{Schwz\-Mem\-Time\-\_\-size} = 5011$\ast$4
+unsigned int \hyperlink{whitecat_8h_a4386db9de5d11c3e58e3b6fa9bee0f8f}{Schwz\-Mem\-Time\-\_\-size} = 5011$\ast$4
 \item 
-int \hyperlink{whitecat_8h_a2150cbfe187e75aa801325e1dd5c318f}{Schwz\-Patch\-\_\-size} =513$\ast$1
+unsigned int \hyperlink{whitecat_8h_a96c9660ec5ff41de4fe6fa7c535f9114}{Schwz\-Patch\-\_\-size} =513$\ast$1
 \item 
-int \hyperlink{whitecat_8h_ac1901d4c03aa75c09e42a0e7766758fe}{Schwz\-Memoires\-Existantes\-\_\-size} =5011$\ast$1
+unsigned int \hyperlink{whitecat_8h_ac97b72b9beffbb4a5f51a7f1afaa81db}{Schwz\-Memoires\-Existantes\-\_\-size} =5011$\ast$1
 \item 
-int \hyperlink{whitecat_8h_a55e3d174668f5c8b11459e86337d2d93}{Schwzautogo\-\_\-size} =5011$\ast$1
+unsigned int \hyperlink{whitecat_8h_a27dde23241d7f7451eafdfbf5563f810}{Schwzautogo\-\_\-size} =5011$\ast$1
 \item 
-int \hyperlink{whitecat_8h_aed2e5b468d1fa8cc7e39210ce642fa36}{Schwzdescriptif\-\_\-size} =5011$\ast$13
+unsigned int \hyperlink{whitecat_8h_a17e4b1ce43c1ebcea37caa98904aec49}{Schwzdescriptif\-\_\-size} =5011$\ast$13
 \item 
-int \hyperlink{whitecat_8h_a6c00a80e8035849bef0edefc7d3caa36}{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub} =40$\ast$121
+unsigned int \hyperlink{whitecat_8h_acc5764cc99cc2138e563a0b6ee719b64}{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub} =40$\ast$121
 \item 
 bool \hyperlink{whitecat_8h_a9e6206ca5f19b5bf5f58ce4f3fe45d7c}{is\-Schwz} =0
 \item 
@@ -2124,7 +2123,7 @@ char \hyperlink{whitecat_8h_ad7a98c09af4b1d4ead9d13ed9d883867}{sound\-\_\-files}
 \item 
 char \hyperlink{whitecat_8h_a9b0d52223b6bbf205ad1366087f5851a}{soundfile\-\_\-temp\-\_\-loader} \mbox{[}256+72\mbox{]}
 \item 
-bool \hyperlink{whitecat_8h_a32417cf39ac209e32b400222102bbacf}{index\-\_\-preloaded\-\_\-sounds} =1
+int \hyperlink{whitecat_8h_af41bf424d9fbaab24d97bbaccedfa0b9}{index\-\_\-preloaded\-\_\-sounds} =1
 \item 
 int \hyperlink{whitecat_8h_ae0914227f8f81152acf1a613698179f6}{length\-\_\-of\-\_\-file\-\_\-in\-\_\-player} \mbox{[}4\mbox{]}
 \item 
@@ -2370,7 +2369,7 @@ bool \hyperlink{whitecat_8h_afc0d4b13e2abde887acfae029162d85a}{index\-\_\-allow\
 \item 
 int \hyperlink{whitecat_8h_a84877b65786498c633c61362af33705d}{core\-\_\-to\-\_\-assign} =0
 \item 
-bool \hyperlink{whitecat_8h_ab13c171d748482f4a95ee91a8ee9aa14}{open\-\_\-arduino\-\_\-on\-\_\-open} =0
+int \hyperlink{whitecat_8h_a0155cb918143d0f983c7d44a76cba403}{open\-\_\-arduino\-\_\-on\-\_\-open} =0
 \item 
 char \hyperlink{whitecat_8h_a9c6a1d66181b0c2f2451476bd48af57b}{string\-\_\-\-Arduino\-\_\-status} \mbox{[}128\mbox{]}
 \item 
@@ -2381,6 +2380,8 @@ bool \hyperlink{whitecat_8h_ad51d0b2370a7462f0009b38b10d4936e}{index\-\_\-send\-
 float \hyperlink{whitecat_8h_acc28bc00e661409931611d8362636730}{index\-\_\-do\-\_\-light\-\_\-send\-\_\-config} =1.\-0
 \item 
 int \hyperlink{whitecat_8h_a0dcd570e5bcf5d47799394fc39b38f26}{n\-Bytes\-Read\-Arduino0} =0
+\item 
+int \hyperlink{whitecat_8h_ad155d67582696099ef7a0c4c116a3e10}{n\-Bytes\-Sendto\-Arduino} =0
 \item 
 char \hyperlink{whitecat_8h_a32bfbb1d7acebed2dec256cbc39aac56}{arduino\-\_\-order} \mbox{[}4\mbox{]}
 \item 
@@ -2808,7 +2809,7 @@ int \hyperlink{whitecat_8h_a7757f271611fa4eb9423b86b14810b01}{before\-\_\-mover\
 \item 
 bool \hyperlink{whitecat_8h_a3d7cf952f62d37d6ca47f918538d08a8}{tracker\-\_\-16b\-\_\-edit} =0
 \item 
-bool \hyperlink{whitecat_8h_a8953fcca01cc7f16374121f00638fa27}{enable\-\_\-i\-Cat} =0
+int \hyperlink{whitecat_8h_adb01622c770a88fe203f66aa91dc7ebe}{enable\-\_\-i\-Cat} =0
 \item 
 bool \hyperlink{whitecat_8h_ad999a9f627db28a9542a9663c06d3754}{receiving\-\_\-bytes\-\_\-i\-Cat} =0
 \item 
@@ -3262,7 +3263,7 @@ int \hyperlink{whitecat_8h_aca766cdd892cde0b9629e7513d6ecd79}{core\-\_\-user\-\_
 \item 
 int \hyperlink{whitecat_8h_a3f63901e5262032ce97115754292a088}{core\-\_\-user\-\_\-define\-\_\-nb\-\_\-bangers} =128
 \item 
-bool \hyperlink{whitecat_8h_a0bf1b413f890c98bdd80835f3b81aa88}{core\-\_\-do\-\_\-calculations} \mbox{[}24\mbox{]}
+int \hyperlink{whitecat_8h_abd0057913297140a82ec591d654f807c}{core\-\_\-do\-\_\-calculations} \mbox{[}24\mbox{]}
 \item 
 int \hyperlink{whitecat_8h_a6b63c5af1ad0d5f42e60bf6683274060}{mouse\-\_\-level\-\_\-for\-\_\-banger} =0
 \item 
@@ -3534,7 +3535,7 @@ bool \hyperlink{whitecat_8h_a2dd6d2854d0763ca3fee876113b2ca91}{plot\-\_\-index\-
 \item 
 bool \hyperlink{whitecat_8h_a826402956500463498ce074c9c412da1}{plot\-\_\-index\-\_\-show\-\_\-levels\-\_\-from\-\_\-faders} =1
 \item 
-bool \hyperlink{whitecat_8h_a917e57eaa6df92bbbebaeac7ddae8da4}{plot\-\_\-grid\-\_\-type} =0
+int \hyperlink{whitecat_8h_a6a022635fe7a488d6735ee1c76baeef6}{plot\-\_\-grid\-\_\-type} =0
 \item 
 float \hyperlink{whitecat_8h_a5cbe571e0c109a8fe9af75a6f0591355}{alpha\-\_\-grille} =0.\-5
 \item 
@@ -3548,7 +3549,7 @@ const short \hyperlink{whitecat_8h_a241b973624dd2634752f8d42ced769d0}{max\-\_\-s
 \item 
 char \hyperlink{whitecat_8h_a7ce8e33f6257e4281d8c135aaa40e14d}{shape\-\_\-nickname} \mbox{[}\hyperlink{whitecat_8h_a241b973624dd2634752f8d42ced769d0}{max\-\_\-shape\-\_\-type}+1\mbox{]}\mbox{[}25\mbox{]}
 \item 
-bool \hyperlink{whitecat_8h_ac204598a83af1358e5af863a15b21407}{lock\-\_\-background\-\_\-proportions} =0
+int \hyperlink{whitecat_8h_acc4d3a633037b264271a5c0de5f1f5f5}{lock\-\_\-background\-\_\-proportions} =0
 \item 
 int \hyperlink{whitecat_8h_a7b736dd161cdc920606f7491a1d2de61}{shape\-\_\-selected\-\_\-type} =0
 \item 
@@ -3600,7 +3601,7 @@ bool \hyperlink{whitecat_8h_af41471e4092d6c975e4b4540429f278b}{index\-\_\-ask\-\
 \item 
 int \hyperlink{whitecat_8h_a764998d26ff15b88569a4d0bb020be9b}{editing\-\_\-shape\-\_\-line\-\_\-number} =0
 \item 
-bool \hyperlink{whitecat_8h_a99858965269f2bd766d95d18bc22214c}{index\-\_\-show\-\_\-shape\-\_\-id} =0
+int \hyperlink{whitecat_8h_aa792ce3ffc072b6b0873ed7e7e642d97}{index\-\_\-show\-\_\-shape\-\_\-id} =0
 \item 
 int \hyperlink{whitecat_8h_aa183703ed1e6121dbd1b60bb03755c52}{index\-\_\-last\-\_\-shape\-\_\-selected} =0
 \item 
@@ -3644,7 +3645,7 @@ int \hyperlink{whitecat_8h_a8cf5c7f0788f07e822332ecb9060b4f5}{xyrelativ\-\_\-pre
 \item 
 int \hyperlink{whitecat_8h_ab360602039d723ee110ad5ec6fa5ab78}{plot\-\_\-relativxy\-\_\-preset} \mbox{[}8\mbox{]}\mbox{[}4\mbox{]}\mbox{[}2\mbox{]}
 \item 
-bool \hyperlink{whitecat_8h_a48a5dd573b6e02fd12175d8b89dbd379}{mode\-\_\-relatif\-\_\-xy\-\_\-solo} =0
+int \hyperlink{whitecat_8h_addae3e68d70f40dc1051b23df8c930f9}{mode\-\_\-relatif\-\_\-xy\-\_\-solo} =0
 \item 
 int \hyperlink{whitecat_8h_a3bbe763c7fa909c497cf32f4494ed9e9}{number\-\_\-of\-\_\-shapes\-\_\-groups} =0
 \item 
@@ -3758,7 +3759,7 @@ int \hyperlink{whitecat_8h_aefbf3853bf3de1fd2f54571c4b6a8d7c}{size\-\_\-x\-\_\-m
 \item 
 int \hyperlink{whitecat_8h_a86368a1d70ce7243fffe55f6d38116fa}{size\-\_\-y\-\_\-mainmenu} =200
 \item 
-bool \hyperlink{whitecat_8h_aa7af7fab39247d72b96b8a81b121e9c4}{expert\-\_\-mode} =0
+int \hyperlink{whitecat_8h_ab983cfbbf074d40faefae1bef80cc1c5}{expert\-\_\-mode} =0
 \item 
 bool \hyperlink{whitecat_8h_a90b716a52f014037907d36fd0fd3427c}{index\-\_\-show\-\_\-first\-\_\-dim} =0
 \item 
@@ -3814,7 +3815,7 @@ int \hyperlink{whitecat_8h_a53452fb72bb1083ae7c535f09fee5853}{draw\-\_\-preset\-
 \item 
 int \hyperlink{whitecat_8h_a6e102c500b50c524fdacc0aa80e6238e}{previous\-\_\-draw\-\_\-preset\-\_\-selected} =-\/1
 \item 
-bool \hyperlink{whitecat_8h_afece1a3194794bffa59f4154779eeb5e}{draw\-\_\-brush\-\_\-type} \mbox{[}6\mbox{]}
+int \hyperlink{whitecat_8h_a3bbd14c67733c766de0597ccbd5c4118}{draw\-\_\-brush\-\_\-type} \mbox{[}6\mbox{]}
 \item 
 int \hyperlink{whitecat_8h_a889a38875cc21b83ef862b29c60046ad}{draw\-\_\-mode} \mbox{[}6\mbox{]}
 \item 
@@ -3921,10 +3922,10 @@ float \hyperlink{whitecat_8h_a07ececfb454172b63ec8031b48995be6}{snap\-\_\-echo\-
 Christoph Guillermet 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-\{0.\-8.\-5.\-2\} 
+\{0.\-8.\-5.\-3\} 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-\{19/02/2014\}
+\{04/03/2014\}
 \end{DoxyDate}
 White Cat \{-\/ categorie\} \{-\/ sous categorie \{-\/ sous categorie\}\}
 
@@ -3973,10 +3974,7 @@ Header for all the global variables used in whitecat
 \item[{}]{x}
 \end{DoxyParamCaption}
 )~(L\-O\-W\-\_\-\-B\-Y\-T\-E \& x)}}\label{whitecat_8h_ae4e6c6f48e224528f3bf837f2443553c}
-\hypertarget{whitecat_8h_a97b66f1468ddd4c67934e4dc1bb64bf4}{\index{whitecat.\-h@{whitecat.\-h}!White\-Microsoft@{White\-Microsoft}}
-\index{White\-Microsoft@{White\-Microsoft}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{White\-Microsoft}]{\setlength{\rightskip}{0pt plus 5cm}\#define White\-Microsoft}}\label{whitecat_8h_a97b66f1468ddd4c67934e4dc1bb64bf4}
-uncomment if whitecat is compilled for windows with Min\-G\-W else comment it and uncomment an other White define ex White\-P\-O\-S\-I\-X 
+
 
 \subsection{Documentation des définitions de type}
 \hypertarget{whitecat_8h_a381b962aa4b8e005d1aa81578168a052}{\index{whitecat.\-h@{whitecat.\-h}!curve\-\_\-node@{curve\-\_\-node}}
@@ -4891,9 +4889,9 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_a3dbb86cb2b0a95397ef95fa60589a96d}{\index{whitecat.\-h@{whitecat.\-h}!beforeloop\-\_\-for\-\_\-directch@{beforeloop\-\_\-for\-\_\-directch}}
 \index{beforeloop\-\_\-for\-\_\-directch@{beforeloop\-\_\-for\-\_\-directch}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{beforeloop\-\_\-for\-\_\-directch}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char beforeloop\-\_\-for\-\_\-directch\mbox{[}48\mbox{]}}}\label{whitecat_8h_a3dbb86cb2b0a95397ef95fa60589a96d}
-\hypertarget{whitecat_8h_accd79bae9a3927c5f1cafdabf9f71f86}{\index{whitecat.\-h@{whitecat.\-h}!blur\-\_\-on@{blur\-\_\-on}}
+\hypertarget{whitecat_8h_a73d4c84ee20c36cbd33c8252bbeb5f49}{\index{whitecat.\-h@{whitecat.\-h}!blur\-\_\-on@{blur\-\_\-on}}
 \index{blur\-\_\-on@{blur\-\_\-on}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{blur\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}bool blur\-\_\-on =0}}\label{whitecat_8h_accd79bae9a3927c5f1cafdabf9f71f86}
+\subsubsection[{blur\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}int blur\-\_\-on =0}}\label{whitecat_8h_a73d4c84ee20c36cbd33c8252bbeb5f49}
 \hypertarget{whitecat_8h_ad65a99c866cfcd74e2724f222a431d61}{\index{whitecat.\-h@{whitecat.\-h}!bmp\-\_\-buffer\-\_\-trichro@{bmp\-\_\-buffer\-\_\-trichro}}
 \index{bmp\-\_\-buffer\-\_\-trichro@{bmp\-\_\-buffer\-\_\-trichro}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{bmp\-\_\-buffer\-\_\-trichro}]{\setlength{\rightskip}{0pt plus 5cm}B\-I\-T\-M\-A\-P$\ast$ bmp\-\_\-buffer\-\_\-trichro}}\label{whitecat_8h_ad65a99c866cfcd74e2724f222a431d61}
@@ -5195,9 +5193,9 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_a7ab978b6bb8da920be791612fe0bb1ab}{\index{whitecat.\-h@{whitecat.\-h}!config\-\_\-page\-\_\-is@{config\-\_\-page\-\_\-is}}
 \index{config\-\_\-page\-\_\-is@{config\-\_\-page\-\_\-is}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{config\-\_\-page\-\_\-is}]{\setlength{\rightskip}{0pt plus 5cm}int config\-\_\-page\-\_\-is =0}}\label{whitecat_8h_a7ab978b6bb8da920be791612fe0bb1ab}
-\hypertarget{whitecat_8h_a0bf1b413f890c98bdd80835f3b81aa88}{\index{whitecat.\-h@{whitecat.\-h}!core\-\_\-do\-\_\-calculations@{core\-\_\-do\-\_\-calculations}}
+\hypertarget{whitecat_8h_abd0057913297140a82ec591d654f807c}{\index{whitecat.\-h@{whitecat.\-h}!core\-\_\-do\-\_\-calculations@{core\-\_\-do\-\_\-calculations}}
 \index{core\-\_\-do\-\_\-calculations@{core\-\_\-do\-\_\-calculations}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{core\-\_\-do\-\_\-calculations}]{\setlength{\rightskip}{0pt plus 5cm}bool core\-\_\-do\-\_\-calculations\mbox{[}24\mbox{]}}}\label{whitecat_8h_a0bf1b413f890c98bdd80835f3b81aa88}
+\subsubsection[{core\-\_\-do\-\_\-calculations}]{\setlength{\rightskip}{0pt plus 5cm}int core\-\_\-do\-\_\-calculations\mbox{[}24\mbox{]}}}\label{whitecat_8h_abd0057913297140a82ec591d654f807c}
 \hypertarget{whitecat_8h_a84877b65786498c633c61362af33705d}{\index{whitecat.\-h@{whitecat.\-h}!core\-\_\-to\-\_\-assign@{core\-\_\-to\-\_\-assign}}
 \index{core\-\_\-to\-\_\-assign@{core\-\_\-to\-\_\-assign}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{core\-\_\-to\-\_\-assign}]{\setlength{\rightskip}{0pt plus 5cm}int core\-\_\-to\-\_\-assign =0}}\label{whitecat_8h_a84877b65786498c633c61362af33705d}
@@ -5486,9 +5484,9 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_af7f4370008d32d06612a513d2236fe64}{\index{whitecat.\-h@{whitecat.\-h}!div\-\_\-facteur@{div\-\_\-facteur}}
 \index{div\-\_\-facteur@{div\-\_\-facteur}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{div\-\_\-facteur}]{\setlength{\rightskip}{0pt plus 5cm}int div\-\_\-facteur =1}}\label{whitecat_8h_af7f4370008d32d06612a513d2236fe64}
-\hypertarget{whitecat_8h_a5bd5a5a2ce1c53c493d0e43dc108dbc0}{\index{whitecat.\-h@{whitecat.\-h}!dmx\-\_\-view@{dmx\-\_\-view}}
+\hypertarget{whitecat_8h_a24c20c3f3feee50efa5244ab198c6c08}{\index{whitecat.\-h@{whitecat.\-h}!dmx\-\_\-view@{dmx\-\_\-view}}
 \index{dmx\-\_\-view@{dmx\-\_\-view}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{dmx\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}bool dmx\-\_\-view =0}}\label{whitecat_8h_a5bd5a5a2ce1c53c493d0e43dc108dbc0}
+\subsubsection[{dmx\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}int dmx\-\_\-view =0}}\label{whitecat_8h_a24c20c3f3feee50efa5244ab198c6c08}
 \hypertarget{whitecat_8h_ae8feb70a9170b9935cb93810cda81add}{\index{whitecat.\-h@{whitecat.\-h}!Dmx\-Block@{Dmx\-Block}}
 \index{Dmx\-Block@{Dmx\-Block}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Dmx\-Block}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Dmx\-Block\mbox{[}514\mbox{]}}}\label{whitecat_8h_ae8feb70a9170b9935cb93810cda81add}
@@ -5603,12 +5601,12 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_afd221e8075767abcdbba854f32523640}{\index{whitecat.\-h@{whitecat.\-h}!Dock\-Name@{Dock\-Name}}
 \index{Dock\-Name@{Dock\-Name}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Dock\-Name}]{\setlength{\rightskip}{0pt plus 5cm}char Dock\-Name\mbox{[}48\mbox{]}\mbox{[}6\mbox{]}\mbox{[}25\mbox{]}}}\label{whitecat_8h_afd221e8075767abcdbba854f32523640}
-\hypertarget{whitecat_8h_affda9088bf3d9dc9db0e0f0df028ae08}{\index{whitecat.\-h@{whitecat.\-h}!Dock\-Net\-Is@{Dock\-Net\-Is}}
+\hypertarget{whitecat_8h_a57e8d50b21ca1ac943fb7f28f77ff2d8}{\index{whitecat.\-h@{whitecat.\-h}!Dock\-Net\-Is@{Dock\-Net\-Is}}
 \index{Dock\-Net\-Is@{Dock\-Net\-Is}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Dock\-Net\-Is}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Dock\-Net\-Is\mbox{[}48\mbox{]}\mbox{[}6\mbox{]}}}\label{whitecat_8h_affda9088bf3d9dc9db0e0f0df028ae08}
-\hypertarget{whitecat_8h_adb99c29699380f0e77ade5b2c66ab312}{\index{whitecat.\-h@{whitecat.\-h}!Dock\-Type\-Is@{Dock\-Type\-Is}}
+\subsubsection[{Dock\-Net\-Is}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Dock\-Net\-Is\mbox{[}48\mbox{]}\mbox{[}6\mbox{]}}}\label{whitecat_8h_a57e8d50b21ca1ac943fb7f28f77ff2d8}
+\hypertarget{whitecat_8h_adb366b865c909655b8142e2398fd432a}{\index{whitecat.\-h@{whitecat.\-h}!Dock\-Type\-Is@{Dock\-Type\-Is}}
 \index{Dock\-Type\-Is@{Dock\-Type\-Is}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Dock\-Type\-Is}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Dock\-Type\-Is\mbox{[}48\mbox{]}\mbox{[}6\mbox{]}}}\label{whitecat_8h_adb99c29699380f0e77ade5b2c66ab312}
+\subsubsection[{Dock\-Type\-Is}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Dock\-Type\-Is\mbox{[}48\mbox{]}\mbox{[}6\mbox{]}}}\label{whitecat_8h_adb366b865c909655b8142e2398fd432a}
 \hypertarget{whitecat_8h_a0cbe4232275ab30c93b5ee985b5c4e67}{\index{whitecat.\-h@{whitecat.\-h}!doom@{doom}}
 \index{doom@{doom}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{doom}]{\setlength{\rightskip}{0pt plus 5cm}Text\-Renderer doom}}\label{whitecat_8h_a0cbe4232275ab30c93b5ee985b5c4e67}
@@ -5627,9 +5625,9 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_a2b21abe81a269f6ac7c1ac9b940930e5}{\index{whitecat.\-h@{whitecat.\-h}!dragging\-\_\-draw@{dragging\-\_\-draw}}
 \index{dragging\-\_\-draw@{dragging\-\_\-draw}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{dragging\-\_\-draw}]{\setlength{\rightskip}{0pt plus 5cm}bool dragging\-\_\-draw =0}}\label{whitecat_8h_a2b21abe81a269f6ac7c1ac9b940930e5}
-\hypertarget{whitecat_8h_afece1a3194794bffa59f4154779eeb5e}{\index{whitecat.\-h@{whitecat.\-h}!draw\-\_\-brush\-\_\-type@{draw\-\_\-brush\-\_\-type}}
+\hypertarget{whitecat_8h_a3bbd14c67733c766de0597ccbd5c4118}{\index{whitecat.\-h@{whitecat.\-h}!draw\-\_\-brush\-\_\-type@{draw\-\_\-brush\-\_\-type}}
 \index{draw\-\_\-brush\-\_\-type@{draw\-\_\-brush\-\_\-type}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{draw\-\_\-brush\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}bool draw\-\_\-brush\-\_\-type\mbox{[}6\mbox{]}}}\label{whitecat_8h_afece1a3194794bffa59f4154779eeb5e}
+\subsubsection[{draw\-\_\-brush\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int draw\-\_\-brush\-\_\-type\mbox{[}6\mbox{]}}}\label{whitecat_8h_a3bbd14c67733c766de0597ccbd5c4118}
 \hypertarget{whitecat_8h_a35224460b49db2646bfda205479fefc9}{\index{whitecat.\-h@{whitecat.\-h}!draw\-\_\-centre\-\_\-x@{draw\-\_\-centre\-\_\-x}}
 \index{draw\-\_\-centre\-\_\-x@{draw\-\_\-centre\-\_\-x}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{draw\-\_\-centre\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int draw\-\_\-centre\-\_\-x\mbox{[}6\mbox{]}}}\label{whitecat_8h_a35224460b49db2646bfda205479fefc9}
@@ -5777,9 +5775,9 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_a576a97d9b561f533b639ea45dcd68c7b}{\index{whitecat.\-h@{whitecat.\-h}!enable\-\_\-export@{enable\-\_\-export}}
 \index{enable\-\_\-export@{enable\-\_\-export}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{enable\-\_\-export}]{\setlength{\rightskip}{0pt plus 5cm}bool enable\-\_\-export =0}}\label{whitecat_8h_a576a97d9b561f533b639ea45dcd68c7b}
-\hypertarget{whitecat_8h_a8953fcca01cc7f16374121f00638fa27}{\index{whitecat.\-h@{whitecat.\-h}!enable\-\_\-i\-Cat@{enable\-\_\-i\-Cat}}
+\hypertarget{whitecat_8h_adb01622c770a88fe203f66aa91dc7ebe}{\index{whitecat.\-h@{whitecat.\-h}!enable\-\_\-i\-Cat@{enable\-\_\-i\-Cat}}
 \index{enable\-\_\-i\-Cat@{enable\-\_\-i\-Cat}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{enable\-\_\-i\-Cat}]{\setlength{\rightskip}{0pt plus 5cm}bool enable\-\_\-i\-Cat =0}}\label{whitecat_8h_a8953fcca01cc7f16374121f00638fa27}
+\subsubsection[{enable\-\_\-i\-Cat}]{\setlength{\rightskip}{0pt plus 5cm}int enable\-\_\-i\-Cat =0}}\label{whitecat_8h_adb01622c770a88fe203f66aa91dc7ebe}
 \hypertarget{whitecat_8h_a2e4dcc61fa81dfc35617c37e42116436}{\index{whitecat.\-h@{whitecat.\-h}!enable\-\_\-import@{enable\-\_\-import}}
 \index{enable\-\_\-import@{enable\-\_\-import}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{enable\-\_\-import}]{\setlength{\rightskip}{0pt plus 5cm}bool enable\-\_\-import =0}}\label{whitecat_8h_a2e4dcc61fa81dfc35617c37e42116436}
@@ -5804,15 +5802,15 @@ uncomment if whitecat is compilled for windows with Min\-G\-W else comment it an
 \hypertarget{whitecat_8h_abb51ee948e5df377341cc2995d457628}{\index{whitecat.\-h@{whitecat.\-h}!erode\-\_\-level@{erode\-\_\-level}}
 \index{erode\-\_\-level@{erode\-\_\-level}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{erode\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}int erode\-\_\-level =0}}\label{whitecat_8h_abb51ee948e5df377341cc2995d457628}
-\hypertarget{whitecat_8h_a32d106de6afc31ccd7458024d06d167e}{\index{whitecat.\-h@{whitecat.\-h}!erode\-\_\-mode@{erode\-\_\-mode}}
+\hypertarget{whitecat_8h_a504ec10c24c499ca940f54dd0d145b52}{\index{whitecat.\-h@{whitecat.\-h}!erode\-\_\-mode@{erode\-\_\-mode}}
 \index{erode\-\_\-mode@{erode\-\_\-mode}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{erode\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}bool erode\-\_\-mode =0}}\label{whitecat_8h_a32d106de6afc31ccd7458024d06d167e}
+\subsubsection[{erode\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}int erode\-\_\-mode =0}}\label{whitecat_8h_a504ec10c24c499ca940f54dd0d145b52}
 \hypertarget{whitecat_8h_a9a391065d1101c9258ed6a93623a4165}{\index{whitecat.\-h@{whitecat.\-h}!event\-\_\-sended@{event\-\_\-sended}}
 \index{event\-\_\-sended@{event\-\_\-sended}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{event\-\_\-sended}]{\setlength{\rightskip}{0pt plus 5cm}bool event\-\_\-sended\mbox{[}128\mbox{]}\mbox{[}6\mbox{]}}}\label{whitecat_8h_a9a391065d1101c9258ed6a93623a4165}
-\hypertarget{whitecat_8h_aa7af7fab39247d72b96b8a81b121e9c4}{\index{whitecat.\-h@{whitecat.\-h}!expert\-\_\-mode@{expert\-\_\-mode}}
+\hypertarget{whitecat_8h_ab983cfbbf074d40faefae1bef80cc1c5}{\index{whitecat.\-h@{whitecat.\-h}!expert\-\_\-mode@{expert\-\_\-mode}}
 \index{expert\-\_\-mode@{expert\-\_\-mode}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{expert\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}bool expert\-\_\-mode =0}}\label{whitecat_8h_aa7af7fab39247d72b96b8a81b121e9c4}
+\subsubsection[{expert\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}int expert\-\_\-mode =0}}\label{whitecat_8h_ab983cfbbf074d40faefae1bef80cc1c5}
 \hypertarget{whitecat_8h_a47f84b0d417d9c438d1b0befefb02d8a}{\index{whitecat.\-h@{whitecat.\-h}!f\-\_\-autogo@{f\-\_\-autogo}}
 \index{f\-\_\-autogo@{f\-\_\-autogo}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{f\-\_\-autogo}]{\setlength{\rightskip}{0pt plus 5cm}char f\-\_\-autogo\mbox{[}25\mbox{]} =\{\char`\"{}autogo.\-dat\char`\"{}\}}}\label{whitecat_8h_a47f84b0d417d9c438d1b0befefb02d8a}
@@ -5919,9 +5917,9 @@ M\-O\-D\-E D\-I\-R\-E\-C\-T C\-H\-A\-N\-N\-E\-L P\-O\-U\-R L\-E\-S F\-A\-D\-E\-R
 \hypertarget{whitecat_8h_a7c0ba98fa8eca70e0c0ec6c40293a4f9}{\index{whitecat.\-h@{whitecat.\-h}!finished\-\_\-to\-\_\-send\-\_\-orders\-\_\-to\-\_\-i\-Cat@{finished\-\_\-to\-\_\-send\-\_\-orders\-\_\-to\-\_\-i\-Cat}}
 \index{finished\-\_\-to\-\_\-send\-\_\-orders\-\_\-to\-\_\-i\-Cat@{finished\-\_\-to\-\_\-send\-\_\-orders\-\_\-to\-\_\-i\-Cat}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{finished\-\_\-to\-\_\-send\-\_\-orders\-\_\-to\-\_\-i\-Cat}]{\setlength{\rightskip}{0pt plus 5cm}bool finished\-\_\-to\-\_\-send\-\_\-orders\-\_\-to\-\_\-i\-Cat =0}}\label{whitecat_8h_a7c0ba98fa8eca70e0c0ec6c40293a4f9}
-\hypertarget{whitecat_8h_a9f0acad3e2be4c9c2a0d7563b18561d1}{\index{whitecat.\-h@{whitecat.\-h}!flip\-\_\-image@{flip\-\_\-image}}
+\hypertarget{whitecat_8h_a3dd6d6a863b368672f14f39fd203df57}{\index{whitecat.\-h@{whitecat.\-h}!flip\-\_\-image@{flip\-\_\-image}}
 \index{flip\-\_\-image@{flip\-\_\-image}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{flip\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}bool flip\-\_\-image =1}}\label{whitecat_8h_a9f0acad3e2be4c9c2a0d7563b18561d1}
+\subsubsection[{flip\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}int flip\-\_\-image =1}}\label{whitecat_8h_a3dd6d6a863b368672f14f39fd203df57}
 \hypertarget{whitecat_8h_afae7ed9c4ee3f5583b7f51173741851d}{\index{whitecat.\-h@{whitecat.\-h}!float\-X1@{float\-X1}}
 \index{float\-X1@{float\-X1}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{float\-X1}]{\setlength{\rightskip}{0pt plus 5cm}float float\-X1 =0.\-0}}\label{whitecat_8h_afae7ed9c4ee3f5583b7f51173741851d}
@@ -6384,9 +6382,9 @@ M\-O\-D\-E D\-I\-R\-E\-C\-T C\-H\-A\-N\-N\-E\-L P\-O\-U\-R L\-E\-S F\-A\-D\-E\-R
 \hypertarget{whitecat_8h_a023974eca29096f853f9e7ba337a7349}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-art\-\_\-polling@{index\-\_\-art\-\_\-polling}}
 \index{index\-\_\-art\-\_\-polling@{index\-\_\-art\-\_\-polling}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-art\-\_\-polling}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-art\-\_\-polling =0}}\label{whitecat_8h_a023974eca29096f853f9e7ba337a7349}
-\hypertarget{whitecat_8h_aaf3c256eb11c8f690a51ba01d4c442dc}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-artnet\-\_\-doubledmx@{index\-\_\-artnet\-\_\-doubledmx}}
+\hypertarget{whitecat_8h_a739b01ff0983c438c74d2924e776dd48}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-artnet\-\_\-doubledmx@{index\-\_\-artnet\-\_\-doubledmx}}
 \index{index\-\_\-artnet\-\_\-doubledmx@{index\-\_\-artnet\-\_\-doubledmx}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{index\-\_\-artnet\-\_\-doubledmx}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-artnet\-\_\-doubledmx =0}}\label{whitecat_8h_aaf3c256eb11c8f690a51ba01d4c442dc}
+\subsubsection[{index\-\_\-artnet\-\_\-doubledmx}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-artnet\-\_\-doubledmx =0}}\label{whitecat_8h_a739b01ff0983c438c74d2924e776dd48}
 \hypertarget{whitecat_8h_aceee995e8f7dbfefc9d4741a42a50500}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-artnet\-\_\-receiver@{index\-\_\-artnet\-\_\-receiver}}
 \index{index\-\_\-artnet\-\_\-receiver@{index\-\_\-artnet\-\_\-receiver}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-artnet\-\_\-receiver}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-artnet\-\_\-receiver =0}}\label{whitecat_8h_aceee995e8f7dbfefc9d4741a42a50500}
@@ -6468,15 +6466,15 @@ M\-O\-D\-E D\-I\-R\-E\-C\-T C\-H\-A\-N\-N\-E\-L P\-O\-U\-R L\-E\-S F\-A\-D\-E\-R
 \hypertarget{whitecat_8h_afeec33e2ed973345c42928bc00732543}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-blind@{index\-\_\-blind}}
 \index{index\-\_\-blind@{index\-\_\-blind}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-blind}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-blind =0}}\label{whitecat_8h_afeec33e2ed973345c42928bc00732543}
-\hypertarget{whitecat_8h_ab078061cb017f879496df227dd40a7df}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-blink\-\_\-change\-\_\-memories@{index\-\_\-blink\-\_\-change\-\_\-memories}}
+\hypertarget{whitecat_8h_a4791d2991c39a65c1adeb268f632c604}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-blink\-\_\-change\-\_\-memories@{index\-\_\-blink\-\_\-change\-\_\-memories}}
 \index{index\-\_\-blink\-\_\-change\-\_\-memories@{index\-\_\-blink\-\_\-change\-\_\-memories}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{index\-\_\-blink\-\_\-change\-\_\-memories}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-blink\-\_\-change\-\_\-memories =0}}\label{whitecat_8h_ab078061cb017f879496df227dd40a7df}
+\subsubsection[{index\-\_\-blink\-\_\-change\-\_\-memories}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-blink\-\_\-change\-\_\-memories =0}}\label{whitecat_8h_a4791d2991c39a65c1adeb268f632c604}
 \hypertarget{whitecat_8h_abcc15f81608243d17ee3798bbcf4c057}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-borderwindow@{index\-\_\-borderwindow}}
 \index{index\-\_\-borderwindow@{index\-\_\-borderwindow}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-borderwindow}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-borderwindow =0}}\label{whitecat_8h_abcc15f81608243d17ee3798bbcf4c057}
-\hypertarget{whitecat_8h_a1906fa2c0011a66cc216b1d474b4f39a}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-broadcast@{index\-\_\-broadcast}}
+\hypertarget{whitecat_8h_a9452c08cf30ec596c76b652536fab46e}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-broadcast@{index\-\_\-broadcast}}
 \index{index\-\_\-broadcast@{index\-\_\-broadcast}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{index\-\_\-broadcast}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-broadcast =0}}\label{whitecat_8h_a1906fa2c0011a66cc216b1d474b4f39a}
+\subsubsection[{index\-\_\-broadcast}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-broadcast =0}}\label{whitecat_8h_a9452c08cf30ec596c76b652536fab46e}
 \hypertarget{whitecat_8h_a8c72656fd57762fb945aef1a9c5ed654}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-build\-\_\-patch\-\_\-from\-\_\-plot@{index\-\_\-build\-\_\-patch\-\_\-from\-\_\-plot}}
 \index{index\-\_\-build\-\_\-patch\-\_\-from\-\_\-plot@{index\-\_\-build\-\_\-patch\-\_\-from\-\_\-plot}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-build\-\_\-patch\-\_\-from\-\_\-plot}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-build\-\_\-patch\-\_\-from\-\_\-plot =1}}\label{whitecat_8h_a8c72656fd57762fb945aef1a9c5ed654}
@@ -7026,9 +7024,9 @@ M\-O\-D\-E D\-I\-R\-E\-C\-T C\-H\-A\-N\-N\-E\-L P\-O\-U\-R L\-E\-S F\-A\-D\-E\-R
 \hypertarget{whitecat_8h_a8321c46ec777b383281f58ca3a0e9b84}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-midi\-\_\-auto\-\_\-demute@{index\-\_\-midi\-\_\-auto\-\_\-demute}}
 \index{index\-\_\-midi\-\_\-auto\-\_\-demute@{index\-\_\-midi\-\_\-auto\-\_\-demute}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-midi\-\_\-auto\-\_\-demute}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-midi\-\_\-auto\-\_\-demute =0}}\label{whitecat_8h_a8321c46ec777b383281f58ca3a0e9b84}
-\hypertarget{whitecat_8h_ae55aca56a5f9fc18bfc8ffd55fc8cb81}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-midi\-\_\-auto\-\_\-desaffect@{index\-\_\-midi\-\_\-auto\-\_\-desaffect}}
+\hypertarget{whitecat_8h_a1b76c7f63997aeb5d67582be6fa436db}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-midi\-\_\-auto\-\_\-desaffect@{index\-\_\-midi\-\_\-auto\-\_\-desaffect}}
 \index{index\-\_\-midi\-\_\-auto\-\_\-desaffect@{index\-\_\-midi\-\_\-auto\-\_\-desaffect}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{index\-\_\-midi\-\_\-auto\-\_\-desaffect}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-midi\-\_\-auto\-\_\-desaffect =0}}\label{whitecat_8h_ae55aca56a5f9fc18bfc8ffd55fc8cb81}
+\subsubsection[{index\-\_\-midi\-\_\-auto\-\_\-desaffect}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-midi\-\_\-auto\-\_\-desaffect =0}}\label{whitecat_8h_a1b76c7f63997aeb5d67582be6fa436db}
 \hypertarget{whitecat_8h_a183bfe544493c3a7fc4544a8782dbfe7}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-midi\-\_\-global\-\_\-thruth@{index\-\_\-midi\-\_\-global\-\_\-thruth}}
 \index{index\-\_\-midi\-\_\-global\-\_\-thruth@{index\-\_\-midi\-\_\-global\-\_\-thruth}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-midi\-\_\-global\-\_\-thruth}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-midi\-\_\-global\-\_\-thruth =0}}\label{whitecat_8h_a183bfe544493c3a7fc4544a8782dbfe7}
@@ -7144,9 +7142,9 @@ window plot
 \hypertarget{whitecat_8h_aacd6998fbed51313dc4cdc8760a141ce}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-preheat\-\_\-curve@{index\-\_\-preheat\-\_\-curve}}
 \index{index\-\_\-preheat\-\_\-curve@{index\-\_\-preheat\-\_\-curve}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-preheat\-\_\-curve}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-preheat\-\_\-curve =0}}\label{whitecat_8h_aacd6998fbed51313dc4cdc8760a141ce}
-\hypertarget{whitecat_8h_a32417cf39ac209e32b400222102bbacf}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-preloaded\-\_\-sounds@{index\-\_\-preloaded\-\_\-sounds}}
+\hypertarget{whitecat_8h_af41bf424d9fbaab24d97bbaccedfa0b9}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-preloaded\-\_\-sounds@{index\-\_\-preloaded\-\_\-sounds}}
 \index{index\-\_\-preloaded\-\_\-sounds@{index\-\_\-preloaded\-\_\-sounds}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{index\-\_\-preloaded\-\_\-sounds}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-preloaded\-\_\-sounds =1}}\label{whitecat_8h_a32417cf39ac209e32b400222102bbacf}
+\subsubsection[{index\-\_\-preloaded\-\_\-sounds}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-preloaded\-\_\-sounds =1}}\label{whitecat_8h_af41bf424d9fbaab24d97bbaccedfa0b9}
 \hypertarget{whitecat_8h_adc2ad092fff2c5f9a0b8f6243525ef79}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-progression\-\_\-chaser\-\_\-step@{index\-\_\-progression\-\_\-chaser\-\_\-step}}
 \index{index\-\_\-progression\-\_\-chaser\-\_\-step@{index\-\_\-progression\-\_\-chaser\-\_\-step}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-progression\-\_\-chaser\-\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}float index\-\_\-progression\-\_\-chaser\-\_\-step\mbox{[}128\mbox{]}}}\label{whitecat_8h_adc2ad092fff2c5f9a0b8f6243525ef79}
@@ -7270,9 +7268,9 @@ window plot
 \hypertarget{whitecat_8h_a73762c102a2110279b57cbd7d32c1fcb}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-show\-\_\-save\-\_\-load\-\_\-report@{index\-\_\-show\-\_\-save\-\_\-load\-\_\-report}}
 \index{index\-\_\-show\-\_\-save\-\_\-load\-\_\-report@{index\-\_\-show\-\_\-save\-\_\-load\-\_\-report}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-show\-\_\-save\-\_\-load\-\_\-report}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-show\-\_\-save\-\_\-load\-\_\-report =0}}\label{whitecat_8h_a73762c102a2110279b57cbd7d32c1fcb}
-\hypertarget{whitecat_8h_a99858965269f2bd766d95d18bc22214c}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-show\-\_\-shape\-\_\-id@{index\-\_\-show\-\_\-shape\-\_\-id}}
+\hypertarget{whitecat_8h_aa792ce3ffc072b6b0873ed7e7e642d97}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-show\-\_\-shape\-\_\-id@{index\-\_\-show\-\_\-shape\-\_\-id}}
 \index{index\-\_\-show\-\_\-shape\-\_\-id@{index\-\_\-show\-\_\-shape\-\_\-id}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{index\-\_\-show\-\_\-shape\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-show\-\_\-shape\-\_\-id =0}}\label{whitecat_8h_a99858965269f2bd766d95d18bc22214c}
+\subsubsection[{index\-\_\-show\-\_\-shape\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-show\-\_\-shape\-\_\-id =0}}\label{whitecat_8h_aa792ce3ffc072b6b0873ed7e7e642d97}
 \hypertarget{whitecat_8h_adcca17479faf54bcf38fae57167072b7}{\index{whitecat.\-h@{whitecat.\-h}!index\-\_\-show\-\_\-shortcuts@{index\-\_\-show\-\_\-shortcuts}}
 \index{index\-\_\-show\-\_\-shortcuts@{index\-\_\-show\-\_\-shortcuts}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{index\-\_\-show\-\_\-shortcuts}]{\setlength{\rightskip}{0pt plus 5cm}bool index\-\_\-show\-\_\-shortcuts =1}}\label{whitecat_8h_adcca17479faf54bcf38fae57167072b7}
@@ -7585,9 +7583,9 @@ window plot
 \hypertarget{whitecat_8h_a66ae665871f44e654abab5c590691376}{\index{whitecat.\-h@{whitecat.\-h}!Level\-Fader\-Before\-Flash@{Level\-Fader\-Before\-Flash}}
 \index{Level\-Fader\-Before\-Flash@{Level\-Fader\-Before\-Flash}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Level\-Fader\-Before\-Flash}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Level\-Fader\-Before\-Flash\mbox{[}48\mbox{]}}}\label{whitecat_8h_a66ae665871f44e654abab5c590691376}
-\hypertarget{whitecat_8h_ab69580ea9fedb4cfd56115f64bf8ccf1}{\index{whitecat.\-h@{whitecat.\-h}!Level\-Stop\-Pos@{Level\-Stop\-Pos}}
+\hypertarget{whitecat_8h_a81e6ef0fe999603e6b82d5667a78ccf2}{\index{whitecat.\-h@{whitecat.\-h}!Level\-Stop\-Pos@{Level\-Stop\-Pos}}
 \index{Level\-Stop\-Pos@{Level\-Stop\-Pos}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Level\-Stop\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Level\-Stop\-Pos\mbox{[}48\mbox{]}}}\label{whitecat_8h_ab69580ea9fedb4cfd56115f64bf8ccf1}
+\subsubsection[{Level\-Stop\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Level\-Stop\-Pos\mbox{[}48\mbox{]}}}\label{whitecat_8h_a81e6ef0fe999603e6b82d5667a78ccf2}
 \hypertarget{whitecat_8h_a93a88141adc1528e4c6f50b7be79cfe6}{\index{whitecat.\-h@{whitecat.\-h}!lfo\-\_\-cycle\-\_\-is\-\_\-on@{lfo\-\_\-cycle\-\_\-is\-\_\-on}}
 \index{lfo\-\_\-cycle\-\_\-is\-\_\-on@{lfo\-\_\-cycle\-\_\-is\-\_\-on}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{lfo\-\_\-cycle\-\_\-is\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}bool lfo\-\_\-cycle\-\_\-is\-\_\-on\mbox{[}49\mbox{]}}}\label{whitecat_8h_a93a88141adc1528e4c6f50b7be79cfe6}
@@ -7669,12 +7667,12 @@ window plot
 \hypertarget{whitecat_8h_a273ccb43a235aed45e396a98c47f8fba}{\index{whitecat.\-h@{whitecat.\-h}!listnum@{listnum}}
 \index{listnum@{listnum}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{listnum}]{\setlength{\rightskip}{0pt plus 5cm}char listnum\mbox{[}12\mbox{]}}}\label{whitecat_8h_a273ccb43a235aed45e396a98c47f8fba}
-\hypertarget{whitecat_8h_a5aa84cfbadd1b5439d9d3fc2c27e64f7}{\index{whitecat.\-h@{whitecat.\-h}!load\-\_\-camera\-\_\-on\-\_\-start@{load\-\_\-camera\-\_\-on\-\_\-start}}
+\hypertarget{whitecat_8h_a27a1c3e670a20d8d5137359755df5674}{\index{whitecat.\-h@{whitecat.\-h}!load\-\_\-camera\-\_\-on\-\_\-start@{load\-\_\-camera\-\_\-on\-\_\-start}}
 \index{load\-\_\-camera\-\_\-on\-\_\-start@{load\-\_\-camera\-\_\-on\-\_\-start}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{load\-\_\-camera\-\_\-on\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}bool load\-\_\-camera\-\_\-on\-\_\-start =0}}\label{whitecat_8h_a5aa84cfbadd1b5439d9d3fc2c27e64f7}
-\hypertarget{whitecat_8h_ac204598a83af1358e5af863a15b21407}{\index{whitecat.\-h@{whitecat.\-h}!lock\-\_\-background\-\_\-proportions@{lock\-\_\-background\-\_\-proportions}}
+\subsubsection[{load\-\_\-camera\-\_\-on\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}int load\-\_\-camera\-\_\-on\-\_\-start =0}}\label{whitecat_8h_a27a1c3e670a20d8d5137359755df5674}
+\hypertarget{whitecat_8h_acc4d3a633037b264271a5c0de5f1f5f5}{\index{whitecat.\-h@{whitecat.\-h}!lock\-\_\-background\-\_\-proportions@{lock\-\_\-background\-\_\-proportions}}
 \index{lock\-\_\-background\-\_\-proportions@{lock\-\_\-background\-\_\-proportions}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{lock\-\_\-background\-\_\-proportions}]{\setlength{\rightskip}{0pt plus 5cm}bool lock\-\_\-background\-\_\-proportions =0}}\label{whitecat_8h_ac204598a83af1358e5af863a15b21407}
+\subsubsection[{lock\-\_\-background\-\_\-proportions}]{\setlength{\rightskip}{0pt plus 5cm}int lock\-\_\-background\-\_\-proportions =0}}\label{whitecat_8h_acc4d3a633037b264271a5c0de5f1f5f5}
 \hypertarget{whitecat_8h_ae2228d41bd04f5a9c9c8b2bb8a5c0cb5}{\index{whitecat.\-h@{whitecat.\-h}!lock\-\_\-preset@{lock\-\_\-preset}}
 \index{lock\-\_\-preset@{lock\-\_\-preset}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{lock\-\_\-preset}]{\setlength{\rightskip}{0pt plus 5cm}bool lock\-\_\-preset\mbox{[}8\mbox{]}}}\label{whitecat_8h_ae2228d41bd04f5a9c9c8b2bb8a5c0cb5}
@@ -7903,13 +7901,13 @@ window plot
 \hypertarget{whitecat_8h_ad0593ab655b4aa76e0ca0de9aa7271fe}{\index{whitecat.\-h@{whitecat.\-h}!mode\-\_\-rebuild@{mode\-\_\-rebuild}}
 \index{mode\-\_\-rebuild@{mode\-\_\-rebuild}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{mode\-\_\-rebuild}]{\setlength{\rightskip}{0pt plus 5cm}int mode\-\_\-rebuild =0}}\label{whitecat_8h_ad0593ab655b4aa76e0ca0de9aa7271fe}
-\hypertarget{whitecat_8h_a48a5dd573b6e02fd12175d8b89dbd379}{\index{whitecat.\-h@{whitecat.\-h}!mode\-\_\-relatif\-\_\-xy\-\_\-solo@{mode\-\_\-relatif\-\_\-xy\-\_\-solo}}
+\hypertarget{whitecat_8h_addae3e68d70f40dc1051b23df8c930f9}{\index{whitecat.\-h@{whitecat.\-h}!mode\-\_\-relatif\-\_\-xy\-\_\-solo@{mode\-\_\-relatif\-\_\-xy\-\_\-solo}}
 \index{mode\-\_\-relatif\-\_\-xy\-\_\-solo@{mode\-\_\-relatif\-\_\-xy\-\_\-solo}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{mode\-\_\-relatif\-\_\-xy\-\_\-solo}]{\setlength{\rightskip}{0pt plus 5cm}bool mode\-\_\-relatif\-\_\-xy\-\_\-solo =0}}\label{whitecat_8h_a48a5dd573b6e02fd12175d8b89dbd379}
-\hypertarget{whitecat_8h_a90371d832206c75d417cfacb6cf26292}{\index{whitecat.\-h@{whitecat.\-h}!mondirectory@{mondirectory}}
+\subsubsection[{mode\-\_\-relatif\-\_\-xy\-\_\-solo}]{\setlength{\rightskip}{0pt plus 5cm}int mode\-\_\-relatif\-\_\-xy\-\_\-solo =0}}\label{whitecat_8h_addae3e68d70f40dc1051b23df8c930f9}
+\hypertarget{whitecat_8h_a8d877db7b1b43dd03b48422174dd51e9}{\index{whitecat.\-h@{whitecat.\-h}!mondirectory@{mondirectory}}
 \index{mondirectory@{mondirectory}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{mondirectory}]{\setlength{\rightskip}{0pt plus 5cm}char mondirectory\mbox{[}200\mbox{]}}}\label{whitecat_8h_a90371d832206c75d417cfacb6cf26292}
-\hypertarget{whitecat_8h_a6b63c5af1ad0d5f42e60bf6683274060}{\index{whitecat.\-h@{whitecat.\-h}!mouse\-\_\-level\-\_\-for\-\_\-banger@{mouse\-\_\-level\-\_\-for\-\_\-banger}}
+\subsubsection[{mondirectory}]{\setlength{\rightskip}{0pt plus 5cm}char mondirectory\mbox{[}512\mbox{]}}}\label{whitecat_8h_a8d877db7b1b43dd03b48422174dd51e9}
+Directory where is the executable file -\/ Répertoire où se trouve l'exécutable \hypertarget{whitecat_8h_a6b63c5af1ad0d5f42e60bf6683274060}{\index{whitecat.\-h@{whitecat.\-h}!mouse\-\_\-level\-\_\-for\-\_\-banger@{mouse\-\_\-level\-\_\-for\-\_\-banger}}
 \index{mouse\-\_\-level\-\_\-for\-\_\-banger@{mouse\-\_\-level\-\_\-for\-\_\-banger}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{mouse\-\_\-level\-\_\-for\-\_\-banger}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\-\_\-level\-\_\-for\-\_\-banger =0}}\label{whitecat_8h_a6b63c5af1ad0d5f42e60bf6683274060}
 \hypertarget{whitecat_8h_ad78b16457579939f897be0934973b26e}{\index{whitecat.\-h@{whitecat.\-h}!mouse\-\_\-level\-\_\-for\-\_\-event@{mouse\-\_\-level\-\_\-for\-\_\-event}}
@@ -8083,6 +8081,9 @@ window plot
 \hypertarget{whitecat_8h_a0dcd570e5bcf5d47799394fc39b38f26}{\index{whitecat.\-h@{whitecat.\-h}!n\-Bytes\-Read\-Arduino0@{n\-Bytes\-Read\-Arduino0}}
 \index{n\-Bytes\-Read\-Arduino0@{n\-Bytes\-Read\-Arduino0}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{n\-Bytes\-Read\-Arduino0}]{\setlength{\rightskip}{0pt plus 5cm}int n\-Bytes\-Read\-Arduino0 =0}}\label{whitecat_8h_a0dcd570e5bcf5d47799394fc39b38f26}
+\hypertarget{whitecat_8h_ad155d67582696099ef7a0c4c116a3e10}{\index{whitecat.\-h@{whitecat.\-h}!n\-Bytes\-Sendto\-Arduino@{n\-Bytes\-Sendto\-Arduino}}
+\index{n\-Bytes\-Sendto\-Arduino@{n\-Bytes\-Sendto\-Arduino}!whitecat.h@{whitecat.\-h}}
+\subsubsection[{n\-Bytes\-Sendto\-Arduino}]{\setlength{\rightskip}{0pt plus 5cm}int n\-Bytes\-Sendto\-Arduino =0}}\label{whitecat_8h_ad155d67582696099ef7a0c4c116a3e10}
 \hypertarget{whitecat_8h_af945c53fbed7d83d17187e6185a3660d}{\index{whitecat.\-h@{whitecat.\-h}!need\-\_\-send\-\_\-pwm@{need\-\_\-send\-\_\-pwm}}
 \index{need\-\_\-send\-\_\-pwm@{need\-\_\-send\-\_\-pwm}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{need\-\_\-send\-\_\-pwm}]{\setlength{\rightskip}{0pt plus 5cm}bool need\-\_\-send\-\_\-pwm}}\label{whitecat_8h_af945c53fbed7d83d17187e6185a3660d}
@@ -8106,7 +8107,7 @@ window plot
 \subsubsection[{next\-\_\-step\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}int next\-\_\-step\-\_\-node =0}}\label{whitecat_8h_ab24533c4861fba330e270fb5f78681d8}
 \hypertarget{whitecat_8h_a6d63e36b0c0319e6b4995f2339c3242a}{\index{whitecat.\-h@{whitecat.\-h}!nickname\-\_\-version@{nickname\-\_\-version}}
 \index{nickname\-\_\-version@{nickname\-\_\-version}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{nickname\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}char nickname\-\_\-version\mbox{[}48\mbox{]} =\{\char`\"{}O\-P\-E\-N V\-E\-R\-S\-I\-O\-N\char`\"{}\}}}\label{whitecat_8h_a6d63e36b0c0319e6b4995f2339c3242a}
+\subsubsection[{nickname\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}char nickname\-\_\-version\mbox{[}48\mbox{]} =\{\char`\"{}A\-N\-T\-O\-N R\-U\-I\-S S\-E\-R\-G\-E A\-N\-D C\-H\-R\-I\-S\-T\-O\-P\-H P\-O\-W\-E\-R\char`\"{}\}}}\label{whitecat_8h_a6d63e36b0c0319e6b4995f2339c3242a}
 \hypertarget{whitecat_8h_a0f45e12cc56a9b89bc054de120a7b47b}{\index{whitecat.\-h@{whitecat.\-h}!niveau\-G\-Master@{niveau\-G\-Master}}
 \index{niveau\-G\-Master@{niveau\-G\-Master}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{niveau\-G\-Master}]{\setlength{\rightskip}{0pt plus 5cm}int niveau\-G\-Master =255}}\label{whitecat_8h_a0f45e12cc56a9b89bc054de120a7b47b}
@@ -8182,9 +8183,9 @@ window plot
 \hypertarget{whitecat_8h_aaf19e4a91cf5455ced3a052960cc1cf9}{\index{whitecat.\-h@{whitecat.\-h}!oldi\-Cat\-Pageis@{oldi\-Cat\-Pageis}}
 \index{oldi\-Cat\-Pageis@{oldi\-Cat\-Pageis}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{oldi\-Cat\-Pageis}]{\setlength{\rightskip}{0pt plus 5cm}int oldi\-Cat\-Pageis =-\/1}}\label{whitecat_8h_aaf19e4a91cf5455ced3a052960cc1cf9}
-\hypertarget{whitecat_8h_ab13c171d748482f4a95ee91a8ee9aa14}{\index{whitecat.\-h@{whitecat.\-h}!open\-\_\-arduino\-\_\-on\-\_\-open@{open\-\_\-arduino\-\_\-on\-\_\-open}}
+\hypertarget{whitecat_8h_a0155cb918143d0f983c7d44a76cba403}{\index{whitecat.\-h@{whitecat.\-h}!open\-\_\-arduino\-\_\-on\-\_\-open@{open\-\_\-arduino\-\_\-on\-\_\-open}}
 \index{open\-\_\-arduino\-\_\-on\-\_\-open@{open\-\_\-arduino\-\_\-on\-\_\-open}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{open\-\_\-arduino\-\_\-on\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}bool open\-\_\-arduino\-\_\-on\-\_\-open =0}}\label{whitecat_8h_ab13c171d748482f4a95ee91a8ee9aa14}
+\subsubsection[{open\-\_\-arduino\-\_\-on\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int open\-\_\-arduino\-\_\-on\-\_\-open =0}}\label{whitecat_8h_a0155cb918143d0f983c7d44a76cba403}
 \hypertarget{whitecat_8h_a67dfb8d9d42f18f3f1c2042520e45f51}{\index{whitecat.\-h@{whitecat.\-h}!opening\-\_\-angle\-\_\-selected@{opening\-\_\-angle\-\_\-selected}}
 \index{opening\-\_\-angle\-\_\-selected@{opening\-\_\-angle\-\_\-selected}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{opening\-\_\-angle\-\_\-selected}]{\setlength{\rightskip}{0pt plus 5cm}float opening\-\_\-angle\-\_\-selected =0.\-8}}\label{whitecat_8h_a67dfb8d9d42f18f3f1c2042520e45f51}
@@ -8371,9 +8372,9 @@ window plot
 \hypertarget{whitecat_8h_ac1336988ccc51edec518cc47f4d1a44e}{\index{whitecat.\-h@{whitecat.\-h}!plot\-\_\-facteur\-\_\-move\-\_\-y@{plot\-\_\-facteur\-\_\-move\-\_\-y}}
 \index{plot\-\_\-facteur\-\_\-move\-\_\-y@{plot\-\_\-facteur\-\_\-move\-\_\-y}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{plot\-\_\-facteur\-\_\-move\-\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}int plot\-\_\-facteur\-\_\-move\-\_\-y =0}}\label{whitecat_8h_ac1336988ccc51edec518cc47f4d1a44e}
-\hypertarget{whitecat_8h_a917e57eaa6df92bbbebaeac7ddae8da4}{\index{whitecat.\-h@{whitecat.\-h}!plot\-\_\-grid\-\_\-type@{plot\-\_\-grid\-\_\-type}}
+\hypertarget{whitecat_8h_a6a022635fe7a488d6735ee1c76baeef6}{\index{whitecat.\-h@{whitecat.\-h}!plot\-\_\-grid\-\_\-type@{plot\-\_\-grid\-\_\-type}}
 \index{plot\-\_\-grid\-\_\-type@{plot\-\_\-grid\-\_\-type}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{plot\-\_\-grid\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}bool plot\-\_\-grid\-\_\-type =0}}\label{whitecat_8h_a917e57eaa6df92bbbebaeac7ddae8da4}
+\subsubsection[{plot\-\_\-grid\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int plot\-\_\-grid\-\_\-type =0}}\label{whitecat_8h_a6a022635fe7a488d6735ee1c76baeef6}
 \hypertarget{whitecat_8h_a2dd6d2854d0763ca3fee876113b2ca91}{\index{whitecat.\-h@{whitecat.\-h}!plot\-\_\-index\-\_\-show\-\_\-levels@{plot\-\_\-index\-\_\-show\-\_\-levels}}
 \index{plot\-\_\-index\-\_\-show\-\_\-levels@{plot\-\_\-index\-\_\-show\-\_\-levels}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{plot\-\_\-index\-\_\-show\-\_\-levels}]{\setlength{\rightskip}{0pt plus 5cm}bool plot\-\_\-index\-\_\-show\-\_\-levels =1}}\label{whitecat_8h_a2dd6d2854d0763ca3fee876113b2ca91}
@@ -8651,9 +8652,9 @@ automations goback variable
 \hypertarget{whitecat_8h_a2b6e0b5924a5580e586fe219824f156d}{\index{whitecat.\-h@{whitecat.\-h}!previous\-\_\-zone\-\_\-is\-\_\-touched@{previous\-\_\-zone\-\_\-is\-\_\-touched}}
 \index{previous\-\_\-zone\-\_\-is\-\_\-touched@{previous\-\_\-zone\-\_\-is\-\_\-touched}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{previous\-\_\-zone\-\_\-is\-\_\-touched}]{\setlength{\rightskip}{0pt plus 5cm}bool previous\-\_\-zone\-\_\-is\-\_\-touched\mbox{[}8\mbox{]}\mbox{[}8\mbox{]}}}\label{whitecat_8h_a2b6e0b5924a5580e586fe219824f156d}
-\hypertarget{whitecat_8h_adf8cb4e1bd596e3c19fc490f4180d877}{\index{whitecat.\-h@{whitecat.\-h}!Previous\-Level\-Stop\-Pos@{Previous\-Level\-Stop\-Pos}}
+\hypertarget{whitecat_8h_a1bbedc7ba83d1446fe6b974329bc462f}{\index{whitecat.\-h@{whitecat.\-h}!Previous\-Level\-Stop\-Pos@{Previous\-Level\-Stop\-Pos}}
 \index{Previous\-Level\-Stop\-Pos@{Previous\-Level\-Stop\-Pos}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Previous\-Level\-Stop\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Previous\-Level\-Stop\-Pos\mbox{[}48\mbox{]}}}\label{whitecat_8h_adf8cb4e1bd596e3c19fc490f4180d877}
+\subsubsection[{Previous\-Level\-Stop\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Previous\-Level\-Stop\-Pos\mbox{[}48\mbox{]}}}\label{whitecat_8h_a1bbedc7ba83d1446fe6b974329bc462f}
 \hypertarget{whitecat_8h_a3678d9f4b7f8e44f112709d7f06a4a05}{\index{whitecat.\-h@{whitecat.\-h}!pwm\-\_\-data\-\_\-to\-\_\-arduino@{pwm\-\_\-data\-\_\-to\-\_\-arduino}}
 \index{pwm\-\_\-data\-\_\-to\-\_\-arduino@{pwm\-\_\-data\-\_\-to\-\_\-arduino}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{pwm\-\_\-data\-\_\-to\-\_\-arduino}]{\setlength{\rightskip}{0pt plus 5cm}int pwm\-\_\-data\-\_\-to\-\_\-arduino\mbox{[}36\mbox{]}}}\label{whitecat_8h_a3678d9f4b7f8e44f112709d7f06a4a05}
@@ -8802,45 +8803,45 @@ R\-E\-C\-E\-P\-T\-I\-O\-N A\-R\-T-\/\-N\-E\-T.
 \hypertarget{whitecat_8h_a8938917a0a065645e66f015a74e9fbf0}{\index{whitecat.\-h@{whitecat.\-h}!Schwzautogo@{Schwzautogo}}
 \index{Schwzautogo@{Schwzautogo}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwzautogo}]{\setlength{\rightskip}{0pt plus 5cm}bool Schwzautogo\mbox{[}5011\mbox{]}}}\label{whitecat_8h_a8938917a0a065645e66f015a74e9fbf0}
-\hypertarget{whitecat_8h_a55e3d174668f5c8b11459e86337d2d93}{\index{whitecat.\-h@{whitecat.\-h}!Schwzautogo\-\_\-size@{Schwzautogo\-\_\-size}}
+\hypertarget{whitecat_8h_a27dde23241d7f7451eafdfbf5563f810}{\index{whitecat.\-h@{whitecat.\-h}!Schwzautogo\-\_\-size@{Schwzautogo\-\_\-size}}
 \index{Schwzautogo\-\_\-size@{Schwzautogo\-\_\-size}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwzautogo\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Schwzautogo\-\_\-size =5011$\ast$1}}\label{whitecat_8h_a55e3d174668f5c8b11459e86337d2d93}
+\subsubsection[{Schwzautogo\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwzautogo\-\_\-size =5011$\ast$1}}\label{whitecat_8h_a27dde23241d7f7451eafdfbf5563f810}
 \hypertarget{whitecat_8h_ae251d1eec4829f7e4d61f58f665f2735}{\index{whitecat.\-h@{whitecat.\-h}!Schwzdescriptif\-\_\-mem@{Schwzdescriptif\-\_\-mem}}
 \index{Schwzdescriptif\-\_\-mem@{Schwzdescriptif\-\_\-mem}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwzdescriptif\-\_\-mem}]{\setlength{\rightskip}{0pt plus 5cm}char Schwzdescriptif\-\_\-mem\mbox{[}5011\mbox{]}\mbox{[}13\mbox{]}}}\label{whitecat_8h_ae251d1eec4829f7e4d61f58f665f2735}
-\hypertarget{whitecat_8h_aed2e5b468d1fa8cc7e39210ce642fa36}{\index{whitecat.\-h@{whitecat.\-h}!Schwzdescriptif\-\_\-size@{Schwzdescriptif\-\_\-size}}
+\hypertarget{whitecat_8h_a17e4b1ce43c1ebcea37caa98904aec49}{\index{whitecat.\-h@{whitecat.\-h}!Schwzdescriptif\-\_\-size@{Schwzdescriptif\-\_\-size}}
 \index{Schwzdescriptif\-\_\-size@{Schwzdescriptif\-\_\-size}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwzdescriptif\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Schwzdescriptif\-\_\-size =5011$\ast$13}}\label{whitecat_8h_aed2e5b468d1fa8cc7e39210ce642fa36}
+\subsubsection[{Schwzdescriptif\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwzdescriptif\-\_\-size =5011$\ast$13}}\label{whitecat_8h_a17e4b1ce43c1ebcea37caa98904aec49}
 \hypertarget{whitecat_8h_ad7628e2bcd6176a6980ee3f7cbe4d15c}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Memoires@{Schwz\-Memoires}}
 \index{Schwz\-Memoires@{Schwz\-Memoires}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwz\-Memoires}]{\setlength{\rightskip}{0pt plus 5cm}int Schwz\-Memoires\mbox{[}121\mbox{]}\mbox{[}5011\mbox{]}}}\label{whitecat_8h_ad7628e2bcd6176a6980ee3f7cbe4d15c}
-\hypertarget{whitecat_8h_a8ae793f72425464a26a4ac9e7ce09845}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Memoires\-\_\-size@{Schwz\-Memoires\-\_\-size}}
+\hypertarget{whitecat_8h_af7aca83bba46f8e77781751df33a2888}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Memoires\-\_\-size@{Schwz\-Memoires\-\_\-size}}
 \index{Schwz\-Memoires\-\_\-size@{Schwz\-Memoires\-\_\-size}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwz\-Memoires\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Schwz\-Memoires\-\_\-size = 121$\ast$5011}}\label{whitecat_8h_a8ae793f72425464a26a4ac9e7ce09845}
+\subsubsection[{Schwz\-Memoires\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwz\-Memoires\-\_\-size = 121$\ast$5011}}\label{whitecat_8h_af7aca83bba46f8e77781751df33a2888}
 \hypertarget{whitecat_8h_a6a713627688be31639fdc5574ab2cda0}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Memoires\-Existantes@{Schwz\-Memoires\-Existantes}}
 \index{Schwz\-Memoires\-Existantes@{Schwz\-Memoires\-Existantes}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwz\-Memoires\-Existantes}]{\setlength{\rightskip}{0pt plus 5cm}bool Schwz\-Memoires\-Existantes\mbox{[}5011\mbox{]}}}\label{whitecat_8h_a6a713627688be31639fdc5574ab2cda0}
-\hypertarget{whitecat_8h_ac1901d4c03aa75c09e42a0e7766758fe}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Memoires\-Existantes\-\_\-size@{Schwz\-Memoires\-Existantes\-\_\-size}}
+\hypertarget{whitecat_8h_ac97b72b9beffbb4a5f51a7f1afaa81db}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Memoires\-Existantes\-\_\-size@{Schwz\-Memoires\-Existantes\-\_\-size}}
 \index{Schwz\-Memoires\-Existantes\-\_\-size@{Schwz\-Memoires\-Existantes\-\_\-size}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwz\-Memoires\-Existantes\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Schwz\-Memoires\-Existantes\-\_\-size =5011$\ast$1}}\label{whitecat_8h_ac1901d4c03aa75c09e42a0e7766758fe}
+\subsubsection[{Schwz\-Memoires\-Existantes\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwz\-Memoires\-Existantes\-\_\-size =5011$\ast$1}}\label{whitecat_8h_ac97b72b9beffbb4a5f51a7f1afaa81db}
 \hypertarget{whitecat_8h_adf3b86041dcbea354c2a6237a3500fac}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Mem\-Time@{Schwz\-Mem\-Time}}
 \index{Schwz\-Mem\-Time@{Schwz\-Mem\-Time}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwz\-Mem\-Time}]{\setlength{\rightskip}{0pt plus 5cm}float Schwz\-Mem\-Time\mbox{[}5011\mbox{]}\mbox{[}4\mbox{]}}}\label{whitecat_8h_adf3b86041dcbea354c2a6237a3500fac}
-\hypertarget{whitecat_8h_a0b8b6289a346ecd6c1f5398fd7651785}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Mem\-Time\-\_\-size@{Schwz\-Mem\-Time\-\_\-size}}
+\hypertarget{whitecat_8h_a4386db9de5d11c3e58e3b6fa9bee0f8f}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Mem\-Time\-\_\-size@{Schwz\-Mem\-Time\-\_\-size}}
 \index{Schwz\-Mem\-Time\-\_\-size@{Schwz\-Mem\-Time\-\_\-size}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwz\-Mem\-Time\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Schwz\-Mem\-Time\-\_\-size = 5011$\ast$4}}\label{whitecat_8h_a0b8b6289a346ecd6c1f5398fd7651785}
+\subsubsection[{Schwz\-Mem\-Time\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwz\-Mem\-Time\-\_\-size = 5011$\ast$4}}\label{whitecat_8h_a4386db9de5d11c3e58e3b6fa9bee0f8f}
 \hypertarget{whitecat_8h_a6ab60f28ed003a40d3b0a09af1507daf}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Patch@{Schwz\-Patch}}
 \index{Schwz\-Patch@{Schwz\-Patch}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwz\-Patch}]{\setlength{\rightskip}{0pt plus 5cm}int Schwz\-Patch\mbox{[}513\mbox{]}}}\label{whitecat_8h_a6ab60f28ed003a40d3b0a09af1507daf}
-\hypertarget{whitecat_8h_a2150cbfe187e75aa801325e1dd5c318f}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Patch\-\_\-size@{Schwz\-Patch\-\_\-size}}
+\hypertarget{whitecat_8h_a96c9660ec5ff41de4fe6fa7c535f9114}{\index{whitecat.\-h@{whitecat.\-h}!Schwz\-Patch\-\_\-size@{Schwz\-Patch\-\_\-size}}
 \index{Schwz\-Patch\-\_\-size@{Schwz\-Patch\-\_\-size}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwz\-Patch\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Schwz\-Patch\-\_\-size =513$\ast$1}}\label{whitecat_8h_a2150cbfe187e75aa801325e1dd5c318f}
+\subsubsection[{Schwz\-Patch\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwz\-Patch\-\_\-size =513$\ast$1}}\label{whitecat_8h_a96c9660ec5ff41de4fe6fa7c535f9114}
 \hypertarget{whitecat_8h_ac14c1cba3633756a436d5580c548df2c}{\index{whitecat.\-h@{whitecat.\-h}!Schwzshadow\-\_\-sub@{Schwzshadow\-\_\-sub}}
 \index{Schwzshadow\-\_\-sub@{Schwzshadow\-\_\-sub}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{Schwzshadow\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}int Schwzshadow\-\_\-sub\mbox{[}8\mbox{]}\mbox{[}5\mbox{]}\mbox{[}121\mbox{]}}}\label{whitecat_8h_ac14c1cba3633756a436d5580c548df2c}
-\hypertarget{whitecat_8h_a6c00a80e8035849bef0edefc7d3caa36}{\index{whitecat.\-h@{whitecat.\-h}!Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub@{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub}}
+\hypertarget{whitecat_8h_acc5764cc99cc2138e563a0b6ee719b64}{\index{whitecat.\-h@{whitecat.\-h}!Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub@{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub}}
 \index{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub@{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}int Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub =40$\ast$121}}\label{whitecat_8h_a6c00a80e8035849bef0edefc7d3caa36}
+\subsubsection[{Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Schwzsize\-\_\-of\-\_\-shadow\-\_\-sub =40$\ast$121}}\label{whitecat_8h_acc5764cc99cc2138e563a0b6ee719b64}
 \hypertarget{whitecat_8h_a4a9d65cd93b8b81a89f36a92657ada56}{\index{whitecat.\-h@{whitecat.\-h}!scroll\-\_\-channelspace@{scroll\-\_\-channelspace}}
 \index{scroll\-\_\-channelspace@{scroll\-\_\-channelspace}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{scroll\-\_\-channelspace}]{\setlength{\rightskip}{0pt plus 5cm}int scroll\-\_\-channelspace =0}}\label{whitecat_8h_a4a9d65cd93b8b81a89f36a92657ada56}
@@ -9591,9 +9592,9 @@ R\-E\-C\-E\-P\-T\-I\-O\-N A\-R\-T-\/\-N\-E\-T.
 \hypertarget{whitecat_8h_ab826af7a4bf9c38243ba11d80dfb77ab}{\index{whitecat.\-h@{whitecat.\-h}!threshold\-\_\-level@{threshold\-\_\-level}}
 \index{threshold\-\_\-level@{threshold\-\_\-level}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{threshold\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}int threshold\-\_\-level =65}}\label{whitecat_8h_ab826af7a4bf9c38243ba11d80dfb77ab}
-\hypertarget{whitecat_8h_a3eeff56d623ca8dc28994f0ff6d61ea5}{\index{whitecat.\-h@{whitecat.\-h}!threshold\-\_\-on@{threshold\-\_\-on}}
+\hypertarget{whitecat_8h_a343ab715ac3d2e57d9e4a99f4cda8b5a}{\index{whitecat.\-h@{whitecat.\-h}!threshold\-\_\-on@{threshold\-\_\-on}}
 \index{threshold\-\_\-on@{threshold\-\_\-on}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{threshold\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}bool threshold\-\_\-on =1}}\label{whitecat_8h_a3eeff56d623ca8dc28994f0ff6d61ea5}
+\subsubsection[{threshold\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}int threshold\-\_\-on =1}}\label{whitecat_8h_a343ab715ac3d2e57d9e4a99f4cda8b5a}
 \hypertarget{whitecat_8h_a216008a8abce501939beab3afcadb516}{\index{whitecat.\-h@{whitecat.\-h}!ticker\-\_\-video\-\_\-rate@{ticker\-\_\-video\-\_\-rate}}
 \index{ticker\-\_\-video\-\_\-rate@{ticker\-\_\-video\-\_\-rate}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{ticker\-\_\-video\-\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}int ticker\-\_\-video\-\_\-rate = B\-P\-S\-\_\-\-T\-O\-\_\-\-T\-I\-M\-E\-R({\bf fps\-\_\-video\-\_\-rate})}}\label{whitecat_8h_a216008a8abce501939beab3afcadb516}
@@ -9809,8 +9810,8 @@ R\-E\-C\-E\-P\-T\-I\-O\-N A\-R\-T-\/\-N\-E\-T.
 \subsubsection[{vcom\-\_\-inposition\-\_\-is}]{\setlength{\rightskip}{0pt plus 5cm}int vcom\-\_\-inposition\-\_\-is =0}}\label{whitecat_8h_af0ecdd8e058db262de89aba39123f945}
 \hypertarget{whitecat_8h_a5fcf102e027084f163357238d141adb7}{\index{whitecat.\-h@{whitecat.\-h}!versionis@{versionis}}
 \index{versionis@{versionis}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{versionis}]{\setlength{\rightskip}{0pt plus 5cm}char versionis\mbox{[}72\mbox{]} =\{\char`\"{}Beta 0.\-8.\-4.\-14 -\/ 6 janv 2014\char`\"{}\}}}\label{whitecat_8h_a5fcf102e027084f163357238d141adb7}
-uncomment if whitecat is compilled for P\-O\-S\-I\-X (ex\-:O\-S\-X) else comment it and uncomment an other White define ex\-:\-: White\-Microsoft \hypertarget{whitecat_8h_a527e1ed9dfae0953c0ad1938728f95f5}{\index{whitecat.\-h@{whitecat.\-h}!video\-\_\-folder@{video\-\_\-folder}}
+\subsubsection[{versionis}]{\setlength{\rightskip}{0pt plus 5cm}char versionis\mbox{[}72\mbox{]} =\{\char`\"{}Beta 0.\-8.\-5.\-8 -\/ 4 mars 2014\char`\"{}\}}}\label{whitecat_8h_a5fcf102e027084f163357238d141adb7}
+\hypertarget{whitecat_8h_a527e1ed9dfae0953c0ad1938728f95f5}{\index{whitecat.\-h@{whitecat.\-h}!video\-\_\-folder@{video\-\_\-folder}}
 \index{video\-\_\-folder@{video\-\_\-folder}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{video\-\_\-folder}]{\setlength{\rightskip}{0pt plus 5cm}char video\-\_\-folder\mbox{[}256\mbox{]}}}\label{whitecat_8h_a527e1ed9dfae0953c0ad1938728f95f5}
 \hypertarget{whitecat_8h_a5564e5a688901db111e36289495452b2}{\index{whitecat.\-h@{whitecat.\-h}!video\-\_\-size\-\_\-x@{video\-\_\-size\-\_\-x}}
@@ -9870,9 +9871,9 @@ uncomment if whitecat is compilled for P\-O\-S\-I\-X (ex\-:O\-S\-X) else comment
 \hypertarget{whitecat_8h_a8c162b20aa7e324e282cb2d969f4dd9c}{\index{whitecat.\-h@{whitecat.\-h}!vyw@{vyw}}
 \index{vyw@{vyw}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{vyw}]{\setlength{\rightskip}{0pt plus 5cm}float vyw =-\/50}}\label{whitecat_8h_a8c162b20aa7e324e282cb2d969f4dd9c}
-\hypertarget{whitecat_8h_adcc002dcbf09212826eab2c95a6ac5e2}{\index{whitecat.\-h@{whitecat.\-h}!wheellevel\-\_\-absolutemode@{wheellevel\-\_\-absolutemode}}
+\hypertarget{whitecat_8h_aeb65575fbd5ae63549f221ce5475680f}{\index{whitecat.\-h@{whitecat.\-h}!wheellevel\-\_\-absolutemode@{wheellevel\-\_\-absolutemode}}
 \index{wheellevel\-\_\-absolutemode@{wheellevel\-\_\-absolutemode}!whitecat.h@{whitecat.\-h}}
-\subsubsection[{wheellevel\-\_\-absolutemode}]{\setlength{\rightskip}{0pt plus 5cm}bool wheellevel\-\_\-absolutemode =0}}\label{whitecat_8h_adcc002dcbf09212826eab2c95a6ac5e2}
+\subsubsection[{wheellevel\-\_\-absolutemode}]{\setlength{\rightskip}{0pt plus 5cm}int wheellevel\-\_\-absolutemode =0}}\label{whitecat_8h_aeb65575fbd5ae63549f221ce5475680f}
 \hypertarget{whitecat_8h_a3acd143d09ff979ca3ae7474ed3d0c10}{\index{whitecat.\-h@{whitecat.\-h}!window\-\_\-cfg\-X@{window\-\_\-cfg\-X}}
 \index{window\-\_\-cfg\-X@{window\-\_\-cfg\-X}!whitecat.h@{whitecat.\-h}}
 \subsubsection[{window\-\_\-cfg\-X}]{\setlength{\rightskip}{0pt plus 5cm}int window\-\_\-cfg\-X =10}}\label{whitecat_8h_a3acd143d09ff979ca3ae7474ed3d0c10}

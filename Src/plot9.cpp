@@ -95,7 +95,7 @@ case 3:
 sprintf(temp_plot_info,"A.%d",gelat[calc][symb][i]);
 break;
 default:
-sprintf(temp_plot_info,"");
+strcpy(temp_plot_info,"");
 break;
 }
 petitchiffrenoir.Print(temp_plot_info,plotx+10,(int)(ploty+(i*10)));
@@ -1701,7 +1701,7 @@ carcasse3.Draw(CouleurFader);
 int  plot_draw_symbol_barre_de_couplage(int plotx, int ploty, float size_symbol, float  angle_pc, int num_symbol, int plot_calc_number_is)
 {
 float taille_x=200.0*size_symbol;
-float taille_y=200.0*size_symbol;
+//sab 02/03/2014 unused var float taille_y=200.0*size_symbol;
 Poly tourelle;
 tourelle.Add(Vec2D(plotx-(taille_x/2),ploty-(10*size_symbol)));
 tourelle.Add(Vec2D(plotx+(taille_x/2),ploty-(10*size_symbol)));
@@ -2344,7 +2344,7 @@ int plot_draw_symbol_direct(int plotx, int ploty, float size_symbol, float  angl
 {
 
 float taille_x=40.0*size_symbol;
-float taille_y=20.0*size_symbol;
+//sab 02/03/2014 unused var float taille_y=20.0*size_symbol;
 
 Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.Draw(CouleurPlotLine);
@@ -2363,7 +2363,7 @@ int plot_draw_symbol_serviceligth(int plotx, int ploty, float size_symbol, float
 {
 
 float taille_x=40.0*size_symbol;
-float taille_y=20.0*size_symbol;
+//sab 02/03/2014 unused var float taille_y=20.0*size_symbol;
 
 Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.Draw(CouleurPlotFill);
@@ -2382,7 +2382,7 @@ int plot_draw_symbol_dimmerline(int plotx, int ploty, float size_symbol, float  
 {
 
 float taille_x=40.0*size_symbol;
-float taille_y=20.0*size_symbol;
+//sab 02/03/2014 unused var  float taille_y=20.0*size_symbol;
 
 Circle lentille(Vec2D(plotx,ploty),taille_x);
 lentille.Draw(CouleurPlotLine);
@@ -3112,9 +3112,10 @@ return(0);
 }
 
 
-int plot_draw_text(int plotx,int ploty, int fontsize,int fonttype,  char text[25],float alphatext, bool isselected)
+//sab 02/03/2014 int plot_draw_text(int plotx,int ploty, int fontsize,int fonttype,  char text[25],float alphatext, bool isselected)
+void plot_draw_text(int plotx,int ploty, int fontsize,int fonttype,  const std::string label,float alphatext, bool isselected)
 {
-
+const std::string text = label.substr(0,25);
 
 int xsi=0;
 int ysi=0;
@@ -3206,7 +3207,7 @@ Line(Vec2D(plotx+5,ploty-5),Vec2D(plotx-5,ploty+5)).Draw(CouleurBlind);
 }
 
 
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 int plot_shape_list(int plotx,int ploty)
@@ -3378,7 +3379,7 @@ for(int l=0;l<3;l++)
 {
 for(int c=0;c<3;c++)
 {
-int pos=(l*3) + c;
+//sab 02/03/2014 unused var int pos=(l*3) + c;
 AnglePos.MoveTo(Vec2D(plotx+140+(c*15),ploty+10+(l*15)));
 AnglePos.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 if(window_focus_id==W_PLOT && mouse_x>plotx+140+(c*15) && mouse_x<plotx+150+(c*15) && mouse_y>ploty+10+(l*15) && mouse_y<ploty+20+(l*15) )
@@ -3732,7 +3733,7 @@ PlotOptionsEdit_Little.DrawOutline(CouleurLigne.WithAlpha(0.5));
 }
 break;
 case 1:
-sprintf(TextPlot,"");
+strcpy(TextPlot,"");
 PlotOptionsEdit_Long.MoveTo(Vec2D(plotx+20,ploty+65+(20*l)));
 PlotOptionsEdit_Long.Draw(CouleurPlotLine.WithAlpha(0.2));
 petitchiffrenoir.Print( descriptif_projecteurs[(symbol_channel_is[view_plot_calc_number_is][last_selected_symbol_is])],plotx+25,ploty+78+(20*l));
@@ -4038,7 +4039,7 @@ for(int l=0;l<3;l++)
 {
 for(int c=0;c<3;c++)
 {
-int pos=(l*3) + c;
+//sab 02/03/2014 unused var int pos=(l*3) + c;
 AnglePos.MoveTo(Vec2D(plotx+140+(c*15),ploty+10+(l*15)));
 AnglePos.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 if( window_focus_id==W_PLOT && mouse_x>plotx+140+(c*15) && mouse_x<plotx+150+(c*15) && mouse_y>ploty+10+(l*15) && mouse_y<ploty+20+(l*15) )
@@ -4055,7 +4056,7 @@ AnglePos.DrawOutline(CouleurPlotFill);
 Rect MySymbAction(Vec2D(plotx, ploty+60),Vec2D(60,18));
 MySymbAction.SetRoundness(5);
 
-int ido=0;
+//sab 02/03/2014 unused var int ido=0;
 for(int c=0;c<3;c++)
 {
 for(int l=0;l<2;l++)
@@ -4264,10 +4265,10 @@ Canvas::DisableClipping();
 return(0);
 }
 
-
-int deroule_repertoire_plans(int xrep, int yrep, char name_of_rep[25])
+//sab 02/03/2014  int deroule_repertoire_plans(int xrep, int yrep, char name_of_rep[25])
+void deroule_repertoire_plans(int xrep, int yrep, const std::string label)
 {
-
+const std::string name_of_rep = label.substr(0,25);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 
 Rect BackDeroule(Vec2D(xrep,yrep+155),Vec2D(210,185));
@@ -4318,7 +4319,7 @@ if( window_focus_id==W_PLOT &&  index_editing_theatre_plan==0 && mouse_x>xrep+15
 BoutonRescan.DrawOutline(CouleurLigne);
 }
 
-return(0);
+//sab 02/03/2014  return(0);
 }
 
 int menu_plan(int plotx, int ploty)
@@ -4408,7 +4409,7 @@ for(int l=0;l<3;l++)
 {
 for(int c=0;c<3;c++)
 {
-int pos=(l*3) + c;
+//sab 02/03/2014 unused var  int pos=(l*3) + c;
 AnglePos.MoveTo(Vec2D(plotx+140+(c*15),ploty+125+(l*15)));
 AnglePos.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 if(window_focus_id==W_PLOT &&  mouse_x>plotx+140+(c*15) && mouse_x<plotx+150+(c*15) && mouse_y>ploty+125+(l*15) && mouse_y<ploty+135+(l*15) )
@@ -5032,7 +5033,7 @@ neuromoyen.Print("Spots & Symbols List" ,xplot+5,yplot+14);
 int refth=0;
 int thx=0; int thy=0;
 int the_ecrat=0;
-int nbr_sy=0;
+//sab 02/03/2014 unused var int nbr_sy=0;
 int nbre_cl=0;
 int typap=0;
 

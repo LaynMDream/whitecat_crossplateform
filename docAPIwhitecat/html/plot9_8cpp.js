@@ -1,6 +1,6 @@
 var plot9_8cpp =
 [
-    [ "deroule_repertoire_plans", "plot9_8cpp.html#a94d1e97372fd967852ff8e5be778fba4", null ],
+    [ "deroule_repertoire_plans", "plot9_8cpp.html#a3cfe2da1a534efe2c1cbb29ec7db3f80", null ],
     [ "draw_channel_of_symbol", "plot9_8cpp.html#a9608f90dd2bb998cbc57b7794c18d834", null ],
     [ "draw_gels_of_a_symbol", "plot9_8cpp.html#a75932a66d44fcbfcc6aefacb21aaa636", null ],
     [ "draw_line_to_channel_of_symbol", "plot9_8cpp.html#a13548127994273a4822e85411a2f6e5f", null ],
@@ -70,7 +70,7 @@ var plot9_8cpp =
     [ "plot_draw_symbol_top_hat", "plot9_8cpp.html#ae8a6d9e268cd51dc8bfe42d77706f636", null ],
     [ "plot_draw_symbol_VP1", "plot9_8cpp.html#a07d667f606b8cc501c2f368307750a2a", null ],
     [ "plot_draw_symbol_VP2", "plot9_8cpp.html#a83f3a63f7c5c268fd0f9373223b08579", null ],
-    [ "plot_draw_text", "plot9_8cpp.html#a0e7caccf277e9930f99a9f5971262d92", null ],
+    [ "plot_draw_text", "plot9_8cpp.html#abe99ba067db16915802483cdf3f8c7a4", null ],
     [ "plot_legend_menu", "plot9_8cpp.html#abe275208016319cd98159df30af43e71", null ],
     [ "plot_menu_bar", "plot9_8cpp.html#a7a3e34424c30cfacad4058efd30162d6", null ],
     [ "plot_print_neutral_symbol", "plot9_8cpp.html#a3951a5b6b3fa49a2c1faf24e2fe0cfb4", null ],

@@ -763,7 +763,7 @@ return(0);
 int do_scroll_fader_space()
 {
 scroll_target_val=goto_scroll_faderspace;
-float old_position_faderspace=scroll_faderspace;
+//sab 02/03/2014 unused var float old_position_faderspace=scroll_faderspace;
 if(index_stop_move!=1)
 {
   float scroll_decay_constant = 0.8;
@@ -1150,7 +1150,7 @@ if(mouse_x> x+((cmptfader*espacement)+(largeur+30)-10) && mouse_x< x+((cmptfader
   mouse_released=1;
 }
 
-///RACCROCHE MIDI
+//RACCROCHE MIDI
 raccrochage_midi_logical_vertical_dmx(x+(cmptfader*espacement),y,cmptfader,largeur,255);
 //////////////////////////////////////////////////////
 if(mouse_y>(y+280) && mouse_y<(y+280+(largeur/2)+7) && mouse_x>x+(cmptfader*espacement) && mouse_x<(x+largeur+(cmptfader*espacement))

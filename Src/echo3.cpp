@@ -445,7 +445,7 @@ Rect ChanEcho(Vec2D(xe+475,ye),Vec2D(30,6));
 
 
 int echochanis=0;
-float mouse_y_level=0.0;
+//sab 02/03/2014 unused var float mouse_y_level=0.0;
 
 for (int sh=0;sh<15;sh++)
 {
@@ -562,7 +562,9 @@ break;
 }
 petitchiffre.Print(tcmp,xe+500 ,ye+70);
 
-sprintf(tcmp,"");
+//sab 02/03/2014 sprintf(tcmp,"");
+strcpy(tcmp,"");
+
 int index_ec=0;
 
 //ECHO presets
@@ -744,7 +746,8 @@ switch(cl)
  sprintf(tcmp,"Energy: %.2f",tmp_lev);
  break;
  default:
-  sprintf(tcmp,"");
+  //sab 02/03/2014 sprintf(tcmp,"");
+  strcpy(tcmp,"");
  break;
 }
 sprintf(mid_lev,"%d",(int)(tmp_lev*127));

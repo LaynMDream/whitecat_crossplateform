@@ -154,13 +154,13 @@ int Enttec_Pro_SetCommParams()
 
 
 // send a packet, overlapped code has not been implemented yet
-int Enttec_Pro_SendData(int label, unsigned char *data, int length, LPOVERLAPPED lpOverlapped)
+int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPOVERLAPPED lpOverlapped)
 {
 
 //label is SEND_DMX_RDM_TX
 	BOOL res = false;
 	DWORD bytes_written = 0;
-	HANDLE event = NULL;
+	//HANDLE event = NULL;
 
 	unsigned char header[4];
 	header[0] = 0x7E;
@@ -265,7 +265,7 @@ uint16_t Enttec_Pro_ReceiveData(uint16_t label, uint8_t *data, uint32_t expected
 	DWORD length = 0;
 	DWORD bytes_read = 0;
 	uint8_t byte = 0;
-	HANDLE eventIN = NULL;
+	//HANDLE eventIN = NULL;
 	char buffer[513];
 
 	while (byte != label)

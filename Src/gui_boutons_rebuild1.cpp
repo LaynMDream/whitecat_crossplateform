@@ -59,7 +59,8 @@ On.DrawOutline(CouleurBlind);
 return(0);
 }
 
-int bouton_text_view(int xp, int yp,char *dex, bool state)
+//sab 02/03/2014 int bouton_text_view(int xp, int yp,char *dex, bool state)
+void bouton_text_view(int xp, int yp,const std::string dex, bool state)
 {
 Rect Texn(Vec2D(xp,yp),Vec2D(20,20));
 Texn.SetRoundness(4);
@@ -73,7 +74,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 Texn.DrawOutline(CouleurBlind);
 }
 }
- return(0);
+//sab 02/03/2014 return(0);
 }
 
 
@@ -283,14 +284,15 @@ petitchiffre.Print("+",xp+3,yp+10);
  return(0);
 }
 
-int toggling_bar_view(int xp,int yp, bool state, char *titre)
+//sab 02/03/2014 int toggling_bar_view(int xp,int yp, bool state, char *titre)
+void toggling_bar_view(int xp,int yp, bool state, const std::string titre)
 {
 Rect toggling_B(Vec2D(xp,yp),Vec2D(70,20));
 toggling_B.SetRoundness(4);
 toggling_B.Draw(CouleurFond.WithAlpha(0.4));
 petitpetitchiffre.Print(titre,xp,yp+12);
 
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 
@@ -626,7 +628,8 @@ show_type_midi(1593, "MidiOUT Faders");
  return(0);
 }
 
-int command_button_view( int xcom, int ycom, int isstate, char *desc, char *shortcut, int IDmidi)
+//sab 02/03/2014 int command_button_view( int xcom, int ycom, int isstate, char *desc, char *shortcut, int IDmidi)
+void command_button_view( int xcom, int ycom, int isstate, const std::string desc, const std::string shortcut, int IDmidi)
 {
 Rect Command(Vec2D(xcom,ycom),Vec2D(65,20));
 Command.SetRoundness(5);
@@ -713,17 +716,19 @@ Command.DrawOutline(CouleurLigne.WithAlpha(0.8));
 break;
 }
 
-if((window_focus_id==0 && index_over_A_window==0 )|| (window_focus_id==W_MAINMENU) && mouse_x>xcom && mouse_x<xcom+60 && mouse_y>ycom && mouse_y<ycom+20)
+if ( ( (window_focus_id==0 && index_over_A_window==0 )|| window_focus_id==W_MAINMENU) && mouse_x>xcom && mouse_x<xcom+60 && mouse_y>ycom && mouse_y<ycom+20)
 {
 if(Midi_Faders_Affectation_Type!=0 && IDmidi!=1625)
-{show_type_midi(IDmidi, desc);Command.DrawOutline(CouleurBlind);}
+{show_type_midi(IDmidi, desc);
+Command.DrawOutline(CouleurBlind);}
 }
 
 petitpetitchiffre.Print(desc,xcom+5,ycom+12);
-return(0);
+//sab 02/03/2014 return(0);
 }
 
-int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
+//sab 02/03/2014 int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
+void command_button_logical( int xcom, int ycom, int isstate, const std::string desc, const std::string raccourci, int IDmidi, int thecommand)
 {
 if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT) && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && mouse_released==0)
 {
@@ -847,7 +852,8 @@ reset_audio_indexs_to_dock();
 break;
 case 34://name
 index_type=toggle(index_type);
-sprintf(numeric,"");numeric_postext=0;
+strcpy(numeric,"");
+numeric_postext=0;
 break;
 case 35://draw
 if(index_draw_window==0){add_a_window(W_DRAW);substract_a_window(W_MAINMENU);}
@@ -1048,5 +1054,6 @@ mouse_released=1;
 
 
 
- return(0);
+//sab 02/03/2014  return(0);
 }
+

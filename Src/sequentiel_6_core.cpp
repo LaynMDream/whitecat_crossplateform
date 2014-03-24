@@ -490,7 +490,7 @@ mouse_released=1;
 
 //LES MEMOIRES SUIVANTES USER DEFINED
 int index_nbre_mem_visues=0;
-int last_mem_visue=0;
+//sab 02/03/2014  unused var int last_mem_visue=0;
 for(int memsearch=position_preset+1; memsearch<10000;memsearch++)
 {
 if(memsearch>=9999){memsearch=0;}

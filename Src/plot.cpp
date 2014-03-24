@@ -2193,9 +2193,10 @@ return(0);
 
 
 
-int deroule_repertoire_plans(int xrep, int yrep, char name_of_rep[25])
+//sab 02/03/2014  int deroule_repertoire_plans(int xrep, int yrep, char name_of_rep[25])
+void deroule_repertoire_plans(int xrep, int yrep, const std::string label)
 {
-
+const std::string name_of_rep = label.substr(0,25);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 Canvas::SetClipping( xrep,yrep,xrep+230,yrep+175);
 
@@ -2253,7 +2254,7 @@ if( index_editing_theatre_plan==0 && mouse_x>xrep+150 && mouse_x<xrep+150+60 && 
 BoutonRescan.DrawOutline(CouleurLigne);
 }
 
-return(0);
+//sab 02/03/2014 return(0);
 }
 
 

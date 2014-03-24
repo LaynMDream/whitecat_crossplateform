@@ -137,7 +137,7 @@ int \hyperlink{plot9_8cpp_a256d9949f79860f9b76680cf02a12076}{plot\-\_\-draw\-\_\
 \item 
 int \hyperlink{plot9_8cpp_aba57cd1a4d2dc741ca1e702e6953ed37}{plot\-\_\-draw\-\_\-polygon} (int plotx1, int ploty1, float sizeshape, float shaperotation, int num\-Points, float alphashape, int colorpattern, bool isselected)
 \item 
-int \hyperlink{plot9_8cpp_a0e7caccf277e9930f99a9f5971262d92}{plot\-\_\-draw\-\_\-text} (int plotx, int ploty, int fontsize, int fonttype, char text\mbox{[}25\mbox{]}, float alphatext, bool isselected)
+void \hyperlink{plot9_8cpp_abe99ba067db16915802483cdf3f8c7a4}{plot\-\_\-draw\-\_\-text} (int plotx, int ploty, int fontsize, int fonttype, const std\-::string label, float alphatext, bool isselected)
 \item 
 int \hyperlink{plot9_8cpp_a3b6965809d6bc00de46fa526dda3e30c}{plot\-\_\-shape\-\_\-list} (int plotx, int ploty)
 \item 
@@ -149,7 +149,7 @@ int \hyperlink{plot9_8cpp_ad02cf4d1adb04054a67455558848ef86}{plot\-\_\-symbol\-\
 \item 
 int \hyperlink{plot9_8cpp_a7a3e34424c30cfacad4058efd30162d6}{plot\-\_\-menu\-\_\-bar} (int plotx, int ploty)
 \item 
-int \hyperlink{plot9_8cpp_a94d1e97372fd967852ff8e5be778fba4}{deroule\-\_\-repertoire\-\_\-plans} (int xrep, int yrep, char name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]})
+void \hyperlink{plot9_8cpp_a3cfe2da1a534efe2c1cbb29ec7db3f80}{deroule\-\_\-repertoire\-\_\-plans} (int xrep, int yrep, const std\-::string label)
 \item 
 int \hyperlink{plot9_8cpp_acf095e83e4a36f1b5492819f42657b55}{menu\-\_\-plan} (int plotx, int ploty)
 \item 
@@ -188,15 +188,15 @@ Fonctions G\-U\-I de dessin de la fenêtre plot
 G\-U\-I fonctions for the plot window 
 
 \subsection{Documentation des fonctions}
-\hypertarget{plot9_8cpp_a94d1e97372fd967852ff8e5be778fba4}{\index{plot9.\-cpp@{plot9.\-cpp}!deroule\-\_\-repertoire\-\_\-plans@{deroule\-\_\-repertoire\-\_\-plans}}
+\hypertarget{plot9_8cpp_a3cfe2da1a534efe2c1cbb29ec7db3f80}{\index{plot9.\-cpp@{plot9.\-cpp}!deroule\-\_\-repertoire\-\_\-plans@{deroule\-\_\-repertoire\-\_\-plans}}
 \index{deroule\-\_\-repertoire\-\_\-plans@{deroule\-\_\-repertoire\-\_\-plans}!plot9.cpp@{plot9.\-cpp}}
-\subsubsection[{deroule\-\_\-repertoire\-\_\-plans}]{\setlength{\rightskip}{0pt plus 5cm}int deroule\-\_\-repertoire\-\_\-plans (
+\subsubsection[{deroule\-\_\-repertoire\-\_\-plans}]{\setlength{\rightskip}{0pt plus 5cm}void deroule\-\_\-repertoire\-\_\-plans (
 \begin{DoxyParamCaption}
 \item[{int}]{xrep, }
 \item[{int}]{yrep, }
-\item[{char}]{name\-\_\-of\-\_\-rep\mbox{[}25\mbox{]}}
+\item[{const std\-::string}]{label}
 \end{DoxyParamCaption}
-)}}\label{plot9_8cpp_a94d1e97372fd967852ff8e5be778fba4}
+)}}\label{plot9_8cpp_a3cfe2da1a534efe2c1cbb29ec7db3f80}
 \hypertarget{plot9_8cpp_a9608f90dd2bb998cbc57b7794c18d834}{\index{plot9.\-cpp@{plot9.\-cpp}!draw\-\_\-channel\-\_\-of\-\_\-symbol@{draw\-\_\-channel\-\_\-of\-\_\-symbol}}
 \index{draw\-\_\-channel\-\_\-of\-\_\-symbol@{draw\-\_\-channel\-\_\-of\-\_\-symbol}!plot9.cpp@{plot9.\-cpp}}
 \subsubsection[{draw\-\_\-channel\-\_\-of\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}int draw\-\_\-channel\-\_\-of\-\_\-symbol (
@@ -1011,19 +1011,19 @@ G\-U\-I fonctions for the plot window
 \item[{int}]{plot\-\_\-calc\-\_\-number\-\_\-is}
 \end{DoxyParamCaption}
 )}}\label{plot9_8cpp_a83f3a63f7c5c268fd0f9373223b08579}
-\hypertarget{plot9_8cpp_a0e7caccf277e9930f99a9f5971262d92}{\index{plot9.\-cpp@{plot9.\-cpp}!plot\-\_\-draw\-\_\-text@{plot\-\_\-draw\-\_\-text}}
+\hypertarget{plot9_8cpp_abe99ba067db16915802483cdf3f8c7a4}{\index{plot9.\-cpp@{plot9.\-cpp}!plot\-\_\-draw\-\_\-text@{plot\-\_\-draw\-\_\-text}}
 \index{plot\-\_\-draw\-\_\-text@{plot\-\_\-draw\-\_\-text}!plot9.cpp@{plot9.\-cpp}}
-\subsubsection[{plot\-\_\-draw\-\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}int plot\-\_\-draw\-\_\-text (
+\subsubsection[{plot\-\_\-draw\-\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}void plot\-\_\-draw\-\_\-text (
 \begin{DoxyParamCaption}
 \item[{int}]{plotx, }
 \item[{int}]{ploty, }
 \item[{int}]{fontsize, }
 \item[{int}]{fonttype, }
-\item[{char}]{text\mbox{[}25\mbox{]}, }
+\item[{const std\-::string}]{label, }
 \item[{float}]{alphatext, }
 \item[{bool}]{isselected}
 \end{DoxyParamCaption}
-)}}\label{plot9_8cpp_a0e7caccf277e9930f99a9f5971262d92}
+)}}\label{plot9_8cpp_abe99ba067db16915802483cdf3f8c7a4}
 \hypertarget{plot9_8cpp_abe275208016319cd98159df30af43e71}{\index{plot9.\-cpp@{plot9.\-cpp}!plot\-\_\-legend\-\_\-menu@{plot\-\_\-legend\-\_\-menu}}
 \index{plot\-\_\-legend\-\_\-menu@{plot\-\_\-legend\-\_\-menu}!plot9.cpp@{plot9.\-cpp}}
 \subsubsection[{plot\-\_\-legend\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}int plot\-\_\-legend\-\_\-menu (

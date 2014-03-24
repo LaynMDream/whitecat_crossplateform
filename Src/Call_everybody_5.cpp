@@ -236,8 +236,8 @@ break;
 case 4://save
 IDmidi=1330;
 IDcommand=cl;
-sprintf(nom_commande,"Save");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Save");
+strcpy(raccourci_commande,"");
 stae=index_menu_save;
 break;
 default:
@@ -263,36 +263,36 @@ break;
 case 1:
 IDmidi=1332;
 IDcommand=cl+10;
-sprintf(nom_commande,"List");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"List");
+strcpy(raccourci_commande,"");
 stae=index_list_projecteurs;
 break;
 case 2:
 IDmidi=1594;
 IDcommand=cl+10;
-sprintf(nom_commande,"Light Plot");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Light Plot");
+strcpy(raccourci_commande,"");
 stae=index_plot_window;
 break;
 case 3:
 IDmidi=1335;
 IDcommand=cl+10;
-sprintf(nom_commande,"Freeze");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Freeze");
+strcpy(raccourci_commande,"");
 stae=index_do_freeze;
 break;
 case 4:
 IDmidi=1541;
 IDcommand=cl+10;
-sprintf(nom_commande,"Exclude");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Exclude");
+strcpy(raccourci_commande,"");
 stae=index_do_exclude;
 break;
 case 5://my window
 IDmidi=2047; // c est la derniere commande midi, a changer et  définir voir tableau affectations midi
 IDcommand=cl+10;
-sprintf(nom_commande,"MY WINDOW");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"MY WINDOW");
+strcpy(raccourci_commande,"");
 stae= index_my_window;
 break;
 default:
@@ -338,8 +338,8 @@ break;
 case 4:
 IDmidi=1340;
 IDcommand=cl+20;
-sprintf(nom_commande,"GridPl.");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"GridPl.");
+strcpy(raccourci_commande,"");
 stae=index_grider_window;
 break;
 
@@ -366,15 +366,15 @@ break;
 case 1:
 IDmidi=1339;
 IDcommand=cl+30;
-sprintf(nom_commande,"Mover");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Mover");
+strcpy(raccourci_commande,"");
 stae=index_show_mover_window;
 break;
 case 2:
 IDmidi=1662;
 IDcommand=cl+30;
-sprintf(nom_commande,"ECHO");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"ECHO");
+strcpy(raccourci_commande,"");
 stae=index_show_echo_window;
 break;
 case 3:
@@ -394,8 +394,8 @@ break;
 case 5:
 IDmidi=1659;
 IDcommand=cl+30;
-sprintf(nom_commande,"Draw");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Draw");
+strcpy(raccourci_commande,"");
 break;
 default:
 break;
@@ -420,8 +420,8 @@ break;
 case 1:
 IDmidi=1341;
 IDcommand=cl+40;
-sprintf(nom_commande,"iCat Builder");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"iCat Builder");
+strcpy(raccourci_commande,"");
 stae=index_window_gui_iCat;
 break;
 case 2:
@@ -434,8 +434,8 @@ break;
 case 3:
 IDmidi=1342;
 IDcommand=cl+40;
-sprintf(nom_commande,"Help");
-sprintf(raccourci_commande,"");
+strcpy(nom_commande,"Help");
+strcpy(raccourci_commande,"");
 stae=index_call_help;
 break;
 case 4:
@@ -482,7 +482,8 @@ petitchiffre.Print("XX",xmenu+337, ymenu+20);
 
 
 
-int IDmidi=0; int IDcommand=0;
+int IDmidi=0;
+//02/043/2014 unused var int IDcommand=0;
 char nom_commande[24];
 char raccourci_commande[24];
 bool stae=0;
@@ -497,37 +498,37 @@ switch(cl)
 {
 case 0://sequenciel window
 IDmidi=751;
-IDcommand=cl+10;
+//02/03/2014 unused var IDcommand=cl+10;
 sprintf(nom_commande,"CUELIST");
 sprintf(raccourci_commande,"F9");
 stae=index_window_sequentiel;
 break;
 case 1://time
 IDmidi=748;
-IDcommand=cl+10;
+//02/03/2014 unused var IDcommand=cl+10;
 sprintf(nom_commande,"TIME");
 sprintf(raccourci_commande,"F6");
 stae=index_time;
 break;
 case 2://banger
 IDmidi=753;
-IDcommand=cl+10;
+//02/03/2014 unused var IDcommand=cl+10;
 sprintf(nom_commande,"BANGER");
 sprintf(raccourci_commande,"F11");
 stae=index_show_banger_window;
 break;
 case 3://wizard
 IDmidi=1329;
-IDcommand=cl+10;
-sprintf(nom_commande,"WIZARD");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+10;
+strcpy(nom_commande,"WIZARD");
+strcpy(raccourci_commande,"");
 stae= index_show_wizard_window;
 break;
 case 4://save
 IDmidi=1330;
-IDcommand=cl+10;
-sprintf(nom_commande,"SAVE");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+10;
+strcpy(nom_commande,"SAVE");
+strcpy(raccourci_commande,"");
 stae=index_menu_save;
 break;
 default:
@@ -543,44 +544,44 @@ switch(cl)
 {
 case 0:
 IDmidi=1331;
-IDcommand=cl+10;
+//02/043/2014 unused var IDcommand=cl+10;
 sprintf(nom_commande,"PATCH");
 sprintf(raccourci_commande,"Shift-P");
 stae=index_patch_window;
 break;
 case 1:
 IDmidi=1332;
-IDcommand=cl+10;
-sprintf(nom_commande,"LIST");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+10;
+strcpy(nom_commande,"LIST");
+strcpy(raccourci_commande,"");
 stae=index_list_projecteurs;
 break;
 case 2:
 IDmidi=1594;
-IDcommand=cl+30;
-sprintf(nom_commande,"LIGHT PLOT");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+30;
+strcpy(nom_commande,"LIGHT PLOT");
+strcpy(raccourci_commande,"");
 stae=index_plot_window;
 break;
 case 3:
 IDmidi=1335;
-IDcommand=cl+10;
-sprintf(nom_commande,"Freeze");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+10;
+strcpy(nom_commande,"Freeze");
+strcpy(raccourci_commande,"");
 stae=index_do_freeze;
 break;
 case 4:
 IDmidi=1541;
-IDcommand=cl+10;
-sprintf(nom_commande,"Exclude");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+10;
+strcpy(nom_commande,"Exclude");
+strcpy(raccourci_commande,"");
 stae=index_do_exclude;
 break;
 case 5://my window
 IDmidi=2047; //a re définir voir tableau affectations midi
-IDcommand=cl+10;
-sprintf(nom_commande,"MY WINDOW");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+10;
+strcpy(nom_commande,"MY WINDOW");
+strcpy(raccourci_commande,"");
 stae= index_my_window;
 break;
 default:
@@ -597,37 +598,37 @@ switch(cl)
 {
 case 0:
 IDmidi=752;
-IDcommand=cl+20;
+//02/043/2014 unused var IDcommand=cl+20;
 sprintf(nom_commande,"FADERS");
 sprintf(raccourci_commande,"F10");
 stae=index_show_faders;
 break;
 case 1:
 IDmidi=1336;
-IDcommand=cl+20;
+//02/03/2014 unused var IDcommand=cl+20;
 sprintf(nom_commande,"MiniFaders");
 sprintf(raccourci_commande,"Shift-F10");
 stae=index_show_minifaders;
 break;
 case 2:
 IDmidi=749;
-IDcommand=cl+20;
+//02/03/2014 unused var IDcommand=cl+20;
 sprintf(nom_commande,"Trichromy");
 sprintf(raccourci_commande,"F7");
 stae=index_trichro_window;
 break;
 case 3:
 IDmidi=1337;
-IDcommand=cl+20;
+//02/03/2014 unused var IDcommand=cl+20;
 sprintf(nom_commande,"CHASERS");
 sprintf(raccourci_commande,"Shift-C");
 stae=index_window_chasers;
 break;
 case 4:
 IDmidi=1340;
-IDcommand=cl+30;
-sprintf(nom_commande,"GRID PL.");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+30;
+strcpy(nom_commande,"GRID PL.");
+strcpy(raccourci_commande,"");
 stae=index_grider_window;
 break;
 
@@ -645,44 +646,44 @@ switch(cl)
 {
 case 0:
 IDmidi=750;
-IDcommand=cl+20;
+//02/043/2014 unused var IDcommand=cl+20;
 sprintf(nom_commande,"Track.Vid.");
 sprintf(raccourci_commande,"F8");
 stae=index_video_window;
 break;
 case 1:
 IDmidi=1339;
-IDcommand=cl+30;
-sprintf(nom_commande,"Mover");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+30;
+strcpy(nom_commande,"Mover");
+strcpy(raccourci_commande,"");
 stae=index_show_mover_window;
 break;
 case 2:
 IDmidi=1662;
-IDcommand=cl+30;
-sprintf(nom_commande,"ECHO");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+30;
+strcpy(nom_commande,"ECHO");
+strcpy(raccourci_commande,"");
 stae=index_show_echo_window;
 break;
 case 3:
 IDmidi=756;
-IDcommand=cl+30;
+//02/03/2014 unused var IDcommand=cl+30;
 sprintf(nom_commande,"AUDIO PL.");
 sprintf(raccourci_commande,"Ctrl-A");
 stae=index_show_audio_window;
 break;
 case 4:
 IDmidi=747;
-IDcommand=cl+30;
+//02/03/2014 unused var IDcommand=cl+30;
 sprintf(nom_commande,"NAME");
 sprintf(raccourci_commande,"F5");
 stae=index_type;
 break;
 case 5:
 IDmidi=1659;
-IDcommand=cl+30;
-sprintf(nom_commande,"DRAW");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+30;
+strcpy(nom_commande,"DRAW");
+strcpy(raccourci_commande,"");
 stae=index_draw_window;
 break;
 default:
@@ -698,7 +699,7 @@ switch(cl)
 {
 case 0:
 IDmidi=755;
-IDcommand=cl+40;
+//02/043/2014 unused var IDcommand=cl+40;
 sprintf(nom_commande,"CFG-Menu");
 sprintf(raccourci_commande,"Shift-F11");
 stae=index_show_config_window;
@@ -706,28 +707,28 @@ break;
 
 case 1:
 IDmidi=1341;
-IDcommand=cl+30;
-sprintf(nom_commande,"iCat Builder");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+30;
+strcpy(nom_commande,"iCat Builder");
+strcpy(raccourci_commande,"");
 stae=index_window_gui_iCat;
 break;
 case 2:
 IDmidi=1338;
-IDcommand=cl+30;
+//02/03/2014 unused var IDcommand=cl+30;
 sprintf(nom_commande,"N-Pad");
 sprintf(raccourci_commande,"P");
 stae=index_visual_pad;
 break;
 case 3:
 IDmidi=1342;
-IDcommand=cl+40;
-sprintf(nom_commande,"Help");
-sprintf(raccourci_commande,"");
+//02/03/2014 unused var IDcommand=cl+40;
+strcpy(nom_commande,"Help");
+strcpy(raccourci_commande,"");
 stae=index_call_help;
 break;
 case 4:
 IDmidi=757;
-IDcommand=cl+40;
+//02/03/2014 unused var IDcommand=cl+40;
 sprintf(nom_commande,"QUIT");
 sprintf(raccourci_commande,"Ctrl-F12");
 stae=index_do_quit_with_save;

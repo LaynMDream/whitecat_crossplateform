@@ -223,8 +223,8 @@ if(index_init_dmx_ok==1 )
  }
     if (pUsbDmx!= NULL)
 		{
-	    int iRet;
-		iRet = pUsbDmx->get_dmx_device_count();
+	    /*int iRet;
+		iRet = pUsbDmx->get_dmx_device_count();*/
    	    pUsbDmx->send_dmx_packet(DmxBlockEnttecOpen);
         }
   break;
@@ -347,7 +347,9 @@ if(auto_reset_crossfade_speed_on_link==1 && (Links_Memoires[position_onstage]==0
 {crossfade_speed=64;}
 
 crossfade_done_time=0;
-sprintf(string_time_left_is,"");
+//sab 02/03/2014 sprintf(string_time_left_is,"");
+strcpy(string_time_left_is,"");
+
 if(index_link_speed_crossfade_to_gpl1==1)
 {  grid_crossfade_speed[0]=crossfade_speed;
    midi_levels[1508]=crossfade_speed;
@@ -422,7 +424,10 @@ grid_niveauX2[0]=(int)grid_floatX2[0];
 
 if(niveauX1==255 && niveauX2==0)
 {
-crossfade_done_time=0;sprintf(string_time_left_is,"");
+//sab 02/03/2014 crossfade_done_time=0;sprintf(string_time_left_is,"");
+crossfade_done_time=0;
+strcpy(string_time_left_is,"");
+
 index_go_back=0;
 if(index_auto_mute_cuelist_speed==1 && crossfade_speed!=64)
 {is_raccrochage_midi_remote[493]=1; }
@@ -1252,7 +1257,7 @@ FILE *cfg_file = NULL ;
 char read_buff[ 512 ] ;
 
     char motcleinterfaceis[24];
-    int it=0;
+    //sab 02/03/2014 unused var int it=0;
 	cfg_file = fopen("user\\config_dmx.txt", "rt" );
 	if( !cfg_file )
 	{
@@ -1266,8 +1271,10 @@ char read_buff[ 512 ] ;
      sprintf(string_save_load_report[idf],"! config_dmx.txt");
      return 1;
 	}
-	fscanf( cfg_file , "%s\n" ,  &motcleinterfaceis );
+	//sab 02/03/2014 IMPACT
+	fscanf( cfg_file , "%s\n" ,  motcleinterfaceis );
 	fscanf( cfg_file , "%d\n" ,  &index_artnet_doubledmx);
+
 	fclose( cfg_file );
 
     if (strcmp (motcleinterfaceis,"ART-NET")==0){myDMXinterfaceis=1;}
@@ -1292,7 +1299,7 @@ else if( myDMXinterfaceis==4){sprintf(motcleinterface,"SUNLITE");}
 FILE *fp;
 char rep_conf_dmx[256];
 sprintf(rep_conf_dmx,"%s\\user\\config_dmx.txt",mondirectory);
-if(fp=fopen(rep_conf_dmx,"w"))
+if((fp=fopen(rep_conf_dmx,"w")))
 {
 fprintf(fp,"#arguments: 1st line:  dmxkeyword / 3rd: artnetwith usb ( 0-1) \n");
 fprintf(fp,"%s\n",motcleinterface);

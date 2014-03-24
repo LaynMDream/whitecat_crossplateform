@@ -420,7 +420,7 @@ petitchiffre.Print("+",xb+566,yb+(index_nbre_players_visibles*120)+5);
 LineUp.DrawOutline(CouleurLigne);
 LineDown.DrawOutline(CouleurLigne);
 
-///RESCAN FOLDER
+//RESCAN FOLDER
     Rect AudioRescanDriver( Vec2D(xb+230,yb+10), Vec2D ( 50,20));
     AudioRescanDriver.SetRoundness(7.5);
     AudioRescanDriver.DrawOutline(CouleurLigne);
