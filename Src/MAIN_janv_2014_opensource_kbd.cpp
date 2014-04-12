@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.5.9}
+* \date {10/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -750,16 +750,15 @@ int main_actions_on_screen()
 int main() {
 
 load_screen_config();
-if(index_multiplescreen==1)
-  {
-    largeur_ecran= GetSystemMetrics(SM_CXVIRTUALSCREEN);
-    hauteur_ecran = GetSystemMetrics(SM_CYVIRTUALSCREEN);
-  }
 
+/*Christoph 11/04/14 Begin replace*/
+/*
 if(index_borderwindow==0)
 {Settings::SetWindowBorder(false);}
 else
 {Settings::SetWindowBorder(true);}
+*/
+Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable avec les menus
 
 Setup::SetupProgram(KEYBOARD | MOUSE);
 
@@ -1063,7 +1062,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d",index_midi_mute);
+sprintf(string_debug,"%d %d %d", index_fullscreen,largeur_ecran, hauteur_ecran);
 
 if(there_is_change_on_show_save_state==1)
 {

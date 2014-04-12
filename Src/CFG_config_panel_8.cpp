@@ -809,7 +809,7 @@ if(mouse_button==1 && mouse_released==0)
 index_allow_multicore=toggle(index_allow_multicore);
 ProcessB.Draw(CouleurBlind);
 mouse_released=1;
-if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
+if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9)
 {process_assign_to_core(core_to_assign);}
 }
 }
@@ -1374,14 +1374,14 @@ char read_buff[ 512 ] ;
 	if( !cfg_file )
 	{
 	 printf("\nPb à ouverture de config_network.txt\n");
-     return 1;
+     return (1);
 	}
 
     //premiere ligne les args
 	if( !fgets( read_buff , sizeof( read_buff ) ,cfg_file ) )
 	{
      sprintf(string_save_load_report[idf],"! config_network.txt");
-     return 1;
+     return (1);
 	}
 	//sab 02/03/2014 fscanf( cfg_file , "%s\n" ,  &IP_artnet_IN );
 	fscanf( cfg_file , "%s\n" ,  IP_artnet_IN );

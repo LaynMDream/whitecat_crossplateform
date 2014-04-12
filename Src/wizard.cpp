@@ -518,6 +518,28 @@ else if(index_wizard_ch_mode==1)
 {
 //wizard chann
 neuro.Print( " Wizard  CH",(xb+110), (yb+25));
+//
+Rect detect_ch(Vec2D(xb+415,yb+10), Vec2D( 50,20));
+detect_ch.SetRoundness(6);
+detect_ch.Draw(CouleurFond.WithAlpha(0.5));
+detect_ch.DrawOutline(CouleurBlanc.WithAlpha(0.5));
+petitchiffre.Print("Select unused Channels",(xb+260), (yb+25));
+if(window_focus_id==W_WIZARD  && mouse_x>xb+415 && mouse_x<xb+465 && mouse_y>yb+10 && mouse_y<yb+30 && mouse_released==0)
+{
+detect_ch.Draw(CouleurFader);
+if(mouse_button==1 && mouse_released==0)
+{
+for (int l=1; l<514; l++)
+{
+     Selected_Channel[l]=0;
+}
+
+wizard_detect_unused_channels(wizard_from_mem, wizard_to_mem);
+mouse_released=1;
+}
+}
+
+
 ///////MEM TO MEM////////////////////////////////////////////////////////////
 Box_mem_to_mem(xb,yb);
 //SELECTED CHANNEL BOX

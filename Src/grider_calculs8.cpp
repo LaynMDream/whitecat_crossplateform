@@ -485,6 +485,7 @@ index_grider_selected[grid_pl]=grid_in_preset[grid_pl][0];
 index_grider_step_is[grid_pl]=grid_in_preset[grid_pl][1];
 grid_delay_in[grid_pl]=0;
 grid_delay_out[grid_pl]=0;
+
 if(grid_in_preset[grid_pl][1]>1023){index_grider_step_is[grid_pl]=1023;}
 gridder_prepare_cross(grid_pl,index_grider_selected[grid_pl],index_grider_step_is[grid_pl]);
 grid_niveauX1[grid_pl]=255;

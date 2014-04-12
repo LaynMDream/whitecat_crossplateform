@@ -81,7 +81,7 @@
 	<chasers_visu.cpp>
 	<graphics_rebuild1.cpp>
 
-1114359974 c:\mingw\include\allegro.h
+1114363574 c:\mingw\include\allegro.h
 	"allegro/base.h"
 	"allegro/system.h"
 	"allegro/debug.h"
@@ -114,7 +114,7 @@
 	"allegro/alcompat.h"
 	"allegro/fix.h"
 
-1305839920 c:\mingw\include\allegro\base.h
+1305843520 c:\mingw\include\allegro\base.h
 	<errno.h>
 	<limits.h>
 	<stdarg.h>
@@ -126,31 +126,31 @@
 	<dmalloc.h>
 	"internal/alconfig.h"
 
-1379878921 c:\mingw\include\errno.h
+1379882522 c:\mingw\include\errno.h
 	<_mingw.h>
 
-1379878920 c:\mingw\include\_mingw.h
+1379882520 c:\mingw\include\_mingw.h
 	<sdkddkver.h>
 
-1379879794 c:\mingw\include\sdkddkver.h
+1379883394 c:\mingw\include\sdkddkver.h
 	<_mingw.h>
 
-1379878922 c:\mingw\include\limits.h
+1379882522 c:\mingw\include\limits.h
 	<_mingw.h>
 
-1379878923 c:\mingw\include\stdlib.h
-	<_mingw.h>
-	<stddef.h>
-
-1379878922 c:\mingw\include\time.h
+1379882524 c:\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
-1379878924 c:\mingw\include\string.h
+1379882522 c:\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
-1230115188 c:\mingw\include\allegro\internal\alconfig.h
+1379882524 c:\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1230118788 c:\mingw\include\allegro\internal\alconfig.h
 	"allegro/platform/alplatf.h"
 	"allegro/platform/aldjgpp.h"
 	"allegro/platform/alwatcom.h"
@@ -167,9 +167,9 @@
 	"allegro/platform/alpspcfg.h"
 	"allegro/platform/astdint.h"
 
-1392065888 c:\mingw\include\allegro\platform\alplatf.h
+1392069490 c:\mingw\include\allegro\platform\alplatf.h
 
-1107295932 c:\mingw\include\allegro\platform\aldjgpp.h
+1107299532 c:\mingw\include\allegro\platform\aldjgpp.h
 	<pc.h>
 	<dir.h>
 	<dpmi.h>
@@ -178,43 +178,43 @@
 	<unistd.h>
 	<sys/farptr.h>
 
-1379878923 c:\mingw\include\dir.h
+1379882524 c:\mingw\include\dir.h
 	<io.h>
 
-1379878921 c:\mingw\include\io.h
+1379882522 c:\mingw\include\io.h
 	<_mingw.h>
 	<sys/types.h>
 	<string.h>
 	<string.h>
 
-1379878925 c:\mingw\include\sys\types.h
+1379882526 c:\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
-1379878922 c:\mingw\include\fcntl.h
+1379882522 c:\mingw\include\fcntl.h
 	<_mingw.h>
 	<io.h>
 
-1379878923 c:\mingw\include\unistd.h
+1379882524 c:\mingw\include\unistd.h
 	<_mingw.h>
 	<io.h>
 	<process.h>
 	<getopt.h>
 	<sys/types.h>
 
-1379878923 c:\mingw\include\process.h
+1379882524 c:\mingw\include\process.h
 	<_mingw.h>
 	<sys/types.h>
 	<stdint.h>
 
-1379878922 c:\mingw\include\stdint.h
+1379882522 c:\mingw\include\stdint.h
 	<_mingw.h>
 	<stddef.h>
 
-1379878920 c:\mingw\include\getopt.h
+1379882520 c:\mingw\include\getopt.h
 	<_mingw.h>
 
-1181987548 c:\mingw\include\allegro\platform\alwatcom.h
+1181991148 c:\mingw\include\allegro\platform\alwatcom.h
 	<io.h>
 	<i86.h>
 	<conio.h>
@@ -222,248 +222,248 @@
 	<direct.h>
 	<malloc.h>
 
-1379878921 c:\mingw\include\conio.h
+1379882522 c:\mingw\include\conio.h
 	<_mingw.h>
 
-1379878923 c:\mingw\include\direct.h
+1379882524 c:\mingw\include\direct.h
 	<_mingw.h>
 	<stddef.h>
 	<io.h>
 
-1379878923 c:\mingw\include\malloc.h
+1379882524 c:\mingw\include\malloc.h
 	<_mingw.h>
 	<stdlib.h>
 
-1256074500 c:\mingw\include\allegro\platform\almngw32.h
+1256078100 c:\mingw\include\allegro\platform\almngw32.h
 	<io.h>
 	<fcntl.h>
 	<direct.h>
 	<malloc.h>
 
-1256049942 c:\mingw\include\allegro\platform\aldmc.h
+1256053542 c:\mingw\include\allegro\platform\aldmc.h
 	<io.h>
 	<fcntl.h>
 	<stdint.h>
 
-1256049942 c:\mingw\include\allegro\platform\albcc32.h
+1256053542 c:\mingw\include\allegro\platform\albcc32.h
 	<io.h>
 	<fcntl.h>
 	<direct.h>
 	<malloc.h>
 
-1256049942 c:\mingw\include\allegro\platform\almsvc.h
+1256053542 c:\mingw\include\allegro\platform\almsvc.h
 	<io.h>
 	<fcntl.h>
 	<direct.h>
 	<malloc.h>
 
-1224520046 c:\mingw\include\allegro\platform\albecfg.h
+1224523646 c:\mingw\include\allegro\platform\albecfg.h
 	<fcntl.h>
 	<unistd.h>
 
-1107295932 c:\mingw\include\allegro\platform\almaccfg.h
+1107299532 c:\mingw\include\allegro\platform\almaccfg.h
 	<MacTypes.h>
 	<QuickDraw.h>
 	<FCntl.h>
 
-1301041104 c:\mingw\include\allegro\platform\alosxcfg.h
+1301044704 c:\mingw\include\allegro\platform\alosxcfg.h
 
-1181987548 c:\mingw\include\allegro\platform\alqnxcfg.h
+1181991148 c:\mingw\include\allegro\platform\alqnxcfg.h
 	<stdio.h>
 	<stdlib.h>
 	<fcntl.h>
 	<unistd.h>
 
-1379878922 c:\mingw\include\stdio.h
+1379882522 c:\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
 	<sys/types.h>
 
-1301041104 c:\mingw\include\allegro\platform\alucfg.h
+1301044704 c:\mingw\include\allegro\platform\alucfg.h
 	<fcntl.h>
 	<unistd.h>
 	"allegro/platform/alunixac.h"
 
-1301041104 c:\mingw\include\allegro\platform\alpspcfg.h
+1301044704 c:\mingw\include\allegro\platform\alpspcfg.h
 	<fcntl.h>
 	<unistd.h>
 
-1181987548 c:\mingw\include\allegro\platform\astdint.h
+1181991148 c:\mingw\include\allegro\platform\astdint.h
 	<inttypes.h>
 	<stdint.h>
 
-1379878920 c:\mingw\include\inttypes.h
+1379882520 c:\mingw\include\inttypes.h
 	<_mingw.h>
 	<stdint.h>
 	<stddef.h>
 
-1300524464 c:\mingw\include\allegro\system.h
+1300528064 c:\mingw\include\allegro\system.h
 	"base.h"
 	"unicode.h"
 	"config.h"
 	"inline/system.inl"
 
-1110268524 c:\mingw\include\allegro\unicode.h
+1110272124 c:\mingw\include\allegro\unicode.h
 	"base.h"
 
-1136074186 c:\mingw\include\allegro\config.h
+1136077786 c:\mingw\include\allegro\config.h
 	"base.h"
 
-1090953202 c:\mingw\include\allegro\inline\system.inl
+1090956802 c:\mingw\include\allegro\inline\system.inl
 	"allegro/debug.h"
 
-1110268524 c:\mingw\include\allegro\debug.h
+1110272124 c:\mingw\include\allegro\debug.h
 	"base.h"
 
-1233513738 c:\mingw\include\allegro\mouse.h
+1233517338 c:\mingw\include\allegro\mouse.h
 	"base.h"
 
-1110268524 c:\mingw\include\allegro\timer.h
+1110272124 c:\mingw\include\allegro\timer.h
 	"base.h"
 
-1102139788 c:\mingw\include\allegro\keyboard.h
+1102143388 c:\mingw\include\allegro\keyboard.h
 	"base.h"
 
-1073674196 c:\mingw\include\allegro\joystick.h
+1073677796 c:\mingw\include\allegro\joystick.h
 	"base.h"
 
-1005095206 c:\mingw\include\allegro\palette.h
+1005098806 c:\mingw\include\allegro\palette.h
 
-1236662836 c:\mingw\include\allegro\gfx.h
+1236666436 c:\mingw\include\allegro\gfx.h
 	"3d.h"
 	"base.h"
 	"fixed.h"
 	"inline/gfx.inl"
 
-1097984732 c:\mingw\include\allegro\3d.h
+1097988332 c:\mingw\include\allegro\3d.h
 	"base.h"
 	"fixed.h"
 
-1107295932 c:\mingw\include\allegro\fixed.h
+1107299532 c:\mingw\include\allegro\fixed.h
 	"base.h"
 
-1110268524 c:\mingw\include\allegro\inline\gfx.inl
+1110272124 c:\mingw\include\allegro\inline\gfx.inl
 	"allegro/debug.h"
 	"asm.inl"
 
-1144544848 c:\mingw\include\allegro\inline\asm.inl
+1144548448 c:\mingw\include\allegro\inline\asm.inl
 	"allegro/platform/al386gcc.h"
 	"allegro/platform/al386vc.h"
 	"allegro/platform/al386wat.h"
 
-1110268524 c:\mingw\include\allegro\platform\al386gcc.h
+1110272124 c:\mingw\include\allegro\platform\al386gcc.h
 
-1110268524 c:\mingw\include\allegro\platform\al386vc.h
+1110272124 c:\mingw\include\allegro\platform\al386vc.h
 
-1110268524 c:\mingw\include\allegro\platform\al386wat.h
+1110272124 c:\mingw\include\allegro\platform\al386wat.h
 
-1110268524 c:\mingw\include\allegro\color.h
+1110272124 c:\mingw\include\allegro\color.h
 	"base.h"
 	"palette.h"
 	"inline/color.inl"
 
-1110268524 c:\mingw\include\allegro\inline\color.inl
+1110272124 c:\mingw\include\allegro\inline\color.inl
 
-1257765844 c:\mingw\include\allegro\draw.h
+1257769444 c:\mingw\include\allegro\draw.h
 	"base.h"
 	"fixed.h"
 	"gfx.h"
 	"inline/draw.inl"
 
-1199158858 c:\mingw\include\allegro\inline\draw.inl
+1199162458 c:\mingw\include\allegro\inline\draw.inl
 	"allegro/debug.h"
 	"allegro/3d.h"
 	"gfx.inl"
 
-1036101384 c:\mingw\include\allegro\rle.h
+1036104984 c:\mingw\include\allegro\rle.h
 	"base.h"
 	"gfx.h"
 	"inline/rle.inl"
 
-1036101384 c:\mingw\include\allegro\inline\rle.inl
+1036104984 c:\mingw\include\allegro\inline\rle.inl
 	"allegro/debug.h"
 
-1144544848 c:\mingw\include\allegro\compiled.h
+1144548448 c:\mingw\include\allegro\compiled.h
 	"base.h"
 
-1105906488 c:\mingw\include\allegro\text.h
+1105910088 c:\mingw\include\allegro\text.h
 	"base.h"
 
-1165889676 c:\mingw\include\allegro\font.h
+1165893276 c:\mingw\include\allegro\font.h
 	"base.h"
 
-1036101384 c:\mingw\include\allegro\fli.h
+1036104984 c:\mingw\include\allegro\fli.h
 	"base.h"
 	"palette.h"
 
-1104431266 c:\mingw\include\allegro\gui.h
+1104434866 c:\mingw\include\allegro\gui.h
 	"base.h"
 
-1142726734 c:\mingw\include\allegro\sound.h
+1142730334 c:\mingw\include\allegro\sound.h
 	"base.h"
 	"digi.h"
 	"stream.h"
 	"midi.h"
 
-1142726734 c:\mingw\include\allegro\digi.h
+1142730334 c:\mingw\include\allegro\digi.h
 	"base.h"
 
-1036101384 c:\mingw\include\allegro\stream.h
+1036104984 c:\mingw\include\allegro\stream.h
 	"base.h"
 
-1142726734 c:\mingw\include\allegro\midi.h
+1142730334 c:\mingw\include\allegro\midi.h
 	"base.h"
 
-1199302764 c:\mingw\include\allegro\file.h
+1199306364 c:\mingw\include\allegro\file.h
 	"base.h"
 
-1110308416 c:\mingw\include\allegro\lzss.h
+1110312016 c:\mingw\include\allegro\lzss.h
 	"base.h"
 
-1136074186 c:\mingw\include\allegro\datafile.h
+1136077786 c:\mingw\include\allegro\datafile.h
 	"base.h"
 
-1036101384 c:\mingw\include\allegro\fmaths.h
+1036104984 c:\mingw\include\allegro\fmaths.h
 	"base.h"
 	"fixed.h"
 	"inline/fmaths.inl"
 
-1130560498 c:\mingw\include\allegro\inline\fmaths.inl
+1130564098 c:\mingw\include\allegro\inline\fmaths.inl
 	"asm.inl"
 
-1036101384 c:\mingw\include\allegro\matrix.h
+1036104984 c:\mingw\include\allegro\matrix.h
 	"base.h"
 	"fixed.h"
 	"fmaths.h"
 	"inline/matrix.inl"
 
-1007245970 c:\mingw\include\allegro\inline\matrix.inl
+1007249570 c:\mingw\include\allegro\inline\matrix.inl
 
-1036101384 c:\mingw\include\allegro\quat.h
+1036104984 c:\mingw\include\allegro\quat.h
 	"base.h"
 
-1110268524 c:\mingw\include\allegro\3dmaths.h
+1110272124 c:\mingw\include\allegro\3dmaths.h
 	"base.h"
 	"fixed.h"
 	"inline/3dmaths.inl"
 
-1110268524 c:\mingw\include\allegro\inline\3dmaths.inl
+1110272124 c:\mingw\include\allegro\inline\3dmaths.inl
 
-1261303856 c:\mingw\include\allegro\alcompat.h
+1261307456 c:\mingw\include\allegro\alcompat.h
 
-1036101384 c:\mingw\include\allegro\fix.h
+1036104984 c:\mingw\include\allegro\fix.h
 	"fixed.h"
 	"fmaths.h"
 	"inline/fix.inl"
 
-1110268524 c:\mingw\include\allegro\inline\fix.inl
+1110272124 c:\mingw\include\allegro\inline\fix.inl
 
-1224201080 c:\mingw\include\winalleg.h
+1224204680 c:\mingw\include\winalleg.h
 	<afxwin.h>
 	<windows.h>
 
-1379879797 c:\mingw\include\windows.h
+1379883398 c:\mingw\include\windows.h
 	<_mingw.h>
 	<winresrc.h>
 	<stdarg.h>
@@ -493,7 +493,7 @@
 	<winsock.h>
 	<ole2.h>
 
-1379879798 c:\mingw\include\winresrc.h
+1379883398 c:\mingw\include\winresrc.h
 	<_mingw.h>
 	<winuser.h>
 	<winnt.h>
@@ -502,10 +502,10 @@
 	<dlgs.h>
 	<commctrl.h>
 
-1379879799 c:\mingw\include\winuser.h
+1379883400 c:\mingw\include\winuser.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\winnt.h
+1379883398 c:\mingw\include\winnt.h
 	<_mingw.h>
 	<winerror.h>
 	<string.h>
@@ -513,80 +513,80 @@
 	<pshpack4.h>
 	<poppack.h>
 
-1379879797 c:\mingw\include\winerror.h
+1379883398 c:\mingw\include\winerror.h
 	<_mingw.h>
 
-1379879780 c:\mingw\include\basetsd.h
+1379883380 c:\mingw\include\basetsd.h
 	<_mingw.h>
 
-1379879792 c:\mingw\include\pshpack4.h
+1379883392 c:\mingw\include\pshpack4.h
 
-1379879791 c:\mingw\include\poppack.h
+1379883392 c:\mingw\include\poppack.h
 
-1379879799 c:\mingw\include\winver.h
+1379883400 c:\mingw\include\winver.h
 	<_mingw.h>
 
-1379879781 c:\mingw\include\dde.h
+1379883382 c:\mingw\include\dde.h
 	<_mingw.h>
 
-1379879782 c:\mingw\include\dlgs.h
+1379883382 c:\mingw\include\dlgs.h
 	<_mingw.h>
 
-1379879781 c:\mingw\include\commctrl.h
+1379883382 c:\mingw\include\commctrl.h
 	<_mingw.h>
 	<prsht.h>
 
-1379879791 c:\mingw\include\prsht.h
+1379883392 c:\mingw\include\prsht.h
 	<_mingw.h>
 
-1379879797 c:\mingw\include\windef.h
+1379883398 c:\mingw\include\windef.h
 	<_mingw.h>
 	<winnt.h>
 
-1379879797 c:\mingw\include\wincon.h
+1379883398 c:\mingw\include\wincon.h
 	<_mingw.h>
 
-1379879797 c:\mingw\include\winbase.h
+1379883398 c:\mingw\include\winbase.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\wingdi.h
+1379883398 c:\mingw\include\wingdi.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\winnls.h
+1379883398 c:\mingw\include\winnls.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\winnetwk.h
+1379883398 c:\mingw\include\winnetwk.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\winreg.h
+1379883398 c:\mingw\include\winreg.h
 	<_mingw.h>
 	<reason.h>
 
-1379879792 c:\mingw\include\reason.h
+1379883392 c:\mingw\include\reason.h
 	<_mingw.h>
 
-1379879799 c:\mingw\include\winsvc.h
+1379883400 c:\mingw\include\winsvc.h
 	<_mingw.h>
 
-1379879780 c:\mingw\include\cderr.h
+1379883380 c:\mingw\include\cderr.h
 	<_mingw.h>
 
-1379879781 c:\mingw\include\ddeml.h
+1379883382 c:\mingw\include\ddeml.h
 	<_mingw.h>
 
-1379879784 c:\mingw\include\imm.h
+1379883384 c:\mingw\include\imm.h
 	<_mingw.h>
 
-1379879787 c:\mingw\include\lzexpand.h
+1379883388 c:\mingw\include\lzexpand.h
 	<_mingw.h>
 
-1379879788 c:\mingw\include\mmsystem.h
+1379883388 c:\mingw\include\mmsystem.h
 	<_mingw.h>
 
-1379879788 c:\mingw\include\nb30.h
+1379883388 c:\mingw\include\nb30.h
 	<_mingw.h>
 
-1379879793 c:\mingw\include\rpc.h
+1379883394 c:\mingw\include\rpc.h
 	<windows.h>
 	<_mingw.h>
 	<rpcdce.h>
@@ -595,77 +595,77 @@
 	<winerror.h>
 	<excpt.h>
 
-1379879793 c:\mingw\include\rpcdce.h
+1379883394 c:\mingw\include\rpcdce.h
 	<_mingw.h>
 	<basetyps.h>
 	<rpcdcep.h>
 
-1379879780 c:\mingw\include\basetyps.h
+1379883380 c:\mingw\include\basetyps.h
 	<_mingw.h>
 
-1379879793 c:\mingw\include\rpcdcep.h
+1379883394 c:\mingw\include\rpcdcep.h
 	<_mingw.h>
 
-1379879793 c:\mingw\include\rpcnsi.h
+1379883394 c:\mingw\include\rpcnsi.h
 	<_mingw.h>
 
-1379879793 c:\mingw\include\rpcnterr.h
+1379883394 c:\mingw\include\rpcnterr.h
 	<_mingw.h>
 
-1379878922 c:\mingw\include\excpt.h
+1379882522 c:\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
-1379879795 c:\mingw\include\shellapi.h
+1379883396 c:\mingw\include\shellapi.h
 	<_mingw.h>
 	<pshpack2.h>
 	<poppack.h>
 
-1379879792 c:\mingw\include\pshpack2.h
+1379883392 c:\mingw\include\pshpack2.h
 
-1379879798 c:\mingw\include\winperf.h
+1379883398 c:\mingw\include\winperf.h
 	<_mingw.h>
 
-1379879781 c:\mingw\include\commdlg.h
+1379883382 c:\mingw\include\commdlg.h
 	<_mingw.h>
 	<unknwn.h>
 	<prsht.h>
 
-1379879796 c:\mingw\include\unknwn.h
+1379883396 c:\mingw\include\unknwn.h
 	<_mingw.h>
 	<windows.h>
 	<objfwd.h>
 	<wtypes.h>
 
-1379879789 c:\mingw\include\objfwd.h
+1379883390 c:\mingw\include\objfwd.h
 	<_mingw.h>
 	<basetyps.h>
 
-1379879799 c:\mingw\include\wtypes.h
+1379883400 c:\mingw\include\wtypes.h
 	<_mingw.h>
 	<rpc.h>
 	<rpcndr.h>
 
-1379879793 c:\mingw\include\rpcndr.h
+1379883394 c:\mingw\include\rpcndr.h
 	<_mingw.h>
 	<rpcnsip.h>
 	<objfwd.h>
 
-1379879793 c:\mingw\include\rpcnsip.h
+1379883394 c:\mingw\include\rpcnsip.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\winspool.h
+1379883398 c:\mingw\include\winspool.h
 	<_mingw.h>
 
-1379879798 c:\mingw\include\winsock.h
+1379883398 c:\mingw\include\winsock.h
 	<_mingw.h>
 	<windows.h>
 	<mswsock.h>
 
-1379879788 c:\mingw\include\mswsock.h
+1379883388 c:\mingw\include\mswsock.h
 	<_mingw.h>
 
-1379879790 c:\mingw\include\ole2.h
+1379883390 c:\mingw\include\ole2.h
 	<_mingw.h>
 	<winerror.h>
 	<objbase.h>
@@ -673,7 +673,7 @@
 	<oleauto.h>
 	<oleidl.h>
 
-1379879789 c:\mingw\include\objbase.h
+1379883390 c:\mingw\include\objbase.h
 	<rpc.h>
 	<rpcndr.h>
 	<_mingw.h>
@@ -684,30 +684,30 @@
 	<objidl.h>
 	<cguid.h>
 
-1379879790 c:\mingw\include\objidl.h
+1379883390 c:\mingw\include\objidl.h
 	<_mingw.h>
 	<objfwd.h>
 
-1379879780 c:\mingw\include\cguid.h
+1379883380 c:\mingw\include\cguid.h
 	<_mingw.h>
 
-1379879791 c:\mingw\include\olectlid.h
+1379883392 c:\mingw\include\olectlid.h
 	<_mingw.h>
 
-1379879790 c:\mingw\include\oleauto.h
+1379883390 c:\mingw\include\oleauto.h
 	<_mingw.h>
 	<oaidl.h>
 
-1379879789 c:\mingw\include\oaidl.h
+1379883390 c:\mingw\include\oaidl.h
 	<_mingw.h>
 	<windows.h>
 	<ole2.h>
 
-1379879791 c:\mingw\include\oleidl.h
+1379883392 c:\mingw\include\oleidl.h
 	<_mingw.h>
 	<objfwd.h>
 
-1392304012 c:\mingw\include\openlayer.hpp
+1392307614 c:\mingw\include\openlayer.hpp
 	"OpenLayer/GarbageCollector.hpp"
 	"OpenLayer/Includes.hpp"
 	"OpenLayer/Animation.hpp"
@@ -737,20 +737,20 @@
 	"OpenLayer/loadpng.h"
 	"OpenLayer/GfxRend.hpp"
 
-1392012440 c:\mingw\include\openlayer\garbagecollector.hpp
+1392016040 c:\mingw\include\openlayer\garbagecollector.hpp
 	<list>
 	"Includes.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\includes.hpp
+1392016040 c:\mingw\include\openlayer\includes.hpp
 	"Declspec.hpp"
 	<allegro.h>
 	<alleggl.h>
 	<string>
 
-1392012440 c:\mingw\include\openlayer\declspec.hpp
+1392016040 c:\mingw\include\openlayer\declspec.hpp
 
-1392063548 c:\mingw\include\alleggl.h
+1392067150 c:\mingw\include\alleggl.h
 	<allegro.h>
 	<winalleg.h>
 	<OpenGL/OpenGL.h>
@@ -760,9 +760,9 @@
 	"allegrogl/gl_ext.h"
 	"allegrogl/alleggl_config.h"
 
-1379879809 c:\mingw\include\gl\gl.h
+1379883410 c:\mingw\include\gl\gl.h
 
-1177747558 c:\mingw\include\allegrogl\gl_ext.h
+1177751158 c:\mingw\include\allegrogl\gl_ext.h
 	"allegrogl/gl_header_detect.h"
 	"allegrogl/GLext/gl_ext_defs.h"
 	"allegrogl/GLext/wgl_ext_defs.h"
@@ -780,44 +780,44 @@
 	"allegrogl/GLext/glx_ext_list.h"
 	"allegrogl/GLext/wgl_ext_list.h"
 
-1071139722 c:\mingw\include\allegrogl\gl_header_detect.h
+1071143322 c:\mingw\include\allegrogl\gl_header_detect.h
 
-1223793222 c:\mingw\include\allegrogl\glext\gl_ext_defs.h
+1223796822 c:\mingw\include\allegrogl\glext\gl_ext_defs.h
 	<stddef.h>
 	<stddef.h>
 
-1223793222 c:\mingw\include\allegrogl\glext\wgl_ext_defs.h
+1223796822 c:\mingw\include\allegrogl\glext\wgl_ext_defs.h
 
-1223601772 c:\mingw\include\allegrogl\glext\glx_ext_defs.h
+1223605372 c:\mingw\include\allegrogl\glext\glx_ext_defs.h
 	<GL/glx.h>
 
-1256216008 c:\mingw\include\allegrogl\glext\gl_ext_api.h
+1256219608 c:\mingw\include\allegrogl\glext\gl_ext_api.h
 
-1223793222 c:\mingw\include\allegrogl\glext\wgl_ext_api.h
+1223796822 c:\mingw\include\allegrogl\glext\wgl_ext_api.h
 
-1223793222 c:\mingw\include\allegrogl\glext\glx_ext_api.h
+1223796822 c:\mingw\include\allegrogl\glext\glx_ext_api.h
 
-1256216008 c:\mingw\include\allegrogl\glext\gl_ext_alias.h
+1256219608 c:\mingw\include\allegrogl\glext\gl_ext_alias.h
 
-1255792030 c:\mingw\include\allegrogl\glext\wgl_ext_alias.h
+1255795630 c:\mingw\include\allegrogl\glext\wgl_ext_alias.h
 
-1255792030 c:\mingw\include\allegrogl\glext\glx_ext_alias.h
+1255795630 c:\mingw\include\allegrogl\glext\glx_ext_alias.h
 
-1223793222 c:\mingw\include\allegrogl\glext\gl_ext_list.h
+1223796822 c:\mingw\include\allegrogl\glext\gl_ext_list.h
 
-1210546736 c:\mingw\include\allegrogl\glext\glx_ext_list.h
+1210550336 c:\mingw\include\allegrogl\glext\glx_ext_list.h
 
-1223793222 c:\mingw\include\allegrogl\glext\wgl_ext_list.h
+1223796822 c:\mingw\include\allegrogl\glext\wgl_ext_list.h
 
-1392065889 c:\mingw\include\allegrogl\alleggl_config.h
+1392069490 c:\mingw\include\allegrogl\alleggl_config.h
 
-1392012440 c:\mingw\include\openlayer\animation.hpp
+1392016040 c:\mingw\include\openlayer\animation.hpp
 	"Includes.hpp"
 	"Bitmap.hpp"
 	"Declspec.hpp"
 	<vector>
 
-1392012440 c:\mingw\include\openlayer\bitmap.hpp
+1392016040 c:\mingw\include\openlayer\bitmap.hpp
 	"Includes.hpp"
 	"GarbageCollector.hpp"
 	"Rgba.hpp"
@@ -832,39 +832,39 @@
 	<string>
 	<math.h>
 
-1392012440 c:\mingw\include\openlayer\rgba.hpp
+1392016040 c:\mingw\include\openlayer\rgba.hpp
 	"Includes.hpp"
 	"Transforms.hpp"
 	"Declspec.hpp"
 	<string>
 
-1392012440 c:\mingw\include\openlayer\transforms.hpp
+1392016040 c:\mingw\include\openlayer\transforms.hpp
 	"Includes.hpp"
 	"Vec2D.hpp"
 	"Placement.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\vec2d.hpp
+1392016040 c:\mingw\include\openlayer\vec2d.hpp
 	<cmath>
 	<string>
 	<sstream>
 	"General.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\general.hpp
+1392016040 c:\mingw\include\openlayer\general.hpp
 	<sstream>
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\placement.hpp
+1392016040 c:\mingw\include\openlayer\placement.hpp
 	"Matrix.hpp"
 	"Vec2D.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\matrix.hpp
+1392016040 c:\mingw\include\openlayer\matrix.hpp
 	"Vec2D.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\internal.hpp
+1392016040 c:\mingw\include\openlayer\internal.hpp
 	"Includes.hpp"
 	<string>
 	<math.h>
@@ -872,38 +872,38 @@
 	<iostream>
 	"Declspec.hpp"
 
-1379878920 c:\mingw\include\math.h
+1379882520 c:\mingw\include\math.h
 	<_mingw.h>
 
-1392012440 c:\mingw\include\openlayer\pendingload.hpp
+1392016040 c:\mingw\include\openlayer\pendingload.hpp
 	"Includes.hpp"
 	"GarbageCollector.hpp"
 	"TextureInfo.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\textureinfo.hpp
+1392016040 c:\mingw\include\openlayer\textureinfo.hpp
 	"Includes.hpp"
 	"Vec2D.hpp"
 	"Rgba.hpp"
 	"OlRectangle.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\olrectangle.hpp
+1392016040 c:\mingw\include\openlayer\olrectangle.hpp
 	<cmath>
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\collisions.hpp
+1392016040 c:\mingw\include\openlayer\collisions.hpp
 	"Vec2D.hpp"
 	"Declspec.hpp"
 	<utility>
 	<vector>
 
-1392012440 c:\mingw\include\openlayer\rendermodes.hpp
+1392016040 c:\mingw\include\openlayer\rendermodes.hpp
 	"Rgba.hpp"
 	"TextureInfo.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\gldriver.hpp
+1392016040 c:\mingw\include\openlayer\gldriver.hpp
 	"Includes.hpp"
 	"Internal.hpp"
 	"Vec2D.hpp"
@@ -912,24 +912,24 @@
 	"Declspec.hpp"
 	<string>
 
-1392012440 c:\mingw\include\openlayer\setup.hpp
+1392016040 c:\mingw\include\openlayer\setup.hpp
 	"Includes.hpp"
 	"Declspec.hpp"
 	<string>
 
-1392012440 c:\mingw\include\openlayer\blenders.hpp
+1392016040 c:\mingw\include\openlayer\blenders.hpp
 	"Includes.hpp"
 	"Declspec.hpp"
 	<stack>
 
-1392012440 c:\mingw\include\openlayer\fpscounter.hpp
+1392016040 c:\mingw\include\openlayer\fpscounter.hpp
 	"Declspec.hpp"
 
-1392069917 c:\mingw\include\openlayer\settings.hpp
+1392073518 c:\mingw\include\openlayer\settings.hpp
 	"Includes.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\textrenderer.hpp
+1392016040 c:\mingw\include\openlayer\textrenderer.hpp
 	"Includes.hpp"
 	"Rgba.hpp"
 	"GarbageCollector.hpp"
@@ -938,7 +938,7 @@
 	"Glyph.hpp"
 	<glyph.h>
 
-1392012440 c:\mingw\include\openlayer\glyph.hpp
+1392016040 c:\mingw\include\openlayer\glyph.hpp
 	<math.h>
 	<map>
 	"Rgba.hpp"
@@ -948,19 +948,19 @@
 	"Declspec.hpp"
 	<ft2build.h>
 
-1392012440 c:\mingw\include\openlayer\point.hpp
+1392016040 c:\mingw\include\openlayer\point.hpp
 	"Shape.hpp"
 	"Vec2D.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\shape.hpp
+1392016040 c:\mingw\include\openlayer\shape.hpp
 	"Includes.hpp"
 	"Rgba.hpp"
 	"Vec2D.hpp"
 	"Collisions.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\canvas.hpp
+1392016040 c:\mingw\include\openlayer\canvas.hpp
 	"Includes.hpp"
 	"Bitmap.hpp"
 	"Rectangle.hpp"
@@ -970,7 +970,7 @@
 	<map>
 	<string>
 
-1392012440 c:\mingw\include\openlayer\rectangle.hpp
+1392016040 c:\mingw\include\openlayer\rectangle.hpp
 	"Shape.hpp"
 	"Point.hpp"
 	"Settings.hpp"
@@ -978,7 +978,7 @@
 	"Declspec.hpp"
 	<cmath>
 
-1392012440 c:\mingw\include\openlayer\polygon.hpp
+1392016040 c:\mingw\include\openlayer\polygon.hpp
 	"RawLineStrip.hpp"
 	"Vec2D.hpp"
 	"Rgba.hpp"
@@ -993,12 +993,12 @@
 	<vector>
 	"Internal.hpp"
 
-1392012440 c:\mingw\include\openlayer\rawlinestrip.hpp
+1392016040 c:\mingw\include\openlayer\rawlinestrip.hpp
 	"Rgba.hpp"
 	"Bitmap.hpp"
 	"Declspec.hpp"
 
-1392012440 c:\mingw\include\openlayer\linestrip.hpp
+1392016040 c:\mingw\include\openlayer\linestrip.hpp
 	"Shape.hpp"
 	"Vec2D.hpp"
 	"Placement.hpp"
@@ -1007,28 +1007,28 @@
 	"Declspec.hpp"
 	<list>
 
-1392012440 c:\mingw\include\openlayer\line.hpp
+1392016040 c:\mingw\include\openlayer\line.hpp
 	"Shape.hpp"
 	"Vec2D.hpp"
 	"Settings.hpp"
 	"Declspec.hpp"
 
-1392070018 c:\mingw\include\glyph.h
+1392073620 c:\mingw\include\glyph.h
 	<allegro.h>
 	<allegro/internal/aintern.h>
 	<SDL/SDL.h>
 	<stdio.h>
 
-1224797900 c:\mingw\include\allegro\internal\aintern.h
+1224801500 c:\mingw\include\allegro\internal\aintern.h
 
-1392012440 c:\mingw\include\openlayer\texturedpoly.hpp
+1392016040 c:\mingw\include\openlayer\texturedpoly.hpp
 	"Polygon.hpp"
 	"Vec2D.hpp"
 	"Declspec.hpp"
 	<vector>
 	<utility>
 
-1392012440 c:\mingw\include\openlayer\circle.hpp
+1392016040 c:\mingw\include\openlayer\circle.hpp
 	"Shape.hpp"
 	"Settings.hpp"
 	"Rgba.hpp"
@@ -1037,36 +1037,36 @@
 	<cmath>
 	<vector>
 
-1392012440 c:\mingw\include\openlayer\loadpng.h
+1392016040 c:\mingw\include\openlayer\loadpng.h
 
-1392012440 c:\mingw\include\openlayer\gfxrend.hpp
+1392016040 c:\mingw\include\openlayer\gfxrend.hpp
 	"Includes.hpp"
 	"Rgba.hpp"
 	"Settings.hpp"
 	"Declspec.hpp"
 
-1201723010 c:\mingw\include\loadpng.h
+1201726610 c:\mingw\include\loadpng.h
 
-1379878920 c:\mingw\include\assert.h
+1379882520 c:\mingw\include\assert.h
 	<_mingw.h>
 
-1379879784 c:\mingw\include\iphlpapi.h
+1379883384 c:\mingw\include\iphlpapi.h
 	<_mingw.h>
 	<iprtrmib.h>
 	<ipexport.h>
 	<iptypes.h>
 
-1379879784 c:\mingw\include\iprtrmib.h
+1379883384 c:\mingw\include\iprtrmib.h
 	<_mingw.h>
 	<ipifcons.h>
 
-1379879784 c:\mingw\include\ipifcons.h
+1379883384 c:\mingw\include\ipifcons.h
 	<_mingw.h>
 
-1379879784 c:\mingw\include\ipexport.h
+1379883384 c:\mingw\include\ipexport.h
 	<_mingw.h>
 
-1379879784 c:\mingw\include\iptypes.h
+1379883384 c:\mingw\include\iptypes.h
 	<_mingw.h>
 	<sys/types.h>
 
@@ -1074,10 +1074,10 @@
 	<vector>
 	<string>
 
-1201723010 c:\mingw\include\jpgalleg.h
+1201726610 c:\mingw\include\jpgalleg.h
 	<allegro.h>
 
-1392594695 c:\mingw\include\hpdf.h
+1392598296 c:\mingw\include\hpdf.h
 	"hpdf_consts.h"
 	"hpdf_types.h"
 	"hpdf_consts.h"
@@ -1087,66 +1087,66 @@
 
 1389220668 c:\mingw\include\hpdf_version.h
 
-1392594695 c:\mingw\include\hpdf_consts.h
+1392598296 c:\mingw\include\hpdf_consts.h
 
-1392594695 c:\mingw\include\hpdf_types.h
+1392598296 c:\mingw\include\hpdf_types.h
 	<stdlib.h>
 
-1392594695 c:\mingw\include\hpdf_doc.h
+1392598296 c:\mingw\include\hpdf_doc.h
 	"hpdf_catalog.h"
 	"hpdf_image.h"
 	"hpdf_pages.h"
 	"hpdf_outline.h"
 	"hpdf_ext_gstate.h"
 
-1392594695 c:\mingw\include\hpdf_catalog.h
+1392598296 c:\mingw\include\hpdf_catalog.h
 	"hpdf_objects.h"
 
-1392594695 c:\mingw\include\hpdf_objects.h
+1392598296 c:\mingw\include\hpdf_objects.h
 	"hpdf_encoder.h"
 
-1392594695 c:\mingw\include\hpdf_encoder.h
+1392598296 c:\mingw\include\hpdf_encoder.h
 	"hpdf_consts.h"
 	"hpdf_streams.h"
 
-1392594695 c:\mingw\include\hpdf_streams.h
+1392598296 c:\mingw\include\hpdf_streams.h
 	"hpdf_list.h"
 	"hpdf_encrypt.h"
 
-1392594695 c:\mingw\include\hpdf_list.h
+1392598296 c:\mingw\include\hpdf_list.h
 	"hpdf_error.h"
 	"hpdf_mmgr.h"
 
-1392594695 c:\mingw\include\hpdf_error.h
+1392598296 c:\mingw\include\hpdf_error.h
 	"hpdf_types.h"
 
-1392594695 c:\mingw\include\hpdf_mmgr.h
+1392598296 c:\mingw\include\hpdf_mmgr.h
 	"hpdf_types.h"
 	"hpdf_error.h"
 
-1392594695 c:\mingw\include\hpdf_encrypt.h
+1392598296 c:\mingw\include\hpdf_encrypt.h
 	"hpdf_mmgr.h"
 
-1392594695 c:\mingw\include\hpdf_image.h
+1392598296 c:\mingw\include\hpdf_image.h
 	"hpdf_objects.h"
 
-1392594695 c:\mingw\include\hpdf_pages.h
+1392598296 c:\mingw\include\hpdf_pages.h
 	"hpdf_gstate.h"
 	"hpdf_ext_gstate.h"
 
-1392594695 c:\mingw\include\hpdf_gstate.h
+1392598296 c:\mingw\include\hpdf_gstate.h
 	"hpdf_font.h"
 
-1392594695 c:\mingw\include\hpdf_font.h
+1392598296 c:\mingw\include\hpdf_font.h
 	"hpdf_fontdef.h"
 
-1392594695 c:\mingw\include\hpdf_fontdef.h
+1392598296 c:\mingw\include\hpdf_fontdef.h
 	"hpdf_objects.h"
 
-1392594695 c:\mingw\include\hpdf_ext_gstate.h
+1392598296 c:\mingw\include\hpdf_ext_gstate.h
 	"hpdf_objects.h"
 
-1392594695 c:\mingw\include\hpdf_outline.h
+1392598296 c:\mingw\include\hpdf_outline.h
 	"hpdf_objects.h"
 
 1389220668 c:\mingw\include\hpdf_pdfa.h
@@ -1156,76 +1156,78 @@
 1390400902 c:\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1391962280 c:\whitecat_crossplateform\src\whitecat.h
+1397200051 c:\whitecat_crossplateform\src\whitecat.h
+	"Crossplateform.h"
 
-1391548149 c:\whitecat_crossplateform\src\my_window_file_sample.h
+1395646150 c:\whitecat_crossplateform\src\my_window_file_sample.h
 
-1391548151 c:\whitecat_crossplateform\src\patch_splines_2.cpp
+1393273860 c:\whitecat_crossplateform\src\patch_splines_2.cpp
 
-1391548146 c:\whitecat_crossplateform\src\grider_calculs8.cpp
+1397233457 c:\whitecat_crossplateform\src\grider_calculs8.cpp
 
-1391548149 c:\whitecat_crossplateform\src\midi_core.cpp
+1393273860 c:\whitecat_crossplateform\src\midi_core.cpp
 
-1391861068 c:\whitecat_crossplateform\src\core_6.cpp
+1397197819 c:\whitecat_crossplateform\src\core_6.cpp
 
-1391548151 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
+1395646150 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
 	<setjmp.h>
 	"hpdf.h"
 
-1379878920 c:\mingw\include\setjmp.h
+1379882520 c:\mingw\include\setjmp.h
 	<_mingw.h>
 
-1391548151 c:\whitecat_crossplateform\src\saves_export_import.cpp
+1395646150 c:\whitecat_crossplateform\src\saves_export_import.cpp
 
-1391548151 c:\whitecat_crossplateform\src\saves_menu_8.cpp
+1395646150 c:\whitecat_crossplateform\src\saves_menu_8.cpp
 
-1391548146 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
+1397198007 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
 
-1391548146 c:\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
+1396257823 c:\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
 
-1391861425 c:\whitecat_crossplateform\src\grider_core8.cpp
+1395646150 c:\whitecat_crossplateform\src\grider_core8.cpp
 
-1391548151 c:\whitecat_crossplateform\src\wizard_operations.cpp
+1396255214 c:\whitecat_crossplateform\src\wizard_operations.cpp
 
-1391548146 c:\whitecat_crossplateform\src\faders_operations.cpp
+1395646150 c:\whitecat_crossplateform\src\faders_operations.cpp
 
-1391548146 c:\whitecat_crossplateform\src\chasers_core_5.cpp
+1395646150 c:\whitecat_crossplateform\src\chasers_core_5.cpp
 
-1391548149 c:\whitecat_crossplateform\src\mover_spline6.cpp
+1393273860 c:\whitecat_crossplateform\src\mover_spline6.cpp
 
-1391548149 c:\whitecat_crossplateform\src\mover_2013.cpp
+1395646150 c:\whitecat_crossplateform\src\mover_2013.cpp
 
-1391548151 c:\whitecat_crossplateform\src\plot_core9.cpp
+1396253565 c:\whitecat_crossplateform\src\plot_core9.cpp
 
-1391548151 c:\whitecat_crossplateform\src\plot9.cpp
+1395646150 c:\whitecat_crossplateform\src\plot9.cpp
 
-1391548145 c:\whitecat_crossplateform\src\audio_core5.cpp
+1395646150 c:\whitecat_crossplateform\src\audio_core5.cpp
 
-1391548151 c:\whitecat_crossplateform\src\save_show_13.cpp
+1397200205 c:\whitecat_crossplateform\src\save_show_13.cpp
 
-1391822711 c:\whitecat_crossplateform\src\network_artnet_3.cpp
+1395646150 c:\whitecat_crossplateform\src\network_artnet_3.cpp
 	<winsock2.h>
 
-1379879798 c:\mingw\include\winsock2.h
+1379883398 c:\mingw\include\winsock2.h
 	<_mingw.h>
 	<windows.h>
 
-1391861425 c:\whitecat_crossplateform\src\logicals_intres.cpp
+1395646150 c:\whitecat_crossplateform\src\logicals_intres.cpp
 
-1391821635 c:\whitecat_crossplateform\src\channels_9_core.cpp
+1393273860 c:\whitecat_crossplateform\src\channels_9_core.cpp
 	<allegro.h>
+	<OpenLayer.hpp>
 
-1391548151 c:\whitecat_crossplateform\src\wizard.cpp
+1396255268 c:\whitecat_crossplateform\src\wizard.cpp
 
-1391548146 c:\whitecat_crossplateform\src\grand_master.cpp
+1393273860 c:\whitecat_crossplateform\src\grand_master.cpp
 
-1391548146 c:\whitecat_crossplateform\src\faders_core_24.cpp
+1395646150 c:\whitecat_crossplateform\src\faders_core_24.cpp
 
-1391548145 c:\whitecat_crossplateform\src\audio_visu4.cpp
+1395646150 c:\whitecat_crossplateform\src\audio_visu4.cpp
 
-1391548146 c:\whitecat_crossplateform\src\icat_core14.cpp
+1395646150 c:\whitecat_crossplateform\src\icat_core14.cpp
 
-1391548145 c:\whitecat_crossplateform\src\arduino_device_core.cpp
+1393273860 c:\whitecat_crossplateform\src\arduino_device_core.cpp
 	"serial.cpp"
 
 1390400902 c:\whitecat_crossplateform\lib\windows\cserial\serial.cpp
@@ -1233,47 +1235,47 @@
 
 1390400902 c:\whitecat_crossplateform\lib\windows\cserial\serial.h
 
-1391548145 c:\whitecat_crossplateform\src\banger_core_8.cpp
+1396257801 c:\whitecat_crossplateform\src\banger_core_8.cpp
 
-1391548145 c:\whitecat_crossplateform\src\banger_visu_8.cpp
+1396257670 c:\whitecat_crossplateform\src\banger_visu_8.cpp
 
-1391548144 c:\whitecat_crossplateform\src\call_everybody_5.cpp
+1395646150 c:\whitecat_crossplateform\src\call_everybody_5.cpp
 
-1391548151 c:\whitecat_crossplateform\src\patch_core.cpp
+1393273860 c:\whitecat_crossplateform\src\patch_core.cpp
 
-1391548151 c:\whitecat_crossplateform\src\patch_visu.cpp
+1393273860 c:\whitecat_crossplateform\src\patch_visu.cpp
 
-1391548151 c:\whitecat_crossplateform\src\time_core_3.cpp
+1393273860 c:\whitecat_crossplateform\src\time_core_3.cpp
 
-1391548151 c:\whitecat_crossplateform\src\time_visu_3.cpp
+1393273860 c:\whitecat_crossplateform\src\time_visu_3.cpp
 
-1391548151 c:\whitecat_crossplateform\src\trichro_core2.cpp
+1393273860 c:\whitecat_crossplateform\src\trichro_core2.cpp
 
-1391548151 c:\whitecat_crossplateform\src\trichro_visu2.cpp
+1393273860 c:\whitecat_crossplateform\src\trichro_visu2.cpp
 
-1391548149 c:\whitecat_crossplateform\src\numpad_core.cpp
+1393273860 c:\whitecat_crossplateform\src\numpad_core.cpp
 
-1391548149 c:\whitecat_crossplateform\src\numpad_visuel.cpp
+1393273860 c:\whitecat_crossplateform\src\numpad_visuel.cpp
 
-1391548146 c:\whitecat_crossplateform\src\keyboard_functions2.cpp
+1395646150 c:\whitecat_crossplateform\src\keyboard_functions2.cpp
 
-1391548146 c:\whitecat_crossplateform\src\keyboard_routines2.cpp
+1395646150 c:\whitecat_crossplateform\src\keyboard_routines2.cpp
 	<allegro.h>
 
-1391548149 c:\whitecat_crossplateform\src\minifaders_core.cpp
+1395646150 c:\whitecat_crossplateform\src\minifaders_core.cpp
 
-1391548149 c:\whitecat_crossplateform\src\minifaders_visu.cpp
+1395646150 c:\whitecat_crossplateform\src\minifaders_visu.cpp
 
-1391548146 c:\whitecat_crossplateform\src\faders_visuels_26.cpp
+1395646150 c:\whitecat_crossplateform\src\faders_visuels_26.cpp
 
-1391548146 c:\whitecat_crossplateform\src\channels_10_visu.cpp
+1395646150 c:\whitecat_crossplateform\src\channels_10_visu.cpp
 
-1392222550 c:\whitecat_crossplateform\src\video_tracking_core.cpp
+1395646150 c:\whitecat_crossplateform\src\video_tracking_core.cpp
 	"opencv2/opencv.hpp"
 	"opencv/cv.h"
 	"opencv/highgui.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\opencv.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\opencv.hpp
 	"opencv2/core/core_c.h"
 	"opencv2/core/core.hpp"
 	"opencv2/flann/miniflann.hpp"
@@ -1289,10 +1291,10 @@
 	"opencv2/highgui/highgui.hpp"
 	"opencv2/contrib/contrib.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\core_c.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\core_c.h
 	"opencv2/core/types_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\types_c.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\types_c.h
 	<assert.h>
 	<stdlib.h>
 	<string.h>
@@ -1307,10 +1309,10 @@
 	"tegra_round.hpp"
 	"emmintrin.h"
 
-1379878923 c:\mingw\include\float.h
+1379882524 c:\mingw\include\float.h
 	<_mingw.h>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\core.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\core.hpp
 	"opencv2/core/types_c.h"
 	"opencv2/core/version.hpp"
 	<limits.h>
@@ -1326,88 +1328,88 @@
 	"opencv2/core/operations.hpp"
 	"opencv2/core/mat.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\version.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\version.hpp
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\operations.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\operations.hpp
 	<string.h>
 	<limits.h>
 	<ext/atomicity.h>
 	<bits/atomicity.h>
 	<limits>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\mat.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\mat.hpp
 	<limits.h>
 	<string.h>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\miniflann.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\miniflann.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/flann/defines.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\defines.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\defines.h
 	"config.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\config.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\config.h
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc_c.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc_c.h
 	"opencv2/core/core_c.h"
 	"opencv2/imgproc/types_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\types_c.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\imgproc\types_c.h
 	"opencv2/core/core_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/imgproc/types_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\photo\photo.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\photo\photo.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/imgproc/imgproc.hpp"
 	"opencv2/photo/photo_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\photo\photo_c.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\photo\photo_c.h
 	"opencv2/core/core_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\video.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\video\video.hpp
 	"opencv2/video/tracking.hpp"
 	"opencv2/video/background_segm.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\tracking.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\video\tracking.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/imgproc/imgproc.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\background_segm.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\video\background_segm.hpp
 	"opencv2/core/core.hpp"
 	<list>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\features2d\features2d.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\features2d\features2d.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/flann/miniflann.hpp"
 	<limits>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\objdetect\objdetect.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\objdetect\objdetect.hpp
 	"opencv2/core/core.hpp"
 	<map>
 	<deque>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\calib3d\calib3d.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\calib3d\calib3d.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/features2d/features2d.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\ml\ml.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\ml\ml.hpp
 	"opencv2/core/core.hpp"
 	<limits.h>
 	<map>
 	<string>
 	<iostream>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui_c.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui_c.h
 	"opencv2/core/core_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/highgui/highgui_c.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\contrib.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\contrib\contrib.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/imgproc/imgproc.hpp"
 	"opencv2/features2d/features2d.hpp"
@@ -1415,11 +1417,11 @@
 	"opencv2/contrib/retina.hpp"
 	"opencv2/contrib/openfabmap.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\retina.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\contrib\retina.hpp
 	"opencv2/core/core.hpp"
 	<valarray>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\openfabmap.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\contrib\openfabmap.hpp
 	"opencv2/core/core.hpp"
 	"opencv2/features2d/features2d.hpp"
 	<vector>
@@ -1428,7 +1430,7 @@
 	<set>
 	<valarray>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv\cv.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv\cv.h
 	"opencv2/core/core_c.h"
 	"opencv2/core/core.hpp"
 	"opencv2/imgproc/imgproc_c.h"
@@ -1441,13 +1443,13 @@
 	"opencv2/legacy/compat.hpp"
 	"opencv2/core/internal.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\flann.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\flann.hpp
 	"opencv2/core/types_c.h"
 	"opencv2/core/core.hpp"
 	"opencv2/flann/flann_base.hpp"
 	"opencv2/flann/miniflann.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\flann_base.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\flann_base.hpp
 	<vector>
 	<string>
 	<cassert>
@@ -1458,41 +1460,41 @@
 	"saving.h"
 	"all_indices.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\general.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\general.h
 	"defines.h"
 	<stdexcept>
 	<cassert>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\matrix.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\matrix.h
 	<stdio.h>
 	"general.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\params.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\params.h
 	"any.h"
 	"general.h"
 	<iostream>
 	<map>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\any.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\any.h
 	"defines.h"
 	<stdexcept>
 	<ostream>
 	<typeinfo>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\saving.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\saving.h
 	<cstring>
 	<vector>
 	"general.h"
 	"nn_index.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\nn_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\nn_index.h
 	<string>
 	"general.h"
 	"matrix.h"
 	"result_set.h"
 	"params.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\result_set.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\result_set.h
 	<algorithm>
 	<cstring>
 	<iostream>
@@ -1500,7 +1502,7 @@
 	<set>
 	<vector>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\all_indices.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\all_indices.h
 	"general.h"
 	"nn_index.h"
 	"kdtree_index.h"
@@ -1512,7 +1514,7 @@
 	"lsh_index.h"
 	"autotuned_index.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_index.h
 	<algorithm>
 	<map>
 	<cassert>
@@ -1527,12 +1529,12 @@
 	"random.h"
 	"saving.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\dynamic_bitset.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\dynamic_bitset.h
 	<boost/dynamic_bitset.hpp>
 	<limits.h>
 	"dist.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\dist.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\dist.h
 	<cmath>
 	<cstdlib>
 	<string.h>
@@ -1541,21 +1543,21 @@
 	<Intrin.h>
 	"arm_neon.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\heap.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\heap.h
 	<algorithm>
 	<vector>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\allocator.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\allocator.h
 	<stdlib.h>
 	<stdio.h>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\random.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\random.h
 	<algorithm>
 	<cstdlib>
 	<vector>
 	"general.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_single_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_single_index.h
 	<algorithm>
 	<map>
 	<cassert>
@@ -1569,7 +1571,7 @@
 	"random.h"
 	"saving.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kmeans_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\kmeans_index.h
 	<algorithm>
 	<string>
 	<map>
@@ -1587,22 +1589,22 @@
 	"saving.h"
 	"logger.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\logger.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\logger.h
 	<stdio.h>
 	<stdarg.h>
 	"defines.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\composite_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\composite_index.h
 	"general.h"
 	"nn_index.h"
 	"kdtree_index.h"
 	"kmeans_index.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\linear_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\linear_index.h
 	"general.h"
 	"nn_index.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\hierarchical_clustering_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\hierarchical_clustering_index.h
 	<algorithm>
 	<string>
 	<map>
@@ -1619,7 +1621,7 @@
 	"random.h"
 	"saving.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_index.h
 	<algorithm>
 	<cassert>
 	<cstring>
@@ -1635,7 +1637,7 @@
 	"random.h"
 	"saving.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_table.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_table.h
 	<algorithm>
 	<iostream>
 	<iomanip>
@@ -1647,7 +1649,7 @@
 	"dynamic_bitset.h"
 	"matrix.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\autotuned_index.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\autotuned_index.h
 	"general.h"
 	"nn_index.h"
 	"ground_truth.h"
@@ -1660,11 +1662,11 @@
 	"linear_index.h"
 	"logger.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\ground_truth.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\ground_truth.h
 	"dist.h"
 	"matrix.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\index_testing.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\index_testing.h
 	<cstring>
 	<cassert>
 	<cmath>
@@ -1674,20 +1676,20 @@
 	"logger.h"
 	"timer.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\timer.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\timer.h
 	<time.h>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\sampling.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\flann\sampling.h
 	"matrix.h"
 	"random.h"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\legacy\compat.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\legacy\compat.hpp
 	"opencv2/core/core_c.h"
 	"opencv2/imgproc/types_c.h"
 	<math.h>
 	<string.h>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\internal.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\internal.hpp
 	<vector>
 	"opencv2/core/core.hpp"
 	"opencv2/core/types_c.h"
@@ -1708,7 +1710,7 @@
 	<Eigen/Core>
 	"opencv2/core/eigen.hpp"
 
-1377171295 c:\mingw\include\pthread.h
+1377174896 c:\mingw\include\pthread.h
 	<windows.h>
 	"config.h"
 	<time.h>
@@ -1719,52 +1721,52 @@
 	<sched.h>
 	<sys/types.h>
 
-1379878921 c:\mingw\include\signal.h
+1379882522 c:\mingw\include\signal.h
 	<_mingw.h>
 
-1377171295 c:\mingw\include\sched.h
+1377174896 c:\mingw\include\sched.h
 	"need_errno.h"
 	<errno.h>
 	<sys/types.h>
 	<time.h>
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\eigen.hpp
+1388135358 c:\mingw\opencv2.4.8\include\opencv2\core\eigen.hpp
 	"opencv2/core/core_c.h"
 	"opencv2/core/core.hpp"
 
-1388131758 c:\mingw\opencv2.4.8\include\opencv\highgui.h
+1388135358 c:\mingw\opencv2.4.8\include\opencv\highgui.h
 	"opencv2/core/core_c.h"
 	"opencv2/core/core.hpp"
 	"opencv2/highgui/highgui_c.h"
 	"opencv2/highgui/highgui.hpp"
 
-1391548151 c:\whitecat_crossplateform\src\video_tracking_visu.cpp
+1393273860 c:\whitecat_crossplateform\src\video_tracking_visu.cpp
 
-1391548149 c:\whitecat_crossplateform\src\list_proj_core.cpp
+1395646101 c:\whitecat_crossplateform\src\list_proj_core.cpp
 
-1391861950 c:\whitecat_crossplateform\src\list_proj_visu.cpp
+1395646150 c:\whitecat_crossplateform\src\list_proj_visu.cpp
 
-1391548151 c:\whitecat_crossplateform\src\sequentiel_6_core.cpp
+1395646150 c:\whitecat_crossplateform\src\sequentiel_6_core.cpp
 
-1391548146 c:\whitecat_crossplateform\src\icat14.cpp
+1395646150 c:\whitecat_crossplateform\src\icat14.cpp
 
-1391548149 c:\whitecat_crossplateform\src\network_mac_adress_3.cpp
+1393921333 c:\whitecat_crossplateform\src\network_mac_adress_3.cpp
 
-1391548149 c:\whitecat_crossplateform\src\midi_launchpad.cpp
+1393273860 c:\whitecat_crossplateform\src\midi_launchpad.cpp
 
-1391548146 c:\whitecat_crossplateform\src\grider8.cpp
+1395646150 c:\whitecat_crossplateform\src\grider8.cpp
 
-1391548151 c:\whitecat_crossplateform\src\sequentiel_7_visu.cpp
+1395646150 c:\whitecat_crossplateform\src\sequentiel_7_visu.cpp
 
-1391548144 c:\whitecat_crossplateform\src\draw3.cpp
+1393273860 c:\whitecat_crossplateform\src\draw3.cpp
 
-1391548146 c:\whitecat_crossplateform\src\echo3.cpp
+1395646150 c:\whitecat_crossplateform\src\echo3.cpp
 
-1391548149 c:\whitecat_crossplateform\src\my_window_file_sample.cpp
+1393273860 c:\whitecat_crossplateform\src\my_window_file_sample.cpp
 
-1391548151 c:\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
+1396258589 c:\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
 
-1391548146 c:\whitecat_crossplateform\src\dmx_functions_13.cpp
+1395646150 c:\whitecat_crossplateform\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
 	<odmxusb.h>
 	<dmx_enttec_pro.cpp>
@@ -1779,16 +1781,16 @@
 
 1390400902 c:\whitecat_crossplateform\lib\windows\odmxusb_terry\ftd2xx.h
 
-1391548146 c:\whitecat_crossplateform\src\dmx_enttec_pro.cpp
+1395646150 c:\whitecat_crossplateform\src\dmx_enttec_pro.cpp
 	<process.h>
 	<assert.h>
 	<tchar.h>
 
-1379878921 c:\mingw\include\tchar.h
+1379882522 c:\mingw\include\tchar.h
 	<_mingw.h>
 	<wchar.h>
 
-1379878921 c:\mingw\include\wchar.h
+1379882522 c:\mingw\include\wchar.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
@@ -1799,30 +1801,30 @@
 	<string.h>
 	<stdint.h>
 
-1379878921 c:\mingw\include\wctype.h
+1379882522 c:\mingw\include\wctype.h
 	<_mingw.h>
 	<stddef.h>
 
-1391548146 c:\whitecat_crossplateform\src\dmx_sunlite.cpp
+1395646150 c:\whitecat_crossplateform\src\dmx_sunlite.cpp
 	<_DasHard.h>
 
 1390400902 c:\whitecat_crossplateform\lib\windows\dashard\_dashard.h
 
-1391548149 c:\whitecat_crossplateform\src\midi_13.cpp
+1395646150 c:\whitecat_crossplateform\src\midi_13.cpp
 
-1391548144 c:\whitecat_crossplateform\src\cfg_screen.cpp
+1397200112 c:\whitecat_crossplateform\src\cfg_screen.cpp
 
 1391548145 c:\whitecat_crossplateform\src\arduino_core_6_uno_anton3.cpp
 
 1391548145 c:\whitecat_crossplateform\src\arduino_6_uno_anton2.cpp
 
-1391548144 c:\whitecat_crossplateform\src\cfg_config_panel_8.cpp
+1396250621 c:\whitecat_crossplateform\src\cfg_config_panel_8.cpp
 
-1391548146 c:\whitecat_crossplateform\src\chasers_visu.cpp
+1393273860 c:\whitecat_crossplateform\src\chasers_visu.cpp
 
-1391548146 c:\whitecat_crossplateform\src\graphics_rebuild1.cpp
+1397197723 c:\whitecat_crossplateform\src\graphics_rebuild1.cpp
 
-1392300107 source:c:\whitecat_crossplateform\src\whitecat_private.rc
+1395646150 source:c:\whitecat_crossplateform\src\whitecat_private.rc
 	<windows.h>
 
 1392318514 source:c:\users\bibi\documents\github\whitecat_crossplateform\src\main_nov_2013_opensource_kbd.cpp
@@ -2178,4 +2180,115 @@
 1392830352 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_core_6_uno.cpp
 
 1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_6_uno.cpp
+
+1397232487 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
+	<allegro.h>
+	<winalleg.h>
+	<OpenLayer.hpp>
+	<stdio.h>
+	<loadpng.h>
+	<assert.h>
+	<Iphlpapi.h>
+	<audiere.h>
+	<jpgalleg.h>
+	<hpdf.h>
+	<MidiShare.h>
+	<whitecat.h>
+	<my_window_file_sample.h>
+	<patch_splines_2.cpp>
+	<grider_calculs8.cpp>
+	<midi_CORE.cpp>
+	<CORE_6.cpp>
+	<saves_export_pdf2.cpp>
+	<saves_export_import.cpp>
+	<saves_menu_8.cpp>
+	<gestionaire_fenetres2.cpp>
+	<gui_boutons_rebuild1.cpp>
+	<grider_core8.cpp>
+	<wizard_operations.cpp>
+	<faders_operations.cpp>
+	<chasers_core_5.cpp>
+	"mover_spline6.cpp"
+	"mover_2013.cpp"
+	"plot_core9.cpp"
+	"plot9.cpp"
+	<audio_core5.cpp>
+	<save_show_13.cpp>
+	<network_artnet_3.cpp>
+	<logicals_intres.cpp>
+	<channels_9_core.cpp>
+	<wizard.cpp>
+	<grand_master.cpp>
+	<faders_core_24.cpp>
+	<audio_visu4.cpp>
+	<icat_core14.cpp>
+	<arduino_device_core.cpp>
+	<banger_core_8.cpp>
+	<banger_visu_8.cpp>
+	<Call_everybody_5.cpp>
+	<patch_core.cpp>
+	<patch_visu.cpp>
+	<time_core_3.cpp>
+	<time_visu_3.cpp>
+	<trichro_core2.cpp>
+	<trichro_visu2.cpp>
+	<numpad_core.cpp>
+	<numpad_visuel.cpp>
+	<keyboard_functions2.cpp>
+	<keyboard_routines2.cpp>
+	<minifaders_core.cpp>
+	<minifaders_visu.cpp>
+	<faders_visuels_26.cpp>
+	<channels_10_visu.cpp>
+	<video_tracking_core.cpp>
+	<video_tracking_visu.cpp>
+	<list_proj_core.cpp>
+	<list_proj_visu.cpp>
+	<sequentiel_6_core.cpp>
+	<iCat14.cpp>
+	<network_MAC_adress_3.cpp>
+	<midi_launchpad.cpp>
+	<grider8.cpp>
+	<sequentiel_7_visu.cpp>
+	<Draw3.cpp>
+	<echo3.cpp>
+	<my_window_file_sample.cpp>
+	<procs_visuels_rebuild1.cpp>
+	<dmx_functions_13.cpp>
+	<midi_13.cpp>
+	<CFG_screen.cpp>
+	<arduino_core_6_UNO.cpp>
+	<arduino_6_UNO.cpp>
+	<CFG_config_panel_8.cpp>
+	<chasers_visu.cpp>
+	<graphics_rebuild1.cpp>
+
+1393363667 c:\whitecat_crossplateform\whitecatlib\lib\windows\audiere-1.9.4-win32\include\audiere.h
+	<vector>
+	<string>
+
+1393363697 c:\whitecat_crossplateform\whitecatlib\lib\windows\midishare\include\midishare.h
+	"windows.h"
+
+1396255503 c:\whitecat_crossplateform\src\crossplateform.h
+
+1393975294 c:\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.cpp
+	"Serial.h"
+
+1393363688 c:\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.h
+
+1393363698 c:\whitecat_crossplateform\whitecatlib\lib\windows\odmxusb_terry\odmxusb.cpp
+	"odmxusb.h"
+
+1393363698 c:\whitecat_crossplateform\whitecatlib\lib\windows\odmxusb_terry\odmxusb.h
+	<windows.h>
+	"FTD2XX.H"
+
+1393363697 c:\whitecat_crossplateform\whitecatlib\lib\windows\odmxusb_terry\ftd2xx.h
+
+1393363688 c:\whitecat_crossplateform\whitecatlib\lib\windows\dashard\_dashard.h
+
+1395646150 c:\whitecat_crossplateform\src\arduino_core_6_uno.cpp
+
+1395646150 c:\whitecat_crossplateform\src\arduino_6_uno.cpp
 

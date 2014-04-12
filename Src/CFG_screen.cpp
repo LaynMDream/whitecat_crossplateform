@@ -149,7 +149,7 @@ EncadreScreen.SetLineWidth(epaisseur_ligne_fader);
 
 petitchiffre.Print("SIZE -need restart- " ,(x_cfg_sc+20), (y_cfg_sc+60));
 
-for (int lps=0;lps<4;lps++)
+for (int lps=0;lps<2;lps++)
 {
 Rect screen_mode(Vec2D( x_cfg_sc+20,y_cfg_sc+75+(lps*30)),Vec2D(55,15));
 screen_mode.SetRoundness(5);
@@ -163,7 +163,8 @@ if(mouse_x>x_cfg_sc+20 && mouse_x<x_cfg_sc+75 && mouse_y>y_cfg_sc+75+(lps*30) &&
 screen_mode.Draw(CouleurSurvol);
 if(mouse_button==1 && mouse_released==0)
 {
-if(index_fullscreen==0) {index_fullscreen=1;index_specify_size=0;}
+if(index_fullscreen==0) {index_fullscreen=1;index_specify_size=0;largeur_ecran= GetSystemMetrics(SM_CXVIRTUALSCREEN);
+hauteur_ecran = GetSystemMetrics(SM_CYVIRTUALSCREEN);}
 else if (index_fullscreen==1) {index_fullscreen=0;}
 mouse_released=1;
 }
@@ -171,42 +172,9 @@ mouse_released=1;
 if(index_fullscreen==1)
 {screen_mode.Draw(CouleurFader);}
 }
-//MULTIPLE SCREENS
-else if(lps==1)
-{
-petitchiffre.Print("Auto" ,(x_cfg_sc+85), y_cfg_sc+85+(lps*30));
-if(mouse_x>x_cfg_sc+20 && mouse_x<x_cfg_sc+75 && mouse_y>y_cfg_sc+75+(lps*30) && mouse_y<y_cfg_sc+90+(lps*30)  && window_focus_id==920)
-{
-screen_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
-{
-if(index_multiplescreen==0) {index_multiplescreen=1;index_specify_size=0;}
-else if (index_multiplescreen==1) {index_multiplescreen=0;}
-mouse_released=1;
-}
-}
-if(index_multiplescreen==1)
-{screen_mode.Draw(CouleurFader);}
-}
-//BORDER
-else if(lps==2)
-{
-petitchiffre.Print("Borderwindow " ,(x_cfg_sc+85), y_cfg_sc+85+(lps*30));
-if(mouse_x>x_cfg_sc+20 && mouse_x<x_cfg_sc+75 && mouse_y>y_cfg_sc+75+(lps*30) && mouse_y<y_cfg_sc+90+(lps*30)  && window_focus_id==920)
-{
-screen_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
-{
-if(index_borderwindow==0) {index_borderwindow=1;}
-else if (index_borderwindow==1) {index_borderwindow=0;}
-mouse_released=1;
-}
-}
-if(index_borderwindow==1)
-{screen_mode.Draw(CouleurFader);}
-}
+
 //SPECIFY SIZE
-else if(lps==3)
+else if(lps==1)
 {
 petitchiffre.Print("Set new size: " ,(x_cfg_sc+85), y_cfg_sc+50+35+(lps*30));
 if(mouse_x>x_cfg_sc+20 && mouse_x<x_cfg_sc+75 && mouse_y>y_cfg_sc+75+(lps*30) && mouse_y<y_cfg_sc+90+(lps*30)  && window_focus_id==920)
@@ -218,7 +186,6 @@ if(index_specify_size==0)
 {
 index_specify_size=1;
 index_fullscreen=0;
-index_multiplescreen=0;
 }
 else if (index_specify_size==1) {index_specify_size=0;}
 mouse_released=1;
@@ -231,18 +198,18 @@ if(index_specify_size==1)
 }
 
 
-Rect boxlargeur(Vec2D((x_cfg_sc+100),y_cfg_sc+190),Vec2D(65,30));
+Rect boxlargeur(Vec2D((x_cfg_sc+100),y_cfg_sc+130),Vec2D(65,30));
 boxlargeur.SetRoundness(7.5);
 boxlargeur.Draw(CouleurFond.WithAlpha(0.5));
 
 
-Rect boxhauteur(Vec2D((x_cfg_sc+100),y_cfg_sc+225),Vec2D(65,30));
+Rect boxhauteur(Vec2D((x_cfg_sc+100),y_cfg_sc+165),Vec2D(65,30));
 boxhauteur.SetRoundness(7.5);
 boxhauteur.Draw(CouleurFond.WithAlpha(0.5));
 
-if(mouse_x>(x_cfg_sc+100) && mouse_x<(x_cfg_sc+190) && window_focus_id==920)
+if(mouse_x>(x_cfg_sc+100) && mouse_x<(x_cfg_sc+165) && window_focus_id==920)
 {
-if(mouse_y> y_cfg_sc+190 && mouse_y<y_cfg_sc+220)
+if(mouse_y> y_cfg_sc+130 && mouse_y<y_cfg_sc+160)
 {
 boxlargeur.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0 && index_specify_size==1)
@@ -256,7 +223,7 @@ else {sprintf(string_Last_Order,"Screen Width must be at minimum 1024 px");}
 mouse_released=1;
 }
 }
-if(mouse_y> y_cfg_sc+225 && mouse_y<y_cfg_sc+255)
+if(mouse_y> y_cfg_sc+165 && mouse_y<y_cfg_sc+195)
 {
 boxhauteur.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0 && index_specify_size==1)
@@ -271,10 +238,10 @@ mouse_released=1;
 }
 }
 }
-petitchiffre.Print("Width: " ,(x_cfg_sc+40), y_cfg_sc+210);
-petitchiffre.Print(ol::ToString(largeur_ecran) ,(x_cfg_sc+120), y_cfg_sc+210);
-petitchiffre.Print("Height: " ,(x_cfg_sc+40), y_cfg_sc+245);
-petitchiffre.Print(ol::ToString(hauteur_ecran) ,(x_cfg_sc+120), y_cfg_sc+245);
+petitchiffre.Print("Width: " ,(x_cfg_sc+40), y_cfg_sc+150);
+petitchiffre.Print(ol::ToString(largeur_ecran) ,(x_cfg_sc+120), y_cfg_sc+150);
+petitchiffre.Print("Height: " ,(x_cfg_sc+40), y_cfg_sc+185);
+petitchiffre.Print(ol::ToString(hauteur_ecran) ,(x_cfg_sc+120), y_cfg_sc+185);
 EncadreScreen.DrawOutline(CouleurLigne);
 
 /////////////////////WINDOW POS///////////////////////////////////////////////////

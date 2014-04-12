@@ -472,10 +472,10 @@ logical_channelspace();             //classique et custom
 
 
 
-do_logical_grand_master(1200, 30, (int(50*size_faders)));
+do_logical_grand_master(1050, 55, 40);
 
-
-do_logical_feedback_banger(xVisuBanger,yVisuBanger);
+//dans la fenetre Banger maintenant. Christoph 31 / 03 / 14
+//do_logical_feedback_banger(xVisuBanger,yVisuBanger);
 
 
 //manquent save menu / wizard / save box / CFG etc...

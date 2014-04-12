@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file gui_boutons_rebuild1.cpp
 * \brief {GUI fonctions to redraw buttons}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.5.8}
+* \date {31/03/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

@@ -169,9 +169,10 @@ for(int s=1;s<=nbre_symbols_on_plot[c];s++)
 {
 for(int g=0;g<3;g++)//3 slots de gelat par symbol
 {
-if( gelat[c][s][g]!=0)//si une gelat non zero
+//christoph 30/03/14 correction bug comptage gélatine
+if( gelat[c][s][g]!=0 && gelat_family[c][s][g]<5) //si une gelat non zero et inférieure à la marque 0 à 4 pour ne pas déborder du tableau
 {
-tmp_gel_list[g][(gelat[c][s][g])][(symbol_type[c][s])]++;
+tmp_gel_list[gelat_family[c][s][g]][(gelat[c][s][g])][(symbol_type[c][s])]++;
 }
 }
 }
@@ -207,7 +208,7 @@ case 3:
      sprintf(GelTyp,"Apollo");
 break;
 default:
-     strcpy(GelTyp,"");
+     sprintf(GelTyp," ");
 break;
 }
 sprintf(Geo[index_geo]," %s %d x %d %s",GelTyp, t , tmp_gel_list[g][t][s],symbol_nickname[s]);
@@ -1523,7 +1524,8 @@ else if(the_value<=the_lowest_value)
 }
 if(the_lowest_value>the_highest_value)
 {
- switch_values(the_lowest_value,the_highest_value);
+the_lowest_value=return_lowest(the_lowest_value,the_highest_value);
+the_highest_value=return_highest(the_lowest_value,the_highest_value);
 }
 
 int the_frac=(int)((float)(the_highest_value-the_lowest_value)/(the_count));//debut fin = 1+1
@@ -1574,8 +1576,10 @@ else if(the_value<=the_lowest_value)
 
 if(the_lowest_value>the_highest_value)
 {
- switch_values(the_lowest_value,the_highest_value);
+the_lowest_value=return_lowest(the_lowest_value,the_highest_value);
+the_highest_value=return_highest(the_lowest_value,the_highest_value);
 }
+
 int the_frac=(int)(((float)(the_highest_value-the_lowest_value))/(the_count));
 the_count=0;
 for(int i=0;i<=nbre_symbols_on_plot[calc];i++)

@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.5.3}
-* \date {04/03/2014}
+* \version {0.8.5.9}
+* \date {10/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,8 +45,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.5.8 - 4 mars 2014"};
-char nickname_version[48]={"ANTON RUIS SERGE AND CHRISTOPH POWER"};
+char versionis[72]={"Beta 0.8.5.9 - 10 avril 2014"};
+char nickname_version[48]={"SPRING POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -123,9 +123,7 @@ float angle_souris=0.0,transparence_souris=1.0;
 int config_color_style_is=0;
 float size_faders=0.8;
 //screens
-bool index_borderwindow=0;
-bool index_multiplescreen=0;
-bool index_fullscreen=0;
+int index_fullscreen=0;
 int posX_mainwindow=0;//placement fenetre sur bureau
 int posY_mainwindow=0;
 int index_report_customs[128]; //report des fentres on off, du view dmx, theme couleur etc etc
@@ -1175,7 +1173,7 @@ bool stockage_all_at_zero_state[6];//stockage de l action menée
 ///////////////////////////////////BANGER///////////////////////////////////////
 int X_banger=100;
 int Y_banger=50;
-int size_X_Banger=560;
+int size_X_Banger=610;
 int size_Y_Banger=300;
 bool index_show_banger_window=0;
 int index_over_banger_window=0;
@@ -1196,10 +1194,8 @@ bool bang_is_sended[128];//le bang est exécuté si = 0, si déjà exécuté, do
 
 
 
-//raccourcis claviers attribués depuis banger
-char banger_kbd_shortcut[128];
-bool banger_kbd_ctrl_shift_key[128][2];//ctrl [0] et shift [1]
-bool disable_classical_kbd[256];
+
+
 char keyname[256][16];//nom des touches
 
 

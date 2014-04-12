@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file banger_visu_8.cpp
 * \brief {Bangers GUI fonctions}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.5.8}
+* \date {30/03/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -220,9 +220,6 @@ petitchiffre.Print("Delay",xb+385,yb+90);
 char bangers_type_affiche[16];
 char bangers_type_action[25];//garder 25 car recopie dedans du texte descriptif
 
-//mapping clavier
-Rect Kbdb( Vec2D((xb),(yb)),Vec2D(40,20));
-Rect KbdShift(Vec2D((xb),(yb)),Vec2D(40,20));
 
 Rect BangEvent(Vec2D(xb,yb),Vec2D(100,20));
 
@@ -273,16 +270,12 @@ Bangsolo.DrawOutline(CouleurBlind);
 }
 
 
-Kbdb.MoveTo(Vec2D(xb+470,yb+100+(lp*30)));
-Kbdb.DrawOutline(CouleurFader.WithAlpha(0.5));
-KbdShift.MoveTo(Vec2D(xb+515,yb+100+(lp*30)));
-KbdShift.DrawOutline(CouleurBlind.WithAlpha(0.5));
-
 sprintf(numev,"%d",lp+1);
 petitpetitchiffre.Print(numev,xb+10,yb+110+(lp*30));
 //au dessus type ev
 if(window_focus_id==W_BANGER && index_enable_edit_banger==1)
 {
+
 if( mouse_x>xb+30 && mouse_x<xb+130 && mouse_y>yb+100+(lp*30) && mouse_y<yb+120+(lp*30) )
 {
 
@@ -1387,5 +1380,6 @@ petitchiffre.Print(numev,xb+385,yb+113+(lp*30));
 }
 
 
+feedback_banger(xb+480,yb+50);
 return(0);
 }

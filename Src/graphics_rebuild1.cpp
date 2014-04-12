@@ -82,7 +82,7 @@ petitpetitchiffre.Print("Nb.W.:",x_info,y_info);
 petitpetitchiffre.Print(ol::ToString(nbre_fenetre_actives),x_info+35,y_info);
 for(int i=0;i<63;i++)
 {
-if(window_opened[i]!=0){petitpetitchiffre.Print(ol::ToString(window_opened[i]),x_info,y_info+10+(i*10));}
+if(window_opened[i]>0 && window_opened[i]<max_window_identity_is){petitpetitchiffre.Print(ol::ToString(window_opened[i]),x_info,y_info+10+(i*10));}
 }
  return(0);
 }
@@ -120,30 +120,27 @@ Canvas::DisableClipping();
 
 
 RetourInfos(680,40);
+//mis dans la fenetre banger Christoph 30/03/14
+//feedback_banger(xVisuBanger,yVisuBanger);
+grand_master(1050, 55);//x y largeur
+show_windows_list_id(1100, 50);//debug windows
 
-feedback_banger(xVisuBanger,yVisuBanger);
-grand_master(1200, 30);//x y largeur
-show_windows_list_id(1250, 10);//debug windows
+petitchiffre.Print(nickname_version,680,195);
 
-Rect Registered(Vec2D(xVisuBanger-5, 272),Vec2D(145,18));
-Registered.SetRoundness(4);
-
-petitchiffre.Print(nickname_version,xVisuBanger,285);
-
-petitchiffre.Print(string_debug,xVisuBanger, 300);
+petitchiffre.Print(string_debug,680, 210);
 
 //focus window
-petitchiffre.Print("Focus: ",xVisuBanger,310);
-petitchiffre.Print(ol::ToString(window_focus_id),xVisuBanger+50,310);
-petitchiffre.Print("Over Window: ",xVisuBanger,320);
-petitchiffre.Print(ol::ToString(index_over_A_window),xVisuBanger+90,320);
+petitchiffre.Print("Focus: ",680,220);
+petitchiffre.Print(ol::ToString(window_focus_id),730,220);
+petitchiffre.Print("Over Window: ",680,230);
+petitchiffre.Print(ol::ToString(index_over_A_window),770,230);
 //retour sauvegarde
-Rect RetourConduite(Vec2D(xVisuBanger,330),Vec2D(270,40));
+Rect RetourConduite(Vec2D(680,240),Vec2D(270,40));
 RetourConduite.SetRoundness(5);
 RetourConduite.Draw(CouleurBlind.WithAlpha(0.5));
 RetourConduite.DrawOutline(CouleurLigne);
-petitchiffre.Print("Last_save / SAVE:",xVisuBanger+5,345);
-petitchiffre.Print(my_show_is_coming_from,xVisuBanger+5,360);
+petitchiffre.Print("Last_save / SAVE:",685,255);
+petitchiffre.Print(my_show_is_coming_from,685,270);
 
 //////////////AFFICHAGES CONDITIONNES//////////////////////////////////////////////
 

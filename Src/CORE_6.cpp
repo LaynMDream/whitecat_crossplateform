@@ -51,15 +51,25 @@ int reset_numeric_entry()
 }
 ///////////////////////////////////////////////////////////////////////////////
 
-int switch_values(int data1, int data2)
+int return_lowest(int data1, int data2)
 {
-    int data1_prev=data1;
-    int data2_prev=data2;
-    data2=data1_prev;
-    data1=data2_prev;
-
-    return(0);
+ int lowest_is;
+ if (data1>data2){lowest_is=data2;}
+ else {lowest_is=data1;}
+ return(lowest_is);
 }
+
+
+int return_highest(int data1, int data2)
+{
+ int highest_is;
+ if (data1>data2){highest_is=data1;}
+ else {highest_is=data2;}
+ return(highest_is);
+}
+
+
+
 
 int constrain_data_to_dmx_range(int valeur)
 {
@@ -2582,7 +2592,7 @@ int scan_audiofolder()
     }
     //detection
     struct al_ffblk f;
-    bool isSomeone;
+    bool isSomeone=0;
     int nrbe_de_fichiers=0;
     sprintf(rep_audio,"%s\\audio\\%s\\",mondirectory,audio_folder);
     chdir(rep_audio);
@@ -2688,6 +2698,7 @@ int close_all_windows()
     index_show_wizard_window=0;
     index_window_gui_iCat=0;
     index_my_window=0;//sample
+    window_focus_id=0;
     return(0);
 }
 
@@ -5558,32 +5569,32 @@ int substract_a_window(int id)
 
 int substract_a_window(int id)
 {
-/* sab 05/03/2014 begin replace */
-    int erase_window_opened[72];
+/* christoph 11/04/2014 begin replace */
+    int erase_window_opened[64];
     int next_free_pos;
     next_free_pos=0;
 //function to rewritte with window_opened as a deque
 //All open window are kept open in same order, just taking off the deque "id" window
-    for(int old_pos=0; old_pos<72; old_pos++)
+    for(int old_pos=0; old_pos<63; old_pos++)
     {
         if((window_opened[old_pos]!=id)  //id has been erase from the deque
   && (window_opened[old_pos]!=0)  //shouldn't hapen
-  && (next_free_pos<72))    // don't overflow
+  && (next_free_pos<63))    // don't overflow
         {
             erase_window_opened[next_free_pos]=window_opened[old_pos];
             next_free_pos = next_free_pos+1;
         }
     }
     // Clean last unuse new position
-    if ((next_free_pos+1)<72)
+    if ((next_free_pos+1)<63)
     {
-        for(int i=(next_free_pos+1); i<72; i++)
+        for(int i=(next_free_pos+1); i<63; i++)
         {
             erase_window_opened[i]=0;
         }
     }
     //copy
- for(int i=0; i<72; i++) //both are 72 occurences long
+ for(int i=0; i<63; i++) //both are 72 occurences long
     {
   window_opened[i] = erase_window_opened[i];
     }
@@ -5712,8 +5723,11 @@ int substract_a_window(int id)
     default:
         break;
     }
+
 nbre_fenetre_actives--;
-if (nbre_fenetre_actives<0){nbre_fenetre_actives=0;}
+
+if (nbre_fenetre_actives<=0){nbre_fenetre_actives=0;window_focus_id=0;}
+
 return(0);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
