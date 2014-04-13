@@ -1156,7 +1156,7 @@
 1390400902 c:\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1397200051 c:\whitecat_crossplateform\src\whitecat.h
+1397415721 c:\whitecat_crossplateform\src\whitecat.h
 	"Crossplateform.h"
 
 1395646150 c:\whitecat_crossplateform\src\my_window_file_sample.h
@@ -1167,7 +1167,7 @@
 
 1393273860 c:\whitecat_crossplateform\src\midi_core.cpp
 
-1397197819 c:\whitecat_crossplateform\src\core_6.cpp
+1397419066 c:\whitecat_crossplateform\src\core_6.cpp
 
 1395646150 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
 	<setjmp.h>
@@ -1202,7 +1202,7 @@
 
 1395646150 c:\whitecat_crossplateform\src\audio_core5.cpp
 
-1397200205 c:\whitecat_crossplateform\src\save_show_13.cpp
+1397375362 c:\whitecat_crossplateform\src\save_show_13.cpp
 
 1395646150 c:\whitecat_crossplateform\src\network_artnet_3.cpp
 	<winsock2.h>
@@ -1235,9 +1235,9 @@
 
 1390400902 c:\whitecat_crossplateform\lib\windows\cserial\serial.h
 
-1396257801 c:\whitecat_crossplateform\src\banger_core_8.cpp
+1397419173 c:\whitecat_crossplateform\src\banger_core_8.cpp
 
-1396257670 c:\whitecat_crossplateform\src\banger_visu_8.cpp
+1397374620 c:\whitecat_crossplateform\src\banger_visu_8.cpp
 
 1395646150 c:\whitecat_crossplateform\src\call_everybody_5.cpp
 
@@ -1756,7 +1756,7 @@
 
 1395646150 c:\whitecat_crossplateform\src\grider8.cpp
 
-1395646150 c:\whitecat_crossplateform\src\sequentiel_7_visu.cpp
+1397418498 c:\whitecat_crossplateform\src\sequentiel_7_visu.cpp
 
 1393273860 c:\whitecat_crossplateform\src\draw3.cpp
 
@@ -1820,7 +1820,7 @@
 
 1396250621 c:\whitecat_crossplateform\src\cfg_config_panel_8.cpp
 
-1393273860 c:\whitecat_crossplateform\src\chasers_visu.cpp
+1397418672 c:\whitecat_crossplateform\src\chasers_visu.cpp
 
 1397197723 c:\whitecat_crossplateform\src\graphics_rebuild1.cpp
 
@@ -2181,7 +2181,7 @@
 
 1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_6_uno.cpp
 
-1397232487 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
+1397415729 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>

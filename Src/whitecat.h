@@ -1172,7 +1172,7 @@ bool stockage_all_at_zero_state[6];//stockage de l action menée
 
 ///////////////////////////////////BANGER///////////////////////////////////////
 int X_banger=100;
-int Y_banger=50;
+int Y_banger=100;
 int size_X_Banger=610;
 int size_Y_Banger=300;
 bool index_show_banger_window=0;
@@ -1192,8 +1192,10 @@ float end_time_for_banger[128];
 bool event_sended[128][6];// une fois que l evenement est lancé est mis en 1
 bool bang_is_sended[128];//le bang est exécuté si = 0, si déjà exécuté, donc non actif =1
 
-
-
+//0.8.5.9 ticker to loop a banger
+bool do_loop_banger[128];
+float time_loop_banger[128];
+volatile int ticker_loop_banger[128];//to store ticks and enclench timers on loop
 
 
 char keyname[256][16];//nom des touches

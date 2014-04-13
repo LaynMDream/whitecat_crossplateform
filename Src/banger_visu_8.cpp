@@ -194,6 +194,19 @@ BangerEditEnable.Draw(CouleurFader);
 BangerEditEnable.DrawOutline(CouleurLigne);
 petitchiffre.Print("edit",xb+420 ,yb+22);
 
+/////////////LOOP ON
+Rect BangerLoop( Vec2D((xb+490),(yb+10)),Vec2D(50,20));
+BangerLoop.SetRoundness(7.5);
+BangerLoop.Draw(CouleurBlind.WithAlpha(alpha_blinker*do_loop_banger[index_banger_selected]));
+BangerLoop.DrawOutline(CouleurLigne);
+petitchiffre.Print("LOOP!",xb+497 ,yb+23);
+
+Rect BangerTimeLoop( Vec2D((xb+550),(yb+10)),Vec2D(50,20));
+BangerTimeLoop.SetRoundness(5);
+BangerTimeLoop.Draw(CouleurBleuProcedure);
+BangerTimeLoop.DrawOutline(CouleurLigne);
+petitchiffre.Print(ol::ToString(time_loop_banger[index_banger_selected]),xb+555 ,yb+23);
+
 //BANG DO IT
 Rect BangerIt( Vec2D((xb+410),(yb+40)),Vec2D(60,30));
 BangerIt.SetRoundness(7.5);

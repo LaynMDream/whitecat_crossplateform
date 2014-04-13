@@ -237,6 +237,10 @@ int clear_banger(int bg)
     strcpy(bangers_name[bg],"");
 
     bangers_name[bg][24]='\n';
+
+    do_loop_banger[bg]=0;
+    time_loop_banger[bg]=0.0;
+    ticker_loop_banger[bg]=0;
 //sab 02/03/2014 sprintf(string_alarm[bg],"");
     strcpy(string_alarm[bg],"");
 

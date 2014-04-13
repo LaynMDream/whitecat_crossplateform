@@ -365,7 +365,7 @@ else
 }
 petitpetitchiffre.Print(ol::ToString(track_level[chaser_selected][num_track]),xp+190,yp+25);
 
-char temp_steppos[16];
+char temp_steppos[32];
 sprintf(temp_steppos,"Time-Joint:B:%d E:%d R:%d", joint_begin_step[chaser_selected][num_track]+1, joint_end_step[chaser_selected][num_track]+1, count_steps_for_fades[chaser_selected][num_track]);
 petitpetitchiffregris.Print(temp_steppos,xp+240,yp+25);
 

@@ -259,8 +259,10 @@ const char file_bangers_times[24]={"banger_times.whc"};//
 unsigned int banger_times_size=128*6*2;//int bangers_delay[128][6];//delays
 const char file_bangers_alarms[24]={"banger_alarms.whc"};//
 unsigned int banger_alarm_size=128*25;//char string_alarm[128][25];//une alarm par banger
-
-
+const char file_bangers_loop[24]={"banger_doloop.whc"};//
+unsigned int banger_loop_size=128;//bool do_loop_banger[128]
+const char file_bangers_looptime[24]={"banger_looptime.whc"};//
+unsigned int banger_looptime_size=128;//bool time_loop_banger[128]
 ///////////ARDUINO///////////////////////////////
 const char file_arduino_dig_typ[24]={"arduino_IO_typ.whc"};//
 unsigned int arduino_dig_typ_size=128;//int arduino_digital_type[128]
@@ -2156,6 +2158,30 @@ else sprintf(string_save_load_report[idf],"Saved file %s",file_bangers_alarms);
 fclose(fp);
 }
  idf++;
+if ((fp=fopen(file_bangers_loop, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_bangers_loop); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_loop);
+if (fwrite(do_loop_banger, sizeof(bool), banger_loop_size, fp) != banger_loop_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_bangers_loop); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",file_bangers_loop);
+fclose(fp);
+}
+ idf++;
+
+if ((fp=fopen(file_bangers_looptime, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_bangers_looptime); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s",  file_bangers_looptime);
+if (fwrite(time_loop_banger, sizeof(float), banger_looptime_size, fp) != banger_looptime_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_bangers_looptime); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",file_bangers_looptime);
+fclose(fp);
+}
+ idf++;
+
 }
 
 if(specify_who_to_save_load[12]==1) /////////////FADERS contents///////////////////////////////////////////
@@ -5118,6 +5144,32 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_alarms);
  fclose(fp);
 }
 idf++;
+
+if ((fp=fopen( file_bangers_loop, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_loop);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_loop);
+if (fread(do_loop_banger, sizeof(bool), banger_loop_size, fp) !=banger_loop_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_bangers_loop);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_loop);
+ fclose(fp);
+}
+idf++;
+
+
+if ((fp=fopen( file_bangers_looptime, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s", file_bangers_looptime);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s",   file_bangers_looptime);
+if (fread(time_loop_banger, sizeof(float), banger_looptime_size, fp) !=banger_looptime_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_bangers_looptime);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_bangers_looptime);
+ fclose(fp);
+}
+idf++;
+
 }
 
 

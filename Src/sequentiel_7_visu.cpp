@@ -638,7 +638,7 @@ DoubleGoTouch.DrawOutline(CouleurBlind);
 else if( mouse_x> x_seq+548 && mouse_x<  x_seq+563 && mouse_y>y_seq+435 && mouse_y<y_seq+450 && Midi_Faders_Affectation_Type!=0)
 {
 char sttmp[24];
-sprintf(sttmp,"AutoReset Crossfade Speed");
+sprintf(sttmp,"AutoReset Xfade Speed");
 show_type_midi(1591,sttmp );
 OnLinkReset.DrawOutline(CouleurBlind);
 }

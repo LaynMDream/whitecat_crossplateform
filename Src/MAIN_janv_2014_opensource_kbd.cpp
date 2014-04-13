@@ -528,7 +528,13 @@ void ticker_full_loop()
 
 if(core_do_calculations[2]==1 && starting_wcat==0)
 {
-for (int i=0;i<core_user_define_nb_bangers;i++){do_bang(i);}
+
+for (int i=0;i<core_user_define_nb_bangers;i++)
+{
+//Mise en oeuvre de la boucle
+do_loop_bang(i);
+do_bang(i);
+}
 sound_core_processing();
 }
 

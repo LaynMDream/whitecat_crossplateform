@@ -2546,7 +2546,6 @@ if(param1_is>=0 && param1_is<5)
      sprintf(string_event,"Cleared Player %d",param1_is);
      }
      break;
-     break;
      case 1:
      sprintf(audiofile_name_was[param1_is],sound_files[param1_is]);
      //sprintf(bangers_type_action,"Load in Player");
@@ -4631,6 +4630,19 @@ return(0);
 
 
 
+int do_loop_bang(int banger_is)
+{
+ticker_loop_banger[banger_is]++;
+//verifier ok calcul *10000
+if(do_loop_banger[banger_is]==1 && time_loop_banger[banger_is]>0.0 && ticker_loop_banger[banger_is]>time_loop_banger[banger_is]*10000)
+{
+  for (int y=0;y<6;y++){event_sended[banger_is][y]=0;}
+  bang_is_sended[banger_is]=0;
+  start_time_for_banger[banger_is]=actual_time;
+  ticker_loop_banger[banger_is]=0;
+}
+ return(0);
+}
 
 int do_bang(int banger_is)
 {
@@ -4640,7 +4652,6 @@ end_time_for_banger[banger_is]=0;//reinit pour pierre groupe laps
 //calcul bang time de fin
 for (int y=0;y<6;y++)
 {
-
 if(bangers_delay[banger_is][y]> end_time_for_banger[banger_is])
 {
 end_time_for_banger[banger_is]= bangers_delay[banger_is][y];
@@ -4655,7 +4666,7 @@ for (int y=0;y<6;y++)
 {
 if(bangers_type[banger_is][y]!=0)
 {
-//par dixiemes
+
 if(actual_time>start_time_for_banger[banger_is]+ (bangers_delay[banger_is][y]*BPS_RATE) && event_sended[banger_is][y]==0)
 {
     Bang_event(banger_is, y);
@@ -4666,9 +4677,6 @@ if(actual_time>start_time_for_banger[banger_is]+ (bangers_delay[banger_is][y]*BP
 
 if(actual_time>(start_time_for_banger[banger_is]+ (end_time_for_banger[banger_is]*BPS_RATE)))//rajout de +50 pour visualisation send dernier event
 {
-/*if(banger_is==Banger_Memoire[position_preset] && index_go==1 && index_crossfading==1 ){bang_is_sended[banger_is]=1;}//reglage pour permettre un goback
-else if(banger_is!=Banger_Memoire[position_preset]&& index_crossfading==0 ){bang_is_sended[banger_is]=1;}
-*/
 bang_is_sended[banger_is]=1;
 }
 
@@ -4876,13 +4884,43 @@ index_copy_banger=toggle(index_copy_banger);
 mouse_released=1;
 }
 
-//////////////EDIT MODE
+//EDIT MODE
 if(mouse_x>(xb+410) && mouse_x<(xb+410+50) && mouse_y>(yb+10) && mouse_y<(yb+10+20))
 {
 index_enable_edit_banger=toggle(index_enable_edit_banger);
 mouse_released=1;
 }
-///BANG DO IT
+
+//mise en boucle
+if(mouse_x>(xb+490) && mouse_x<(xb+540) && mouse_y>(yb+10) && mouse_y<(yb+30))
+{
+do_loop_banger[index_banger_selected]=toggle(do_loop_banger[index_banger_selected]);
+ticker_loop_banger[index_banger_selected]=0;
+if(do_loop_banger[index_banger_selected]==1)
+{
+start_time_for_banger[index_banger_selected]=actual_time;
+//4 aout 2010 initalisation  un temps plus long par defaut pour faire partir mes évènements
+end_time_for_banger[index_banger_selected]=default_time_of_the_bang;
+//reset du banger concerné
+for (int o=0;o<6;o++)//reset des évènements
+{
+event_sended[index_banger_selected][o]=0;
+if(bangers_delay[index_banger_selected][o]>end_time_for_banger[index_banger_selected])
+{end_time_for_banger[index_banger_selected]=bangers_delay[index_banger_selected][o];}
+}
+bang_is_sended[index_banger_selected]=0;//reset du bang sended is
+}
+mouse_released=1;
+}
+//temps de boucle
+if(mouse_x>(xb+550) && mouse_x<(xb+600) && mouse_y>(yb+10) && mouse_y<(yb+30))
+{
+time_loop_banger[index_banger_selected]=atof(numeric);
+reset_numeric_entry();
+mouse_released=1;
+}
+
+//BANG DO IT
 
 if(mouse_x>(xb+410) && mouse_x<(xb+410+50) && mouse_y>(yb+40) && mouse_y<(yb+40+30))
 {
