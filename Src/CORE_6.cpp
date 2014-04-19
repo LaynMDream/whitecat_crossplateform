@@ -98,6 +98,77 @@ int constrain_data_to_midi_range(int valeur)
     return(valeur);
 }
 
+
+
+//christoph 14/04/14 avoiding clippling on stop
+int player1_do_stop()//fade out to avoid clipping in sound when stopping
+{
+float value_lecteur=(((float)player_niveauson[0])/127);
+for(float i=value_lecteur*30; i>0.0;i--)
+{
+if(i>=0.0){player1->setVolume(i/30);}
+}
+player1->setVolume(0.0);
+player1->stop();
+for(float i=value_lecteur*30; i<1.0;i++)
+{
+if(i<1.0){player1->setVolume(i/30);}
+}
+player1->setVolume(value_lecteur);
+return(0);
+}
+
+int player2_do_stop()//fade out to avoid clipping in sound when stopping
+{
+float value_lecteur=(((float)player_niveauson[1])/127);
+for(float i=value_lecteur*30; i>0.0;i--)
+{
+if(i>=0.0){player2->setVolume(i/30);}
+}
+player2->setVolume(0.0);
+player2->stop();
+for(float i=value_lecteur*30; i<1.0;i++)
+{
+if(i<1.0){player2->setVolume(i/30);}
+}
+player2->setVolume(value_lecteur);
+return(0);
+}
+
+int player3_do_stop()//fade out to avoid clipping in sound when stopping
+{
+float value_lecteur=(((float)player_niveauson[2])/127);
+for(float i=value_lecteur*30; i>0.0;i--)
+{
+if(i>=0.0){player3->setVolume(i/30);}
+}
+player3->setVolume(0.0);
+player3->stop();
+for(float i=value_lecteur*30; i<1.0;i++)
+{
+if(i<1.0){player3->setVolume(i/30);}
+}
+player3->setVolume(value_lecteur);
+return(0);
+}
+int player4_do_stop()//fade out to avoid clipping in sound when stopping
+{
+float value_lecteur=(((float)player_niveauson[3])/127);
+for(float i=value_lecteur*30; i>0.0;i--)
+{
+if(i>=0.0){player4->setVolume(i/30);}
+}
+player4->setVolume(0.0);
+player4->stop();
+for(float i=value_lecteur*30; i<1.0;i++)
+{
+if(i<1.0){player4->setVolume(i/30);}
+}
+player4->setVolume(value_lecteur);
+return(0);
+}
+
+
 bool check_channel_is_patched(int ch)
 {
     bool the_ch_is_patched=0;
@@ -1605,7 +1676,7 @@ int constrain_banger_param(int lp)
         }
         break;
     case 12://set banger
-        if(bangers_action[index_banger_selected][lp]>1)
+        if(bangers_action[index_banger_selected][lp]>3)
         {
             bangers_action[index_banger_selected][lp]=0;
         }
@@ -4807,7 +4878,8 @@ int do_action_on_selected_minifaders(int action)
                                     player1->play();
                                     break;
                                 case 1:
-                                    player1->stop();
+                                    //player1->stop();
+                                    player1_do_stop();
                                     break;
                                 }
                                 break;
@@ -4818,7 +4890,8 @@ int do_action_on_selected_minifaders(int action)
                                     player2->play();
                                     break;
                                 case 1:
-                                    player2->stop();
+                                    //player2->stop();
+                                    player2_do_stop();
                                     break;
                                 }
                                 break;
@@ -4829,7 +4902,8 @@ int do_action_on_selected_minifaders(int action)
                                     player3->play();
                                     break;
                                 case 1:
-                                    player3->stop();
+                                    //player3->stop();
+                                    player3_do_stop();
                                     break;
                                 }
                                 break;
@@ -4840,7 +4914,8 @@ int do_action_on_selected_minifaders(int action)
                                     player4->play();
                                     break;
                                 case 1:
-                                    player4->stop();
+                                    //player4->stop();
+                                    player4_do_stop();
                                     break;
                                 }
                                 break;
@@ -4868,7 +4943,8 @@ int do_action_on_selected_minifaders(int action)
                                     player1->play();
                                     break;
                                 case 1:
-                                    player1->stop();
+                                    //player1->stop();
+                                    player1_do_stop();
                                     break;
                                 }
                                 break;
@@ -4879,7 +4955,8 @@ int do_action_on_selected_minifaders(int action)
                                     player2->play();
                                     break;
                                 case 1:
-                                    player2->stop();
+                                    //player2->stop();
+                                    player2_do_stop();
                                     break;
                                 }
                                 break;
@@ -4890,7 +4967,8 @@ int do_action_on_selected_minifaders(int action)
                                     player3->play();
                                     break;
                                 case 1:
-                                    player3->stop();
+                                    //player3->stop();
+                                    player3_do_stop();
                                     break;
                                 }
                                 break;
@@ -4901,7 +4979,8 @@ int do_action_on_selected_minifaders(int action)
                                     player4->play();
                                     break;
                                 case 1:
-                                    player4->stop();
+                                    //player4->stop();
+                                    player4_do_stop();
                                     break;
                                 }
                                 break;
@@ -4929,7 +5008,8 @@ int do_action_on_selected_minifaders(int action)
                                     player1->play();
                                     break;
                                 case 1:
-                                    player1->stop();
+                                    //player1->stop();
+                                    player1_do_stop();
                                     break;
                                 }
                                 break;
@@ -4940,7 +5020,8 @@ int do_action_on_selected_minifaders(int action)
                                     player2->play();
                                     break;
                                 case 1:
-                                    player2->stop();
+                                    //player2->stop();
+                                    player2_do_stop();
                                     break;
                                 }
                                 break;
@@ -4951,7 +5032,8 @@ int do_action_on_selected_minifaders(int action)
                                     player3->play();
                                     break;
                                 case 1:
-                                    player3->stop();
+                                    //player3->stop();
+                                    player3_do_stop();
                                     break;
                                 }
                                 break;
@@ -4962,7 +5044,8 @@ int do_action_on_selected_minifaders(int action)
                                     player4->play();
                                     break;
                                 case 1:
-                                    player4->stop();
+                                    //player4->stop();
+                                    player4_do_stop();
                                     break;
                                 }
                                 break;

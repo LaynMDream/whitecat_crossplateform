@@ -980,7 +980,7 @@ if(param1_is>=0 && param1_is<5)
                            {
                            case 1:
                            if(player_ignited[param1_is]==1)
-                           {player1->stop();
+                           {player1_do_stop();
                            player_is_playing[param1_is]=(player1->isPlaying());
                            sprintf(string_event,"BACK: Player 1 STOP");}
                            break;
@@ -997,7 +997,7 @@ if(param1_is>=0 && param1_is<5)
                            {
                            case 1:
                            if(player_ignited[param1_is]==1)
-                           {player2->stop();
+                           {player2_do_stop();
                            player_is_playing[param1_is]=(player2->isPlaying());
                            sprintf(string_event,"BACK: Player 2 STOP");}
                            break;
@@ -1014,7 +1014,7 @@ if(param1_is>=0 && param1_is<5)
                                       {
                            case 1:
                            if(player_ignited[param1_is]==1)
-                           {player3->stop();
+                           {player3_do_stop();
                            player_is_playing[param1_is]=(player3->isPlaying());
                            sprintf(string_event,"BACK: Player 3 STOP");}
                            break;
@@ -1031,7 +1031,7 @@ if(param1_is>=0 && param1_is<5)
                            {
                            case 1:
                            if(player_ignited[param1_is]==1)
-                           {player4->stop();
+                           {player4_do_stop();
                            player_is_playing[param1_is]=(player4->isPlaying());
                            sprintf(string_event,"BACK: Player 4 STOP");}
                            break;
@@ -1053,7 +1053,7 @@ if(param1_is>=0 && param1_is<5)
           case 0:
 
                            if(player_ignited[param1_is]==1)
-                           {player1->stop();
+                           {player1_do_stop();
                            player_is_playing[param1_is]=(player1->isPlaying());
                            sprintf(string_event,"BACK: Player 1 STOP");}
           break;
@@ -1061,21 +1061,21 @@ if(param1_is>=0 && param1_is<5)
           case 1:
 
                            if(player_ignited[param1_is]==1)
-                           {player2->stop();
+                           {player2_do_stop();
                            player_is_playing[param1_is]=(player2->isPlaying());
                            sprintf(string_event,"BACK: Player 2 STOP");}
           break;
           case 2:
 
                            if(player_ignited[param1_is]==1)
-                           {player3->stop();
+                           {player3_do_stop();
                            player_is_playing[param1_is]=(player3->isPlaying());
                            sprintf(string_event,"BACK: Player 3 STOP");}
           break;
           case 3:
 
                            if(player_ignited[param1_is]==1)
-                           {player4->stop();
+                           {player4_do_stop();
                            player_is_playing[param1_is]=(player4->isPlaying());
                            sprintf(string_event,"BACK: Player 4 STOP");}
           break;
@@ -2499,7 +2499,7 @@ if(param1_is>=0 && param1_is<5)
       switch (param1_is )
       {
       case 0:
-      player1->stop();
+      player1_do_stop();
       player_is_playing[param1_is]=(player1->isPlaying());
       player1->setPitchShift((((float)player_pitch[param1_is])/64));
       player1->setPan(((float)(player_pan[param1_is]-64))/63);
@@ -2507,7 +2507,7 @@ if(param1_is>=0 && param1_is<5)
       player1->setVolume(((float)player_niveauson[param1_is])/127);
       break;
       case 1:
-      player2->stop();
+      player2_do_stop();
       player_is_playing[param1_is]=(player2->isPlaying());
       player2->setPitchShift((((float)player_pitch[param1_is])/64));
       player2->setPan(((float)(player_pan[param1_is]-64))/63);
@@ -2515,7 +2515,7 @@ if(param1_is>=0 && param1_is<5)
       player2->setVolume(((float)player_niveauson[param1_is])/127);
       break;
       case 2:
-      player3->stop();
+      player3_do_stop();
       player_is_playing[param1_is]=(player3->isPlaying());
       player3->setPitchShift((((float)player_pitch[param1_is])/64));
       player3->setPan(((float)(player_pan[param1_is]-64))/63);
@@ -2523,7 +2523,7 @@ if(param1_is>=0 && param1_is<5)
       player3->setVolume(((float)player_niveauson[param1_is])/127);
       break;
       case 3:
-      player4->stop();
+      player4_do_stop();
       player_is_playing[param1_is]=(player4->isPlaying());
       player4->setPitchShift((((float)player_pitch[param1_is])/64));
       player4->setPan(((float)(player_pan[param1_is]-64))/63);
@@ -2564,7 +2564,7 @@ if(param1_is>=0 && param1_is<5)
           switch(param2_is)
                            {
                            case 0:
-                           if(player_ignited[param1_is]==1){player1->stop();sprintf(string_event,"Player 1 STOP");}
+                           if(player_ignited[param1_is]==1){player1_do_stop();sprintf(string_event,"Player 1 STOP");}
                            break;
                            case 1:
                            if(player_ignited[param1_is]==1){player1->play();sprintf(string_event,"Player 1 PLAY");}
@@ -2575,7 +2575,7 @@ if(param1_is>=0 && param1_is<5)
           switch(param2_is)
                            {
                            case 0:
-                           if(player_ignited[param1_is]==1){player2->stop();sprintf(string_event,"Player 2 STOP");}
+                           if(player_ignited[param1_is]==1){player2_do_stop();sprintf(string_event,"Player 2 STOP");}
                            break;
                            case 1:
                            if(player_ignited[param1_is]==1){player2->play();sprintf(string_event,"Player 2 PLAY");}
@@ -2586,7 +2586,7 @@ if(param1_is>=0 && param1_is<5)
           switch(param2_is)
                                       {
                            case 0:
-                           if(player_ignited[param1_is]==1){player3->stop();sprintf(string_event,"Player 3 STOP");}
+                           if(player_ignited[param1_is]==1){player3_do_stop();sprintf(string_event,"Player 3 STOP");}
                            break;
                            case 1:
                            if(player_ignited[param1_is]==1){player3->play();sprintf(string_event,"Player 3 PLAY");}
@@ -2597,7 +2597,7 @@ if(param1_is>=0 && param1_is<5)
           switch(param2_is)
                            {
                            case 0:
-                           if(player_ignited[param1_is]==1){player4->stop();sprintf(string_event,"Player 4 STOP");}
+                           if(player_ignited[param1_is]==1){player4_do_stop();sprintf(string_event,"Player 4 STOP");}
                            break;
                            case 1:
                            if(player_ignited[param1_is]==1){player4->play();sprintf(string_event,"Player 4 PLAY");}
@@ -3755,6 +3755,27 @@ param2_is=bangers_params[banger_num][event_num][1];
       }
       bang_is_sended[param1_is]=1;//bloquage de l envoi des autres évènements
       }
+      break;
+      case 2://banger loop on
+      do_loop_banger[param1_is]=1;
+      ticker_loop_banger[param1_is]=0;
+      if(do_loop_banger[param1_is]==1)
+      {
+      start_time_for_banger[param1_is]=actual_time;
+      end_time_for_banger[param1_is]=default_time_of_the_bang;
+      //reset du banger concerné
+      for (int o=0;o<6;o++)//reset des évènements
+      {
+      event_sended[param1_is][o]=0;
+      if(bangers_delay[param1_is][o]>end_time_for_banger[param1_is])
+      {end_time_for_banger[param1_is]=bangers_delay[param1_is][o];}
+      }
+      bang_is_sended[param1_is]=0;//reset du bang sended is
+      }
+      break;
+      case 3://banger loop off
+      do_loop_banger[param1_is]=0;
+      bang_is_sended[param1_is]=1;
       break;
       default:
       break;

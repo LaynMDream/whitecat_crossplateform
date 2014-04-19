@@ -727,7 +727,7 @@ case 0://PLAYER 1
  player1->play(); player_is_playing[bum]=1;
  break;
  case 1:
- player1->stop(); player_is_playing[bum]=0;
+ player1_do_stop();player_is_playing[bum]=0;
  break;
  }
 break;
@@ -738,7 +738,7 @@ case 1://PLAYER 2
  player2->play();    player_is_playing[bum]=1;
  break;
  case 1:
- player2->stop();    player_is_playing[bum]=0;
+ player2_do_stop();player_is_playing[bum]=0;
  break;
  }
 break;
@@ -749,7 +749,7 @@ case 2://PLAYER 3
  player3->play();    player_is_playing[bum]=1;
  break;
  case 1:
- player3->stop();    player_is_playing[bum]=0;
+ player3_do_stop();player_is_playing[bum]=0;
  break;
  }
 break;
@@ -760,7 +760,7 @@ case 3://PLAYER 4
  player4->play();     player_is_playing[bum]=1;
  break;
  case 1:
- player4->stop();     player_is_playing[bum]=0;
+ player4_do_stop();  player_is_playing[bum]=0;
  break;
  }
 break;
@@ -1861,7 +1861,7 @@ case 0://PLAYER 1
  player1->play();
  break;
  case 1:
- player1->stop();
+ player1_do_stop();
  break;
  }
 break;
@@ -1872,7 +1872,7 @@ case 1://PLAYER 2
  player2->play();
  break;
  case 1:
- player2->stop();
+ player2_do_stop();
  break;
  }
 break;
@@ -1883,7 +1883,7 @@ case 2://PLAYER 3
  player3->play();
  break;
  case 1:
- player3->stop();
+ player3_do_stop();
  break;
  }
 break;
@@ -1894,7 +1894,7 @@ case 3://PLAYER 4
  player4->play();
  break;
  case 1:
- player4->stop();
+ player4_do_stop();
  break;
  }
 break;
@@ -1922,7 +1922,7 @@ case 0://PLAYER 1
  player1->play();
  break;
  case 1:
- player1->stop();
+ player1_do_stop();
  break;
  }
 break;
@@ -1933,7 +1933,7 @@ case 1://PLAYER 2
  player2->play();
  break;
  case 1:
- player2->stop();
+ player2_do_stop();
  break;
  }
 break;
@@ -1944,7 +1944,7 @@ case 2://PLAYER 3
  player3->play();
  break;
  case 1:
- player3->stop();
+ player3_do_stop();
  break;
  }
 break;
@@ -1955,7 +1955,7 @@ case 3://PLAYER 4
  player4->play();
  break;
  case 1:
- player4->stop();
+ player4_do_stop();
  break;
  }
 break;
@@ -1983,7 +1983,7 @@ case 0://PLAYER 1
  player1->play();
  break;
  case 1:
- player1->stop();
+ player1_do_stop();
  break;
  }
 break;
@@ -1994,7 +1994,7 @@ case 1://PLAYER 2
  player2->play();
  break;
  case 1:
- player2->stop();
+ player2_do_stop();
  break;
  }
 break;
@@ -2005,7 +2005,7 @@ case 2://PLAYER 3
  player3->play();
  break;
  case 1:
- player3->stop();
+ player3_do_stop();
  break;
  }
 break;
@@ -2016,7 +2016,7 @@ case 3://PLAYER 4
  player4->play();
  break;
  case 1:
- player4->stop();
+ player4_do_stop();
  break;
  }
 break;
@@ -2141,7 +2141,6 @@ else
 {player2->setPosition(player_seek_position[1]);}
 break;
 case 2://PLAYER 3
-player3->stop();
 if(player_is_onloopCue[2]==0  ){player1->setPosition(0);}
 else
 {player3->setPosition(player_seek_position[2]);}

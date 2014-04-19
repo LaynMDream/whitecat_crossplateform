@@ -57,7 +57,6 @@ WWWWWWWW           C  WWWWWWWW   |
 using namespace audiere;
 using namespace ol;
 
-
 int BPS_RATE=50;//devient dmx rate
 int dmxINrate=25;
 int ARDUINO_RATE=20;
@@ -986,12 +985,11 @@ rafraichissement_padwheel();
 recalculate_draw_sizes(draw_preset_selected);
 
 //init du flash de bang en cours
-//bang_is_sended[index_banger_selected]=1;
+bang_is_sended[index_banger_selected]=1;
 
 
 
-
-   rest(100);
+rest(100);
 
 starting_wcat=1;
 for(int i=0;i<4;i++)

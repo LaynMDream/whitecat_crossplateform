@@ -907,6 +907,12 @@ case 12://set banger
       case 1:
       sprintf(bangers_type_action,"RollBack");
       break;
+      case 2:
+      sprintf(bangers_type_action,"Loop ON");
+      break;
+      case 3:
+      sprintf(bangers_type_action,"Loop OFF");
+      break;
       default:
       break;
       }
