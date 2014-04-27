@@ -1022,6 +1022,15 @@ sprintf(bangers_type_affiche,"GridPlayer");
      case 19:
      sprintf(bangers_type_action,"Previous Step"); //GPL Stp
      break;
+     case 20:
+     sprintf(bangers_type_action,"Goto=SeekStep"); //Goto position take seek step reference
+     break;
+     case 21:
+     sprintf(bangers_type_action,"Def.as SeekSt."); //Actual step is define as seekstep
+     break;
+     case 22:
+     sprintf(bangers_type_action,"Clear SeekSteps!"); //clear all seek steps
+     break;
      default:
      sprintf(bangers_type_action,"-");
      break;

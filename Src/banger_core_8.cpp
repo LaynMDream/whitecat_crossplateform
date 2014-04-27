@@ -3078,7 +3078,7 @@ switch(bangers_action[banger_num][event_num])
      break;
      }
      break;
-     case 4://Set Banger mode
+     case 4://Set Banger mode sequenciel
      if(param1_is>0){param1_is=1;}
      switch(param1_is)
      {
@@ -3713,7 +3713,7 @@ if(bang_the_chan_is>0 && bang_the_chan_is<513)
 break;
 
 case 12:
-if( bangers_params[banger_num][event_num][0]>0 &&  bangers_params[banger_num][event_num][0]<127
+if( bangers_params[banger_num][event_num][0]>0 &&  bangers_params[banger_num][event_num][0]<=127
 && ( bangers_params[banger_num][event_num][1]==0 || bangers_params[banger_num][event_num][1]==1) )
 
 {
@@ -3742,7 +3742,7 @@ param2_is=bangers_params[banger_num][event_num][1];
       }
       break;
       case 1://"RollBack"); > go back
-      if( bangers_params[banger_num][event_num][0]>0 &&  bangers_params[banger_num][event_num][0]<127 )
+      if( bangers_params[banger_num][event_num][0]>0 &&  bangers_params[banger_num][event_num][0]<=127 )
      {
       param1_is=bangers_params[banger_num][event_num][0]-1;
       for (int y=0;y<6;y++)
@@ -4008,7 +4008,8 @@ switch(bangers_action[banger_num][event_num])
      if(param1_is>0 && param1_is<5)
      {
      numgridpl=param1_is-1;
-      index_grider_step_is[numgridpl]=grid_seekpos[index_grider_selected[numgridpl]][index_grider_step_is[numgridpl]];
+     //+1 bug detected christoph 21/04/14
+      index_grider_step_is[numgridpl]=grid_seekpos[index_grider_selected[numgridpl]][index_grider_step_is[numgridpl]]+1;
       if(grider_seekto_mode[numgridpl]==1)//seek position
       {index_grider_seek_pos[numgridpl]=grid_seekpos[index_grider_selected[numgridpl]][index_grider_step_is[numgridpl]];}
 
@@ -4074,7 +4075,7 @@ switch(bangers_action[banger_num][event_num])
      numgridpl=param1_is-1;
      if(param2_is>0 && param2_is <1024)
      {
-     index_grider_seek_pos[numgridpl]=param2_is-1;
+     index_grider_seek_pos[numgridpl]=param2_is;
      sprintf(string_event,"GridPl %d Set Seek in %d",numgridpl+1,param2_is);
      }
      }
@@ -4132,6 +4133,30 @@ switch(bangers_action[banger_num][event_num])
      {
      numgridpl=param1_is-1;
      gridplayer_step_minus(numgridpl);
+     }
+     break;
+     case 20://christoph 21/04/14 set loop point to seek step for live recording options
+     if(param1_is>0 && param1_is<5)
+     {
+     numgridpl=param1_is-1;
+     grid_goto[(index_grider_selected[numgridpl])][(index_grider_step_is[numgridpl])][0]=index_grider_selected[numgridpl]; //actual gridp in gridplayer
+     grid_goto[(index_grider_selected[numgridpl])][(index_grider_step_is[numgridpl])][1]=index_grider_seek_pos[numgridpl];//seek step
+     }
+     break;
+     case 21://christoph 21/04/14 redefine actual step as seek step to create loop easely for live recording options
+     if(param1_is>0 && param1_is<5)
+     {
+     numgridpl=param1_is-1;
+     index_grider_seek_pos[numgridpl]=index_grider_step_is[numgridpl];//redefine seek step on the fly
+     }
+     break;
+     case 22: //christoph 21/04/14  clear seek points
+     if(param1_is>0 && param1_is<5)
+     {
+     for(int i=0;i<1023;i++)
+     {
+     grid_seekpos[index_grider_selected[numgridpl]][i]=0;
+     }
      }
      break;
      default:

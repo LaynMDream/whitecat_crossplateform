@@ -3387,7 +3387,7 @@ if(control>=1813 && control<=1816)//prev track
 int lect=control-1813;
 if(player_ignited[lect]==1 && index_loading_a_sound_file==0)
 {
-midi_levels[control]=0;
+/*midi_levels[control]=0;
 control=-1;
 index_loading_a_sound_file=1;
 audiofile_selected=player_has_file_coming_from_pos[lect]-1;
@@ -3398,7 +3398,11 @@ if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(lect);
 }
-//rest(100);
+*/
+//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
+midi_levels[control]=0;
+control=-1;
+audio_do_load_midi_prev_file[lect]=1;
 }
 }
 
@@ -3407,7 +3411,7 @@ if(control>=1817 && control<=1820)//next track
 int lect=control-1817;
 if(player_ignited[lect]==1 && index_loading_a_sound_file==0)
 {
-midi_levels[control]=0;
+/*midi_levels[control]=0;
 control=-1;
 index_loading_a_sound_file=1;
 audiofile_selected=player_has_file_coming_from_pos[lect]+1;
@@ -3418,7 +3422,11 @@ if(strcmp (audiofile_name,"")!=0 )
 {
 AffectSoundFile(lect);
 }
-//rest(100);
+*/
+//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
+midi_levels[control]=0;
+control=-1;
+audio_do_load_midi_next_file[lect]=1;
 }
 }
 //seek to end
@@ -3446,8 +3454,31 @@ break;
 }
 }
 }
-
 }
+//Christoph Touch OSC remote control
+if(control == 1825 )//check minus
+{
+     index_false_control= 1;
+     index_false_shift=0;
+     simulate_keypress(KEY_LEFT<<8);
+}
+if( control == 1826 )//check plus
+{
+     index_false_control= 1;
+     index_false_shift=0;
+     simulate_keypress(KEY_RIGHT<<8);
+}
+if(control == 1827 )//at full
+{
+simulate_keypress(KEY_I<<8);index_false_shift=0;index_false_control=0;
+}
+if(control == 1828 )//at zero
+{
+simulate_keypress(KEY_O<<8);index_false_shift=0;index_false_control=0;
+sprintf(string_Last_Order,"Midi simulate FULL");
+}
+
+
 return(0);
 }
 
@@ -3573,6 +3604,9 @@ static char * EvAquire ( MidiEvPtr e)
     break;
     case 5://pad to triggers
     if(isvel>0 && isvel<127){isvel=127;}
+    break;
+    case 6://CC 0 devient Koff pour touch osc
+    if(isvel==0){istyp=2;}
     break;
     default:
      break;
@@ -3777,7 +3811,7 @@ OverMidi.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0)
 {
 midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]++;
-if(midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]>5)
+if(midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]>6)
   {midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]=0;}
 mouse_released=1;
 }
@@ -3809,6 +3843,10 @@ break;
 case 5:
 OverMidi.Draw(CouleurBleuProcedure);
 petitpetitchiffre.Print("Pad To Trigger",xrep+30,yrep+10+(y*20));
+break;
+case 6:
+OverMidi.Draw(CouleurBleuProcedure);
+petitpetitchiffre.Print("CC Vel0 =Koff",xrep+30,yrep+10+(y*20));
 break;
 default:
 break;

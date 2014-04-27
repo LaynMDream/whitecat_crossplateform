@@ -142,6 +142,17 @@ RetourConduite.DrawOutline(CouleurLigne);
 petitchiffre.Print("Last_save / SAVE:",685,255);
 petitchiffre.Print(my_show_is_coming_from,685,270);
 
+//visualisation retour faux shift faux ctrl de banger ou de iCat
+Rect False(Vec2D(970,240),Vec2D(55,15));
+False.Draw(CouleurBlind.WithAlpha(index_false_shift*alpha_blinker));
+False.DrawOutline(CouleurLigne.WithAlpha(0.5));
+petitchiffre.Print("F-Shift",975,252);
+
+False.MoveTo(Vec2D(970,265));
+False.Draw(CouleurBlind.WithAlpha(index_false_control*alpha_blinker));
+False.DrawOutline(CouleurLigne.WithAlpha(0.5));
+petitchiffre.Print("F-Ctrl",980,277);
+
 //////////////AFFICHAGES CONDITIONNES//////////////////////////////////////////////
 
 for (int f=63;f>=0;f--)

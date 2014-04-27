@@ -515,7 +515,7 @@ if(arduino_device_0_is_ignited==1)
 arduino_do_digital_in_whitecat();arduino_do_analog_in_whitecat();
 arduino__send_config();
 }
-
+do_audio_midi_function_next_prev_track();//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
 }
 END_OF_FUNCTION(dixiemes_de_secondes);
 
@@ -987,8 +987,6 @@ recalculate_draw_sizes(draw_preset_selected);
 //init du flash de bang en cours
 bang_is_sended[index_banger_selected]=1;
 
-
-
 rest(100);
 
 starting_wcat=1;
@@ -1066,7 +1064,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d %d %d", index_fullscreen,largeur_ecran, hauteur_ecran);
+sprintf(string_debug,"%d", DockTypeIs[26][0]);
 
 if(there_is_change_on_show_save_state==1)
 {

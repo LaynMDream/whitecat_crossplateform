@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.5.9 - 10 avril 2014"};
+char versionis[72]={"Beta 0.8.5.9 - 22 avril 2014"};
 char nickname_version[48]={"SPRING POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
@@ -250,10 +250,11 @@ unsigned char Fader_previous[48];//pour chasers autolaunch. très certainement �
 bool DockIsSelected[48][6];
 
 //sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
-unsigned int DockTypeIs[48][6];//0: dock de niveau normal // 1: linké au couleurs de la trichro
+//christoph 22/04/14 -> unsigneed char back
+unsigned char DockTypeIs[48][6];//0: dock de niveau normal // 1: linké au couleurs de la trichro
 // 2:artnet IN // 3: DMX IN //4 video // 5 memoire // 6 lecteur audio volume 7 pan 8 picth / 9 :vide et clearé / 10: direct chan mode
 // 11:FX // 12: Grid // 13: groupe de faders // 14:Mover // 15: Draw // 16: echo
-unsigned int DockNetIs[48][6]; // numero Universe artnet(0 à 15) ou Config Port UDP(0 à 5) to listen
+unsigned char DockNetIs[48][6]; // numero Universe artnet(0 à 15) ou Config Port UDP(0 à 5) to listen
 
 char string_docktypnet[8];//affiche du numero artnet ou udp, variable string
 char string_docktypmem[8];
@@ -1289,6 +1290,10 @@ int length_of_file_in_player[4];
 int position_of_file_in_player[4];
 int player_loop_out_position[4];
 int player_seek_position[4];
+
+//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
+bool audio_do_load_midi_prev_file[4];
+bool audio_do_load_midi_next_file[4];
 
 int audiofile_cue_in_out_pos[128][2]; // les 128 files du repertoire
 

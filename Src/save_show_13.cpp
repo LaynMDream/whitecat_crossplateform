@@ -613,6 +613,7 @@ if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fpm) !=midi_send_out_s
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_send_out);
 }
 load_Fader_state_to_midi_array();
+
 fclose(fpm);
 //REROLL
 strcpy(rep,"");
@@ -2207,6 +2208,7 @@ if (fwrite(DockIsSelected, sizeof(bool), dock_selected_size, fp) != dock_selecte
 else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_selected);
 fclose(fp);
 }
+
  idf++;
 if ((fp=fopen( file_dock_type, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_type); b_report_error[idf]=1;}
@@ -2219,6 +2221,7 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_dock_type);
 fclose(fp);
 }
  idf++;
+
 if ((fp=fopen( file_dock_net, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_net); b_report_error[idf]=1;}
 else

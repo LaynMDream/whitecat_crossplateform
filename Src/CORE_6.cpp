@@ -1688,7 +1688,7 @@ int constrain_banger_param(int lp)
         }
         break;
     case 14://grid
-        if(bangers_action[index_banger_selected][lp]>19)
+        if(bangers_action[index_banger_selected][lp]>22)
         {
             bangers_action[index_banger_selected][lp]=0;
         }

@@ -186,8 +186,10 @@ break;
 case 1:
 if (show_numpad_midi[10]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[10]=0;}
 break;
-if (show_numpad_midi[11]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[11]=0;}
 case 2:
+if (show_numpad_midi[11]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[11]=0;}
+break;
+default:
 break;
 }
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -267,6 +269,62 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
 }
 
+Rect AtFull(Vec2D(x_num+330,y_num+230),Vec2D(60,20));
+AtFull.SetRoundness(7.5);
+AtFull.SetLineWidth(epaisseur_ligne_fader);
+if (show_numpad_midi[1827]==1){AtFull.Draw(CouleurSurvol);show_numpad_midi[1827]=0;}
+AtFull.DrawOutline(CouleurLigne);
+if( Midi_Faders_Affectation_Type!=0)//config midi
+{
+  if(mouse_x>x_num+330 && mouse_x<x_num+390 && mouse_y>y_num+230 && mouse_y<y_num+250)
+  {
+  AtFull.DrawOutline(CouleurBlind);
+  }
+}
+
+Rect AtZ(Vec2D(x_num+330,y_num+265),Vec2D(60,20));
+AtZ.SetRoundness(7.5);
+AtZ.SetLineWidth(epaisseur_ligne_fader);
+if (show_numpad_midi[1828]==1){AtZ.Draw(CouleurSurvol);show_numpad_midi[1828]=0;}
+AtZ.DrawOutline(CouleurLigne);
+if( Midi_Faders_Affectation_Type!=0)//config midi
+{
+  if(mouse_x>x_num+330 && mouse_x<x_num+390 && mouse_y>y_num+265 && mouse_y<y_num+285)
+  {
+  AtZ.DrawOutline(CouleurBlind);
+  }
+}
+
+Rect CheckM(Vec2D(x_num+330,y_num+15),Vec2D(55,20));
+CheckM.SetRoundness(7.5);
+CheckM.SetLineWidth(epaisseur_ligne_fader);
+
+if (show_numpad_midi[1825]==1){CheckM.Draw(CouleurSurvol);show_numpad_midi[1825]=0;}
+CheckM.DrawOutline(CouleurLigne);
+if( Midi_Faders_Affectation_Type!=0)//config midi
+{
+  if(mouse_x>x_num+330 && mouse_x<x_num+390 && mouse_y>y_num+15 && mouse_y<y_num+35)
+  {
+  CheckM.DrawOutline(CouleurBlind);
+  }
+}
+Rect CheckP(Vec2D(x_num+330,y_num+45),Vec2D(55,20));
+CheckP.SetRoundness(7.5);
+CheckP.SetLineWidth(epaisseur_ligne_fader);
+
+if (show_numpad_midi[1826]==1){CheckP.Draw(CouleurSurvol);show_numpad_midi[1826]=0;}
+CheckP.DrawOutline(CouleurLigne);
+if( Midi_Faders_Affectation_Type!=0)//config midi
+{
+  if(mouse_x>x_num+330 && mouse_x<x_num+390 && mouse_y>y_num+45 && mouse_y<y_num+65)
+  {
+  CheckP.DrawOutline(CouleurBlind);
+  }
+}
+
+petitchiffre.Print("CHECK -",x_num+332, y_num+25);
+petitchiffre.Print("CHECK +",x_num+332, y_num+55);
+
 doom.Print("1",x_num+30, y_num+55);
 doom.Print("2",x_num+100, y_num+55);
 doom.Print("3",x_num+170, y_num+55);
@@ -284,6 +342,9 @@ doom.Print("down",x_num+230, y_num+195);
 doom.Print("AT",x_num+245, y_num+265);
 doom.Print("+",x_num+350, y_num+125);
 doom.Print("-",x_num+350, y_num+195);
+petitchiffre.Print("AT FULL",x_num+333, y_num+245);
+petitchiffre.Print("AT ZERO",x_num+333, y_num+280);
+
 return(0);
 }
 
