@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file Core_6.cpp
 * \brief {Global fonctions for the core of whitecat}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -1845,7 +1845,7 @@ int refresh_hauteur_fenetre_grider()
 int reset_window_positions()
 {
     x_mainmenu=300;
-    y_mainmenu=300;
+    y_mainmenu=200;
     xpatch_window=500;
     ypatch_window=200;
     xtime_window=100;
@@ -1858,7 +1858,7 @@ int reset_window_positions()
     ynum_window=200;
     videoX=600;
     videoY=200;
-    YFader=400;
+    YFader=500;
     XAudio=100;
     YAudio=200;
     XConfirm=300;
@@ -1881,11 +1881,11 @@ int reset_window_positions()
     grider_window_x=200;
     grider_window_y=200;
     x_plot=100;
-    y_plot=100;
+    y_plot=200;
     x_Wdraw=100;
-    y_Wdraw=100;
+    y_Wdraw=200;
     x_echo=100;
-    y_echo=100;
+    y_echo=200;
     return(0);
 }
 

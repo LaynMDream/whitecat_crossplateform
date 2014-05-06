@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file gui_boutons_rebuild1.cpp
 * \brief {GUI fonctions to redraw buttons}
 * \author Christoph Guillermet
-* \version {0.8.5.8}
-* \date {31/03/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -878,8 +878,9 @@ index_call_help=toggle(index_call_help);
 if(index_call_help==1)
 {
 char txtsp[1024];
-sprintf(txtsp,"start /max file://%sdoc/export/introduction.htm",mondirectory);
-//system("start /max file://C:/white_cat/doc/export/introduction.htm");}
+//sprintf(txtsp,"start /max file://%sdoc/export/introduction.htm",mondirectory);
+//system("start /max file://C:/white_cat/doc/export/introduction.htm");};
+sprintf(txtsp,"iexplore www.le-chat-noir-numerique.fr/whitecat/dokuwiki/doku.php");
 system(txtsp);
 index_call_help=0;substract_a_window(W_MAINMENU);
 }

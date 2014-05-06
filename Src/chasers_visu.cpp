@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file chasers_visu.cpp
 * \brief {file for the GUI window of the chasers}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

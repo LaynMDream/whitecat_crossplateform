@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file banger_core_8.cpp
 * \brief {Bangers fonctions}
 * \author Christoph Guillermet
-* \version {0.8.5.8}
-* \date {31/03/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

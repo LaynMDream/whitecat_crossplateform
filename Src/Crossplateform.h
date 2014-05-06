@@ -33,8 +33,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file Crossplateform.h
 * \brief {header file for the specifique crossplateform fonction of whitecat}
 * \author Christoph G
-* \version {0.8.5.8}
-* \date {31/03/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

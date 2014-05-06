@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.5.9}
-* \date {10/04/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.5.9 - 22 avril 2014"};
+char versionis[72]={"Beta 0.8.6 - 6 mai 2014"};
 char nickname_version[48]={"SPRING POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
@@ -616,8 +616,8 @@ int tempo_interm=0;//pur addition des ticks
 ////////////////////////THRICHRO////////////////////////////////////////////////
 
 #define ACCURACY_DOUBLE  1.e-06
-int xtrichro_window=1128,ytrichro_window=226;
-int default_xtrichro_window=1128,default_ytrichro_window=226;//xy de la window par defaut
+int xtrichro_window=1128,ytrichro_window=350;
+int default_xtrichro_window=1128,default_ytrichro_window=350;//xy de la window par defaut
 //les 8 colors docks et leurs données
 bool dock_color_type[8];//0 trichro 1 mode quadri
 int x_y_picker_par_colordock[8][2];//stockage des coordonnes du picker par coordonnées

@@ -32,8 +32,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file WhiteCat_private.h
 * \brief {number of version and details}
 * \author Christoph Guillermet
-* \version {0.8.5.8}
-* \date {19/02/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

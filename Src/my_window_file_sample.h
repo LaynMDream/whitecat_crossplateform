@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file my_window_file_sample.h
 * \brief {header file for exemple to create a new module window}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

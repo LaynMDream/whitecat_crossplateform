@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file network_MAC_adress_3.cpp
 * \brief {MAC Adress of all the network interfaces of the computer}
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

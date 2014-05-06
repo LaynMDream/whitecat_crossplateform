@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
-* \version {0.8.5.9}
-* \date {10/04/2014}
+* \version {0.8.6}
+* \date {28/04/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

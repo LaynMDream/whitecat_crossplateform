@@ -30,9 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file wizard.cpp
 * \brief {GUI fonctions for wizard }
 * \author Christoph Guillermet
-* \version {0.8.5.2}
-* \date {19/02/2014}
-
+* \version {0.8.6}
+* \date {28/04/2014}
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   GUI fonctions pour la fenêtre wizard, il s'agit d'un outil permettant de faire des changement, copier coler, changement d'etat etc.. dans toutes les mémoires de la conduite ou partielement
