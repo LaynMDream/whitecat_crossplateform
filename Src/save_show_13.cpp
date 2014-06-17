@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file save_show_13.cpp
 * \brief {save and load fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.1}
+* \date {16/06/2014}
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions de sauvegarde et de rappel

@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.1}
+* \date {16/06/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -1064,7 +1064,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d", DockTypeIs[26][0]);
+sprintf(string_debug,"%d / %d / %d / %d ", enable_import,index_do_import,isSchwz,index_export_choice);
 
 if(there_is_change_on_show_save_state==1)
 {

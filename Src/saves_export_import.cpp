@@ -511,7 +511,7 @@ for(int t=0;t<11;t++)
 if(Schwzdescriptif_mem[m][t]=='\0'){break;}
 else {descriptif_memoires[m][t]=Schwzdescriptif_mem[m][t];}
 }
-descriptif_memoires[m][23]='\n';// ne pas mettre 24 !
+descriptif_memoires[m][23]='\0';//christoph 16/06/14 debug instead of "\n"
 if(SchwzMemoiresExistantes[m]==1) {schwzmem_before=m;}
 }
 

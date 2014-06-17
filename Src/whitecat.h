@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.1}
+* \date {16/06/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6 - 6 mai 2014"};
+char versionis[72]={"Beta 0.8.6.1 - 16 juin 2014"};
 char nickname_version[48]={"SPRING POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
