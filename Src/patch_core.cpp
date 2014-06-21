@@ -46,14 +46,14 @@ int do_curve_affectation()
 for(int k=0;k<513;k++)
 {
 if(Dimmers_selected[k]==1)
-{curves[k]=curve_selected;}
+{curve_node::curves[k]=curve_node::selected;}
 }
 return(0);
 }
 
 int load_curve_in_temp_curve()
 {
-index_curve_spline_level=the_curve_spline_level[curve_selected];   //pixels de l editeur    le float est recalculé dans la boucle
+  curve_node::index_spline_level=curve_node::the_spline_level[curve_node::selected];   //pixels de l editeur    le float est recalculé dans la boucle
 return(0);
 }
 
@@ -123,33 +123,34 @@ for (int curvenumber=0;curvenumber<4;curvenumber++)
 if(mouse_x>(XCurv+20+(curvenumber*70)) && mouse_x<(XCurv+20+(curvenumber*70)+60) && mouse_y>(YCurv+370+(30*l)) && mouse_y<(YCurv+370+(30*l))+20)
 {
 
-  curve_selected=curvenumber+(l*4);
+  curve_node::selected=curvenumber+(l*4);
 
  //courbe droite
  if(index_reset_curve==1 && index_enable_curve_editing==1 && index_square_curve==0 && index_fluo_curve==0 && index_preheat_curve==0)
  {
- build_default_curve(curve_selected);
+ build_default_curve(curve_node::selected);
  index_reset_curve=0;
  mouse_released=1;
  }
  //courbe TV
  else if (index_square_curve==1 &&  index_enable_curve_editing==1 && index_reset_curve==0 && index_fluo_curve==0 && index_preheat_curve==0)
  {
- build_square_curve(curve_selected);
+   graphic_context gc(window_focus_id, W_PATCH, mouse_x, mouse_y, xpatch_window, ypatch_window, dmx_view);
+   curve_node::build_square(curve_node::selected,gc);
  index_square_curve=0;
   mouse_released=1;
  }
  //courbe preheat
  else if (index_preheat_curve==1 && index_enable_curve_editing==1 && index_square_curve==0 && index_reset_curve==0 && index_fluo_curve==0  )
  {
- build_preheat_curve(curve_selected);
+ build_preheat_curve(curve_node::selected);
  index_preheat_curve=0;
   mouse_released=1;
  }
  //courbe fluo
  else if (index_fluo_curve==1 && index_enable_curve_editing==1 && index_square_curve==0 && index_reset_curve==0 && index_preheat_curve==0)
  {
- build_fluo_curve(curve_selected);
+ build_fluo_curve(curve_node::selected);
  index_fluo_curve=0;
   mouse_released=1;
  }
@@ -200,7 +201,7 @@ if(mouse_x>XCurv+65 && mouse_x<XCurv+65+200 && mouse_y>YCurv+560 && mouse_y<YCur
 {
 do_curve_affectation();
 patch_unselect_all_dimmers();
-sprintf(string_Last_Order,">>Affected Curve  %d to Dimmer", curve_selected);
+sprintf(string_Last_Order,">>Affected Curve  %d to Dimmer", curve_node::selected);
 mouse_released=1;
 }
 

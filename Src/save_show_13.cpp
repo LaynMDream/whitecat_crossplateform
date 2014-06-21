@@ -2045,7 +2045,7 @@ if ((fp=fopen( file_patch_curves, "wb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_patch_curves);
-if (fwrite(curves, sizeof(int),patch_curves_size, fp) != patch_curves_size)
+ if (fwrite(curve_node::curves, sizeof(int),patch_curves_size, fp) != patch_curves_size)
 { sprintf(string_save_load_report[idf],"Error writting %s",file_patch_curves); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_patch_curves);
 fclose(fp);
@@ -2060,7 +2060,7 @@ if ((fp=fopen( file_curve_ctrl_pt, "wb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_curve_ctrl_pt);
-if (fwrite(curve_ctrl_pt, sizeof(int),curve_ctrl_size, fp) != curve_ctrl_size)
+ if (fwrite(curve_node::ctrl_pt, sizeof(int),curve_ctrl_size, fp) != curve_ctrl_size)
 { sprintf(string_save_load_report[idf],"Error writting %s",file_curve_ctrl_pt); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_curve_ctrl_pt);
 fclose(fp);
@@ -2071,7 +2071,7 @@ if ((fp=fopen( file_curve_spline_level, "wb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_curve_spline_level);
-if (fwrite(the_curve_spline_level, sizeof(int),curve_spline_level_size, fp) != curve_spline_level_size)
+ if (fwrite(curve_node::the_spline_level, sizeof(int),curve_spline_level_size, fp) != curve_spline_level_size)
 { sprintf(string_save_load_report[idf],"Error writting %s",file_curve_spline_level); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s", file_curve_spline_level);
 fclose(fp);
@@ -2082,7 +2082,7 @@ if ((fp=fopen( file_curve_matrix, "wb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opened file %s",file_curve_matrix);
-if (fwrite(curve_report, sizeof(int),curve_matrix_size, fp) != curve_matrix_size)
+ if (fwrite(curve_node::report, sizeof(int),curve_matrix_size, fp) != curve_matrix_size)
 { sprintf(string_save_load_report[idf],"Error writting %s",file_curve_matrix); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s",file_curve_matrix);
 fclose(fp);
@@ -5024,7 +5024,7 @@ if ((fp=fopen(file_patch_curves, "rb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_patch_curves);
-if (fread(curves, sizeof(int),patch_curves_size, fp) !=patch_curves_size)
+ if (fread(curve_node::curves, sizeof(int),patch_curves_size, fp) !=patch_curves_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",   file_patch_curves);b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_patch_curves);
  fclose(fp);
@@ -5035,7 +5035,7 @@ if ((fp=fopen(file_curve_ctrl_pt, "rb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_curve_ctrl_pt);
-if (fread(curve_ctrl_pt, sizeof(int),curve_ctrl_size, fp) !=curve_ctrl_size)
+if (fread(curve_node::ctrl_pt, sizeof(int),curve_ctrl_size, fp) !=curve_ctrl_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",   file_curve_ctrl_pt);b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_curve_ctrl_pt);
  fclose(fp);
@@ -5046,7 +5046,7 @@ if ((fp=fopen(file_curve_spline_level, "rb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_curve_spline_level);
-if (fread(the_curve_spline_level, sizeof(int),curve_spline_level_size, fp) !=curve_spline_level_size)
+if (fread(curve_node::the_spline_level, sizeof(int),curve_spline_level_size, fp) !=curve_spline_level_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",   file_curve_spline_level);b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_curve_spline_level);
  fclose(fp);
@@ -5057,12 +5057,12 @@ if ((fp=fopen(file_curve_matrix, "rb"))==NULL)
 else
 {
 sprintf(string_save_load_report[idf],"Opening file %s",   file_curve_matrix);
-if (fread(curve_report, sizeof(int),curve_matrix_size, fp) !=curve_matrix_size)
+if (fread(curve_node::report, sizeof(int),curve_matrix_size, fp) !=curve_matrix_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s",   file_curve_matrix);b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_curve_matrix);
  fclose(fp);
 }
-index_curve_spline_level=the_curve_spline_level[curve_selected];
+curve_node::index_spline_level=curve_node::the_spline_level[curve_node::selected];
 idf++;
 rest(10);
 }

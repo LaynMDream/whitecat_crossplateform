@@ -1,3 +1,5 @@
+#ifndef WHITECAT_H
+#define WHITECAT_H
 /*-------------------------------------------------------------------------------------------------------------
                                  |
           CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
@@ -457,26 +459,6 @@ char string_monitor_patch[1024];
 bool index_patch_affect_is_done=0;
 int last_dim_selected=0;
 int dimmer_check_level=192;
-//Curves splines
-bool index_writing_curve=0;
-float curve_spline_level=0.0;//report en float
-int curve_selected=0;
-int the_curve_spline_level[16];
-int curve_report[16][256];
-int index_curve_spline_level=0;//pixels de l editeur
-bool index_enable_curve_editing=0;
-int curves[514];//bug ?514 était en 513
-int curve_ctrl_pt[16][8][2]; //5 pts de controls (  pour caller 1er et dernier dummy)
-int diam_curve_node=10;//diametre de la poignee pour saisie du curve_node
-typedef struct curve_node
-{
-   int x, y;
-   fixed tangent;
-} curve_node;
-#define MAX_curve_nodeS    8
-curve_node curve_nodes[MAX_curve_nodeS];
-int curve_node_count=0;
-fixed curve_curviness;
 typedef struct NODE
 {
    int x, y;
@@ -693,8 +675,8 @@ bool index_midi_mute=0;
 bool index_auto_mute_cuelist_speed=0;
 int index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
-MidiFilterPtr	myFilter; // events filter
-MidiName AppliName = "white cat";
+/*MidiFilterPtr	myFilter; // events filter*/
+/*MidiName AppliName = "white cat";*/
 
 char	  	TblLibEv[256][20];
 char my_midi_string[64];
@@ -726,6 +708,7 @@ char string_shortview_midi[24];//affichage over souris
 //char string_dock_contains_midi[128];
 int isport=0 ; int ischan=0 ; int ispitch=0; int isvel=0;
 int istyp=0;
+typedef char byte;
 byte isrefnum=0;
 int miditable[3][2048];
 int   over_fader=0, over_dock=0; // survol d un fader ou d un dock pour visualisation des circuits et de leur niveau
@@ -974,16 +957,16 @@ char string_ip[30];
 char my_ip_is[4];//report pour artnet poll reply
 
 //client
-SOCKET sockartnet;
-SOCKADDR_IN sinS;
+/*SOCKET sockartnet;*/
+/*SOCKADDR_IN sinS;*/
 int sinsize;
 //serveur
-SOCKET sock;
-SOCKADDR_IN sinServ;
+/*SOCKET sock;*/
+/*SOCKADDR_IN sinServ;*/
 int sinsizeServ;
 /////////////////////////
 struct hostent * phe;
-char FAR hostnamebuffer[64] ;
+/*char FAR hostnamebuffer[64] ;*/
 char broadcast='1';
 int nbrbytessended=0;
 int bytesreceived=0;
@@ -1014,119 +997,9 @@ bool index_re_init_serveur_artnet=0;
 bool index_re_init_clientserveur_icat=0;
 
 bool index_ask_reinit_FS_client=0;
-///////////////////////COULEURS ET POLICES//////////////////////////////////////
-Rgba CouleurFond;
-Rgba CouleurLigne;
-Rgba CouleurFader;
-Rgba CouleurPatch;
-Rgba CouleurSurvol;
-Rgba CouleurLevel;
-Rgba CouleurSelection;
-Rgba CouleurNiveau;
-Rgba CouleurBlind;
-Rgba CouleurLock;
-Rgba CouleurConfig;
-Rgba CouleurBleuProcedure;
-Rgba CouleurYellow(0.6,0.6,0.0);
-Rgba CouleurYellowFgroup(1.0,0.7,0.0);
-Rgba CouleurGreen(0.0,0.6,0.0);
-Rgba CouleurRed(0.6,0.0,0.0);
-Rgba CouleurRougePur(1.0,0.0,0.0);
-Rgba CouleurFondDefaut(0.0,0.0,0.0);
-Rgba CouleurLigneDefaut(1.0,1.0,1.0);
-Rgba CouleurFaderDefaut(1.0,0.4,0.0);
-Rgba CouleurPatchDefaut(1.0,0.2,0.0);
-Rgba CouleurSurvolDefaut(0.8,0.0,0.0);
-Rgba CouleurLevelDefaut(0.5,0.7,0.6);
-Rgba CouleurSelectionDefaut(0.5,0.0,0.7);
-Rgba CouleurNiveauDefaut(0.1,0.0,0.7);
-Rgba CouleurBlindDefaut(1.0,0.0,0.0);
-Rgba CouleurLockDefaut(0.0,0.4,0.2);
-Rgba CouleurConfigDefaut(0.1,0.1,0.3);
-Rgba CouleurBleuProcedureDefaut(0.0,0.2,0.5);
 
-Rgba CouleurBlanc(1.0,1.0,1.0);
-Rgba CouleurGrisTresClair(0.8,0.8,0.8);
-Rgba CouleurGrisClair(0.6,0.6,0.6);
-Rgba CouleurGrisMoyen(0.4,0.4,0.4);
-Rgba CouleurGrisAnthracite(0.2,0.2,0.2);
-Rgba CouleurNoir(0.0,0.0,0.0);
+#include "colors_fonts.h"
 
-Rgba CouleurBleu10(0.1,0.1,1.0);
-Rgba CouleurBleu8(0.1,0.1,0.8);
-Rgba CouleurBleu6(0.1,0.1,0.6);
-Rgba CouleurBleu4(0.1,0.1,0.4);
-Rgba CouleurBleu2(0.1,0.1,0.2);
-Rgba CouleurBleu1(0.0,0.0,0.1);
-
-Rgba Discrete1(0.023529,0.023529,0.082353);
-Rgba Discrete2(0.2,0.2,0.4);
-Rgba Discrete3(0.6,0.6,0.7);
-Rgba Discrete4(0.6,0.8,0.7);
-Rgba Discrete5(0.7,0.3,0.4);
-Rgba Discrete6(0.9,0.0,0.0);
-Rgba Discrete7(0.1,0.8,0.0);
-Rgba Discrete8(0.2,0.4,0.8);
-Rgba Discrete9(0.2,0.2,0.3);
-Rgba Discrete10(0.8,0.7,0.7);
-Rgba Discrete11(0.9,0.0,0.8);
-Rgba Discrete12(0.2,0.3,0.2);
-
-Rgba Matrix1(0.0,0.1,0.0);
-Rgba Matrix2(0.0,1.0,0.0);
-Rgba Matrix3(0.0,0.8,0.0);
-Rgba Matrix4(0.0,0.2,0.0);
-Rgba Matrix5(0.0,0.9,0.0);
-Rgba Matrix6(0.0,1.0,0.0);
-Rgba Matrix7(0.0,0.9,0.0);
-Rgba Matrix8(0.0,1.0,0.0);
-Rgba Matrix9(0.0,0.2,0.0);
-Rgba Matrix10(0.0,0.3,0.0);
-Rgba Matrix11(0.6,0.9,0.0);
-Rgba Matrix12(0.2,0.7,0.2);
-
-Rgba CouleurUserLoop;
-Rgba CouleurUser1;
-Rgba CouleurUser2;
-Rgba CouleurUser3;
-Rgba CouleurUser4;
-Rgba CouleurUser5;
-Rgba CouleurUser6;
-Rgba CouleurUser7;
-Rgba CouleurUser8;
-Rgba CouleurUser9;
-Rgba CouleurUser10;
-Rgba CouleurUser11;
-Rgba CouleurUser12;
-
-
-Rgba CouleurPreviewHue;
-Rgba CouleurPreviewChroma;
-
-TextRenderer axaxax12;
-TextRenderer doom;
-TextRenderer doomblanc;
-TextRenderer petitdoomblanc;
-TextRenderer minidoomblanc;
-TextRenderer doomrouge;
-TextRenderer neuro;
-TextRenderer neuromoyen;
-TextRenderer petitchiffre;
-TextRenderer circuitlevel;
-TextRenderer circuitfaderlevel;
-TextRenderer circuitblindlevel;
-TextRenderer petitpetitchiffre;
-TextRenderer petitpetitchiffregris;
-TextRenderer petitpetitchiffrerouge;
-TextRenderer petitchiffrerouge;
-TextRenderer petitchiffrenoir;
-TextRenderer petitdoomInspekt;
-TextRenderer petitdoomrouge;
-TextRenderer neuroTitle;
-TextRenderer minichiffre;
-TextRenderer minichiffregris;
-TextRenderer minichiffrerouge;
-TextRenderer minichiffrenoir;
 //IMPORT SCHWZ////////////////////////////////////////////////////////////////////////
 char f_cues[25]={"cues.dat"};
 char f_boolcues[25]={"bool_cues.dat"};
@@ -1777,13 +1650,13 @@ char StrOrderToiCat[96];
 bool refresh_icatpage_please=0;//index en cas de besoin de rafraichir toute la page
 
 //client
-SOCKET sockiCat;
-SOCKADDR_IN siniCat;
+/*SOCKET sockiCat;*/
+/*SOCKADDR_IN siniCat;*/
 int sinsizeiCat;
 bool client_icat_is_closed=1;
 //serveur
-SOCKET sockRiCat;
-SOCKADDR_IN sinServiCat;
+/*SOCKET sockRiCat;*/
+/*SOCKADDR_IN sinServiCat;*/
 int sinsizeServiCat;
 bool iCat_serveur_is_initialized=0;
 /////////////////////////
@@ -2520,3 +2393,5 @@ bool bounce_is_prepared[24];
 int fader_before_bounce[48];
 
 float snap_echo_to_recall[24][513];
+
+#endif  /*WHITECAT_H*/

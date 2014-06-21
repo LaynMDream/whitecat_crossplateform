@@ -312,7 +312,7 @@ petitchiffre.Print(ol::ToString(grad) ,(XChan + (45*c)),(YChan+100+(l*60) - (int
 //num circuit
 petitchiffre.Print(ol::ToString(Patch[(grad)]),(XChan + (45*c)),(YChan+120+(l*60) - (int)(scroller_patch* scroll_chan)),CENTER);
 //num curve
-petitpetitchiffre.Print(ol::ToString(curves[grad]+1),(XChan + (45*c))+5,(YChan+135+(l*60) - (int)(scroller_patch* scroll_chan)),CENTER);
+petitpetitchiffre.Print(ol::ToString(curve_node::curves[grad]+1),(XChan + (45*c))+5,(YChan+135+(l*60) - (int)(scroller_patch* scroll_chan)),CENTER);
 }
 }
 }

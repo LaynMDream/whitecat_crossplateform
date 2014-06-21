@@ -553,7 +553,7 @@ else//autostop
 int Control_Audio_thruth_faders(int ff, int dd, int typ)//typ 0 vol / 1 pan / 2 pitch
 {
 int player_to_remote=0;
-int vol_to_send=(255- curve_report[(FaderCurves[ff])][(Fader[ff])])/2;
+ int vol_to_send=(255- curve_node::report[(FaderCurves[ff])][(Fader[ff])])/2;
 if(vol_to_send>127){vol_to_send=127;}
 
 switch(typ)
