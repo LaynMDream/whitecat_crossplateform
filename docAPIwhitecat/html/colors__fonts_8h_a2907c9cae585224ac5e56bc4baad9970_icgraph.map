@@ -1,0 +1,15 @@
+<map id="CouleurYellow" name="CouleurYellow">
+<area shape="rect" id="node3" href="$arduino__6___u_n_o_8cpp.html#a38905c45209df5be7f35a35d9a4f96db" title="do_arduino_config" alt="" coords="572,34,697,68"/>
+<area shape="rect" id="node15" href="$channels__10__visu_8cpp.html#a4db85cfe81cd5f91be5c54593d93c908" title="ClassicalChannelSpace" alt="" coords="748,8,908,41"/>
+<area shape="rect" id="node18" href="$channels__10__visu_8cpp.html#a1b490fcdc049aa2ff24f7ef9126d357a" title="Draw_Channel_Preset_View" alt="" coords="957,153,1147,186"/>
+<area shape="rect" id="node21" href="$midi__13_8cpp.html#a1be6169a0ed28989c422b9f72042f0bb" title="midi_change_signal" alt="" coords="176,93,312,126"/>
+<area shape="rect" id="node28" href="$sequentiel__7__visu_8cpp.html#aaa9e3d6dfa511aed5a938d99daca6d3f" title="refresh_vision_memories" alt="" coords="161,210,327,244"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="771,93,885,126"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="980,94,1124,128"/>
+<area shape="rect" id="node9" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1195,124,1253,157"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1303,124,1468,157"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1517,124,1568,157"/>
+<area shape="rect" id="node23" href="$midi__13_8cpp.html#a110e58b11dbde556672bce44aafba38a" title="midipage_preset_and\l_options" alt="" coords="377,82,521,137"/>
+<area shape="rect" id="node25" href="$midi__13_8cpp.html#a8f70acacad6eaba8867bdd80dda5e277" title="do_midi_config" alt="" coords="580,93,689,126"/>
+<area shape="rect" id="node30" href="$sequentiel__7__visu_8cpp.html#a5f032ba7b767bdb2b20d73c06bacf34b" title="Sequenciel_Window" alt="" coords="380,210,519,244"/>
+</map>

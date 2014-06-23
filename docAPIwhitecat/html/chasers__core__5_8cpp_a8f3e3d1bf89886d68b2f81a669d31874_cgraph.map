@@ -1,0 +1,9 @@
+<map id="do_autolaunch" name="do_autolaunch">
+<area shape="rect" id="node3" href="$chasers__core__5_8cpp.html#a128576bedb198e99fd9ca3dace3304d1" title="chaser_seek_at_beg" alt="" coords="161,82,303,115"/>
+<area shape="rect" id="node11" href="$grider__calculs8_8cpp.html#a1385e50460f3dd71bdc4d3f8e1ec462f" title="gridplayer_seek" alt="" coords="176,143,288,177"/>
+<area shape="rect" id="node5" href="$chasers__core__5_8cpp.html#abb6ff444898fcb4ad35f303696f41ea2" title="chaser_calcul_step" alt="" coords="361,15,495,49"/>
+<area shape="rect" id="node9" href="$chasers__core__5_8cpp.html#afaeffdf5e70f64260ab334beb4f46c04" title="chaser_calcul_time\l_joint" alt="" coords="361,71,495,126"/>
+<area shape="rect" id="node7" href="$chasers__core__5_8cpp.html#a91fb9c1ef62ff51adbf81dfdc900fb04" title="refresh_launchpad_on\l_chaser" alt="" coords="553,5,703,59"/>
+<area shape="rect" id="node13" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="353,149,503,182"/>
+<area shape="rect" id="node15" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="553,149,703,182"/>
+</map>

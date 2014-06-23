@@ -1,0 +1,5 @@
+<map id="bouton_view_launchpad_pos_core" name="bouton_view_launchpad_pos_core">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="224,5,339,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="216,61,347,115"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="396,61,545,115"/>
+</map>

@@ -19,21 +19,91 @@
           <Subnodes>
            <Node>
             <Name>curve_node</Name>
-            <Path>structcurve__node.html</Path>
+            <Path>classcurve__node.html</Path>
             <Subnodes>
              <Node>
+              <Name>curve_node</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>add0d28f291f1cfe22e11f5436a8ba161</Anchor>
+             </Node>
+             <Node>
+              <Name>build_fluo</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a51a7bb24aa5832b54ec61507a556dda9</Anchor>
+             </Node>
+             <Node>
+              <Name>build_inverse</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a787cd6340d6b9e15da5723ed25eb18ff</Anchor>
+             </Node>
+             <Node>
+              <Name>build_preheat</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a6338ccf647d5f510c47702f613a3d9d2</Anchor>
+             </Node>
+             <Node>
+              <Name>build_square</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>ac1e52fe7e8f762074b804b88a1b420cf</Anchor>
+             </Node>
+             <Node>
+              <Name>calc_tangents</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a22f8acf6b081673429257867a4115c57</Anchor>
+             </Node>
+             <Node>
+              <Name>dist</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a1146c27b9e6c0b3a5f6fb3faced5cea2</Anchor>
+             </Node>
+             <Node>
+              <Name>draw</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>ab1db9f4ea1c53ab2eab6072b2cdc90eb</Anchor>
+             </Node>
+             <Node>
+              <Name>draw_splines</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>aace217c0200a043c2d2f5f071fde8e56</Anchor>
+             </Node>
+             <Node>
+              <Name>dummy</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a55e51b51f9b6ede537c5e11b7f234188</Anchor>
+             </Node>
+             <Node>
+              <Name>get_control_points</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a14aba313f46315faae44bcca011136a9</Anchor>
+             </Node>
+             <Node>
+              <Name>SplineCurve</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>afb8f3c6e6a53e062f5c2fb1cf7243969</Anchor>
+             </Node>
+             <Node>
+              <Name>view_after_draw</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a5c54a9611e91814177cf901636d4e8e5</Anchor>
+             </Node>
+             <Node>
+              <Name>write_curve</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>abc1a06d649c6dce22334da762f2955b8</Anchor>
+             </Node>
+             <Node>
               <Name>tangent</Name>
-              <Path>structcurve__node.html</Path>
+              <Path>classcurve__node.html</Path>
               <Anchor>a31ea7469070f7bb90ceae073d1d075a6</Anchor>
              </Node>
              <Node>
               <Name>x</Name>
-              <Path>structcurve__node.html</Path>
+              <Path>classcurve__node.html</Path>
               <Anchor>aa7ae8f2ee3bbd3e6194785c392751cdb</Anchor>
              </Node>
              <Node>
               <Name>y</Name>
-              <Path>structcurve__node.html</Path>
+              <Path>classcurve__node.html</Path>
               <Anchor>afc1f4f007a920aa79c1f1f0ff0b49465</Anchor>
              </Node>
             </Subnodes>
@@ -101,6 +171,52 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>graphic_context</Name>
+            <Path>classgraphic__context.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>graphic_context</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>ac81331f894194151dc9f2f20f6eb86e6</Anchor>
+             </Node>
+             <Node>
+              <Name>dmx_view</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>abeabd1716cb7451605935b9191be65fb</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_x</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>af9aa907f4c540927888920111f2a3890</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_y</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>a72195ff30744dcb9c467cad5bda4e602</Anchor>
+             </Node>
+             <Node>
+              <Name>W_PATCH</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>af8795c6d73bb4076febf90a4bed34cd7</Anchor>
+             </Node>
+             <Node>
+              <Name>window_focus_id</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>afb842574bef9200a343eae5ed25b6aea</Anchor>
+             </Node>
+             <Node>
+              <Name>xpatch_window</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>a57a5bcca338d0b27c5014b9bde3f6e99</Anchor>
+             </Node>
+             <Node>
+              <Name>ypatch_window</Name>
+              <Path>classgraphic__context.html</Path>
+              <Anchor>ae902bd96df3912441f3f5e99cd802fbf</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>NODE</Name>
             <Path>struct_n_o_d_e.html</Path>
             <Subnodes>
@@ -155,6 +271,10 @@
            <Node>
             <Name>Tout</Name>
             <Path>functions.html</Path>
+           </Node>
+           <Node>
+            <Name>Fonctions</Name>
+            <Path>functions_func.html</Path>
            </Node>
            <Node>
             <Name>Variables</Name>
@@ -285,6 +405,11 @@
               <Anchor>a7a2fe6aee0064f868114dc5c2d58df9f</Anchor>
              </Node>
              <Node>
+              <Name>do_audio_midi_function_next_prev_track</Name>
+              <Path>audio__core5_8cpp.html</Path>
+              <Anchor>ae6f8dd1f3de99ac54980667b9baf9ad1</Anchor>
+             </Node>
+             <Node>
               <Name>do_logical_fader_niveau_son</Name>
               <Path>audio__core5_8cpp.html</Path>
               <Anchor>a8b31946eb761c7f981bb92526a3f065a</Anchor>
@@ -385,6 +510,11 @@
               <Name>do_logical_fenetre_banger</Name>
               <Path>banger__core__8_8cpp.html</Path>
               <Anchor>a4fe16ad483c0c1609d97aeb9a23c74ee</Anchor>
+             </Node>
+             <Node>
+              <Name>do_loop_bang</Name>
+              <Path>banger__core__8_8cpp.html</Path>
+              <Anchor>a96e373fcf4106adeef778f40ea6c5ebc</Anchor>
              </Node>
              <Node>
               <Name>do_send_bang</Name>
@@ -872,6 +1002,532 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>colors_fonts.h</Name>
+            <Path>colors__fonts_8h.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>CouleurBlanc</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ad71b50b4541cd718bfb2918f0bb2dd8f</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleu1</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>afe8ced3c85a7fc3b8d0ccdcdf243eb47</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleu10</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ac4a2205b105750bafa100b610ea72db3</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleu2</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1ebb31875483506d4af7cbbc78ba9779</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleu4</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa5fe12fb8a2da77b1a3fb6b28c76deea</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleu6</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1c1bdc06fa0e97af5c84ea85fd1bcc5f</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleu8</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0b3dc8d74a837db49b6634415bfd63f7</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleuProcedureDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa5cfee44201c8607ff977e024fdf0d3b</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBlindDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a3d1b034aeb5533e1fea7a051ee3fee4b</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurConfigDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ab9da5b552e510f2345cc730e3840efa9</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurFaderDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1b703138a4385a165804320cc64ec895</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurFondDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a56b207337c79233be26e693530da65e2</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurGreen</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae9274ddf03277718b9234207fe9a3d3a</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurGrisAnthracite</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ab65bd319db91abdfc062b4e3b720902e</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurGrisClair</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a6dcb064f958b5a0184ad6eb768852621</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurGrisMoyen</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae86cd6c0de005129d702f0c4352b2a24</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurGrisTresClair</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1bfaa7dd12400d888ac9398fed6ea774</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurLevelDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a6bf8f7b59c160460fc6a7a8b87aac96b</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurLigneDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae99bc6c691c87267c033c3b2ffacc476</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurLockDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>adf3a6fb43a7f54bbbfaefee4da14171f</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurNiveauDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a773d7a9149463abfbc7e78d54ac6e02c</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurNoir</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a432c8c850a2a3ffc16f0030931d99475</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurPatchDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>adf5f11e2e6c252f0a0bcd9690ba1b35e</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurRed</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a9f46ddd6a2c54abab874ea891efa4750</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurRougePur</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0681e6c857773e39158b582969b6934b</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurSelectionDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a8d7dbe1d33388cb7ace7a55efe02b52d</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurSurvolDefaut</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a24aa13cd453f6036d74557761bd2d428</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurYellow</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a2907c9cae585224ac5e56bc4baad9970</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurYellowFgroup</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a5427dd0a5a11091bc410f7eed5d2657f</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete1</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ab9339f72af5e78d446210e5ef2c7b89d</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete10</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>abe7a7fa1c1d1966ff49fb5287b7bb167</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete11</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a5452f62acb7d2cef062302d6ac84f3e5</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete12</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a79b0a28801f4cbbc8244e5dc0436c5e8</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete2</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae9be49e36dd551563724b7b6f799214f</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete3</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a98ac16ec3ba1b96206ac4382d8e93a6c</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete4</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a98779fb733557a5d1359f4ea78070c32</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete5</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a3e9200d517d472f442bd8eafa2fc1bae</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete6</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0b3e679334d456b926bce64431f18e5b</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete7</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a82fd325e9b1bd8a288f161de5bf32314</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete8</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1f7c9a56f1b079299541dfbd31a981ba</Anchor>
+             </Node>
+             <Node>
+              <Name>Discrete9</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a9e190227b94ba52df03b8cbb1f49aee6</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix1</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a416a75b372e5de425111d6790f997c87</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix10</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a4be6c160c53dce2aed6781f27e6eded6</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix11</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae562a9058982e5697f8477a8144a9e64</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix12</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa184789357ed7a2313a79ed9a121eecf</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix2</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa813415a8101699673435b09d105fc3e</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix3</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1756c196d9e7ce7224d0d104c6eebcb4</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix4</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a8484b562f59a9db155152a096a5b2246</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix5</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a12a0e1e0c25047a5a2cddb2e97ea8982</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix6</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a9a96cd1000443eaa0bcae1cad652e087</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix7</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a99bfb8fb66e3ac7d278141b5a0c12e9f</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix8</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>abccc85b8a9224e40a99b2a0ddc4ee9d1</Anchor>
+             </Node>
+             <Node>
+              <Name>Matrix9</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0d5abc48b14e974d8afc9df855fc959b</Anchor>
+             </Node>
+             <Node>
+              <Name>axaxax12</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae96e723e9e712f09908cc90f2cea208e</Anchor>
+             </Node>
+             <Node>
+              <Name>circuitblindlevel</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a67d6f0aba15d019b595bc25784fc63ef</Anchor>
+             </Node>
+             <Node>
+              <Name>circuitfaderlevel</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa2871ef510c78a9b0b60c160d7bae5eb</Anchor>
+             </Node>
+             <Node>
+              <Name>circuitlevel</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a1502d946795653cb8b09563e0c240728</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBleuProcedure</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ac2c3aadc93aa5e8192c9fc86880b1c0d</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurBlind</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a7aa65853583b760dde3a38c8eb165c4c</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurConfig</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a08a3800c22f34f905553c13b6eaea1f4</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurFader</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0212d2da971d5e736481179e1d74a208</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurFond</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>adfcc3526181502da1a8ff1042decf24a</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurLevel</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0efc9f7d49f012395440022592ae9777</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurLigne</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a13634a163205befdb126d7c93d62444f</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurLock</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa58dc294eb82ddb45c1a24c5d482a233</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurNiveau</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a5485211aa86e3089b015604b015e9168</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurPatch</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a125d065c51cfb6718c22d4d0c78871ae</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurPreviewChroma</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a86d7c2106cf30aabe9a6bab3f6e9d6ed</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurPreviewHue</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a04f39411e2c3898e391bca3cda79b28d</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurSelection</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aacc6dbbfddaf62612b384a48726581a7</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurSurvol</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0adcc58ffd36f23b946fd330f881aee3</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser1</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>abd7aa109b95c3484a04877b8ec2b2de5</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser10</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>af696fabd7e0034f8af7bcaa51de792f6</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser11</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a55da3fcc18bf23e5c64bbb9a3119243b</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser12</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a306c4d345db720ccc6d44eadf295c927</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser2</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>abedb11cb719af2fac82d7c48d337e92a</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser3</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a574d00ed3bdac38bebdb9b5a391dca19</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser4</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a2202a062a6f3cac0dfbae53a1ade10f6</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser5</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a90f26938d39df91830f84c730f698c6b</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser6</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a102572e81e482a8bb07920e19acf50bb</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser7</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a3165f8bcbec1e4aa096df7ea19cf0a6a</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser8</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ac548e7ee65026518101c3329c4bb47de</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUser9</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a030c8774e129a77a4ede05e720387614</Anchor>
+             </Node>
+             <Node>
+              <Name>CouleurUserLoop</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a6add92119b0e7f8ca4f0b532c051ac9e</Anchor>
+             </Node>
+             <Node>
+              <Name>doom</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a0cbe4232275ab30c93b5ee985b5c4e67</Anchor>
+             </Node>
+             <Node>
+              <Name>doomblanc</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aa0dfe2840e0235d364823017f0bd2597</Anchor>
+             </Node>
+             <Node>
+              <Name>doomrouge</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a27c98519c525fd509242d409d967935a</Anchor>
+             </Node>
+             <Node>
+              <Name>minichiffre</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ad5ad7b93d507fac4f13bb666c7e3b2cb</Anchor>
+             </Node>
+             <Node>
+              <Name>minichiffregris</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae0db494e54e707b26d6922ea4c79af10</Anchor>
+             </Node>
+             <Node>
+              <Name>minichiffrenoir</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a3506faab8b41d7b989a32c41670f5e56</Anchor>
+             </Node>
+             <Node>
+              <Name>minichiffrerouge</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a353f2aea0ffb3c7c1cabf1b03f290ebd</Anchor>
+             </Node>
+             <Node>
+              <Name>minidoomblanc</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ad59e4611e72e694cabcd886f7d911dce</Anchor>
+             </Node>
+             <Node>
+              <Name>neuro</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a54139c7545e4823122d9d2c842c87dc1</Anchor>
+             </Node>
+             <Node>
+              <Name>neuromoyen</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aecb93b81f17d29a713422b6d9f556cb1</Anchor>
+             </Node>
+             <Node>
+              <Name>neuroTitle</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a7a7cd29e4f4e9396d80901a5151e01d6</Anchor>
+             </Node>
+             <Node>
+              <Name>petitchiffre</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a502b0229281fd20afa659c6355c68cde</Anchor>
+             </Node>
+             <Node>
+              <Name>petitchiffrenoir</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a74850347656ca9b3098c70f4324f3f76</Anchor>
+             </Node>
+             <Node>
+              <Name>petitchiffrerouge</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae9ec7ba79936693cd87c836aa991e54e</Anchor>
+             </Node>
+             <Node>
+              <Name>petitdoomblanc</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a2c48477a755517bb9c2969248c8ddb6b</Anchor>
+             </Node>
+             <Node>
+              <Name>petitdoomInspekt</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>adc5d61f83ec7b164cd97f9d8373a8323</Anchor>
+             </Node>
+             <Node>
+              <Name>petitdoomrouge</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a9b8136dde0c4bf76ca6ba77ea1517dfe</Anchor>
+             </Node>
+             <Node>
+              <Name>petitpetitchiffre</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>aad2f35cb8d2bb081b6300976c47df6c8</Anchor>
+             </Node>
+             <Node>
+              <Name>petitpetitchiffregris</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>ae97b8b7a8f3f6a414ecf241091ba26c9</Anchor>
+             </Node>
+             <Node>
+              <Name>petitpetitchiffrerouge</Name>
+              <Path>colors__fonts_8h.html</Path>
+              <Anchor>a624cb0be19e5dbf397d9bc8935ef4e50</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>CORE_6.cpp</Name>
             <Path>_c_o_r_e__6_8cpp.html</Path>
             <Subnodes>
@@ -1326,6 +1982,26 @@
               <Anchor>a894b338494d0bdd820df2944b628e2de</Anchor>
              </Node>
              <Node>
+              <Name>player1_do_stop</Name>
+              <Path>_c_o_r_e__6_8cpp.html</Path>
+              <Anchor>a23423256688613149926c4984ff25f79</Anchor>
+             </Node>
+             <Node>
+              <Name>player2_do_stop</Name>
+              <Path>_c_o_r_e__6_8cpp.html</Path>
+              <Anchor>a6c41d19d859a2e1292ad64ef915e265f</Anchor>
+             </Node>
+             <Node>
+              <Name>player3_do_stop</Name>
+              <Path>_c_o_r_e__6_8cpp.html</Path>
+              <Anchor>a494249193c56b13a4e1eac04c6dd2d0b</Anchor>
+             </Node>
+             <Node>
+              <Name>player4_do_stop</Name>
+              <Path>_c_o_r_e__6_8cpp.html</Path>
+              <Anchor>afbcf17b50787fb3b8360659f6ce9b193</Anchor>
+             </Node>
+             <Node>
               <Name>prepare_bounce</Name>
               <Path>_c_o_r_e__6_8cpp.html</Path>
               <Anchor>a02c0482cf9631910ebc1d59614215ecd</Anchor>
@@ -1566,6 +2242,16 @@
               <Anchor>ac35c1426f741de67edbc3131f4557ed1</Anchor>
              </Node>
              <Node>
+              <Name>return_highest</Name>
+              <Path>_c_o_r_e__6_8cpp.html</Path>
+              <Anchor>abf3905741fad82c878a1c2b5a64e78b1</Anchor>
+             </Node>
+             <Node>
+              <Name>return_lowest</Name>
+              <Path>_c_o_r_e__6_8cpp.html</Path>
+              <Anchor>a7949412d847774cd29d24015ad877eee</Anchor>
+             </Node>
+             <Node>
               <Name>save_load_print_to_screen</Name>
               <Path>_c_o_r_e__6_8cpp.html</Path>
               <Anchor>a7ffa1025184678936494e68a31f35042</Anchor>
@@ -1689,11 +2375,6 @@
               <Name>substract_a_window</Name>
               <Path>_c_o_r_e__6_8cpp.html</Path>
               <Anchor>ad0ba084ac976c6a4d32088e939ee0dbc</Anchor>
-             </Node>
-             <Node>
-              <Name>switch_values</Name>
-              <Path>_c_o_r_e__6_8cpp.html</Path>
-              <Anchor>a4909ea51fd817d6160d0c03a3239d5d1</Anchor>
              </Node>
              <Node>
               <Name>toggle</Name>
@@ -3448,6 +4129,564 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>MAIN_avec_objets.cpp</Name>
+            <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>PI</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
+             </Node>
+             <Node>
+              <Name>dixiemes_de_secondes</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ace9c8a9b37c6087c3cffef442d71d70e</Anchor>
+             </Node>
+             <Node>
+              <Name>do_mouse_right_click_menu</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a2e68aac9b76d597d28ad2b424580da72</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a64537a89893b28c0f5304f617b9dfce1</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ac99b5c2f92d13d20bd2913b97564e05f</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a2c35041c190007399fb51e1728e15200</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ab3e8a31a179f5016b13f6fdef45b154c</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a42c10b61710b850529595131a78744d6</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a22eee39636034dc1f4e00f52ddacda99</Anchor>
+             </Node>
+             <Node>
+              <Name>Load_Fonts</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a5ed0e12936f7d3649de463336207b914</Anchor>
+             </Node>
+             <Node>
+              <Name>main</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+             </Node>
+             <Node>
+              <Name>main_actions_on_screen</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ade8d4ba65d55c94f8ee277829d722155</Anchor>
+             </Node>
+             <Node>
+              <Name>my_callback</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a9c70719f0a352d777b5166c1e1872f13</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a6a015280c1363331ada8a329be6eb7c8</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_artnet</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a2a8330265b71d2008d7c4154078aac89</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dmxIn</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a69e23eb9aeff094c5710a0299995f3d2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_full_loop</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a8e80f54ac804eddce8ed6e45adb1db44</Anchor>
+             </Node>
+             <Node>
+              <Name>time_doing</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a1ef61965eb1754586c339e2c7711f15c</Anchor>
+             </Node>
+             <Node>
+              <Name>Tmax</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>acd49ac80e8195ee336da1503fd149313</Anchor>
+             </Node>
+             <Node>
+              <Name>ARDUINO_RATE</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a76c8221e0eedb0bbad95f071046f2485</Anchor>
+             </Node>
+             <Node>
+              <Name>BPS_RATE</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a4bdc38714c8b2ec9fda1c2410e21bbda</Anchor>
+             </Node>
+             <Node>
+              <Name>calculation_on_faders_done</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>abfd20761b0f16abcfe2abaa5e582759b</Anchor>
+             </Node>
+             <Node>
+              <Name>dmxINrate</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a1a14c8e08f74679e5db97ae284516b81</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_button</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a1c0a0b0ed525a2cf4b66829184fe604b</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_maintained</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ab58dc8f641267e33f268fe6e86fbc6af</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_R_button</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a2c80ae4e541d9f9c1f964d3d03b0a65e</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_R_released</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a17788d87bce7f7373a384a50e1508c27</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_released</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a891eb6e7ec0969933184f3e6f8d8abb2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_artnet_rate</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a028cdbf80274859ac4658ab51d2cd1f2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dixiemes_de_secondes_check</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a8ee36156d9cfe55bed3eac783b480cec</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dmxIn_rate</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a322f8e02a3a15aa6dd0c55971bf3e900</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_full_loop_rate</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a80ce9856e7af49bb3aa203962e7d90d1</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_rate</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a09eaacc772264f05551244e71614cda3</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>ab97230fdf86fd49a50dbcc8e44fdf9cc</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks_for_artnet</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>aa2381657303f524e1cfdc9e16d90fbc8</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks_passed</Name>
+              <Path>_m_a_i_n__avec__objets_8cpp.html</Path>
+              <Anchor>a9346d4a28d8e748352e48dedbd380d55</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MAIN_febrier_2014.cpp</Name>
+            <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>PI</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
+             </Node>
+             <Node>
+              <Name>dixiemes_de_secondes</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ace9c8a9b37c6087c3cffef442d71d70e</Anchor>
+             </Node>
+             <Node>
+              <Name>do_mouse_right_click_menu</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a2e68aac9b76d597d28ad2b424580da72</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a64537a89893b28c0f5304f617b9dfce1</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ac99b5c2f92d13d20bd2913b97564e05f</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a2c35041c190007399fb51e1728e15200</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ab3e8a31a179f5016b13f6fdef45b154c</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a42c10b61710b850529595131a78744d6</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a22eee39636034dc1f4e00f52ddacda99</Anchor>
+             </Node>
+             <Node>
+              <Name>Load_Fonts</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a5ed0e12936f7d3649de463336207b914</Anchor>
+             </Node>
+             <Node>
+              <Name>main</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+             </Node>
+             <Node>
+              <Name>main_actions_on_screen</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ade8d4ba65d55c94f8ee277829d722155</Anchor>
+             </Node>
+             <Node>
+              <Name>my_callback</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a9c70719f0a352d777b5166c1e1872f13</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a6a015280c1363331ada8a329be6eb7c8</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_artnet</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a2a8330265b71d2008d7c4154078aac89</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dmxIn</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a69e23eb9aeff094c5710a0299995f3d2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_full_loop</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a8e80f54ac804eddce8ed6e45adb1db44</Anchor>
+             </Node>
+             <Node>
+              <Name>time_doing</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a1ef61965eb1754586c339e2c7711f15c</Anchor>
+             </Node>
+             <Node>
+              <Name>Tmax</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>acd49ac80e8195ee336da1503fd149313</Anchor>
+             </Node>
+             <Node>
+              <Name>ARDUINO_RATE</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a76c8221e0eedb0bbad95f071046f2485</Anchor>
+             </Node>
+             <Node>
+              <Name>BPS_RATE</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a4bdc38714c8b2ec9fda1c2410e21bbda</Anchor>
+             </Node>
+             <Node>
+              <Name>calculation_on_faders_done</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>abfd20761b0f16abcfe2abaa5e582759b</Anchor>
+             </Node>
+             <Node>
+              <Name>dmxINrate</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a1a14c8e08f74679e5db97ae284516b81</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_button</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a1c0a0b0ed525a2cf4b66829184fe604b</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_maintained</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ab58dc8f641267e33f268fe6e86fbc6af</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_R_button</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a2c80ae4e541d9f9c1f964d3d03b0a65e</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_R_released</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a17788d87bce7f7373a384a50e1508c27</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_released</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a891eb6e7ec0969933184f3e6f8d8abb2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_artnet_rate</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a028cdbf80274859ac4658ab51d2cd1f2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dixiemes_de_secondes_check</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a8ee36156d9cfe55bed3eac783b480cec</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dmxIn_rate</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a322f8e02a3a15aa6dd0c55971bf3e900</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_full_loop_rate</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a80ce9856e7af49bb3aa203962e7d90d1</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_rate</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a09eaacc772264f05551244e71614cda3</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>ab97230fdf86fd49a50dbcc8e44fdf9cc</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks_for_artnet</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>aa2381657303f524e1cfdc9e16d90fbc8</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks_passed</Name>
+              <Path>_m_a_i_n__febrier__2014_8cpp.html</Path>
+              <Anchor>a9346d4a28d8e748352e48dedbd380d55</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MAIN_fevrier_2014.cpp</Name>
+            <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>PI</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
+             </Node>
+             <Node>
+              <Name>dixiemes_de_secondes</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ace9c8a9b37c6087c3cffef442d71d70e</Anchor>
+             </Node>
+             <Node>
+              <Name>do_mouse_right_click_menu</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a2e68aac9b76d597d28ad2b424580da72</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a64537a89893b28c0f5304f617b9dfce1</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ac99b5c2f92d13d20bd2913b97564e05f</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a2c35041c190007399fb51e1728e15200</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ab3e8a31a179f5016b13f6fdef45b154c</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a42c10b61710b850529595131a78744d6</Anchor>
+             </Node>
+             <Node>
+              <Name>END_OF_FUNCTION</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a22eee39636034dc1f4e00f52ddacda99</Anchor>
+             </Node>
+             <Node>
+              <Name>Load_Fonts</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a5ed0e12936f7d3649de463336207b914</Anchor>
+             </Node>
+             <Node>
+              <Name>main</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+             </Node>
+             <Node>
+              <Name>main_actions_on_screen</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ade8d4ba65d55c94f8ee277829d722155</Anchor>
+             </Node>
+             <Node>
+              <Name>my_callback</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a9c70719f0a352d777b5166c1e1872f13</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a6a015280c1363331ada8a329be6eb7c8</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_artnet</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a2a8330265b71d2008d7c4154078aac89</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dmxIn</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a69e23eb9aeff094c5710a0299995f3d2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_full_loop</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a8e80f54ac804eddce8ed6e45adb1db44</Anchor>
+             </Node>
+             <Node>
+              <Name>time_doing</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a1ef61965eb1754586c339e2c7711f15c</Anchor>
+             </Node>
+             <Node>
+              <Name>Tmax</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>acd49ac80e8195ee336da1503fd149313</Anchor>
+             </Node>
+             <Node>
+              <Name>ARDUINO_RATE</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a76c8221e0eedb0bbad95f071046f2485</Anchor>
+             </Node>
+             <Node>
+              <Name>BPS_RATE</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a4bdc38714c8b2ec9fda1c2410e21bbda</Anchor>
+             </Node>
+             <Node>
+              <Name>calculation_on_faders_done</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>abfd20761b0f16abcfe2abaa5e582759b</Anchor>
+             </Node>
+             <Node>
+              <Name>dmxINrate</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a1a14c8e08f74679e5db97ae284516b81</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_button</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a1c0a0b0ed525a2cf4b66829184fe604b</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_maintained</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ab58dc8f641267e33f268fe6e86fbc6af</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_R_button</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a2c80ae4e541d9f9c1f964d3d03b0a65e</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_R_released</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a17788d87bce7f7373a384a50e1508c27</Anchor>
+             </Node>
+             <Node>
+              <Name>mouse_released</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a891eb6e7ec0969933184f3e6f8d8abb2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_artnet_rate</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a028cdbf80274859ac4658ab51d2cd1f2</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dixiemes_de_secondes_check</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a8ee36156d9cfe55bed3eac783b480cec</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_dmxIn_rate</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a322f8e02a3a15aa6dd0c55971bf3e900</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_full_loop_rate</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a80ce9856e7af49bb3aa203962e7d90d1</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_rate</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a09eaacc772264f05551244e71614cda3</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>ab97230fdf86fd49a50dbcc8e44fdf9cc</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks_for_artnet</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>aa2381657303f524e1cfdc9e16d90fbc8</Anchor>
+             </Node>
+             <Node>
+              <Name>ticks_passed</Name>
+              <Path>_m_a_i_n__fevrier__2014_8cpp.html</Path>
+              <Anchor>a9346d4a28d8e748352e48dedbd380d55</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MAIN_janv_2014_opensource_kbd.cpp</Name>
             <Path>_m_a_i_n__janv__2014__opensource__kbd_8cpp.html</Path>
             <Subnodes>
@@ -4456,70 +5695,153 @@
               <Path>patch__splines__2_8cpp.html</Path>
               <Anchor>a0cbea62f1ce2043dd08108e65ed8de1d</Anchor>
              </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>patch_splines_2.h</Name>
+            <Path>patch__splines__2_8h.html</Path>
+            <Subnodes>
              <Node>
-              <Name>build_fluo_curve</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a17f65e80f479982bc455b72c204835f4</Anchor>
+              <Name>graphic_context</Name>
+              <Path>classgraphic__context.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>graphic_context</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>ac81331f894194151dc9f2f20f6eb86e6</Anchor>
+               </Node>
+               <Node>
+                <Name>dmx_view</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>abeabd1716cb7451605935b9191be65fb</Anchor>
+               </Node>
+               <Node>
+                <Name>mouse_x</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>af9aa907f4c540927888920111f2a3890</Anchor>
+               </Node>
+               <Node>
+                <Name>mouse_y</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>a72195ff30744dcb9c467cad5bda4e602</Anchor>
+               </Node>
+               <Node>
+                <Name>W_PATCH</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>af8795c6d73bb4076febf90a4bed34cd7</Anchor>
+               </Node>
+               <Node>
+                <Name>window_focus_id</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>afb842574bef9200a343eae5ed25b6aea</Anchor>
+               </Node>
+               <Node>
+                <Name>xpatch_window</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>a57a5bcca338d0b27c5014b9bde3f6e99</Anchor>
+               </Node>
+               <Node>
+                <Name>ypatch_window</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>ae902bd96df3912441f3f5e99cd802fbf</Anchor>
+               </Node>
+              </Subnodes>
              </Node>
              <Node>
-              <Name>build_inverse_curve</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a494b6fb8f0969746c81636acfd3ee119</Anchor>
+              <Name>curve_node</Name>
+              <Path>classcurve__node.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>curve_node</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>add0d28f291f1cfe22e11f5436a8ba161</Anchor>
+               </Node>
+               <Node>
+                <Name>build_fluo</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a51a7bb24aa5832b54ec61507a556dda9</Anchor>
+               </Node>
+               <Node>
+                <Name>build_inverse</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a787cd6340d6b9e15da5723ed25eb18ff</Anchor>
+               </Node>
+               <Node>
+                <Name>build_preheat</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a6338ccf647d5f510c47702f613a3d9d2</Anchor>
+               </Node>
+               <Node>
+                <Name>build_square</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>ac1e52fe7e8f762074b804b88a1b420cf</Anchor>
+               </Node>
+               <Node>
+                <Name>calc_tangents</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a22f8acf6b081673429257867a4115c57</Anchor>
+               </Node>
+               <Node>
+                <Name>dist</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a1146c27b9e6c0b3a5f6fb3faced5cea2</Anchor>
+               </Node>
+               <Node>
+                <Name>draw</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>ab1db9f4ea1c53ab2eab6072b2cdc90eb</Anchor>
+               </Node>
+               <Node>
+                <Name>draw_splines</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>aace217c0200a043c2d2f5f071fde8e56</Anchor>
+               </Node>
+               <Node>
+                <Name>dummy</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a55e51b51f9b6ede537c5e11b7f234188</Anchor>
+               </Node>
+               <Node>
+                <Name>get_control_points</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a14aba313f46315faae44bcca011136a9</Anchor>
+               </Node>
+               <Node>
+                <Name>SplineCurve</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>afb8f3c6e6a53e062f5c2fb1cf7243969</Anchor>
+               </Node>
+               <Node>
+                <Name>view_after_draw</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a5c54a9611e91814177cf901636d4e8e5</Anchor>
+               </Node>
+               <Node>
+                <Name>write_curve</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>abc1a06d649c6dce22334da762f2955b8</Anchor>
+               </Node>
+               <Node>
+                <Name>tangent</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a31ea7469070f7bb90ceae073d1d075a6</Anchor>
+               </Node>
+               <Node>
+                <Name>x</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>aa7ae8f2ee3bbd3e6194785c392751cdb</Anchor>
+               </Node>
+               <Node>
+                <Name>y</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>afc1f4f007a920aa79c1f1f0ff0b49465</Anchor>
+               </Node>
+              </Subnodes>
              </Node>
              <Node>
-              <Name>build_preheat_curve</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>ae20dee04c43e5e0a2d5a608a99f7fa02</Anchor>
-             </Node>
-             <Node>
-              <Name>build_square_curve</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a04b47983c2e21f4f49bbfca6242d69ba</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_calc_tangents</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a73b4b2bd0b3a4883990631e700412e5c</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_draw_splines</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a08b231bb59f931127b1d8b7c44e5e763</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_get_control_points</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a9bb9965be9181f7acc4ec959008e27fa</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_node_dist</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a5c1c390cfcc55a09ec6a85d5155cee14</Anchor>
-             </Node>
-             <Node>
-              <Name>draw_curve_node</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a0f704fc1724b6542d22b9b69b7be5887</Anchor>
-             </Node>
-             <Node>
-              <Name>dummy_curve_node</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>aebe378966107425f388f7bf1f3c88f8a</Anchor>
-             </Node>
-             <Node>
-              <Name>SplineCurve</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a5424e2f37a599febce25be271c5a88e8</Anchor>
-             </Node>
-             <Node>
-              <Name>view_curve_after_draw</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>aa717e6214cc2f06b76f09fc95a9915ed</Anchor>
-             </Node>
-             <Node>
-              <Name>write_curve</Name>
-              <Path>patch__splines__2_8cpp.html</Path>
-              <Anchor>a8fbf4d116bffee5fdda73fc5670377a7</Anchor>
+              <Name>MAX_CNODES</Name>
+              <Path>patch__splines__2_8h.html</Path>
+              <Anchor>abd21c950f8371229cfca1c4f98c9750f</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -5913,6 +7235,16 @@
               <Anchor>acecf97d3e96d0332873d28b28d50fa29</Anchor>
              </Node>
              <Node>
+              <Name>banger_loop_size</Name>
+              <Path>save__show__13_8cpp.html</Path>
+              <Anchor>a97418f6f3275771b8a455d6543d81f30</Anchor>
+             </Node>
+             <Node>
+              <Name>banger_looptime_size</Name>
+              <Path>save__show__13_8cpp.html</Path>
+              <Anchor>adb6712dd9b829748771f9f7e06b3f9b1</Anchor>
+             </Node>
+             <Node>
               <Name>banger_name_size</Name>
               <Path>save__show__13_8cpp.html</Path>
               <Anchor>a6c8248409886b225bf0273d4a056537c</Anchor>
@@ -6426,6 +7758,16 @@
               <Name>file_bangers_alarms</Name>
               <Path>save__show__13_8cpp.html</Path>
               <Anchor>a43caa46505d71e242fe83321898fd54b</Anchor>
+             </Node>
+             <Node>
+              <Name>file_bangers_loop</Name>
+              <Path>save__show__13_8cpp.html</Path>
+              <Anchor>aefac9aa7d7366ff4fe8d2956c5ac7f81</Anchor>
+             </Node>
+             <Node>
+              <Name>file_bangers_looptime</Name>
+              <Path>save__show__13_8cpp.html</Path>
+              <Anchor>ad8cd408c646963c63afb732a76c13edb</Anchor>
              </Node>
              <Node>
               <Name>file_bangers_names</Name>
@@ -8941,27 +10283,6 @@
             <Path>whitecat_8h.html</Path>
             <Subnodes>
              <Node>
-              <Name>curve_node</Name>
-              <Path>structcurve__node.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>tangent</Name>
-                <Path>structcurve__node.html</Path>
-                <Anchor>a31ea7469070f7bb90ceae073d1d075a6</Anchor>
-               </Node>
-               <Node>
-                <Name>x</Name>
-                <Path>structcurve__node.html</Path>
-                <Anchor>aa7ae8f2ee3bbd3e6194785c392751cdb</Anchor>
-               </Node>
-               <Node>
-                <Name>y</Name>
-                <Path>structcurve__node.html</Path>
-                <Anchor>afc1f4f007a920aa79c1f1f0ff0b49465</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
               <Name>NODE</Name>
               <Path>struct_n_o_d_e.html</Path>
               <Subnodes>
@@ -9003,11 +10324,6 @@
               <Anchor>a31279823b01a43eddf1e804c547da815</Anchor>
              </Node>
              <Node>
-              <Name>MAX_curve_nodeS</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a694a04a45f3fe2d9299cf7e09f9c2842</Anchor>
-             </Node>
-             <Node>
               <Name>MAX_NODES</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>abd2aacdca9cb2a1a30f3392256b96ea3</Anchor>
@@ -9028,9 +10344,9 @@
               <Anchor>ae4e6c6f48e224528f3bf837f2443553c</Anchor>
              </Node>
              <Node>
-              <Name>curve_node</Name>
+              <Name>byte</Name>
               <Path>whitecat_8h.html</Path>
-              <Anchor>a381b962aa4b8e005d1aa81578168a052</Anchor>
+              <Anchor>a2b7e7856b48ec3327148ac994ad95cd5</Anchor>
              </Node>
              <Node>
               <Name>NODE</Name>
@@ -9180,121 +10496,6 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>CouleurBlanc</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ad71b50b4541cd718bfb2918f0bb2dd8f</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleu1</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>afe8ced3c85a7fc3b8d0ccdcdf243eb47</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleu10</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ac4a2205b105750bafa100b610ea72db3</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleu2</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1ebb31875483506d4af7cbbc78ba9779</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleu4</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa5fe12fb8a2da77b1a3fb6b28c76deea</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleu6</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1c1bdc06fa0e97af5c84ea85fd1bcc5f</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleu8</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0b3dc8d74a837db49b6634415bfd63f7</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBleuProcedureDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa5cfee44201c8607ff977e024fdf0d3b</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBlindDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a3d1b034aeb5533e1fea7a051ee3fee4b</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurConfigDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab9da5b552e510f2345cc730e3840efa9</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurFaderDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1b703138a4385a165804320cc64ec895</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurFondDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a56b207337c79233be26e693530da65e2</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurGreen</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae9274ddf03277718b9234207fe9a3d3a</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurGrisAnthracite</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab65bd319db91abdfc062b4e3b720902e</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurGrisClair</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a6dcb064f958b5a0184ad6eb768852621</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurGrisMoyen</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae86cd6c0de005129d702f0c4352b2a24</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurGrisTresClair</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1bfaa7dd12400d888ac9398fed6ea774</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurLevelDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a6bf8f7b59c160460fc6a7a8b87aac96b</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurLigneDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae99bc6c691c87267c033c3b2ffacc476</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurLockDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>adf3a6fb43a7f54bbbfaefee4da14171f</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurNiveauDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a773d7a9149463abfbc7e78d54ac6e02c</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurNoir</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a432c8c850a2a3ffc16f0030931d99475</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurPatchDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>adf5f11e2e6c252f0a0bcd9690ba1b35e</Anchor>
-             </Node>
-             <Node>
               <Name>CouleurPlotFill</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a53146b0df4992543bd09594d4ce44f7d</Anchor>
@@ -9305,159 +10506,9 @@
               <Anchor>a5e88fb41a8a9fa61f87aae4fedd74510</Anchor>
              </Node>
              <Node>
-              <Name>CouleurRed</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a9f46ddd6a2c54abab874ea891efa4750</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurRougePur</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0681e6c857773e39158b582969b6934b</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurSelectionDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a8d7dbe1d33388cb7ace7a55efe02b52d</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurSurvolDefaut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a24aa13cd453f6036d74557761bd2d428</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurYellow</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a2907c9cae585224ac5e56bc4baad9970</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurYellowFgroup</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a5427dd0a5a11091bc410f7eed5d2657f</Anchor>
-             </Node>
-             <Node>
               <Name>Dim</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a220d7588afb23d8828e0a5b05de03f57</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete1</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab9339f72af5e78d446210e5ef2c7b89d</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete10</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abe7a7fa1c1d1966ff49fb5287b7bb167</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete11</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a5452f62acb7d2cef062302d6ac84f3e5</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete12</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a79b0a28801f4cbbc8244e5dc0436c5e8</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete2</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae9be49e36dd551563724b7b6f799214f</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete3</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a98ac16ec3ba1b96206ac4382d8e93a6c</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete4</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a98779fb733557a5d1359f4ea78070c32</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete5</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a3e9200d517d472f442bd8eafa2fc1bae</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete6</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0b3e679334d456b926bce64431f18e5b</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete7</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a82fd325e9b1bd8a288f161de5bf32314</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete8</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1f7c9a56f1b079299541dfbd31a981ba</Anchor>
-             </Node>
-             <Node>
-              <Name>Discrete9</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a9e190227b94ba52df03b8cbb1f49aee6</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix1</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a416a75b372e5de425111d6790f997c87</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix10</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a4be6c160c53dce2aed6781f27e6eded6</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix11</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae562a9058982e5697f8477a8144a9e64</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix12</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa184789357ed7a2313a79ed9a121eecf</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix2</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa813415a8101699673435b09d105fc3e</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix3</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1756c196d9e7ce7224d0d104c6eebcb4</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix4</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a8484b562f59a9db155152a096a5b2246</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix5</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a12a0e1e0c25047a5a2cddb2e97ea8982</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix6</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a9a96cd1000443eaa0bcae1cad652e087</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix7</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a99bfb8fb66e3ac7d278141b5a0c12e9f</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix8</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abccc85b8a9224e40a99b2a0ddc4ee9d1</Anchor>
-             </Node>
-             <Node>
-              <Name>Matrix9</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0d5abc48b14e974d8afc9df855fc959b</Anchor>
              </Node>
              <Node>
               <Name>absolute_level_wheel</Name>
@@ -9613,11 +10664,6 @@
               <Name>Appareil</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a573eb812c98b6c624936db23afefeace</Anchor>
-             </Node>
-             <Node>
-              <Name>AppliName</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab8c665479e2307916fc29d2703ef0bb8</Anchor>
              </Node>
              <Node>
               <Name>arduino_analog_attribution_input</Name>
@@ -9795,6 +10841,16 @@
               <Anchor>a5ca71ed75d32b6e2b745361281f4672d</Anchor>
              </Node>
              <Node>
+              <Name>audio_do_load_midi_next_file</Name>
+              <Path>whitecat_8h.html</Path>
+              <Anchor>a0037c77d5b1a91d944ba9b04a4dbb0ce</Anchor>
+             </Node>
+             <Node>
+              <Name>audio_do_load_midi_prev_file</Name>
+              <Path>whitecat_8h.html</Path>
+              <Anchor>a0f6d5e5f58d2820d39efcc9ecf889f95</Anchor>
+             </Node>
+             <Node>
               <Name>audio_folder</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>ad3c23671d90d7aa0a70c5c0d6964d234</Anchor>
@@ -9870,11 +10926,6 @@
               <Anchor>a191a8fa13376fb8a4f22fba545da56c9</Anchor>
              </Node>
              <Node>
-              <Name>axaxax12</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae96e723e9e712f09908cc90f2cea208e</Anchor>
-             </Node>
-             <Node>
               <Name>b_pick</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a1d10c7c218587e0122499e515e24eec6</Anchor>
@@ -9903,16 +10954,6 @@
               <Name>bang_val_the_chan_is</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>afd3c23200b61fe896a40f98367b4ee5b</Anchor>
-             </Node>
-             <Node>
-              <Name>banger_kbd_ctrl_shift_key</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>af4f6f201c6918bfdf6aed49014bd9acc</Anchor>
-             </Node>
-             <Node>
-              <Name>banger_kbd_shortcut</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a4d28801ba276388bdf8a6d40a022ef3b</Anchor>
              </Node>
              <Node>
               <Name>Banger_Memoire</Name>
@@ -10400,21 +11441,6 @@
               <Anchor>a6d918184a61c67bf4951e392a220f643</Anchor>
              </Node>
              <Node>
-              <Name>circuitblindlevel</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a67d6f0aba15d019b595bc25784fc63ef</Anchor>
-             </Node>
-             <Node>
-              <Name>circuitfaderlevel</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa2871ef510c78a9b0b60c160d7bae5eb</Anchor>
-             </Node>
-             <Node>
-              <Name>circuitlevel</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a1502d946795653cb8b09563e0c240728</Anchor>
-             </Node>
-             <Node>
               <Name>ClassicalChannelView</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a25294aa21b3188dc2eae233e7fedfe4a</Anchor>
@@ -10565,144 +11591,9 @@
               <Anchor>a73f27f0739146e440db2b51c9cf0f6d8</Anchor>
              </Node>
              <Node>
-              <Name>CouleurBleuProcedure</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ac2c3aadc93aa5e8192c9fc86880b1c0d</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurBlind</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a7aa65853583b760dde3a38c8eb165c4c</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurConfig</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a08a3800c22f34f905553c13b6eaea1f4</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurFader</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0212d2da971d5e736481179e1d74a208</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurFond</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>adfcc3526181502da1a8ff1042decf24a</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurLevel</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0efc9f7d49f012395440022592ae9777</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurLigne</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a13634a163205befdb126d7c93d62444f</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurLock</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa58dc294eb82ddb45c1a24c5d482a233</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurNiveau</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a5485211aa86e3089b015604b015e9168</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurPatch</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a125d065c51cfb6718c22d4d0c78871ae</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurPreviewChroma</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a86d7c2106cf30aabe9a6bab3f6e9d6ed</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurPreviewHue</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a04f39411e2c3898e391bca3cda79b28d</Anchor>
-             </Node>
-             <Node>
               <Name>couleurs_user</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a61c8541a03f38f76220408bf16f03147</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurSelection</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aacc6dbbfddaf62612b384a48726581a7</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurSurvol</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0adcc58ffd36f23b946fd330f881aee3</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser1</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abd7aa109b95c3484a04877b8ec2b2de5</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser10</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>af696fabd7e0034f8af7bcaa51de792f6</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser11</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a55da3fcc18bf23e5c64bbb9a3119243b</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser12</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a306c4d345db720ccc6d44eadf295c927</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser2</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abedb11cb719af2fac82d7c48d337e92a</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser3</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a574d00ed3bdac38bebdb9b5a391dca19</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser4</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a2202a062a6f3cac0dfbae53a1ade10f6</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser5</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a90f26938d39df91830f84c730f698c6b</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser6</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a102572e81e482a8bb07920e19acf50bb</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser7</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a3165f8bcbec1e4aa096df7ea19cf0a6a</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser8</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ac548e7ee65026518101c3329c4bb47de</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUser9</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a030c8774e129a77a4ede05e720387614</Anchor>
-             </Node>
-             <Node>
-              <Name>CouleurUserLoop</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a6add92119b0e7f8ca4f0b532c051ac9e</Anchor>
              </Node>
              <Node>
               <Name>count_artopoll_received</Name>
@@ -10783,46 +11674,6 @@
               <Name>curve_asked_for_fader</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>af92a81999a60e669866d1e7aba98dbde</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_ctrl_pt</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abf235ff38c37b6971b4dc500d714c2f6</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_curviness</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abfefe1dce9624af597554c2d70414e3a</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_node_count</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>af1cb4f3f1430f235283d214061d1f626</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_nodes</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ac6e38c01c1521df78405f52c6d00275b</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_report</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a912add04e8b72c06a74977ecd1189165</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_selected</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>af2ed093ccc2aa3954fb729b4d9ab0334</Anchor>
-             </Node>
-             <Node>
-              <Name>curve_spline_level</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>adbfdbdfa2c8d8c95602c0027e68a3a53</Anchor>
-             </Node>
-             <Node>
-              <Name>curves</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a88ccc103f3e4980cdb7d58b4d4c4b240</Anchor>
              </Node>
              <Node>
               <Name>curviness</Name>
@@ -10950,11 +11801,6 @@
               <Anchor>a4fda30c89f2eb5ea6e500dbd94ef4eff</Anchor>
              </Node>
              <Node>
-              <Name>diam_curve_node</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab9f92958eb5133f6d99e46813bfcfd94</Anchor>
-             </Node>
-             <Node>
               <Name>digital_data_from_arduino</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>adfb89091e5aa32d9dd42230fb4816168</Anchor>
@@ -10983,11 +11829,6 @@
               <Name>Dimmers_selected</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a2bc0ce6a8f4c095309da65475f86fe8d</Anchor>
-             </Node>
-             <Node>
-              <Name>disable_classical_kbd</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab27154f6225dfecfd195dbf17b0c2950</Anchor>
              </Node>
              <Node>
               <Name>display_fps</Name>
@@ -11068,6 +11909,11 @@
               <Name>do_light_tap_tempo</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a13299259606785d4a98952d79c51e60c</Anchor>
+             </Node>
+             <Node>
+              <Name>do_loop_banger</Name>
+              <Path>whitecat_8h.html</Path>
+              <Anchor>a3eafee716cef9c34c2691efb78ae23e7</Anchor>
              </Node>
              <Node>
               <Name>do_save_at_time</Name>
@@ -11197,27 +12043,12 @@
              <Node>
               <Name>DockNetIs</Name>
               <Path>whitecat_8h.html</Path>
-              <Anchor>a57e8d50b21ca1ac943fb7f28f77ff2d8</Anchor>
+              <Anchor>affda9088bf3d9dc9db0e0f0df028ae08</Anchor>
              </Node>
              <Node>
               <Name>DockTypeIs</Name>
               <Path>whitecat_8h.html</Path>
-              <Anchor>adb366b865c909655b8142e2398fd432a</Anchor>
-             </Node>
-             <Node>
-              <Name>doom</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a0cbe4232275ab30c93b5ee985b5c4e67</Anchor>
-             </Node>
-             <Node>
-              <Name>doomblanc</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aa0dfe2840e0235d364823017f0bd2597</Anchor>
-             </Node>
-             <Node>
-              <Name>doomrouge</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a27c98519c525fd509242d409d967935a</Anchor>
+              <Anchor>adb99c29699380f0e77ade5b2c66ab312</Anchor>
              </Node>
              <Node>
               <Name>double_epaisseur_ligne_fader</Name>
@@ -12195,11 +13026,6 @@
               <Anchor>ad6a5c101af8afa67414f1fed6c79b107</Anchor>
              </Node>
              <Node>
-              <Name>hostnamebuffer</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ad33d065fcd3990ba24e3b495ea285de1</Anchor>
-             </Node>
-             <Node>
               <Name>i_m_over_a_track</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>acb338a7d9d5d9a55458db8bbb3329e04</Anchor>
@@ -12635,11 +13461,6 @@
               <Anchor>a4791d2991c39a65c1adeb268f632c604</Anchor>
              </Node>
              <Node>
-              <Name>index_borderwindow</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abcc15f81608243d17ee3798bbcf4c057</Anchor>
-             </Node>
-             <Node>
               <Name>index_broadcast</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a9452c08cf30ec596c76b652536fab46e</Anchor>
@@ -12873,11 +13694,6 @@
               <Name>index_crossfading</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>ad61ae3be711345f05b5dd66122bd4575</Anchor>
-             </Node>
-             <Node>
-              <Name>index_curve_spline_level</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a65157ea169ae9217106ce7aec953f53b</Anchor>
              </Node>
              <Node>
               <Name>index_cycle</Name>
@@ -13305,11 +14121,6 @@
               <Anchor>a5574baee8cb994c4f7492a0617a2600f</Anchor>
              </Node>
              <Node>
-              <Name>index_enable_curve_editing</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a7848bbb36afa10e8b17ebff67f31c963</Anchor>
-             </Node>
-             <Node>
               <Name>index_enable_edit_banger</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a266ae39f37c4aee8142d20475cf983a0</Anchor>
@@ -13623,11 +14434,6 @@
               <Name>index_moving_y_slide</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a3149add13534dda283ddb6996e934f25</Anchor>
-             </Node>
-             <Node>
-              <Name>index_multiplescreen</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a73a80b57f16e26b8d53f4f9795eae93d</Anchor>
              </Node>
              <Node>
               <Name>index_nbre_griderplayers_visibles</Name>
@@ -14083,11 +14889,6 @@
               <Name>index_wizard_do_reload_from_disk</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>ab0cbbf53a5157071d152be728706c9ef</Anchor>
-             </Node>
-             <Node>
-              <Name>index_writing_curve</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a44a9eeda20517e7517f637047033b36b</Anchor>
              </Node>
              <Node>
               <Name>index_x1_x2_together</Name>
@@ -14960,31 +15761,6 @@
               <Anchor>aba67aec20d84bde556c65cb42ea04f32</Anchor>
              </Node>
              <Node>
-              <Name>minichiffre</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ad5ad7b93d507fac4f13bb666c7e3b2cb</Anchor>
-             </Node>
-             <Node>
-              <Name>minichiffregris</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae0db494e54e707b26d6922ea4c79af10</Anchor>
-             </Node>
-             <Node>
-              <Name>minichiffrenoir</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a3506faab8b41d7b989a32c41670f5e56</Anchor>
-             </Node>
-             <Node>
-              <Name>minichiffrerouge</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a353f2aea0ffb3c7c1cabf1b03f290ebd</Anchor>
-             </Node>
-             <Node>
-              <Name>minidoomblanc</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ad59e4611e72e694cabcd886f7d911dce</Anchor>
-             </Node>
-             <Node>
               <Name>minifader_lockpreset_is</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a77abaea8f7a3d2197bdac2e4ef5735ce</Anchor>
@@ -15170,11 +15946,6 @@
               <Anchor>aa2806ec739a24d2489cc777e88059670</Anchor>
              </Node>
              <Node>
-              <Name>myFilter</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ada9ab28a1773d62bba2e34fc283cbd03</Anchor>
-             </Node>
-             <Node>
               <Name>myRefNum</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a2b1b7930b62af2183cdb1ed5e494c41e</Anchor>
@@ -15328,21 +16099,6 @@
               <Name>network_OUT_is_selected</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>abf7b369adaacd533fc686a429c61ea5c</Anchor>
-             </Node>
-             <Node>
-              <Name>neuro</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a54139c7545e4823122d9d2c842c87dc1</Anchor>
-             </Node>
-             <Node>
-              <Name>neuromoyen</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aecb93b81f17d29a713422b6d9f556cb1</Anchor>
-             </Node>
-             <Node>
-              <Name>neuroTitle</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a7a7cd29e4f4e9396d80901a5151e01d6</Anchor>
              </Node>
              <Node>
               <Name>next_step</Name>
@@ -15588,51 +16344,6 @@
               <Name>pause_channel_is</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a8c8466eff32280b24b33717222e60eaf</Anchor>
-             </Node>
-             <Node>
-              <Name>petitchiffre</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a502b0229281fd20afa659c6355c68cde</Anchor>
-             </Node>
-             <Node>
-              <Name>petitchiffrenoir</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a74850347656ca9b3098c70f4324f3f76</Anchor>
-             </Node>
-             <Node>
-              <Name>petitchiffrerouge</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae9ec7ba79936693cd87c836aa991e54e</Anchor>
-             </Node>
-             <Node>
-              <Name>petitdoomblanc</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a2c48477a755517bb9c2969248c8ddb6b</Anchor>
-             </Node>
-             <Node>
-              <Name>petitdoomInspekt</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>adc5d61f83ec7b164cd97f9d8373a8323</Anchor>
-             </Node>
-             <Node>
-              <Name>petitdoomrouge</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a9b8136dde0c4bf76ca6ba77ea1517dfe</Anchor>
-             </Node>
-             <Node>
-              <Name>petitpetitchiffre</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>aad2f35cb8d2bb081b6300976c47df6c8</Anchor>
-             </Node>
-             <Node>
-              <Name>petitpetitchiffregris</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ae97b8b7a8f3f6a414ecf241091ba26c9</Anchor>
-             </Node>
-             <Node>
-              <Name>petitpetitchiffrerouge</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a624cb0be19e5dbf397d9bc8935ef4e50</Anchor>
              </Node>
              <Node>
               <Name>phe</Name>
@@ -16805,26 +17516,6 @@
               <Anchor>a3802380e22b4cd8e54e47f20a5754ab4</Anchor>
              </Node>
              <Node>
-              <Name>siniCat</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a65c1cc1835ff17f586c493e16cba1956</Anchor>
-             </Node>
-             <Node>
-              <Name>sinS</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a212339b8cfedd351f3af6e5ac54d3844</Anchor>
-             </Node>
-             <Node>
-              <Name>sinServ</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a2f639fd0e0dfc877755d80dcd6e5bff0</Anchor>
-             </Node>
-             <Node>
-              <Name>sinServiCat</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>abafe769a3b012bb934db8165d9afddb2</Anchor>
-             </Node>
-             <Node>
               <Name>sinsize</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>ab0f0de40fb362f6650abe4a75f061619</Anchor>
@@ -17043,26 +17734,6 @@
               <Name>snapshot_symbol_type</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a6e43def2f693cd185c52a97df669b246</Anchor>
-             </Node>
-             <Node>
-              <Name>sock</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a6e91849780a994f2adde299b33642829</Anchor>
-             </Node>
-             <Node>
-              <Name>sockartnet</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a62f91450b4586335319d1a9bc622da27</Anchor>
-             </Node>
-             <Node>
-              <Name>sockiCat</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>a9fbefaa7d1588fb9d9147cff5fc26f82</Anchor>
-             </Node>
-             <Node>
-              <Name>sockRiCat</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>af7036f1e76ab452236ab84cf6152e477</Anchor>
              </Node>
              <Node>
               <Name>someone_changed_in_sequences</Name>
@@ -17795,11 +18466,6 @@
               <Anchor>a851a331b1023979232e0570b7a8de89a</Anchor>
              </Node>
              <Node>
-              <Name>the_curve_spline_level</Name>
-              <Path>whitecat_8h.html</Path>
-              <Anchor>ab395367da3c410afab9c3faeb2d31f21</Anchor>
-             </Node>
-             <Node>
               <Name>there_is_an_error_on_save_load</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a4af73505e0cfd12534250aaabf1fccda</Anchor>
@@ -17823,6 +18489,11 @@
               <Name>threshold_on</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>a343ab715ac3d2e57d9e4a99f4cda8b5a</Anchor>
+             </Node>
+             <Node>
+              <Name>ticker_loop_banger</Name>
+              <Path>whitecat_8h.html</Path>
+              <Anchor>aaffa4eeabd25d4db32e8a51509d304d0</Anchor>
              </Node>
              <Node>
               <Name>ticker_video_rate</Name>
@@ -17908,6 +18579,11 @@
               <Name>time_left</Name>
               <Path>whitecat_8h.html</Path>
               <Anchor>aee3ea92c650bf274a4aeb86a73e09a93</Anchor>
+             </Node>
+             <Node>
+              <Name>time_loop_banger</Name>
+              <Path>whitecat_8h.html</Path>
+              <Anchor>ae725cb7f6f6e7c5c624713bf8b072aa7</Anchor>
              </Node>
              <Node>
               <Name>time_minutes</Name>
@@ -18906,6 +19582,11 @@
               <Name>wizard_delete_mem</Name>
               <Path>wizard__operations_8cpp.html</Path>
               <Anchor>a8bdf6e58c74c657d894478f6ea9fbb21</Anchor>
+             </Node>
+             <Node>
+              <Name>wizard_detect_unused_channels</Name>
+              <Path>wizard__operations_8cpp.html</Path>
+              <Anchor>aff087100adcf4c71ab4c400745f20df9</Anchor>
              </Node>
              <Node>
               <Name>wizard_insert_mems</Name>

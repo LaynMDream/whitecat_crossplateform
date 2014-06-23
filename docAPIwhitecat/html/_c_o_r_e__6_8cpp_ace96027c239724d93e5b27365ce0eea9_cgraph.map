@@ -1,0 +1,5 @@
+<map id="snap_kill_and_bounce" name="snap_kill_and_bounce">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ae46ccc9515b4dfbae80f22ad0d12d970" title="snap_fader_state" alt="" coords="205,77,328,110"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a02c0482cf9631910ebc1d59614215ecd" title="prepare_bounce" alt="" coords="565,79,680,113"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#acb60b88f155e303f382267840df74671" title="recall_channel_state\l_in_an_echo" alt="" coords="376,5,517,59"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="reset_symbols_selected" name="reset_symbols_selected">
+<area shape="rect" id="node3" href="$plot__core9_8cpp.html#a6f933b83f292138e49fc9057684a1b4b" title="add_a_symbol_to_plot" alt="" coords="225,5,377,38"/>
+<area shape="rect" id="node15" href="$plot__core9_8cpp.html#a3431bbe587897e907b6dee6b35777684" title="send_symbols_from_calc\l_to_calc" alt="" coords="216,61,387,115"/>
+<area shape="rect" id="node17" href="$plot__core9_8cpp.html#a81228c183a1b219d5f3c5a759800df4b" title="logical_plot_menu_bare" alt="" coords="436,119,593,153"/>
+<area shape="rect" id="node20" href="$plot__core9_8cpp.html#acdf877cbaf298c90801ddc1916103287" title="check_select_deselect\l_symbol" alt="" coords="437,175,592,230"/>
+<area shape="rect" id="node23" href="$plot__core9_8cpp.html#afacf9fafd495ceac6c305b0cf88312f2" title="logical_symbol_edition\l_options" alt="" coords="225,239,377,294"/>
+<area shape="rect" id="node5" href="$plot__core9_8cpp.html#a6ff8cd924e588a71a1366288cf8dc41b" title="logical_plot_symbol_list" alt="" coords="435,34,595,67"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="644,153,804,186"/>
+<area shape="rect" id="node9" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="855,142,1012,197"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1061,153,1171,186"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1219,153,1269,186"/>
+</map>

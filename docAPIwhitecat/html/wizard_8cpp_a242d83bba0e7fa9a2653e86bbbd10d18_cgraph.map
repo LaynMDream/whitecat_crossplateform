@@ -1,0 +1,13 @@
+<map id="fenetre_wizard" name="fenetre_wizard">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="220,5,276,38"/>
+<area shape="rect" id="node5" href="$wizard_8cpp.html#a83efc50e6fdd7761f349a8befed67316" title="Box_mem_to_mem" alt="" coords="181,61,315,94"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="385,114,524,147"/>
+<area shape="rect" id="node12" href="$colors__fonts_8h.html#ad71b50b4541cd718bfb2918f0bb2dd8f" title="CouleurBlanc" alt="" coords="199,167,297,201"/>
+<area shape="rect" id="node14" href="$wizard__operations_8cpp.html#aff087100adcf4c71ab4c400745f20df9" title="wizard_detect_unused\l_channels" alt="" coords="172,223,324,278"/>
+<area shape="rect" id="node16" href="$wizard_8cpp.html#a844a0be2fdee312f19033cb1cc31a876" title="wizard_store_channel_in" alt="" coords="165,301,331,334"/>
+<area shape="rect" id="node18" href="$wizard_8cpp.html#a4ce31bf59e187ab193565b3823b1a53e" title="clear_wizard_store\l_ch_in" alt="" coords="389,325,520,379"/>
+<area shape="rect" id="node21" href="$wizard_8cpp.html#a9164e259676797e2e848b3862d8dcb0f" title="wizard_store_channel_out" alt="" coords="161,407,335,441"/>
+<area shape="rect" id="node23" href="$wizard_8cpp.html#a1052236d1218517afb8c3ed0ff15ecaa" title="clear_wizard_store\l_ch_out" alt="" coords="389,417,520,471"/>
+<area shape="rect" id="node26" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="161,514,335,547"/>
+<area shape="rect" id="node7" href="$wizard__operations_8cpp.html#a3c907be70d36446336326a70702d6051" title="wizard_calcul_nbre\l_de_mem" alt="" coords="388,37,521,91"/>
+</map>

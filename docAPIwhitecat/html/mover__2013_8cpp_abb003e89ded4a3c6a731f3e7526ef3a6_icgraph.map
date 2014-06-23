@@ -1,0 +1,13 @@
+<map id="Move_StepForward" name="Move_StepForward">
+<area shape="rect" id="node3" href="$mover__2013_8cpp.html#acc2bd882d4deb89b6251c3fedaf0d8b1" title="mover_box" alt="" coords="693,5,779,38"/>
+<area shape="rect" id="node11" href="$mover__2013_8cpp.html#af1627b55add388ce92ebb0130bc45ede" title="Move_do_crossfade" alt="" coords="189,31,328,65"/>
+<area shape="rect" id="node5" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1037,87,1096,121"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1145,87,1311,121"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1360,114,1411,147"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="396,87,449,121"/>
+<area shape="rect" id="node23" href="$tracker__main14nov_8cpp.html#a343d540f006963227ee5b445888ca393" title="ticker_move" alt="" coords="376,31,469,65"/>
+<area shape="rect" id="node15" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="519,87,628,121"/>
+<area shape="rect" id="node17" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="679,87,793,121"/>
+<area shape="rect" id="node19" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="844,87,988,121"/>
+<area shape="rect" id="node25" href="$tracker__main14nov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="548,31,599,65"/>
+</map>

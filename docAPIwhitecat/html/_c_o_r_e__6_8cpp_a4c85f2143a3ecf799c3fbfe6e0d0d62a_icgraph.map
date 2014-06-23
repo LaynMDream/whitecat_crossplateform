@@ -1,0 +1,15 @@
+<map id="reconstruct_plot_dimmer_list_from_patch" name="reconstruct_plot_dimmer_list_from_patch">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a77c8abece336fca391a4cbcb400045ff" title="patch_straight" alt="" coords="255,26,359,59"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa788448f95d9a014495e26c5ea74d944" title="patch_to_default_selected" alt="" coords="220,82,393,115"/>
+<area shape="rect" id="node7" href="$keyboard__functions2_8cpp.html#af66b1a909d22bea5fc6335bd3fc36964" title="key_full" alt="" coords="660,5,727,38"/>
+<area shape="rect" id="node15" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="613,109,773,142"/>
+<area shape="rect" id="node27" href="$saves__export__import_8cpp.html#a905bc7e6b97081073c37e69402672358" title="do_ASCII_import" alt="" coords="443,109,565,142"/>
+<area shape="rect" id="node30" href="$saves__export__import_8cpp.html#aa1d9d650676ab451f00cf24b2b7ac0a1" title="do_Alq_import" alt="" coords="452,165,556,198"/>
+<area shape="rect" id="node9" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="981,58,1120,91"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1197,58,1307,91"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1384,86,1435,119"/>
+<area shape="rect" id="node17" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="823,58,932,91"/>
+<area shape="rect" id="node20" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="821,114,933,147"/>
+<area shape="rect" id="node22" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1021,114,1080,147"/>
+<area shape="rect" id="node24" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1169,114,1335,147"/>
+</map>

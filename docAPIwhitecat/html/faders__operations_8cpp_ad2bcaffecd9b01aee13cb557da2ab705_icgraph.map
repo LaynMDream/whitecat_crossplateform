@@ -1,0 +1,35 @@
+<map id="Unselect_other_docks" name="Unselect_other_docks">
+<area shape="rect" id="node3" href="$banger__core__8_8cpp.html#a29583c84f980616502ac7c4f99e1bc29" title="Bang_event_back" alt="" coords="207,229,332,262"/>
+<area shape="rect" id="node5" href="$banger__core__8_8cpp.html#ae4008269e0575da11cc90e812961ef6f" title="Bang_event" alt="" coords="416,170,507,203"/>
+<area shape="rect" id="node67" href="$faders__core__24_8cpp.html#a7a87eef3a5459bdd689c77b5b02957d7" title="do_logical_FaderSpace" alt="" coords="383,5,540,38"/>
+<area shape="rect" id="node70" href="$faders__operations_8cpp.html#a2aebdef821440431b05b1028ca7622ae" title="ClearFader" alt="" coords="227,291,312,325"/>
+<area shape="rect" id="node84" href="$faders__operations_8cpp.html#a3571b5afaa0932ae3302580cd79fc9e2" title="DoDock" alt="" coords="235,359,304,393"/>
+<area shape="rect" id="node87" href="$faders__operations_8cpp.html#a2d6d1dfe3a86de65bda20275d59814e6" title="DoReport" alt="" coords="231,441,308,474"/>
+<area shape="rect" id="node20" href="$i_cat14_8cpp.html#a16285241f82898e7a5f051b03d90b9a3" title="check_button" alt="" coords="797,443,896,477"/>
+<area shape="rect" id="node33" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="801,198,892,231"/>
+<area shape="rect" id="node51" href="$banger__core__8_8cpp.html#a790bd34b44c1055de586eb9f279b3b3e" title="do_go_back_bang" alt="" coords="399,435,524,469"/>
+<area shape="rect" id="node61" href="$banger__core__8_8cpp.html#af7d3486500e160cd24bc1d25fc8cfdae" title="do_logical_feedback\l_banger" alt="" coords="392,71,531,126"/>
+<area shape="rect" id="node7" href="$banger__core__8_8cpp.html#a4003a08a1620546de77b118c91d2fd9d" title="do_bang" alt="" coords="1027,105,1096,138"/>
+<area shape="rect" id="node13" href="$banger__core__8_8cpp.html#a4fe16ad483c0c1609d97aeb9a23c74ee" title="do_logical_fenetre\l_banger" alt="" coords="593,47,719,102"/>
+<area shape="rect" id="node18" href="$banger__core__8_8cpp.html#ab405ab53ea444b049e5ffa258498fcb6" title="refresh_banger_wx" alt="" coords="591,277,721,310"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1200,431,1309,465"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1768,538,1819,571"/>
+<area shape="rect" id="node15" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="983,181,1140,235"/>
+<area shape="rect" id="node25" href="$keyboard__functions2_8cpp.html#af3dd6697323b10b480719c1612bcf29a" title="key_backward" alt="" coords="793,254,900,287"/>
+<area shape="rect" id="node30" href="$keyboard__functions2_8cpp.html#a6b73a3669797504ce2e357d9a8b9a2c2" title="key_forward" alt="" coords="800,310,893,343"/>
+<area shape="rect" id="node47" href="$sequentiel__6__core_8cpp.html#a2a71c851cf25565491dd10423bc80380" title="do_logical_Sequenciel\l_Window" alt="" coords="772,366,921,421"/>
+<area shape="rect" id="node22" href="$i_cat14_8cpp.html#aa9772b548765a631d4bae1c14053b4e1" title="DoJobFantastickTouch" alt="" coords="984,431,1139,465"/>
+<area shape="rect" id="node27" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="992,487,1131,521"/>
+<area shape="rect" id="node35" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="972,297,1151,330"/>
+<area shape="rect" id="node37" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="1204,499,1305,533"/>
+<area shape="rect" id="node39" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="1357,489,1504,543"/>
+<area shape="rect" id="node44" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="1368,566,1493,621"/>
+<area shape="rect" id="node41" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="1557,538,1715,571"/>
+<area shape="rect" id="node55" href="$keyboard__functions2_8cpp.html#a1069ef07040abfea667ec14eeefe7e56" title="key_go" alt="" coords="624,490,688,523"/>
+<area shape="rect" id="node58" href="$sequentiel__6__core_8cpp.html#a152c03ccf49d8d9a457e048daaa48023" title="do_logical_x1_x2" alt="" coords="595,383,717,417"/>
+<area shape="rect" id="node72" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="381,491,541,525"/>
+<area shape="rect" id="node74" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="601,546,711,579"/>
+<area shape="rect" id="node77" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="600,653,712,686"/>
+<area shape="rect" id="node79" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="817,653,876,686"/>
+<area shape="rect" id="node81" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1553,599,1719,633"/>
+</map>

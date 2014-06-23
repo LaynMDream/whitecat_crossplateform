@@ -1,0 +1,18 @@
+<map id="load_plan_of_theatre" name="load_plan_of_theatre">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9810ddc7657f7ab70b4f50f22419814b" title="set_plot_background\l_to_default" alt="" coords="212,130,353,185"/>
+<area shape="rect" id="node22" href="$plot_8cpp.html#a444548e4e1e6d3f451c66e20cdefb0b4" title="logical_deroule_repertoire\l_plans" alt="" coords="199,207,367,262"/>
+<area shape="rect" id="node31" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="237,53,328,86"/>
+<area shape="rect" id="node5" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="651,98,811,131"/>
+<area shape="rect" id="node7" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="860,69,969,102"/>
+<area shape="rect" id="node15" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="859,125,971,158"/>
+<area shape="rect" id="node9" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1019,69,1157,102"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1235,69,1344,102"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1421,69,1472,102"/>
+<area shape="rect" id="node17" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1059,125,1117,158"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1207,125,1372,158"/>
+<area shape="rect" id="node24" href="$plot_8cpp.html#af3b896abf6e2ed7c442a78cddcaefad5" title="logical_menu_plan" alt="" coords="445,261,573,294"/>
+<area shape="rect" id="node29" href="$plot9_8cpp.html#a3d45bfc1bc76a3d67ad1a8bb3d63163d" title="Plot_window" alt="" coords="461,205,557,238"/>
+<area shape="rect" id="node26" href="$plot_8cpp.html#a3d45bfc1bc76a3d67ad1a8bb3d63163d" title="Plot_window" alt="" coords="683,247,779,281"/>
+<area shape="rect" id="node34" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="455,42,564,75"/>
+<area shape="rect" id="node37" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="416,98,603,131"/>
+</map>

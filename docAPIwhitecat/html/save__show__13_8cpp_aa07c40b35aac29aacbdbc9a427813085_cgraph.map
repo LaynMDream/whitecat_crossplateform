@@ -1,0 +1,18 @@
+<map id="save_the_show" name="save_the_show">
+<area shape="rect" id="node3" href="$save__show__13_8cpp.html#ada1116462104df2f0db8774b30c326b1" title="Save_Show" alt="" coords="208,306,299,339"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a7ffa1025184678936494e68a31f35042" title="save_load_print_to\l_screen" alt="" coords="416,5,547,59"/>
+<area shape="rect" id="node34" href="$_c_o_r_e__6_8cpp.html#aeb5185db4ec05f1a5b81fd5e86801b68" title="write_show_coming_from" alt="" coords="168,362,339,395"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a75676000bd6539f15b0e057e4d2bd1fc" title="clear_report_string" alt="" coords="417,82,545,115"/>
+<area shape="rect" id="node13" href="$save__show__13_8cpp.html#a11f455280c0aa0494bee9c8684badc61" title="Save_Sequenciel_Conf" alt="" coords="403,138,560,171"/>
+<area shape="rect" id="node15" href="$save__show__13_8cpp.html#a250630debd391dc83e0ec6ff480fabc9" title="Save_Arduino_Config" alt="" coords="408,194,555,227"/>
+<area shape="rect" id="node17" href="$save__show__13_8cpp.html#a39f58e822efaceb4eaa6a72e9865bfb4" title="Save_Audio_Conf" alt="" coords="419,250,544,283"/>
+<area shape="rect" id="node19" href="$save__show__13_8cpp.html#acb4f4092ab0e654debe123f7135fdb21" title="Save_Window_Conf" alt="" coords="411,306,552,339"/>
+<area shape="rect" id="node21" href="$save__show__13_8cpp.html#a70b1e28043c498662659fdf0d22c83b3" title="write_indexes" alt="" coords="431,362,532,395"/>
+<area shape="rect" id="node23" href="$save__show__13_8cpp.html#a00e27562293d34f24449f402f95741fc" title="Save_Plot_Plan_config" alt="" coords="403,418,560,451"/>
+<area shape="rect" id="node25" href="$save__show__13_8cpp.html#af3e9540aab42a003a838dc912f0ef5da" title="save_draw_preset_config" alt="" coords="396,474,567,507"/>
+<area shape="rect" id="node27" href="$save__show__13_8cpp.html#ae3bc4f57d62f67c59d8e2fe4071a54c5" title="Save_Launchpad_RetroLight" alt="" coords="387,530,576,563"/>
+<area shape="rect" id="node29" href="$save__show__13_8cpp.html#a38949ce22e8f0f9c37b20e2a7327ae08" title="Save_audiofiles_cues" alt="" coords="407,586,556,619"/>
+<area shape="rect" id="node31" href="$_c_o_r_e__6_8cpp.html#a6f4f1f9ffb007d053e1d4560750a5b69" title="detect_error_on_save_load" alt="" coords="392,642,571,675"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#af166a225e96cceccb765c0be242c6138" title="show_title" alt="" coords="669,15,749,49"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#ae39581ed29a3e6b280e3e6ca1adc0a07" title="reset_error_on_save_load" alt="" coords="624,82,795,115"/>
+</map>

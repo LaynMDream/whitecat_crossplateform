@@ -1,0 +1,6 @@
+<map id="do_midi_call_order" name="do_midi_call_order">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a1d69e941ecabe5dd73d0b108627b21d6" title="detect_dock_used" alt="" coords="191,5,319,38"/>
+<area shape="rect" id="node5" href="$faders__operations_8cpp.html#a85b6979e04dd2e2b3f6b5e26fcbb34ec" title="DoTimeToDock" alt="" coords="199,61,311,94"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="185,117,324,150"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="227,173,283,206"/>
+</map>

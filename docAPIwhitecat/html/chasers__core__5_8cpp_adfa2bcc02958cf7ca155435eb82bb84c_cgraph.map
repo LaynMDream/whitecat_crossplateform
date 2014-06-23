@@ -1,0 +1,9 @@
+<map id="Track_draw_logical" name="Track_draw_logical">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="213,5,328,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="189,61,352,94"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="451,181,507,214"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="201,167,340,201"/>
+<area shape="rect" id="node13" href="$gui__boutons__rebuild1_8cpp.html#a968d1aafeff1f4495bd2901ab1c80202" title="raccrochage_midi_logical\l_horizontal_little" alt="" coords="187,223,355,278"/>
+<area shape="rect" id="node16" href="$chasers__core__5_8cpp.html#a91fb9c1ef62ff51adbf81dfdc900fb04" title="refresh_launchpad_on\l_chaser" alt="" coords="196,301,345,355"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="404,50,553,105"/>
+</map>

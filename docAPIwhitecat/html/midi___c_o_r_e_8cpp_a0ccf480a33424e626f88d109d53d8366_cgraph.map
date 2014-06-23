@@ -1,0 +1,6 @@
+<map id="InitMidi" name="InitMidi">
+<area shape="rect" id="node3" href="$midi___c_o_r_e_8cpp.html#a2b0b387b399b110d0894dd7c92cf64b3" title="InitTblLibEv" alt="" coords="128,5,219,38"/>
+<area shape="rect" id="node5" href="$midi___c_o_r_e_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="119,61,228,94"/>
+<area shape="rect" id="node9" href="$midi___c_o_r_e_8cpp.html#ad481bcd8fdbcdd7399c796a7cd4a3ada" title="InstallFilter" alt="" coords="131,117,216,150"/>
+<area shape="rect" id="node7" href="$midi__13_8cpp.html#a831f1dfc7870ae4f6c64a0e65fbaf3ff" title="Display" alt="" coords="277,61,344,94"/>
+</map>

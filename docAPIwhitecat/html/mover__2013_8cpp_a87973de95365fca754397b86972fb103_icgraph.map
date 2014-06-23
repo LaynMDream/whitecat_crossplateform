@@ -1,0 +1,17 @@
+<map id="Move_refresh_xy" name="Move_refresh_xy">
+<area shape="rect" id="node3" href="$mover__2013_8cpp.html#aad1ab3429acac0303e5e3abcc7e4c0c6" title="Move_DelStep" alt="" coords="199,5,305,38"/>
+<area shape="rect" id="node13" href="$mover__2013_8cpp.html#a09da21b3ee6f5a971c70ce7509a45751" title="Move_StepBackward" alt="" coords="179,117,325,150"/>
+<area shape="rect" id="node32" href="$mover__2013_8cpp.html#abb003e89ded4a3c6a731f3e7526ef3a6" title="Move_StepForward" alt="" coords="185,61,319,94"/>
+<area shape="rect" id="node36" href="$mover__2013_8cpp.html#af5d5dfcca19b6c49e3ed04c78b76cb5e" title="ImportMoveInMyDock" alt="" coords="177,173,327,206"/>
+<area shape="rect" id="node5" href="$mover__2013_8cpp.html#acc2bd882d4deb89b6251c3fedaf0d8b1" title="mover_box" alt="" coords="403,37,488,70"/>
+<area shape="rect" id="node7" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1224,83,1283,117"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1332,83,1497,117"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1547,110,1597,143"/>
+<area shape="rect" id="node16" href="$mover__2013_8cpp.html#af1627b55add388ce92ebb0130bc45ede" title="Move_do_crossfade" alt="" coords="376,117,515,150"/>
+<area shape="rect" id="node18" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="583,117,636,150"/>
+<area shape="rect" id="node28" href="$tracker__main14nov_8cpp.html#a343d540f006963227ee5b445888ca393" title="ticker_move" alt="" coords="563,185,656,218"/>
+<area shape="rect" id="node20" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="705,83,815,117"/>
+<area shape="rect" id="node22" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="865,83,980,117"/>
+<area shape="rect" id="node24" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1031,83,1175,117"/>
+<area shape="rect" id="node30" href="$tracker__main14nov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="735,190,785,223"/>
+</map>

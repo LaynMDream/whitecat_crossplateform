@@ -1,0 +1,15 @@
+<map id="curve_node::dist" name="curve_node::dist">
+<area shape="rect" id="node3" href="$classcurve__node.html#a14aba313f46315faae44bcca011136a9" title="curve_node::get_control\l_points" alt="" coords="175,106,335,161"/>
+<area shape="rect" id="node5" href="$classcurve__node.html#abc1a06d649c6dce22334da762f2955b8" title="curve_node::write_curve" alt="" coords="385,117,548,150"/>
+<area shape="rect" id="node7" href="$classcurve__node.html#ab1db9f4ea1c53ab2eab6072b2cdc90eb" title="curve_node::draw" alt="" coords="597,117,723,150"/>
+<area shape="rect" id="node9" href="$classcurve__node.html#aace217c0200a043c2d2f5f071fde8e56" title="curve_node::draw_splines" alt="" coords="771,117,944,150"/>
+<area shape="rect" id="node11" href="$classcurve__node.html#afb8f3c6e6a53e062f5c2fb1cf7243969" title="curve_node::SplineCurve" alt="" coords="996,5,1164,38"/>
+<area shape="rect" id="node13" href="$classcurve__node.html#ac1e52fe7e8f762074b804b88a1b420cf" title="curve_node::build_square" alt="" coords="995,61,1165,94"/>
+<area shape="rect" id="node23" href="$classcurve__node.html#a51a7bb24aa5832b54ec61507a556dda9" title="curve_node::build_fluo" alt="" coords="1004,117,1156,150"/>
+<area shape="rect" id="node25" href="$classcurve__node.html#a6338ccf647d5f510c47702f613a3d9d2" title="curve_node::build_preheat" alt="" coords="993,173,1167,206"/>
+<area shape="rect" id="node27" href="$classcurve__node.html#a787cd6340d6b9e15da5723ed25eb18ff" title="curve_node::build_inverse" alt="" coords="993,229,1167,262"/>
+<area shape="rect" id="node15" href="$patch__core_8cpp.html#a072192232bbd1f5cb8cdffe9bc243870" title="do_logical_menu_curve" alt="" coords="1217,61,1375,94"/>
+<area shape="rect" id="node17" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1425,50,1583,105"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1632,61,1741,94"/>
+<area shape="rect" id="node21" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1789,61,1840,94"/>
+</map>

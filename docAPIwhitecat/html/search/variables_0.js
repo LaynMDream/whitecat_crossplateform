@@ -38,7 +38,6 @@ var searchData=
   ['annotation_5fmemoires',['annotation_memoires',['../whitecat_8h.html#acef643233b3215f98b5a625487b58ff9',1,'whitecat.h']]],
   ['annote_5fmy_5fvideo',['annote_my_video',['../whitecat_8h.html#a3772c11ee18b44c2fbc50aeee465323f',1,'whitecat.h']]],
   ['appareil',['Appareil',['../whitecat_8h.html#a573eb812c98b6c624936db23afefeace',1,'whitecat.h']]],
-  ['appliname',['AppliName',['../whitecat_8h.html#ab8c665479e2307916fc29d2703ef0bb8',1,'whitecat.h']]],
   ['arduino_5fan_5faff_5fsize',['arduino_an_aff_size',['../save__show__13_8cpp.html#ae2b42f549b0f7a0b53b26e2baed6bcf2',1,'save_show_13.cpp']]],
   ['arduino_5fan_5ftyp_5fsize',['arduino_an_typ_size',['../save__show__13_8cpp.html#aa9bb005c6118d5bda63bd254178dd51a',1,'save_show_13.cpp']]],
   ['arduino_5fanalog_5fattribution_5finput',['arduino_analog_attribution_input',['../whitecat_8h.html#abb369d19b5685c468ffedaf31b04b354',1,'whitecat.h']]],
@@ -58,7 +57,7 @@ var searchData=
   ['arduino_5fmax_5fout_5fdigi',['arduino_max_out_digi',['../whitecat_8h.html#a55e9a7437dca41de4b643057c08ad19f',1,'whitecat.h']]],
   ['arduino_5forder',['arduino_order',['../whitecat_8h.html#a32bfbb1d7acebed2dec256cbc39aac56',1,'whitecat.h']]],
   ['arduino_5fpwm_5faff_5fsize',['arduino_pwm_aff_size',['../save__show__13_8cpp.html#a2eda9c7168b072b8e5f7aea0c3d00bf1',1,'save_show_13.cpp']]],
-  ['arduino_5frate',['ARDUINO_RATE',['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'MAIN_janv_2014_opensource_kbd.cpp']]],
+  ['arduino_5frate',['ARDUINO_RATE',['../_m_a_i_n__avec__objets_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'ARDUINO_RATE():&#160;MAIN_avec_objets.cpp'],['../_m_a_i_n__febrier__2014_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'ARDUINO_RATE():&#160;MAIN_febrier_2014.cpp'],['../_m_a_i_n__fevrier__2014_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'ARDUINO_RATE():&#160;MAIN_fevrier_2014.cpp'],['../_m_a_i_n__janv__2014__opensource__kbd_8cpp.html#a76c8221e0eedb0bbad95f071046f2485',1,'ARDUINO_RATE():&#160;MAIN_janv_2014_opensource_kbd.cpp']]],
   ['arduino_5fsimulating_5fmidi',['arduino_simulating_midi',['../whitecat_8h.html#a18609ef09e36d3647b7b189bb1e4e4fa',1,'whitecat.h']]],
   ['arduino_5ftotal_5fpin',['arduino_total_pin',['../whitecat_8h.html#a1bc1c3f47d2088f2fc9b067d3eea0c73',1,'whitecat.h']]],
   ['artdetected',['ArtDetected',['../whitecat_8h.html#ac63e0c383a1df6ee1f0f8923d8763224',1,'whitecat.h']]],
@@ -84,6 +83,8 @@ var searchData=
   ['audio_5fcue_5fin_5fwas',['audio_cue_in_was',['../whitecat_8h.html#ab764600098a9f8ed173af8370cfc6106',1,'whitecat.h']]],
   ['audio_5fcue_5fout_5fwas',['audio_cue_out_was',['../whitecat_8h.html#a339a0d736f13b706b063eaa34f5b2a9f',1,'whitecat.h']]],
   ['audio_5fdevice_5fname',['audio_device_name',['../whitecat_8h.html#a5ca71ed75d32b6e2b745361281f4672d',1,'whitecat.h']]],
+  ['audio_5fdo_5fload_5fmidi_5fnext_5ffile',['audio_do_load_midi_next_file',['../whitecat_8h.html#a0037c77d5b1a91d944ba9b04a4dbb0ce',1,'whitecat.h']]],
+  ['audio_5fdo_5fload_5fmidi_5fprev_5ffile',['audio_do_load_midi_prev_file',['../whitecat_8h.html#a0f6d5e5f58d2820d39efcc9ecf889f95',1,'whitecat.h']]],
   ['audio_5ffilenumber_5fsize',['audio_filenumber_size',['../save__show__13_8cpp.html#af9170cd0e224996dc631d7c0f5785d7f',1,'save_show_13.cpp']]],
   ['audio_5ffolder',['audio_folder',['../whitecat_8h.html#ad3c23671d90d7aa0a70c5c0d6964d234',1,'whitecat.h']]],
   ['audio_5fnumber_5ftotal_5fin_5ffolder',['audio_number_total_in_folder',['../whitecat_8h.html#a162bafc64c9646edebd9e0ec6d450f6e',1,'whitecat.h']]],
@@ -101,5 +102,5 @@ var searchData=
   ['auto_5freset_5fcrossfade_5fspeed_5fon_5flink',['auto_reset_crossfade_speed_on_link',['../whitecat_8h.html#a4e1c96dc86d8a59cf55c907d8b2a414d',1,'whitecat.h']]],
   ['autolaunch',['autolaunch',['../whitecat_8h.html#a0e693692eb5b51a925b5bd1176725fee',1,'whitecat.h']]],
   ['automatic_5ftime_5ffor_5fsave',['automatic_time_for_save',['../whitecat_8h.html#a191a8fa13376fb8a4f22fba545da56c9',1,'whitecat.h']]],
-  ['axaxax12',['axaxax12',['../whitecat_8h.html#ae96e723e9e712f09908cc90f2cea208e',1,'whitecat.h']]]
+  ['axaxax12',['axaxax12',['../colors__fonts_8h.html#ae96e723e9e712f09908cc90f2cea208e',1,'colors_fonts.h']]]
 ];

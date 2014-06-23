@@ -1,0 +1,15 @@
+<map id="do_logical_Time_Window" name="do_logical_Time_Window">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="247,5,377,59"/>
+<area shape="rect" id="node7" href="$time__core__3_8cpp.html#aa13fdced1e9efa3d645d9021593edf7e" title="Chrono_PlayPause" alt="" coords="245,189,379,222"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="496,133,552,166"/>
+<area shape="rect" id="node11" href="$banger__core__8_8cpp.html#a9615c6c17d4bd54d959e0d9b85a0ff77" title="Chrono_Reset" alt="" coords="259,245,365,278"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#ac4236bb4164b6b65e8ff01c0549d47a9" title="set_time_cursor_to\l_time_type" alt="" coords="457,411,591,466"/>
+<area shape="rect" id="node18" href="$chasers__core__5_8cpp.html#ae2b4b1de6181d516a8ae0b71b7a37838" title="set_chaser_tempo_unit" alt="" coords="233,301,391,334"/>
+<area shape="rect" id="node20" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="243,357,381,390"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a18d9930e99d784f37bcf4427b9bb616f" title="set_new_time_in_tap\l_tempo" alt="" coords="240,413,384,467"/>
+<area shape="rect" id="node25" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="243,490,381,523"/>
+<area shape="rect" id="node27" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="225,546,399,579"/>
+<area shape="rect" id="node29" href="$_c_o_r_e__6_8cpp.html#a258baf5cfe97f8043dec96ce785fcb34" title="button_midi_out_core" alt="" coords="239,133,385,166"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="449,5,599,59"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a23e8581e0717573c80f8fc12ea8606bd" title="refresh_time_cursor" alt="" coords="649,422,785,455"/>
+</map>

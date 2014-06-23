@@ -1,0 +1,30 @@
+<map id="BoxGuiBuilder_iCat" name="BoxGuiBuilder_iCat">
+<area shape="rect" id="node3" href="$gui__boutons__rebuild1_8cpp.html#ab0ea33493c26853e0c8a8d19042043dc" title="toggling_bar_view" alt="" coords="453,727,579,761"/>
+<area shape="rect" id="node5" href="$icat__core14_8cpp.html#ab3f0023aea3c5869bf75875825607542" title="recalculate_iCatBuilder\l_window_size" alt="" coords="439,5,593,59"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="201,218,364,251"/>
+<area shape="rect" id="node11" href="$icat__core14_8cpp.html#a469dfea8228721f299af4b56df39989b" title="do_refresh_iCat" alt="" coords="225,381,340,414"/>
+<area shape="rect" id="node32" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="447,839,585,873"/>
+<area shape="rect" id="node34" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="488,783,544,817"/>
+<area shape="rect" id="node36" href="$icat__core14_8cpp.html#ac6ce4044c10ed017ce1cc07016decedd" title="load_iCat_page" alt="" coords="227,109,339,142"/>
+<area shape="rect" id="node39" href="$i_cat14_8cpp.html#abc079caac0c225bbb8484daf457da114" title="Tablier_GUI_editor" alt="" coords="217,673,348,706"/>
+<area shape="rect" id="node43" href="$i_cat14_8cpp.html#a7426d98eb8f682691db780eb7c04addc" title="Menu_edition_iCat_sliders" alt="" coords="196,882,369,915"/>
+<area shape="rect" id="node58" href="$i_cat14_8cpp.html#a78e4867c9daa670552f0b1c1ccf8e202" title="Menu_edition_iCat_boutons" alt="" coords="192,994,373,1027"/>
+<area shape="rect" id="node66" href="$i_cat14_8cpp.html#a764d8450adbc4acf5723d1867f2f9238" title="Menu_edition_iCat_strings" alt="" coords="195,1050,371,1083"/>
+<area shape="rect" id="node74" href="$i_cat14_8cpp.html#a0b170fa87838ed3b3a31c40d00f980e9" title="Menu_edition_tracking_zone" alt="" coords="189,938,376,971"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="441,82,591,137"/>
+<area shape="rect" id="node14" href="$icat__core14_8cpp.html#a68b2b6f713ddcd8e8eef86022f7efe17" title="To_iCat_DrawSlider" alt="" coords="447,159,585,193"/>
+<area shape="rect" id="node16" href="$icat__core14_8cpp.html#a5e489ecf91d98fca0c8a20af6a80d188" title="To_iCat_DrawButton" alt="" coords="445,215,587,249"/>
+<area shape="rect" id="node18" href="$icat__core14_8cpp.html#a21c6d520bafb57220176544983795395" title="To_iCat_DrawString" alt="" coords="447,271,585,305"/>
+<area shape="rect" id="node20" href="$icat__core14_8cpp.html#ae03469250a821b30c7857d581c9b5abb" title="To_iCat_DrawTrackingZone" alt="" coords="425,327,607,361"/>
+<area shape="rect" id="node22" href="$icat__core14_8cpp.html#a6c1be76af31e27a4e0fb05c6f35d4443" title="refresh_continuously\l_iCat_sliders" alt="" coords="445,383,587,438"/>
+<area shape="rect" id="node24" href="$icat__core14_8cpp.html#a73fdc8999a84e32c9274a3e6eef616ee" title="refresh_continuously\l_iCat_buttons" alt="" coords="445,461,587,515"/>
+<area shape="rect" id="node28" href="$icat__core14_8cpp.html#a31e04a262e705fcd565133a9b59d0be1" title="refresh_continuously\l_iCat_trackerzones" alt="" coords="445,538,587,593"/>
+<area shape="rect" id="node30" href="$icat__core14_8cpp.html#ae1847eaa0922902ca67dd5cebbcf8aae" title="Fantastick_check_string" alt="" coords="435,615,597,649"/>
+<area shape="rect" id="node26" href="$_c_o_r_e__6_8cpp.html#a5615f7c8a54ba9a586dd910ec1ae5e43" title="constrain_int_data\l_to_this_range" alt="" coords="656,461,784,515"/>
+<area shape="rect" id="node41" href="$i_cat14_8cpp.html#a918b8e26d993eb1d4443651daeab78fb" title="Point_Viewing" alt="" coords="464,671,568,705"/>
+<area shape="rect" id="node45" href="$gui__boutons__rebuild1_8cpp.html#a602e186310541aea863c7368fef4b3f1" title="previous_button_view" alt="" coords="443,1119,589,1153"/>
+<area shape="rect" id="node47" href="$gui__boutons__rebuild1_8cpp.html#a25048f0a097129c29226ec04caae26a5" title="next_button_view" alt="" coords="455,895,577,929"/>
+<area shape="rect" id="node49" href="$gui__boutons__rebuild1_8cpp.html#aabe7e4ca1f83ca56984eb02767aece7d" title="case_moins_view" alt="" coords="453,951,579,985"/>
+<area shape="rect" id="node51" href="$gui__boutons__rebuild1_8cpp.html#a61fe50bce3e45b6ebb295ba656a05b9f" title="case_plus_view" alt="" coords="459,1007,573,1041"/>
+<area shape="rect" id="node53" href="$gui__boutons__rebuild1_8cpp.html#ab21a3bdb57480d3c80b64c2da8ba3d0e" title="pulse_bar_view" alt="" coords="460,1063,572,1097"/>
+</map>

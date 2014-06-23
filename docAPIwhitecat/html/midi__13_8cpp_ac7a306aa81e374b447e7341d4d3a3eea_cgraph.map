@@ -1,0 +1,10 @@
+<map id="midipage_devices" name="midipage_devices">
+<area shape="rect" id="node3" href="$midi__13_8cpp.html#aff8c5f1fdfe9df36489591a068675118" title="midi_list_and_choose\l_devices" alt="" coords="181,5,328,59"/>
+<area shape="rect" id="node7" href="$midi___c_o_r_e_8cpp.html#a03ded972e797f8e15514a17805345818" title="QuitMidi" alt="" coords="220,82,289,115"/>
+<area shape="rect" id="node9" href="$midi___c_o_r_e_8cpp.html#a0ccf480a33424e626f88d109d53d8366" title="InitMidi" alt="" coords="223,138,287,171"/>
+<area shape="rect" id="node5" href="$midi__13_8cpp.html#a7dba8baf7c2d933706a03f39c4525891" title="PrintSlotsInfosDevices" alt="" coords="377,15,532,49"/>
+<area shape="rect" id="node11" href="$midi___c_o_r_e_8cpp.html#a2b0b387b399b110d0894dd7c92cf64b3" title="InitTblLibEv" alt="" coords="409,82,500,115"/>
+<area shape="rect" id="node13" href="$midi___c_o_r_e_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="400,138,509,171"/>
+<area shape="rect" id="node17" href="$midi___c_o_r_e_8cpp.html#ad481bcd8fdbcdd7399c796a7cd4a3ada" title="InstallFilter" alt="" coords="412,194,497,227"/>
+<area shape="rect" id="node15" href="$midi__13_8cpp.html#a831f1dfc7870ae4f6c64a0e65fbaf3ff" title="Display" alt="" coords="581,138,648,171"/>
+</map>

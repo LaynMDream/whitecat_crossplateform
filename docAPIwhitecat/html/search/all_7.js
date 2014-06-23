@@ -20,6 +20,5 @@ var searchData=
   ['help_5f2_2ecpp',['help_2.cpp',['../help__2_8cpp.html',1,'']]],
   ['helpwindow',['HelpWindow',['../help__2_8cpp.html#a07ac15f267d5edf5186ce8b1f4afafad',1,'help_2.cpp']]],
   ['highest_5flevel_5fcomes_5ffrom_5ffader',['highest_level_comes_from_fader',['../whitecat_8h.html#ad6a5c101af8afa67414f1fed6c79b107',1,'whitecat.h']]],
-  ['hlibsunlite',['hLibSunlite',['../dmx__sunlite_8cpp.html#a6a4e71386067bff97eb5f68c5830c2fd',1,'dmx_sunlite.cpp']]],
-  ['hostnamebuffer',['hostnamebuffer',['../whitecat_8h.html#ad33d065fcd3990ba24e3b495ea285de1',1,'whitecat.h']]]
+  ['hlibsunlite',['hLibSunlite',['../dmx__sunlite_8cpp.html#a6a4e71386067bff97eb5f68c5830c2fd',1,'dmx_sunlite.cpp']]]
 ];

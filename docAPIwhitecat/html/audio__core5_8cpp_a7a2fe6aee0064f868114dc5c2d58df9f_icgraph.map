@@ -1,0 +1,11 @@
+<map id="Control_Audio_thruth_faders" name="Control_Audio_thruth_faders">
+<area shape="rect" id="node3" href="$dmx__functions__13_8cpp.html#ac0e932ae0c7050397aecccdf0a97c882" title="calculs_etats_faders\l_et_contenus" alt="" coords="199,21,340,75"/>
+<area shape="rect" id="node5" href="$dmx__functions__13_8cpp.html#adb29aebba6d2c4fb69de35a3a6496ebf" title="Merger" alt="" coords="391,31,452,65"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="503,31,556,65"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="607,5,716,38"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1448,31,1499,65"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="767,5,881,38"/>
+<area shape="rect" id="node13" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="932,5,1076,38"/>
+<area shape="rect" id="node15" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1125,5,1184,38"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1233,5,1399,38"/>
+</map>

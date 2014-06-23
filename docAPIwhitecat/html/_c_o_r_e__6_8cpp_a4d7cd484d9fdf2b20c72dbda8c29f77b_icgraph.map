@@ -1,0 +1,24 @@
+<map id="do_stock_fadersstate" name="do_stock_fadersstate">
+<area shape="rect" id="node3" href="$banger__core__8_8cpp.html#ae4008269e0575da11cc90e812961ef6f" title="Bang_event" alt="" coords="437,191,528,225"/>
+<area shape="rect" id="node31" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="823,330,913,363"/>
+<area shape="rect" id="node49" href="$_c_o_r_e__6_8cpp.html#ad5d62bd83cd9b293bfcd326a9c77537d" title="do_action_on_selected\l_minifaders" alt="" coords="200,277,355,331"/>
+<area shape="rect" id="node58" href="$minifaders__core_8cpp.html#a81fcd9a467cd5debbaad4d09b3782f19" title="all_at_zero_panel_core" alt="" coords="200,354,355,387"/>
+<area shape="rect" id="node5" href="$banger__core__8_8cpp.html#a4003a08a1620546de77b118c91d2fd9d" title="do_bang" alt="" coords="643,33,712,66"/>
+<area shape="rect" id="node11" href="$banger__core__8_8cpp.html#a4fe16ad483c0c1609d97aeb9a23c74ee" title="do_logical_fenetre\l_banger" alt="" coords="615,175,740,230"/>
+<area shape="rect" id="node16" href="$banger__core__8_8cpp.html#ab405ab53ea444b049e5ffa258498fcb6" title="refresh_banger_wx" alt="" coords="612,119,743,153"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1221,191,1331,225"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1781,223,1832,257"/>
+<area shape="rect" id="node13" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1004,185,1161,239"/>
+<area shape="rect" id="node18" href="$i_cat14_8cpp.html#a16285241f82898e7a5f051b03d90b9a3" title="check_button" alt="" coords="819,273,917,306"/>
+<area shape="rect" id="node23" href="$keyboard__functions2_8cpp.html#af3dd6697323b10b480719c1612bcf29a" title="key_backward" alt="" coords="815,89,921,122"/>
+<area shape="rect" id="node28" href="$keyboard__functions2_8cpp.html#a6b73a3669797504ce2e357d9a8b9a2c2" title="key_forward" alt="" coords="821,33,915,66"/>
+<area shape="rect" id="node45" href="$sequentiel__6__core_8cpp.html#a2a71c851cf25565491dd10423bc80380" title="do_logical_Sequenciel\l_Window" alt="" coords="793,145,943,199"/>
+<area shape="rect" id="node20" href="$i_cat14_8cpp.html#aa9772b548765a631d4bae1c14053b4e1" title="DoJobFantastickTouch" alt="" coords="1005,271,1160,305"/>
+<area shape="rect" id="node25" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1013,89,1152,122"/>
+<area shape="rect" id="node33" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="993,330,1172,363"/>
+<area shape="rect" id="node35" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="1225,330,1327,363"/>
+<area shape="rect" id="node37" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="1379,245,1525,299"/>
+<area shape="rect" id="node42" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="1389,322,1515,377"/>
+<area shape="rect" id="node39" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="1575,255,1732,289"/>
+<area shape="rect" id="node54" href="$minifaders__core_8cpp.html#ac974e1c0e7800b10f4290db4d5ce4db0" title="mini_faders_panel_core" alt="" coords="404,354,561,387"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="pdf_draw_little_gridplayer" name="pdf_draw_little_gridplayer">
+<area shape="rect" id="node3" href="$saves__export__pdf2_8cpp.html#a7d6f602fcde4b6dae7d59591dbb8b265" title="draw_pdf_grid" alt="" coords="225,33,327,66"/>
+<area shape="rect" id="node5" href="$saves__export__pdf2_8cpp.html#a7ce311eef0e05201b6060acbcf49d006" title="draw_pdf_grid_players\l_config" alt="" coords="376,22,528,77"/>
+<area shape="rect" id="node7" href="$saves__export__pdf2_8cpp.html#a690cff6b3991789940013a85ddcc0588" title="do_pdf_export" alt="" coords="576,33,680,66"/>
+<area shape="rect" id="node9" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="728,33,888,66"/>
+<area shape="rect" id="node11" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="937,5,1047,38"/>
+<area shape="rect" id="node19" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="936,61,1048,94"/>
+<area shape="rect" id="node13" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1096,5,1235,38"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1312,5,1421,38"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1499,33,1549,66"/>
+<area shape="rect" id="node21" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1136,61,1195,94"/>
+<area shape="rect" id="node23" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1284,61,1449,94"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="delete_selected_shapes" name="delete_selected_shapes">
+<area shape="rect" id="node3" href="$plot__core9_8cpp.html#a030f8007ad7298ca956af8dd807718a6" title="snapshot_shapes" alt="" coords="217,5,340,38"/>
+<area shape="rect" id="node5" href="$plot__core9_8cpp.html#a52ebd70a395c38d47cf2568e5c682cb2" title="clear_shape_slot" alt="" coords="219,61,339,94"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#a83c32bfcc46e9b4120d887cb1952f254" title="rearrange_shapes" alt="" coords="216,117,341,150"/>
+<area shape="rect" id="node9" href="$plot__core9_8cpp.html#a02cebb0231b44ec953ad598da42e30bf" title="copy_shape_to_emply_slot" alt="" coords="391,117,569,150"/>
+</map>

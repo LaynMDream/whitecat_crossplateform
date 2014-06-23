@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['y',['y',['../structcurve__node.html#afc1f4f007a920aa79c1f1f0ff0b49465',1,'curve_node::y()'],['../struct_n_o_d_e.html#a1c83ccf922c1655a4f4cc90fb7455670',1,'NODE::y()']]],
+  ['y',['y',['../classcurve__node.html#afc1f4f007a920aa79c1f1f0ff0b49465',1,'curve_node::y()'],['../struct_n_o_d_e.html#a1c83ccf922c1655a4f4cc90fb7455670',1,'NODE::y()']]],
   ['y_5fbanger',['Y_banger',['../whitecat_8h.html#af8c123445f9f04f01f84dad1dbbacacb',1,'whitecat.h']]],
   ['y_5fecho',['y_echo',['../whitecat_8h.html#ab2c6b3f93f527c147d8dc642d231f25f',1,'whitecat.h']]],
   ['y_5ffract',['y_fract',['../whitecat_8h.html#ad40edc21c83105d6185634e3acd7b5eb',1,'whitecat.h']]],
@@ -24,7 +24,7 @@ var searchData=
   ['yminifaders',['yMinifaders',['../whitecat_8h.html#aef0168c5982f28bf24e337fdfd06c17d',1,'whitecat.h']]],
   ['ymover_5fwindow',['ymover_window',['../whitecat_8h.html#a4cf0218a150b1b8476d4ffe0b0421db4',1,'whitecat.h']]],
   ['ynum_5fwindow',['ynum_window',['../whitecat_8h.html#a6776968ddc567ecccd76b33255c826fe',1,'whitecat.h']]],
-  ['ypatch_5fwindow',['ypatch_window',['../whitecat_8h.html#a8fd8eb2c622a0dfe4a2ba0033d2768c2',1,'whitecat.h']]],
+  ['ypatch_5fwindow',['ypatch_window',['../classgraphic__context.html#ae902bd96df3912441f3f5e99cd802fbf',1,'graphic_context::ypatch_window()'],['../whitecat_8h.html#a8fd8eb2c622a0dfe4a2ba0033d2768c2',1,'ypatch_window():&#160;whitecat.h']]],
   ['ysave_5fwindow',['ysave_window',['../whitecat_8h.html#a7456472d4cee7623dbff2bf07aa2974a',1,'whitecat.h']]],
   ['yseq_5fwindow',['yseq_window',['../whitecat_8h.html#a34a9ad7f6394a51c9d35e2880c56286c',1,'whitecat.h']]],
   ['ytime_5fwindow',['ytime_window',['../whitecat_8h.html#a85158c513e8f038f9feab8185b8fb128',1,'whitecat.h']]],

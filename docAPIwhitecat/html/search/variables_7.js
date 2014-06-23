@@ -18,6 +18,5 @@ var searchData=
   ['headerlength',['HeaderLength',['../whitecat_8h.html#a8317fab4944fdb709f155b83353acd12',1,'whitecat.h']]],
   ['height',['height',['../saves__export__pdf2_8cpp.html#a64f3448e2733fa528f9de13b7c627d69',1,'saves_export_pdf2.cpp']]],
   ['highest_5flevel_5fcomes_5ffrom_5ffader',['highest_level_comes_from_fader',['../whitecat_8h.html#ad6a5c101af8afa67414f1fed6c79b107',1,'whitecat.h']]],
-  ['hlibsunlite',['hLibSunlite',['../dmx__sunlite_8cpp.html#a6a4e71386067bff97eb5f68c5830c2fd',1,'dmx_sunlite.cpp']]],
-  ['hostnamebuffer',['hostnamebuffer',['../whitecat_8h.html#ad33d065fcd3990ba24e3b495ea285de1',1,'whitecat.h']]]
+  ['hlibsunlite',['hLibSunlite',['../dmx__sunlite_8cpp.html#a6a4e71386067bff97eb5f68c5830c2fd',1,'dmx_sunlite.cpp']]]
 ];

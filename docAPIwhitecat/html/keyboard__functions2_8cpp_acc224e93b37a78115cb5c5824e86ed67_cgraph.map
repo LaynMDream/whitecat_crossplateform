@@ -1,0 +1,5 @@
+<map id="check_channel_plus" name="check_channel_plus">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#aa0329053411635ed42b29bcdb7287acf" title="check_presence_of_any\l_channel_in_A_view" alt="" coords="195,5,357,59"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="211,82,341,137"/>
+<area shape="rect" id="node7" href="$plot_8cpp.html#a63d5e7a094f416fd40690d465ffacdd0" title="add_channel_selection\l_to_layers_plot" alt="" coords="199,159,353,214"/>
+</map>

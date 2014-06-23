@@ -1,0 +1,16 @@
+<map id="logical_plot_symbol_list" name="logical_plot_symbol_list">
+<area shape="rect" id="node3" href="$plot_8cpp.html#ae4d4bf060a0f2c56a500418205a18c5b" title="change_symbol_type" alt="" coords="217,5,361,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="261,61,317,94"/>
+<area shape="rect" id="node7" href="$plot_8cpp.html#a6f933b83f292138e49fc9057684a1b4b" title="add_a_symbol_to_plot" alt="" coords="213,117,365,150"/>
+<area shape="rect" id="node13" href="$plot_8cpp.html#a3b11b23ea0a7eab7727ad25259caba54" title="edit_symbol_name" alt="" coords="224,173,355,206"/>
+<area shape="rect" id="node9" href="$plot_8cpp.html#a58fe8fc317633b7cfd679c95c67193b9" title="clear_symbol_slot" alt="" coords="432,61,557,94"/>
+<area shape="rect" id="node11" href="$plot_8cpp.html#ac16f49a033e4ae3af728e3789f080e51" title="reset_symbols_selected" alt="" coords="413,117,576,150"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="425,173,564,206"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc" title="substract_a_window" alt="" coords="424,229,565,262"/>
+<area shape="rect" id="node19" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="645,51,784,85"/>
+<area shape="rect" id="node21" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="649,107,780,162"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a492a9badab85a9e07b0200f4e34b607f" title="reset_check_grada_overide\l_dimmers" alt="" coords="624,185,805,239"/>
+<area shape="rect" id="node25" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="628,262,801,295"/>
+<area shape="rect" id="node27" href="$_c_o_r_e__6_8cpp.html#a91e4f7146fd4a20828a9bd7ac93c0baa" title="reset_audio_indexs\l_to_dock" alt="" coords="648,318,781,373"/>
+<area shape="rect" id="node29" href="$_c_o_r_e__6_8cpp.html#abfbdb9056b43d4acfaf3f39122911bad" title="remember_config_page" alt="" coords="636,395,793,429"/>
+</map>

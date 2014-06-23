@@ -1,0 +1,7 @@
+<map id="select_channel_minus" name="select_channel_minus">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#aa0329053411635ed42b29bcdb7287acf" title="check_presence_of_any\l_channel_in_A_view" alt="" coords="217,5,380,59"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#abe9a3b526c970e74827588b9e7dac195" title="detect_last_activ_channel\l_in_activ_view" alt="" coords="212,82,385,137"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="233,159,364,214"/>
+<area shape="rect" id="node9" href="$plot_8cpp.html#a63d5e7a094f416fd40690d465ffacdd0" title="add_channel_selection\l_to_layers_plot" alt="" coords="221,237,376,291"/>
+<area shape="rect" id="node11" href="$plot_8cpp.html#a62a28f2a197fa1c11db6a93e2dae6362" title="substract_channel_selection\l_to_layers_plot" alt="" coords="205,314,392,369"/>
+</map>

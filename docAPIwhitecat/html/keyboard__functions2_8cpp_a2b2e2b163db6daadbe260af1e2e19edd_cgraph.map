@@ -1,0 +1,17 @@
+<map id="key_switch_window_down" name="key_switch_window_down">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc" title="substract_a_window" alt="" coords="260,194,401,227"/>
+<area shape="rect" id="node17" href="$gestionaire__fenetres2_8cpp.html#ada3b9703b1aaa1cc37304633bdeb526c" title="add_a_window" alt="" coords="277,433,384,466"/>
+<area shape="rect" id="node31" href="$gestionaire__fenetres2_8cpp.html#a2ccc804649f44cb5fed71045ff451c3a" title="check_nbre_opened_windows" alt="" coords="233,489,428,522"/>
+<area shape="rect" id="node33" href="$gestionaire__fenetres2_8cpp.html#ac3bd0e2081750b56f44edcd478f0e2bf" title="window_bring_to_front" alt="" coords="255,545,407,578"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="499,61,637,94"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="503,117,633,171"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a492a9badab85a9e07b0200f4e34b607f" title="reset_check_grada_overide\l_dimmers" alt="" coords="477,327,659,382"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="481,194,655,227"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a91e4f7146fd4a20828a9bd7ac93c0baa" title="reset_audio_indexs\l_to_dock" alt="" coords="501,250,635,305"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#abfbdb9056b43d4acfaf3f39122911bad" title="remember_config_page" alt="" coords="489,5,647,38"/>
+<area shape="rect" id="node20" href="$_c_o_r_e__6_8cpp.html#aa8157e82745eb3ac355d8f443b19955f" title="refresh_shape_factors" alt="" coords="493,594,643,627"/>
+<area shape="rect" id="node22" href="$saves__menu__8_8cpp.html#aa97cd577bd2f433780569b3a20136d23" title="scan_importfolder" alt="" coords="505,650,631,683"/>
+<area shape="rect" id="node24" href="$saves__menu__8_8cpp.html#aa54ed73e914394a0efe1c45930c72cbd" title="scan_savesfolder" alt="" coords="507,405,629,438"/>
+<area shape="rect" id="node27" href="$gestionaire__fenetres2_8cpp.html#a3ecbad4b357ed9e70478e6418261f2fd" title="reset_config_indexes" alt="" coords="496,461,640,494"/>
+<area shape="rect" id="node29" href="$gestionaire__fenetres2_8cpp.html#ad38c1b7f03bd1ec3007a87d4c55efacf" title="clear_non_desired_values\l_in_window_list" alt="" coords="483,517,653,571"/>
+</map>

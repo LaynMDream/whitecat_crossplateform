@@ -1,0 +1,16 @@
+<map id="do_mouse_right_click_menu" name="do_mouse_right_click_menu">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="283,138,339,171"/>
+<area shape="rect" id="node5" href="$gestionaire__fenetres2_8cpp.html#ada3b9703b1aaa1cc37304633bdeb526c" title="add_a_window" alt="" coords="257,433,364,466"/>
+<area shape="rect" id="node21" href="$_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc" title="substract_a_window" alt="" coords="240,194,381,227"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a492a9badab85a9e07b0200f4e34b607f" title="reset_check_grada_overide\l_dimmers" alt="" coords="429,327,611,382"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#aa8157e82745eb3ac355d8f443b19955f" title="refresh_shape_factors" alt="" coords="445,594,595,627"/>
+<area shape="rect" id="node11" href="$saves__menu__8_8cpp.html#aa97cd577bd2f433780569b3a20136d23" title="scan_importfolder" alt="" coords="457,650,583,683"/>
+<area shape="rect" id="node13" href="$saves__menu__8_8cpp.html#aa54ed73e914394a0efe1c45930c72cbd" title="scan_savesfolder" alt="" coords="459,405,581,438"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a91e4f7146fd4a20828a9bd7ac93c0baa" title="reset_audio_indexs\l_to_dock" alt="" coords="453,250,587,305"/>
+<area shape="rect" id="node17" href="$gestionaire__fenetres2_8cpp.html#a3ecbad4b357ed9e70478e6418261f2fd" title="reset_config_indexes" alt="" coords="448,461,592,494"/>
+<area shape="rect" id="node19" href="$gestionaire__fenetres2_8cpp.html#ad38c1b7f03bd1ec3007a87d4c55efacf" title="clear_non_desired_values\l_in_window_list" alt="" coords="435,517,605,571"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="451,61,589,94"/>
+<area shape="rect" id="node25" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="455,117,585,171"/>
+<area shape="rect" id="node28" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="433,194,607,227"/>
+<area shape="rect" id="node31" href="$_c_o_r_e__6_8cpp.html#abfbdb9056b43d4acfaf3f39122911bad" title="remember_config_page" alt="" coords="441,5,599,38"/>
+</map>

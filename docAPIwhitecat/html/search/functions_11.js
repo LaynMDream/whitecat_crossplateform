@@ -84,7 +84,7 @@ var searchData=
   ['snapshot_5fshapes',['snapshot_shapes',['../plot__core9_8cpp.html#a030f8007ad7298ca956af8dd807718a6',1,'plot_core9.cpp']]],
   ['snapshot_5fwindows',['snapshot_windows',['../_c_o_r_e__6_8cpp.html#addd538e55c30edb83bd3eae7f5342a0c',1,'CORE_6.cpp']]],
   ['sound_5fcore_5fprocessing',['sound_core_processing',['../audio__core5_8cpp.html#a13f7e158754259cb905ce151d53b5d70',1,'audio_core5.cpp']]],
-  ['splinecurve',['SplineCurve',['../patch__splines__2_8cpp.html#a5424e2f37a599febce25be271c5a88e8',1,'patch_splines_2.cpp']]],
+  ['splinecurve',['SplineCurve',['../classcurve__node.html#afb8f3c6e6a53e062f5c2fb1cf7243969',1,'curve_node']]],
   ['stock_5fetat_5fpicker_5fdans_5fdockcolor',['stock_etat_picker_dans_dockcolor',['../trichro__core2_8cpp.html#a5131f6eaf6586fea783516b48d810cda',1,'trichro_core2.cpp']]],
   ['store_5fplot_5fposition_5fof_5factiv_5fcalc',['store_plot_position_of_activ_calc',['../plot_8cpp.html#ab55dc973d445812eb41e0ca9d1ec6cd2',1,'store_plot_position_of_activ_calc(int calc):&#160;plot.cpp'],['../plot__core9_8cpp.html#ab55dc973d445812eb41e0ca9d1ec6cd2',1,'store_plot_position_of_activ_calc(int calc):&#160;plot_core9.cpp']]],
   ['store_5fplot_5fposition_5fof_5fshapes',['store_plot_position_of_shapes',['../plot__core9_8cpp.html#a70cb86b534e799be9af44596fbc62be1',1,'plot_core9.cpp']]],
@@ -95,6 +95,5 @@ var searchData=
   ['substract_5fa_5fwindow',['substract_a_window',['../_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc',1,'CORE_6.cpp']]],
   ['substract_5fchannel_5fselection_5fto_5flayers_5fplot',['substract_channel_selection_to_layers_plot',['../plot_8cpp.html#a62a28f2a197fa1c11db6a93e2dae6362',1,'substract_channel_selection_to_layers_plot():&#160;plot.cpp'],['../plot__core9_8cpp.html#a62a28f2a197fa1c11db6a93e2dae6362',1,'substract_channel_selection_to_layers_plot():&#160;plot_core9.cpp']]],
   ['sunlite_5fsend_5fdata',['sunlite_send_data',['../dmx__sunlite_8cpp.html#a2fa2d09b0fd94bfa1d215fbb83531865',1,'dmx_sunlite.cpp']]],
-  ['switch_5fvalues',['switch_values',['../_c_o_r_e__6_8cpp.html#a4909ea51fd817d6160d0c03a3239d5d1',1,'CORE_6.cpp']]],
   ['symbol_5fedition_5foptions',['symbol_edition_options',['../plot_8cpp.html#a5e1ce40da808d2566d0cc6d864ad0aac',1,'symbol_edition_options(int plotx, int ploty):&#160;plot.cpp'],['../plot9_8cpp.html#a5e1ce40da808d2566d0cc6d864ad0aac',1,'symbol_edition_options(int plotx, int ploty):&#160;plot9.cpp']]]
 ];

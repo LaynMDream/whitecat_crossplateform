@@ -1,0 +1,8 @@
+<map id="patch_select_all_dimmers" name="patch_select_all_dimmers">
+<area shape="rect" id="node3" href="$keyboard__functions2_8cpp.html#a6da8be4c214b63bf629cd91c9761fe5e" title="key_select_all" alt="" coords="247,7,351,41"/>
+<area shape="rect" id="node11" href="$patch__core_8cpp.html#a4d803399af09cb8327d07795a5f51a93" title="do_logical_PatchBox" alt="" coords="227,66,371,99"/>
+<area shape="rect" id="node5" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="429,5,568,38"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="627,38,736,71"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="784,38,835,71"/>
+<area shape="rect" id="node13" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="420,61,577,115"/>
+</map>

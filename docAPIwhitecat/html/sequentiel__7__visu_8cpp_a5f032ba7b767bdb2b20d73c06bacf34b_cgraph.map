@@ -1,0 +1,18 @@
+<map id="Sequenciel_Window" name="Sequenciel_Window">
+<area shape="rect" id="node3" href="$sequentiel__7__visu_8cpp.html#aaa9e3d6dfa511aed5a938d99daca6d3f" title="refresh_vision_memories" alt="" coords="196,91,361,125"/>
+<area shape="rect" id="node7" href="$sequentiel__7__visu_8cpp.html#aa0d5cc4c4ac1e0239551c9fde309658d" title="x1_x2" alt="" coords="251,234,307,267"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="436,349,551,382"/>
+<area shape="rect" id="node20" href="$grider8_8cpp.html#adf34126e40458873ce6c6e9dd5cdbaab" title="TheStepBox" alt="" coords="232,405,325,438"/>
+<area shape="rect" id="node27" href="$grider8_8cpp.html#ad2a7a08d5d1c725b77f84719741dae4c" title="ThePlayCommands" alt="" coords="211,517,347,550"/>
+<area shape="rect" id="node36" href="$grider8_8cpp.html#aca8abe8ebc9a78836e9214a351c32259" title="TheGrid_commands" alt="" coords="209,349,348,382"/>
+<area shape="rect" id="node5" href="$colors__fonts_8h.html#a2907c9cae585224ac5e56bc4baad9970" title="CouleurYellow" alt="" coords="441,5,545,38"/>
+<area shape="rect" id="node9" href="$gui__boutons__rebuild1_8cpp.html#abb581d7ddf10e2dccfaff413231dceaa" title="raccrochage_midi_visuel\l_vertical_dmx" alt="" coords="411,138,576,193"/>
+<area shape="rect" id="node11" href="$gui__boutons__rebuild1_8cpp.html#a53ca00cc38989cbf6f620338c409b777" title="raccrochage_midi_visuel\l_vertical_dmx_inverted" alt="" coords="411,215,576,270"/>
+<area shape="rect" id="node13" href="$colors__fonts_8h.html#ae9274ddf03277718b9234207fe9a3d3a" title="CouleurGreen" alt="" coords="443,293,544,326"/>
+<area shape="rect" id="node15" href="$gui__boutons__rebuild1_8cpp.html#a039e24b1deea8472aa6312f1201a9264" title="raccrochage_midi_visuel\l_horizontal" alt="" coords="411,61,576,115"/>
+<area shape="rect" id="node22" href="$gui__boutons__rebuild1_8cpp.html#a602e186310541aea863c7368fef4b3f1" title="previous_button_view" alt="" coords="420,461,567,494"/>
+<area shape="rect" id="node24" href="$gui__boutons__rebuild1_8cpp.html#a25048f0a097129c29226ec04caae26a5" title="next_button_view" alt="" coords="432,405,555,438"/>
+<area shape="rect" id="node29" href="$gui__boutons__rebuild1_8cpp.html#aa6052f3f1534f1a69a06d1498f27af78" title="play_button_view" alt="" coords="432,517,555,550"/>
+<area shape="rect" id="node31" href="$gui__boutons__rebuild1_8cpp.html#a49d3463d08aebc6ce155aa1baae271bd" title="seek_button_view" alt="" coords="431,573,556,606"/>
+<area shape="rect" id="node33" href="$gui__boutons__rebuild1_8cpp.html#aaf89aac5edeb61d30e001c9abb9b341f" title="playstop_button_view" alt="" coords="420,629,567,662"/>
+</map>

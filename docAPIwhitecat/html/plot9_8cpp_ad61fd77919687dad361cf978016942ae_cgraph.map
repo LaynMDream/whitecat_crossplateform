@@ -1,0 +1,16 @@
+<map id="plot_draw_shapes" name="plot_draw_shapes">
+<area shape="rect" id="node3" href="$plot9_8cpp.html#a54e8cb2ced857c1f8067b3e456dfe3b9" title="plot_draw_shape_curtain" alt="" coords="185,61,351,94"/>
+<area shape="rect" id="node15" href="$plot9_8cpp.html#a5d615a11b0a4aa8e460497e3a26c584f" title="plot_draw_shape_line" alt="" coords="195,117,341,150"/>
+<area shape="rect" id="node21" href="$plot9_8cpp.html#ac65c1116fd01359daaa143c5faa79d66" title="plot_draw_shape_stripline" alt="" coords="183,173,353,206"/>
+<area shape="rect" id="node24" href="$plot9_8cpp.html#a37531ff00d91fbe5df80031b7bdc6662" title="plot_draw_rectangle" alt="" coords="199,341,337,374"/>
+<area shape="rect" id="node29" href="$plot9_8cpp.html#a19dcbdd456332a8f4bdf7a4684256110" title="plot_draw_circle" alt="" coords="211,397,325,430"/>
+<area shape="rect" id="node33" href="$plot9_8cpp.html#a256d9949f79860f9b76680cf02a12076" title="plot_draw_slice" alt="" coords="212,229,324,262"/>
+<area shape="rect" id="node37" href="$plot9_8cpp.html#aba57cd1a4d2dc741ca1e702e6953ed37" title="plot_draw_polygon" alt="" coords="203,285,333,318"/>
+<area shape="rect" id="node41" href="$plot9_8cpp.html#abe99ba067db16915802483cdf3f8c7a4" title="plot_draw_text" alt="" coords="215,453,321,486"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="448,5,504,38"/>
+<area shape="rect" id="node7" href="$colors__fonts_8h.html#a5427dd0a5a11091bc410f7eed5d2657f" title="CouleurYellowFgroup" alt="" coords="404,61,548,94"/>
+<area shape="rect" id="node9" href="$colors__fonts_8h.html#a9f46ddd6a2c54abab874ea891efa4750" title="CouleurRed" alt="" coords="431,117,521,150"/>
+<area shape="rect" id="node11" href="$colors__fonts_8h.html#ae9274ddf03277718b9234207fe9a3d3a" title="CouleurGreen" alt="" coords="425,173,527,206"/>
+<area shape="rect" id="node13" href="$whitecat_8h.html#a5e88fb41a8a9fa61f87aae4fedd74510" title="CouleurPlotLine" alt="" coords="419,229,533,262"/>
+<area shape="rect" id="node26" href="$whitecat_8h.html#a53146b0df4992543bd09594d4ce44f7d" title="CouleurPlotFill" alt="" coords="423,313,529,346"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="do_logical_Lock_Preset_Call" name="do_logical_Lock_Preset_Call">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="252,15,415,49"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="247,71,420,105"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#aa16450d858e0f6dfaa0be7a31adf4d15" title="do_lock_preset" alt="" coords="279,127,388,161"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="471,5,620,59"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="517,127,573,161"/>
+</map>

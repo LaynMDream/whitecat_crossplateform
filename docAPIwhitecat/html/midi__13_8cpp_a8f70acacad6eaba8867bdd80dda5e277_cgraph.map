@@ -1,0 +1,24 @@
+<map id="do_midi_config" name="do_midi_config">
+<area shape="rect" id="node3" href="$midi__13_8cpp.html#ac7a306aa81e374b447e7341d4d3a3eea" title="midipage_devices" alt="" coords="173,139,299,173"/>
+<area shape="rect" id="node21" href="$midi__13_8cpp.html#a110e58b11dbde556672bce44aafba38a" title="midipage_preset_and\l_options" alt="" coords="164,374,308,429"/>
+<area shape="rect" id="node47" href="$midi__13_8cpp.html#a658bd5e9ac4307a561f2f4ffa41e70ee" title="midipage_affectation" alt="" coords="165,493,307,526"/>
+<area shape="rect" id="node5" href="$midi__13_8cpp.html#aff8c5f1fdfe9df36489591a068675118" title="midi_list_and_choose\l_devices" alt="" coords="361,162,508,217"/>
+<area shape="rect" id="node9" href="$midi___c_o_r_e_8cpp.html#a03ded972e797f8e15514a17805345818" title="QuitMidi" alt="" coords="400,50,469,83"/>
+<area shape="rect" id="node11" href="$midi___c_o_r_e_8cpp.html#a0ccf480a33424e626f88d109d53d8366" title="InitMidi" alt="" coords="403,106,467,139"/>
+<area shape="rect" id="node7" href="$midi__13_8cpp.html#a7dba8baf7c2d933706a03f39c4525891" title="PrintSlotsInfosDevices" alt="" coords="579,173,733,206"/>
+<area shape="rect" id="node13" href="$midi___c_o_r_e_8cpp.html#a2b0b387b399b110d0894dd7c92cf64b3" title="InitTblLibEv" alt="" coords="611,117,701,150"/>
+<area shape="rect" id="node15" href="$midi___c_o_r_e_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="601,5,711,38"/>
+<area shape="rect" id="node19" href="$midi___c_o_r_e_8cpp.html#ad481bcd8fdbcdd7399c796a7cd4a3ada" title="InstallFilter" alt="" coords="613,61,699,94"/>
+<area shape="rect" id="node17" href="$midi__13_8cpp.html#a831f1dfc7870ae4f6c64a0e65fbaf3ff" title="Display" alt="" coords="836,5,903,38"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="407,294,463,327"/>
+<area shape="rect" id="node25" href="$midi__launchpad_8cpp.html#a6f96c04520781848f749f65e9b8492ae" title="reset_launchpad" alt="" coords="376,350,493,383"/>
+<area shape="rect" id="node36" href="$midi__13_8cpp.html#a72179ebf14bb726cf84ba6f4781bf7d2" title="midi_launchpad_colors" alt="" coords="357,509,512,542"/>
+<area shape="rect" id="node43" href="$midi__13_8cpp.html#a1be6169a0ed28989c422b9f72042f0bb" title="midi_change_signal" alt="" coords="367,418,503,451"/>
+<area shape="rect" id="node27" href="$midi__launchpad_8cpp.html#ae33e05f7bf68aa5563156d334e942bc7" title="define_colors" alt="" coords="820,421,919,454"/>
+<area shape="rect" id="node29" href="$_c_o_r_e__6_8cpp.html#ad598ada3395937db3457ab6ee10dcdb7" title="send_my_midi_note" alt="" coords="800,307,939,341"/>
+<area shape="rect" id="node31" href="$_c_o_r_e__6_8cpp.html#afba5d73bd277858cb503c6bb4ae4634c" title="send_my_midi_note_delayed" alt="" coords="561,285,751,318"/>
+<area shape="rect" id="node33" href="$midi__launchpad_8cpp.html#af9548fa9e59c002812e934498e361e37" title="launchpad_refresh_buffer_led" alt="" coords="561,229,751,262"/>
+<area shape="rect" id="node38" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="587,575,725,609"/>
+<area shape="rect" id="node40" href="$midi__13_8cpp.html#a44d22ff6a4e809a5baa34035ebb96d3e" title="refresh_launchpad_color\l_callibration" alt="" coords="575,498,737,553"/>
+<area shape="rect" id="node45" href="$colors__fonts_8h.html#a2907c9cae585224ac5e56bc4baad9970" title="CouleurYellow" alt="" coords="604,442,708,475"/>
+</map>

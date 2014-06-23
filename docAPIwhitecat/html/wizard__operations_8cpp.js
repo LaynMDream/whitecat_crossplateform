@@ -8,6 +8,7 @@ var wizard__operations_8cpp =
     [ "wizard_clear_transfert_array", "wizard__operations_8cpp.html#ac5517aa5e0fd9057c55c2760b41ec268", null ],
     [ "wizard_copy_mem", "wizard__operations_8cpp.html#a2d1db01db432b298e1fc290a739e6645", null ],
     [ "wizard_delete_mem", "wizard__operations_8cpp.html#a8bdf6e58c74c657d894478f6ea9fbb21", null ],
+    [ "wizard_detect_unused_channels", "wizard__operations_8cpp.html#aff087100adcf4c71ab4c400745f20df9", null ],
     [ "wizard_insert_mems", "wizard__operations_8cpp.html#adc2a1b3d3a17b0399ba3d3c40eaeb8dd", null ],
     [ "wizard_inspekt_mem", "wizard__operations_8cpp.html#a36fb1e8c45313b896f866d928fee291d", null ],
     [ "wizard_move_mems", "wizard__operations_8cpp.html#ab59b0bf3d4f7b7d778b28525293ba71d", null ],

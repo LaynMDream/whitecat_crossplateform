@@ -1,0 +1,587 @@
+\hypertarget{classcurve__node}{\section{Référence de la classe curve\+\_\+node}
+\label{classcurve__node}\index{curve\+\_\+node@{curve\+\_\+node}}
+}
+
+
+{\ttfamily \#include $<$patch\+\_\+splines\+\_\+2.\+h$>$}
+
+
+
+Graphe de collaboration de curve\+\_\+node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classcurve__node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcurve__node_add0d28f291f1cfe22e11f5436a8ba161}{curve\+\_\+node} (int ax, int ay, fixed atangent)
+\item 
+fixed \hyperlink{classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2}{dist} (const \hyperlink{classcurve__node}{curve\+\_\+node} \&other)
+\item 
+\hyperlink{classcurve__node}{curve\+\_\+node} \& \hyperlink{classcurve__node_a55e51b51f9b6ede537c5e11b7f234188}{dummy} (const \hyperlink{classcurve__node}{curve\+\_\+node} \&prev)
+\item 
+void \hyperlink{classcurve__node_a22f8acf6b081673429257867a4115c57}{calc\+\_\+tangents} (void)
+\item 
+void \hyperlink{classcurve__node_a14aba313f46315faae44bcca011136a9}{get\+\_\+control\+\_\+points} (const \hyperlink{classcurve__node}{curve\+\_\+node} \&other, int points\mbox{[}8\mbox{]})
+\item 
+int \hyperlink{classcurve__node_abc1a06d649c6dce22334da762f2955b8}{write\+\_\+curve} (const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb}{draw} (int n, const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_aace217c0200a043c2d2f5f071fde8e56}{draw\+\_\+splines} (const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_a5c54a9611e91814177cf901636d4e8e5}{view\+\_\+after\+\_\+draw} (const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969}{Spline\+Curve} (const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf}{build\+\_\+square} (int curve, const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_a51a7bb24aa5832b54ec61507a556dda9}{build\+\_\+fluo} (int curve, const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_a6338ccf647d5f510c47702f613a3d9d2}{build\+\_\+preheat} (int curve, const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\item 
+int \hyperlink{classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff}{build\+\_\+inverse} (int curve, const \hyperlink{classgraphic__context}{graphic\+\_\+context} \&gc)
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classcurve__node_aa7ae8f2ee3bbd3e6194785c392751cdb}{x}
+\item 
+int \hyperlink{classcurve__node_afc1f4f007a920aa79c1f1f0ff0b49465}{y}
+\item 
+fixed \hyperlink{classcurve__node_a31ea7469070f7bb90ceae073d1d075a6}{tangent}
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classcurve__node_ae995b9ef63ae5b880d6006083acaf6d3}{index\+\_\+writing} =0
+\item 
+static float \hyperlink{classcurve__node_a16c72a6637b3b68983b5ce55b90665bf}{spline\+\_\+level} =0.\+0
+\item 
+static int \hyperlink{classcurve__node_abe017d998cde30d2ca5f7c8ea68ba3da}{selected} =0
+\item 
+static int \hyperlink{classcurve__node_a62eb9b6b3a24274664775a07c565d39c}{the\+\_\+spline\+\_\+level} \mbox{[}16\mbox{]}
+\item 
+static int \hyperlink{classcurve__node_a348cce4dfe54130e8b8b2fb218baedfb}{report} \mbox{[}16\mbox{]}\mbox{[}256\mbox{]}
+\item 
+static int \hyperlink{classcurve__node_af9c0c53bc02942259c36c753232326aa}{index\+\_\+spline\+\_\+level} =0
+\item 
+static bool \hyperlink{classcurve__node_a4479fff7bfc410d6f6d1df9975261aa8}{index\+\_\+enable\+\_\+editing} =0
+\item 
+static int \hyperlink{classcurve__node_a0aebfec8e10d7fc02442cd5326433c93}{curves} \mbox{[}514\mbox{]}
+\item 
+static int \hyperlink{classcurve__node_ab7280e17d47152797e10e5992791ee9b}{ctrl\+\_\+pt} \mbox{[}16\mbox{]}\mbox{[}8\mbox{]}\mbox{[}2\mbox{]}
+\item 
+static int \hyperlink{classcurve__node_aab45660e4c1077f8742b151fcb0cdcad}{diam} =10
+\item 
+static \hyperlink{classcurve__node}{curve\+\_\+node} \hyperlink{classcurve__node_affd9362e19ab4c4a70164622a7aebb61}{nodes} \mbox{[}\hyperlink{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}\mbox{]}
+\item 
+static int \hyperlink{classcurve__node_a09d4ec4d9b46abddbcec3e0c46f53d3f}{node\+\_\+count} =0
+\item 
+static fixed \hyperlink{classcurve__node_a46e1f23c6d19a1ca915697c80ed72a84}{curviness}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classcurve__node_add0d28f291f1cfe22e11f5436a8ba161}{\index{curve\+\_\+node@{curve\+\_\+node}!curve\+\_\+node@{curve\+\_\+node}}
+\index{curve\+\_\+node@{curve\+\_\+node}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{curve\+\_\+node}]{\setlength{\rightskip}{0pt plus 5cm}curve\+\_\+node\+::curve\+\_\+node (
+\begin{DoxyParamCaption}
+\item[{int}]{ax, }
+\item[{int}]{ay, }
+\item[{fixed}]{atangent}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_add0d28f291f1cfe22e11f5436a8ba161}
+The constructor 
+\begin{DoxyParams}{Paramètres}
+{\em ax} & abscissa \\
+\hline
+{\em ay} & ordinate \\
+\hline
+{\em atangent} & slope \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_add0d28f291f1cfe22e11f5436a8ba161_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classcurve__node_a51a7bb24aa5832b54ec61507a556dda9}{\index{curve\+\_\+node@{curve\+\_\+node}!build\+\_\+fluo@{build\+\_\+fluo}}
+\index{build\+\_\+fluo@{build\+\_\+fluo}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{build\+\_\+fluo}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::build\+\_\+fluo (
+\begin{DoxyParamCaption}
+\item[{int}]{curve, }
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a51a7bb24aa5832b54ec61507a556dda9}
+Function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em curve} & index of the chosen curve (0..15) \\
+\hline
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a51a7bb24aa5832b54ec61507a556dda9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff}{\index{curve\+\_\+node@{curve\+\_\+node}!build\+\_\+inverse@{build\+\_\+inverse}}
+\index{build\+\_\+inverse@{build\+\_\+inverse}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{build\+\_\+inverse}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::build\+\_\+inverse (
+\begin{DoxyParamCaption}
+\item[{int}]{curve, }
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff}
+Function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em curve} & index of the chosen curve (0..15) \\
+\hline
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a6338ccf647d5f510c47702f613a3d9d2}{\index{curve\+\_\+node@{curve\+\_\+node}!build\+\_\+preheat@{build\+\_\+preheat}}
+\index{build\+\_\+preheat@{build\+\_\+preheat}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{build\+\_\+preheat}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::build\+\_\+preheat (
+\begin{DoxyParamCaption}
+\item[{int}]{curve, }
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a6338ccf647d5f510c47702f613a3d9d2}
+Function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em curve} & index of the chosen curve (0..15) \\
+\hline
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a6338ccf647d5f510c47702f613a3d9d2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf}{\index{curve\+\_\+node@{curve\+\_\+node}!build\+\_\+square@{build\+\_\+square}}
+\index{build\+\_\+square@{build\+\_\+square}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{build\+\_\+square}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::build\+\_\+square (
+\begin{DoxyParamCaption}
+\item[{int}]{curve, }
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf}
+Function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em curve} & index of the chosen curve (0..15) \\
+\hline
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a22f8acf6b081673429257867a4115c57}{\index{curve\+\_\+node@{curve\+\_\+node}!calc\+\_\+tangents@{calc\+\_\+tangents}}
+\index{calc\+\_\+tangents@{calc\+\_\+tangents}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{calc\+\_\+tangents}]{\setlength{\rightskip}{0pt plus 5cm}void curve\+\_\+node\+::calc\+\_\+tangents (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a22f8acf6b081673429257867a4115c57}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a22f8acf6b081673429257867a4115c57_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a22f8acf6b081673429257867a4115c57_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2}{\index{curve\+\_\+node@{curve\+\_\+node}!dist@{dist}}
+\index{dist@{dist}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}fixed curve\+\_\+node\+::dist (
+\begin{DoxyParamCaption}
+\item[{const {\bf curve\+\_\+node} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2}
+calculates the distance between this and another \hyperlink{classcurve__node}{curve\+\_\+node} 
+\begin{DoxyParams}{Paramètres}
+{\em other} & second node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the distance from this to the other 
+\end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb}{\index{curve\+\_\+node@{curve\+\_\+node}!draw@{draw}}
+\index{draw@{draw}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::draw (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb}
+Function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em n} & value meaning something \\
+\hline
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_aace217c0200a043c2d2f5f071fde8e56}{\index{curve\+\_\+node@{curve\+\_\+node}!draw\+\_\+splines@{draw\+\_\+splines}}
+\index{draw\+\_\+splines@{draw\+\_\+splines}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{draw\+\_\+splines}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::draw\+\_\+splines (
+\begin{DoxyParamCaption}
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_aace217c0200a043c2d2f5f071fde8e56}
+draws the spline paths 
+\begin{DoxyParams}{Paramètres}
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_aace217c0200a043c2d2f5f071fde8e56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_aace217c0200a043c2d2f5f071fde8e56_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a55e51b51f9b6ede537c5e11b7f234188}{\index{curve\+\_\+node@{curve\+\_\+node}!dummy@{dummy}}
+\index{dummy@{dummy}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{dummy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf curve\+\_\+node} \& curve\+\_\+node\+::dummy (
+\begin{DoxyParamCaption}
+\item[{const {\bf curve\+\_\+node} \&}]{prev}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a55e51b51f9b6ede537c5e11b7f234188}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a14aba313f46315faae44bcca011136a9}{\index{curve\+\_\+node@{curve\+\_\+node}!get\+\_\+control\+\_\+points@{get\+\_\+control\+\_\+points}}
+\index{get\+\_\+control\+\_\+points@{get\+\_\+control\+\_\+points}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{get\+\_\+control\+\_\+points}]{\setlength{\rightskip}{0pt plus 5cm}void curve\+\_\+node\+::get\+\_\+control\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{const {\bf curve\+\_\+node} \&}]{other, }
+\item[{int}]{points\mbox{[}8\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a14aba313f46315faae44bcca011136a9}
+calculates the control points for a spline segment 
+\begin{DoxyParams}{Paramètres}
+{\em other} & the second point of the segment ('this' is the first one) \\
+\hline
+{\em points} & (output parameter) a table of 8 integers \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classcurve__node_a14aba313f46315faae44bcca011136a9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a14aba313f46315faae44bcca011136a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969}{\index{curve\+\_\+node@{curve\+\_\+node}!Spline\+Curve@{Spline\+Curve}}
+\index{Spline\+Curve@{Spline\+Curve}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{Spline\+Curve}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::\+Spline\+Curve (
+\begin{DoxyParamCaption}
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969}
+draws the spline paths ... 
+\begin{DoxyParams}{Paramètres}
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_a5c54a9611e91814177cf901636d4e8e5}{\index{curve\+\_\+node@{curve\+\_\+node}!view\+\_\+after\+\_\+draw@{view\+\_\+after\+\_\+draw}}
+\index{view\+\_\+after\+\_\+draw@{view\+\_\+after\+\_\+draw}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{view\+\_\+after\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::view\+\_\+after\+\_\+draw (
+\begin{DoxyParamCaption}
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_a5c54a9611e91814177cf901636d4e8e5}
+Function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_a5c54a9611e91814177cf901636d4e8e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcurve__node_abc1a06d649c6dce22334da762f2955b8}{\index{curve\+\_\+node@{curve\+\_\+node}!write\+\_\+curve@{write\+\_\+curve}}
+\index{write\+\_\+curve@{write\+\_\+curve}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{write\+\_\+curve}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::write\+\_\+curve (
+\begin{DoxyParamCaption}
+\item[{const {\bf graphic\+\_\+context} \&}]{gc}
+\end{DoxyParamCaption}
+)}}\label{classcurve__node_abc1a06d649c6dce22334da762f2955b8}
+function to do something 
+\begin{DoxyParams}{Paramètres}
+{\em gc} & graphic context \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe d'appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_abc1a06d649c6dce22334da762f2955b8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcurve__node_abc1a06d649c6dce22334da762f2955b8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Documentation des données membres}
+\hypertarget{classcurve__node_ab7280e17d47152797e10e5992791ee9b}{\index{curve\+\_\+node@{curve\+\_\+node}!ctrl\+\_\+pt@{ctrl\+\_\+pt}}
+\index{ctrl\+\_\+pt@{ctrl\+\_\+pt}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{ctrl\+\_\+pt}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::ctrl\+\_\+pt\mbox{[}16\mbox{]}\mbox{[}8\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_ab7280e17d47152797e10e5992791ee9b}
+\hypertarget{classcurve__node_a0aebfec8e10d7fc02442cd5326433c93}{\index{curve\+\_\+node@{curve\+\_\+node}!curves@{curves}}
+\index{curves@{curves}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{curves}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::curves\mbox{[}514\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a0aebfec8e10d7fc02442cd5326433c93}
+\hypertarget{classcurve__node_a46e1f23c6d19a1ca915697c80ed72a84}{\index{curve\+\_\+node@{curve\+\_\+node}!curviness@{curviness}}
+\index{curviness@{curviness}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{curviness}]{\setlength{\rightskip}{0pt plus 5cm}fixed curve\+\_\+node\+::curviness\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a46e1f23c6d19a1ca915697c80ed72a84}
+\hypertarget{classcurve__node_aab45660e4c1077f8742b151fcb0cdcad}{\index{curve\+\_\+node@{curve\+\_\+node}!diam@{diam}}
+\index{diam@{diam}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{diam}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::diam =10\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_aab45660e4c1077f8742b151fcb0cdcad}
+\hypertarget{classcurve__node_a4479fff7bfc410d6f6d1df9975261aa8}{\index{curve\+\_\+node@{curve\+\_\+node}!index\+\_\+enable\+\_\+editing@{index\+\_\+enable\+\_\+editing}}
+\index{index\+\_\+enable\+\_\+editing@{index\+\_\+enable\+\_\+editing}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{index\+\_\+enable\+\_\+editing}]{\setlength{\rightskip}{0pt plus 5cm}bool curve\+\_\+node\+::index\+\_\+enable\+\_\+editing =0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a4479fff7bfc410d6f6d1df9975261aa8}
+\hypertarget{classcurve__node_af9c0c53bc02942259c36c753232326aa}{\index{curve\+\_\+node@{curve\+\_\+node}!index\+\_\+spline\+\_\+level@{index\+\_\+spline\+\_\+level}}
+\index{index\+\_\+spline\+\_\+level@{index\+\_\+spline\+\_\+level}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{index\+\_\+spline\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::index\+\_\+spline\+\_\+level =0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_af9c0c53bc02942259c36c753232326aa}
+\hypertarget{classcurve__node_ae995b9ef63ae5b880d6006083acaf6d3}{\index{curve\+\_\+node@{curve\+\_\+node}!index\+\_\+writing@{index\+\_\+writing}}
+\index{index\+\_\+writing@{index\+\_\+writing}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{index\+\_\+writing}]{\setlength{\rightskip}{0pt plus 5cm}bool curve\+\_\+node\+::index\+\_\+writing =0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_ae995b9ef63ae5b880d6006083acaf6d3}
+\hypertarget{classcurve__node_a09d4ec4d9b46abddbcec3e0c46f53d3f}{\index{curve\+\_\+node@{curve\+\_\+node}!node\+\_\+count@{node\+\_\+count}}
+\index{node\+\_\+count@{node\+\_\+count}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{node\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::node\+\_\+count =0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a09d4ec4d9b46abddbcec3e0c46f53d3f}
+\hypertarget{classcurve__node_affd9362e19ab4c4a70164622a7aebb61}{\index{curve\+\_\+node@{curve\+\_\+node}!nodes@{nodes}}
+\index{nodes@{nodes}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf curve\+\_\+node} curve\+\_\+node\+::nodes\mbox{[}{\bf M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_affd9362e19ab4c4a70164622a7aebb61}
+\hypertarget{classcurve__node_a348cce4dfe54130e8b8b2fb218baedfb}{\index{curve\+\_\+node@{curve\+\_\+node}!report@{report}}
+\index{report@{report}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{report}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::report\mbox{[}16\mbox{]}\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a348cce4dfe54130e8b8b2fb218baedfb}
+\hypertarget{classcurve__node_abe017d998cde30d2ca5f7c8ea68ba3da}{\index{curve\+\_\+node@{curve\+\_\+node}!selected@{selected}}
+\index{selected@{selected}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{selected}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::selected =0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_abe017d998cde30d2ca5f7c8ea68ba3da}
+\hypertarget{classcurve__node_a16c72a6637b3b68983b5ce55b90665bf}{\index{curve\+\_\+node@{curve\+\_\+node}!spline\+\_\+level@{spline\+\_\+level}}
+\index{spline\+\_\+level@{spline\+\_\+level}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{spline\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}float curve\+\_\+node\+::spline\+\_\+level =0.\+0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a16c72a6637b3b68983b5ce55b90665bf}
+\hypertarget{classcurve__node_a31ea7469070f7bb90ceae073d1d075a6}{\index{curve\+\_\+node@{curve\+\_\+node}!tangent@{tangent}}
+\index{tangent@{tangent}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{tangent}]{\setlength{\rightskip}{0pt plus 5cm}fixed curve\+\_\+node\+::tangent}}\label{classcurve__node_a31ea7469070f7bb90ceae073d1d075a6}
+\hypertarget{classcurve__node_a62eb9b6b3a24274664775a07c565d39c}{\index{curve\+\_\+node@{curve\+\_\+node}!the\+\_\+spline\+\_\+level@{the\+\_\+spline\+\_\+level}}
+\index{the\+\_\+spline\+\_\+level@{the\+\_\+spline\+\_\+level}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{the\+\_\+spline\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::the\+\_\+spline\+\_\+level\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a62eb9b6b3a24274664775a07c565d39c}
+\hypertarget{classcurve__node_aa7ae8f2ee3bbd3e6194785c392751cdb}{\index{curve\+\_\+node@{curve\+\_\+node}!x@{x}}
+\index{x@{x}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::x}}\label{classcurve__node_aa7ae8f2ee3bbd3e6194785c392751cdb}
+\hypertarget{classcurve__node_afc1f4f007a920aa79c1f1f0ff0b49465}{\index{curve\+\_\+node@{curve\+\_\+node}!y@{y}}
+\index{y@{y}!curve\+\_\+node@{curve\+\_\+node}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::y}}\label{classcurve__node_afc1f4f007a920aa79c1f1f0ff0b49465}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{patch__splines__2_8h}{patch\+\_\+splines\+\_\+2.\+h}\item 
+\hyperlink{_m_a_i_n__avec__objets_8cpp}{M\+A\+I\+N\+\_\+avec\+\_\+objets.\+cpp}\item 
+\hyperlink{patch__splines__2_8cpp}{patch\+\_\+splines\+\_\+2.\+cpp}\end{DoxyCompactItemize}

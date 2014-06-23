@@ -1,0 +1,7 @@
+<map id="create_memory_plus_faders" name="create_memory_plus_faders">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a4821d8a48532bbf682bbb4c8f2054282" title="record_memory_plus\l_faders" alt="" coords="209,5,351,59"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#adaf2ef6007ed8bd2568485df95ca65b8" title="detect_mem_before_one" alt="" coords="197,82,363,115"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#ae7696959678ab167800352830bf81766" title="detect_mem_preset" alt="" coords="212,138,348,171"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a68c3767f8e350737e991a726e0ef1438" title="refresh_mem_onpreset" alt="" coords="203,194,357,227"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a093838a2bc2e21bee8f86645c60a0036" title="refresh_mem_onstage" alt="" coords="412,15,561,49"/>
+</map>

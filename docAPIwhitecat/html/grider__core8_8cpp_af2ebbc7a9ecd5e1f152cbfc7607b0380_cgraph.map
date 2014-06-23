@@ -1,0 +1,8 @@
+<map id="do_logical_ThePlayCommands" name="do_logical_ThePlayCommands">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="256,5,387,59"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="293,82,349,115"/>
+<area shape="rect" id="node9" href="$grider__calculs8_8cpp.html#a1385e50460f3dd71bdc4d3f8e1ec462f" title="gridplayer_seek" alt="" coords="265,138,377,171"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="436,5,585,59"/>
+<area shape="rect" id="node11" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="436,138,585,171"/>
+<area shape="rect" id="node13" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="636,138,785,171"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="do_logical_PatchBox" name="do_logical_PatchBox">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="223,5,353,59"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="260,82,316,115"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#af8f38931041dedab6c0958d96918ca03" title="patch_select_all_dimmers" alt="" coords="201,138,375,171"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a492a9badab85a9e07b0200f4e34b607f" title="reset_check_grada_overide\l_dimmers" alt="" coords="197,194,379,249"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a32dc90bc691784f4e2e205c69a9e0a9d" title="generate_channel_view\l_list_from_patched_circuits" alt="" coords="197,271,379,326"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#ab88648bb253532281d1c58fb9647290a" title="clear_selection_in" alt="" coords="452,229,577,262"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a39a8fa0905933794d58438ac52b93a76" title="count_number_of_channels\l_in_view" alt="" coords="651,238,832,293"/>
+<area shape="rect" id="node18" href="$_c_o_r_e__6_8cpp.html#ae6b6dda74fceff6db90d029785454a0b" title="generate_channel_preview\l_patch_list" alt="" coords="427,335,603,390"/>
+<area shape="rect" id="node20" href="$_c_o_r_e__6_8cpp.html#a028a0b0eaaf0423183a1cd4d90f76be1" title="reset_channel_first\l_dimmer_list" alt="" coords="676,335,807,390"/>
+</map>

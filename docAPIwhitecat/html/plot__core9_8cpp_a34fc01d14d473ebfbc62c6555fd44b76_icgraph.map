@@ -1,0 +1,33 @@
+<map id="plot_reset_list_gelat" name="plot_reset_list_gelat">
+<area shape="rect" id="node3" href="$plot__core9_8cpp.html#ab76f6823319f1363767e9b0027c633a9" title="plot_reset_list_appareils" alt="" coords="192,246,355,279"/>
+<area shape="rect" id="node75" href="$plot__core9_8cpp.html#aee1db260c83091fb31c75951b8c9b091" title="plot_generate_gels_list" alt="" coords="196,302,351,335"/>
+<area shape="rect" id="node5" href="$plot__core9_8cpp.html#a30a3e9357adedd3ded2f2ded796e81e2" title="plot_generate_appareils_list" alt="" coords="404,274,585,307"/>
+<area shape="rect" id="node7" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="667,5,757,38"/>
+<area shape="rect" id="node22" href="$plot__core9_8cpp.html#a8a3eaffeb57e4bca8f42aa973645f5b9" title="clear_calc" alt="" coords="672,61,752,94"/>
+<area shape="rect" id="node24" href="$plot__core9_8cpp.html#a6f933b83f292138e49fc9057684a1b4b" title="add_a_symbol_to_plot" alt="" coords="636,474,788,507"/>
+<area shape="rect" id="node26" href="$plot__core9_8cpp.html#a6ff8cd924e588a71a1366288cf8dc41b" title="logical_plot_symbol_list" alt="" coords="851,423,1011,457"/>
+<area shape="rect" id="node35" href="$plot__core9_8cpp.html#a0e606b8d73e2db784589b32f412e8fe1" title="duplicate_selected\l_symbols" alt="" coords="647,117,777,171"/>
+<area shape="rect" id="node37" href="$plot__core9_8cpp.html#a74a79a0e49b7f81a7cb8b944c77b3b0d" title="logical_plot_symbol\l_edition" alt="" coords="863,167,999,222"/>
+<area shape="rect" id="node40" href="$plot__core9_8cpp.html#a9c23683c01563bbc9fceacea0cfd1282" title="add_selected_symbols\l_to_calc" alt="" coords="635,295,789,350"/>
+<area shape="rect" id="node44" href="$plot__core9_8cpp.html#a81228c183a1b219d5f3c5a759800df4b" title="logical_plot_menu_bare" alt="" coords="1073,293,1231,326"/>
+<area shape="rect" id="node48" href="$plot__core9_8cpp.html#afacf9fafd495ceac6c305b0cf88312f2" title="logical_symbol_edition\l_options" alt="" coords="1076,349,1228,403"/>
+<area shape="rect" id="node53" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="667,533,757,566"/>
+<area shape="rect" id="node9" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="841,58,1020,91"/>
+<area shape="rect" id="node11" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="1101,107,1203,141"/>
+<area shape="rect" id="node13" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="1288,97,1435,151"/>
+<area shape="rect" id="node19" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="1299,174,1424,229"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="1492,185,1649,218"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1915,453,1965,486"/>
+<area shape="rect" id="node28" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="1281,358,1441,391"/>
+<area shape="rect" id="node30" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1492,347,1649,402"/>
+<area shape="rect" id="node32" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1728,425,1837,458"/>
+<area shape="rect" id="node42" href="$plot__core9_8cpp.html#a3431bbe587897e907b6dee6b35777684" title="send_symbols_from_calc\l_to_calc" alt="" coords="845,295,1016,350"/>
+<area shape="rect" id="node56" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="876,535,985,569"/>
+<area shape="rect" id="node72" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="837,479,1024,513"/>
+<area shape="rect" id="node58" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="1072,481,1232,514"/>
+<area shape="rect" id="node60" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="1307,425,1416,458"/>
+<area shape="rect" id="node65" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="1305,481,1417,514"/>
+<area shape="rect" id="node62" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1501,425,1640,458"/>
+<area shape="rect" id="node67" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1541,481,1600,514"/>
+<area shape="rect" id="node69" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1700,481,1865,514"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="raccrochage_midi_logical_horizontal_audio" name="raccrochage_midi_logical_horizontal_audio">
+<area shape="rect" id="node3" href="$audio__core5_8cpp.html#a657e082e79a514893ab79a019dfa5e5a" title="do_logical_lecteur\l_audio" alt="" coords="223,5,348,59"/>
+<area shape="rect" id="node5" href="$audio__core5_8cpp.html#a58dbea0caa9eacea9a92dace23de4e32" title="do_logical_fenetre\l_audio" alt="" coords="399,5,524,59"/>
+<area shape="rect" id="node7" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="575,5,732,59"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="781,15,891,49"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="939,15,989,49"/>
+</map>

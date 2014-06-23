@@ -1,0 +1,10 @@
+<map id="do_channels_macro" name="do_channels_macro">
+<area shape="rect" id="node3" href="$list__proj__core_8cpp.html#a99d20171657c9d6aa521bcee25202e46" title="do_the_macro_of_the\l_channel" alt="" coords="192,145,339,199"/>
+<area shape="rect" id="node5" href="$audio__core5_8cpp.html#a441637bcca17a3226a6b3aadea1defe9" title="AffectSoundFile" alt="" coords="407,89,521,122"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a508dbd6f669f4288435f15723ee22a24" title="send_immidiateley_my\l_midi_cc" alt="" coords="387,145,541,199"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#ad598ada3395937db3457ab6ee10dcdb7" title="send_my_midi_note" alt="" coords="395,222,533,255"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a23423256688613149926c4984ff25f79" title="player1_do_stop" alt="" coords="589,5,707,38"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a6c41d19d859a2e1292ad64ef915e265f" title="player2_do_stop" alt="" coords="589,61,707,94"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a494249193c56b13a4e1eac04c6dd2d0b" title="player3_do_stop" alt="" coords="589,117,707,150"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#afbcf17b50787fb3b8360659f6ce9b193" title="player4_do_stop" alt="" coords="589,173,707,206"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="check_wich_channel_is_in_view" name="check_wich_channel_is_in_view">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a08d71e04855f7642fff10b3d45f7b39e" title="set_channel_scroll" alt="" coords="197,33,328,66"/>
+<area shape="rect" id="node5" href="$keyboard__functions2_8cpp.html#afd699a465fe032ed5bddf70ed71228ce" title="key_add_ch" alt="" coords="384,5,475,38"/>
+<area shape="rect" id="node13" href="$keyboard__functions2_8cpp.html#a03c383f56267026d3d8d6378d3e11652" title="key_minus_ch" alt="" coords="376,61,483,94"/>
+<area shape="rect" id="node7" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="531,33,669,66"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="717,33,827,66"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="875,33,925,66"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="do_logical_TheGrid_commands" name="do_logical_TheGrid_commands">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="197,5,328,59"/>
+<area shape="rect" id="node7" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="188,82,337,115"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="235,138,291,171"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="193,194,332,227"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="388,5,537,59"/>
+<area shape="rect" id="node9" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="388,82,537,115"/>
+</map>

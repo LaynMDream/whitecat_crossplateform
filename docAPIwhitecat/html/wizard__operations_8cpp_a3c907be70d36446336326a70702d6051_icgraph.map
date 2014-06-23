@@ -1,0 +1,13 @@
+<map id="wizard_calcul_nbre_de_mem" name="wizard_calcul_nbre_de_mem">
+<area shape="rect" id="node3" href="$wizard_8cpp.html#a83efc50e6fdd7761f349a8befed67316" title="Box_mem_to_mem" alt="" coords="188,5,321,38"/>
+<area shape="rect" id="node13" href="$wizard__operations_8cpp.html#a0fd8df35a33a8ec97cc12d2ef23c11f0" title="do_wizard_mem" alt="" coords="196,61,313,94"/>
+<area shape="rect" id="node5" href="$wizard_8cpp.html#a242d83bba0e7fa9a2653e86bbbd10d18" title="fenetre_wizard" alt="" coords="397,5,504,38"/>
+<area shape="rect" id="node7" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="779,58,837,91"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="927,58,1092,91"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1141,86,1192,119"/>
+<area shape="rect" id="node15" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="371,61,531,94"/>
+<area shape="rect" id="node17" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="580,114,689,147"/>
+<area shape="rect" id="node24" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="579,58,691,91"/>
+<area shape="rect" id="node19" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="739,114,877,147"/>
+<area shape="rect" id="node21" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="955,114,1064,147"/>
+</map>

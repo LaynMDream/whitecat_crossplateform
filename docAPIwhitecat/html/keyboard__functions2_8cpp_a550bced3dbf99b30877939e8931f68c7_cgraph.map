@@ -1,0 +1,10 @@
+<map id="key_left" name="key_left">
+<area shape="rect" id="node3" href="$keyboard__functions2_8cpp.html#aa8a798ca0919743c30cc7a3a19b4944b" title="check_channel_minus" alt="" coords="124,114,273,147"/>
+<area shape="rect" id="node11" href="$plot_8cpp.html#a63d5e7a094f416fd40690d465ffacdd0" title="add_channel_selection\l_to_layers_plot" alt="" coords="339,5,493,59"/>
+<area shape="rect" id="node14" href="$plot_8cpp.html#a62a28f2a197fa1c11db6a93e2dae6362" title="substract_channel_selection\l_to_layers_plot" alt="" coords="323,314,509,369"/>
+<area shape="rect" id="node16" href="$patch__core_8cpp.html#aa51f64f387a82522bfd73cf69dfaf18d" title="check_dimmer_minus\l_override" alt="" coords="124,226,273,281"/>
+<area shape="rect" id="node18" href="$keyboard__functions2_8cpp.html#ab1d5b3deffbd55172eb2a8e559b13ed8" title="select_channel_minus" alt="" coords="124,170,273,203"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa0329053411635ed42b29bcdb7287acf" title="check_presence_of_any\l_channel_in_A_view" alt="" coords="335,237,497,291"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#abe9a3b526c970e74827588b9e7dac195" title="detect_last_activ_channel\l_in_activ_view" alt="" coords="329,82,503,137"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="351,159,481,214"/>
+</map>

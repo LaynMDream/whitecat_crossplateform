@@ -2,6 +2,7 @@ var audio__core5_8cpp =
 [
     [ "AffectSoundFile", "audio__core5_8cpp.html#a441637bcca17a3226a6b3aadea1defe9", null ],
     [ "Control_Audio_thruth_faders", "audio__core5_8cpp.html#a7a2fe6aee0064f868114dc5c2d58df9f", null ],
+    [ "do_audio_midi_function_next_prev_track", "audio__core5_8cpp.html#ae6f8dd1f3de99ac54980667b9baf9ad1", null ],
     [ "do_logical_fader_niveau_son", "audio__core5_8cpp.html#a8b31946eb761c7f981bb92526a3f065a", null ],
     [ "do_logical_fenetre_audio", "audio__core5_8cpp.html#a58dbea0caa9eacea9a92dace23de4e32", null ],
     [ "do_logical_lecteur_audio", "audio__core5_8cpp.html#a657e082e79a514893ab79a019dfa5e5a", null ],

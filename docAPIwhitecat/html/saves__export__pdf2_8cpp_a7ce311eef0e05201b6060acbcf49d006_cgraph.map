@@ -1,0 +1,14 @@
+<map id="draw_pdf_grid_players_config" name="draw_pdf_grid_players_config">
+<area shape="rect" id="node3" href="$saves__export__pdf2_8cpp.html#a0dbb3aa1de7a425bd7f638f927af20c2" title="draw_title" alt="" coords="252,98,329,132"/>
+<area shape="rect" id="node5" href="$saves__export__pdf2_8cpp.html#a78c387c9fcc74472a17483a32c23182c" title="verification_fin_de_page" alt="" coords="435,41,597,74"/>
+<area shape="rect" id="node7" href="$saves__export__pdf2_8cpp.html#aa2c18df7ab96478bd156fc2830bd7328" title="draw_numpage" alt="" coords="677,41,787,74"/>
+<area shape="rect" id="node9" href="$saves__export__pdf2_8cpp.html#a1a1844495417accb24171750e5061c93" title="draw_info" alt="" coords="693,316,771,349"/>
+<area shape="rect" id="node11" href="$saves__export__pdf2_8cpp.html#a84afdc9a6debcff66646f8f74158a1f9" title="draw_pdf_gridayer_state" alt="" coords="209,314,372,348"/>
+<area shape="rect" id="node15" href="$saves__export__pdf2_8cpp.html#ae09ee0ce70af7f92a5b1cbf32f915835" title="check_there_is_someone\l_in_grid" alt="" coords="205,473,376,528"/>
+<area shape="rect" id="node18" href="$saves__export__pdf2_8cpp.html#a7d6f602fcde4b6dae7d59591dbb8b265" title="draw_pdf_grid" alt="" coords="240,206,341,240"/>
+<area shape="rect" id="node31" href="$saves__export__pdf2_8cpp.html#ac4d21355aeacfda2140c000bb566a67c" title="saut_de_page" alt="" coords="465,97,567,130"/>
+<area shape="rect" id="node21" href="$saves__export__pdf2_8cpp.html#a269d937cd505c0d371cb3c61fb9602d2" title="pdf_draw_channels_on_grid" alt="" coords="425,316,607,349"/>
+<area shape="rect" id="node24" href="$saves__export__pdf2_8cpp.html#ac050800192c6f21ea8effde11f70af8c" title="pdf_draw_little_gridplayer" alt="" coords="432,260,600,293"/>
+<area shape="rect" id="node26" href="$saves__export__pdf2_8cpp.html#a5203a62883d545b60b33031a1db149c6" title="pdf_draw_infos_of_step" alt="" coords="436,153,596,186"/>
+<area shape="rect" id="node28" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="657,153,807,186"/>
+</map>

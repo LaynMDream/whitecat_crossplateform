@@ -5,6 +5,6 @@ var searchData=
   ['ventilation_5fniveaux_5fmover',['ventilation_niveaux_mover',['../mover__2013_8cpp.html#a9882ebf6fd8c8e639a77fe7967b31cdd',1,'mover_2013.cpp']]],
   ['ventilation_5fvideo_5ftrackers',['ventilation_video_trackers',['../video__tracking__core_8cpp.html#a76c70a2283a6aca4e4e1fe62868d0a9f',1,'video_tracking_core.cpp']]],
   ['verification_5ffin_5fde_5fpage',['verification_fin_de_page',['../saves__export__pdf2_8cpp.html#a78c387c9fcc74472a17483a32c23182c',1,'saves_export_pdf2.cpp']]],
-  ['view_5fcurve_5fafter_5fdraw',['view_curve_after_draw',['../patch__splines__2_8cpp.html#aa717e6214cc2f06b76f09fc95a9915ed',1,'patch_splines_2.cpp']]],
+  ['view_5fafter_5fdraw',['view_after_draw',['../classcurve__node.html#a5c54a9611e91814177cf901636d4e8e5',1,'curve_node']]],
   ['visual_5fnumeric_5fpad',['visual_numeric_pad',['../numpad__visuel_8cpp.html#a29b81a4ada06395fa11000f22d2321eb',1,'numpad_visuel.cpp']]]
 ];

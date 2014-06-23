@@ -1,0 +1,13 @@
+<map id="ArtDmx" name="ArtDmx">
+<area shape="rect" id="node3" href="$_c_f_g__config__panel__8_8cpp.html#af492ee2130c3aed1b5f2ee4ff61a4416" title="do_dmx_config" alt="" coords="500,141,609,174"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1341,49,1392,82"/>
+<area shape="rect" id="node15" href="$dmx__functions__13_8cpp.html#a53b11cad2f3a0892f08b078a52236e7b" title="Init_dmx_interface" alt="" coords="133,117,261,150"/>
+<area shape="rect" id="node22" href="$dmx__functions__13_8cpp.html#a4f4e828a2e427a69d166dfa03fe59f28" title="SendData_to_interface" alt="" coords="120,250,275,283"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="660,141,775,174"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="825,135,969,169"/>
+<area shape="rect" id="node9" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1019,123,1077,157"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1127,99,1292,133"/>
+<area shape="rect" id="node17" href="$_c_f_g__config__panel__8_8cpp.html#ab6b381db258889ff1d6e45119c1b24fc" title="SelectDmxDevice" alt="" coords="323,143,451,177"/>
+<area shape="rect" id="node24" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="360,250,413,283"/>
+<area shape="rect" id="node26" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="500,197,609,230"/>
+</map>

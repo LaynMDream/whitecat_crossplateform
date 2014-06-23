@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$tracker__main14nov_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="125,10,179,43"/>
+<area shape="rect" id="node5" href="$tracker__main14nov_8cpp.html#a343d540f006963227ee5b445888ca393" title="ticker_move" alt="" coords="105,66,199,99"/>
+<area shape="rect" id="node16" href="$mover__2013_8cpp.html#a4cd6cdd120b9feb87202ddb062daecbb" title="prepare_move_values" alt="" coords="435,117,584,150"/>
+<area shape="rect" id="node20" href="$mover__spline6_8cpp.html#a090797adb1f79d0d55f8967194130c47" title="Prepare_Cross_Spline" alt="" coords="632,170,784,203"/>
+<area shape="rect" id="node29" href="$tracker__main14nov_8cpp.html#a5ed0e12936f7d3649de463336207b914" title="Load_Fonts" alt="" coords="107,223,197,257"/>
+<area shape="rect" id="node33" href="$tracker__main14nov_8cpp.html#a74ab97b69fd601d87ba61140a21a749f" title="CouleurFader" alt="" coords="268,279,367,313"/>
+<area shape="rect" id="node37" href="$tracker__main14nov_8cpp.html#a01abcd7f79dd32725287eba005b345e1" title="CouleurFond" alt="" coords="104,330,200,363"/>
+<area shape="rect" id="node7" href="$mover__2013_8cpp.html#af1627b55add388ce92ebb0130bc45ede" title="Move_do_crossfade" alt="" coords="248,63,387,97"/>
+<area shape="rect" id="node9" href="$mover__2013_8cpp.html#abb003e89ded4a3c6a731f3e7526ef3a6" title="Move_StepForward" alt="" coords="443,5,576,38"/>
+<area shape="rect" id="node13" href="$mover__2013_8cpp.html#a09da21b3ee6f5a971c70ce7509a45751" title="Move_StepBackward" alt="" coords="436,61,583,94"/>
+<area shape="rect" id="node11" href="$mover__2013_8cpp.html#a87973de95365fca754397b86972fb103" title="Move_refresh_xy" alt="" coords="647,31,769,65"/>
+<area shape="rect" id="node18" href="$mover__2013_8cpp.html#a5fbe4af69b774a1738d80f6879d958e9" title="convert_bytes_to_int" alt="" coords="637,114,779,147"/>
+<area shape="rect" id="node22" href="$mover__spline6_8cpp.html#a71a41e8d002948913c4ae79560729c48" title="get_control_points" alt="" coords="832,137,960,170"/>
+<area shape="rect" id="node26" href="$mover__spline6_8cpp.html#a41772bd93cf820f16672603cc49e4a13" title="get_control_points\l_backward" alt="" coords="832,193,960,247"/>
+<area shape="rect" id="node24" href="$mover__spline6_8cpp.html#a98185a4f31c71ab881cacc66ef0d87e1" title="node_dist" alt="" coords="1009,170,1087,203"/>
+<area shape="rect" id="node31" href="$tracker__main14nov_8cpp.html#a4f8d24a0f5516a9e088f5ff29820c5b1" title="CouleurLevel" alt="" coords="268,223,367,257"/>
+</map>

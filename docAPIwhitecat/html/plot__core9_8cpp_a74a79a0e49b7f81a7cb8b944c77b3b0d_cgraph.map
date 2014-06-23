@@ -1,0 +1,34 @@
+<map id="logical_plot_symbol_edition" name="logical_plot_symbol_edition">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="215,5,345,59"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#a69f1a5353a6592a8d6e9ac61d74b6a02" title="affect_angle_to_symbols" alt="" coords="197,82,363,115"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="211,138,349,171"/>
+<area shape="rect" id="node11" href="$plot__core9_8cpp.html#a0e606b8d73e2db784589b32f412e8fe1" title="duplicate_selected\l_symbols" alt="" coords="215,245,345,299"/>
+<area shape="rect" id="node13" href="$plot__core9_8cpp.html#a30a3e9357adedd3ded2f2ded796e81e2" title="plot_generate_appareils_list" alt="" coords="420,227,601,261"/>
+<area shape="rect" id="node22" href="$plot__core9_8cpp.html#a81a672760936c3fe4915f269850aa955" title="snapshot_calc" alt="" coords="691,349,797,382"/>
+<area shape="rect" id="node24" href="$plot__core9_8cpp.html#a23e56ec233d9db7dd7dca8c52410b847" title="delete_selected_symbols" alt="" coords="196,506,364,539"/>
+<area shape="rect" id="node38" href="$_c_o_r_e__6_8cpp.html#a32dc90bc691784f4e2e205c69a9e0a9d" title="generate_channel_view\l_list_from_patched_circuits" alt="" coords="189,562,371,617"/>
+<area shape="rect" id="node49" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="252,639,308,673"/>
+<area shape="rect" id="node51" href="$plot__core9_8cpp.html#a91f3a181b08c6bd1095771d96903f7f9" title="position_down_selected\l_symbols" alt="" coords="200,373,360,427"/>
+<area shape="rect" id="node58" href="$plot__core9_8cpp.html#a567a92fb27840f1db037b3ff0c15de28" title="position_on_top" alt="" coords="224,450,336,483"/>
+<area shape="rect" id="node62" href="$plot__core9_8cpp.html#abc896e0ae2cbd1aa6c71a2747ebb685f" title="group_symbols_selected" alt="" coords="197,695,363,729"/>
+<area shape="rect" id="node64" href="$plot__core9_8cpp.html#a956b569f1c75a8a5b25aed4f2096232a" title="plot_align_x" alt="" coords="235,751,325,785"/>
+<area shape="rect" id="node66" href="$plot__core9_8cpp.html#ad3894921efd1d3506ce1b054b21b8a95" title="plot_align_y" alt="" coords="235,807,325,841"/>
+<area shape="rect" id="node68" href="$plot__core9_8cpp.html#a3877f5a66a0940ae945de82e3f6312d1" title="plot_ventilate_x" alt="" coords="224,919,336,953"/>
+<area shape="rect" id="node74" href="$plot__core9_8cpp.html#a9549f983b62a28662b9fac6a071c246d" title="plot_ventilate_y" alt="" coords="224,863,336,897"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="436,5,585,59"/>
+<area shape="rect" id="node15" href="$plot__core9_8cpp.html#ab76f6823319f1363767e9b0027c633a9" title="plot_reset_list_appareils" alt="" coords="663,214,825,247"/>
+<area shape="rect" id="node19" href="$plot__core9_8cpp.html#aee1db260c83091fb31c75951b8c9b091" title="plot_generate_gels_list" alt="" coords="667,270,821,303"/>
+<area shape="rect" id="node17" href="$plot__core9_8cpp.html#a34fc01d14d473ebfbc62c6555fd44b76" title="plot_reset_list_gelat" alt="" coords="905,242,1044,275"/>
+<area shape="rect" id="node26" href="$plot__core9_8cpp.html#a58fe8fc317633b7cfd679c95c67193b9" title="clear_symbol_slot" alt="" coords="681,531,807,565"/>
+<area shape="rect" id="node30" href="$plot__core9_8cpp.html#a66c5771a91b5557afae81e1ad42603a6" title="reorder_plan" alt="" coords="464,505,557,538"/>
+<area shape="rect" id="node35" href="$plot__core9_8cpp.html#ad2a3f7bed24f6e271a1d1a42ebc81ff5" title="recount_symbols_on_calc" alt="" coords="424,611,597,645"/>
+<area shape="rect" id="node28" href="$plot__core9_8cpp.html#a4afbbba7a97b479ffbf4b9b190c40b29" title="clear_grouped_to_symbols" alt="" coords="887,531,1063,565"/>
+<area shape="rect" id="node32" href="$plot__core9_8cpp.html#a3aa259226da63745d5e779178c8111f2" title="copy_symbol_to_emply_slot" alt="" coords="651,426,837,459"/>
+<area shape="rect" id="node40" href="$_c_o_r_e__6_8cpp.html#ab88648bb253532281d1c58fb9647290a" title="clear_selection_in" alt="" coords="448,795,573,829"/>
+<area shape="rect" id="node42" href="$_c_o_r_e__6_8cpp.html#a39a8fa0905933794d58438ac52b93a76" title="count_number_of_channels\l_in_view" alt="" coords="653,765,835,819"/>
+<area shape="rect" id="node45" href="$_c_o_r_e__6_8cpp.html#ae6b6dda74fceff6db90d029785454a0b" title="generate_channel_preview\l_patch_list" alt="" coords="423,667,599,722"/>
+<area shape="rect" id="node47" href="$_c_o_r_e__6_8cpp.html#a028a0b0eaaf0423183a1cd4d90f76be1" title="reset_channel_first\l_dimmer_list" alt="" coords="679,667,809,722"/>
+<area shape="rect" id="node54" href="$plot__core9_8cpp.html#afa207c7603f4ee259c528f3d86afb2f6" title="exchange_symbol_position" alt="" coords="421,398,600,431"/>
+<area shape="rect" id="node70" href="$_c_o_r_e__6_8cpp.html#a7949412d847774cd29d24015ad877eee" title="return_lowest" alt="" coords="461,919,560,953"/>
+<area shape="rect" id="node72" href="$_c_o_r_e__6_8cpp.html#abf3905741fad82c878a1c2b5a64e78b1" title="return_highest" alt="" coords="459,863,563,897"/>
+</map>

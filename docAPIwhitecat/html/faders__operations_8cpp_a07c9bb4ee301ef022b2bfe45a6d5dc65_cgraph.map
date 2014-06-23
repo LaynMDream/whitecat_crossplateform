@@ -1,0 +1,5 @@
+<map id="affect_dmxIN_to_dock" name="affect_dmxIN_to_dock">
+<area shape="rect" id="node3" href="$faders__operations_8cpp.html#ac93160d2b68a41a47ae2a84e32e8db21" title="ClearDock" alt="" coords="209,33,292,66"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a7323ff870691e50a22fe13a920fed4a8" title="show_who_is_in_dock" alt="" coords="343,5,495,38"/>
+<area shape="rect" id="node7" href="$faders__operations_8cpp.html#a85b6979e04dd2e2b3f6b5e26fcbb34ec" title="DoTimeToDock" alt="" coords="363,61,475,94"/>
+</map>

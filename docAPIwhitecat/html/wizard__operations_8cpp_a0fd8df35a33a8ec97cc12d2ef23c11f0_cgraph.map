@@ -1,0 +1,18 @@
+<map id="do_wizard_mem" name="do_wizard_mem">
+<area shape="rect" id="node3" href="$wizard__operations_8cpp.html#a2d1db01db432b298e1fc290a739e6645" title="wizard_copy_mem" alt="" coords="201,21,332,54"/>
+<area shape="rect" id="node7" href="$wizard__operations_8cpp.html#a3c907be70d36446336326a70702d6051" title="wizard_calcul_nbre\l_de_mem" alt="" coords="200,250,333,305"/>
+<area shape="rect" id="node9" href="$wizard__operations_8cpp.html#aabebb76f2d75c359211ccdb2c652402b" title="wizard_clear_mem_original" alt="" coords="177,327,356,361"/>
+<area shape="rect" id="node11" href="$wizard__operations_8cpp.html#a8968dd39272c9ecc1b5d1bbdd8f8adb6" title="wizard_rebuild" alt="" coords="215,194,319,227"/>
+<area shape="rect" id="node21" href="$wizard__operations_8cpp.html#adc2a1b3d3a17b0399ba3d3c40eaeb8dd" title="wizard_insert_mems" alt="" coords="196,138,337,171"/>
+<area shape="rect" id="node27" href="$wizard__operations_8cpp.html#a8bdf6e58c74c657d894478f6ea9fbb21" title="wizard_delete_mem" alt="" coords="197,383,336,417"/>
+<area shape="rect" id="node29" href="$wizard__operations_8cpp.html#ab59b0bf3d4f7b7d778b28525293ba71d" title="wizard_move_mems" alt="" coords="196,82,337,115"/>
+<area shape="rect" id="node36" href="$wizard__operations_8cpp.html#a36fb1e8c45313b896f866d928fee291d" title="wizard_inspekt_mem" alt="" coords="195,439,339,473"/>
+<area shape="rect" id="node38" href="$wizard__operations_8cpp.html#ae0c0e02799db8debc4c2a4b7bf061df0" title="wizard_calcul_nbre\l_de_mem_deleted" alt="" coords="200,495,333,550"/>
+<area shape="rect" id="node40" href="$wizard__operations_8cpp.html#a827cf3f16dc402b17022605bc20c3eea" title="wizard_restore_mem" alt="" coords="196,573,337,606"/>
+<area shape="rect" id="node42" href="$wizard__operations_8cpp.html#ae6d44c7b48cd3bb813f997c3e4f91673" title="wizard_reset_to_default_time" alt="" coords="171,629,363,662"/>
+<area shape="rect" id="node5" href="$wizard__operations_8cpp.html#ac5517aa5e0fd9057c55c2760b41ec268" title="wizard_clear_transfert\l_array" alt="" coords="419,5,568,59"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a093838a2bc2e21bee8f86645c60a0036" title="refresh_mem_onstage" alt="" coords="419,138,568,171"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#adaf2ef6007ed8bd2568485df95ca65b8" title="detect_mem_before_one" alt="" coords="411,194,576,227"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#ae7696959678ab167800352830bf81766" title="detect_mem_preset" alt="" coords="425,250,561,283"/>
+<area shape="rect" id="node19" href="$_c_o_r_e__6_8cpp.html#a68c3767f8e350737e991a726e0ef1438" title="refresh_mem_onpreset" alt="" coords="416,82,571,115"/>
+</map>

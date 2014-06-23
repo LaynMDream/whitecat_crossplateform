@@ -1,0 +1,12 @@
+<map id="DoLock" name="DoLock">
+<area shape="rect" id="node3" href="$dmx__functions__13_8cpp.html#ab72876a6ba8c1eae5c792075e8bff19e" title="do_lfos" alt="" coords="312,5,376,38"/>
+<area shape="rect" id="node20" href="$dmx__functions__13_8cpp.html#ac0e932ae0c7050397aecccdf0a97c882" title="calculs_etats_faders\l_et_contenus" alt="" coords="121,55,263,110"/>
+<area shape="rect" id="node5" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="425,34,479,67"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="529,7,639,41"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1371,34,1421,67"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="689,7,804,41"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="855,7,999,41"/>
+<area shape="rect" id="node13" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1048,7,1107,41"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1156,7,1321,41"/>
+<area shape="rect" id="node22" href="$dmx__functions__13_8cpp.html#adb29aebba6d2c4fb69de35a3a6496ebf" title="Merger" alt="" coords="313,62,375,95"/>
+</map>

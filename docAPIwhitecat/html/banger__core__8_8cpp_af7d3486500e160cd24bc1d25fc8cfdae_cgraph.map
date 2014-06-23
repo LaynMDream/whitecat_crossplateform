@@ -1,0 +1,33 @@
+<map id="do_logical_feedback_banger" name="do_logical_feedback_banger">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="196,21,359,54"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="697,130,753,163"/>
+<area shape="rect" id="node9" href="$banger__core__8_8cpp.html#a29583c84f980616502ac7c4f99e1bc29" title="Bang_event_back" alt="" coords="215,482,340,515"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="423,5,572,59"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a1d69e941ecabe5dd73d0b108627b21d6" title="detect_dock_used" alt="" coords="433,346,561,379"/>
+<area shape="rect" id="node13" href="$faders__operations_8cpp.html#ad2bcaffecd9b01aee13cb557da2ab705" title="Unselect_other_docks" alt="" coords="421,402,573,435"/>
+<area shape="rect" id="node15" href="$faders__core__24_8cpp.html#af5590fbbb7ec3390b51704c3c04c640d" title="asservissement_gridplayer" alt="" coords="409,239,585,273"/>
+<area shape="rect" id="node22" href="$_c_o_r_e__6_8cpp.html#a66525c797b7c3a7c5359c87f0094876c" title="do_recall_fadersstate" alt="" coords="424,509,571,542"/>
+<area shape="rect" id="node24" href="$_c_o_r_e__6_8cpp.html#aa16450d858e0f6dfaa0be7a31adf4d15" title="do_lock_preset" alt="" coords="443,183,552,217"/>
+<area shape="rect" id="node27" href="$_c_o_r_e__6_8cpp.html#ad598ada3395937db3457ab6ee10dcdb7" title="send_my_midi_note" alt="" coords="428,565,567,598"/>
+<area shape="rect" id="node29" href="$gestionaire__fenetres2_8cpp.html#ada3b9703b1aaa1cc37304633bdeb526c" title="add_a_window" alt="" coords="444,1155,551,1189"/>
+<area shape="rect" id="node45" href="$_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc" title="substract_a_window" alt="" coords="427,861,568,894"/>
+<area shape="rect" id="node57" href="$_c_o_r_e__6_8cpp.html#a52e7364ba887cabb040c29b592557b6c" title="load_etat_picker_dans\l_dockcolor" alt="" coords="421,727,573,782"/>
+<area shape="rect" id="node59" href="$audio__core5_8cpp.html#a441637bcca17a3226a6b3aadea1defe9" title="AffectSoundFile" alt="" coords="440,621,555,654"/>
+<area shape="rect" id="node61" href="$_c_o_r_e__6_8cpp.html#a23423256688613149926c4984ff25f79" title="player1_do_stop" alt="" coords="667,615,784,649"/>
+<area shape="rect" id="node63" href="$_c_o_r_e__6_8cpp.html#a6c41d19d859a2e1292ad64ef915e265f" title="player2_do_stop" alt="" coords="667,671,784,705"/>
+<area shape="rect" id="node65" href="$_c_o_r_e__6_8cpp.html#a494249193c56b13a4e1eac04c6dd2d0b" title="player3_do_stop" alt="" coords="667,373,784,406"/>
+<area shape="rect" id="node67" href="$_c_o_r_e__6_8cpp.html#afbcf17b50787fb3b8360659f6ce9b193" title="player4_do_stop" alt="" coords="667,507,784,541"/>
+<area shape="rect" id="node17" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="651,239,800,273"/>
+<area shape="rect" id="node19" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="865,239,1015,273"/>
+<area shape="rect" id="node31" href="$_c_o_r_e__6_8cpp.html#a492a9badab85a9e07b0200f4e34b607f" title="reset_check_grada_overide\l_dimmers" alt="" coords="635,1050,816,1105"/>
+<area shape="rect" id="node33" href="$_c_o_r_e__6_8cpp.html#aa8157e82745eb3ac355d8f443b19955f" title="refresh_shape_factors" alt="" coords="651,1127,800,1161"/>
+<area shape="rect" id="node35" href="$saves__menu__8_8cpp.html#aa97cd577bd2f433780569b3a20136d23" title="scan_importfolder" alt="" coords="663,1183,788,1217"/>
+<area shape="rect" id="node37" href="$saves__menu__8_8cpp.html#aa54ed73e914394a0efe1c45930c72cbd" title="scan_savesfolder" alt="" coords="664,1239,787,1273"/>
+<area shape="rect" id="node39" href="$_c_o_r_e__6_8cpp.html#a91e4f7146fd4a20828a9bd7ac93c0baa" title="reset_audio_indexs\l_to_dock" alt="" coords="659,973,792,1027"/>
+<area shape="rect" id="node41" href="$gestionaire__fenetres2_8cpp.html#a3ecbad4b357ed9e70478e6418261f2fd" title="reset_config_indexes" alt="" coords="653,1295,797,1329"/>
+<area shape="rect" id="node43" href="$gestionaire__fenetres2_8cpp.html#ad38c1b7f03bd1ec3007a87d4c55efacf" title="clear_non_desired_values\l_in_window_list" alt="" coords="640,1351,811,1406"/>
+<area shape="rect" id="node47" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="656,917,795,950"/>
+<area shape="rect" id="node49" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="660,727,791,782"/>
+<area shape="rect" id="node52" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="639,805,812,838"/>
+<area shape="rect" id="node55" href="$_c_o_r_e__6_8cpp.html#abfbdb9056b43d4acfaf3f39122911bad" title="remember_config_page" alt="" coords="647,861,804,894"/>
+</map>

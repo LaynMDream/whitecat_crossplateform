@@ -1,0 +1,19 @@
+<map id="Grider_Box" name="Grider_Box">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="553,198,668,231"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="193,358,249,391"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a37a0af1e3344de7d352aada6d9a612a3" title="refresh_hauteur_fenetre\l_grider" alt="" coords="143,414,300,469"/>
+<area shape="rect" id="node9" href="$grider8_8cpp.html#aa19f8422b692ed5ac7b03a322aed9ef9" title="GlobalGridViewer" alt="" coords="357,447,480,481"/>
+<area shape="rect" id="node17" href="$grider8_8cpp.html#af2ccd6607b93f2a83feb55dd4b66c25c" title="Grid_player" alt="" coords="177,251,265,285"/>
+<area shape="rect" id="node11" href="$gui__boutons__rebuild1_8cpp.html#a602e186310541aea863c7368fef4b3f1" title="previous_button_view" alt="" coords="537,391,684,425"/>
+<area shape="rect" id="node13" href="$gui__boutons__rebuild1_8cpp.html#a25048f0a097129c29226ec04caae26a5" title="next_button_view" alt="" coords="549,447,672,481"/>
+<area shape="rect" id="node15" href="$colors__fonts_8h.html#ae9274ddf03277718b9234207fe9a3d3a" title="CouleurGreen" alt="" coords="560,335,661,369"/>
+<area shape="rect" id="node19" href="$grider8_8cpp.html#af5dc421b53c2888c17d1b7ca3370ef0e" title="TheCallGridBox" alt="" coords="361,167,476,201"/>
+<area shape="rect" id="node22" href="$grider8_8cpp.html#adf34126e40458873ce6c6e9dd5cdbaab" title="TheStepBox" alt="" coords="372,391,465,425"/>
+<area shape="rect" id="node27" href="$grider8_8cpp.html#ad2a7a08d5d1c725b77f84719741dae4c" title="ThePlayCommands" alt="" coords="351,61,487,94"/>
+<area shape="rect" id="node36" href="$grider8_8cpp.html#aca8abe8ebc9a78836e9214a351c32259" title="TheGrid_commands" alt="" coords="349,223,488,257"/>
+<area shape="rect" id="node39" href="$grider8_8cpp.html#a85b783a040afd52187e370bd9b01cae7" title="TheGrid_divers" alt="" coords="364,279,473,313"/>
+<area shape="rect" id="node42" href="$grider8_8cpp.html#a9e1ee0eba138b4a8fc72f527af97617f" title="TheGrid_matrix" alt="" coords="364,335,473,369"/>
+<area shape="rect" id="node29" href="$gui__boutons__rebuild1_8cpp.html#aa6052f3f1534f1a69a06d1498f27af78" title="play_button_view" alt="" coords="549,5,672,38"/>
+<area shape="rect" id="node31" href="$gui__boutons__rebuild1_8cpp.html#a49d3463d08aebc6ce155aa1baae271bd" title="seek_button_view" alt="" coords="548,61,673,94"/>
+<area shape="rect" id="node33" href="$gui__boutons__rebuild1_8cpp.html#aaf89aac5edeb61d30e001c9abb9b341f" title="playstop_button_view" alt="" coords="537,117,684,150"/>
+</map>

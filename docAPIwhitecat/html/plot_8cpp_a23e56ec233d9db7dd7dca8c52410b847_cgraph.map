@@ -1,0 +1,6 @@
+<map id="delete_selected_symbols" name="delete_selected_symbols">
+<area shape="rect" id="node3" href="$plot_8cpp.html#a81a672760936c3fe4915f269850aa955" title="snapshot_calc" alt="" coords="235,5,341,38"/>
+<area shape="rect" id="node5" href="$plot_8cpp.html#a58fe8fc317633b7cfd679c95c67193b9" title="clear_symbol_slot" alt="" coords="225,61,351,94"/>
+<area shape="rect" id="node7" href="$plot_8cpp.html#a94516b8805c4d4f6c5850469e7eb5945" title="rearrange_plan" alt="" coords="235,117,341,150"/>
+<area shape="rect" id="node9" href="$plot_8cpp.html#a3aa259226da63745d5e779178c8111f2" title="copy_symbol_to_emply_slot" alt="" coords="400,117,587,150"/>
+</map>

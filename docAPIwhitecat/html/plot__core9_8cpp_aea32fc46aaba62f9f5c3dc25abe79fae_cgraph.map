@@ -1,0 +1,30 @@
+<map id="logical_shape_edition" name="logical_shape_edition">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="220,5,351,59"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#aabb5978ce8070f19a89c2e5de8ecfce7" title="affect_angle_to_shapes" alt="" coords="207,82,364,115"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="436,162,575,195"/>
+<area shape="rect" id="node11" href="$plot__core9_8cpp.html#ab0c94680c809bf98fd24589fddfb1892" title="duplicate_selected\l_shapes" alt="" coords="220,245,351,299"/>
+<area shape="rect" id="node13" href="$plot__core9_8cpp.html#a0ad3131782822f5d43a18eeb139ad855" title="delete_selected_shapes" alt="" coords="204,477,367,510"/>
+<area shape="rect" id="node23" href="$plot__core9_8cpp.html#a459fcf821f7f5f39b1892a5c6d4ab2d7" title="unselect_all_shapes" alt="" coords="216,533,355,566"/>
+<area shape="rect" id="node25" href="$plot__core9_8cpp.html#a848c80a6a502f9571fb26f425930f41a" title="position_down_selected\l_shapes" alt="" coords="205,322,365,377"/>
+<area shape="rect" id="node31" href="$plot__core9_8cpp.html#ac30d6f57a271402d67996ccc36993a9f" title="position_on_top_selected\l_shapes" alt="" coords="201,399,369,454"/>
+<area shape="rect" id="node35" href="$plot__core9_8cpp.html#a5cf7bf6819da6878fa4d58f1da92048f" title="group_ungroup_selected\l_shapes" alt="" coords="204,589,367,643"/>
+<area shape="rect" id="node37" href="$plot__core9_8cpp.html#a67ffd8f01a25e2c132bfd665d8fa4712" title="plot_shapes_align_x" alt="" coords="216,666,355,699"/>
+<area shape="rect" id="node39" href="$plot__core9_8cpp.html#adad2af76d5338d20228b127f3f91b95d" title="plot_shapes_align_y" alt="" coords="216,722,355,755"/>
+<area shape="rect" id="node41" href="$plot__core9_8cpp.html#a559ffe89a436fa931e16f1e32ea8614a" title="plot_shapes_ventilate_x" alt="" coords="204,778,367,811"/>
+<area shape="rect" id="node43" href="$plot__core9_8cpp.html#a0b644d627defb9e7aac4a30f49b94bda" title="plot_shapes_ventilate_y" alt="" coords="204,834,367,867"/>
+<area shape="rect" id="node45" href="$plot__core9_8cpp.html#a386b4947396b948b8c8eb60dedef47a8" title="affect_size_to_shape" alt="" coords="213,890,357,923"/>
+<area shape="rect" id="node47" href="$plot__core9_8cpp.html#a7815c2b9e36bb7e72d7d972dfebc6eab" title="affect_color_pattern\l_to_shape" alt="" coords="217,946,353,1001"/>
+<area shape="rect" id="node49" href="$plot__core9_8cpp.html#a65d251a13187c2cae786b8b3015dcbb3" title="affect_size_to_rect" alt="" coords="220,1023,351,1057"/>
+<area shape="rect" id="node51" href="$plot__core9_8cpp.html#ad4d4a67ac259379a93cd6c65301feb72" title="refresh_opening_angle" alt="" coords="209,1079,361,1113"/>
+<area shape="rect" id="node53" href="$plot__core9_8cpp.html#add3c70ba00370ce7641c965c6dbc0c0e" title="affect_polygon_nbr\l_of_corners" alt="" coords="220,1135,351,1190"/>
+<area shape="rect" id="node55" href="$plot__core9_8cpp.html#a12e04a81a74211eb173a065c377b2a29" title="affect_font_to_texts" alt="" coords="217,1213,353,1246"/>
+<area shape="rect" id="node57" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="257,1269,313,1302"/>
+<area shape="rect" id="node59" href="$plot__core9_8cpp.html#a7ff9e5c68ed64adb83533d20f550d4ef" title="edit_shape_name" alt="" coords="224,189,347,222"/>
+<area shape="rect" id="node62" href="$plot__core9_8cpp.html#aba48cd07bcd31e62a2aa31f487ad5e92" title="store_relativ_xy_position\l_of_shape" alt="" coords="203,1325,368,1379"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="431,5,580,59"/>
+<area shape="rect" id="node15" href="$plot__core9_8cpp.html#a030f8007ad7298ca956af8dd807718a6" title="snapshot_shapes" alt="" coords="444,410,567,443"/>
+<area shape="rect" id="node17" href="$plot__core9_8cpp.html#a52ebd70a395c38d47cf2568e5c682cb2" title="clear_shape_slot" alt="" coords="445,522,565,555"/>
+<area shape="rect" id="node19" href="$plot__core9_8cpp.html#a83c32bfcc46e9b4120d887cb1952f254" title="rearrange_shapes" alt="" coords="443,466,568,499"/>
+<area shape="rect" id="node21" href="$plot__core9_8cpp.html#a02cebb0231b44ec953ad598da42e30bf" title="copy_shape_to_emply_slot" alt="" coords="641,410,820,443"/>
+<area shape="rect" id="node28" href="$plot__core9_8cpp.html#af1de2902c8517c77ae02efcb54bda21e" title="exchange_shape_position" alt="" coords="420,354,591,387"/>
+</map>

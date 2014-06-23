@@ -1,0 +1,8 @@
+<map id="Menu_edition_iCat_strings" name="Menu_edition_iCat_strings">
+<area shape="rect" id="node3" href="$gui__boutons__rebuild1_8cpp.html#a602e186310541aea863c7368fef4b3f1" title="previous_button_view" alt="" coords="231,5,377,38"/>
+<area shape="rect" id="node5" href="$gui__boutons__rebuild1_8cpp.html#a25048f0a097129c29226ec04caae26a5" title="next_button_view" alt="" coords="243,61,365,94"/>
+<area shape="rect" id="node7" href="$gui__boutons__rebuild1_8cpp.html#aabe7e4ca1f83ca56984eb02767aece7d" title="case_moins_view" alt="" coords="241,117,367,150"/>
+<area shape="rect" id="node9" href="$gui__boutons__rebuild1_8cpp.html#a61fe50bce3e45b6ebb295ba656a05b9f" title="case_plus_view" alt="" coords="247,173,361,206"/>
+<area shape="rect" id="node11" href="$gui__boutons__rebuild1_8cpp.html#ab21a3bdb57480d3c80b64c2da8ba3d0e" title="pulse_bar_view" alt="" coords="248,229,360,262"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="235,285,373,318"/>
+</map>

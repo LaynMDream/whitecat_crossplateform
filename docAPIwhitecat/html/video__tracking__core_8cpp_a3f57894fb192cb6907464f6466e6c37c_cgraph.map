@@ -1,0 +1,17 @@
+<map id="do_logical_Interface_video_window" name="do_logical_Interface_video_window">
+<area shape="rect" id="node3" href="$video__tracking__core_8cpp.html#a70c39e49a01a6bc18e17d0e21fbfe090" title="ticker_video" alt="" coords="244,5,335,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="208,61,371,94"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="224,117,355,171"/>
+<area shape="rect" id="node12" href="$video__tracking__core_8cpp.html#abf34c3fc2665584fade57e2dcaad6184" title="show_who_is_in_ROI\l_as_channel" alt="" coords="215,194,364,249"/>
+<area shape="rect" id="node14" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="483,445,539,478"/>
+<area shape="rect" id="node16" href="$_c_o_r_e__6_8cpp.html#aef793ce0ef44f4f0dcb3ee0a5af04073" title="refresh_ocv_settings" alt="" coords="219,322,360,355"/>
+<area shape="rect" id="node18" href="$video__tracking__core_8cpp.html#aeb6a3d93e0317cc95358eab24bfe2d03" title="Snap_Background" alt="" coords="225,378,353,411"/>
+<area shape="rect" id="node20" href="$video__tracking__core_8cpp.html#a2c38a87093b9cb94740104c0405279aa" title="do_logical_Set_Filtering\l_Image" alt="" coords="209,434,369,489"/>
+<area shape="rect" id="node23" href="$video__tracking__core_8cpp.html#ac16a2c1aad2c77bea9a5e49ec782368f" title="do_logical_Edit_Tracker_Size" alt="" coords="193,511,385,545"/>
+<area shape="rect" id="node25" href="$video__tracking__core_8cpp.html#a3ad6db139c1e92bd759520ba4fe03e06" title="do_logical_Move_Tracker" alt="" coords="205,567,373,601"/>
+<area shape="rect" id="node27" href="$_c_o_r_e__6_8cpp.html#ae128452d6884960c1b69f7217cbbf577" title="refresh_decay" alt="" coords="237,623,341,657"/>
+<area shape="rect" id="node29" href="$gui__boutons__rebuild1_8cpp.html#a786202770b993e9277fc6f2dea176ae7" title="raccrochage_midi_logical\l_horizontal" alt="" coords="205,679,373,734"/>
+<area shape="rect" id="node32" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="220,757,359,790"/>
+<area shape="rect" id="node34" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="203,813,376,846"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="436,83,585,138"/>
+</map>

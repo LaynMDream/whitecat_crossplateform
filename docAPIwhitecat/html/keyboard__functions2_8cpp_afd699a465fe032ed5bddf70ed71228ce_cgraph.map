@@ -1,0 +1,9 @@
+<map id="key_add_ch" name="key_add_ch">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="171,5,309,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a7a305990bfcccbbd39386b5d4e5d40b9" title="set_patch_scroll" alt="" coords="181,61,299,94"/>
+<area shape="rect" id="node7" href="$plot_8cpp.html#a62a28f2a197fa1c11db6a93e2dae6362" title="substract_channel_selection\l_to_layers_plot" alt="" coords="147,117,333,171"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a7cadb552191a09a09e8844e4c1099b61" title="check_presence_of_a\l_channel_in_views" alt="" coords="165,194,315,249"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a08d71e04855f7642fff10b3d45f7b39e" title="set_channel_scroll" alt="" coords="175,271,305,305"/>
+<area shape="rect" id="node15" href="$plot_8cpp.html#a63d5e7a094f416fd40690d465ffacdd0" title="add_channel_selection\l_to_layers_plot" alt="" coords="163,327,317,382"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a98e71a49462cd163ce5236edcf7d3a7d" title="check_wich_channel\l_is_in_view" alt="" coords="383,261,524,315"/>
+</map>

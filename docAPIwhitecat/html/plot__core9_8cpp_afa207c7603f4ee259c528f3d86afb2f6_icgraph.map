@@ -1,0 +1,9 @@
+<map id="exchange_symbol_position" name="exchange_symbol_position">
+<area shape="rect" id="node3" href="$plot__core9_8cpp.html#a91f3a181b08c6bd1095771d96903f7f9" title="position_down_selected\l_symbols" alt="" coords="233,5,393,59"/>
+<area shape="rect" id="node15" href="$plot__core9_8cpp.html#a567a92fb27840f1db037b3ff0c15de28" title="position_on_top" alt="" coords="257,82,369,115"/>
+<area shape="rect" id="node5" href="$plot__core9_8cpp.html#a74a79a0e49b7f81a7cb8b944c77b3b0d" title="logical_plot_symbol\l_edition" alt="" coords="443,38,579,93"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="628,49,788,82"/>
+<area shape="rect" id="node9" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="839,38,996,93"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1045,49,1155,82"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1203,49,1253,82"/>
+</map>

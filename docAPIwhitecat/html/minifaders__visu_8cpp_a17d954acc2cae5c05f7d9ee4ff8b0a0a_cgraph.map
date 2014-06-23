@@ -1,0 +1,20 @@
+<map id="mini_faders_panel_visu" name="mini_faders_panel_visu">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="239,5,369,59"/>
+<area shape="rect" id="node7" href="$minifaders__visu_8cpp.html#a8851811233a2a7daa6b1aff216557524" title="draw_sign_up" alt="" coords="253,82,355,115"/>
+<area shape="rect" id="node9" href="$minifaders__visu_8cpp.html#a9ed4735af1866bb63905bacd847f4dc2" title="draw_sign_down" alt="" coords="245,138,363,171"/>
+<area shape="rect" id="node11" href="$minifaders__visu_8cpp.html#aed3647aa5b76f10938d36ce5f8ba19db" title="draw_sign_saw" alt="" coords="248,194,360,227"/>
+<area shape="rect" id="node13" href="$minifaders__visu_8cpp.html#a26d828d799b549a2635d456a10fd51ee" title="draw_sign_prev" alt="" coords="248,250,360,283"/>
+<area shape="rect" id="node15" href="$minifaders__visu_8cpp.html#a567f8ce3188f8447b0398fda6715c3c3" title="draw_sign_next" alt="" coords="248,306,360,339"/>
+<area shape="rect" id="node17" href="$minifaders__visu_8cpp.html#a70de41a7db5a567fa308eb4cf399956f" title="draw_sign_up_down" alt="" coords="235,362,373,395"/>
+<area shape="rect" id="node19" href="$_c_o_r_e__6_8cpp.html#a4aa64d5ab2f015ed44d0084ee2dff77d" title="detect_master_lock" alt="" coords="236,418,372,451"/>
+<area shape="rect" id="node21" href="$minifaders__visu_8cpp.html#ae5c636328160dc2ca90b20c51d36d4ed" title="all_at_zero_panel_visu" alt="" coords="227,474,381,507"/>
+<area shape="rect" id="node23" href="$gui__boutons__rebuild1_8cpp.html#aef04760266be5bc33fa2cb13e5fedbb0" title="midi_send_faders_button\l_visuel" alt="" coords="221,530,387,585"/>
+<area shape="rect" id="node25" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="461,573,576,606"/>
+<area shape="rect" id="node27" href="$minifaders__visu_8cpp.html#a42090cec02a5716993a7cb230c5546f0" title="show_fgroup_in_minifaders\l_window" alt="" coords="215,658,393,713"/>
+<area shape="rect" id="node29" href="$colors__fonts_8h.html#a0681e6c857773e39158b582969b6934b" title="CouleurRougePur" alt="" coords="241,735,367,769"/>
+<area shape="rect" id="node32" href="$colors__fonts_8h.html#ae9274ddf03277718b9234207fe9a3d3a" title="CouleurGreen" alt="" coords="253,791,355,825"/>
+<area shape="rect" id="node34" href="$colors__fonts_8h.html#a5427dd0a5a11091bc410f7eed5d2657f" title="CouleurYellowFgroup" alt="" coords="232,847,376,881"/>
+<area shape="rect" id="node36" href="$colors__fonts_8h.html#a1f7c9a56f1b079299541dfbd31a981ba" title="Discrete8" alt="" coords="265,903,343,937"/>
+<area shape="rect" id="node38" href="$_c_o_r_e__6_8cpp.html#a96f5b79e5245edced1e6006716227a94" title="refresh_minifader_state\l_view_core" alt="" coords="225,959,383,1014"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="444,5,593,59"/>
+</map>

@@ -1,0 +1,36 @@
+<map id="constrain_int_data_to_this_range" name="constrain_int_data_to_this_range">
+<area shape="rect" id="node3" href="$banger__core__8_8cpp.html#ae4008269e0575da11cc90e812961ef6f" title="Bang_event" alt="" coords="667,493,757,527"/>
+<area shape="rect" id="node18" href="$i_cat14_8cpp.html#a16285241f82898e7a5f051b03d90b9a3" title="check_button" alt="" coords="1088,708,1187,741"/>
+<area shape="rect" id="node49" href="$_draw3_8cpp.html#a2e1cbba7c06eaee357cede79ea4e4e1f" title="do_logical_Draw_Window" alt="" coords="399,812,569,845"/>
+<area shape="rect" id="node52" href="$echo3_8cpp.html#a440d7e78e4b39340e539bef8b9d7e2e1" title="do_logical_echo_window" alt="" coords="183,864,348,897"/>
+<area shape="rect" id="node56" href="$i_cat14_8cpp.html#a843d8ebff54004e8109b3c481755ffc2" title="check_tracker_zone" alt="" coords="415,756,553,789"/>
+<area shape="rect" id="node59" href="$icat__core14_8cpp.html#a73fdc8999a84e32c9274a3e6eef616ee" title="refresh_continuously\l_iCat_buttons" alt="" coords="195,325,336,380"/>
+<area shape="rect" id="node76" href="$save__show__13_8cpp.html#a79587985e352a4fbda2370920c13d87e" title="load_draw_preset_config" alt="" coords="183,172,348,205"/>
+<area shape="rect" id="node5" href="$banger__core__8_8cpp.html#a4003a08a1620546de77b118c91d2fd9d" title="do_bang" alt="" coords="899,521,968,555"/>
+<area shape="rect" id="node11" href="$banger__core__8_8cpp.html#a4fe16ad483c0c1609d97aeb9a23c74ee" title="do_logical_fenetre\l_banger" alt="" coords="871,577,996,632"/>
+<area shape="rect" id="node16" href="$banger__core__8_8cpp.html#ab405ab53ea444b049e5ffa258498fcb6" title="refresh_banger_wx" alt="" coords="868,465,999,499"/>
+<area shape="rect" id="node31" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="1092,361,1183,395"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1491,604,1600,637"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="2059,207,2109,240"/>
+<area shape="rect" id="node13" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1273,657,1431,712"/>
+<area shape="rect" id="node23" href="$keyboard__functions2_8cpp.html#af3dd6697323b10b480719c1612bcf29a" title="key_backward" alt="" coords="1084,473,1191,507"/>
+<area shape="rect" id="node28" href="$keyboard__functions2_8cpp.html#a6b73a3669797504ce2e357d9a8b9a2c2" title="key_forward" alt="" coords="1091,417,1184,451"/>
+<area shape="rect" id="node45" href="$sequentiel__6__core_8cpp.html#a2a71c851cf25565491dd10423bc80380" title="do_logical_Sequenciel\l_Window" alt="" coords="1063,529,1212,584"/>
+<area shape="rect" id="node20" href="$i_cat14_8cpp.html#aa9772b548765a631d4bae1c14053b4e1" title="DoJobFantastickTouch" alt="" coords="1275,735,1429,768"/>
+<area shape="rect" id="node25" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1283,448,1421,481"/>
+<area shape="rect" id="node33" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="1263,367,1441,400"/>
+<area shape="rect" id="node35" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="1495,372,1596,405"/>
+<area shape="rect" id="node37" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="1648,361,1795,416"/>
+<area shape="rect" id="node42" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="1659,439,1784,493"/>
+<area shape="rect" id="node39" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="1848,308,2005,341"/>
+<area shape="rect" id="node61" href="$icat__core14_8cpp.html#a469dfea8228721f299af4b56df39989b" title="do_refresh_iCat" alt="" coords="427,336,541,369"/>
+<area shape="rect" id="node64" href="$i_cat14_8cpp.html#a3dd96bb8dc1ec3e640f104b2d2db4065" title="BoxGuiBuilder_iCat" alt="" coords="644,207,780,240"/>
+<area shape="rect" id="node66" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1323,153,1381,187"/>
+<area shape="rect" id="node68" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1844,153,2009,187"/>
+<area shape="rect" id="node78" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="439,72,529,105"/>
+<area shape="rect" id="node81" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="657,100,767,133"/>
+<area shape="rect" id="node91" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="619,44,805,77"/>
+<area shape="rect" id="node83" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="853,100,1013,133"/>
+<area shape="rect" id="node85" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="1083,103,1192,136"/>
+<area shape="rect" id="node88" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="1081,47,1193,80"/>
+</map>

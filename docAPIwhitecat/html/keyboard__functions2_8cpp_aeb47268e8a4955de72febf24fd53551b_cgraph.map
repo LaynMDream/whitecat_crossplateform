@@ -1,0 +1,5 @@
+<map id="key_select_inv" name="key_select_inv">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a7cadb552191a09a09e8844e4c1099b61" title="check_presence_of_a\l_channel_in_views" alt="" coords="181,5,331,59"/>
+<area shape="rect" id="node5" href="$plot_8cpp.html#a63d5e7a094f416fd40690d465ffacdd0" title="add_channel_selection\l_to_layers_plot" alt="" coords="179,82,333,137"/>
+<area shape="rect" id="node7" href="$plot_8cpp.html#a62a28f2a197fa1c11db6a93e2dae6362" title="substract_channel_selection\l_to_layers_plot" alt="" coords="163,159,349,214"/>
+</map>

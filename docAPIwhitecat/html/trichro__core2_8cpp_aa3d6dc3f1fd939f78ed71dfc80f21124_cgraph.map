@@ -1,0 +1,12 @@
+<map id="do_logical_Interface_Trichromie" name="do_logical_Interface_Trichromie">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="211,5,349,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="193,61,367,94"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="215,250,345,305"/>
+<area shape="rect" id="node11" href="$trichro__core2_8cpp.html#a35fbef75de2216fb72a4cfcc1f96563f" title="show_who_is_in_dock\l_color" alt="" coords="204,173,356,227"/>
+<area shape="rect" id="node13" href="$gui__boutons__rebuild1_8cpp.html#a3bacdc32dbf41a4e289dc20607f42ce8" title="raccrochage_midi_logical\l_circulaire" alt="" coords="196,327,364,382"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="464,398,520,431"/>
+<area shape="rect" id="node17" href="$trichro__core2_8cpp.html#a9663f5115492ee4cdefd3aadcbe4dbca" title="do_colors" alt="" coords="241,405,319,438"/>
+<area shape="rect" id="node19" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="199,117,361,150"/>
+<area shape="rect" id="node22" href="$_c_o_r_e__6_8cpp.html#a52e7364ba887cabb040c29b592557b6c" title="load_etat_picker_dans\l_dockcolor" alt="" coords="204,511,356,566"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="417,178,567,233"/>
+</map>

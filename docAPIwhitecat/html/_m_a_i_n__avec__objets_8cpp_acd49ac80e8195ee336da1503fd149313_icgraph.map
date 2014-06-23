@@ -1,0 +1,18 @@
+<map id="Tmax" name="Tmax">
+<area shape="rect" id="node3" href="$channels__9__core_8cpp.html#a6339d05fc2a9d7a1dea0adf2ee99bcfc" title="channel_copy" alt="" coords="131,61,232,94"/>
+<area shape="rect" id="node16" href="$chasers__core__5_8cpp.html#a1d95361a5140157ac0aae6fa94b09cbe" title="do_chaser" alt="" coords="364,137,447,170"/>
+<area shape="rect" id="node32" href="$dmx__functions__13_8cpp.html#afe72c8c1d3c933742658c5d58139f302" title="Merger_Faders" alt="" coords="127,167,236,201"/>
+<area shape="rect" id="node34" href="$dmx__functions__13_8cpp.html#adb29aebba6d2c4fb69de35a3a6496ebf" title="Merger" alt="" coords="375,205,436,238"/>
+<area shape="rect" id="node37" href="$dmx__functions__13_8cpp.html#ac0e932ae0c7050397aecccdf0a97c882" title="calculs_etats_faders\l_et_contenus" alt="" coords="111,274,252,329"/>
+<area shape="rect" id="node5" href="$_call__everybody__5_8cpp.html#af326410369b61f889c2c6068a6d67f60" title="do_logical_FunctionBoxChannel" alt="" coords="301,21,509,54"/>
+<area shape="rect" id="node13" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="568,82,707,115"/>
+<area shape="rect" id="node7" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="559,5,716,59"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="767,78,876,111"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1608,131,1659,165"/>
+<area shape="rect" id="node18" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="611,182,664,215"/>
+<area shape="rect" id="node20" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="767,185,876,218"/>
+<area shape="rect" id="node22" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="927,185,1041,218"/>
+<area shape="rect" id="node24" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1092,185,1236,218"/>
+<area shape="rect" id="node26" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1285,185,1344,218"/>
+<area shape="rect" id="node28" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1393,185,1559,218"/>
+</map>

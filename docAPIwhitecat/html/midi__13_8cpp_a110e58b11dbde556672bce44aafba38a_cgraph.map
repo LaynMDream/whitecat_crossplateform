@@ -1,0 +1,13 @@
+<map id="midipage_preset_and_options" name="midipage_preset_and_options">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="249,69,305,102"/>
+<area shape="rect" id="node5" href="$midi__launchpad_8cpp.html#a6f96c04520781848f749f65e9b8492ae" title="reset_launchpad" alt="" coords="219,125,336,158"/>
+<area shape="rect" id="node16" href="$midi__13_8cpp.html#a72179ebf14bb726cf84ba6f4781bf7d2" title="midi_launchpad_colors" alt="" coords="200,216,355,249"/>
+<area shape="rect" id="node23" href="$midi__13_8cpp.html#a1be6169a0ed28989c422b9f72042f0bb" title="midi_change_signal" alt="" coords="209,305,345,338"/>
+<area shape="rect" id="node7" href="$midi__launchpad_8cpp.html#ae33e05f7bf68aa5563156d334e942bc7" title="define_colors" alt="" coords="663,169,761,202"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#ad598ada3395937db3457ab6ee10dcdb7" title="send_my_midi_note" alt="" coords="643,82,781,116"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#afba5d73bd277858cb503c6bb4ae4634c" title="send_my_midi_note_delayed" alt="" coords="404,42,593,76"/>
+<area shape="rect" id="node13" href="$midi__launchpad_8cpp.html#af9548fa9e59c002812e934498e361e37" title="launchpad_refresh_buffer_led" alt="" coords="404,98,593,132"/>
+<area shape="rect" id="node18" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="429,282,568,316"/>
+<area shape="rect" id="node20" href="$midi__13_8cpp.html#a44d22ff6a4e809a5baa34035ebb96d3e" title="refresh_launchpad_color\l_callibration" alt="" coords="417,205,580,260"/>
+<area shape="rect" id="node25" href="$colors__fonts_8h.html#a2907c9cae585224ac5e56bc4baad9970" title="CouleurYellow" alt="" coords="447,338,551,372"/>
+</map>

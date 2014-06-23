@@ -71,6 +71,8 @@ var searchData=
   ['file_5fbanger_5fcall_5fin_5fmem',['file_banger_call_in_mem',['../save__show__13_8cpp.html#af283355e64e6a8c889d4d07211153ed5',1,'save_show_13.cpp']]],
   ['file_5fbangers_5factions',['file_bangers_actions',['../save__show__13_8cpp.html#ad2f0f87cfbef002d7be1b845732edf31',1,'save_show_13.cpp']]],
   ['file_5fbangers_5falarms',['file_bangers_alarms',['../save__show__13_8cpp.html#a43caa46505d71e242fe83321898fd54b',1,'save_show_13.cpp']]],
+  ['file_5fbangers_5floop',['file_bangers_loop',['../save__show__13_8cpp.html#aefac9aa7d7366ff4fe8d2956c5ac7f81',1,'save_show_13.cpp']]],
+  ['file_5fbangers_5flooptime',['file_bangers_looptime',['../save__show__13_8cpp.html#ad8cd408c646963c63afb732a76c13edb',1,'save_show_13.cpp']]],
   ['file_5fbangers_5fnames',['file_bangers_names',['../save__show__13_8cpp.html#a26d8e408436b6a9a2181d29ed3f377c3',1,'save_show_13.cpp']]],
   ['file_5fbangers_5ftimes',['file_bangers_times',['../save__show__13_8cpp.html#ac4df2127223173e7a76228985c321d0a',1,'save_show_13.cpp']]],
   ['file_5fbangers_5ftypes',['file_bangers_types',['../save__show__13_8cpp.html#aa33fd3b7175333e64f9d325ef2a80983',1,'save_show_13.cpp']]],

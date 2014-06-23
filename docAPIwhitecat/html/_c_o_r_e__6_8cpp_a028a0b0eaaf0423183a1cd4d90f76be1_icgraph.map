@@ -1,0 +1,23 @@
+<map id="reset_channel_first_dimmer_list" name="reset_channel_first_dimmer_list">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ae6b6dda74fceff6db90d029785454a0b" title="generate_channel_preview\l_patch_list" alt="" coords="187,374,363,429"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a32dc90bc691784f4e2e205c69a9e0a9d" title="generate_channel_view\l_list_from_patched_circuits" alt="" coords="411,374,592,429"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a5e53dc8ef589fe38b9d40e3497ac3f13" title="GlobInit" alt="" coords="675,66,741,99"/>
+<area shape="rect" id="node11" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="1060,199,1220,233"/>
+<area shape="rect" id="node13" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="1295,361,1404,394"/>
+<area shape="rect" id="node32" href="$patch__core_8cpp.html#a4d803399af09cb8327d07795a5f51a93" title="do_logical_PatchBox" alt="" coords="1068,415,1212,449"/>
+<area shape="rect" id="node37" href="$plot__core9_8cpp.html#a1bd59a25aebc7c988be294079ea1ef02" title="repatch_from_plot" alt="" coords="645,591,771,625"/>
+<area shape="rect" id="node39" href="$plot__core9_8cpp.html#afacf9fafd495ceac6c305b0cf88312f2" title="logical_symbol_edition\l_options" alt="" coords="841,527,993,582"/>
+<area shape="rect" id="node45" href="$plot__core9_8cpp.html#a74a79a0e49b7f81a7cb8b944c77b3b0d" title="logical_plot_symbol\l_edition" alt="" coords="640,463,776,518"/>
+<area shape="rect" id="node48" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="663,281,753,314"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a29400ad92b676ecb7743384700af5560" title="reset_show" alt="" coords="873,93,961,126"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1880,277,1931,310"/>
+<area shape="rect" id="node21" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="1293,226,1405,259"/>
+<area shape="rect" id="node15" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1477,361,1616,394"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1693,361,1803,394"/>
+<area shape="rect" id="node23" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1517,239,1576,273"/>
+<area shape="rect" id="node25" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1665,246,1831,279"/>
+<area shape="rect" id="node34" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1271,417,1428,471"/>
+<area shape="rect" id="node41" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="1060,474,1220,507"/>
+<area shape="rect" id="node51" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="863,199,972,233"/>
+<area shape="rect" id="node54" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="824,255,1011,289"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="patch_clear_selected" name="patch_clear_selected">
+<area shape="rect" id="node3" href="$keyboard__functions2_8cpp.html#ae994c15c56c4ee2e4560320fab4d2201" title="key_at_zero" alt="" coords="404,5,497,38"/>
+<area shape="rect" id="node11" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="371,109,531,142"/>
+<area shape="rect" id="node23" href="$saves__export__import_8cpp.html#a905bc7e6b97081073c37e69402672358" title="do_ASCII_import" alt="" coords="200,109,323,142"/>
+<area shape="rect" id="node26" href="$saves__export__import_8cpp.html#aa1d9d650676ab451f00cf24b2b7ac0a1" title="do_Alq_import" alt="" coords="209,165,313,198"/>
+<area shape="rect" id="node5" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="739,58,877,91"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="955,58,1064,91"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1141,86,1192,119"/>
+<area shape="rect" id="node13" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="580,58,689,91"/>
+<area shape="rect" id="node16" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="579,114,691,147"/>
+<area shape="rect" id="node18" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="779,114,837,147"/>
+<area shape="rect" id="node20" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="927,114,1092,147"/>
+</map>

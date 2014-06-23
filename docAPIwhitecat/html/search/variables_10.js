@@ -31,6 +31,7 @@ var searchData=
   ['rep',['rep',['../tracker__main14nov_8cpp.html#adeab9e3181f9a277a30cd6a567db8586',1,'rep():&#160;tracker_main14nov.cpp'],['../whitecat_8h.html#adeab9e3181f9a277a30cd6a567db8586',1,'rep():&#160;whitecat.h']]],
   ['rep_5faudio',['rep_audio',['../whitecat_8h.html#a7335951fa6042b506f2c92ff10026a08',1,'whitecat.h']]],
   ['rep_5fsaves',['rep_saves',['../whitecat_8h.html#a7f3c355aa0fcdfa26bd8512944fec9fb',1,'whitecat.h']]],
+  ['report',['report',['../classcurve__node.html#a348cce4dfe54130e8b8b2fb218baedfb',1,'curve_node']]],
   ['report_5fdin',['report_dIn',['../whitecat_8h.html#a1a429974ba30995a062c61830816966b',1,'whitecat.h']]],
   ['report_5fdout',['report_dOut',['../whitecat_8h.html#abe1b4c6495855292cd228dc075765a56',1,'whitecat.h']]],
   ['report_5fin',['report_In',['../whitecat_8h.html#aaa21ad7a970c1d8a47a80b3f762e8898',1,'whitecat.h']]],

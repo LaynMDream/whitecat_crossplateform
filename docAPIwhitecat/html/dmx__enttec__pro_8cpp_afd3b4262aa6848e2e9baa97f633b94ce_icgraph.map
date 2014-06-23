@@ -1,0 +1,10 @@
+<map id="Close_EnttecProOut" name="Close_EnttecProOut">
+<area shape="rect" id="node3" href="$dmx__functions__13_8cpp.html#a3048b55699cf98058123e21f401cbcf0" title="Close_dmx_interface" alt="" coords="199,58,343,91"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#ab6b381db258889ff1d6e45119c1b24fc" title="SelectDmxDevice" alt="" coords="392,5,520,38"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#af492ee2130c3aed1b5f2ee4ff61a4416" title="do_dmx_config" alt="" coords="569,55,679,89"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1411,82,1461,115"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="729,55,844,89"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="895,55,1039,89"/>
+<area shape="rect" id="node13" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1088,55,1147,89"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1196,55,1361,89"/>
+</map>

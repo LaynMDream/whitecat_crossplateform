@@ -1,0 +1,18 @@
+<map id="do_logical_menu_curve" name="do_logical_menu_curve">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="271,5,327,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a0cfe114d9d46419bf5269f7bfbb00107" title="build_default_curve" alt="" coords="232,61,365,94"/>
+<area shape="rect" id="node7" href="$classcurve__node.html#ac1e52fe7e8f762074b804b88a1b420cf" title="curve_node::build_square" alt="" coords="213,117,384,150"/>
+<area shape="rect" id="node29" href="$patch__core_8cpp.html#a48df97f3c14a7304f80157d81163be5b" title="load_curve_in_temp\l_curve" alt="" coords="229,173,368,227"/>
+<area shape="rect" id="node31" href="$_c_o_r_e__6_8cpp.html#a777e7b1c3fb576962105247199bfeb50" title="dessafect_index_curves" alt="" coords="217,250,380,283"/>
+<area shape="rect" id="node33" href="$patch__core_8cpp.html#a681366431cf7dab1fc7c83f83baa7629" title="do_curve_affectation" alt="" coords="228,306,369,339"/>
+<area shape="rect" id="node35" href="$_c_o_r_e__6_8cpp.html#a894b338494d0bdd820df2944b628e2de" title="patch_unselect_all\l_dimmers" alt="" coords="233,362,364,417"/>
+<area shape="rect" id="node9" href="$classcurve__node.html#a22f8acf6b081673429257867a4115c57" title="curve_node::calc_tangents" alt="" coords="1059,53,1237,86"/>
+<area shape="rect" id="node15" href="$classcurve__node.html#aace217c0200a043c2d2f5f071fde8e56" title="curve_node::draw_splines" alt="" coords="441,117,615,150"/>
+<area shape="rect" id="node27" href="$classcurve__node.html#a5c54a9611e91814177cf901636d4e8e5" title="curve_node::view_after_draw" alt="" coords="432,173,624,206"/>
+<area shape="rect" id="node11" href="$classcurve__node.html#a55e51b51f9b6ede537c5e11b7f234188" title="curve_node::dummy" alt="" coords="1287,179,1425,213"/>
+<area shape="rect" id="node13" href="$classcurve__node.html#add0d28f291f1cfe22e11f5436a8ba161" title="curve_node::curve_node" alt="" coords="1476,179,1639,213"/>
+<area shape="rect" id="node18" href="$classcurve__node.html#ab1db9f4ea1c53ab2eab6072b2cdc90eb" title="curve_node::draw" alt="" coords="672,117,797,150"/>
+<area shape="rect" id="node20" href="$classcurve__node.html#abc1a06d649c6dce22334da762f2955b8" title="curve_node::write_curve" alt="" coords="847,117,1009,150"/>
+<area shape="rect" id="node23" href="$classcurve__node.html#a14aba313f46315faae44bcca011136a9" title="curve_node::get_control\l_points" alt="" coords="1068,109,1228,163"/>
+<area shape="rect" id="node25" href="$classcurve__node.html#a1146c27b9e6c0b3a5f6fb3faced5cea2" title="curve_node::dist" alt="" coords="1297,119,1415,153"/>
+</map>

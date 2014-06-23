@@ -1,0 +1,8 @@
+<map id="Interface_video_window" name="Interface_video_window">
+<area shape="rect" id="node3" href="$video__tracking__visu_8cpp.html#a30a5b009c6049a246efaec21c12b3bda" title="tracking_print_to_screen" alt="" coords="217,5,380,38"/>
+<area shape="rect" id="node9" href="$video__tracking__visu_8cpp.html#ad1e140d578e12e37e27caf1a3952ff93" title="ShowTrackers" alt="" coords="247,61,351,94"/>
+<area shape="rect" id="node11" href="$video__tracking__visu_8cpp.html#a6e5e67da82dcfa08fe08f5e0b7ed4b74" title="Set_Filtering_Image" alt="" coords="229,117,368,150"/>
+<area shape="rect" id="node13" href="$gui__boutons__rebuild1_8cpp.html#a039e24b1deea8472aa6312f1201a9264" title="raccrochage_midi_visuel\l_horizontal" alt="" coords="216,173,381,227"/>
+<area shape="rect" id="node5" href="$video__tracking__core_8cpp.html#a9476fbb167969a532b17803160b7d4c5" title="Trackers" alt="" coords="429,5,501,38"/>
+<area shape="rect" id="node7" href="$video__tracking__core_8cpp.html#a24fa812f08dfaa0151d221bcb3479862" title="Filter_Image" alt="" coords="551,5,644,38"/>
+</map>

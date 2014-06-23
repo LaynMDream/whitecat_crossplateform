@@ -1,0 +1,6 @@
+<map id="draw_splines" name="draw_splines">
+<area shape="rect" id="node3" href="$mover__spline6_8cpp.html#afb746186e6eadd49e68304dcdbd3320b" title="dummy_node" alt="" coords="153,5,252,38"/>
+<area shape="rect" id="node5" href="$mover__spline6_8cpp.html#a319081649340b9fe035cff9aa020468b" title="draw_spline" alt="" coords="157,61,248,94"/>
+<area shape="rect" id="node7" href="$mover__spline6_8cpp.html#a71a41e8d002948913c4ae79560729c48" title="get_control_points" alt="" coords="301,61,429,94"/>
+<area shape="rect" id="node9" href="$mover__spline6_8cpp.html#a98185a4f31c71ab881cacc66ef0d87e1" title="node_dist" alt="" coords="479,61,556,94"/>
+</map>

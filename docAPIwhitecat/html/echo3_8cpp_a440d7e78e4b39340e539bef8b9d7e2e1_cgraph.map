@@ -1,0 +1,21 @@
+<map id="do_logical_echo_window" name="do_logical_echo_window">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="281,5,337,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="448,30,611,63"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a5615f7c8a54ba9a586dd910ec1ae5e43" title="constrain_int_data\l_to_this_range" alt="" coords="245,269,373,323"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="240,346,379,379"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="464,86,595,141"/>
+<area shape="rect" id="node16" href="$_c_o_r_e__6_8cpp.html#ae46ccc9515b4dfbae80f22ad0d12d970" title="snap_fader_state" alt="" coords="468,453,591,486"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a4b0f1aba504cdfe03c231a0d30b67f67" title="bounce" alt="" coords="497,510,561,543"/>
+<area shape="rect" id="node26" href="$_c_o_r_e__6_8cpp.html#ace96027c239724d93e5b27365ce0eea9" title="snap_kill_and_bounce" alt="" coords="235,402,384,435"/>
+<area shape="rect" id="node30" href="$_c_o_r_e__6_8cpp.html#a92972cb220bff54c3b0678a13710da1c" title="recall_fader_state_echo" alt="" coords="229,559,389,593"/>
+<area shape="rect" id="node32" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="240,615,379,649"/>
+<area shape="rect" id="node34" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="223,671,396,705"/>
+<area shape="rect" id="node36" href="$_c_o_r_e__6_8cpp.html#a97b36de7f5074b4fd47b66be07e6061d" title="clear_echo_levels" alt="" coords="247,727,372,761"/>
+<area shape="rect" id="node38" href="$_c_o_r_e__6_8cpp.html#a124c49947ef1a65abaefad3f880f99f9" title="clear_ground_levels" alt="" coords="241,783,377,817"/>
+<area shape="rect" id="node40" href="$_c_o_r_e__6_8cpp.html#ab5d29b9ad8d00204a0d8d4ed77e7caec" title="constrain_data_to_midi\l_range" alt="" coords="452,241,607,295"/>
+<area shape="rect" id="node42" href="$echo3_8cpp.html#ab232f374279854445118919ce3fff8a8" title="do_logical_Echo_Aera" alt="" coords="235,162,384,195"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="663,53,812,107"/>
+<area shape="rect" id="node18" href="$_c_o_r_e__6_8cpp.html#acb60b88f155e303f382267840df74671" title="recall_channel_state\l_in_an_echo" alt="" coords="667,501,808,555"/>
+<area shape="rect" id="node20" href="$_c_o_r_e__6_8cpp.html#a02c0482cf9631910ebc1d59614215ecd" title="prepare_bounce" alt="" coords="861,447,976,481"/>
+<area shape="rect" id="node45" href="$_c_o_r_e__6_8cpp.html#abbe1dbb26f5bf5fd7c9411e15817ca37" title="record_channel_ch_state\l_in_an_echo" alt="" coords="447,163,612,218"/>
+</map>

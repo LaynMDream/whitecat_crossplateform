@@ -1,0 +1,10 @@
+<map id="send_my_midi_note_delayed" name="send_my_midi_note_delayed">
+<area shape="rect" id="node3" href="$midi__launchpad_8cpp.html#a6f96c04520781848f749f65e9b8492ae" title="reset_launchpad" alt="" coords="245,21,363,54"/>
+<area shape="rect" id="node5" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1445,17,1496,50"/>
+<area shape="rect" id="node7" href="$midi__13_8cpp.html#a110e58b11dbde556672bce44aafba38a" title="midipage_preset_and\l_options" alt="" coords="412,42,556,97"/>
+<area shape="rect" id="node9" href="$midi__13_8cpp.html#a8f70acacad6eaba8867bdd80dda5e277" title="do_midi_config" alt="" coords="605,51,715,85"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="764,51,879,85"/>
+<area shape="rect" id="node13" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="929,46,1073,79"/>
+<area shape="rect" id="node15" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1123,45,1181,78"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1231,43,1396,77"/>
+</map>

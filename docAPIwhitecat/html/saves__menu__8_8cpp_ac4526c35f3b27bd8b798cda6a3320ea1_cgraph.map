@@ -1,0 +1,12 @@
+<map id="do_logical_Save_Menu" name="do_logical_Save_Menu">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="509,48,565,81"/>
+<area shape="rect" id="node5" href="$saves__menu__8_8cpp.html#a2404adf9c5e730ecf56aad688799482e" title="do_logical_selecteur\l_binary_save_solo_global" alt="" coords="221,115,392,169"/>
+<area shape="rect" id="node10" href="$saves__menu__8_8cpp.html#a3e840863ce8c1e9b10b79353b9bffb66" title="do_logical_deroule\l_repertoire_classical_save" alt="" coords="219,269,395,324"/>
+<area shape="rect" id="node14" href="$saves__menu__8_8cpp.html#a7632db539835664d84c7e8b03d67bc57" title="do_logical_choose_personnal\l_preset_binary_save_load" alt="" coords="211,192,403,247"/>
+<area shape="rect" id="node16" href="$saves__menu__8_8cpp.html#a620573779e5af21a8593504f03b9a464" title="do_logical_selecteur\l_PDF_save_solo_global" alt="" coords="225,37,388,92"/>
+<area shape="rect" id="node19" href="$saves__menu__8_8cpp.html#ad69a6a5f22f46792e578ebff56fedccf" title="do_logical_deroule\l_repertoire_export_import" alt="" coords="223,347,391,401"/>
+<area shape="rect" id="node8" href="$_c_o_r_e__6_8cpp.html#ac87e78f4784116c0fa1397140362febe" title="set_all_saves_indexes_at" alt="" coords="452,125,623,159"/>
+<area shape="rect" id="node12" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="468,291,607,324"/>
+<area shape="rect" id="node21" href="$saves__menu__8_8cpp.html#a5828c46601c5450312f7d66f44576006" title="check_import_type" alt="" coords="472,357,603,391"/>
+<area shape="rect" id="node23" href="$saves__menu__8_8cpp.html#aa97cd577bd2f433780569b3a20136d23" title="scan_importfolder" alt="" coords="672,357,797,391"/>
+</map>

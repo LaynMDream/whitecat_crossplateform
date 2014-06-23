@@ -1,0 +1,8 @@
+<map id="raccrochage_midi_logical_vertical" name="raccrochage_midi_logical_vertical">
+<area shape="rect" id="node3" href="$audio__core5_8cpp.html#a8b31946eb761c7f981bb92526a3f065a" title="do_logical_fader_niveau_son" alt="" coords="221,15,411,49"/>
+<area shape="rect" id="node5" href="$audio__core5_8cpp.html#a657e082e79a514893ab79a019dfa5e5a" title="do_logical_lecteur\l_audio" alt="" coords="460,5,585,59"/>
+<area shape="rect" id="node7" href="$audio__core5_8cpp.html#a58dbea0caa9eacea9a92dace23de4e32" title="do_logical_fenetre\l_audio" alt="" coords="636,5,761,59"/>
+<area shape="rect" id="node9" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="812,5,969,59"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1019,15,1128,49"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1176,15,1227,49"/>
+</map>

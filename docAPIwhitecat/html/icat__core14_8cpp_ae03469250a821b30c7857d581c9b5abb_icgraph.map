@@ -1,0 +1,25 @@
+<map id="To_iCat_DrawTrackingZone" name="To_iCat_DrawTrackingZone">
+<area shape="rect" id="node3" href="$icat__core14_8cpp.html#a469dfea8228721f299af4b56df39989b" title="do_refresh_iCat" alt="" coords="237,272,352,306"/>
+<area shape="rect" id="node5" href="$banger__core__8_8cpp.html#ae4008269e0575da11cc90e812961ef6f" title="Bang_event" alt="" coords="423,212,513,246"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1763,398,1813,431"/>
+<area shape="rect" id="node20" href="$i_cat14_8cpp.html#a16285241f82898e7a5f051b03d90b9a3" title="check_button" alt="" coords="792,391,891,424"/>
+<area shape="rect" id="node33" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="796,44,887,78"/>
+<area shape="rect" id="node41" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="1552,94,1709,127"/>
+<area shape="rect" id="node51" href="$i_cat14_8cpp.html#a3dd96bb8dc1ec3e640f104b2d2db4065" title="BoxGuiBuilder_iCat" alt="" coords="400,498,536,531"/>
+<area shape="rect" id="node7" href="$banger__core__8_8cpp.html#a4003a08a1620546de77b118c91d2fd9d" title="do_bang" alt="" coords="616,146,685,179"/>
+<area shape="rect" id="node13" href="$banger__core__8_8cpp.html#a4fe16ad483c0c1609d97aeb9a23c74ee" title="do_logical_fenetre\l_banger" alt="" coords="588,202,713,256"/>
+<area shape="rect" id="node18" href="$banger__core__8_8cpp.html#ab405ab53ea444b049e5ffa258498fcb6" title="refresh_banger_wx" alt="" coords="585,279,716,312"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1195,307,1304,340"/>
+<area shape="rect" id="node15" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="977,202,1135,256"/>
+<area shape="rect" id="node25" href="$keyboard__functions2_8cpp.html#af3dd6697323b10b480719c1612bcf29a" title="key_backward" alt="" coords="788,335,895,368"/>
+<area shape="rect" id="node30" href="$keyboard__functions2_8cpp.html#a6b73a3669797504ce2e357d9a8b9a2c2" title="key_forward" alt="" coords="795,279,888,312"/>
+<area shape="rect" id="node47" href="$sequentiel__6__core_8cpp.html#a2a71c851cf25565491dd10423bc80380" title="do_logical_Sequenciel\l_Window" alt="" coords="767,202,916,256"/>
+<area shape="rect" id="node22" href="$i_cat14_8cpp.html#aa9772b548765a631d4bae1c14053b4e1" title="DoJobFantastickTouch" alt="" coords="979,378,1133,411"/>
+<area shape="rect" id="node27" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="987,307,1125,340"/>
+<area shape="rect" id="node35" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="967,44,1145,78"/>
+<area shape="rect" id="node37" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="1199,55,1300,88"/>
+<area shape="rect" id="node39" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="1352,44,1499,99"/>
+<area shape="rect" id="node44" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="1363,122,1488,176"/>
+<area shape="rect" id="node53" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1220,498,1279,531"/>
+<area shape="rect" id="node55" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1548,498,1713,531"/>
+</map>

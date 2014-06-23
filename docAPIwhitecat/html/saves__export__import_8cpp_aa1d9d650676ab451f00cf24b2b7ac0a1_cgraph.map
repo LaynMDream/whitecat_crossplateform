@@ -1,0 +1,10 @@
+<map id="do_Alq_import" name="do_Alq_import">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#aa788448f95d9a014495e26c5ea74d944" title="patch_to_default_selected" alt="" coords="161,15,335,49"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a77c4e71e4ffb054498925a12dfacb643" title="patch_clear_selected" alt="" coords="176,71,320,105"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a54a6359c50e0756bd269aa6b9b7e8ef4" title="scan_for_free_dock" alt="" coords="180,127,316,161"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a093838a2bc2e21bee8f86645c60a0036" title="refresh_mem_onstage" alt="" coords="173,183,323,217"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#adaf2ef6007ed8bd2568485df95ca65b8" title="detect_mem_before_one" alt="" coords="165,239,331,273"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#ae7696959678ab167800352830bf81766" title="detect_mem_preset" alt="" coords="180,295,316,329"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#a68c3767f8e350737e991a726e0ef1438" title="refresh_mem_onpreset" alt="" coords="171,351,325,385"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a4c85f2143a3ecf799c3fbfe6e0d0d62a" title="reconstruct_plot_dimmer\l_list_from_patch" alt="" coords="384,5,549,59"/>
+</map>

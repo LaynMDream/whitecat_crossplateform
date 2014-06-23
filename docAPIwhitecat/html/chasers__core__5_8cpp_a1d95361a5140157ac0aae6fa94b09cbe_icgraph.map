@@ -1,0 +1,9 @@
+<map id="do_chaser" name="do_chaser">
+<area shape="rect" id="node3" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="137,31,191,65"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="241,5,351,38"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1083,31,1133,65"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="401,5,516,38"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="567,5,711,38"/>
+<area shape="rect" id="node11" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="760,5,819,38"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="868,5,1033,38"/>
+</map>

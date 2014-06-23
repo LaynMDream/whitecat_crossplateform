@@ -1,0 +1,10 @@
+<map id="do_bouncing_levels" name="do_bouncing_levels">
+<area shape="rect" id="node3" href="$echo3_8cpp.html#ad0d31b1438de53230c9018eb36fb7bc7" title="do_echo" alt="" coords="191,31,260,65"/>
+<area shape="rect" id="node5" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="311,31,364,65"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="415,5,524,38"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1256,31,1307,65"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="575,5,689,38"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="740,5,884,38"/>
+<area shape="rect" id="node13" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="933,5,992,38"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1041,5,1207,38"/>
+</map>

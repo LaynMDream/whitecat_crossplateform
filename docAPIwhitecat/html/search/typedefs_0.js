@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['curve_5fnode',['curve_node',['../whitecat_8h.html#a381b962aa4b8e005d1aa81578168a052',1,'whitecat.h']]]
+  ['byte',['byte',['../whitecat_8h.html#a2b7e7856b48ec3327148ac994ad95cd5',1,'whitecat.h']]]
 ];

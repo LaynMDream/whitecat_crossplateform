@@ -1,0 +1,15 @@
+<map id="refresh_ocv_settings" name="refresh_ocv_settings">
+<area shape="rect" id="node3" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="221,114,312,147"/>
+<area shape="rect" id="node28" href="$video__tracking__core_8cpp.html#a3f57894fb192cb6907464f6466e6c37c" title="do_logical_Interface\l_video_window" alt="" coords="197,15,336,70"/>
+<area shape="rect" id="node5" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1389,125,1440,158"/>
+<area shape="rect" id="node7" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="423,125,532,158"/>
+<area shape="rect" id="node25" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="384,69,571,102"/>
+<area shape="rect" id="node9" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="619,103,779,137"/>
+<area shape="rect" id="node11" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="828,69,937,102"/>
+<area shape="rect" id="node18" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="827,125,939,158"/>
+<area shape="rect" id="node13" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="987,69,1125,102"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1203,69,1312,102"/>
+<area shape="rect" id="node20" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1027,125,1085,158"/>
+<area shape="rect" id="node22" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1175,125,1340,158"/>
+<area shape="rect" id="node30" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="620,5,777,59"/>
+</map>

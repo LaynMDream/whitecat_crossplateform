@@ -1,0 +1,10 @@
+<map id="do_logical_lfo_fader_functions" name="do_logical_lfo_fader_functions">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="200,21,363,54"/>
+<area shape="rect" id="node7" href="$faders__core__24_8cpp.html#af5590fbbb7ec3390b51704c3c04c640d" title="asservissement_gridplayer" alt="" coords="193,77,369,110"/>
+<area shape="rect" id="node13" href="$gui__boutons__rebuild1_8cpp.html#a786202770b993e9277fc6f2dea176ae7" title="raccrochage_midi_logical\l_horizontal" alt="" coords="197,133,365,187"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="467,170,523,203"/>
+<area shape="rect" id="node18" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="212,261,351,294"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="420,5,569,59"/>
+<area shape="rect" id="node9" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="420,82,569,115"/>
+<area shape="rect" id="node11" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="620,82,769,115"/>
+</map>

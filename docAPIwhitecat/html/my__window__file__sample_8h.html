@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
 <title>WhitecatAPI: Référence du fichier my_window_file_sample.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -38,7 +38,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.7 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -111,7 +111,13 @@ $(document).ready(function(){initNavTree('my__window__file__sample_8h.html','');
 
 <p>{header file for exemple to create a new module window}  
 <a href="#details">Plus de détails...</a></p>
-
+<div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="my__window__file__sample_8h__dep__incl.svg" width="568" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
 <p><a href="my__window__file__sample_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -134,13 +140,13 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>{header file for exemple to create a new module window} </p>
 <dl class="section author"><dt>Auteur</dt><dd>Christoph Guillermet </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>{0.8.5.2} </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>{19/02/2014}</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>{0.8.6} </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>{28/04/2014}</dd></dl>
 <p>White Cat {- categorie} {- sous categorie {- sous categorie}}</p>
 <p>Exemple pour créer sa propre fenêtre dans whitecat afin d'ajouter un nouveau module</p>
 <p>Exemple to create a new module window</p>
 <p>/ / CREER UNE FENETRE C EST LE PLUS .... NEBULEUX / PETIT PAS A PAS EN MODE TUNNEL /</p>
-<p>Dans un premier temps vous pouvez directement modifier <a class="el" href="my__window__file__sample_8cpp.html" title="{exemple to create a new module window} ">My_window_file_sample.cpp</a> . C est un gabarit actif dans whitecat. Passer à ce moment directement au point 5 pour essayer. Par contre vous aurez besoin de transform my_window en mon_module, ou d'ajouter une fenêtre, et là il faudra passer par la longue manip des points 1 à 4</p>
+<p>Dans un premier temps vous pouvez directement modifier My_window_file_sample.cpp . C est un gabarit actif dans whitecat. Passer à ce moment directement au point 5 pour essayer. Par contre vous aurez besoin de transform my_window en mon_module, ou d'ajouter une fenêtre, et là il faudra passer par la longue manip des points 1 à 4</p>
 <p>/////////////////////CREER UNE FENETRE VIERGE/////////////////////////////////////////////////////</p>
 <ol type="1">
 <li>DEFINIR UNE NOUVELLE ID DE FENETRE</li>
@@ -152,8 +158,8 @@ Variables</h2></td></tr>
 </ol>
 <p>Il y a un index booléen d ouverture ou de fermeture de la fenetre pour activer la partie affichage, et la partie logique (clicks de souris). Ici: index_my_window</p>
 <p>Ouverture de fenêtre ( et mettre des choses logiques si besoin d'initialisation des données par ex ) dans gestionnaire_fenetres2.cpp fonction <a class="el" href="gestionaire__fenetres2_8cpp.html#ada3b9703b1aaa1cc37304633bdeb526c">add_a_window(int id)</a> index_my_window=1</p>
-<p>Fermeture de fenetre dans <a class="el" href="_c_o_r_e__6_8cpp.html" title="{Global fonctions for the core of whitecat} ">CORE_6.cpp</a> &gt; fonction <a class="el" href="_c_o_r_e__6_8cpp.html#ad1fdcc6a57eee30071023de7d67461f4">close_all_windows()</a>: index_my_window=0</p>
-<p>toujours dans <a class="el" href="_c_o_r_e__6_8cpp.html" title="{Global fonctions for the core of whitecat} ">CORE_6.cpp</a> ajouter dans les switch case de <a class="el" href="_c_o_r_e__6_8cpp.html#a03f118b2d12fcfe87b0a0d09b8636d37">write_window_indexes_from_list_of_windows()</a> le case W_MY_WINDOW et dans <a class="el" href="_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc">substract_a_window(int id)</a> le case W_MY_WINDOW</p>
+<p>Fermeture de fenetre dans <a class="el" href="_c_o_r_e__6_8cpp.html">CORE_6.cpp</a> &gt; fonction <a class="el" href="_c_o_r_e__6_8cpp.html#ad1fdcc6a57eee30071023de7d67461f4">close_all_windows()</a>: index_my_window=0</p>
+<p>toujours dans <a class="el" href="_c_o_r_e__6_8cpp.html">CORE_6.cpp</a> ajouter dans les switch case de <a class="el" href="_c_o_r_e__6_8cpp.html#a03f118b2d12fcfe87b0a0d09b8636d37">write_window_indexes_from_list_of_windows()</a> le case W_MY_WINDOW et dans <a class="el" href="_c_o_r_e__6_8cpp.html#ad0ba084ac976c6a4d32088e939ee0dbc">substract_a_window(int id)</a> le case W_MY_WINDOW</p>
 <ol type="1">
 <li>CREER UN BOUTON D'APPEL DANS LE MENU</li>
 </ol>
@@ -170,16 +176,13 @@ Variables</h2></td></tr>
 <p>//la position int my_window_x=100;//pixels int my_window_y=100; //la taille int largeur_my_window=400;//pixels int hauteur_my_window=250;</p>
 <ol type="1">
 <li><p class="startli">MODIFIER LES FICHIERS DEDIEZ AU TRAITEMENT DE LA LOGIQUE et A L AFFICHAGE:</p>
-<p class="startli">dans le fichier proc_visuels_rebuild1.cpp </p>
-<blockquote class="doxtable">
-<p>fonction <a class="el" href="procs__visuels__rebuild1_8cpp.html#ab7d3d74e516aa4baf2fd5714a198c84a">detection_over_window()</a> fonction <a class="el" href="procs__visuels__rebuild1_8cpp.html#ab61650b619a9d8bb64c4bfafa7e61db3">move_window(int idwindowis)</a></p>
-<p></p>
+<p class="startli">dans le fichier proc_visuels_rebuild1.cpp </p><blockquote class="doxtable">
+<p>fonction <a class="el" href="procs__visuels__rebuild1_8cpp.html#ab7d3d74e516aa4baf2fd5714a198c84a">detection_over_window()</a> fonction <a class="el" href="procs__visuels__rebuild1_8cpp.html#ab61650b619a9d8bb64c4bfafa7e61db3">move_window(int idwindowis)</a> </p>
 </blockquote>
 <p>case W_MY_WINDOW: do_logical_my_window_Box(my_window_x, my_window_y); do_logical_MoveCloseBox( my_window_x+20,my_window_y+20,W_MY_WINDOW); break;</p>
 <p class="startli">dans <a class="el" href="procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054">check_graphics_mouse_handling()</a> se passe tous les appels au click souris dans votre fenêtre. regarder et modifier case W_MY_WINDOW: do_logical_my_window_Box(my_window_x, my_window_y); //ca c est votre fonction pour definir ce qui se passe au click souris do_logical_MoveCloseBox( my_window_x+20,my_window_y+20,W_GRID); //ca c est la fonction de fermeture bougeage de fenêtre break;</p>
 <p class="startli">Vous verrez que dans les sources de whitecat il ya un fichier _visu et un fichier _core. Pour faire simple les fonctions appelées vont aller dans votre fichier my_window_sample.cpp</p>
-<p class="startli">ENFIN dans graphic_rebuild1, fonction Boxes , c est là ou est fait l'affichage </p>
-<pre class="fragment">   case W_MY_WINDOW:
+<p class="startli">ENFIN dans graphic_rebuild1, fonction Boxes , c est là ou est fait l'affichage </p><pre class="fragment">   case W_MY_WINDOW:
   MyWindow_Box(my_window_x, my_window_y);
    MoveCloseBox( my_window_x+20,my_window_y+20,W_MY_WINDOW);
    break;
@@ -282,9 +285,9 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="my__window__file__sample_8h.html">my_window_file_sample.h</a></li>
-    <li class="footer">Généré le Mardi 18 Mars 2014 13:18:49 pour WhitecatAPI par
+    <li class="footer">Généré le Lundi 23 Juin 2014 12:04:27 pour WhitecatAPI par
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
 </div>
 </body>

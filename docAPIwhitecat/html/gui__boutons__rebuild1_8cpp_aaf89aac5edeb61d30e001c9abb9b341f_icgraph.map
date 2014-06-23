@@ -1,0 +1,10 @@
+<map id="playstop_button_view" name="playstop_button_view">
+<area shape="rect" id="node3" href="$faders__visuels__26_8cpp.html#a9ea1e5a2798eea88240ff9ea8500b339" title="FaderSpace" alt="" coords="580,5,671,38"/>
+<area shape="rect" id="node11" href="$grider8_8cpp.html#ad2a7a08d5d1c725b77f84719741dae4c" title="ThePlayCommands" alt="" coords="204,58,340,91"/>
+<area shape="rect" id="node5" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="720,61,779,94"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="828,61,993,94"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1043,61,1093,94"/>
+<area shape="rect" id="node13" href="$grider8_8cpp.html#af2ccd6607b93f2a83feb55dd4b66c25c" title="Grid_player" alt="" coords="416,58,504,91"/>
+<area shape="rect" id="node18" href="$sequentiel__7__visu_8cpp.html#a5f032ba7b767bdb2b20d73c06bacf34b" title="Sequenciel_Window" alt="" coords="391,114,529,147"/>
+<area shape="rect" id="node15" href="$grider8_8cpp.html#a2272f8103848683416a11f9f5828b595" title="Grider_Box" alt="" coords="583,61,668,94"/>
+</map>

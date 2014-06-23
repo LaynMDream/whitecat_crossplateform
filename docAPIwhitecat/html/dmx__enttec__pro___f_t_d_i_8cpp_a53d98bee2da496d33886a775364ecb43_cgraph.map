@@ -1,0 +1,5 @@
+<map id="FTDI_OpenDevice" name="FTDI_OpenDevice">
+<area shape="rect" id="node3" href="$dmx__enttec__pro___f_t_d_i_8cpp.html#a431795e4eccfcc491c8687f345cf8846" title="FTDI_SendData" alt="" coords="193,5,311,38"/>
+<area shape="rect" id="node5" href="$dmx__enttec__pro___f_t_d_i_8cpp.html#af5ae1961488636f4b852b6e56ba19334" title="FTDI_ClosePort" alt="" coords="193,61,311,94"/>
+<area shape="rect" id="node7" href="$dmx__enttec__pro___f_t_d_i_8cpp.html#a33e9733d7b3871ec0299253f3b414e5d" title="FTDI_ReceiveData" alt="" coords="185,117,319,150"/>
+</map>

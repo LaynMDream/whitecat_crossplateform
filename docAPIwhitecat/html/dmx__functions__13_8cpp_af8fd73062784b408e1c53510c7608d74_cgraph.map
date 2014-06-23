@@ -1,0 +1,15 @@
+<map id="do_crossfade" name="do_crossfade">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a5c17b7c708caee1d7ff53ba997ad0d83" title="prepare_crossfade" alt="" coords="171,42,299,75"/>
+<area shape="rect" id="node5" href="$sequentiel__6__core_8cpp.html#a5f47e7234fc37c17227682d3b3c05d0f" title="next_mem_crossfade\l_finished" alt="" coords="161,98,308,153"/>
+<area shape="rect" id="node13" href="$dmx__functions__13_8cpp.html#a395f98122a0ab76bb36a86b53881916b" title="refresh_modified_levels\l_in_crossfade" alt="" coords="156,175,313,230"/>
+<area shape="rect" id="node17" href="$banger__core__8_8cpp.html#afa98bbdb588f29b8fc94df9f7754f05f" title="do_send_bang" alt="" coords="181,258,288,291"/>
+<area shape="rect" id="node25" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="160,319,309,353"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#ae7696959678ab167800352830bf81766" title="detect_mem_preset" alt="" coords="377,5,513,38"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a68c3767f8e350737e991a726e0ef1438" title="refresh_mem_onpreset" alt="" coords="368,61,523,94"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#adaf2ef6007ed8bd2568485df95ca65b8" title="detect_mem_before_one" alt="" coords="363,117,528,150"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a30cbf636d9bf3de2518c9f2da7252d7c" title="reset_modified_levels\l_in_crossfade" alt="" coords="372,173,519,227"/>
+<area shape="rect" id="node19" href="$banger__core__8_8cpp.html#ae0c6d738503a7f8bea4a0881fd15e7fb" title="back_up_fader_if_a\l_fader_inside" alt="" coords="379,250,512,305"/>
+<area shape="rect" id="node21" href="$banger__core__8_8cpp.html#ab6ed5760e29b7576e9acfbc4cb3da75e" title="store_state_of_fader\l_before_bang" alt="" coords="576,250,717,305"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a1d69e941ecabe5dd73d0b108627b21d6" title="detect_dock_used" alt="" coords="765,261,893,294"/>
+<area shape="rect" id="node27" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="371,327,520,361"/>
+</map>

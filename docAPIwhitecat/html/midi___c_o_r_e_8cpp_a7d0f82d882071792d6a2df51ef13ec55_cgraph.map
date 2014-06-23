@@ -1,0 +1,6 @@
+<map id="ReceivePolling" name="ReceivePolling">
+<area shape="rect" id="node3" href="$midi__13_8cpp.html#aa4aeee5088a4a5462566dfee5c9cc71f" title="DisplayTask" alt="" coords="329,18,423,51"/>
+<area shape="rect" id="node7" href="$midi__13_8cpp.html#a7d0f82d882071792d6a2df51ef13ec55" title="ReceivePolling" alt="" coords="163,47,272,80"/>
+<area shape="rect" id="node11" href="$midi__13_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="321,74,431,107"/>
+<area shape="rect" id="node5" href="$midi__13_8cpp.html#a831f1dfc7870ae4f6c64a0e65fbaf3ff" title="Display" alt="" coords="480,46,547,79"/>
+</map>

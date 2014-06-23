@@ -1,0 +1,6 @@
+<map id="ThePlayCommands" name="ThePlayCommands">
+<area shape="rect" id="node3" href="$gui__boutons__rebuild1_8cpp.html#aa6052f3f1534f1a69a06d1498f27af78" title="play_button_view" alt="" coords="205,5,328,38"/>
+<area shape="rect" id="node5" href="$gui__boutons__rebuild1_8cpp.html#a49d3463d08aebc6ce155aa1baae271bd" title="seek_button_view" alt="" coords="204,61,329,94"/>
+<area shape="rect" id="node7" href="$gui__boutons__rebuild1_8cpp.html#aaf89aac5edeb61d30e001c9abb9b341f" title="playstop_button_view" alt="" coords="193,117,340,150"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="209,173,324,206"/>
+</map>

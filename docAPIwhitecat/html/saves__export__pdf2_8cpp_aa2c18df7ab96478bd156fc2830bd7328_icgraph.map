@@ -1,0 +1,24 @@
+<map id="draw_numpage" name="draw_numpage">
+<area shape="rect" id="node3" href="$saves__export__pdf2_8cpp.html#a78c387c9fcc74472a17483a32c23182c" title="verification_fin_de_page" alt="" coords="165,246,328,279"/>
+<area shape="rect" id="node9" href="$saves__export__pdf2_8cpp.html#a690cff6b3991789940013a85ddcc0588" title="do_pdf_export" alt="" coords="768,335,872,369"/>
+<area shape="rect" id="node31" href="$saves__export__pdf2_8cpp.html#a7ce311eef0e05201b6060acbcf49d006" title="draw_pdf_grid_players\l_config" alt="" coords="568,639,720,694"/>
+<area shape="rect" id="node34" href="$saves__export__pdf2_8cpp.html#a3cd323526e85872a7d80185e71d678f0" title="draw_pdf_chaser" alt="" coords="584,442,704,475"/>
+<area shape="rect" id="node57" href="$saves__export__pdf2_8cpp.html#ac4d21355aeacfda2140c000bb566a67c" title="saut_de_page" alt="" coords="196,658,297,691"/>
+<area shape="rect" id="node5" href="$saves__export__pdf2_8cpp.html#a0dbb3aa1de7a425bd7f638f927af20c2" title="draw_title" alt="" coords="409,426,487,459"/>
+<area shape="rect" id="node7" href="$saves__export__pdf2_8cpp.html#a6377e5a2b40e64163612bbba96a4b75c" title="draw_pdf_echo_config" alt="" coords="568,279,720,313"/>
+<area shape="rect" id="node37" href="$saves__export__pdf2_8cpp.html#a6ce936402f9355eb4b48505b1cf9b5fe" title="draw_pdf_icat_preset" alt="" coords="571,335,717,369"/>
+<area shape="rect" id="node41" href="$saves__export__pdf2_8cpp.html#a43345b45f19806fafaca498fdf7ee954" title="draw_section" alt="" coords="595,223,693,257"/>
+<area shape="rect" id="node46" href="$saves__export__pdf2_8cpp.html#ab4a988ecb3fc4c676a582197a1ec358d" title="print_ch_macro" alt="" coords="393,5,503,38"/>
+<area shape="rect" id="node49" href="$saves__export__pdf2_8cpp.html#aba26c1f0f87d8fce31a89c1212478c5b" title="print_ch_from_plot" alt="" coords="384,61,512,94"/>
+<area shape="rect" id="node52" href="$saves__export__pdf2_8cpp.html#ab5aec9e9cf80dfba21700f96ad102d4f" title="print_midi_command" alt="" coords="377,117,519,150"/>
+<area shape="rect" id="node28" href="$saves__export__pdf2_8cpp.html#ab2dd9df08e833653f871cbaf68b839a0" title="draw_pdf_draw_config" alt="" coords="568,498,720,531"/>
+<area shape="rect" id="node11" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="920,335,1080,369"/>
+<area shape="rect" id="node13" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="1129,307,1239,341"/>
+<area shape="rect" id="node21" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="1128,363,1240,397"/>
+<area shape="rect" id="node15" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1288,307,1427,341"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1504,307,1613,341"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1691,335,1741,369"/>
+<area shape="rect" id="node23" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1328,363,1387,397"/>
+<area shape="rect" id="node25" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1476,363,1641,397"/>
+<area shape="rect" id="node59" href="$saves__export__pdf2_8cpp.html#a7d6f602fcde4b6dae7d59591dbb8b265" title="draw_pdf_grid" alt="" coords="397,685,499,718"/>
+</map>

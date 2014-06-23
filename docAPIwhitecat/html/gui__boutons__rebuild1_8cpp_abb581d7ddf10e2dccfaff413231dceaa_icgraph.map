@@ -1,0 +1,9 @@
+<map id="raccrochage_midi_visuel_vertical_dmx" name="raccrochage_midi_visuel_vertical_dmx">
+<area shape="rect" id="node3" href="$faders__visuels__26_8cpp.html#a9ea1e5a2798eea88240ff9ea8500b339" title="FaderSpace" alt="" coords="393,5,484,38"/>
+<area shape="rect" id="node11" href="$grand__master_8cpp.html#aa671b3f97cbbc0ef8a60e9f539286da5" title="grand_master" alt="" coords="219,57,320,90"/>
+<area shape="rect" id="node15" href="$sequentiel__7__visu_8cpp.html#aa0d5cc4c4ac1e0239551c9fde309658d" title="x1_x2" alt="" coords="241,113,297,146"/>
+<area shape="rect" id="node5" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="557,58,616,91"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="665,58,831,91"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="880,58,931,91"/>
+<area shape="rect" id="node17" href="$sequentiel__7__visu_8cpp.html#a5f032ba7b767bdb2b20d73c06bacf34b" title="Sequenciel_Window" alt="" coords="369,111,508,145"/>
+</map>

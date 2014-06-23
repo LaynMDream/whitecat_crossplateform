@@ -1,0 +1,8 @@
+<map id="detect_last_activ_channel_in_activ_view" name="detect_last_activ_channel_in_activ_view">
+<area shape="rect" id="node3" href="$keyboard__functions2_8cpp.html#aa8a798ca0919743c30cc7a3a19b4944b" title="check_channel_minus" alt="" coords="228,5,377,38"/>
+<area shape="rect" id="node13" href="$keyboard__functions2_8cpp.html#ab1d5b3deffbd55172eb2a8e559b13ed8" title="select_channel_minus" alt="" coords="228,61,377,94"/>
+<area shape="rect" id="node5" href="$keyboard__functions2_8cpp.html#a550bced3dbf99b30877939e8931f68c7" title="key_left" alt="" coords="428,33,495,66"/>
+<area shape="rect" id="node7" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="544,33,683,66"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="731,33,840,66"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="888,33,939,66"/>
+</map>

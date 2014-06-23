@@ -57,6 +57,16 @@ class graphic_context{
   int ypatch_window;
   int dmx_view;
 
+  /**
+   * The constructor of a graphic context
+   * @param window_focus_id identifier of the windows owning the focus
+   * @param W_PATCH identifier of a particular window
+   * @param mouse_x abscissa of the mouse cursor
+   * @param mouse_y ordinate of the mouse cursor
+   * @param xpatch_window abscissa of the patch window
+   * @param ypatch_window ordinate of the patch window
+   * @param dmx_view an integer code to define the view mode of DMX: 0 means percentage of intensity, 1 means DMX unity (0..255)
+   **/
   inline graphic_context(int window_focus_id, int W_PATCH, int mouse_x, int mouse_y, int xpatch_window, int ypatch_window, int dmx_view):
     window_focus_id(window_focus_id),
     W_PATCH(W_PATCH),

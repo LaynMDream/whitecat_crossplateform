@@ -1,0 +1,8 @@
+<map id="SendData_to_interface" name="SendData_to_interface">
+<area shape="rect" id="node3" href="$network__artnet__3_8cpp.html#a52663b2ef9ae55710b667ce7e37b5d3f" title="ArtDmx" alt="" coords="251,5,317,38"/>
+<area shape="rect" id="node7" href="$dmx__functions__13_8cpp.html#aa9ce6ff7bb814d25f1dd955c7e2a1838" title="check_if_dmx_change" alt="" coords="208,61,360,94"/>
+<area shape="rect" id="node9" href="$dmx__enttec__pro_8cpp.html#a6a5a2ed5121b0102514b55519f421807" title="Enttec_Pro_SendData" alt="" coords="208,117,360,150"/>
+<area shape="rect" id="node11" href="$dmx__sunlite_8cpp.html#a2fa2d09b0fd94bfa1d215fbb83531865" title="sunlite_send_data" alt="" coords="221,173,347,206"/>
+<area shape="rect" id="node13" href="$network__artnet__3_8cpp.html#a902768ff9ce48a1a2e66e3bd999b51c2" title="init_artnet_variables" alt="" coords="215,229,353,262"/>
+<area shape="rect" id="node5" href="$whitecat_8h.html#a220d7588afb23d8828e0a5b05de03f57" title="Dim" alt="" coords="409,5,455,38"/>
+</map>

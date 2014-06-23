@@ -1,0 +1,16 @@
+<map id="draw_title" name="draw_title">
+<area shape="rect" id="node3" href="$saves__export__pdf2_8cpp.html#a6377e5a2b40e64163612bbba96a4b75c" title="draw_pdf_echo_config" alt="" coords="133,5,285,38"/>
+<area shape="rect" id="node5" href="$saves__export__pdf2_8cpp.html#a690cff6b3991789940013a85ddcc0588" title="do_pdf_export" alt="" coords="333,145,437,178"/>
+<area shape="rect" id="node24" href="$saves__export__pdf2_8cpp.html#ab2dd9df08e833653f871cbaf68b839a0" title="draw_pdf_draw_config" alt="" coords="133,111,285,145"/>
+<area shape="rect" id="node27" href="$saves__export__pdf2_8cpp.html#a7ce311eef0e05201b6060acbcf49d006" title="draw_pdf_grid_players\l_config" alt="" coords="133,167,285,222"/>
+<area shape="rect" id="node30" href="$saves__export__pdf2_8cpp.html#a3cd323526e85872a7d80185e71d678f0" title="draw_pdf_chaser" alt="" coords="149,245,269,278"/>
+<area shape="rect" id="node33" href="$saves__export__pdf2_8cpp.html#a6ce936402f9355eb4b48505b1cf9b5fe" title="draw_pdf_icat_preset" alt="" coords="136,301,283,334"/>
+<area shape="rect" id="node7" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="485,145,645,178"/>
+<area shape="rect" id="node9" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="695,117,804,150"/>
+<area shape="rect" id="node17" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="693,173,805,206"/>
+<area shape="rect" id="node11" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="853,117,992,150"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1069,117,1179,150"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1256,145,1307,178"/>
+<area shape="rect" id="node19" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="893,173,952,206"/>
+<area shape="rect" id="node21" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1041,173,1207,206"/>
+</map>

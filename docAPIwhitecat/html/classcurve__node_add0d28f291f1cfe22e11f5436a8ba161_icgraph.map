@@ -1,0 +1,16 @@
+<map id="curve_node::curve_node" name="curve_node::curve_node">
+<area shape="rect" id="node3" href="$classcurve__node.html#a55e51b51f9b6ede537c5e11b7f234188" title="curve_node::dummy" alt="" coords="220,30,359,63"/>
+<area shape="rect" id="node5" href="$classcurve__node.html#a22f8acf6b081673429257867a4115c57" title="curve_node::calc_tangents" alt="" coords="408,107,587,141"/>
+<area shape="rect" id="node11" href="$classcurve__node.html#aace217c0200a043c2d2f5f071fde8e56" title="curve_node::draw_splines" alt="" coords="1021,107,1195,141"/>
+<area shape="rect" id="node7" href="$classcurve__node.html#abc1a06d649c6dce22334da762f2955b8" title="curve_node::write_curve" alt="" coords="636,107,799,141"/>
+<area shape="rect" id="node13" href="$classcurve__node.html#afb8f3c6e6a53e062f5c2fb1cf7243969" title="curve_node::SplineCurve" alt="" coords="1247,121,1415,154"/>
+<area shape="rect" id="node15" href="$classcurve__node.html#ac1e52fe7e8f762074b804b88a1b420cf" title="curve_node::build_square" alt="" coords="1245,245,1416,278"/>
+<area shape="rect" id="node25" href="$classcurve__node.html#a51a7bb24aa5832b54ec61507a556dda9" title="curve_node::build_fluo" alt="" coords="1255,5,1407,38"/>
+<area shape="rect" id="node27" href="$classcurve__node.html#a6338ccf647d5f510c47702f613a3d9d2" title="curve_node::build_preheat" alt="" coords="1244,62,1417,95"/>
+<area shape="rect" id="node29" href="$classcurve__node.html#a787cd6340d6b9e15da5723ed25eb18ff" title="curve_node::build_inverse" alt="" coords="1244,181,1417,214"/>
+<area shape="rect" id="node9" href="$classcurve__node.html#ab1db9f4ea1c53ab2eab6072b2cdc90eb" title="curve_node::draw" alt="" coords="848,107,973,141"/>
+<area shape="rect" id="node17" href="$patch__core_8cpp.html#a072192232bbd1f5cb8cdffe9bc243870" title="do_logical_menu_curve" alt="" coords="1468,245,1625,278"/>
+<area shape="rect" id="node19" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1676,234,1833,289"/>
+<area shape="rect" id="node21" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1883,245,1992,278"/>
+<area shape="rect" id="node23" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="2040,245,2091,278"/>
+</map>

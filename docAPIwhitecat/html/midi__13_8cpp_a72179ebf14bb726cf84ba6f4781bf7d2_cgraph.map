@@ -1,0 +1,5 @@
+<map id="midi_launchpad_colors" name="midi_launchpad_colors">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="220,5,359,38"/>
+<area shape="rect" id="node5" href="$midi__13_8cpp.html#a44d22ff6a4e809a5baa34035ebb96d3e" title="refresh_launchpad_color\l_callibration" alt="" coords="208,61,371,115"/>
+<area shape="rect" id="node7" href="$midi__launchpad_8cpp.html#ae33e05f7bf68aa5563156d334e942bc7" title="define_colors" alt="" coords="419,71,517,105"/>
+</map>

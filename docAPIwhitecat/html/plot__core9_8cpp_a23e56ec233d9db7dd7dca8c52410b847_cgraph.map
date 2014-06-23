@@ -1,0 +1,7 @@
+<map id="delete_selected_symbols" name="delete_selected_symbols">
+<area shape="rect" id="node3" href="$plot__core9_8cpp.html#a58fe8fc317633b7cfd679c95c67193b9" title="clear_symbol_slot" alt="" coords="476,5,601,38"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#a66c5771a91b5557afae81e1ad42603a6" title="reorder_plan" alt="" coords="264,58,357,91"/>
+<area shape="rect" id="node12" href="$plot__core9_8cpp.html#ad2a3f7bed24f6e271a1d1a42ebc81ff5" title="recount_symbols_on_calc" alt="" coords="224,114,397,147"/>
+<area shape="rect" id="node5" href="$plot__core9_8cpp.html#a4afbbba7a97b479ffbf4b9b190c40b29" title="clear_grouped_to_symbols" alt="" coords="681,5,857,38"/>
+<area shape="rect" id="node9" href="$plot__core9_8cpp.html#a3aa259226da63745d5e779178c8111f2" title="copy_symbol_to_emply_slot" alt="" coords="445,61,632,94"/>
+</map>

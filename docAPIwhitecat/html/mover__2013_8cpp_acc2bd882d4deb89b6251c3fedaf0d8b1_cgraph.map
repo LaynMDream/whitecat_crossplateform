@@ -1,0 +1,34 @@
+<map id="mover_box" name="mover_box">
+<area shape="rect" id="node3" href="$mover__spline6_8cpp.html#af3dc1ccb6aa1e9a53aeccc0cae5ecc92" title="ShowSpline" alt="" coords="184,5,275,38"/>
+<area shape="rect" id="node18" href="$mover__2013_8cpp.html#a4d78a536c4f46696bb96098c4eae76d8" title="Move_AddStep" alt="" coords="175,61,284,94"/>
+<area shape="rect" id="node20" href="$mover__2013_8cpp.html#ad12bf22f48a39f6d2e25367fd6d9a14f" title="Move_RecStep" alt="" coords="173,117,285,150"/>
+<area shape="rect" id="node22" href="$mover__2013_8cpp.html#aad1ab3429acac0303e5e3abcc7e4c0c6" title="Move_DelStep" alt="" coords="176,173,283,206"/>
+<area shape="rect" id="node26" href="$mover__2013_8cpp.html#a0c46818a0a2fe426e9940ead49b94346" title="ClearIntoStep" alt="" coords="179,229,280,262"/>
+<area shape="rect" id="node28" href="$mover__2013_8cpp.html#a09da21b3ee6f5a971c70ce7509a45751" title="Move_StepBackward" alt="" coords="156,285,303,318"/>
+<area shape="rect" id="node31" href="$mover__2013_8cpp.html#abb003e89ded4a3c6a731f3e7526ef3a6" title="Move_StepForward" alt="" coords="163,341,296,374"/>
+<area shape="rect" id="node34" href="$mover__2013_8cpp.html#a336d7391251deb7e14de58ff8993f60f" title="Move_Autostop" alt="" coords="173,397,285,430"/>
+<area shape="rect" id="node36" href="$mover__2013_8cpp.html#a8d0bda13f0a75d615ac8ffc5f4ed72ae" title="ClearGotoStep" alt="" coords="176,453,283,486"/>
+<area shape="rect" id="node38" href="$mover__2013_8cpp.html#a4cd6cdd120b9feb87202ddb062daecbb" title="prepare_move_values" alt="" coords="155,559,304,593"/>
+<area shape="rect" id="node40" href="$mover__2013_8cpp.html#a5fbe4af69b774a1738d80f6879d958e9" title="convert_bytes_to_int" alt="" coords="373,506,515,539"/>
+<area shape="rect" id="node48" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="416,706,472,739"/>
+<area shape="rect" id="node50" href="$_c_o_r_e__6_8cpp.html#ab5d29b9ad8d00204a0d8d4ed77e7caec" title="constrain_data_to_midi\l_range" alt="" coords="152,666,307,721"/>
+<area shape="rect" id="node52" href="$mover__2013_8cpp.html#a5cf6e0dd4fb1d64a7784a5eb454957ee" title="MoveAffectGoto" alt="" coords="172,743,287,777"/>
+<area shape="rect" id="node54" href="$mover__2013_8cpp.html#af0f3e53e4b3ebad2de27b843e8292828" title="TimeShift" alt="" coords="191,799,268,833"/>
+<area shape="rect" id="node56" href="$mover__2013_8cpp.html#ab0c60c8e76abd1c88acb3868cfb8c6a8" title="SetAllParams" alt="" coords="179,855,280,889"/>
+<area shape="rect" id="node58" href="$mover__2013_8cpp.html#a77f6570f8050b1a3971d1b263940167d" title="param_editor" alt="" coords="181,911,277,945"/>
+<area shape="rect" id="node67" href="$mover__2013_8cpp.html#aecef602c2f75fe49676a530019129fda" title="Print_Points" alt="" coords="183,967,276,1001"/>
+<area shape="rect" id="node69" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="160,1023,299,1057"/>
+<area shape="rect" id="node71" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="143,1079,316,1113"/>
+<area shape="rect" id="node5" href="$mover__spline6_8cpp.html#aa23e30f37af6f5df22766fde743ecd64" title="calc_tangents" alt="" coords="393,5,495,38"/>
+<area shape="rect" id="node9" href="$mover__spline6_8cpp.html#a280d32c6ba452ddb38adc34043bc2537" title="draw_splines" alt="" coords="395,61,493,94"/>
+<area shape="rect" id="node7" href="$mover__spline6_8cpp.html#afb746186e6eadd49e68304dcdbd3320b" title="dummy_node" alt="" coords="597,33,696,66"/>
+<area shape="rect" id="node12" href="$mover__spline6_8cpp.html#a319081649340b9fe035cff9aa020468b" title="draw_spline" alt="" coords="601,277,692,310"/>
+<area shape="rect" id="node14" href="$mover__spline6_8cpp.html#a71a41e8d002948913c4ae79560729c48" title="get_control_points" alt="" coords="771,385,899,418"/>
+<area shape="rect" id="node16" href="$mover__spline6_8cpp.html#a98185a4f31c71ab881cacc66ef0d87e1" title="node_dist" alt="" coords="948,418,1025,451"/>
+<area shape="rect" id="node24" href="$mover__2013_8cpp.html#a87973de95365fca754397b86972fb103" title="Move_refresh_xy" alt="" coords="383,285,505,318"/>
+<area shape="rect" id="node42" href="$mover__spline6_8cpp.html#a090797adb1f79d0d55f8967194130c47" title="Prepare_Cross_Spline" alt="" coords="571,451,723,485"/>
+<area shape="rect" id="node45" href="$mover__spline6_8cpp.html#a41772bd93cf820f16672603cc49e4a13" title="get_control_points\l_backward" alt="" coords="771,441,899,495"/>
+<area shape="rect" id="node60" href="$mover__2013_8cpp.html#a49c597636e93c359b66b5d69de5b49ce" title="reset_mover_buffer" alt="" coords="377,855,511,889"/>
+<area shape="rect" id="node62" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="375,911,513,945"/>
+<area shape="rect" id="node64" href="$_c_o_r_e__6_8cpp.html#aef30e64107a2c00a305094e218631bcd" title="constrain_data_to_dmx\l_range" alt="" coords="365,967,523,1022"/>
+</map>

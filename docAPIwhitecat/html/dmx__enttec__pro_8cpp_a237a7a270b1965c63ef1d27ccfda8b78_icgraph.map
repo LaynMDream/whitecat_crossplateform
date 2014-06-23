@@ -1,0 +1,9 @@
+<map id="Enttec_Pro_SetCommParamsIN" name="Enttec_Pro_SetCommParamsIN">
+<area shape="rect" id="node3" href="$dmx__enttec__pro_8cpp.html#a8cee234b25cc0342fb3cac020ef2701f" title="Open_ProIn" alt="" coords="267,5,357,38"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#af492ee2130c3aed1b5f2ee4ff61a4416" title="do_dmx_config" alt="" coords="407,5,516,38"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="567,5,681,38"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="732,5,876,38"/>
+<area shape="rect" id="node11" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="925,5,984,38"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1033,5,1199,38"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1248,5,1299,38"/>
+</map>

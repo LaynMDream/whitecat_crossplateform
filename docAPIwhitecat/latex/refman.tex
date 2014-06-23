@@ -8,7 +8,10 @@
 \usepackage{makeidx}
 \usepackage{multicol}
 \usepackage{multirow}
+\usepackage{fixltx2e}
+\PassOptionsToPackage{warn}{textcomp}
 \usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
 \usepackage[table]{xcolor}
 
 % NLS support packages
@@ -30,6 +33,7 @@
   \fontseries{bc}\selectfont%
   \color{darkgray}%
 }
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
 
 % Page & text layout
 \usepackage{geometry}
@@ -70,8 +74,8 @@
 \fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
 \fancyfoot[LE]{\fancyplain{}{}}
 \fancyfoot[CE]{\fancyplain{}{}}
-\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Généré le Mardi 18 Mars 2014 13\-:18\-:50 pour Whitecat\-A\-P\-I par Doxygen }}
-\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Généré le Mardi 18 Mars 2014 13\-:18\-:50 pour Whitecat\-A\-P\-I par Doxygen }}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Généré le Lundi 23 Juin 2014 12\+:04\+:29 pour Whitecat\+A\+P\+I par Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Généré le Lundi 23 Juin 2014 12\+:04\+:29 pour Whitecat\+A\+P\+I par Doxygen }}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -114,16 +118,20 @@
 \begin{document}
 
 % Titlepage & ToC
-\hypersetup{pageanchor=false}
+\hypersetup{pageanchor=false,
+             bookmarks=true,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
 \pagenumbering{roman}
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}%
-{\Large Whitecat\-A\-P\-I \\[1ex]\large 0.\-8.\-5.\-8 }\\
+{\Large Whitecat\+A\+P\+I \\[1ex]\large 0.\+8.\+5.\+8 }\\
 \vspace*{1cm}
-{\large Généré par Doxygen 1.8.6}\\
+{\large Généré par Doxygen 1.8.7}\\
 \vspace*{0.5cm}
-{\small Mardi 18 Mars 2014 13:18:50}\\
+{\small Lundi 23 Juin 2014 12:04:29}\\
 \end{center}
 \end{titlepage}
 \clearemptydoublepage
@@ -133,7 +141,7 @@
 \hypersetup{pageanchor=true}
 
 %--- Begin generated contents ---
-\chapter{R\-E\-A\-D\-M\-E}
+\chapter{R\+E\+A\+D\+M\+E}
 \label{md__r_e_a_d_m_e}
 \hypertarget{md__r_e_a_d_m_e}{}
 \input{md__r_e_a_d_m_e}
@@ -142,9 +150,10 @@
 \chapter{Index des fichiers}
 \input{files}
 \chapter{Documentation des classes}
-\input{structcurve__node}
+\input{classcurve__node}
 \input{struct_d_m_x_u_s_b_p_r_o_params_type}
 \input{struct_d_m_x_u_s_b_p_r_o_set_params_type}
+\input{classgraphic__context}
 \input{struct_n_o_d_e}
 \input{struct_received_dmx_cos_struct}
 \chapter{Documentation des fichiers}
@@ -162,6 +171,7 @@
 \input{channels__9__core_8cpp}
 \input{chasers__core__5_8cpp}
 \input{chasers__visu_8cpp}
+\input{colors__fonts_8h}
 \input{_c_o_r_e__6_8cpp}
 \input{_crossplateform_8h}
 \input{dmx__enttec__pro_8cpp}
@@ -190,6 +200,9 @@
 \input{list__proj__core_8cpp}
 \input{list__proj__visu_8cpp}
 \input{logicals__intres_8cpp}
+\input{_m_a_i_n__avec__objets_8cpp}
+\input{_m_a_i_n__febrier__2014_8cpp}
+\input{_m_a_i_n__fevrier__2014_8cpp}
 \input{_m_a_i_n__janv__2014__opensource__kbd_8cpp}
 \input{midi__13_8cpp}
 \input{midi___c_o_r_e_8cpp}
@@ -206,6 +219,7 @@
 \input{numpad__visuel_8cpp}
 \input{patch__core_8cpp}
 \input{patch__splines__2_8cpp}
+\input{patch__splines__2_8h}
 \input{patch__visu_8cpp}
 \input{plot_8cpp}
 \input{plot9_8cpp}

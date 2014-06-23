@@ -1,0 +1,24 @@
+<map id="mini_faders_panel_core" name="mini_faders_panel_core">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="452,53,583,107"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a96f5b79e5245edced1e6006716227a94" title="refresh_minifader_state\l_view_core" alt="" coords="223,531,380,586"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="489,242,545,275"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#ad5d62bd83cd9b293bfcd326a9c77537d" title="do_action_on_selected\l_minifaders" alt="" coords="224,403,379,458"/>
+<area shape="rect" id="node18" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="448,354,587,387"/>
+<area shape="rect" id="node20" href="$_c_o_r_e__6_8cpp.html#a1d69e941ecabe5dd73d0b108627b21d6" title="detect_dock_used" alt="" coords="453,634,581,667"/>
+<area shape="rect" id="node30" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="220,5,383,38"/>
+<area shape="rect" id="node33" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="215,609,388,642"/>
+<area shape="rect" id="node35" href="$_c_o_r_e__6_8cpp.html#aa16450d858e0f6dfaa0be7a31adf4d15" title="do_lock_preset" alt="" coords="247,246,356,279"/>
+<area shape="rect" id="node38" href="$minifaders__core_8cpp.html#a81fcd9a467cd5debbaad4d09b3782f19" title="all_at_zero_panel_core" alt="" coords="224,190,379,223"/>
+<area shape="rect" id="node44" href="$gui__boutons__rebuild1_8cpp.html#a101e4bb454d3a0e2c08ddc62fa6c2391" title="midi_send_faders_button\l_logical" alt="" coords="219,113,384,167"/>
+<area shape="rect" id="node51" href="$_c_o_r_e__6_8cpp.html#a7323ff870691e50a22fe13a920fed4a8" title="show_who_is_in_dock" alt="" coords="225,665,377,698"/>
+<area shape="rect" id="node53" href="$faders__operations_8cpp.html#a85b6979e04dd2e2b3f6b5e26fcbb34ec" title="DoTimeToDock" alt="" coords="245,721,357,754"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="647,21,796,75"/>
+<area shape="rect" id="node14" href="$_c_o_r_e__6_8cpp.html#a4d7cd484d9fdf2b20c72dbda8c29f77b" title="do_stock_fadersstate" alt="" coords="444,298,591,331"/>
+<area shape="rect" id="node22" href="$_c_o_r_e__6_8cpp.html#a23423256688613149926c4984ff25f79" title="player1_do_stop" alt="" coords="459,410,576,443"/>
+<area shape="rect" id="node24" href="$_c_o_r_e__6_8cpp.html#a6c41d19d859a2e1292ad64ef915e265f" title="player2_do_stop" alt="" coords="459,466,576,499"/>
+<area shape="rect" id="node26" href="$_c_o_r_e__6_8cpp.html#a494249193c56b13a4e1eac04c6dd2d0b" title="player3_do_stop" alt="" coords="459,522,576,555"/>
+<area shape="rect" id="node28" href="$_c_o_r_e__6_8cpp.html#afbcf17b50787fb3b8360659f6ce9b193" title="player4_do_stop" alt="" coords="459,578,576,611"/>
+<area shape="rect" id="node16" href="$_c_o_r_e__6_8cpp.html#aabfc6329cc79d8e58d47c5014c063be7" title="reset_midi_receiver\l_array" alt="" coords="655,287,788,342"/>
+<area shape="rect" id="node42" href="$_c_o_r_e__6_8cpp.html#a66525c797b7c3a7c5359c87f0094876c" title="do_recall_fadersstate" alt="" coords="444,186,591,219"/>
+<area shape="rect" id="node48" href="$_c_o_r_e__6_8cpp.html#a2cf463855067ae39a14a39c0ca28e632" title="set_all_faders_midi_out" alt="" coords="439,130,596,163"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="read_time_string_entry" name="read_time_string_entry">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ab9c7e597403ca52d62be2f0431164881" title="affect_time_entry_to_mem" alt="" coords="208,138,384,171"/>
+<area shape="rect" id="node26" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="241,221,351,254"/>
+<area shape="rect" id="node5" href="$keyboard__functions2_8cpp.html#a14127becdb98e6a4dc9593f946bc85f5" title="key_time_in" alt="" coords="451,82,541,115"/>
+<area shape="rect" id="node13" href="$keyboard__functions2_8cpp.html#a2c7a2708e492dd6e781f3a62d6aea4a3" title="key_time_out" alt="" coords="447,138,545,171"/>
+<area shape="rect" id="node16" href="$keyboard__functions2_8cpp.html#acb69de3056922079cff7eb277130e4b0" title="key_time_in_out" alt="" coords="437,194,555,227"/>
+<area shape="rect" id="node19" href="$sequentiel__6__core_8cpp.html#acff6c79ef275f95ce616c287d2c0a93d" title="do_logical_refresh\l_vision_memories" alt="" coords="433,5,559,59"/>
+<area shape="rect" id="node7" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="615,138,753,171"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1016,87,1125,121"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1173,87,1224,121"/>
+<area shape="rect" id="node21" href="$sequentiel__6__core_8cpp.html#a2a71c851cf25565491dd10423bc80380" title="do_logical_Sequenciel\l_Window" alt="" coords="609,33,759,87"/>
+<area shape="rect" id="node23" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="809,41,967,95"/>
+</map>

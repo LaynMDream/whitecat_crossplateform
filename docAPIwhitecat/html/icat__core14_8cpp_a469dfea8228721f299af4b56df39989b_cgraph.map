@@ -1,0 +1,12 @@
+<map id="do_refresh_iCat" name="do_refresh_iCat">
+<area shape="rect" id="node3" href="$icat__core14_8cpp.html#ab3f0023aea3c5869bf75875825607542" title="recalculate_iCatBuilder\l_window_size" alt="" coords="183,5,337,59"/>
+<area shape="rect" id="node5" href="$icat__core14_8cpp.html#a68b2b6f713ddcd8e8eef86022f7efe17" title="To_iCat_DrawSlider" alt="" coords="191,82,329,115"/>
+<area shape="rect" id="node7" href="$icat__core14_8cpp.html#a5e489ecf91d98fca0c8a20af6a80d188" title="To_iCat_DrawButton" alt="" coords="189,138,331,171"/>
+<area shape="rect" id="node9" href="$icat__core14_8cpp.html#a21c6d520bafb57220176544983795395" title="To_iCat_DrawString" alt="" coords="191,194,329,227"/>
+<area shape="rect" id="node11" href="$icat__core14_8cpp.html#ae03469250a821b30c7857d581c9b5abb" title="To_iCat_DrawTrackingZone" alt="" coords="169,250,351,283"/>
+<area shape="rect" id="node13" href="$icat__core14_8cpp.html#a6c1be76af31e27a4e0fb05c6f35d4443" title="refresh_continuously\l_iCat_sliders" alt="" coords="189,306,331,361"/>
+<area shape="rect" id="node15" href="$icat__core14_8cpp.html#a73fdc8999a84e32c9274a3e6eef616ee" title="refresh_continuously\l_iCat_buttons" alt="" coords="189,383,331,438"/>
+<area shape="rect" id="node19" href="$icat__core14_8cpp.html#a31e04a262e705fcd565133a9b59d0be1" title="refresh_continuously\l_iCat_trackerzones" alt="" coords="189,461,331,515"/>
+<area shape="rect" id="node21" href="$icat__core14_8cpp.html#ae1847eaa0922902ca67dd5cebbcf8aae" title="Fantastick_check_string" alt="" coords="179,538,341,571"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#a5615f7c8a54ba9a586dd910ec1ae5e43" title="constrain_int_data\l_to_this_range" alt="" coords="400,383,528,438"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="do_arduino_config" name="do_arduino_config">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="183,5,321,38"/>
+<area shape="rect" id="node5" href="$arduino__device__core_8cpp.html#a61195897dc34314cdf3bf254273460a8" title="arduino_close" alt="" coords="201,61,303,94"/>
+<area shape="rect" id="node7" href="$arduino__device__core_8cpp.html#adff1caa3b04b7a4e541b2b2624b91d5d" title="arduino_init" alt="" coords="208,117,296,150"/>
+<area shape="rect" id="node9" href="$arduino__core__6___u_n_o_8cpp.html#a795582d28f2e6944c4c4af55c9a00776" title="ticker_arduino" alt="" coords="201,173,303,206"/>
+<area shape="rect" id="node11" href="$colors__fonts_8h.html#a9f46ddd6a2c54abab874ea891efa4750" title="CouleurRed" alt="" coords="207,229,297,262"/>
+<area shape="rect" id="node13" href="$colors__fonts_8h.html#ae9274ddf03277718b9234207fe9a3d3a" title="CouleurGreen" alt="" coords="201,285,303,318"/>
+<area shape="rect" id="node15" href="$colors__fonts_8h.html#a2907c9cae585224ac5e56bc4baad9970" title="CouleurYellow" alt="" coords="200,341,304,374"/>
+<area shape="rect" id="node17" href="$colors__fonts_8h.html#a0b3dc8d74a837db49b6634415bfd63f7" title="CouleurBleu8" alt="" coords="203,397,301,430"/>
+<area shape="rect" id="node19" href="$colors__fonts_8h.html#a6dcb064f958b5a0184ad6eb768852621" title="CouleurGrisClair" alt="" coords="193,453,311,486"/>
+</map>

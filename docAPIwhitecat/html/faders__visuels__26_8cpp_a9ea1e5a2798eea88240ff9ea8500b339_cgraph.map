@@ -1,0 +1,21 @@
+<map id="FaderSpace" name="FaderSpace">
+<area shape="rect" id="node3" href="$colors__fonts_8h.html#a0681e6c857773e39158b582969b6934b" title="CouleurRougePur" alt="" coords="165,5,291,38"/>
+<area shape="rect" id="node5" href="$colors__fonts_8h.html#ae9274ddf03277718b9234207fe9a3d3a" title="CouleurGreen" alt="" coords="177,61,279,94"/>
+<area shape="rect" id="node7" href="$colors__fonts_8h.html#a5427dd0a5a11091bc410f7eed5d2657f" title="CouleurYellowFgroup" alt="" coords="156,117,300,150"/>
+<area shape="rect" id="node9" href="$colors__fonts_8h.html#a1f7c9a56f1b079299541dfbd31a981ba" title="Discrete8" alt="" coords="189,173,267,206"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a7323ff870691e50a22fe13a920fed4a8" title="show_who_is_in_dock" alt="" coords="152,229,304,262"/>
+<area shape="rect" id="node13" href="$gui__boutons__rebuild1_8cpp.html#abb581d7ddf10e2dccfaff413231dceaa" title="raccrochage_midi_visuel\l_vertical_dmx" alt="" coords="357,567,523,622"/>
+<area shape="rect" id="node15" href="$faders__visuels__26_8cpp.html#ae035a2c86ccd55b0969514c95b52e0ce" title="lfo_fader_functions" alt="" coords="163,285,293,318"/>
+<area shape="rect" id="node25" href="$gui__boutons__rebuild1_8cpp.html#aa6052f3f1534f1a69a06d1498f27af78" title="play_button_view" alt="" coords="167,391,289,425"/>
+<area shape="rect" id="node27" href="$gui__boutons__rebuild1_8cpp.html#a49d3463d08aebc6ce155aa1baae271bd" title="seek_button_view" alt="" coords="165,447,291,481"/>
+<area shape="rect" id="node29" href="$gui__boutons__rebuild1_8cpp.html#a626e01752ca45b01f34b2784b4687366" title="loop_button_view" alt="" coords="167,503,289,537"/>
+<area shape="rect" id="node31" href="$gui__boutons__rebuild1_8cpp.html#a1816d0599254412c089995c155e37453" title="autolaunch_button_view" alt="" coords="147,559,309,593"/>
+<area shape="rect" id="node33" href="$gui__boutons__rebuild1_8cpp.html#aaf89aac5edeb61d30e001c9abb9b341f" title="playstop_button_view" alt="" coords="155,615,301,649"/>
+<area shape="rect" id="node35" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="171,671,285,705"/>
+<area shape="rect" id="node37" href="$grand__master_8cpp.html#aa671b3f97cbbc0ef8a60e9f539286da5" title="grand_master" alt="" coords="177,727,279,761"/>
+<area shape="rect" id="node40" href="$faders__visuels__26_8cpp.html#a3d360b1c1242524b97eccd0821c2c938" title="MoveFaderSpace" alt="" coords="167,783,289,817"/>
+<area shape="rect" id="node17" href="$colors__fonts_8h.html#ae86cd6c0de005129d702f0c4352b2a24" title="CouleurGrisMoyen" alt="" coords="375,285,505,318"/>
+<area shape="rect" id="node19" href="$gui__boutons__rebuild1_8cpp.html#a039e24b1deea8472aa6312f1201a9264" title="raccrochage_midi_visuel\l_horizontal" alt="" coords="357,341,523,395"/>
+<area shape="rect" id="node21" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="359,229,521,262"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="572,218,721,273"/>
+</map>

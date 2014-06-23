@@ -1,0 +1,25 @@
+<map id="do_logical_FaderSpace" name="do_logical_FaderSpace">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="723,150,779,183"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="456,407,619,440"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a7323ff870691e50a22fe13a920fed4a8" title="show_who_is_in_dock" alt="" coords="229,542,381,575"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a1d69e941ecabe5dd73d0b108627b21d6" title="detect_dock_used" alt="" coords="241,598,369,631"/>
+<area shape="rect" id="node13" href="$faders__operations_8cpp.html#ad2bcaffecd9b01aee13cb557da2ab705" title="Unselect_other_docks" alt="" coords="229,654,381,687"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="468,463,607,496"/>
+<area shape="rect" id="node17" href="$faders__operations_8cpp.html#a85b6979e04dd2e2b3f6b5e26fcbb34ec" title="DoTimeToDock" alt="" coords="249,710,361,743"/>
+<area shape="rect" id="node19" href="$gui__boutons__rebuild1_8cpp.html#a7edb878f066697bd0f45cbc91574bfcb" title="raccrochage_midi_logical\l_vertical_dmx" alt="" coords="453,68,621,123"/>
+<area shape="rect" id="node22" href="$faders__core__24_8cpp.html#ac54ebc5164ea44b43ace93804e9948ad" title="do_logical_lfo_fader\l_functions" alt="" coords="237,312,373,367"/>
+<area shape="rect" id="node36" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="248,766,363,799"/>
+<area shape="rect" id="node38" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="472,146,603,200"/>
+<area shape="rect" id="node41" href="$chasers__core__5_8cpp.html#a128576bedb198e99fd9ca3dace3304d1" title="chaser_seek_at_beg" alt="" coords="235,822,376,855"/>
+<area shape="rect" id="node49" href="$grider__calculs8_8cpp.html#a1385e50460f3dd71bdc4d3f8e1ec462f" title="gridplayer_seek" alt="" coords="481,519,593,552"/>
+<area shape="rect" id="node52" href="$grand__master_8cpp.html#a5a68199c370624d8b47fec69c645206f" title="do_logical_grand_master" alt="" coords="223,150,388,183"/>
+<area shape="rect" id="node56" href="$faders__core__24_8cpp.html#ac989811c6ddc422bf8b0dca66d3b610d" title="do_logical_MoveFaderSpace" alt="" coords="211,206,400,239"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="676,302,825,356"/>
+<area shape="rect" id="node25" href="$faders__core__24_8cpp.html#af5590fbbb7ec3390b51704c3c04c640d" title="asservissement_gridplayer" alt="" coords="449,351,625,384"/>
+<area shape="rect" id="node31" href="$gui__boutons__rebuild1_8cpp.html#a786202770b993e9277fc6f2dea176ae7" title="raccrochage_midi_logical\l_horizontal" alt="" coords="453,274,621,328"/>
+<area shape="rect" id="node27" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="676,450,825,483"/>
+<area shape="rect" id="node29" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="876,450,1025,483"/>
+<area shape="rect" id="node43" href="$chasers__core__5_8cpp.html#abb6ff444898fcb4ad35f303696f41ea2" title="chaser_calcul_step" alt="" coords="471,788,604,822"/>
+<area shape="rect" id="node47" href="$chasers__core__5_8cpp.html#afaeffdf5e70f64260ab334beb4f46c04" title="chaser_calcul_time\l_joint" alt="" coords="471,844,604,899"/>
+<area shape="rect" id="node45" href="$chasers__core__5_8cpp.html#a91fb9c1ef62ff51adbf81dfdc900fb04" title="refresh_launchpad_on\l_chaser" alt="" coords="676,778,825,832"/>
+</map>

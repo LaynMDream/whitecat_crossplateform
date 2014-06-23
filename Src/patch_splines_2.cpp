@@ -130,8 +130,7 @@ void curve_node::get_control_points(const curve_node& other, int points[8])
 
 /**
  * function to do something
- * @param xpatch_window abscissa of something
- * @param ypatch_window ordinate of something
+ * @param gc graphic context
  **/
 int curve_node::write_curve(const graphic_context& gc)
 {
@@ -177,13 +176,7 @@ int curve_node::write_curve(const graphic_context& gc)
 /**
  * Function to do something
  * @param n value meaning something
- * @param window_focus_id identifier of the window having the focus
- * @param W_PATCH id of a particular window
- * @param mouse_x abscissa of the mouse cursor
- * @param mouse_y ordinate of the mouse cursor
- * @param gc.xpatch_window abscissa of something
- * @param gc.ypatch_window ordinate of something
- * @param dmx_view means something
+ * @param gc graphic context
  **/
 int curve_node::draw(int n, const graphic_context& gc)
 {
@@ -294,7 +287,7 @@ int curve_node::SplineCurve(const graphic_context& gc)
 
 /**
  * Function to do something
- * @param curve value meaning something
+ * @param curve index of the chosen curve (0..15)
  * @param gc graphic context
  **/
 int curve_node::build_square(int curve,const graphic_context& gc)
@@ -323,7 +316,7 @@ int curve_node::build_square(int curve,const graphic_context& gc)
 
 /**
  * Function to do something
- * @param curve value meaning something
+ * @param curve index of the chosen curve (0..15)
  * @param gc graphic context
  **/
 int curve_node::build_fluo(int curve,const graphic_context& gc)
@@ -351,7 +344,7 @@ int curve_node::build_fluo(int curve,const graphic_context& gc)
 
 /**
  * Function to do something
- * @param curve value meaning something
+ * @param curve index of the chosen curve (0..15)
  * @param gc graphic context
  **/
 int curve_node::build_preheat(int curve,const graphic_context& gc)
@@ -380,7 +373,7 @@ int curve_node::build_preheat(int curve,const graphic_context& gc)
 
 /**
  * Function to do something
- * @param curve value meaning something
+ * @param curve index of the chosen curve (0..15)
  * @param gc graphic context
  **/
 int curve_node::build_inverse(int curve,const graphic_context& gc)

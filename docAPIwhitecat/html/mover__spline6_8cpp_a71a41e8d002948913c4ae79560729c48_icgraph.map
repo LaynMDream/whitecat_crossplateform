@@ -1,0 +1,18 @@
+<map id="get_control_points" name="get_control_points">
+<area shape="rect" id="node3" href="$mover__spline6_8cpp.html#a319081649340b9fe035cff9aa020468b" title="draw_spline" alt="" coords="212,78,303,111"/>
+<area shape="rect" id="node17" href="$mover__spline6_8cpp.html#a090797adb1f79d0d55f8967194130c47" title="Prepare_Cross_Spline" alt="" coords="181,147,333,180"/>
+<area shape="rect" id="node5" href="$mover__spline6_8cpp.html#a280d32c6ba452ddb38adc34043bc2537" title="draw_splines" alt="" coords="407,51,505,84"/>
+<area shape="rect" id="node7" href="$mover__spline6_8cpp.html#af3dc1ccb6aa1e9a53aeccc0cae5ecc92" title="ShowSpline" alt="" coords="603,36,693,70"/>
+<area shape="rect" id="node9" href="$mover__2013_8cpp.html#acc2bd882d4deb89b6251c3fedaf0d8b1" title="mover_box" alt="" coords="769,35,855,68"/>
+<area shape="rect" id="node11" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1427,40,1485,74"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1535,40,1700,74"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1749,147,1800,180"/>
+<area shape="rect" id="node20" href="$mover__2013_8cpp.html#a4cd6cdd120b9feb87202ddb062daecbb" title="prepare_move_values" alt="" coords="381,147,531,180"/>
+<area shape="rect" id="node24" href="$mover__2013_8cpp.html#af1627b55add388ce92ebb0130bc45ede" title="Move_do_crossfade" alt="" coords="579,147,717,180"/>
+<area shape="rect" id="node26" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="785,91,839,124"/>
+<area shape="rect" id="node36" href="$tracker__main14nov_8cpp.html#a343d540f006963227ee5b445888ca393" title="ticker_move" alt="" coords="765,147,859,180"/>
+<area shape="rect" id="node28" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="908,40,1017,74"/>
+<area shape="rect" id="node30" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="1068,40,1183,74"/>
+<area shape="rect" id="node32" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1233,40,1377,74"/>
+<area shape="rect" id="node38" href="$tracker__main14nov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="937,147,988,180"/>
+</map>

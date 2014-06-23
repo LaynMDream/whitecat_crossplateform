@@ -1,0 +1,6 @@
+<map id="lfo_fader_functions" name="lfo_fader_functions">
+<area shape="rect" id="node3" href="$colors__fonts_8h.html#ae86cd6c0de005129d702f0c4352b2a24" title="CouleurGrisMoyen" alt="" coords="204,5,335,38"/>
+<area shape="rect" id="node5" href="$gui__boutons__rebuild1_8cpp.html#a039e24b1deea8472aa6312f1201a9264" title="raccrochage_midi_visuel\l_horizontal" alt="" coords="187,61,352,115"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="188,138,351,171"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="401,127,551,182"/>
+</map>

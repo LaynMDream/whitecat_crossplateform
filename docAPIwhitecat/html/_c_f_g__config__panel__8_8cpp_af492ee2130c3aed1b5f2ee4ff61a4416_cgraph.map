@@ -1,0 +1,29 @@
+<map id="do_dmx_config" name="do_dmx_config">
+<area shape="rect" id="node3" href="$_c_f_g__config__panel__8_8cpp.html#ab6b381db258889ff1d6e45119c1b24fc" title="SelectDmxDevice" alt="" coords="172,311,300,345"/>
+<area shape="rect" id="node5" href="$dmx__functions__13_8cpp.html#a3048b55699cf98058123e21f401cbcf0" title="Close_dmx_interface" alt="" coords="389,165,533,198"/>
+<area shape="rect" id="node7" href="$network__artnet__3_8cpp.html#a9a0f23a71d74445df43d6c60cba8dec2" title="fermeture_client_artnet" alt="" coords="616,5,771,38"/>
+<area shape="rect" id="node13" href="$dmx__enttec__pro_8cpp.html#aa2acf81ae67bb8af4e9fc88bf617a8bc" title="Close_ProIn" alt="" coords="647,61,740,94"/>
+<area shape="rect" id="node15" href="$dmx__functions__13_8cpp.html#a53b11cad2f3a0892f08b078a52236e7b" title="Init_dmx_interface" alt="" coords="397,362,525,395"/>
+<area shape="rect" id="node17" href="$network__artnet__3_8cpp.html#a968a75667346482a13ba5f22a72a0c96" title="initialisation_client\l_artnet" alt="" coords="629,229,757,283"/>
+<area shape="rect" id="node23" href="$network__artnet__3_8cpp.html#a89b223fcfca6ac93e436c033fadf727c" title="ConstructArtPoll" alt="" coords="635,474,752,507"/>
+<area shape="rect" id="node25" href="$network__artnet__3_8cpp.html#a8ddb5312f55572f3f998a14482df6a30" title="ConstructArtPollReply" alt="" coords="617,530,769,563"/>
+<area shape="rect" id="node27" href="$network__artnet__3_8cpp.html#a52663b2ef9ae55710b667ce7e37b5d3f" title="ArtDmx" alt="" coords="660,586,727,619"/>
+<area shape="rect" id="node39" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="167,570,305,603"/>
+<area shape="rect" id="node45" href="$network__artnet__3_8cpp.html#a4086a61bdf2b1f30952557dfb2531126" title="reset_poll_list" alt="" coords="185,626,287,659"/>
+<area shape="rect" id="node48" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="208,682,264,715"/>
+<area shape="rect" id="node52" href="$dmx__enttec__pro_8cpp.html#a99cd8610d4ea2b4275c5b0ef7c9593dc" title="Detect_EnttecProIn" alt="" coords="168,738,304,771"/>
+<area shape="rect" id="node54" href="$dmx__enttec__pro_8cpp.html#a8cee234b25cc0342fb3cac020ef2701f" title="Open_ProIn" alt="" coords="191,794,281,827"/>
+<area shape="rect" id="node59" href="$_c_f_g__config__panel__8_8cpp.html#a50e6495c35f5f9f7d1943fe17da354bd" title="affect_dmx_in" alt="" coords="185,850,287,883"/>
+<area shape="rect" id="node9" href="$dmx__enttec__pro_8cpp.html#afd3b4262aa6848e2e9baa97f633b94ce" title="Close_EnttecProOut" alt="" coords="623,117,764,150"/>
+<area shape="rect" id="node11" href="$dmx__sunlite_8cpp.html#ac9526cc0c6d440caf4d9a9ac3e48d70d" title="close_sunlite" alt="" coords="644,173,743,206"/>
+<area shape="rect" id="node31" href="$dmx__enttec__pro_8cpp.html#a33e896c3cd1bb33a086b10cbe0ac694e" title="Detect_EnttecProOut" alt="" coords="620,306,767,339"/>
+<area shape="rect" id="node33" href="$dmx__enttec__pro_8cpp.html#ad6b2fce0a38f51413e2141e6ca8c23dc" title="Open_EnttecProOut" alt="" coords="624,362,763,395"/>
+<area shape="rect" id="node37" href="$dmx__sunlite_8cpp.html#abe89f379fb21d3ff1c01b6de121ed987" title="open_sunlite" alt="" coords="647,418,740,451"/>
+<area shape="rect" id="node19" href="$network__artnet__3_8cpp.html#aeb8184978161ebde60d284dd5aef4ad9" title="detection_mise_en_place\l_carte_reseaux" alt="" coords="835,229,1003,283"/>
+<area shape="rect" id="node21" href="$network__artnet__3_8cpp.html#a6daea1aeee5d106166a80bc69f4dc4ba" title="detection_reseaux" alt="" coords="1067,239,1195,273"/>
+<area shape="rect" id="node29" href="$whitecat_8h.html#a220d7588afb23d8828e0a5b05de03f57" title="Dim" alt="" coords="896,586,941,619"/>
+<area shape="rect" id="node35" href="$dmx__enttec__pro_8cpp.html#ae444f20d2cc7a88e989ff0681053204f" title="Enttec_Pro_SetCommParams" alt="" coords="820,362,1017,395"/>
+<area shape="rect" id="node56" href="$dmx__enttec__pro_8cpp.html#a237a7a270b1965c63ef1d27ccfda8b78" title="Enttec_Pro_SetCommParamsIN" alt="" coords="356,794,567,827"/>
+<area shape="rect" id="node61" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="392,906,531,939"/>
+<area shape="rect" id="node63" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="375,850,548,883"/>
+</map>

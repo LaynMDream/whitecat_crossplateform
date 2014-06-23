@@ -1,0 +1,10 @@
+<map id="init_artnet_variables" name="init_artnet_variables">
+<area shape="rect" id="node3" href="$dmx__functions__13_8cpp.html#a4f4e828a2e427a69d166dfa03fe59f28" title="SendData_to_interface" alt="" coords="192,55,347,89"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1341,58,1392,91"/>
+<area shape="rect" id="node5" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="396,55,449,89"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="500,5,609,38"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="660,5,775,38"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="825,5,969,38"/>
+<area shape="rect" id="node13" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1019,5,1077,38"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1127,5,1292,38"/>
+</map>

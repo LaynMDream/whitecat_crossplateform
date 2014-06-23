@@ -7,6 +7,7 @@ var NAVTREE =
       [ "Index des classes", "classes.html", null ],
       [ "Membres de classe", "functions.html", [
         [ "Tout", "functions.html", null ],
+        [ "Fonctions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -28,27 +29,25 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_c_f_g__config__panel__8_8cpp.html",
-"_white_cat__private_8h.html#a8b95afde376bc69dc26a267786125074",
-"faders__operations_8cpp.html#ab9674178e3e4918a9917fcb6eff85be1",
-"keyboard__functions2_8cpp.html#ae36a6b8998981bc79bcd8262064c1a21",
-"plot9_8cpp.html#a84862f04dd33577916a945b2b7315a2c",
-"save__show__13_8cpp.html#a253b3940be8665a6db296cb8a31c66c7",
-"save__show__13_8cpp.html#ab61aaba3b7d332e7672b2d8fe0e59ef3",
-"time__visu__3_8cpp.html",
-"whitecat_8h.html#a1414a6a08901f03fe4075c0b9bc4779c",
-"whitecat_8h.html#a3443c64a35719fe305dc0a86ff8cea72",
-"whitecat_8h.html#a542da1a66c741d704f01b498f1311a47",
-"whitecat_8h.html#a773cf10caca8d10f24b5e7be49b543e5",
-"whitecat_8h.html#a98dc05e7e10544c8806f45572c8d5141",
-"whitecat_8h.html#ab8d4789873ee733bb176a41932b27284",
-"whitecat_8h.html#ad7bcc91ad4e173927ba85d5dd02f4bd8",
-"whitecat_8h.html#af8206515811c5b0d008f272feb536977"
+"_m_a_i_n__febrier__2014_8cpp.html#a1a14c8e08f74679e5db97ae284516b81",
+"classcurve__node.html#ab1db9f4ea1c53ab2eab6072b2cdc90eb",
+"faders__operations_8cpp.html#aa78052f1e3cdab13a7993a2dbe360e56",
+"keyboard__functions2_8cpp.html#ad3e3d18653d6c534d1a1c67236447ba9",
+"plot9_8cpp.html#aa5fd69b695802e2893eabfc0362205b4",
+"save__show__13_8cpp.html#a2aa74bf580687138cb82a1b9a71ed088",
+"save__show__13_8cpp.html#ab8c911e37757a173175a139d8236c3a2",
+"tracker__main14nov_8cpp.html#a1502d946795653cb8b09563e0c240728",
+"whitecat_8h.html#a170acbb00f87410265398649a1f51055",
+"whitecat_8h.html#a3935a40e5e085b8599042c59492ef583",
+"whitecat_8h.html#a5aa7dde77cfc89ff6ad1a6fe10d16748",
+"whitecat_8h.html#a8098d7b4f6be15b6075bae5a5b3dab5a",
+"whitecat_8h.html#aa3d56d4dc98af7100a1c088d7f3a100c",
+"whitecat_8h.html#ac5e8da63b6459d61e94ad62e0cf57754",
+"whitecat_8h.html#ae7d3a0d9a7ce6500376b472954a1c520"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
 var SYNCOFFMSG = 'cliquez pour activer la synchronisation du panel';
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
 var navTreeSubIndices = new Array();
 
 function getData(varName)
@@ -69,6 +68,21 @@ function stripPath2(uri)
   var s = uri.substring(i+1);
   var m = uri.substring(0,i+1).match(/\/d\w\/d\w\w\/$/);
   return m ? uri.substring(i-6) : s;
+}
+
+function hashValue()
+{
+  return $(location).attr('hash').substring(1).replace(/[^\w\-]/g,'');
+}
+
+function hashUrl()
+{
+  return '#'+hashValue();
+}
+
+function pathName()
+{
+  return $(location).attr('pathname').replace(/[^-A-Za-z0-9+&@#/%?=~_|!:,.;\(\)]/g, '');
 }
 
 function localStorageSupported()
@@ -93,7 +107,7 @@ function deleteLink()
 {
   if (localStorageSupported()) {
     window.localStorage.setItem('navpath','');
-  } 
+  }
 }
 
 function cachedLink()
@@ -165,11 +179,13 @@ var animationInProgress = false;
 function gotoAnchor(anchor,aname,updateLocation)
 {
   var pos, docContent = $('#doc-content');
-  if (anchor.parent().attr('class')=='memItemLeft' ||
-      anchor.parent().attr('class')=='fieldtype' ||
-      anchor.parent().is(':header')) 
+  var ancParent = $(anchor.parent());
+  if (ancParent.hasClass('memItemLeft') ||
+      ancParent.hasClass('fieldname') ||
+      ancParent.hasClass('fieldtype') ||
+      ancParent.is(':header'))
   {
-    pos = anchor.parent().position().top;
+    pos = ancParent.position().top;
   } else if (anchor.position()) {
     pos = anchor.position().top;
   }
@@ -227,7 +243,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
     a.className = stripPath(link.replace('#',':'));
     if (link.indexOf('#')!=-1) {
       var aname = '#'+link.split('#')[1];
-      var srcPage = stripPath($(location).attr('pathname'));
+      var srcPage = stripPath(pathName());
       var targetPage = stripPath(link.split('#')[0]);
       a.href = srcPage!=targetPage ? url : "javascript:void(0)"; 
       a.onclick = function(){
@@ -321,14 +337,13 @@ function glowEffect(n,duration)
 
 function highlightAnchor()
 {
-  var aname = $(location).attr('hash');
+  var aname = hashUrl();
   var anchor = $(aname);
   if (anchor.parent().attr('class')=='memItemLeft'){
-    var rows = $('.memberdecls tr[class$="'+
-               window.location.hash.substring(1)+'"]');
+    var rows = $('.memberdecls tr[class$="'+hashValue()+'"]');
     glowEffect(rows.children(),300); // member without details
-  } else if (anchor.parents().slice(2).prop('tagName')=='TR') {
-    glowEffect(anchor.parents('div.memitem'),1000); // enum value
+  } else if (anchor.parent().attr('class')=='fieldname'){
+    glowEffect(anchor.parent().parent(),1000); // enum value
   } else if (anchor.parent().attr('class')=='fieldtype'){
     glowEffect(anchor.parent().parent(),1000); // struct field
   } else if (anchor.parent().is(":header")) {
@@ -343,7 +358,7 @@ function selectAndHighlight(hash,n)
 {
   var a;
   if (hash) {
-    var link=stripPath($(location).attr('pathname'))+':'+hash.substring(1);
+    var link=stripPath(pathName())+':'+hash.substring(1);
     a=$('.item a[class$="'+link+'"]');
   }
   if (a && a.length) {
@@ -454,14 +469,13 @@ function navTo(o,root,hash,relpath)
   if (link) {
     var parts = link.split('#');
     root = parts[0];
-    if (parts.length>1) hash = '#'+parts[1];
+    if (parts.length>1) hash = '#'+parts[1].replace(/[^\w\-]/g,'');
     else hash='';
   }
   if (hash.match(/^#l\d+$/)) {
     var anchor=$('a[name='+hash.substring(1)+']');
     glowEffect(anchor.parent(),1000); // line number
     hash=''; // strip line number anchors
-    //root=root.replace(/_source\./,'.'); // source link to doc link
   }
   var url=root+hash;
   var i=-1;
@@ -495,7 +509,7 @@ function toggleSyncButton(relpath)
   if (navSync.hasClass('sync')) {
     navSync.removeClass('sync');
     showSyncOff(navSync,relpath);
-    storeLink(stripPath2($(location).attr('pathname'))+$(location).attr('hash'));
+    storeLink(stripPath2(pathName())+hashUrl());
   } else {
     navSync.addClass('sync');
     showSyncOn(navSync,relpath);
@@ -535,7 +549,7 @@ function initNavTree(toroot,relpath)
   }
 
   $(window).load(function(){
-    navTo(o,toroot,window.location.hash,relpath);
+    navTo(o,toroot,hashUrl(),relpath);
     showRoot();
   });
 
@@ -543,21 +557,20 @@ function initNavTree(toroot,relpath)
      if (window.location.hash && window.location.hash.length>1){
        var a;
        if ($(location).attr('hash')){
-         var clslink=stripPath($(location).attr('pathname'))+':'+
-                               $(location).attr('hash').substring(1);
-         a=$('.item a[class$="'+clslink+'"]');
+         var clslink=stripPath(pathName())+':'+hashValue();
+         a=$('.item a[class$="'+clslink.replace(/</g,'\\3c ')+'"]');
        }
        if (a==null || !$(a).parent().parent().hasClass('selected')){
          $('.item').removeClass('selected');
          $('.item').removeAttr('id');
        }
-       var link=stripPath2($(location).attr('pathname'));
-       navTo(o,link,$(location).attr('hash'),relpath);
+       var link=stripPath2(pathName());
+       navTo(o,link,hashUrl(),relpath);
      } else if (!animationInProgress) {
        $('#doc-content').scrollTop(0);
        $('.item').removeClass('selected');
        $('.item').removeAttr('id');
-       navTo(o,toroot,window.location.hash,relpath);
+       navTo(o,toroot,hashUrl(),relpath);
      }
   })
 }

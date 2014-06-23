@@ -1,0 +1,9 @@
+<map id="add_a_symbol_to_plot" name="add_a_symbol_to_plot">
+<area shape="rect" id="node3" href="$plot__core9_8cpp.html#a58fe8fc317633b7cfd679c95c67193b9" title="clear_symbol_slot" alt="" coords="235,5,360,38"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#ac16f49a033e4ae3af728e3789f080e51" title="reset_symbols_selected" alt="" coords="216,61,379,94"/>
+<area shape="rect" id="node9" href="$plot__core9_8cpp.html#a30a3e9357adedd3ded2f2ded796e81e2" title="plot_generate_appareils_list" alt="" coords="207,117,388,150"/>
+<area shape="rect" id="node5" href="$plot__core9_8cpp.html#a4afbbba7a97b479ffbf4b9b190c40b29" title="clear_grouped_to_symbols" alt="" coords="439,5,615,38"/>
+<area shape="rect" id="node11" href="$plot__core9_8cpp.html#ab76f6823319f1363767e9b0027c633a9" title="plot_reset_list_appareils" alt="" coords="445,89,608,122"/>
+<area shape="rect" id="node15" href="$plot__core9_8cpp.html#aee1db260c83091fb31c75951b8c9b091" title="plot_generate_gels_list" alt="" coords="449,145,604,178"/>
+<area shape="rect" id="node13" href="$plot__core9_8cpp.html#a34fc01d14d473ebfbc62c6555fd44b76" title="plot_reset_list_gelat" alt="" coords="664,117,803,150"/>
+</map>

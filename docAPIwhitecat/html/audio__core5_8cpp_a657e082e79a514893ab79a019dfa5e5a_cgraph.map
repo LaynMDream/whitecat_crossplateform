@@ -1,0 +1,14 @@
+<map id="do_logical_lecteur_audio" name="do_logical_lecteur_audio">
+<area shape="rect" id="node3" href="$audio__core5_8cpp.html#a441637bcca17a3226a6b3aadea1defe9" title="AffectSoundFile" alt="" coords="219,97,333,130"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a23423256688613149926c4984ff25f79" title="player1_do_stop" alt="" coords="444,5,561,38"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a6c41d19d859a2e1292ad64ef915e265f" title="player2_do_stop" alt="" coords="444,62,561,95"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a494249193c56b13a4e1eac04c6dd2d0b" title="player3_do_stop" alt="" coords="444,119,561,153"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#afbcf17b50787fb3b8360659f6ce9b193" title="player4_do_stop" alt="" coords="444,178,561,211"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="437,239,568,294"/>
+<area shape="rect" id="node21" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="207,305,345,338"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="683,417,739,450"/>
+<area shape="rect" id="node25" href="$gui__boutons__rebuild1_8cpp.html#af5f676fb86d11fae23764afc2d4639b0" title="raccrochage_midi_logical\l_horizontal_audio" alt="" coords="192,495,360,550"/>
+<area shape="rect" id="node28" href="$audio__core5_8cpp.html#a8b31946eb761c7f981bb92526a3f065a" title="do_logical_fader_niveau_son" alt="" coords="181,361,371,394"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="636,239,785,294"/>
+<area shape="rect" id="node32" href="$gui__boutons__rebuild1_8cpp.html#a78d337776a997c9274f38c73b7c4b3e4" title="raccrochage_midi_logical\l_vertical" alt="" coords="419,317,587,371"/>
+</map>

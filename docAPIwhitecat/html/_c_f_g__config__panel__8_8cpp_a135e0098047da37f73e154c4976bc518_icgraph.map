@@ -1,0 +1,8 @@
+<map id="Box_artnet_udpport" name="Box_artnet_udpport">
+<area shape="rect" id="node3" href="$_c_f_g__config__panel__8_8cpp.html#abeed1d561a8752f4dcf1f8e84086660e" title="do_network_config" alt="" coords="189,5,320,38"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="369,5,484,38"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="535,5,679,38"/>
+<area shape="rect" id="node9" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="728,5,787,38"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="836,5,1001,38"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1051,5,1101,38"/>
+</map>

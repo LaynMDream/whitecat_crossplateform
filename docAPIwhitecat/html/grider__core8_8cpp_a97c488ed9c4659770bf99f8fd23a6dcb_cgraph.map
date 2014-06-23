@@ -1,0 +1,19 @@
+<map id="do_logical_Grid_player" name="do_logical_Grid_player">
+<area shape="rect" id="node3" href="$grider__core8_8cpp.html#a42b0cb5764096e6486fd48dbacaf50a6" title="do_logical_TheCallGridBox" alt="" coords="220,147,399,180"/>
+<area shape="rect" id="node15" href="$grider__core8_8cpp.html#a9454180ba697c0696084a05e20ad19ae" title="do_logical_TheStepBox" alt="" coords="231,91,388,124"/>
+<area shape="rect" id="node26" href="$grider__core8_8cpp.html#af2ebbc7a9ecd5e1f152cbfc7607b0380" title="do_logical_ThePlayCommands" alt="" coords="208,358,411,391"/>
+<area shape="rect" id="node34" href="$grider__core8_8cpp.html#a931863e7b66ecd87b88ec0c1c0072db1" title="do_logical_TheGrid\l_commands" alt="" coords="243,280,376,335"/>
+<area shape="rect" id="node40" href="$grider__core8_8cpp.html#a124e02cba31832a9a845136d0570c195" title="do_logical_TheGrid\l_divers" alt="" coords="243,414,376,468"/>
+<area shape="rect" id="node49" href="$grider__core8_8cpp.html#adbbc2e7c08b342818e17b6494c3e4556" title="do_logical_TheGrid\l_matrix" alt="" coords="243,203,376,258"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="481,304,612,359"/>
+<area shape="rect" id="node9" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="684,118,833,151"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="477,198,616,231"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="684,304,833,359"/>
+<area shape="rect" id="node11" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="884,118,1033,151"/>
+<area shape="rect" id="node18" href="$grider__calculs8_8cpp.html#a3644a33f8eabdba4aca110c45f0a3b86" title="gridplayer_step_minus" alt="" coords="471,35,623,68"/>
+<area shape="rect" id="node21" href="$grider__calculs8_8cpp.html#af5ae8eeb210f8fb64864f7d1445befcb" title="gridplayer_step_plus" alt="" coords="476,91,617,124"/>
+<area shape="rect" id="node29" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="519,382,575,415"/>
+<area shape="rect" id="node31" href="$grider__calculs8_8cpp.html#a1385e50460f3dd71bdc4d3f8e1ec462f" title="gridplayer_seek" alt="" coords="491,438,603,471"/>
+<area shape="rect" id="node42" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="477,550,616,583"/>
+<area shape="rect" id="node44" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="460,494,633,527"/>
+</map>

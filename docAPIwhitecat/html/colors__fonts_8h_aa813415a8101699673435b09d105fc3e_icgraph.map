@@ -1,0 +1,19 @@
+<map id="Matrix2" name="Matrix2">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a3151aaac61e3f1704869ba4e3ea06226" title="LoadWhiteCatColorProfil" alt="" coords="121,101,287,134"/>
+<area shape="rect" id="node5" href="$_c_f_g__screen_8cpp.html#ac3bf4b5c2955a4f8d1f21437308ead37" title="do_screen_config" alt="" coords="337,66,460,99"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1515,149,1565,182"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#a5e53dc8ef589fe38b9d40e3497ac3f13" title="GlobInit" alt="" coords="365,134,432,167"/>
+<area shape="rect" id="node36" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="353,283,444,317"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="545,42,660,75"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="752,42,896,75"/>
+<area shape="rect" id="node11" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1152,149,1211,182"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1300,149,1465,182"/>
+<area shape="rect" id="node19" href="$_c_o_r_e__6_8cpp.html#a29400ad92b676ecb7743384700af5560" title="reset_show" alt="" coords="559,199,647,233"/>
+<area shape="rect" id="node21" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="744,202,904,235"/>
+<area shape="rect" id="node23" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="953,205,1063,238"/>
+<area shape="rect" id="node30" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="952,149,1064,182"/>
+<area shape="rect" id="node25" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1112,205,1251,238"/>
+<area shape="rect" id="node27" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1328,205,1437,238"/>
+<area shape="rect" id="node39" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="548,255,657,289"/>
+<area shape="rect" id="node42" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="509,311,696,345"/>
+</map>

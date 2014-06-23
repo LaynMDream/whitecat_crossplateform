@@ -1,0 +1,9 @@
+<map id="do_logical_TheStepBox" name="do_logical_TheStepBox">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="224,5,355,59"/>
+<area shape="rect" id="node7" href="$grider__calculs8_8cpp.html#a3644a33f8eabdba4aca110c45f0a3b86" title="gridplayer_step_minus" alt="" coords="213,82,365,115"/>
+<area shape="rect" id="node9" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="415,135,564,169"/>
+<area shape="rect" id="node13" href="$grider__calculs8_8cpp.html#af5ae8eeb210f8fb64864f7d1445befcb" title="gridplayer_step_plus" alt="" coords="219,189,360,222"/>
+<area shape="rect" id="node16" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="220,245,359,278"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="415,5,564,59"/>
+<area shape="rect" id="node11" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="615,135,764,169"/>
+</map>

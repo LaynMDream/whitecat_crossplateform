@@ -1,0 +1,8 @@
+<map id="raccrochage_midi_visuel_vertical" name="raccrochage_midi_visuel_vertical">
+<area shape="rect" id="node3" href="$audio__visu4_8cpp.html#a0b5439162e79825e703858743cab3d1d" title="fader_niveau_son" alt="" coords="220,15,343,49"/>
+<area shape="rect" id="node5" href="$audio__visu4_8cpp.html#af23f016b2fea8ee1404ad97bbda9853c" title="lecteur_audio" alt="" coords="392,15,491,49"/>
+<area shape="rect" id="node7" href="$audio__visu4_8cpp.html#a839f8a050c93200c75b01047fd4f6d09" title="fenetre_audio" alt="" coords="540,15,639,49"/>
+<area shape="rect" id="node9" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="688,15,747,49"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="796,15,961,49"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1011,15,1061,49"/>
+</map>

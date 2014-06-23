@@ -1,0 +1,12 @@
+<map id="ticker_move" name="ticker_move">
+<area shape="rect" id="node3" href="$mover__2013_8cpp.html#af1627b55add388ce92ebb0130bc45ede" title="Move_do_crossfade" alt="" coords="147,61,285,94"/>
+<area shape="rect" id="node5" href="$mover__2013_8cpp.html#abb003e89ded4a3c6a731f3e7526ef3a6" title="Move_StepForward" alt="" coords="341,5,475,38"/>
+<area shape="rect" id="node9" href="$mover__2013_8cpp.html#a09da21b3ee6f5a971c70ce7509a45751" title="Move_StepBackward" alt="" coords="335,61,481,94"/>
+<area shape="rect" id="node12" href="$mover__2013_8cpp.html#a4cd6cdd120b9feb87202ddb062daecbb" title="prepare_move_values" alt="" coords="333,117,483,150"/>
+<area shape="rect" id="node7" href="$mover__2013_8cpp.html#a87973de95365fca754397b86972fb103" title="Move_refresh_xy" alt="" coords="545,5,668,38"/>
+<area shape="rect" id="node14" href="$mover__2013_8cpp.html#a5fbe4af69b774a1738d80f6879d958e9" title="convert_bytes_to_int" alt="" coords="536,89,677,122"/>
+<area shape="rect" id="node16" href="$mover__spline6_8cpp.html#a090797adb1f79d0d55f8967194130c47" title="Prepare_Cross_Spline" alt="" coords="531,145,683,178"/>
+<area shape="rect" id="node18" href="$mover__spline6_8cpp.html#a71a41e8d002948913c4ae79560729c48" title="get_control_points" alt="" coords="731,111,859,145"/>
+<area shape="rect" id="node22" href="$mover__spline6_8cpp.html#a41772bd93cf820f16672603cc49e4a13" title="get_control_points\l_backward" alt="" coords="731,167,859,222"/>
+<area shape="rect" id="node20" href="$mover__spline6_8cpp.html#a98185a4f31c71ab881cacc66ef0d87e1" title="node_dist" alt="" coords="908,145,985,178"/>
+</map>

@@ -102,6 +102,8 @@ var searchData=
   ['reset_5fwindow_5fpositions',['reset_window_positions',['../_c_o_r_e__6_8cpp.html#ac35c1426f741de67edbc3131f4557ed1',1,'CORE_6.cpp']]],
   ['restore_5fstate_5fof_5ffader_5fbefore_5fbang',['restore_state_of_fader_before_bang',['../banger__core__8_8cpp.html#a3226c56ba60abafd10eb8dc5ef8200e7',1,'banger_core_8.cpp']]],
   ['retourinfos',['RetourInfos',['../graphics__rebuild1_8cpp.html#afe52a4be5d26c19c50f8c98d3a4dd8f7',1,'graphics_rebuild1.cpp']]],
+  ['return_5fhighest',['return_highest',['../_c_o_r_e__6_8cpp.html#abf3905741fad82c878a1c2b5a64e78b1',1,'CORE_6.cpp']]],
+  ['return_5flowest',['return_lowest',['../_c_o_r_e__6_8cpp.html#a7949412d847774cd29d24015ad877eee',1,'CORE_6.cpp']]],
   ['right_5fclick_5fon_5fplot',['right_click_on_plot',['../plot__core9_8cpp.html#a4c243f34eca05e7f78d7992b0d3e4833',1,'plot_core9.cpp']]],
   ['rotatif',['rotatif',['../gui__boutons__rebuild1_8cpp.html#a7a940e5d2de3e61297a43cc809cce192',1,'gui_boutons_rebuild1.cpp']]]
 ];

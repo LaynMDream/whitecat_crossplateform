@@ -1,0 +1,10 @@
+<map id="ConstructArtPoll" name="ConstructArtPoll">
+<area shape="rect" id="node3" href="$_c_f_g__config__panel__8_8cpp.html#af492ee2130c3aed1b5f2ee4ff61a4416" title="do_dmx_config" alt="" coords="529,33,639,66"/>
+<area shape="rect" id="node15" href="$dmx__functions__13_8cpp.html#a53b11cad2f3a0892f08b078a52236e7b" title="Init_dmx_interface" alt="" coords="175,57,303,90"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="689,59,804,93"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="855,73,999,106"/>
+<area shape="rect" id="node9" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1048,79,1107,113"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1156,81,1321,114"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1371,109,1421,142"/>
+<area shape="rect" id="node17" href="$_c_f_g__config__panel__8_8cpp.html#ab6b381db258889ff1d6e45119c1b24fc" title="SelectDmxDevice" alt="" coords="352,82,480,115"/>
+</map>

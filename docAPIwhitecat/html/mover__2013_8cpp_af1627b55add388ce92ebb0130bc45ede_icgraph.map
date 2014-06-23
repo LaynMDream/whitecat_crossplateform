@@ -1,0 +1,11 @@
+<map id="Move_do_crossfade" name="Move_do_crossfade">
+<area shape="rect" id="node3" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="212,57,265,90"/>
+<area shape="rect" id="node18" href="$tracker__main14nov_8cpp.html#a343d540f006963227ee5b445888ca393" title="ticker_move" alt="" coords="192,113,285,146"/>
+<area shape="rect" id="node5" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="335,5,444,38"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1176,31,1227,65"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="495,5,609,38"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="660,5,804,38"/>
+<area shape="rect" id="node11" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="853,5,912,38"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="961,5,1127,38"/>
+<area shape="rect" id="node20" href="$tracker__main14nov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="364,113,415,146"/>
+</map>

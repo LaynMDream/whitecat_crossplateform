@@ -1,0 +1,25 @@
+<map id="detection_reseaux" name="detection_reseaux">
+<area shape="rect" id="node3" href="$i_cat14_8cpp.html#a1ab0b64f45d461bb675425625ee860b0" title="initialisation_clientserveur_iCat" alt="" coords="576,92,779,125"/>
+<area shape="rect" id="node26" href="$network__artnet__3_8cpp.html#a32051cea0c5013d0da3e89aef1800859" title="initialisation_serveur\l_artnet" alt="" coords="608,191,747,245"/>
+<area shape="rect" id="node44" href="$network__artnet__3_8cpp.html#aeb8184978161ebde60d284dd5aef4ad9" title="detection_mise_en_place\l_carte_reseaux" alt="" coords="183,413,351,468"/>
+<area shape="rect" id="node61" href="$network___m_a_c__adress__3_8cpp.html#ac218210ef672c54b74f648774fd25b7b" title="Box_IP_routing" alt="" coords="409,263,519,296"/>
+<area shape="rect" id="node5" href="$i_cat14_8cpp.html#a5aa7fe4e46d3895b5ff922cc793d541c" title="BoxiCat" alt="" coords="872,156,941,189"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1968,295,2019,328"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="880,49,933,83"/>
+<area shape="rect" id="node7" href="$_c_f_g__config__panel__8_8cpp.html#abeed1d561a8752f4dcf1f8e84086660e" title="do_network_config" alt="" coords="1035,212,1165,245"/>
+<area shape="rect" id="node9" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="1225,212,1340,245"/>
+<area shape="rect" id="node11" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1401,212,1545,245"/>
+<area shape="rect" id="node13" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1620,265,1679,299"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1753,267,1919,300"/>
+<area shape="rect" id="node21" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="1045,156,1155,189"/>
+<area shape="rect" id="node28" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="827,319,987,352"/>
+<area shape="rect" id="node41" href="$network___m_a_c__adress__3_8cpp.html#a04de018ca9b9aeb591a6393c9efc5ec6" title="do_artnet_affect_config" alt="" coords="828,212,985,245"/>
+<area shape="rect" id="node30" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="1045,321,1155,355"/>
+<area shape="rect" id="node37" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="1417,268,1529,301"/>
+<area shape="rect" id="node32" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1213,321,1352,355"/>
+<area shape="rect" id="node34" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1595,321,1704,355"/>
+<area shape="rect" id="node47" href="$network__artnet__3_8cpp.html#a968a75667346482a13ba5f22a72a0c96" title="initialisation_client\l_artnet" alt="" coords="400,413,528,468"/>
+<area shape="rect" id="node49" href="$_c_f_g__config__panel__8_8cpp.html#af492ee2130c3aed1b5f2ee4ff61a4416" title="do_dmx_config" alt="" coords="1045,400,1155,433"/>
+<area shape="rect" id="node52" href="$dmx__functions__13_8cpp.html#a53b11cad2f3a0892f08b078a52236e7b" title="Init_dmx_interface" alt="" coords="613,451,741,484"/>
+<area shape="rect" id="node54" href="$_c_f_g__config__panel__8_8cpp.html#ab6b381db258889ff1d6e45119c1b24fc" title="SelectDmxDevice" alt="" coords="843,476,971,509"/>
+</map>

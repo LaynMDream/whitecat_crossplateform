@@ -1,0 +1,11 @@
+<map id="curve_node::SplineCurve" name="curve_node::SplineCurve">
+<area shape="rect" id="node3" href="$classcurve__node.html#a22f8acf6b081673429257867a4115c57" title="curve_node::calc_tangents" alt="" coords="848,5,1027,38"/>
+<area shape="rect" id="node9" href="$classcurve__node.html#aace217c0200a043c2d2f5f071fde8e56" title="curve_node::draw_splines" alt="" coords="231,69,404,102"/>
+<area shape="rect" id="node21" href="$classcurve__node.html#a5c54a9611e91814177cf901636d4e8e5" title="curve_node::view_after_draw" alt="" coords="221,125,413,158"/>
+<area shape="rect" id="node5" href="$classcurve__node.html#a55e51b51f9b6ede537c5e11b7f234188" title="curve_node::dummy" alt="" coords="1076,131,1215,165"/>
+<area shape="rect" id="node7" href="$classcurve__node.html#add0d28f291f1cfe22e11f5436a8ba161" title="curve_node::curve_node" alt="" coords="1265,131,1428,165"/>
+<area shape="rect" id="node12" href="$classcurve__node.html#ab1db9f4ea1c53ab2eab6072b2cdc90eb" title="curve_node::draw" alt="" coords="461,69,587,102"/>
+<area shape="rect" id="node14" href="$classcurve__node.html#abc1a06d649c6dce22334da762f2955b8" title="curve_node::write_curve" alt="" coords="636,69,799,102"/>
+<area shape="rect" id="node17" href="$classcurve__node.html#a14aba313f46315faae44bcca011136a9" title="curve_node::get_control\l_points" alt="" coords="857,61,1017,115"/>
+<area shape="rect" id="node19" href="$classcurve__node.html#a1146c27b9e6c0b3a5f6fb3faced5cea2" title="curve_node::dist" alt="" coords="1087,71,1204,105"/>
+</map>

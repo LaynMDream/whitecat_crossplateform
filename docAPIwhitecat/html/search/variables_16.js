@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['x',['x',['../structcurve__node.html#aa7ae8f2ee3bbd3e6194785c392751cdb',1,'curve_node::x()'],['../struct_n_o_d_e.html#ae491648fdefa758c04fd1b39997dfe44',1,'NODE::x()']]],
+  ['x',['x',['../classcurve__node.html#aa7ae8f2ee3bbd3e6194785c392751cdb',1,'curve_node::x()'],['../struct_n_o_d_e.html#ae491648fdefa758c04fd1b39997dfe44',1,'NODE::x()']]],
   ['x_5fbanger',['X_banger',['../whitecat_8h.html#a6e712accfd39e9ac4362be7188323c91',1,'whitecat.h']]],
   ['x_5fecho',['x_echo',['../whitecat_8h.html#ab6cb9f626da9e39c842177f8ea1e03c4',1,'whitecat.h']]],
   ['x_5ffract',['x_fract',['../whitecat_8h.html#a57c606a001ca8c5b7543e31d2b5522af',1,'whitecat.h']]],
@@ -25,7 +25,7 @@ var searchData=
   ['xminifaders',['xMinifaders',['../whitecat_8h.html#a5155021ff1df81bcfb2b16ec90c4b42e',1,'whitecat.h']]],
   ['xmover_5fwindow',['xmover_window',['../whitecat_8h.html#a88f53e99167afb495e0ccf1249bb097d',1,'whitecat.h']]],
   ['xnum_5fwindow',['xnum_window',['../whitecat_8h.html#a6bc911288df828d954b3e33840cc0f44',1,'whitecat.h']]],
-  ['xpatch_5fwindow',['xpatch_window',['../whitecat_8h.html#ad8df5c19653947965ed275ebe440a131',1,'whitecat.h']]],
+  ['xpatch_5fwindow',['xpatch_window',['../classgraphic__context.html#a57a5bcca338d0b27c5014b9bde3f6e99',1,'graphic_context::xpatch_window()'],['../whitecat_8h.html#ad8df5c19653947965ed275ebe440a131',1,'xpatch_window():&#160;whitecat.h']]],
   ['xsave_5fwindow',['xsave_window',['../whitecat_8h.html#aceb5449a4415b82fd88ff10bb5294293',1,'whitecat.h']]],
   ['xseq_5fwindow',['xseq_window',['../whitecat_8h.html#ae1aa117f2de07a7cc4f6528c2311397c',1,'whitecat.h']]],
   ['xtime_5fwindow',['xtime_window',['../whitecat_8h.html#ae4eadb8757d50da96f9ff5cd90ea2775',1,'whitecat.h']]],

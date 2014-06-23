@@ -1,0 +1,24 @@
+<map id="do_logical_fenetre_chasers" name="do_logical_fenetre_chasers">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a3680de15f6ccf838397bde99d246125a" title="show_type_midi" alt="" coords="472,659,587,693"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="464,798,595,853"/>
+<area shape="rect" id="node9" href="$chasers__core__5_8cpp.html#a518bc9c862f014c636af2ed51508cce7" title="refresh_chaser_midi_out" alt="" coords="208,109,371,142"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="460,263,599,297"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="709,413,765,446"/>
+<area shape="rect" id="node15" href="$chasers__core__5_8cpp.html#a128576bedb198e99fd9ca3dace3304d1" title="chaser_seek_at_beg" alt="" coords="219,53,360,86"/>
+<area shape="rect" id="node17" href="$chasers__core__5_8cpp.html#abb6ff444898fcb4ad35f303696f41ea2" title="chaser_calcul_step" alt="" coords="463,53,596,86"/>
+<area shape="rect" id="node21" href="$chasers__core__5_8cpp.html#afaeffdf5e70f64260ab334beb4f46c04" title="chaser_calcul_time\l_joint" alt="" coords="463,122,596,177"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="220,423,359,457"/>
+<area shape="rect" id="node25" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="203,479,376,513"/>
+<area shape="rect" id="node27" href="$chasers__core__5_8cpp.html#a31edc4f3107d172fb0b8666eb8d94478" title="chaser_select_all_track" alt="" coords="211,535,368,569"/>
+<area shape="rect" id="node29" href="$chasers__core__5_8cpp.html#a7fa6ceb1bfc08733e47abe303b3d4a5d" title="chaser_select_inv_track" alt="" coords="448,554,611,587"/>
+<area shape="rect" id="node32" href="$chasers__core__5_8cpp.html#a0f7608d86c31d28c7d759984120c7e4b" title="chaser_select_off_all\l_track" alt="" coords="217,642,361,697"/>
+<area shape="rect" id="node34" href="$chasers__core__5_8cpp.html#ad7eda78647195e87d7b7f1f9e8dd08b5" title="chaser_load_from_preset" alt="" coords="205,719,373,753"/>
+<area shape="rect" id="node38" href="$chasers__core__5_8cpp.html#a9ef4033a9905a9a671f6f1e10d01847d" title="bouton_view_track_downup_core" alt="" coords="183,775,396,809"/>
+<area shape="rect" id="node42" href="$chasers__core__5_8cpp.html#adfa2bcc02958cf7ca155435eb82bb84c" title="Track_draw_logical" alt="" coords="223,317,356,350"/>
+<area shape="rect" id="node54" href="$chasers__core__5_8cpp.html#ac0937d092e3181686c614d1d3efb9d75" title="bouton_view_launchpad\l_pos_core" alt="" coords="209,831,369,886"/>
+<area shape="rect" id="node58" href="$chasers__core__5_8cpp.html#accade0c1dd479872b2a7af6a904e0da6" title="set_refresh_mode_for\l_chaser" alt="" coords="216,959,363,1014"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="663,617,812,671"/>
+<area shape="rect" id="node19" href="$chasers__core__5_8cpp.html#a91fb9c1ef62ff51adbf81dfdc900fb04" title="refresh_launchpad_on\l_chaser" alt="" coords="663,174,812,229"/>
+<area shape="rect" id="node45" href="$_c_o_r_e__6_8cpp.html#a1dbe2a93b1ce714d4d4bebfddbb276cd" title="attribute_midi_to_control" alt="" coords="448,498,611,531"/>
+<area shape="rect" id="node50" href="$gui__boutons__rebuild1_8cpp.html#a968d1aafeff1f4495bd2901ab1c80202" title="raccrochage_midi_logical\l_horizontal_little" alt="" coords="445,370,613,425"/>
+</map>

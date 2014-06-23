@@ -1,0 +1,22 @@
+<map id="do_logical_Grider_Box" name="do_logical_Grider_Box">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="716,229,847,283"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="753,61,809,94"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a37a0af1e3344de7d352aada6d9a612a3" title="refresh_hauteur_fenetre\l_grider" alt="" coords="221,561,379,615"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="712,407,851,441"/>
+<area shape="rect" id="node13" href="$grider__core8_8cpp.html#a52cecced2c9626c64dc6e31727175f33" title="do_logical_GlobalGridViewer" alt="" coords="207,505,393,538"/>
+<area shape="rect" id="node16" href="$grider__core8_8cpp.html#a97c488ed9c4659770bf99f8fd23a6dcb" title="do_logical_Grid_player" alt="" coords="224,322,376,355"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="919,229,1068,283"/>
+<area shape="rect" id="node18" href="$grider__core8_8cpp.html#a42b0cb5764096e6486fd48dbacaf50a6" title="do_logical_TheCallGridBox" alt="" coords="455,322,633,355"/>
+<area shape="rect" id="node26" href="$grider__core8_8cpp.html#a9454180ba697c0696084a05e20ad19ae" title="do_logical_TheStepBox" alt="" coords="465,557,623,590"/>
+<area shape="rect" id="node37" href="$grider__core8_8cpp.html#af2ebbc7a9ecd5e1f152cbfc7607b0380" title="do_logical_ThePlayCommands" alt="" coords="443,61,645,94"/>
+<area shape="rect" id="node44" href="$grider__core8_8cpp.html#a931863e7b66ecd87b88ec0c1c0072db1" title="do_logical_TheGrid\l_commands" alt="" coords="477,245,611,299"/>
+<area shape="rect" id="node50" href="$grider__core8_8cpp.html#a124e02cba31832a9a845136d0570c195" title="do_logical_TheGrid\l_divers" alt="" coords="477,117,611,171"/>
+<area shape="rect" id="node59" href="$grider__core8_8cpp.html#adbbc2e7c08b342818e17b6494c3e4556" title="do_logical_TheGrid\l_matrix" alt="" coords="477,378,611,433"/>
+<area shape="rect" id="node21" href="$grider__calculs8_8cpp.html#aa5e2775d1f19c4fddd0e6ed08b511e96" title="gridder_prepare_cross" alt="" coords="919,407,1068,441"/>
+<area shape="rect" id="node23" href="$grider__calculs8_8cpp.html#aa649acadfb5dcef5c313de19ddcb2290" title="affichage_time_format" alt="" coords="1119,407,1268,441"/>
+<area shape="rect" id="node29" href="$grider__calculs8_8cpp.html#a3644a33f8eabdba4aca110c45f0a3b86" title="gridplayer_step_minus" alt="" coords="705,514,857,547"/>
+<area shape="rect" id="node32" href="$grider__calculs8_8cpp.html#af5ae8eeb210f8fb64864f7d1445befcb" title="gridplayer_step_plus" alt="" coords="711,570,852,603"/>
+<area shape="rect" id="node41" href="$grider__calculs8_8cpp.html#a1385e50460f3dd71bdc4d3f8e1ec462f" title="gridplayer_seek" alt="" coords="725,5,837,38"/>
+<area shape="rect" id="node52" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="712,173,851,206"/>
+<area shape="rect" id="node54" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="695,117,868,150"/>
+</map>

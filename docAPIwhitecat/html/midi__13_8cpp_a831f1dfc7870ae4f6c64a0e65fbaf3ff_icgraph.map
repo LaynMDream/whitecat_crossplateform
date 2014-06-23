@@ -1,0 +1,13 @@
+<map id="Display" name="Display">
+<area shape="rect" id="node3" href="$midi__13_8cpp.html#aa4aeee5088a4a5462566dfee5c9cc71f" title="DisplayTask" alt="" coords="129,29,223,62"/>
+<area shape="rect" id="node8" href="$midi___c_o_r_e_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="121,85,231,118"/>
+<area shape="rect" id="node5" href="$midi___c_o_r_e_8cpp.html#a7d0f82d882071792d6a2df51ef13ec55" title="ReceivePolling" alt="" coords="280,29,389,62"/>
+<area shape="rect" id="node11" href="$midi___c_o_r_e_8cpp.html#a0ccf480a33424e626f88d109d53d8366" title="InitMidi" alt="" coords="303,85,367,118"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1453,85,1504,118"/>
+<area shape="rect" id="node15" href="$midi__13_8cpp.html#ac7a306aa81e374b447e7341d4d3a3eea" title="midipage_devices" alt="" coords="439,111,564,145"/>
+<area shape="rect" id="node17" href="$midi__13_8cpp.html#a8f70acacad6eaba8867bdd80dda5e277" title="do_midi_config" alt="" coords="613,111,723,145"/>
+<area shape="rect" id="node19" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="772,111,887,145"/>
+<area shape="rect" id="node21" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="937,111,1081,145"/>
+<area shape="rect" id="node23" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1131,111,1189,145"/>
+<area shape="rect" id="node25" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1239,111,1404,145"/>
+</map>

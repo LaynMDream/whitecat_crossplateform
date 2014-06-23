@@ -1,0 +1,7 @@
+<map id="fenetre_audio" name="fenetre_audio">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="176,5,232,38"/>
+<area shape="rect" id="node5" href="$audio__visu4_8cpp.html#af23f016b2fea8ee1404ad97bbda9853c" title="lecteur_audio" alt="" coords="155,61,253,94"/>
+<area shape="rect" id="node7" href="$gui__boutons__rebuild1_8cpp.html#ac17ac31b9ff52d8521ac6a5d68c9130a" title="raccrochage_midi_visuel\l_horizontal_audio" alt="" coords="301,17,467,71"/>
+<area shape="rect" id="node9" href="$audio__visu4_8cpp.html#a0b5439162e79825e703858743cab3d1d" title="fader_niveau_son" alt="" coords="323,94,445,127"/>
+<area shape="rect" id="node11" href="$gui__boutons__rebuild1_8cpp.html#aecfe785ae7ea9a24ab2cf8d186a5ca79" title="raccrochage_midi_visuel\l_vertical" alt="" coords="515,83,680,138"/>
+</map>

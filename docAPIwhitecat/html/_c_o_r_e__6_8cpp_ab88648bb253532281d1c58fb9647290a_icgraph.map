@@ -1,0 +1,30 @@
+<map id="clear_selection_in" name="clear_selection_in">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#aac6e4d64ae1090f76500b3b84fc74907" title="build_preset_view_from_mem" alt="" coords="619,190,813,224"/>
+<area shape="rect" id="node5" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="863,465,1023,498"/>
+<area shape="rect" id="node22" href="$_c_o_r_e__6_8cpp.html#a64f52fb60631a515e9ad462e7399fded" title="build_preset_view_from\l_fader" alt="" coords="412,294,569,349"/>
+<area shape="rect" id="node25" href="$_c_o_r_e__6_8cpp.html#ae9f2683871f0b160b199ca671e83e9be" title="build_preset_view_from\l_all_existing_mems" alt="" coords="412,372,569,426"/>
+<area shape="rect" id="node28" href="$_c_o_r_e__6_8cpp.html#af84961c97ca774b6ba366722e8fb5b19" title="build_preset_view_from\l_all_faders" alt="" coords="637,422,795,477"/>
+<area shape="rect" id="node31" href="$_c_o_r_e__6_8cpp.html#a44652f47d9b88065a600b65b8e566c7b" title="build_preset_view_from\l_all_existing_mems_and\l_faders" alt="" coords="189,500,355,576"/>
+<area shape="rect" id="node34" href="$_c_o_r_e__6_8cpp.html#a3d3fc2a953ca3a12c822c8d0ea01273d" title="report_selection_in" alt="" coords="207,25,337,58"/>
+<area shape="rect" id="node37" href="$_c_o_r_e__6_8cpp.html#a32dc90bc691784f4e2e205c69a9e0a9d" title="generate_channel_view\l_list_from_patched_circuits" alt="" coords="181,908,363,962"/>
+<area shape="rect" id="node73" href="$_c_o_r_e__6_8cpp.html#adb56537e696a4432b82b53f51263578b" title="record_selection_in" alt="" coords="205,81,339,114"/>
+<area shape="rect" id="node76" href="$_c_o_r_e__6_8cpp.html#a2c11a60360d4777eb77eb5e02b87b83b" title="modify_selection_in" alt="" coords="204,137,340,170"/>
+<area shape="rect" id="node7" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="1097,814,1207,848"/>
+<area shape="rect" id="node15" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="1096,496,1208,529"/>
+<area shape="rect" id="node9" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="1280,921,1419,954"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1496,921,1605,954"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1683,814,1733,848"/>
+<area shape="rect" id="node17" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1320,617,1379,650"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1468,677,1633,710"/>
+<area shape="rect" id="node39" href="$_c_o_r_e__6_8cpp.html#a5e53dc8ef589fe38b9d40e3497ac3f13" title="GlobInit" alt="" coords="457,748,524,781"/>
+<area shape="rect" id="node48" href="$patch__core_8cpp.html#a4d803399af09cb8327d07795a5f51a93" title="do_logical_PatchBox" alt="" coords="871,972,1015,1005"/>
+<area shape="rect" id="node53" href="$plot__core9_8cpp.html#a1bd59a25aebc7c988be294079ea1ef02" title="repatch_from_plot" alt="" coords="428,1150,553,1184"/>
+<area shape="rect" id="node55" href="$plot__core9_8cpp.html#afacf9fafd495ceac6c305b0cf88312f2" title="logical_symbol_edition\l_options" alt="" coords="640,1086,792,1141"/>
+<area shape="rect" id="node61" href="$plot__core9_8cpp.html#a74a79a0e49b7f81a7cb8b944c77b3b0d" title="logical_plot_symbol\l_edition" alt="" coords="423,1022,559,1077"/>
+<area shape="rect" id="node64" href="$save__show__13_8cpp.html#a8330f725aa2c729bdce098aa4b187589" title="Load_Show" alt="" coords="445,828,536,861"/>
+<area shape="rect" id="node41" href="$_c_o_r_e__6_8cpp.html#a29400ad92b676ecb7743384700af5560" title="reset_show" alt="" coords="672,601,760,634"/>
+<area shape="rect" id="node50" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1073,964,1231,1018"/>
+<area shape="rect" id="node57" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="863,1033,1023,1066"/>
+<area shape="rect" id="node67" href="$save__show__13_8cpp.html#a1eafc1ecb75f36c1fe85c967bdea99b0" title="load_the_show" alt="" coords="661,814,771,848"/>
+<area shape="rect" id="node70" href="$save__show__13_8cpp.html#a2c8ff847dfaf2dc6c8765b2bee26edfc" title="do_wizard_reload_from_disk" alt="" coords="623,708,809,741"/>
+</map>

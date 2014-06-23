@@ -1,0 +1,7 @@
+<map id="do_audio_midi_function_next_prev_track" name="do_audio_midi_function_next_prev_track">
+<area shape="rect" id="node3" href="$audio__core5_8cpp.html#a441637bcca17a3226a6b3aadea1defe9" title="AffectSoundFile" alt="" coords="213,89,328,122"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#a23423256688613149926c4984ff25f79" title="player1_do_stop" alt="" coords="376,5,493,38"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a6c41d19d859a2e1292ad64ef915e265f" title="player2_do_stop" alt="" coords="376,61,493,94"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#a494249193c56b13a4e1eac04c6dd2d0b" title="player3_do_stop" alt="" coords="376,117,493,150"/>
+<area shape="rect" id="node11" href="$_c_o_r_e__6_8cpp.html#afbcf17b50787fb3b8360659f6ce9b193" title="player4_do_stop" alt="" coords="376,173,493,206"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="lecteur_audio" name="lecteur_audio">
+<area shape="rect" id="node3" href="$gui__boutons__rebuild1_8cpp.html#ac17ac31b9ff52d8521ac6a5d68c9130a" title="raccrochage_midi_visuel\l_horizontal_audio" alt="" coords="152,5,317,59"/>
+<area shape="rect" id="node5" href="$audio__visu4_8cpp.html#a0b5439162e79825e703858743cab3d1d" title="fader_niveau_son" alt="" coords="173,82,296,115"/>
+<area shape="rect" id="node7" href="$gui__boutons__rebuild1_8cpp.html#aecfe785ae7ea9a24ab2cf8d186a5ca79" title="raccrochage_midi_visuel\l_vertical" alt="" coords="365,71,531,126"/>
+</map>

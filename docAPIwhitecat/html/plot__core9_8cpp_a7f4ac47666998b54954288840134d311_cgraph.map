@@ -1,0 +1,10 @@
+<map id="logical_plot_shape_list" name="logical_plot_shape_list">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="219,5,349,59"/>
+<area shape="rect" id="node7" href="$plot__core9_8cpp.html#a9404896ebed55aa17866299425261f08" title="change_shape_type" alt="" coords="215,82,353,115"/>
+<area shape="rect" id="node9" href="$_c_o_r_e__6_8cpp.html#aa8157e82745eb3ac355d8f443b19955f" title="refresh_shape_factors" alt="" coords="209,138,359,171"/>
+<area shape="rect" id="node11" href="$plot__core9_8cpp.html#a577251b270b8cebde55a95b2c0677942" title="add_shape_to_plot" alt="" coords="219,194,349,227"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="215,250,353,283"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="409,5,559,59"/>
+<area shape="rect" id="node13" href="$plot__core9_8cpp.html#a52ebd70a395c38d47cf2568e5c682cb2" title="clear_shape_slot" alt="" coords="424,166,544,199"/>
+<area shape="rect" id="node15" href="$plot__core9_8cpp.html#a459fcf821f7f5f39b1892a5c6d4ab2d7" title="unselect_all_shapes" alt="" coords="415,222,553,255"/>
+</map>

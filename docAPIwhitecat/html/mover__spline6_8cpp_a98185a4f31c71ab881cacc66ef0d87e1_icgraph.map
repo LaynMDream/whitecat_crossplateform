@@ -1,0 +1,20 @@
+<map id="node_dist" name="node_dist">
+<area shape="rect" id="node3" href="$mover__spline6_8cpp.html#a71a41e8d002948913c4ae79560729c48" title="get_control_points" alt="" coords="133,80,261,114"/>
+<area shape="rect" id="node42" href="$mover__spline6_8cpp.html#a41772bd93cf820f16672603cc49e4a13" title="get_control_points\l_backward" alt="" coords="133,136,261,191"/>
+<area shape="rect" id="node5" href="$mover__spline6_8cpp.html#a319081649340b9fe035cff9aa020468b" title="draw_spline" alt="" coords="340,60,431,94"/>
+<area shape="rect" id="node19" href="$mover__spline6_8cpp.html#a090797adb1f79d0d55f8967194130c47" title="Prepare_Cross_Spline" alt="" coords="309,147,461,180"/>
+<area shape="rect" id="node7" href="$mover__spline6_8cpp.html#a280d32c6ba452ddb38adc34043bc2537" title="draw_splines" alt="" coords="535,51,633,84"/>
+<area shape="rect" id="node9" href="$mover__spline6_8cpp.html#af3dc1ccb6aa1e9a53aeccc0cae5ecc92" title="ShowSpline" alt="" coords="731,36,821,70"/>
+<area shape="rect" id="node11" href="$mover__2013_8cpp.html#acc2bd882d4deb89b6251c3fedaf0d8b1" title="mover_box" alt="" coords="897,35,983,68"/>
+<area shape="rect" id="node13" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="1555,40,1613,74"/>
+<area shape="rect" id="node15" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1663,40,1828,74"/>
+<area shape="rect" id="node17" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1877,147,1928,180"/>
+<area shape="rect" id="node22" href="$mover__2013_8cpp.html#a4cd6cdd120b9feb87202ddb062daecbb" title="prepare_move_values" alt="" coords="509,147,659,180"/>
+<area shape="rect" id="node26" href="$mover__2013_8cpp.html#af1627b55add388ce92ebb0130bc45ede" title="Move_do_crossfade" alt="" coords="707,147,845,180"/>
+<area shape="rect" id="node28" href="$_m_a_i_n__avec__objets_8cpp.html#a6a015280c1363331ada8a329be6eb7c8" title="ticker" alt="" coords="913,91,967,124"/>
+<area shape="rect" id="node38" href="$tracker__main14nov_8cpp.html#a343d540f006963227ee5b445888ca393" title="ticker_move" alt="" coords="893,147,987,180"/>
+<area shape="rect" id="node30" href="$_c_f_g__config__panel__8_8cpp.html#aff76db94408106be22f658a05f17831a" title="do_core_config" alt="" coords="1036,40,1145,74"/>
+<area shape="rect" id="node32" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="1196,40,1311,74"/>
+<area shape="rect" id="node34" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1361,40,1505,74"/>
+<area shape="rect" id="node40" href="$tracker__main14nov_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1065,147,1116,180"/>
+</map>

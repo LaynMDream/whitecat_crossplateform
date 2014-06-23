@@ -1,0 +1,19 @@
+<map id="do_logical_fenetre_audio" name="do_logical_fenetre_audio">
+<area shape="rect" id="node3" href="$_c_o_r_e__6_8cpp.html#aaeed8d0bce556dd70a3865378bfa6f0a" title="scan_audiofolder" alt="" coords="209,5,329,38"/>
+<area shape="rect" id="node5" href="$audio__core5_8cpp.html#a686da0cc1576b2786c51a621d5de86f5" title="Load_audiofiles_cues" alt="" coords="196,61,343,94"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#a9574e0b790211959c7398e42468410d8" title="toggle" alt="" coords="907,215,963,249"/>
+<area shape="rect" id="node9" href="$audio__core5_8cpp.html#a657e082e79a514893ab79a019dfa5e5a" title="do_logical_lecteur\l_audio" alt="" coords="207,341,332,395"/>
+<area shape="rect" id="node42" href="$_c_o_r_e__6_8cpp.html#a934d136a7c8a752109bc4b160717ee36" title="reset_index_actions" alt="" coords="200,418,339,451"/>
+<area shape="rect" id="node44" href="$_c_o_r_e__6_8cpp.html#afb9b54a7bc4ccbba5ddcdc2097550188" title="reset_indexs_confirmation" alt="" coords="183,474,356,507"/>
+<area shape="rect" id="node11" href="$audio__core5_8cpp.html#a441637bcca17a3226a6b3aadea1defe9" title="AffectSoundFile" alt="" coords="443,559,557,593"/>
+<area shape="rect" id="node13" href="$_c_o_r_e__6_8cpp.html#a23423256688613149926c4984ff25f79" title="player1_do_stop" alt="" coords="668,591,785,625"/>
+<area shape="rect" id="node15" href="$_c_o_r_e__6_8cpp.html#a6c41d19d859a2e1292ad64ef915e265f" title="player2_do_stop" alt="" coords="668,653,785,686"/>
+<area shape="rect" id="node17" href="$_c_o_r_e__6_8cpp.html#a494249193c56b13a4e1eac04c6dd2d0b" title="player3_do_stop" alt="" coords="668,475,785,509"/>
+<area shape="rect" id="node19" href="$_c_o_r_e__6_8cpp.html#afbcf17b50787fb3b8360659f6ce9b193" title="player4_do_stop" alt="" coords="668,533,785,566"/>
+<area shape="rect" id="node21" href="$_c_o_r_e__6_8cpp.html#ad7187a2df52460607db81f8bf0500953" title="attribute_midi_solo\l_affectation" alt="" coords="661,397,792,451"/>
+<area shape="rect" id="node29" href="$_c_o_r_e__6_8cpp.html#a852678868d2a66db68f4a2c9eacfcc78" title="reset_numeric_entry" alt="" coords="431,295,569,329"/>
+<area shape="rect" id="node32" href="$gui__boutons__rebuild1_8cpp.html#af5f676fb86d11fae23764afc2d4639b0" title="raccrochage_midi_logical\l_horizontal_audio" alt="" coords="416,218,584,273"/>
+<area shape="rect" id="node35" href="$audio__core5_8cpp.html#a8b31946eb761c7f981bb92526a3f065a" title="do_logical_fader_niveau_son" alt="" coords="405,351,595,385"/>
+<area shape="rect" id="node23" href="$_c_o_r_e__6_8cpp.html#aa6f6d52757e4af2364c17c3e9dee8095" title="search_and_desaffect\l_previous_midi_signal" alt="" coords="860,397,1009,451"/>
+<area shape="rect" id="node39" href="$gui__boutons__rebuild1_8cpp.html#a78d337776a997c9274f38c73b7c4b3e4" title="raccrochage_midi_logical\l_vertical" alt="" coords="643,319,811,374"/>
+</map>

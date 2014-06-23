@@ -1,0 +1,1058 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>WhitecatAPI: Référence de la classe curve_node</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">WhitecatAPI
+   &#160;<span id="projectnumber">0.8.5.8</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classcurve__node.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="#pub-static-attribs">Attributs publics statiques</a> &#124;
+<a href="classcurve__node-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe curve_node</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="patch__splines__2_8h_source.html">patch_splines_2.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de curve_node:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node__coll__graph.svg" width="163" height="46"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:add0d28f291f1cfe22e11f5436a8ba161"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#add0d28f291f1cfe22e11f5436a8ba161">curve_node</a> (int ax, int ay, fixed atangent)</td></tr>
+<tr class="separator:add0d28f291f1cfe22e11f5436a8ba161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1146c27b9e6c0b3a5f6fb3faced5cea2"><td class="memItemLeft" align="right" valign="top">fixed&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a1146c27b9e6c0b3a5f6fb3faced5cea2">dist</a> (const <a class="el" href="classcurve__node.html">curve_node</a> &amp;other)</td></tr>
+<tr class="separator:a1146c27b9e6c0b3a5f6fb3faced5cea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e51b51f9b6ede537c5e11b7f234188"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcurve__node.html">curve_node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a55e51b51f9b6ede537c5e11b7f234188">dummy</a> (const <a class="el" href="classcurve__node.html">curve_node</a> &amp;prev)</td></tr>
+<tr class="separator:a55e51b51f9b6ede537c5e11b7f234188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f8acf6b081673429257867a4115c57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a22f8acf6b081673429257867a4115c57">calc_tangents</a> (void)</td></tr>
+<tr class="separator:a22f8acf6b081673429257867a4115c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14aba313f46315faae44bcca011136a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a14aba313f46315faae44bcca011136a9">get_control_points</a> (const <a class="el" href="classcurve__node.html">curve_node</a> &amp;other, int points[8])</td></tr>
+<tr class="separator:a14aba313f46315faae44bcca011136a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1a06d649c6dce22334da762f2955b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#abc1a06d649c6dce22334da762f2955b8">write_curve</a> (const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:abc1a06d649c6dce22334da762f2955b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1db9f4ea1c53ab2eab6072b2cdc90eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#ab1db9f4ea1c53ab2eab6072b2cdc90eb">draw</a> (int n, const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:ab1db9f4ea1c53ab2eab6072b2cdc90eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace217c0200a043c2d2f5f071fde8e56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#aace217c0200a043c2d2f5f071fde8e56">draw_splines</a> (const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:aace217c0200a043c2d2f5f071fde8e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c54a9611e91814177cf901636d4e8e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a5c54a9611e91814177cf901636d4e8e5">view_after_draw</a> (const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:a5c54a9611e91814177cf901636d4e8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8f3c6e6a53e062f5c2fb1cf7243969"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#afb8f3c6e6a53e062f5c2fb1cf7243969">SplineCurve</a> (const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:afb8f3c6e6a53e062f5c2fb1cf7243969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e52fe7e8f762074b804b88a1b420cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#ac1e52fe7e8f762074b804b88a1b420cf">build_square</a> (int curve, const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:ac1e52fe7e8f762074b804b88a1b420cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a7bb24aa5832b54ec61507a556dda9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a51a7bb24aa5832b54ec61507a556dda9">build_fluo</a> (int curve, const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:a51a7bb24aa5832b54ec61507a556dda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6338ccf647d5f510c47702f613a3d9d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a6338ccf647d5f510c47702f613a3d9d2">build_preheat</a> (int curve, const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:a6338ccf647d5f510c47702f613a3d9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787cd6340d6b9e15da5723ed25eb18ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a787cd6340d6b9e15da5723ed25eb18ff">build_inverse</a> (int curve, const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;gc)</td></tr>
+<tr class="separator:a787cd6340d6b9e15da5723ed25eb18ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Attributs publics</h2></td></tr>
+<tr class="memitem:aa7ae8f2ee3bbd3e6194785c392751cdb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#aa7ae8f2ee3bbd3e6194785c392751cdb">x</a></td></tr>
+<tr class="separator:aa7ae8f2ee3bbd3e6194785c392751cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1f4f007a920aa79c1f1f0ff0b49465"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#afc1f4f007a920aa79c1f1f0ff0b49465">y</a></td></tr>
+<tr class="separator:afc1f4f007a920aa79c1f1f0ff0b49465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ea7469070f7bb90ceae073d1d075a6"><td class="memItemLeft" align="right" valign="top">fixed&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a31ea7469070f7bb90ceae073d1d075a6">tangent</a></td></tr>
+<tr class="separator:a31ea7469070f7bb90ceae073d1d075a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Attributs publics statiques</h2></td></tr>
+<tr class="memitem:ae995b9ef63ae5b880d6006083acaf6d3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#ae995b9ef63ae5b880d6006083acaf6d3">index_writing</a> =0</td></tr>
+<tr class="separator:ae995b9ef63ae5b880d6006083acaf6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c72a6637b3b68983b5ce55b90665bf"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a16c72a6637b3b68983b5ce55b90665bf">spline_level</a> =0.0</td></tr>
+<tr class="separator:a16c72a6637b3b68983b5ce55b90665bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe017d998cde30d2ca5f7c8ea68ba3da"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#abe017d998cde30d2ca5f7c8ea68ba3da">selected</a> =0</td></tr>
+<tr class="separator:abe017d998cde30d2ca5f7c8ea68ba3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62eb9b6b3a24274664775a07c565d39c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a62eb9b6b3a24274664775a07c565d39c">the_spline_level</a> [16]</td></tr>
+<tr class="separator:a62eb9b6b3a24274664775a07c565d39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348cce4dfe54130e8b8b2fb218baedfb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a348cce4dfe54130e8b8b2fb218baedfb">report</a> [16][256]</td></tr>
+<tr class="separator:a348cce4dfe54130e8b8b2fb218baedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c0c53bc02942259c36c753232326aa"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#af9c0c53bc02942259c36c753232326aa">index_spline_level</a> =0</td></tr>
+<tr class="separator:af9c0c53bc02942259c36c753232326aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4479fff7bfc410d6f6d1df9975261aa8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a4479fff7bfc410d6f6d1df9975261aa8">index_enable_editing</a> =0</td></tr>
+<tr class="separator:a4479fff7bfc410d6f6d1df9975261aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aebfec8e10d7fc02442cd5326433c93"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a0aebfec8e10d7fc02442cd5326433c93">curves</a> [514]</td></tr>
+<tr class="separator:a0aebfec8e10d7fc02442cd5326433c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7280e17d47152797e10e5992791ee9b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#ab7280e17d47152797e10e5992791ee9b">ctrl_pt</a> [16][8][2]</td></tr>
+<tr class="separator:ab7280e17d47152797e10e5992791ee9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab45660e4c1077f8742b151fcb0cdcad"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#aab45660e4c1077f8742b151fcb0cdcad">diam</a> =10</td></tr>
+<tr class="separator:aab45660e4c1077f8742b151fcb0cdcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd9362e19ab4c4a70164622a7aebb61"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcurve__node.html">curve_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#affd9362e19ab4c4a70164622a7aebb61">nodes</a> [<a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>]</td></tr>
+<tr class="separator:affd9362e19ab4c4a70164622a7aebb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d4ec4d9b46abddbcec3e0c46f53d3f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a09d4ec4d9b46abddbcec3e0c46f53d3f">node_count</a> =0</td></tr>
+<tr class="separator:a09d4ec4d9b46abddbcec3e0c46f53d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e1f23c6d19a1ca915697c80ed72a84"><td class="memItemLeft" align="right" valign="top">static fixed&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a46e1f23c6d19a1ca915697c80ed72a84">curviness</a></td></tr>
+<tr class="separator:a46e1f23c6d19a1ca915697c80ed72a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="add0d28f291f1cfe22e11f5436a8ba161"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">curve_node::curve_node </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fixed&#160;</td>
+          <td class="paramname"><em>atangent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The constructor </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ax</td><td>abscissa </td></tr>
+    <tr><td class="paramname">ay</td><td>ordinate </td></tr>
+    <tr><td class="paramname">atangent</td><td>slope </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_add0d28f291f1cfe22e11f5436a8ba161_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a51a7bb24aa5832b54ec61507a556dda9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::build_fluo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curve</td><td>index of the chosen curve (0..15) </td></tr>
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a51a7bb24aa5832b54ec61507a556dda9_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a787cd6340d6b9e15da5723ed25eb18ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::build_inverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curve</td><td>index of the chosen curve (0..15) </td></tr>
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6338ccf647d5f510c47702f613a3d9d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::build_preheat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curve</td><td>index of the chosen curve (0..15) </td></tr>
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a6338ccf647d5f510c47702f613a3d9d2_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1e52fe7e8f762074b804b88a1b420cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::build_square </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curve</td><td>index of the chosen curve (0..15) </td></tr>
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a22f8acf6b081673429257867a4115c57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void curve_node::calc_tangents </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a22f8acf6b081673429257867a4115c57_cgraph.svg" width="592" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a22f8acf6b081673429257867a4115c57_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1146c27b9e6c0b3a5f6fb3faced5cea2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fixed curve_node::dist </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcurve__node.html">curve_node</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>calculates the distance between this and another <a class="el" href="classcurve__node.html">curve_node</a> </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>second node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the distance from this to the other </dd></dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1db9f4ea1c53ab2eab6072b2cdc90eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::draw </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>value meaning something </td></tr>
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aace217c0200a043c2d2f5f071fde8e56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::draw_splines </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>draws the spline paths </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_aace217c0200a043c2d2f5f071fde8e56_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_aace217c0200a043c2d2f5f071fde8e56_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a55e51b51f9b6ede537c5e11b7f234188"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcurve__node.html">curve_node</a> &amp; curve_node::dummy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcurve__node.html">curve_node</a> &amp;&#160;</td>
+          <td class="paramname"><em>prev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_cgraph.svg" width="366" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a14aba313f46315faae44bcca011136a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void curve_node::get_control_points </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcurve__node.html">curve_node</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>points</em>[8]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>calculates the control points for a spline segment </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the second point of the segment ('this' is the first one) </td></tr>
+    <tr><td class="paramname">points</td><td>(output parameter) a table of 8 integers </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a14aba313f46315faae44bcca011136a9_cgraph.svg" width="342" height="64"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a14aba313f46315faae44bcca011136a9_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afb8f3c6e6a53e062f5c2fb1cf7243969"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::SplineCurve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>draws the spline paths ... </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c54a9611e91814177cf901636d4e8e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::view_after_draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a5c54a9611e91814177cf901636d4e8e5_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abc1a06d649c6dce22334da762f2955b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::write_curve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgraphic__context.html">graphic_context</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>function to do something </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>graphic context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_abc1a06d649c6dce22334da762f2955b8_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_abc1a06d649c6dce22334da762f2955b8_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="ab7280e17d47152797e10e5992791ee9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::ctrl_pt[16][8][2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0aebfec8e10d7fc02442cd5326433c93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::curves[514]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a46e1f23c6d19a1ca915697c80ed72a84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fixed curve_node::curviness</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab45660e4c1077f8742b151fcb0cdcad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::diam =10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4479fff7bfc410d6f6d1df9975261aa8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool curve_node::index_enable_editing =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9c0c53bc02942259c36c753232326aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::index_spline_level =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae995b9ef63ae5b880d6006083acaf6d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool curve_node::index_writing =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09d4ec4d9b46abddbcec3e0c46f53d3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::node_count =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="affd9362e19ab4c4a70164622a7aebb61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcurve__node.html">curve_node</a> curve_node::nodes[<a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a348cce4dfe54130e8b8b2fb218baedfb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::report[16][256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe017d998cde30d2ca5f7c8ea68ba3da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::selected =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16c72a6637b3b68983b5ce55b90665bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float curve_node::spline_level =0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a31ea7469070f7bb90ceae073d1d075a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fixed curve_node::tangent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a62eb9b6b3a24274664775a07c565d39c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::the_spline_level[16]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa7ae8f2ee3bbd3e6194785c392751cdb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afc1f4f007a920aa79c1f1f0ff0b49465"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int curve_node::y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li><a class="el" href="patch__splines__2_8h_source.html">patch_splines_2.h</a></li>
+<li><a class="el" href="_m_a_i_n__avec__objets_8cpp.html">MAIN_avec_objets.cpp</a></li>
+<li><a class="el" href="patch__splines__2_8cpp.html">patch_splines_2.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classcurve__node.html">curve_node</a></li>
+    <li class="footer">Généré le Lundi 23 Juin 2014 12:04:29 pour WhitecatAPI par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>

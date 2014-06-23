@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
 <title>WhitecatAPI: Référence du fichier dmx_enttec_pro.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -38,7 +38,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.7 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -114,9 +114,21 @@ $(document).ready(function(){initNavTree('dmx__enttec__pro_8cpp.html','');});
 
 <p>{send dmx fonctions to the enttec usb pro}  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;process.h&gt;</code><br/>
-<code>#include &lt;assert.h&gt;</code><br/>
-<code>#include &lt;tchar.h&gt;</code><br/>
+<div class="textblock"><code>#include &lt;process.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;tchar.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de dmx_enttec_pro.cpp:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp__incl.svg" width="267" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp__dep__incl.svg" width="568" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -147,7 +159,7 @@ Macros</h2></td></tr>
 <tr class="separator:afcf7a892f1028831b750137f57fab1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cb183337ce88373f8f4a685c606bbe4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dmx__enttec__pro_8cpp.html#a0cb183337ce88373f8f4a685c606bbe4">SEND_ON_CHANGE_MODE</a></td></tr>
 <tr class="separator:a0cb183337ce88373f8f4a685c606bbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f535c4d431cda9d73c8a86449fd610"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dmx__enttec__pro_8cpp.html#a05f535c4d431cda9d73c8a86449fd610">READ_ONE_BYTE</a>(handle, byte, bytes_read, overlapped_struct)&#160;&#160;&#160;ReadFile(handle,byte,1,bytes_read,overlapped_struct)</td></tr>
+<tr class="memitem:a05f535c4d431cda9d73c8a86449fd610"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dmx__enttec__pro_8cpp.html#a05f535c4d431cda9d73c8a86449fd610">READ_ONE_BYTE</a>(handle, <a class="el" href="whitecat_8h.html#a2b7e7856b48ec3327148ac994ad95cd5">byte</a>, bytes_read, overlapped_struct)&#160;&#160;&#160;ReadFile(handle,<a class="el" href="whitecat_8h.html#a2b7e7856b48ec3327148ac994ad95cd5">byte</a>,1,bytes_read,overlapped_struct)</td></tr>
 <tr class="separator:a05f535c4d431cda9d73c8a86449fd610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -197,8 +209,8 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>{send dmx fonctions to the enttec usb pro} </p>
 <dl class="section author"><dt>Auteur</dt><dd>Christoph Guillermet </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>{0.8.5.2} </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>{19/02/2014}</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>{0.8.6} </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>{28/04/2014}</dd></dl>
 <p>White Cat {- categorie} {- sous categorie {- sous categorie}}</p>
 <p>Gère les envoie du data dmx et autre fonction vers l'enttec usb pro, specifique pour windows</p>
 <p>send dmx data and other fonctions to the enttec usb pro, only for windows </p>
@@ -241,7 +253,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">byte, </td>
+          <td class="paramname"><a class="el" href="whitecat_8h.html#a2b7e7856b48ec3327148ac994ad95cd5">byte</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -258,7 +270,7 @@ Variables</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;ReadFile(handle,byte,1,bytes_read,overlapped_struct)</td>
+          <td></td><td>&#160;&#160;&#160;ReadFile(handle,<a class="el" href="whitecat_8h.html#a2b7e7856b48ec3327148ac994ad95cd5">byte</a>,1,bytes_read,overlapped_struct)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -363,6 +375,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_afd3b4262aa6848e2e9baa97f633b94ce_icgraph.svg" width="100%" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aa2acf81ae67bb8af4e9fc88bf617a8bc"></a>
@@ -377,6 +397,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_aa2acf81ae67bb8af4e9fc88bf617a8bc_icgraph.svg" width="100%" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -393,6 +421,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a99cd8610d4ea2b4275c5b0ef7c9593dc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a33e896c3cd1bb33a086b10cbe0ac694e"></a>
@@ -407,6 +443,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a33e896c3cd1bb33a086b10cbe0ac694e_icgraph.svg" width="100%" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -439,6 +483,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a29568351e92472b4d93aacdf7a4d6d0a_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -478,6 +530,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a6a5a2ed5121b0102514b55519f421807_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae444f20d2cc7a88e989ff0681053204f"></a>
@@ -492,6 +552,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_ae444f20d2cc7a88e989ff0681053204f_icgraph.svg" width="100%" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -508,6 +576,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a237a7a270b1965c63ef1d27ccfda8b78_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ad6b2fce0a38f51413e2141e6ca8c23dc"></a>
@@ -523,6 +599,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_ad6b2fce0a38f51413e2141e6ca8c23dc_cgraph.svg" width="398" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_ad6b2fce0a38f51413e2141e6ca8c23dc_icgraph.svg" width="100%" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a8cee234b25cc0342fb3cac020ef2701f"></a>
@@ -537,6 +629,22 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a8cee234b25cc0342fb3cac020ef2701f_cgraph.svg" width="363" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="dmx__enttec__pro_8cpp_a8cee234b25cc0342fb3cac020ef2701f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -655,9 +763,9 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dmx__enttec__pro_8cpp.html">dmx_enttec_pro.cpp</a></li>
-    <li class="footer">Généré le Mardi 18 Mars 2014 13:18:48 pour WhitecatAPI par
+    <li class="footer">Généré le Lundi 23 Juin 2014 12:04:26 pour WhitecatAPI par
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
 </div>
 </body>

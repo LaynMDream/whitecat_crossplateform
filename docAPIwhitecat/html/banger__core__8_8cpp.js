@@ -8,6 +8,7 @@ var banger__core__8_8cpp =
     [ "do_go_back_bang", "banger__core__8_8cpp.html#a790bd34b44c1055de586eb9f279b3b3e", null ],
     [ "do_logical_feedback_banger", "banger__core__8_8cpp.html#af7d3486500e160cd24bc1d25fc8cfdae", null ],
     [ "do_logical_fenetre_banger", "banger__core__8_8cpp.html#a4fe16ad483c0c1609d97aeb9a23c74ee", null ],
+    [ "do_loop_bang", "banger__core__8_8cpp.html#a96e373fcf4106adeef778f40ea6c5ebc", null ],
     [ "do_send_bang", "banger__core__8_8cpp.html#afa98bbdb588f29b8fc94df9f7754f05f", null ],
     [ "refresh_banger_wx", "banger__core__8_8cpp.html#ab405ab53ea444b049e5ffa258498fcb6", null ],
     [ "restore_state_of_fader_before_bang", "banger__core__8_8cpp.html#a3226c56ba60abafd10eb8dc5ef8200e7", null ],

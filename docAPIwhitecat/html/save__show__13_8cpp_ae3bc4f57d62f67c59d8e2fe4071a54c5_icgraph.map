@@ -1,0 +1,13 @@
+<map id="Save_Launchpad_RetroLight" name="Save_Launchpad_RetroLight">
+<area shape="rect" id="node3" href="$save__show__13_8cpp.html#ada1116462104df2f0db8774b30c326b1" title="Save_Show" alt="" coords="244,70,335,103"/>
+<area shape="rect" id="node5" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="915,95,1053,129"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1317,69,1368,102"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="548,42,705,75"/>
+<area shape="rect" id="node15" href="$save__show__13_8cpp.html#aa07c40b35aac29aacbdbc9a427813085" title="save_the_show" alt="" coords="385,149,497,182"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1131,95,1240,129"/>
+<area shape="rect" id="node17" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="547,149,707,182"/>
+<area shape="rect" id="node19" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="756,149,865,182"/>
+<area shape="rect" id="node22" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="755,205,867,238"/>
+<area shape="rect" id="node24" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="955,191,1013,225"/>
+<area shape="rect" id="node26" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="1103,178,1268,211"/>
+</map>

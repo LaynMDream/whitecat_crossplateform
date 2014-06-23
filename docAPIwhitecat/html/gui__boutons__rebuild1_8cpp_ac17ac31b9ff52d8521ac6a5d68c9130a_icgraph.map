@@ -1,0 +1,7 @@
+<map id="raccrochage_midi_visuel_horizontal_audio" name="raccrochage_midi_visuel_horizontal_audio">
+<area shape="rect" id="node3" href="$audio__visu4_8cpp.html#af23f016b2fea8ee1404ad97bbda9853c" title="lecteur_audio" alt="" coords="219,15,317,49"/>
+<area shape="rect" id="node5" href="$audio__visu4_8cpp.html#a839f8a050c93200c75b01047fd4f6d09" title="fenetre_audio" alt="" coords="367,15,465,49"/>
+<area shape="rect" id="node7" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="515,15,573,49"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="623,15,788,49"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="837,15,888,49"/>
+</map>

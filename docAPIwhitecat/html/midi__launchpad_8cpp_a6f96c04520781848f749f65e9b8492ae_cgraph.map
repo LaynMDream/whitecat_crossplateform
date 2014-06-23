@@ -1,0 +1,6 @@
+<map id="reset_launchpad" name="reset_launchpad">
+<area shape="rect" id="node3" href="$midi__launchpad_8cpp.html#ae33e05f7bf68aa5563156d334e942bc7" title="define_colors" alt="" coords="217,5,316,38"/>
+<area shape="rect" id="node5" href="$_c_o_r_e__6_8cpp.html#ad598ada3395937db3457ab6ee10dcdb7" title="send_my_midi_note" alt="" coords="411,113,549,146"/>
+<area shape="rect" id="node7" href="$_c_o_r_e__6_8cpp.html#afba5d73bd277858cb503c6bb4ae4634c" title="send_my_midi_note_delayed" alt="" coords="172,111,361,145"/>
+<area shape="rect" id="node9" href="$midi__launchpad_8cpp.html#af9548fa9e59c002812e934498e361e37" title="launchpad_refresh_buffer_led" alt="" coords="172,167,361,201"/>
+</map>

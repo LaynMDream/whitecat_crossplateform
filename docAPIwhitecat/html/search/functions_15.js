@@ -9,6 +9,7 @@ var searchData=
   ['wizard_5fclear_5ftransfert_5farray',['wizard_clear_transfert_array',['../wizard__operations_8cpp.html#ac5517aa5e0fd9057c55c2760b41ec268',1,'wizard_operations.cpp']]],
   ['wizard_5fcopy_5fmem',['wizard_copy_mem',['../wizard__operations_8cpp.html#a2d1db01db432b298e1fc290a739e6645',1,'wizard_operations.cpp']]],
   ['wizard_5fdelete_5fmem',['wizard_delete_mem',['../wizard__operations_8cpp.html#a8bdf6e58c74c657d894478f6ea9fbb21',1,'wizard_operations.cpp']]],
+  ['wizard_5fdetect_5funused_5fchannels',['wizard_detect_unused_channels',['../wizard__operations_8cpp.html#aff087100adcf4c71ab4c400745f20df9',1,'wizard_operations.cpp']]],
   ['wizard_5finsert_5fmems',['wizard_insert_mems',['../wizard__operations_8cpp.html#adc2a1b3d3a17b0399ba3d3c40eaeb8dd',1,'wizard_operations.cpp']]],
   ['wizard_5finspekt_5fmem',['wizard_inspekt_mem',['../wizard__operations_8cpp.html#a36fb1e8c45313b896f866d928fee291d',1,'wizard_operations.cpp']]],
   ['wizard_5fmove_5fmems',['wizard_move_mems',['../wizard__operations_8cpp.html#ab59b0bf3d4f7b7d778b28525293ba71d',1,'wizard_operations.cpp']]],
@@ -17,7 +18,7 @@ var searchData=
   ['wizard_5frestore_5fmem',['wizard_restore_mem',['../wizard__operations_8cpp.html#a827cf3f16dc402b17022605bc20c3eea',1,'wizard_operations.cpp']]],
   ['wizard_5fstore_5fchannel_5fin',['wizard_store_channel_in',['../wizard_8cpp.html#a844a0be2fdee312f19033cb1cc31a876',1,'wizard.cpp']]],
   ['wizard_5fstore_5fchannel_5fout',['wizard_store_channel_out',['../wizard_8cpp.html#a9164e259676797e2e848b3862d8dcb0f',1,'wizard.cpp']]],
-  ['write_5fcurve',['write_curve',['../patch__splines__2_8cpp.html#a8fbf4d116bffee5fdda73fc5670377a7',1,'patch_splines_2.cpp']]],
+  ['write_5fcurve',['write_curve',['../classcurve__node.html#abc1a06d649c6dce22334da762f2955b8',1,'curve_node']]],
   ['write_5findexes',['write_indexes',['../save__show__13_8cpp.html#a70b1e28043c498662659fdf0d22c83b3',1,'save_show_13.cpp']]],
   ['write_5fshow_5fcoming_5ffrom',['write_show_coming_from',['../_c_o_r_e__6_8cpp.html#aeb5185db4ec05f1a5b81fd5e86801b68',1,'CORE_6.cpp']]],
   ['write_5fwindow_5findexes_5ffrom_5flist_5fof_5fwindows',['write_window_indexes_from_list_of_windows',['../_c_o_r_e__6_8cpp.html#a03f118b2d12fcfe87b0a0d09b8636d37',1,'CORE_6.cpp']]]

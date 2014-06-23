@@ -1,0 +1,11 @@
+<map id="wizard_inspekt_mem" name="wizard_inspekt_mem">
+<area shape="rect" id="node3" href="$wizard__operations_8cpp.html#a0fd8df35a33a8ec97cc12d2ef23c11f0" title="do_wizard_mem" alt="" coords="200,33,317,66"/>
+<area shape="rect" id="node5" href="$logicals__intres_8cpp.html#a74cf9c04c734ab342f88799efbfc4210" title="operations_confirmation" alt="" coords="365,33,525,66"/>
+<area shape="rect" id="node7" href="$keyboard__functions2_8cpp.html#a548548066307f816c5021de7d6e4f26a" title="key_affectation" alt="" coords="575,5,684,38"/>
+<area shape="rect" id="node15" href="$logicals__intres_8cpp.html#a85967c22135715eca94d08af2ec1a1fb" title="fenetre_confirm" alt="" coords="573,61,685,94"/>
+<area shape="rect" id="node9" href="$keyboard__routines2_8cpp.html#a8563320b8eab661232619224650de244" title="commandes_clavier" alt="" coords="733,5,872,38"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="949,5,1059,38"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1136,33,1187,66"/>
+<area shape="rect" id="node17" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="773,61,832,94"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="921,61,1087,94"/>
+</map>
