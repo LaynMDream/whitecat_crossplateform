@@ -12,6 +12,7 @@ var searchData=
   ['enttec_5fpro_5fsetcommparams',['Enttec_Pro_SetCommParams',['../dmx__enttec__pro_8cpp.html#ae444f20d2cc7a88e989ff0681053204f',1,'dmx_enttec_pro.cpp']]],
   ['enttec_5fpro_5fsetcommparamsin',['Enttec_Pro_SetCommParamsIN',['../dmx__enttec__pro_8cpp.html#a237a7a270b1965c63ef1d27ccfda8b78',1,'dmx_enttec_pro.cpp']]],
   ['error_5fhandler',['error_handler',['../saves__export__pdf2_8cpp.html#a0b3e42112f8102ab4075d2e454d417b6',1,'saves_export_pdf2.cpp']]],
+  ['evaquire',['EvAquire',['../midi__13_8cpp.html#a4104c2ae7e71376ad9dc78929450dc51',1,'midi_13.cpp']]],
   ['exchange_5fshape_5fposition',['exchange_shape_position',['../plot__core9_8cpp.html#af1de2902c8517c77ae02efcb54bda21e',1,'plot_core9.cpp']]],
   ['exchange_5fsymbol_5fposition',['exchange_symbol_position',['../plot_8cpp.html#afa207c7603f4ee259c528f3d86afb2f6',1,'exchange_symbol_position(int calc, int pos_source, int pos_dest):&#160;plot.cpp'],['../plot__core9_8cpp.html#afa207c7603f4ee259c528f3d86afb2f6',1,'exchange_symbol_position(int calc, int pos_source, int pos_dest):&#160;plot_core9.cpp']]],
   ['exclude_5freinclude_5fchannels_5ffrom_5fgrand_5fmaster_5faction',['exclude_reinclude_channels_from_grand_master_action',['../_c_o_r_e__6_8cpp.html#ad6f4a21753b3461e5d03d0b520c9532b',1,'CORE_6.cpp']]]

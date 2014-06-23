@@ -28,11 +28,11 @@ WWWWWWWW           C  WWWWWWWW   |
 /**
 
 * \file patch_splines_2.cpp
-* \brief {Curves calcul for each canal in the patch}
+* \brief Curves calcul for each canal in the patch
 * \author Christoph Guillermet
 * \author Georges Khaznadar
-* \version {0.8.6}
-* \date {21/06/2014}
+* \version 0.8.6
+* \date 21/06/2014
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -186,7 +186,8 @@ int curve_node::draw(int n, const graphic_context& gc)
   }
 
 
-  if( gc.window_focus_id==gc.W_PATCH && mouse_x>=((nodes[n].x)-(diam/2)) && mouse_x<=((nodes[n].x)+(diam/2))
+  if( gc.window_focus_id==gc.W_PATCH 
+      && mouse_x>=((nodes[n].x)-(diam/2)) && mouse_x<=((nodes[n].x)+(diam/2))
       && mouse_x>=gc.xpatch_window+30+455 && mouse_x<=gc.xpatch_window+30+455+255
       && mouse_x>(nodes[n-1].x+(diam/2)) && mouse_x<(nodes[n+1].x-(diam/2))
       && mouse_y>=gc.ypatch_window+50 && mouse_y<=gc.ypatch_window+255+50    )

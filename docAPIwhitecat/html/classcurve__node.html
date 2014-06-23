@@ -107,18 +107,21 @@ $(document).ready(function(){initNavTree('classcurve__node.html','');});
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="#pub-attribs">Attributs publics</a> &#124;
 <a href="#pub-static-attribs">Attributs publics statiques</a> &#124;
+<a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
 <a href="classcurve__node-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe curve_node</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>implements one node of a spline curve  
+ <a href="classcurve__node.html#details">Plus de détails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="patch__splines__2_8h_source.html">patch_splines_2.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe de collaboration de curve_node:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node__coll__graph.svg" width="163" height="46"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node__coll__graph.svg" width="163" height="46"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -183,14 +186,21 @@ Attributs publics statiques</h2></td></tr>
 <tr class="separator:ab7280e17d47152797e10e5992791ee9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab45660e4c1077f8742b151fcb0cdcad"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#aab45660e4c1077f8742b151fcb0cdcad">diam</a> =10</td></tr>
 <tr class="separator:aab45660e4c1077f8742b151fcb0cdcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affd9362e19ab4c4a70164622a7aebb61"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcurve__node.html">curve_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#affd9362e19ab4c4a70164622a7aebb61">nodes</a> [<a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>]</td></tr>
-<tr class="separator:affd9362e19ab4c4a70164622a7aebb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d4ec4d9b46abddbcec3e0c46f53d3f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a09d4ec4d9b46abddbcec3e0c46f53d3f">node_count</a> =0</td></tr>
 <tr class="separator:a09d4ec4d9b46abddbcec3e0c46f53d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46e1f23c6d19a1ca915697c80ed72a84"><td class="memItemLeft" align="right" valign="top">static fixed&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a46e1f23c6d19a1ca915697c80ed72a84">curviness</a></td></tr>
 <tr class="separator:a46e1f23c6d19a1ca915697c80ed72a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Attributs privés statiques</h2></td></tr>
+<tr class="memitem:a3093639cc6754153904d075329ff2e2c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcurve__node.html">curve_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html#a3093639cc6754153904d075329ff2e2c">nodes</a> [<a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>]</td></tr>
+<tr class="memdesc:a3093639cc6754153904d075329ff2e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">table of nodes to control a spline curve  <a href="#a3093639cc6754153904d075329ff2e2c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3093639cc6754153904d075329ff2e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>implements one node of a spline curve </p>
+<p>the implementation is provisory, it keeps many features of the older non-object implementation, so there are quite a few public static data coming from various parts of whitecat. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="add0d28f291f1cfe22e11f5436a8ba161"></a>
 <div class="memitem">
 <div class="memproto">
@@ -232,8 +242,7 @@ Attributs publics statiques</h2></td></tr>
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_add0d28f291f1cfe22e11f5436a8ba161_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_add0d28f291f1cfe22e11f5436a8ba161_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -274,8 +283,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a51a7bb24aa5832b54ec61507a556dda9_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a51a7bb24aa5832b54ec61507a556dda9_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -315,8 +323,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a787cd6340d6b9e15da5723ed25eb18ff_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -356,8 +363,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a6338ccf647d5f510c47702f613a3d9d2_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a6338ccf647d5f510c47702f613a3d9d2_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -397,16 +403,14 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ac1e52fe7e8f762074b804b88a1b420cf_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -429,16 +433,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a22f8acf6b081673429257867a4115c57_cgraph.svg" width="592" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a22f8acf6b081673429257867a4115c57_cgraph.svg" width="592" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a22f8acf6b081673429257867a4115c57_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a22f8acf6b081673429257867a4115c57_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -457,7 +459,7 @@ Voici le graphe des appelants de cette fonction :</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>calculates the distance between this and another <a class="el" href="classcurve__node.html">curve_node</a> </p><dl class="params"><dt>Paramètres</dt><dd>
+<p>calculates the distance between this and another <a class="el" href="classcurve__node.html" title="implements one node of a spline curve ">curve_node</a> </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>second node </td></tr>
   </table>
@@ -468,8 +470,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a1146c27b9e6c0b3a5f6fb3faced5cea2_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -509,16 +510,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_ab1db9f4ea1c53ab2eab6072b2cdc90eb_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -547,16 +546,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_aace217c0200a043c2d2f5f071fde8e56_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_aace217c0200a043c2d2f5f071fde8e56_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_aace217c0200a043c2d2f5f071fde8e56_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_aace217c0200a043c2d2f5f071fde8e56_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -579,16 +576,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_cgraph.svg" width="366" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_cgraph.svg" width="366" height="43"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a55e51b51f9b6ede537c5e11b7f234188_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -628,16 +623,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a14aba313f46315faae44bcca011136a9_cgraph.svg" width="342" height="64"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcurve__node_a14aba313f46315faae44bcca011136a9_cgraph.svg" width="342" height="64"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a14aba313f46315faae44bcca011136a9_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a14aba313f46315faae44bcca011136a9_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -666,8 +659,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_afb8f3c6e6a53e062f5c2fb1cf7243969_cgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -696,8 +688,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a5c54a9611e91814177cf901636d4e8e5_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_a5c54a9611e91814177cf901636d4e8e5_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -726,16 +717,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_abc1a06d649c6dce22334da762f2955b8_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_abc1a06d649c6dce22334da762f2955b8_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_abc1a06d649c6dce22334da762f2955b8_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcurve__node_abc1a06d649c6dce22334da762f2955b8_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -902,7 +891,7 @@ Voici le graphe des appelants de cette fonction :</div>
 
 </div>
 </div>
-<a class="anchor" id="affd9362e19ab4c4a70164622a7aebb61"></a>
+<a class="anchor" id="a3093639cc6754153904d075329ff2e2c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -910,15 +899,18 @@ Voici le graphe des appelants de cette fonction :</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcurve__node.html">curve_node</a> curve_node::nodes[<a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>]</td>
+          <td class="memname">static <a class="el" href="classcurve__node.html">curve_node</a> curve_node::nodes</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>table of nodes to control a spline curve </p>
+<p>there should be 5 nodes, 2 at both ends, and 3 inbetween the ancient version of this implementation defined 8 places in the table to prevent overflows, let us begin with this quirk </p>
 
 </div>
 </div>
@@ -1049,7 +1041,7 @@ Voici le graphe des appelants de cette fonction :</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classcurve__node.html">curve_node</a></li>
-    <li class="footer">Généré le Lundi 23 Juin 2014 12:04:29 pour WhitecatAPI par
+    <li class="footer">Généré le Lundi 23 Juin 2014 17:23:31 pour WhitecatAPI par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

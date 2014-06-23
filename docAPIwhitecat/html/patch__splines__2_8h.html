@@ -110,47 +110,89 @@ $(document).ready(function(){initNavTree('patch__splines__2_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>{Curves calcul for each canal in the patch}  
+<p>Functions for each channel in the dmx patch.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="graphic__context_8h_source.html">graphic_context.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de patch_splines_2.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="patch__splines__2_8h__incl.svg" width="136" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="patch__splines__2_8h__dep__incl.svg" width="568" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="patch__splines__2_8h__dep__incl.svg" width="568" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="patch__splines__2_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgraphic__context.html">graphic_context</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcurve__node.html">curve_node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">implements one node of a spline curve  <a href="classcurve__node.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:abd21c950f8371229cfca1c4f98c9750f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:a2746cf7aa733816bfa8f880893340b81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="patch__splines__2_8h.html#a2746cf7aa733816bfa8f880893340b81">CNODES</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:a2746cf7aa733816bfa8f880893340b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of nodes in a spline curve.  <a href="#a2746cf7aa733816bfa8f880893340b81">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2746cf7aa733816bfa8f880893340b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07d11d4dca2dff07b40b00853f492199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="patch__splines__2_8h.html#a07d11d4dca2dff07b40b00853f492199">CNODES_OVERFLOW_QUIRK</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a07d11d4dca2dff07b40b00853f492199"><td class="mdescLeft">&#160;</td><td class="mdescRight">This quirk should disappear.  <a href="#a07d11d4dca2dff07b40b00853f492199">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a07d11d4dca2dff07b40b00853f492199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd21c950f8371229cfca1c4f98c9750f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="patch__splines__2_8h.html#abd21c950f8371229cfca1c4f98c9750f">MAX_CNODES</a>&#160;&#160;&#160;(<a class="el" href="patch__splines__2_8h.html#a2746cf7aa733816bfa8f880893340b81">CNODES</a>+<a class="el" href="patch__splines__2_8h.html#a07d11d4dca2dff07b40b00853f492199">CNODES_OVERFLOW_QUIRK</a>)</td></tr>
+<tr class="memdesc:abd21c950f8371229cfca1c4f98c9750f"><td class="mdescLeft">&#160;</td><td class="mdescRight">sum of CNODES and CNODES_OVERFLOW_QUIRK  <a href="#abd21c950f8371229cfca1c4f98c9750f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abd21c950f8371229cfca1c4f98c9750f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>{Curves calcul for each canal in the patch} </p>
+<div class="textblock"><p>Functions for each channel in the dmx patch. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Georges Khaznadar </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>{0.8.6} </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>{28/0421/06/2014}</dd></dl>
 <p>White Cat {- categorie} {- sous categorie {- sous categorie}}</p>
 <p>Fonction de calcul des courbes dans le patch dmx</p>
-<p>Calcul fonction of the curves in the dmx patch </p>
+<p>Functions to calculate the curves in the dmx patch </p>
 </div><h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a2746cf7aa733816bfa8f880893340b81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CNODES&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of nodes in a spline curve. </p>
+
+</div>
+</div>
+<a class="anchor" id="a07d11d4dca2dff07b40b00853f492199"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CNODES_OVERFLOW_QUIRK&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This quirk should disappear. </p>
+<p>it has been borrowed from the ancient code, where it was necessary to prevent overflows </p>
+
+</div>
+</div>
 <a class="anchor" id="abd21c950f8371229cfca1c4f98c9750f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_CNODES&#160;&#160;&#160;8</td>
+          <td class="memname">#define MAX_CNODES&#160;&#160;&#160;(<a class="el" href="patch__splines__2_8h.html#a2746cf7aa733816bfa8f880893340b81">CNODES</a>+<a class="el" href="patch__splines__2_8h.html#a07d11d4dca2dff07b40b00853f492199">CNODES_OVERFLOW_QUIRK</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>sum of CNODES and CNODES_OVERFLOW_QUIRK </p>
 
 </div>
 </div>
@@ -160,7 +202,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="patch__splines__2_8h.html">patch_splines_2.h</a></li>
-    <li class="footer">Généré le Lundi 23 Juin 2014 12:04:27 pour WhitecatAPI par
+    <li class="footer">Généré le Lundi 23 Juin 2014 17:23:30 pour WhitecatAPI par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

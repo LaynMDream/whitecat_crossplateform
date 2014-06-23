@@ -8482,6 +8482,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>EvAquire</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>midi__13_8cpp.html</Path>
+    <Anchor>a4104c2ae7e71376ad9dc78929450dc51</Anchor>
+    <DeclaredIn>midi_13.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Display</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -9902,12 +9912,35 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CNODES</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>patch__splines__2_8h.html</Path>
+    <Anchor>a2746cf7aa733816bfa8f880893340b81</Anchor>
+    <Abstract>number of nodes in a spline curve. </Abstract>
+    <DeclaredIn>patch_splines_2.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CNODES_OVERFLOW_QUIRK</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>patch__splines__2_8h.html</Path>
+    <Anchor>a07d11d4dca2dff07b40b00853f492199</Anchor>
+    <Abstract>This quirk should disappear. </Abstract>
+    <DeclaredIn>patch_splines_2.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MAX_CNODES</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>patch__splines__2_8h.html</Path>
     <Anchor>abd21c950f8371229cfca1c4f98c9750f</Anchor>
+    <Abstract>sum of CNODES and CNODES_OVERFLOW_QUIRK </Abstract>
     <DeclaredIn>patch_splines_2.h</DeclaredIn>
   </Token>
   <Token>
@@ -37162,6 +37195,7 @@
       <Scope>curve_node</Scope>
     </TokenIdentifier>
     <Path>classcurve__node.html</Path>
+    <Abstract>implements one node of a spline curve </Abstract>
     <DeclaredIn>patch_splines_2.h</DeclaredIn>
   </Token>
   <Token>
@@ -37450,16 +37484,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>nodes</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>curve_node</Scope>
-    </TokenIdentifier>
-    <Path>classcurve__node.html</Path>
-    <Anchor>affd9362e19ab4c4a70164622a7aebb61</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>node_count</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -37477,6 +37501,17 @@
     </TokenIdentifier>
     <Path>classcurve__node.html</Path>
     <Anchor>a46e1f23c6d19a1ca915697c80ed72a84</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>nodes</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>curve_node</Scope>
+    </TokenIdentifier>
+    <Path>classcurve__node.html</Path>
+    <Anchor>a3093639cc6754153904d075329ff2e2c</Anchor>
+    <Abstract>table of nodes to control a spline curve </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -37604,7 +37639,8 @@
       <Scope>graphic_context</Scope>
     </TokenIdentifier>
     <Path>classgraphic__context.html</Path>
-    <DeclaredIn>patch_splines_2.h</DeclaredIn>
+    <Abstract>This class may be provisory. </Abstract>
+    <DeclaredIn>graphic_context.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -37615,7 +37651,7 @@
     </TokenIdentifier>
     <Path>classgraphic__context.html</Path>
     <Anchor>ac81331f894194151dc9f2f20f6eb86e6</Anchor>
-    <DeclaredIn>patch_splines_2.h</DeclaredIn>
+    <DeclaredIn>graphic_context.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

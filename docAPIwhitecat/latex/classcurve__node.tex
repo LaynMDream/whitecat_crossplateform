@@ -3,12 +3,16 @@
 }
 
 
+implements one node of a spline curve  
+
+
+
+
 {\ttfamily \#include $<$patch\+\_\+splines\+\_\+2.\+h$>$}
 
 
 
-Graphe de collaboration de curve\+\_\+node\+:
-\nopagebreak
+Graphe de collaboration de curve\+\_\+node\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -78,13 +82,21 @@ static int \hyperlink{classcurve__node_ab7280e17d47152797e10e5992791ee9b}{ctrl\+
 \item 
 static int \hyperlink{classcurve__node_aab45660e4c1077f8742b151fcb0cdcad}{diam} =10
 \item 
-static \hyperlink{classcurve__node}{curve\+\_\+node} \hyperlink{classcurve__node_affd9362e19ab4c4a70164622a7aebb61}{nodes} \mbox{[}\hyperlink{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}\mbox{]}
-\item 
 static int \hyperlink{classcurve__node_a09d4ec4d9b46abddbcec3e0c46f53d3f}{node\+\_\+count} =0
 \item 
 static fixed \hyperlink{classcurve__node_a46e1f23c6d19a1ca915697c80ed72a84}{curviness}
 \end{DoxyCompactItemize}
+\subsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcurve__node}{curve\+\_\+node} \hyperlink{classcurve__node_a3093639cc6754153904d075329ff2e2c}{nodes} \mbox{[}\hyperlink{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em table of nodes to control a spline curve \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Description détaillée}
+implements one node of a spline curve 
+
+the implementation is provisory, it keeps many features of the older non-\/object implementation, so there are quite a few public static data coming from various parts of whitecat. 
 
 \subsection{Documentation des constructeurs et destructeur}
 \hypertarget{classcurve__node_add0d28f291f1cfe22e11f5436a8ba161}{\index{curve\+\_\+node@{curve\+\_\+node}!curve\+\_\+node@{curve\+\_\+node}}
@@ -107,8 +119,7 @@ The constructor
 \end{DoxyParams}
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -137,8 +148,7 @@ Function to do something
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -164,8 +174,7 @@ Function to do something
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -191,8 +200,7 @@ Function to do something
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -218,8 +226,7 @@ Function to do something
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -230,8 +237,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -249,8 +255,7 @@ Voici le graphe des appelants de cette fonction \+:
 )}}\label{classcurve__node_a22f8acf6b081673429257867a4115c57}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -261,8 +266,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -288,8 +292,7 @@ the distance from this to the other
 \end{DoxyReturn}
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -315,8 +318,7 @@ Function to do something
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -327,8 +329,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -351,8 +352,7 @@ draws the spline paths
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -363,8 +363,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -382,8 +381,7 @@ Voici le graphe des appelants de cette fonction \+:
 )}}\label{classcurve__node_a55e51b51f9b6ede537c5e11b7f234188}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -394,8 +392,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -421,8 +418,7 @@ calculates the control points for a spline segment
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -433,8 +429,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -457,8 +452,7 @@ draws the spline paths ...
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -481,8 +475,7 @@ Function to do something
 \end{DoxyParams}
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -505,8 +498,7 @@ function to do something
 \end{DoxyParams}
 
 
-Voici le graphe d'appel pour cette fonction \+:
-\nopagebreak
+Voici le graphe d'appel pour cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -517,8 +509,7 @@ Voici le graphe d'appel pour cette fonction \+:
 
 
 
-Voici le graphe des appelants de cette fonction \+:
-\nopagebreak
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -554,10 +545,14 @@ Voici le graphe des appelants de cette fonction \+:
 \hypertarget{classcurve__node_a09d4ec4d9b46abddbcec3e0c46f53d3f}{\index{curve\+\_\+node@{curve\+\_\+node}!node\+\_\+count@{node\+\_\+count}}
 \index{node\+\_\+count@{node\+\_\+count}!curve\+\_\+node@{curve\+\_\+node}}
 \subsubsection[{node\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::node\+\_\+count =0\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a09d4ec4d9b46abddbcec3e0c46f53d3f}
-\hypertarget{classcurve__node_affd9362e19ab4c4a70164622a7aebb61}{\index{curve\+\_\+node@{curve\+\_\+node}!nodes@{nodes}}
+\hypertarget{classcurve__node_a3093639cc6754153904d075329ff2e2c}{\index{curve\+\_\+node@{curve\+\_\+node}!nodes@{nodes}}
 \index{nodes@{nodes}!curve\+\_\+node@{curve\+\_\+node}}
-\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf curve\+\_\+node} curve\+\_\+node\+::nodes\mbox{[}{\bf M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_affd9362e19ab4c4a70164622a7aebb61}
-\hypertarget{classcurve__node_a348cce4dfe54130e8b8b2fb218baedfb}{\index{curve\+\_\+node@{curve\+\_\+node}!report@{report}}
+\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf curve\+\_\+node} curve\+\_\+node\+::nodes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classcurve__node_a3093639cc6754153904d075329ff2e2c}
+
+
+table of nodes to control a spline curve 
+
+there should be 5 nodes, 2 at both ends, and 3 inbetween the ancient version of this implementation defined 8 places in the table to prevent overflows, let us begin with this quirk \hypertarget{classcurve__node_a348cce4dfe54130e8b8b2fb218baedfb}{\index{curve\+\_\+node@{curve\+\_\+node}!report@{report}}
 \index{report@{report}!curve\+\_\+node@{curve\+\_\+node}}
 \subsubsection[{report}]{\setlength{\rightskip}{0pt plus 5cm}int curve\+\_\+node\+::report\mbox{[}16\mbox{]}\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{classcurve__node_a348cce4dfe54130e8b8b2fb218baedfb}
 \hypertarget{classcurve__node_abe017d998cde30d2ca5f7c8ea68ba3da}{\index{curve\+\_\+node@{curve\+\_\+node}!selected@{selected}}

@@ -42,7 +42,7 @@ var searchData=
   ['node_5fcount',['node_count',['../classcurve__node.html#a09d4ec4d9b46abddbcec3e0c46f53d3f',1,'curve_node::node_count()'],['../whitecat_8h.html#ab5abb737ffd89b661cbcc345019609b0',1,'node_count():&#160;whitecat.h']]],
   ['nodefirmware_5fversinfo',['nodefirmware_versinfo',['../whitecat_8h.html#ae6ae9be71a47192055910bc0475b3b50',1,'whitecat.h']]],
   ['nodereportlength',['NodeReportLength',['../whitecat_8h.html#a34a590fa0b3e47e2d2970e3e9be2f9f5',1,'whitecat.h']]],
-  ['nodes',['nodes',['../classcurve__node.html#affd9362e19ab4c4a70164622a7aebb61',1,'curve_node::nodes()'],['../whitecat_8h.html#a6bd5f9f09e605efc85d5159fecc3b8e7',1,'nodes():&#160;whitecat.h']]],
+  ['nodes',['nodes',['../classcurve__node.html#a3093639cc6754153904d075329ff2e2c',1,'curve_node::nodes()'],['../whitecat_8h.html#a6bd5f9f09e605efc85d5159fecc3b8e7',1,'nodes():&#160;whitecat.h']]],
   ['nomduspectacle',['nomduspectacle',['../whitecat_8h.html#ad553d15cbfa90f412c6e6284fc5308e4',1,'whitecat.h']]],
   ['num_5fdevices',['Num_Devices',['../dmx__enttec__pro_8cpp.html#a7fc559ab2f901a17a610a93c16e2bfd6',1,'Num_Devices():&#160;dmx_enttec_pro.cpp'],['../dmx__enttec__pro___f_t_d_i_8cpp.html#a7fc559ab2f901a17a610a93c16e2bfd6',1,'Num_Devices():&#160;dmx_enttec_pro_FTDI.cpp']]],
   ['num_5fpage_5fpdf',['num_page_pdf',['../saves__export__pdf2_8cpp.html#a8923819e58e01b4a89ec317268a84d38',1,'saves_export_pdf2.cpp']]],

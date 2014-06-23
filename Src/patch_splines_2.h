@@ -30,7 +30,7 @@ WWWWWWWW           C  WWWWWWWW   |
 /**
 
 * \file patch_splines_2.h
-* \brief {Curves calcul for each canal in the patch}
+* \brief Functions for each channel in the dmx patch
 * \author Georges Khaznadar
 * \version {0.8.6}
 * \date {28/0421/06/2014}
@@ -39,45 +39,22 @@ WWWWWWWW           C  WWWWWWWW   |
 
 *   Fonction de calcul des courbes dans le patch dmx
 *
-*   Calcul fonction of the curves in the dmx patch
+*   Functions to calculate the curves in the dmx patch
 *
 **/
 
+#include "graphic_context.h"
+
 //Curves splines
 
-#define MAX_CNODES    8
-
-class graphic_context{
- public:
-  int window_focus_id;
-  int W_PATCH;
-  int mouse_x;
-  int mouse_y;
-  int xpatch_window;
-  int ypatch_window;
-  int dmx_view;
-
-  /**
-   * The constructor of a graphic context
-   * @param window_focus_id identifier of the windows owning the focus
-   * @param W_PATCH identifier of a particular window
-   * @param mouse_x abscissa of the mouse cursor
-   * @param mouse_y ordinate of the mouse cursor
-   * @param xpatch_window abscissa of the patch window
-   * @param ypatch_window ordinate of the patch window
-   * @param dmx_view an integer code to define the view mode of DMX: 0 means percentage of intensity, 1 means DMX unity (0..255)
-   **/
-  inline graphic_context(int window_focus_id, int W_PATCH, int mouse_x, int mouse_y, int xpatch_window, int ypatch_window, int dmx_view):
-    window_focus_id(window_focus_id),
-    W_PATCH(W_PATCH),
-    mouse_x(mouse_x),
-    mouse_y(mouse_y),
-    xpatch_window(xpatch_window),
-    ypatch_window(),
-    dmx_view(){
-  };
-};
-
+/**
+ * @class curve_node
+ * @brief implements one node of a spline curve
+ *
+ * the implementation is provisory, it keeps many features of the
+ * older non-object implementation, so there are quite a few public
+ * static data coming from various parts of whitecat.
+ **/
 class curve_node
 {
  public:
@@ -110,9 +87,37 @@ class curve_node
   static int curves[514];//bug ?514 était en 513
   static int ctrl_pt[16][8][2]; //5 pts de controls (  pour caller 1er et dernier dummy)
   static int diam;//diametre de la poignee pour saisie du curve_node
-  static curve_node nodes[MAX_CNODES];
   static int node_count;
   static fixed curviness;
+
+ private:
+  /**
+   * @macro
+   * @brief number of nodes in a spline curve.
+   **/
+#define CNODES 5
+  /**
+   * @macro
+   * @brief This quirk should disappear
+   *
+   * it has been borrowed from the ancient code, where it was necessary
+   * to prevent overflows
+   **/
+#define CNODES_OVERFLOW_QUIRK 3
+  /**
+   * @macro
+   * @brief sum of CNODES and CNODES_OVERFLOW_QUIRK
+   **/
+#define MAX_CNODES (CNODES+CNODES_OVERFLOW_QUIRK)
+  /**
+   * @var static curve_node nodes
+   * @brief table of nodes to control a spline curve
+   * 
+   * there should be 5 nodes, 2 at both ends, and 3 inbetween
+   * the ancient version of this implementation defined 8 places in the
+   * table to prevent overflows, let us begin with this quirk
+   **/
+  static curve_node nodes[MAX_CNODES]; 
 };
 
 #endif /* patch_splines_2_h */

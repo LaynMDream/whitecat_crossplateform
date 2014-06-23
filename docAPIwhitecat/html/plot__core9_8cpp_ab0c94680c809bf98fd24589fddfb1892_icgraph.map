@@ -1,13 +1,25 @@
 <map id="duplicate_selected_shapes" name="duplicate_selected_shapes">
-<area shape="rect" id="node3" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="212,94,303,127"/>
-<area shape="rect" id="node18" href="$plot__core9_8cpp.html#aea32fc46aaba62f9f5c3dc25abe79fae" title="logical_shape_edition" alt="" coords="184,151,331,185"/>
-<area shape="rect" id="node5" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="380,91,559,125"/>
-<area shape="rect" id="node7" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="637,90,739,123"/>
-<area shape="rect" id="node9" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="816,5,963,59"/>
-<area shape="rect" id="node15" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="827,82,952,137"/>
-<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="1012,93,1169,126"/>
-<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1219,121,1269,154"/>
-<area shape="rect" id="node20" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="389,151,549,185"/>
-<area shape="rect" id="node22" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="609,146,767,201"/>
-<area shape="rect" id="node24" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1036,153,1145,186"/>
+<area shape="rect" id="node3" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="212,162,303,195"/>
+<area shape="rect" id="node46" href="$plot__core9_8cpp.html#aea32fc46aaba62f9f5c3dc25abe79fae" title="logical_shape_edition" alt="" coords="184,219,331,253"/>
+<area shape="rect" id="node5" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="380,159,559,193"/>
+<area shape="rect" id="node7" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="609,93,711,126"/>
+<area shape="rect" id="node18" href="$midi__13_8cpp.html#a4104c2ae7e71376ad9dc78929450dc51" title="EvAquire" alt="" coords="623,159,697,193"/>
+<area shape="rect" id="node9" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="760,5,907,59"/>
+<area shape="rect" id="node15" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="771,82,896,137"/>
+<area shape="rect" id="node11" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="956,26,1113,59"/>
+<area shape="rect" id="node13" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="2387,138,2437,171"/>
+<area shape="rect" id="node20" href="$midi__13_8cpp.html#a831f1dfc7870ae4f6c64a0e65fbaf3ff" title="Display" alt="" coords="800,159,867,193"/>
+<area shape="rect" id="node22" href="$midi__13_8cpp.html#aa4aeee5088a4a5462566dfee5c9cc71f" title="DisplayTask" alt="" coords="988,103,1081,137"/>
+<area shape="rect" id="node27" href="$midi___c_o_r_e_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="980,159,1089,193"/>
+<area shape="rect" id="node24" href="$midi___c_o_r_e_8cpp.html#a7d0f82d882071792d6a2df51ef13ec55" title="ReceivePolling" alt="" coords="1188,103,1297,137"/>
+<area shape="rect" id="node30" href="$midi___c_o_r_e_8cpp.html#a0ccf480a33424e626f88d109d53d8366" title="InitMidi" alt="" coords="1211,159,1275,193"/>
+<area shape="rect" id="node33" href="$midi__13_8cpp.html#ac7a306aa81e374b447e7341d4d3a3eea" title="midipage_devices" alt="" coords="1372,165,1497,198"/>
+<area shape="rect" id="node35" href="$midi__13_8cpp.html#a8f70acacad6eaba8867bdd80dda5e277" title="do_midi_config" alt="" coords="1547,165,1656,198"/>
+<area shape="rect" id="node37" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="1705,165,1820,198"/>
+<area shape="rect" id="node39" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1871,165,2015,198"/>
+<area shape="rect" id="node41" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="2064,165,2123,198"/>
+<area shape="rect" id="node43" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="2172,165,2337,198"/>
+<area shape="rect" id="node48" href="$plot__core9_8cpp.html#a8959d98409d30cff9689b28771791f70" title="do_logical_Plot_window" alt="" coords="389,219,549,253"/>
+<area shape="rect" id="node50" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="1164,215,1321,270"/>
+<area shape="rect" id="node52" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1380,223,1489,257"/>
 </map>

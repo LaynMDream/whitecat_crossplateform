@@ -3,11 +3,18 @@
 }
 
 
-\{Curves calcul for each canal in the patch\}  
+Functions for each channel in the dmx patch.  
 
 
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
-\nopagebreak
+{\ttfamily \#include \char`\"{}graphic\+\_\+context.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de patch\+\_\+splines\+\_\+2.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{patch__splines__2_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,19 +24,21 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classgraphic__context}{graphic\+\_\+context}
-\item 
 class \hyperlink{classcurve__node}{curve\+\_\+node}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em implements one node of a spline curve \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}~8
-\end{DoxyCompactItemize}
+\#define \hyperlink{patch__splines__2_8h_a2746cf7aa733816bfa8f880893340b81}{C\+N\+O\+D\+E\+S}~5
+\begin{DoxyCompactList}\small\item\em number of nodes in a spline curve. \end{DoxyCompactList}\item 
+\#define \hyperlink{patch__splines__2_8h_a07d11d4dca2dff07b40b00853f492199}{C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K}~3
+\begin{DoxyCompactList}\small\item\em This quirk should disappear. \end{DoxyCompactList}\item 
+\#define \hyperlink{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}~(\hyperlink{patch__splines__2_8h_a2746cf7aa733816bfa8f880893340b81}{C\+N\+O\+D\+E\+S}+\hyperlink{patch__splines__2_8h_a07d11d4dca2dff07b40b00853f492199}{C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K})
+\begin{DoxyCompactList}\small\item\em sum of C\+N\+O\+D\+E\+S and C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-\{Curves calcul for each canal in the patch\} 
+Functions for each channel in the dmx patch. 
 
 \begin{DoxyAuthor}{Auteur}
 Georges Khaznadar 
@@ -44,9 +53,27 @@ White Cat \{-\/ categorie\} \{-\/ sous categorie \{-\/ sous categorie\}\}
 
 Fonction de calcul des courbes dans le patch dmx
 
-Calcul fonction of the curves in the dmx patch 
+Functions to calculate the curves in the dmx patch 
 
 \subsection{Documentation des macros}
-\hypertarget{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{\index{patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}!M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S@{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}}
+\hypertarget{patch__splines__2_8h_a2746cf7aa733816bfa8f880893340b81}{\index{patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}!C\+N\+O\+D\+E\+S@{C\+N\+O\+D\+E\+S}}
+\index{C\+N\+O\+D\+E\+S@{C\+N\+O\+D\+E\+S}!patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}}
+\subsubsection[{C\+N\+O\+D\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+N\+O\+D\+E\+S~5}}\label{patch__splines__2_8h_a2746cf7aa733816bfa8f880893340b81}
+
+
+number of nodes in a spline curve. 
+
+\hypertarget{patch__splines__2_8h_a07d11d4dca2dff07b40b00853f492199}{\index{patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}!C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K@{C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K}}
+\index{C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K@{C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K}!patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}}
+\subsubsection[{C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K~3}}\label{patch__splines__2_8h_a07d11d4dca2dff07b40b00853f492199}
+
+
+This quirk should disappear. 
+
+it has been borrowed from the ancient code, where it was necessary to prevent overflows \hypertarget{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}{\index{patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}!M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S@{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}}
 \index{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S@{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}!patch\+\_\+splines\+\_\+2.\+h@{patch\+\_\+splines\+\_\+2.\+h}}
-\subsubsection[{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S~8}}\label{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}
+\subsubsection[{M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+N\+O\+D\+E\+S~({\bf C\+N\+O\+D\+E\+S}+{\bf C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K})}}\label{patch__splines__2_8h_abd21c950f8371229cfca1c4f98c9750f}
+
+
+sum of C\+N\+O\+D\+E\+S and C\+N\+O\+D\+E\+S\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+Q\+U\+I\+R\+K 
+

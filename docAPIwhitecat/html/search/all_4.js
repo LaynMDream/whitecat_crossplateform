@@ -53,6 +53,7 @@ var searchData=
   ['erode_5flevel',['erode_level',['../whitecat_8h.html#abb51ee948e5df377341cc2995d457628',1,'whitecat.h']]],
   ['erode_5fmode',['erode_mode',['../whitecat_8h.html#a504ec10c24c499ca940f54dd0d145b52',1,'whitecat.h']]],
   ['error_5fhandler',['error_handler',['../saves__export__pdf2_8cpp.html#a0b3e42112f8102ab4075d2e454d417b6',1,'saves_export_pdf2.cpp']]],
+  ['evaquire',['EvAquire',['../midi__13_8cpp.html#a4104c2ae7e71376ad9dc78929450dc51',1,'midi_13.cpp']]],
   ['event_5fsended',['event_sended',['../whitecat_8h.html#a9a391065d1101c9258ed6a93623a4165',1,'whitecat.h']]],
   ['exchange_5fshape_5fposition',['exchange_shape_position',['../plot__core9_8cpp.html#af1de2902c8517c77ae02efcb54bda21e',1,'plot_core9.cpp']]],
   ['exchange_5fsymbol_5fposition',['exchange_symbol_position',['../plot_8cpp.html#afa207c7603f4ee259c528f3d86afb2f6',1,'exchange_symbol_position(int calc, int pos_source, int pos_dest):&#160;plot.cpp'],['../plot__core9_8cpp.html#afa207c7603f4ee259c528f3d86afb2f6',1,'exchange_symbol_position(int calc, int pos_source, int pos_dest):&#160;plot_core9.cpp']]],

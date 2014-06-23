@@ -1,12 +1,24 @@
 <map id="clear_echo_levels" name="clear_echo_levels">
-<area shape="rect" id="node3" href="$echo3_8cpp.html#a440d7e78e4b39340e539bef8b9d7e2e1" title="do_logical_echo_window" alt="" coords="183,18,348,51"/>
-<area shape="rect" id="node11" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="220,77,311,110"/>
+<area shape="rect" id="node3" href="$echo3_8cpp.html#a440d7e78e4b39340e539bef8b9d7e2e1" title="do_logical_echo_window" alt="" coords="183,55,348,89"/>
+<area shape="rect" id="node11" href="$midi__13_8cpp.html#a6dff3d42682b58cc0a9875ee30fb4cd4" title="do_midi_job" alt="" coords="220,114,311,147"/>
 <area shape="rect" id="node5" href="$procs__visuels__rebuild1_8cpp.html#ae710b6e599e321ad5934a90140067054" title="check_graphics_mouse\l_handling" alt="" coords="409,5,567,59"/>
-<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="999,19,1108,53"/>
-<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1181,50,1232,83"/>
-<area shape="rect" id="node13" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="399,82,577,115"/>
-<area shape="rect" id="node15" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="628,82,729,115"/>
-<area shape="rect" id="node17" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="779,69,925,123"/>
-<area shape="rect" id="node22" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="789,146,915,201"/>
-<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="975,79,1132,113"/>
+<area shape="rect" id="node7" href="$_m_a_i_n__avec__objets_8cpp.html#a8e80f54ac804eddce8ed6e45adb1db44" title="ticker_full_loop" alt="" coords="1348,7,1457,41"/>
+<area shape="rect" id="node9" href="$_m_a_i_n__avec__objets_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="2355,99,2405,133"/>
+<area shape="rect" id="node13" href="$midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" title="ventilate_midi_to_midiarray" alt="" coords="399,119,577,153"/>
+<area shape="rect" id="node15" href="$midi__13_8cpp.html#afa49dd5668303c2448676c8243737c2d" title="simulate_midi" alt="" coords="628,119,729,153"/>
+<area shape="rect" id="node25" href="$midi__13_8cpp.html#a4104c2ae7e71376ad9dc78929450dc51" title="EvAquire" alt="" coords="641,181,716,214"/>
+<area shape="rect" id="node17" href="$arduino__core__6___u_n_o_8cpp.html#ae72d1a8d74d9ab5515962e03e7e664d6" title="arduino_do_analog_in\l_whitecat" alt="" coords="779,50,925,105"/>
+<area shape="rect" id="node22" href="$arduino__core__6___u_n_o_8cpp.html#a219226c1cd6cc17c78e62fd4445bb445" title="arduino_do_digital\l_in_whitecat" alt="" coords="789,127,915,182"/>
+<area shape="rect" id="node19" href="$_m_a_i_n__avec__objets_8cpp.html#ace9c8a9b37c6087c3cffef442d71d70e" title="dixiemes_de_secondes" alt="" coords="975,71,1132,105"/>
+<area shape="rect" id="node27" href="$midi__13_8cpp.html#a831f1dfc7870ae4f6c64a0e65fbaf3ff" title="Display" alt="" coords="819,205,885,238"/>
+<area shape="rect" id="node29" href="$midi__13_8cpp.html#aa4aeee5088a4a5462566dfee5c9cc71f" title="DisplayTask" alt="" coords="1007,149,1100,182"/>
+<area shape="rect" id="node34" href="$midi___c_o_r_e_8cpp.html#a6fcb4c2efe85f50488d7aeeef1fc0a3e" title="ReceiveEvents" alt="" coords="999,205,1108,238"/>
+<area shape="rect" id="node31" href="$midi___c_o_r_e_8cpp.html#a7d0f82d882071792d6a2df51ef13ec55" title="ReceivePolling" alt="" coords="1181,149,1291,182"/>
+<area shape="rect" id="node37" href="$midi___c_o_r_e_8cpp.html#a0ccf480a33424e626f88d109d53d8366" title="InitMidi" alt="" coords="1204,205,1268,238"/>
+<area shape="rect" id="node40" href="$midi__13_8cpp.html#ac7a306aa81e374b447e7341d4d3a3eea" title="midipage_devices" alt="" coords="1340,202,1465,235"/>
+<area shape="rect" id="node42" href="$midi__13_8cpp.html#a8f70acacad6eaba8867bdd80dda5e277" title="do_midi_config" alt="" coords="1515,201,1624,234"/>
+<area shape="rect" id="node44" href="$_c_f_g__config__panel__8_8cpp.html#ad39c46e2fb3a3ba7ea0460140ead4f96" title="do_panel_config" alt="" coords="1673,194,1788,227"/>
+<area shape="rect" id="node46" href="$_c_f_g__config__panel__8_8cpp.html#a7968da66bccdba8b864caf6c8435f68e" title="config_general_menu" alt="" coords="1839,186,1983,219"/>
+<area shape="rect" id="node48" href="$graphics__rebuild1_8cpp.html#ac2eae1e03fb72cc734ffbcef566483bf" title="Boxes" alt="" coords="2032,183,2091,217"/>
+<area shape="rect" id="node50" href="$_m_a_i_n__avec__objets_8cpp.html#ade8d4ba65d55c94f8ee277829d722155" title="main_actions_on_screen" alt="" coords="2140,181,2305,214"/>
 </map>

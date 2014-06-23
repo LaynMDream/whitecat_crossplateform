@@ -434,7 +434,7 @@ var sectionId = 'dynsection-11';
 <!-- Node15 -->
 <g id="node33" class="node"><title>Node15</title>
 <a xlink:href="midi__13_8cpp.html#a6bedf9750195224914cd87c4e73ab626" target="_top" xlink:title="ventilate_midi_to_midiarray">
-<polygon fill="white" stroke="black" points="962.5,-1201 962.5,-1225 1097.5,-1225 1097.5,-1201 962.5,-1201"/>
+<polygon fill="white" stroke="red" points="962.5,-1201 962.5,-1225 1097.5,-1225 1097.5,-1201 962.5,-1201"/>
 <text text-anchor="middle" x="1030" y="-1212" font-family="Helvetica,sans-Serif" font-size="10.00">ventilate_midi_to_midiarray</text>
 </a>
 </g>

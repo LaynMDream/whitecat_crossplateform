@@ -92,9 +92,74 @@
               <Anchor>abc1a06d649c6dce22334da762f2955b8</Anchor>
              </Node>
              <Node>
+              <Name>ctrl_pt</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>ab7280e17d47152797e10e5992791ee9b</Anchor>
+             </Node>
+             <Node>
+              <Name>curves</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a0aebfec8e10d7fc02442cd5326433c93</Anchor>
+             </Node>
+             <Node>
+              <Name>curviness</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a46e1f23c6d19a1ca915697c80ed72a84</Anchor>
+             </Node>
+             <Node>
+              <Name>diam</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>aab45660e4c1077f8742b151fcb0cdcad</Anchor>
+             </Node>
+             <Node>
+              <Name>index_enable_editing</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a4479fff7bfc410d6f6d1df9975261aa8</Anchor>
+             </Node>
+             <Node>
+              <Name>index_spline_level</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>af9c0c53bc02942259c36c753232326aa</Anchor>
+             </Node>
+             <Node>
+              <Name>index_writing</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>ae995b9ef63ae5b880d6006083acaf6d3</Anchor>
+             </Node>
+             <Node>
+              <Name>node_count</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a09d4ec4d9b46abddbcec3e0c46f53d3f</Anchor>
+             </Node>
+             <Node>
+              <Name>nodes</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a3093639cc6754153904d075329ff2e2c</Anchor>
+             </Node>
+             <Node>
+              <Name>report</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a348cce4dfe54130e8b8b2fb218baedfb</Anchor>
+             </Node>
+             <Node>
+              <Name>selected</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>abe017d998cde30d2ca5f7c8ea68ba3da</Anchor>
+             </Node>
+             <Node>
+              <Name>spline_level</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a16c72a6637b3b68983b5ce55b90665bf</Anchor>
+             </Node>
+             <Node>
               <Name>tangent</Name>
               <Path>classcurve__node.html</Path>
               <Anchor>a31ea7469070f7bb90ceae073d1d075a6</Anchor>
+             </Node>
+             <Node>
+              <Name>the_spline_level</Name>
+              <Path>classcurve__node.html</Path>
+              <Anchor>a62eb9b6b3a24274664775a07c565d39c</Anchor>
              </Node>
              <Node>
               <Name>x</Name>
@@ -3326,6 +3391,58 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>graphic_context.h</Name>
+            <Path>graphic__context_8h.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>graphic_context</Name>
+              <Path>classgraphic__context.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>graphic_context</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>ac81331f894194151dc9f2f20f6eb86e6</Anchor>
+               </Node>
+               <Node>
+                <Name>dmx_view</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>abeabd1716cb7451605935b9191be65fb</Anchor>
+               </Node>
+               <Node>
+                <Name>mouse_x</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>af9aa907f4c540927888920111f2a3890</Anchor>
+               </Node>
+               <Node>
+                <Name>mouse_y</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>a72195ff30744dcb9c467cad5bda4e602</Anchor>
+               </Node>
+               <Node>
+                <Name>W_PATCH</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>af8795c6d73bb4076febf90a4bed34cd7</Anchor>
+               </Node>
+               <Node>
+                <Name>window_focus_id</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>afb842574bef9200a343eae5ed25b6aea</Anchor>
+               </Node>
+               <Node>
+                <Name>xpatch_window</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>a57a5bcca338d0b27c5014b9bde3f6e99</Anchor>
+               </Node>
+               <Node>
+                <Name>ypatch_window</Name>
+                <Path>classgraphic__context.html</Path>
+                <Anchor>ae902bd96df3912441f3f5e99cd802fbf</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>graphics_rebuild1.cpp</Name>
             <Path>graphics__rebuild1_8cpp.html</Path>
             <Subnodes>
@@ -4902,6 +5019,11 @@
               <Anchor>a6dff3d42682b58cc0a9875ee30fb4cd4</Anchor>
              </Node>
              <Node>
+              <Name>EvAquire</Name>
+              <Path>midi__13_8cpp.html</Path>
+              <Anchor>a4104c2ae7e71376ad9dc78929450dc51</Anchor>
+             </Node>
+             <Node>
               <Name>midi_change_signal</Name>
               <Path>midi__13_8cpp.html</Path>
               <Anchor>a1be6169a0ed28989c422b9f72042f0bb</Anchor>
@@ -5702,52 +5824,6 @@
             <Path>patch__splines__2_8h.html</Path>
             <Subnodes>
              <Node>
-              <Name>graphic_context</Name>
-              <Path>classgraphic__context.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>graphic_context</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>ac81331f894194151dc9f2f20f6eb86e6</Anchor>
-               </Node>
-               <Node>
-                <Name>dmx_view</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>abeabd1716cb7451605935b9191be65fb</Anchor>
-               </Node>
-               <Node>
-                <Name>mouse_x</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>af9aa907f4c540927888920111f2a3890</Anchor>
-               </Node>
-               <Node>
-                <Name>mouse_y</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>a72195ff30744dcb9c467cad5bda4e602</Anchor>
-               </Node>
-               <Node>
-                <Name>W_PATCH</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>af8795c6d73bb4076febf90a4bed34cd7</Anchor>
-               </Node>
-               <Node>
-                <Name>window_focus_id</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>afb842574bef9200a343eae5ed25b6aea</Anchor>
-               </Node>
-               <Node>
-                <Name>xpatch_window</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>a57a5bcca338d0b27c5014b9bde3f6e99</Anchor>
-               </Node>
-               <Node>
-                <Name>ypatch_window</Name>
-                <Path>classgraphic__context.html</Path>
-                <Anchor>ae902bd96df3912441f3f5e99cd802fbf</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
               <Name>curve_node</Name>
               <Path>classcurve__node.html</Path>
               <Subnodes>
@@ -5822,9 +5898,74 @@
                 <Anchor>abc1a06d649c6dce22334da762f2955b8</Anchor>
                </Node>
                <Node>
+                <Name>ctrl_pt</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>ab7280e17d47152797e10e5992791ee9b</Anchor>
+               </Node>
+               <Node>
+                <Name>curves</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a0aebfec8e10d7fc02442cd5326433c93</Anchor>
+               </Node>
+               <Node>
+                <Name>curviness</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a46e1f23c6d19a1ca915697c80ed72a84</Anchor>
+               </Node>
+               <Node>
+                <Name>diam</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>aab45660e4c1077f8742b151fcb0cdcad</Anchor>
+               </Node>
+               <Node>
+                <Name>index_enable_editing</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a4479fff7bfc410d6f6d1df9975261aa8</Anchor>
+               </Node>
+               <Node>
+                <Name>index_spline_level</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>af9c0c53bc02942259c36c753232326aa</Anchor>
+               </Node>
+               <Node>
+                <Name>index_writing</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>ae995b9ef63ae5b880d6006083acaf6d3</Anchor>
+               </Node>
+               <Node>
+                <Name>node_count</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a09d4ec4d9b46abddbcec3e0c46f53d3f</Anchor>
+               </Node>
+               <Node>
+                <Name>nodes</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a3093639cc6754153904d075329ff2e2c</Anchor>
+               </Node>
+               <Node>
+                <Name>report</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a348cce4dfe54130e8b8b2fb218baedfb</Anchor>
+               </Node>
+               <Node>
+                <Name>selected</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>abe017d998cde30d2ca5f7c8ea68ba3da</Anchor>
+               </Node>
+               <Node>
+                <Name>spline_level</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a16c72a6637b3b68983b5ce55b90665bf</Anchor>
+               </Node>
+               <Node>
                 <Name>tangent</Name>
                 <Path>classcurve__node.html</Path>
                 <Anchor>a31ea7469070f7bb90ceae073d1d075a6</Anchor>
+               </Node>
+               <Node>
+                <Name>the_spline_level</Name>
+                <Path>classcurve__node.html</Path>
+                <Anchor>a62eb9b6b3a24274664775a07c565d39c</Anchor>
                </Node>
                <Node>
                 <Name>x</Name>
@@ -5837,6 +5978,16 @@
                 <Anchor>afc1f4f007a920aa79c1f1f0ff0b49465</Anchor>
                </Node>
               </Subnodes>
+             </Node>
+             <Node>
+              <Name>CNODES</Name>
+              <Path>patch__splines__2_8h.html</Path>
+              <Anchor>a2746cf7aa733816bfa8f880893340b81</Anchor>
+             </Node>
+             <Node>
+              <Name>CNODES_OVERFLOW_QUIRK</Name>
+              <Path>patch__splines__2_8h.html</Path>
+              <Anchor>a07d11d4dca2dff07b40b00853f492199</Anchor>
              </Node>
              <Node>
               <Name>MAX_CNODES</Name>

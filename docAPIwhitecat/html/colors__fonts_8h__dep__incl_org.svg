@@ -28,7 +28,7 @@
 </g>
 <!-- Node7 -->
 <g id="node13" class="node"><title>Node7</title>
-<a xlink:href="patch__splines__2_8cpp.html" target="_top" xlink:title="{Curves calcul for each canal in the patch} ">
+<a xlink:href="patch__splines__2_8cpp.html" target="_top" xlink:title="Curves calcul for each canal in the patch. ">
 <polygon fill="white" stroke="black" points="278,-79 278,-103 384,-103 384,-79 278,-79"/>
 <text text-anchor="middle" x="331" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">patch_splines_2.cpp</text>
 </a>

@@ -30,6 +30,9 @@ var files =
     [ "generate_strings_arrays.cpp", "generate__strings__arrays_8cpp.html", "generate__strings__arrays_8cpp" ],
     [ "gestionaire_fenetres2.cpp", "gestionaire__fenetres2_8cpp.html", "gestionaire__fenetres2_8cpp" ],
     [ "grand_master.cpp", "grand__master_8cpp.html", "grand__master_8cpp" ],
+    [ "graphic_context.h", "graphic__context_8h.html", [
+      [ "graphic_context", "classgraphic__context.html", "classgraphic__context" ]
+    ] ],
     [ "graphics_rebuild1.cpp", "graphics__rebuild1_8cpp.html", "graphics__rebuild1_8cpp" ],
     [ "grider8.cpp", "grider8_8cpp.html", "grider8_8cpp" ],
     [ "grider_calculs8.cpp", "grider__calculs8_8cpp.html", "grider__calculs8_8cpp" ],
