@@ -41,6 +41,9 @@ WWWWWWWW           C  WWWWWWWW   |
 *
  **/
 
+using namespace std;
+
+#include "patch_splines_2.h"
 
 int reset_numeric_entry()
 {
@@ -1433,7 +1436,7 @@ int clear_completely_the_patch()
     for(int i=0; i<514; i++)
     {
         Patch[i]=0;
-        curves[i]=0;
+	curve_node::curves[i]=0;
         dimmer_type[i]=0;
         snapshot_symbol_dimmer_is[i]=0;
         for(int c=0; c<4; c++)
@@ -3286,7 +3289,7 @@ int  patch_clear_selected()
         if(Dimmers_selected[i]==1)
         {
             Patch[i]=0;
-            curves[i]=0;
+	    curve_node::curves[i]=0;
             if(index_build_patch_from_plot==1)
             {
                 for(int c=0; c<4; c++)
@@ -3316,7 +3319,7 @@ int patch_to_default_selected()
         if(Dimmers_selected[i]==1)
         {
             Patch[i]=i;
-            curves[i]=0;
+            curve_node::curves[i]=0;
         }
     }
     if(index_build_patch_from_plot==1)
@@ -3457,6 +3460,7 @@ int load_Fader_state_to_midi_array()
 
 int send_my_midi_note( int letype,  int lechannel, int lanote, int lavelocite, int laduree)
 {
+#ifdef _WIN32
     MidiEvPtr eMid;
     if ((eMid = MidiNewEv(letype)))
     {
@@ -3468,11 +3472,15 @@ int send_my_midi_note( int letype,  int lechannel, int lanote, int lavelocite, i
         MidiSendIm(myRefNum, eMid);
 
     }
+#else
+    cout << "send_my_midi_note non implémenté\n";
+#endif
     return(0);
 }
 
 int send_my_midi_note_delayed( int letype,  int lechannel, int lanote, int lavelocite, int laduree, int delay)
 {
+#ifdef _WIN32
     MidiEvPtr eMid;
     long  dt = MidiGetTime();
     if ((eMid = MidiNewEv(letype)))
@@ -3485,12 +3493,16 @@ int send_my_midi_note_delayed( int letype,  int lechannel, int lanote, int lavel
         MidiSendAt(myRefNum, MidiCopyEv(eMid), dt+delay);
 
     }
+#else
+    cout << "send_my_midi_note_delayed non implémenté\n";
+#endif
     return(0);
 }
 
 
 int send_immidiateley_my_midi_cc( int letype,  int lechannel, int lanote, int lavelocite)
 {
+#ifdef _WIN32
     MidiEvPtr eIMid;
 
     if ((eIMid = MidiNewEv(letype)))
@@ -3502,7 +3514,9 @@ int send_immidiateley_my_midi_cc( int letype,  int lechannel, int lanote, int la
         //Dur(eIMid)= 10;
         MidiSendIm(myRefNum, eIMid);
     }
-
+#else
+    cout << "send_immidiateley_my_midi_cc not implemented\n";
+#endif
     return(0);
 }
 
@@ -4313,40 +4327,6 @@ int patch_unselect_all_dimmers()
     return(0);
 }
 
-
-int build_default_curve(int curve)
-{
-    mouse_released=1;
-
-//points
-    for (int pt=1; pt<MAX_curve_nodeS-1; pt++)
-    {
-        curve_ctrl_pt[curve][pt][0]=(int)((((float)255)/6) *pt);
-        curve_ctrl_pt[curve][pt][1]=255-(int)((((float)255)/6) *pt);
-    }
-    curve_ctrl_pt[curve][1][0]=0;
-    curve_ctrl_pt[curve][1][1]=255;//point 1 en 0 0
-    curve_ctrl_pt[curve][5][0]=255;
-    curve_ctrl_pt[curve][5][1]=0;//point 5 en 255 255
-
-    curve_ctrl_pt[curve][6][0]=255;
-    curve_ctrl_pt[curve][6][1]=0;//point 5 en 255 255
-
-    the_curve_spline_level[curve]=168;
-    index_curve_spline_level=168;
-    curve_spline_level=(((float)index_curve_spline_level)/127)-1;
-    curve_node_count=6;
-    curve_curviness = ftofix(curve_spline_level);
-    curve_calc_tangents();
-    curve_draw_splines();
-
-    curve_spline_level=(((float)index_curve_spline_level)/127)-1;
-
-//write_curve(); //fait planter si debordement de memoire
-
-    view_curve_after_draw();
-    return(0);
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -6007,7 +5987,7 @@ int GlobInit()
     {
         for(int i=0; i<514; i++)
         {
-            curves[i]=0;
+            curve_node::curves[i]=0;
         }
     }
 

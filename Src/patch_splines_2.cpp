@@ -291,6 +291,46 @@ int curve_node::SplineCurve(const graphic_context& gc)
  * @param curve index of the chosen curve (0..15)
  * @param gc graphic context
  **/
+int curve_node::build_default_curve(int curve,const graphic_context& gc)
+{
+    mouse_released=1;
+
+//points
+    for (int pt=1; pt<MAX_CNODES-1; pt++)
+    {
+        ctrl_pt[curve][pt][0]=(int)((((float)255)/6) *pt);
+        ctrl_pt[curve][pt][1]=255-(int)((((float)255)/6) *pt);
+    }
+    ctrl_pt[curve][1][0]=0;
+    ctrl_pt[curve][1][1]=255;//point 1 en 0 0
+    ctrl_pt[curve][5][0]=255;
+    ctrl_pt[curve][5][1]=0;//point 5 en 255 255
+
+    ctrl_pt[curve][6][0]=255;
+    ctrl_pt[curve][6][1]=0;//point 5 en 255 255
+
+    the_spline_level[curve]=168;
+    index_spline_level=168;
+    spline_level=(((float)index_spline_level)/127)-1;
+    node_count=6;
+    curviness = ftofix(spline_level);
+    curve_calc_tangents();
+    curve_draw_splines();
+
+    curve_spline_level=(((float)index_curve_spline_level)/127)-1;
+
+//write_curve(); //fait planter si debordement de memoire
+
+    view_curve_after_draw();
+    return(0);
+}
+
+
+/**
+ * Function to do something
+ * @param curve index of the chosen curve (0..15)
+ * @param gc graphic context
+ **/
 int curve_node::build_square(int curve,const graphic_context& gc)
 {
   //points
