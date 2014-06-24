@@ -99,6 +99,15 @@ int constrain_data_to_midi_range(int valeur)
 }
 
 
+int send_data_to_fantastick()
+{
+#ifdef __linux__
+#endif
+#ifdef _WIN32
+nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+#endif
+return(0);
+}
 
 //christoph 14/04/14 avoiding clippling on stop
 int player1_do_stop()//fade out to avoid clipping in sound when stopping
@@ -2142,9 +2151,13 @@ int reset_and_recall_iCat_images()
     if (enable_iCat==1 && iCat_serveur_is_initialized==1)
     {
 
-        nbrbytessendediCat=sendto(sockiCat, "clearmodels",sizeof("clearmodels"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
 //effacage total
-        nbrbytessendediCat=sendto(sockiCat, "clearimagecache",sizeof("clearimagecache"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
+sprintf(StrOrderToiCat,"clearmodels");
+send_data_to_fantastick();
+sprintf(StrOrderToiCat,"clearimagecache");
+send_data_to_fantastick();
+
 
         char name_library[128][25];
 //init tableau noms fichiers
@@ -2250,16 +2263,19 @@ int reset_and_recall_iCat_images()
         for(int loopi=0; loopi<85; loopi++)
         {
             sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/%s",loopi,name_library[loopi]);
-            nbrbytessendediCat=sendto(sockiCat, StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+         send_data_to_fantastick();
 //rest(10);
         }
 
         sprintf(StrOrderToiCat,"model slider0d image http://www.le-chat-noir-numerique.fr/iCat/slider.jpg");
-        nbrbytessendediCat=sendto(sockiCat, StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+        send_data_to_fantastick();
         //fin confition enbabled and initiated
 
-        nbrbytessendediCat=sendto(sockiCat, "opengl 1",sizeof("opengl 0"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
-        nbrbytessendediCat=sendto(sockiCat, "opengl 1",sizeof("opengl 1"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        sprintf(StrOrderToiCat,"opengl 1");
+        send_data_to_fantastick();
+        sprintf(StrOrderToiCat,"opengl 1");
+        send_data_to_fantastick();
 
     }
     return(0);
