@@ -41,8 +41,6 @@ WWWWWWWW           C  WWWWWWWW   |
 *
  **/
 
-using namespace std;
-
 #include "patch_splines_2.h"
 
 int reset_numeric_entry()
@@ -3473,7 +3471,7 @@ int send_my_midi_note( int letype,  int lechannel, int lanote, int lavelocite, i
 
     }
 #else
-    cout << "send_my_midi_note non implémenté\n";
+    std::cout << "send_my_midi_note non implémenté\n";
 #endif
     return(0);
 }
@@ -3494,7 +3492,7 @@ int send_my_midi_note_delayed( int letype,  int lechannel, int lanote, int lavel
 
     }
 #else
-    cout << "send_my_midi_note_delayed non implémenté\n";
+    std::cout << "send_my_midi_note_delayed non implémenté\n";
 #endif
     return(0);
 }
@@ -3515,7 +3513,7 @@ int send_immidiateley_my_midi_cc( int letype,  int lechannel, int lanote, int la
         MidiSendIm(myRefNum, eIMid);
     }
 #else
-    cout << "send_immidiateley_my_midi_cc not implemented\n";
+    std::cout << "send_immidiateley_my_midi_cc not implemented\n";
 #endif
     return(0);
 }
@@ -5711,7 +5709,7 @@ int substract_a_window(int id)
         break;
     case W_PATCH:
         index_patch_window=0;
-        index_enable_curve_editing=0;
+	curve_node::index_enable_editing=0;
         patch_unselect_all_dimmers();
         index_patch_overide=0;
         index_patch_affect_is_done=0;
