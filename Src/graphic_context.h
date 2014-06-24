@@ -69,6 +69,7 @@ class graphic_context{
   int W_PATCH;
   int mouse_x;
   int mouse_y;
+  int mouse_released;
   int xpatch_window;
   int ypatch_window;
   int dmx_view;
@@ -79,6 +80,7 @@ class graphic_context{
    * @param W_PATCH identifier of a particular window
    * @param mouse_x abscissa of the mouse cursor
    * @param mouse_y ordinate of the mouse cursor
+   * @param mouse_released 0 or 1, indicates the click state
    * @param xpatch_window abscissa of the patch window
    * @param ypatch_window ordinate of the patch window
    * @param dmx_view an integer code to define the view mode of DMX: 0 means percentage of intensity, 1 means DMX unity (0..255)
@@ -88,6 +90,7 @@ class graphic_context{
     W_PATCH(W_PATCH),
     mouse_x(mouse_x),
     mouse_y(mouse_y),
+    mouse_released(mouse_released),
     xpatch_window(xpatch_window),
     ypatch_window(),
     dmx_view(){
