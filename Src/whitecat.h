@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 #include "Crossplateform.h"
 
-
+#include "utils.h"
 
 char versionis[72]={"Beta 0.8.6.1 - 16 juin 2014"};
 char nickname_version[48]={"SPRING POWER"};
@@ -147,7 +147,7 @@ float couleurs_user[12][3];
 char descriptif_colors_user_conf[32];
 char tmp_time[24];
 //variables globales d'affichage
-char string_Last_Order[256];
+char string_Last_Order[BUFFER_LENGTH];
 char string_xy_mouse[12];
 char string_display_fps[5];
 char string_display_dmx_params[64];
@@ -1777,7 +1777,7 @@ int iCat_affectation_string_value_is[8][24];//affectations valeurs sequeciels st
 int previous_numeric_postext=0;//pour rafraichissement string icat
 int previous_last_ch_selected=0;
 int previous_last_dim_selected=0;
-char previous_string_Last_Order[256];
+char previous_string_Last_Order[BUFFER_LENGTH];
 char previous_string_confirmation[128];
 
 bool  index_ask_clear_img_icat=0;//reset des images et rechargement global

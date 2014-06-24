@@ -35,6 +35,8 @@ WWWWWWWW           C  WWWWWWWW   |
  * \date 24/06/2014
  **/
 
+#define BUFFER_LENGTH 256
+
 int toggle (int index_to_toggle);
 
 #endif //utils_h_included
