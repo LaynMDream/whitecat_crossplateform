@@ -1,3 +1,5 @@
+#ifndef utils_h_included
+#define utils_h_included
 /*-------------------------------------------------------------------------------------------------------------
                                  |
           CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
@@ -34,3 +36,5 @@ WWWWWWWW           C  WWWWWWWW   |
  **/
 
 int toggle (int index_to_toggle);
+
+#endif //utils_h_included

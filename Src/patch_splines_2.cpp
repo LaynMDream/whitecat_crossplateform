@@ -49,6 +49,7 @@ using namespace ol;
 
 //#include "whitecat.h"        /* for the types curve_node */
 #include "patch_splines_2.h"  /* headers for definitions coded below */
+#include "utils.h"
 
 /**
  * The constructor
