@@ -511,7 +511,7 @@ int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
 		      index_preheat==0 && 
 		      gc.mouse_released==0)//selection du curve
 		{
-		  load_curve_in_temp_curve();
+		  load_temp();
 		  gc.mouse_released=1;
 		}
 	    }
@@ -532,43 +532,44 @@ int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
 	  switch(act)
 	    {
 	    case 0:
-	      if(index_reset_curve==0){
-		dessafect_index_curves();
-		index_reset_curve=1; 
+	      if(index_reset==0){
+		clear_indexes();
+		index_reset=1; 
 	      }
-	      else if (index_reset_curve==1){
-		index_reset_curve=0; 
+	      else if (index_reset==1){
+		index_reset=0; 
 	      }
 	      break;
 	    case 1:
-	      if(index_square_curve==0){
-		dessafect_index_curves();
-		index_square_curve=1;
+	      if(index_square==0){
+		clear_indexes();
+		index_square=1;
 	      }
-	      else if (index_square_curve==1){index_square_curve=0; }
+	      else if (index_square==1){
+		index_square=0; 
+	      }
 	      break;
 	    case 2:
-	      if(index_preheat_curve==0){
-		dessafect_index_curves();
-		index_preheat_curve=1; 
+	      if(index_preheat==0){
+		clear_indexes();
+		index_preheat=1; 
 	      }
-	      else if (index_preheat_curve==1){
-		index_preheat_curve=0;
+	      else if (index_preheat==1){
+		index_preheat=0;
 	      }
 	      break;
 	    case 3:
-	      if(index_fluo_curve==0){
-		dessafect_index_curves();
-		index_fluo_curve=1; 
+	      if(index_fluo==0){
+		clear_indexes();
+		index_fluo=1; 
 	      }
-	      else if (index_fluo_curve==1){
-		index_fluo_curve=0; 
+	      else if (index_fluo==1){
+		index_fluo=0; 
 	      }
 	      break;
 	    }
 	  gc.mouse_released=1;
 	}
-
     }
   /////////////////////AFFECTATION AUX DIMERS SELECTIONNES///////////////////////////
 
@@ -586,3 +587,24 @@ int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
   return(0);
 }
 
+/**
+ * recopie une courbe temporaire
+ **/
+int curve_node::load_temp()
+{
+  index_spline_level=the_spline_level[selected];   
+  //pixels de l editeur    le float est recalculé dans la boucle
+  return(0);
+}
+
+/**
+ * remet les index des courbes à zéro
+ **/
+int curve_node::clear_indexes()
+{
+    index_reset=0;
+    index_square=0;
+    index_fluo=0;
+    index_preheat=0;
+    return(0);
+}

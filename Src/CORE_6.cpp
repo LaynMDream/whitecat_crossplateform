@@ -930,25 +930,6 @@ int detect_last_activ_channel_in_activ_view(int v)
 }
 
 
-int toggle (int index_to_toggle)
-{
-    switch(index_to_toggle)
-    {
-    case 0:
-        index_to_toggle=1;
-        break;
-    case 1:
-        index_to_toggle=0;
-        break;
-    default:
-        index_to_toggle=0;
-        break;
-    }
-    return(index_to_toggle);
-}
-
-
-
 int bounce(int b)
 {
 
@@ -3226,15 +3207,6 @@ int do_recall_fadersstate(bool fads, bool speeds, bool locks, bool lfos, bool lo
 
 
 ////////////////////////////////////////////////////////////////////////////////
-
-int dessafect_index_curves()
-{
-    index_reset_curve=0;
-    index_square_curve=0;
-    index_fluo_curve=0;
-    index_preheat_curve=0;
-    return(0);
-}
 
 int reconstruct_plot_dimmer_list_from_patch()
 {

@@ -77,6 +77,8 @@ class curve_node
   int build_preheat(int curve, const graphic_context& gc);
   int build_inverse(int curve, const graphic_context& gc);
   int do_logical_menu(int XCurv, int YCurv, graphic_context& gc);
+  int load_temp();
+  int clear_indexes();
 
   /* static members */
   static bool index_writing;
