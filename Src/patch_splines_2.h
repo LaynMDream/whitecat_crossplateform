@@ -71,7 +71,7 @@ class curve_node
   int draw_splines(const graphic_context& gc);
   int view_after_draw(const graphic_context& gc);
   int SplineCurve(const graphic_context& gc);
-  int build_default_curve(int curve, const graphic_context& gc)
+  int build_default_curve(int curve, graphic_context& gc);
   int build_square(int curve, const graphic_context& gc);
   int build_fluo(int curve, const graphic_context& gc);
   int build_preheat(int curve, const graphic_context& gc);

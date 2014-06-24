@@ -291,9 +291,9 @@ int curve_node::SplineCurve(const graphic_context& gc)
  * @param curve index of the chosen curve (0..15)
  * @param gc graphic context
  **/
-int curve_node::build_default_curve(int curve,const graphic_context& gc)
+int curve_node::build_default_curve(int curve, graphic_context& gc)
 {
-    mouse_released=1;
+    gc.mouse_released=1;
 
 //points
     for (int pt=1; pt<MAX_CNODES-1; pt++)
