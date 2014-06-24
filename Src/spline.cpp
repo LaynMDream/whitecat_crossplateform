@@ -39,6 +39,16 @@ WWWWWWWW           C  WWWWWWWW   |
 using namespace ol;
 #include "colors_fonts.h"
 
+/* static variables */
+bool Spline::index_writing=0;
+int Spline::selected=0;
+bool Spline::index_enable_editing=0;
+bool Spline::index_reset=0;
+bool Spline::index_square=0;
+bool Spline::index_fluo=0;
+bool Spline::index_preheat=0;
+
+
 /**
  * calculates a series of curve_node tangents 
  * @param node_count an index, which is incremented once during the call
@@ -398,3 +408,14 @@ int Spline::build_inverse(int curve,const graphic_context& gc)
   return(0);
 }
 
+/**
+ * Stream dump function
+ * @param o an output stream
+ * @return the output stream after the dump
+ **/
+std::ostream & operator << (std::ostream &o, const Spline & s){
+  o << "Objet Spline{\n"
+    << "  nodes: " << s.nodes << "\n"
+    << "}\n";
+  return o;
+}

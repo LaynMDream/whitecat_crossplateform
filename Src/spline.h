@@ -38,6 +38,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 #include "patch_splines_2.h"
+#include <iostream> 
 
 /**
  * @macro
@@ -89,6 +90,7 @@ class Spline{
   fixed curviness;
   float spline_level; //report en float
   int report[16][256];
+  friend std::ostream & operator << (std::ostream &o, const Spline & s);
 
  public:
   /**
