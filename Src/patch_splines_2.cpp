@@ -438,3 +438,150 @@ int curve_node::build_inverse(int curve,const graphic_context& gc)
   view_after_draw(gc);
   return(0);
 }
+
+int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
+{
+  if(gc.mouse_x > (XCurv+30) &&
+     gc.mouse_x < (XCurv+30+50) &&
+     gc.mouse_y >( YCurv+10) && 
+     gc.mouse_y < (YCurv+10+20))
+    {
+      index_enable_editing=toggle(index_enable_editing);
+      gc.mouse_released=1;
+    }
+
+  for(int l=0;l<4;l++)
+    {
+      for (int curvenumber=0;curvenumber<4;curvenumber++)
+	{
+	  if(gc.mouse_x>(XCurv+20+(curvenumber*70)) &&
+	     gc.mouse_x<(XCurv+20+(curvenumber*70)+60) && 
+	     gc.mouse_y>(YCurv+370+(30*l)) &&
+	     gc.mouse_y<(YCurv+370+(30*l))+20)
+	    {
+	      selected=curvenumber+(l*4);
+	      //courbe droite
+	      if(index_reset_curve==1 && 
+		 index_enable_curve_editing==1 && 
+		 index_square_curve==0 && 
+		 index_fluo_curve==0 && index_preheat_curve==0)
+		{
+		  build_default_curve(selected);
+		  index_reset_curve=0;
+		  gc.mouse_released=1;
+		}
+	      //courbe TV
+	      else if (index_square_curve==1 &&  
+		       index_enable_curve_editing==1 && 
+		       index_reset_curve==0 && 
+		       index_fluo_curve==0 && 
+		       index_preheat_curve==0)
+		{
+		  build_square(selected,gc);
+		  index_square_curve=0;
+		  mouse_released=1;
+		}
+	      //courbe preheat
+	      else if (index_preheat_curve==1 && 
+		       index_enable_curve_editing==1 && 
+		       index_square_curve==0 && 
+		       index_reset_curve==0 && 
+		       index_fluo_curve==0  )
+		{
+		  build_preheat_curve(selected);
+		  index_preheat_curve=0;
+		  mouse_released=1;
+		}
+	      //courbe fluo
+	      else if (index_fluo_curve==1 && 
+		       index_enable_curve_editing==1 && 
+		       index_square_curve==0 && 
+		       index_reset_curve==0 && 
+		       index_preheat_curve==0)
+		{
+		  build_fluo_curve(selected);
+		  index_fluo_curve=0;
+		  gc.mouse_released=1;
+		}
+
+	      else if(index_reset_curve==0 && 
+		      index_square_curve==0 && 
+		      index_fluo_curve==0 && 
+		      index_preheat_curve==0 && 
+		      gc.mouse_released==0)//selection du curve
+		{
+		  load_curve_in_temp_curve();
+		  gc.mouse_released=1;
+		}
+	    }
+
+	}
+    }
+
+  // CHOIX PRESET DE CURVE///////////////////////////////////////////////////////////////////
+
+  for (int act=0;act<4;act++)
+    {
+      ///ACTIONS
+      if(mouse_x>(XCurv+20+(act*70)) && 
+	 mouse_x<(XCurv+20+(act*70)+60) && 
+	 mouse_y>(YCurv+510) && 
+	 mouse_y<(YCurv+510)+20)
+	{
+	  switch(act)
+	    {
+	    case 0:
+	      if(index_reset_curve==0){
+		dessafect_index_curves();
+		index_reset_curve=1; 
+	      }
+	      else if (index_reset_curve==1){
+		index_reset_curve=0; 
+	      }
+	      break;
+	    case 1:
+	      if(index_square_curve==0){
+		dessafect_index_curves();
+		index_square_curve=1;
+	      }
+	      else if (index_square_curve==1){index_square_curve=0; }
+	      break;
+	    case 2:
+	      if(index_preheat_curve==0){
+		dessafect_index_curves();
+		index_preheat_curve=1; 
+	      }
+	      else if (index_preheat_curve==1){
+		index_preheat_curve=0;
+	      }
+	      break;
+	    case 3:
+	      if(index_fluo_curve==0){
+		dessafect_index_curves();
+		index_fluo_curve=1; 
+	      }
+	      else if (index_fluo_curve==1){
+		index_fluo_curve=0; 
+	      }
+	      break;
+	    }
+	  gc.mouse_released=1;
+	}
+
+    }
+  /////////////////////AFFECTATION AUX DIMERS SELECTIONNES///////////////////////////
+
+  if(mouse_x>XCurv+65 && 
+     mouse_x<XCurv+65+200 && 
+     mouse_y>YCurv+560 && 
+     mouse_y<YCurv+560+30)
+    {
+      do_curve_affectation();
+      patch_unselect_all_dimmers();
+      sprintf(string_Last_Order,">>Affected Curve  %d to Dimmer", selected);
+      mouse_released=1;
+    }
+
+  return(0);
+}
+
