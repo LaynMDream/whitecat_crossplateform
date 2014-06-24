@@ -2762,7 +2762,7 @@ int snapshot_windows()
     return(0);
 }
 
-int close_all_windows()
+void close_all_windows()
 {
     index_type=0;
     index_list_projecteurs=0;
@@ -2790,10 +2790,9 @@ int close_all_windows()
     index_window_gui_iCat=0;
     index_my_window=0;//sample
     window_focus_id=0;
-    return(0);
 }
 
-int write_window_indexes_from_list_of_windows()
+void write_window_indexes_from_list_of_windows()
 {
     close_all_windows();
     for(int i=0; i<63; i++)
@@ -2880,7 +2879,6 @@ int write_window_indexes_from_list_of_windows()
             break;
         }
     }
-    return(0);
 }
 
 
@@ -5670,7 +5668,7 @@ int substract_a_window(int id)
 }
 */
 
-int substract_a_window(int id)
+void substract_a_window(int id)
 {
 /* christoph 11/04/2014 begin replace */
     int erase_window_opened[64];
@@ -5830,8 +5828,6 @@ int substract_a_window(int id)
 nbre_fenetre_actives--;
 
 if (nbre_fenetre_actives<=0){nbre_fenetre_actives=0;window_focus_id=0;}
-
-return(0);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 int GlobInit()

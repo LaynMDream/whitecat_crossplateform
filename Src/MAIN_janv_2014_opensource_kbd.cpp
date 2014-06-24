@@ -98,6 +98,9 @@ bufferSaisiesnamp=0;
 #include <MidiShare.h>
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
+
+#include <whitecat_Fct.h>
+
 #include <patch_splines_2.cpp>//spline pour curves
 
 
@@ -327,10 +330,73 @@ int do_mouse_right_click_menu()
  return(0);
 }
 
+/** \brief On mouse event - Manage mouse global variable
+ *
+ * \param int Allegro flags (for binary compar)
+ * \return void
+ *
+ */
 void my_callback(int flags) {
 
     if (flags & MOUSE_FLAG_LEFT_DOWN )
         {
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseLeftClic.isDown=true;
+        mouseLeftClic.isDouble = false;
+        mouseLeftClic.eventProcessed=false;
+        mouseLeftClic.posx=mouse_x;
+        mouseLeftClic.posy=mouse_y;
+        mouseLeftClic.posz=mouse_z;
+        mouseLeftClic.timer = time(NULL);
+
+        if (mouseLeftClicHistory.size()>=2) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
+        {
+            time_t lasttime  = mouseLeftClic.timer ; // 2d down = down courant
+            time_t firsttime = mouseLeftClicHistory[1].timer ; //1er down
+
+            if ((mouseRightClicHistory.size()>=1) && (firsttime < mouseRightClicHistory[0].timer))
+            {
+            	//un clic droit s'est produit entre les deux clics gauche
+				sprintf(string_Last_Order,"Double clic - clic droit intercalé");
+            	mouseLeftClic.isDouble = false;
+            }
+            else if ((mouseMiddleClicHistory.size()>=1) && (firsttime < mouseMiddleClicHistory[0].timer))
+            {
+            	//un clic milieu s'est produit entre les deux clics gauche
+				sprintf(string_Last_Order,"Double clic - clic milieu intercalé");
+            	mouseLeftClic.isDouble = false;
+            }
+            else
+            {
+				gapSecond = lasttime-firsttime ;
+				if ((gapSecond<0.1) && (mouseLeftClicHistory[1].isDouble==false))
+				{
+					sprintf(string_Last_Order,"LeftDoubleClic %f sec", gapSecond);
+					mouseLeftClic.isDouble = true;
+				}
+				else if (mouseLeftClicHistory[1].isDouble)
+				{
+					sprintf(string_Last_Order,"xieme Clic annulant precedent");
+					mouseLeftClic.isDouble = false;
+				}
+				else
+				{
+					sprintf(string_Last_Order,"Double clic - Trop long %f sec", gapSecond);
+					mouseLeftClic.isDouble = false;
+				}
+            }
+        }
+
+		//Keep only previous down-up sequence with the current
+		if (mouseLeftClicHistory.size()==6) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
+		{
+			mouseLeftClicHistory.erase(mouseLeftClicHistory.begin()+5); //   up very old
+			mouseLeftClicHistory.erase(mouseLeftClicHistory.begin()+4); // down very old
+		}
+
+        mouseLeftClicHistory.push_front (mouseLeftClic); //up new (current)
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         mouse_button=1;
         original_posx=mouse_x;original_posy=mouse_y;
         //sab 29/05/2013 deb ---------------------------------------------------------------
@@ -350,6 +416,25 @@ void my_callback(int flags) {
 
     else if (flags & MOUSE_FLAG_LEFT_UP )//relevage bouton
         {
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseLeftClic.isDown=false;
+        mouseLeftClic.isDouble = false;
+        mouseLeftClic.eventProcessed=false;
+        mouseLeftClic.posx=mouse_x;
+        mouseLeftClic.posy=mouse_y;
+        mouseLeftClic.posz=mouse_z;
+        mouseLeftClic.timer = time(NULL);
+
+		//Keep only previous down-up sequence with the current
+        if (mouseRightClicHistory.size()==6)
+        {
+            mouseRightClicHistory.erase(mouseRightClicHistory.begin()+5);
+            mouseRightClicHistory.erase(mouseRightClicHistory.begin()+3);
+        }
+
+        mouseLeftClicHistory.push_front (mouseLeftClic);
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         mouse_button=0; mouse_released=1;   //liberation du curseur souris
         index_click_move_faderspace=0; im_moving_a_window=0; index_mouse_is_tracking=0;
         index_moving_fader_space=0;index_moving_x_slide=0;index_moving_y_slide=0;
@@ -367,6 +452,19 @@ void my_callback(int flags) {
 
        if (flags & MOUSE_FLAG_RIGHT_DOWN )
         {
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseRightClic.isDown=true;
+        mouseRightClic.isDouble = false;
+        mouseRightClic.eventProcessed=false;
+        mouseRightClic.posx=mouse_x;
+        mouseRightClic.posy=mouse_y;
+        mouseRightClic.posz=mouse_z;
+        mouseRightClic.timer = time(NULL);
+
+        mouseRightClicHistory.push_front (mouseRightClic);
+
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         original_posx=mouse_x;original_posy=mouse_y;
         mouse_R_button=1;
         mouse_R_released=0;
@@ -389,6 +487,17 @@ void my_callback(int flags) {
 
        else if (flags & MOUSE_FLAG_RIGHT_UP )
         {
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseRightClic.isDown=false;
+        mouseRightClic.isDouble = false;
+        mouseRightClic.eventProcessed=false;
+        mouseRightClic.posx=mouse_x;
+        mouseRightClic.posy=mouse_y;
+        mouseRightClic.posz=mouse_z;
+        mouseRightClic.timer = time(NULL);
+        mouseRightClicHistory.push_front (mouseRightClic);
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         mouse_R_button=0;
         mouse_R_released=1;
         index_move_plot_view_port=0;
@@ -399,6 +508,41 @@ void my_callback(int flags) {
 
         if(mouse_button==0)
         {set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);}
+
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+    if (flags & MOUSE_FLAG_MIDDLE_DOWN )
+    {
+        mouseMiddleClic.isDown=true;
+        mouseMiddleClic.isDouble = false;
+        mouseMiddleClic.eventProcessed=false;
+        mouseMiddleClic.posx=mouse_x;
+        mouseMiddleClic.posy=mouse_y;
+        mouseMiddleClic.posz=mouse_z;
+        mouseMiddleClic.timer = time(NULL);
+
+		//Keep only previous down-up sequence with the current
+        if (mouseMiddleClicHistory.size()==6)
+        {
+            mouseMiddleClicHistory.erase(mouseMiddleClicHistory.begin()+5);
+            mouseMiddleClicHistory.erase(mouseMiddleClicHistory.begin()+4);
+        }
+
+        mouseMiddleClicHistory.push_front (mouseMiddleClic);
+    }
+    else if (flags & MOUSE_FLAG_MIDDLE_UP )
+    {
+
+        mouseMiddleClic.isDown=false;
+        mouseMiddleClic.isDouble = false;
+        mouseMiddleClic.eventProcessed=false;
+        mouseMiddleClic.posx=mouse_x;
+        mouseMiddleClic.posy=mouse_y;
+        mouseMiddleClic.posz=mouse_z;
+        mouseMiddleClic.timer = time(NULL);
+
+        mouseMiddleClicHistory.push_front (mouseMiddleClic);
+    }
+//sab 24/06/2014 - Doubleclic - Ajout - FIN
 
 }
 END_OF_FUNCTION(my_callback);

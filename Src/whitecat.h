@@ -2520,3 +2520,18 @@ bool bounce_is_prepared[24];
 int fader_before_bounce[48];
 
 float snap_echo_to_recall[24][513];
+
+//sab 24/06/2014 - Doubleclic - Ajout - DEB
+typedef struct eventclic
+{
+   bool isDown, isDouble, eventProcessed ;
+   int  posx, posy, posz;
+   time_t timer;
+} eventclic;
+eventclic mouseLeftClic, mouseMiddleClic, mouseRightClic;
+std::deque<eventclic> mouseLeftClicHistory;
+std::deque<eventclic> mouseMiddleClicHistory;
+std::deque<eventclic> mouseRightClicHistory;
+double gapSecond;
+//sab 24/06/2014 - Doubleclic - Ajout - FIN
+
