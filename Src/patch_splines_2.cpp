@@ -314,14 +314,14 @@ int curve_node::build_default_curve(int curve, graphic_context& gc)
     spline_level=(((float)index_spline_level)/127)-1;
     node_count=6;
     curviness = ftofix(spline_level);
-    curve_calc_tangents();
-    curve_draw_splines();
+    calc_tangents();
+    draw_splines(gc);
 
-    curve_spline_level=(((float)index_curve_spline_level)/127)-1;
+    spline_level=(((float)index_spline_level)/127)-1;
 
 //write_curve(); //fait planter si debordement de memoire
 
-    view_curve_after_draw();
+    view_after_draw(gc);
     return(0);
 }
 
