@@ -44,6 +44,7 @@ WWWWWWWW           C  WWWWWWWW   |
 **/
 
 #include "graphic_context.h"
+#include <allegro.h> // for the type "fixed"
 
 //Curves splines
 
@@ -61,21 +62,9 @@ class curve_node
   int x, y;
   fixed tangent;
 
-  curve_node(int ax, int ay, fixed atangent);
-  fixed dist(const curve_node& other);
+  curve_node(int ax=0, int ay=0, fixed atangent=0);
+  fixed dist(const curve_node& other) const;
   curve_node& dummy(const curve_node& prev);
-  void calc_tangents(void);
-  void get_control_points(const curve_node& other, int points[8]);
-  int write_curve(const graphic_context& gc);
-  int draw(int n, const graphic_context& gc);
-  int draw_splines(const graphic_context& gc);
-  int view_after_draw(const graphic_context& gc);
-  int SplineCurve(const graphic_context& gc);
-  int build_default_curve(int curve, graphic_context& gc);
-  int build_square(int curve, const graphic_context& gc);
-  int build_fluo(int curve, const graphic_context& gc);
-  int build_preheat(int curve, const graphic_context& gc);
-  int build_inverse(int curve, const graphic_context& gc);
   int do_logical_menu(int XCurv, int YCurv, graphic_context& gc, char* string_Last_Order);
   int load_temp();
   int clear_indexes();
@@ -88,27 +77,13 @@ class curve_node
   int reset_channel_first_dimmer_list();
 
   /* static members */
-  static bool index_writing;
-  static bool index_enable_editing;
-  static bool index_reset;
-  static bool index_square;
-  static bool index_fluo;
-  static bool index_preheat;
   static bool Dimmers_selected[514];
   static int  Patch[514];
   static int show_first_dim_array[514][4];//pour affichage du premier grada patché au circuit
   static bool show_more_than_one_dim[514];
   static bool index_build_patch_from_plot;
-  static float spline_level; //report en float
-  static int selected;
-  static int the_spline_level[16];
-  static int report[16][256];
-  static int index_spline_level;//pixels de l editeur
   static int curves[514];//bug ?514 était en 513
-  static int ctrl_pt[16][8][2]; //5 pts de controls (  pour caller 1er et dernier dummy)
-  static int diam;//diametre de la poignee pour saisie du curve_node
   static int node_count;
-  static fixed curviness;
   static int nbre_symbols_on_plot[4];
   static const int nbre_symbol_per_layer=128;
   static int symbol_channel_is[4][nbre_symbol_per_layer];
@@ -162,36 +137,6 @@ class curve_node
   static int shape_id_to_select;
 
   static int temp_shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
-
-
- private:
-  /**
-   * @macro
-   * @brief number of nodes in a spline curve.
-   **/
-#define CNODES 5
-  /**
-   * @macro
-   * @brief This quirk should disappear
-   *
-   * it has been borrowed from the ancient code, where it was necessary
-   * to prevent overflows
-   **/
-#define CNODES_OVERFLOW_QUIRK 3
-  /**
-   * @macro
-   * @brief sum of CNODES and CNODES_OVERFLOW_QUIRK
-   **/
-#define MAX_CNODES CNODES + CNODES_OVERFLOW_QUIRK
-  /**
-   * @var static curve_node nodes
-   * @brief table of nodes to control a spline curve
-   * 
-   * there should be 5 nodes, 2 at both ends, and 3 inbetween
-   * the ancient version of this implementation defined 8 places in the
-   * table to prevent overflows, let us begin with this quirk
-   **/
-  static curve_node nodes[MAX_CNODES]; 
 };
 
 #endif /* patch_splines_2_h */
