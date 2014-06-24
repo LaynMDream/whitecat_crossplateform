@@ -144,7 +144,7 @@ int Spline::write_curve(const graphic_context& gc, int & node_count)
 
 
 /**
- * Function to fraw a spline near a given point
+ * Function to draw a spline near a given point
  * @param n number of point to draw
  * @param gc graphic context
  * param node_count an index to a node (i/o)
@@ -414,8 +414,11 @@ int Spline::build_inverse(int curve,const graphic_context& gc)
  * @return the output stream after the dump
  **/
 std::ostream & operator << (std::ostream &o, const Spline & s){
-  o << "Objet Spline{\n"
-    << "  nodes: " << s.nodes << "\n"
-    << "}\n";
+  o << "Objet Spline{\n";
+  // nodes
+  o << "  nodes: " ;
+  for (int i= 0; i<MAX_CNODES; i++) o << s.nodes[i] << " ";
+  o << "\n";
+  o  << "}\n";
   return o;
 }
