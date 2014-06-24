@@ -147,9 +147,15 @@ int init_artnet_variables()
 
  int  DoArtPollReply()
 {
+
+#ifdef __linux__
+
+#endif
+
+#ifdef _WIN32
    nbrbytessended=sendto(sockartnet, ArtPollReplyBuffer,sizeof( ArtPollReplyBuffer),0,(SOCKADDR*)&sinS,sinsize);
    sprintf(string_Last_Order,">>Polled !");
-
+#endif
    return(0);
 }
 
@@ -274,6 +280,12 @@ return(0);
 
 int initialisation_serveur_artnet()
 {
+#ifdef __linux__
+
+#endif
+
+#ifdef _WIN32
+
     WSADATA wsa;
 	WSAStartup(MAKEWORD(2,0),&wsa);
 
@@ -299,21 +311,35 @@ int initialisation_serveur_artnet()
 memcpy(&sinServ.sin_addr.s_addr, phe->h_addr_list[network_OUT_is_selected], phe->h_length);
 
 artnet_serveur_is_initialized=1;
+#endif
 return(0);
 }
 
 int fermeture_serveur_artnet()
 {
+#ifdef __linux__
+
+#endif
+
+#ifdef _WIN32
+
  	shutdown(sock,2);
     closesocket(sock);
     sprintf(string_Last_Order,">>Closed Art-Net serveur");
     artnet_serveur_is_initialized=0;
+#endif
  return(0);
 }
 
 //bug remonté par jacques
 int detection_mise_en_place_carte_reseaux()
 {
+#ifdef __linux__
+
+#endif
+
+#ifdef _WIN32
+
 WSADATA wsa;
 WSAStartup(MAKEWORD(2,0),&wsa);
 //adresse locale et nom de machine
@@ -326,6 +352,7 @@ WSAStartup(MAKEWORD(2,0),&wsa);
  Ipsearch++;
  }
  detection_reseaux();
+ #endif
 return(0);
 }
 
@@ -363,6 +390,12 @@ memcpy(&sinS.sin_addr.s_addr, phe->h_addr_list[network_OUT_is_selected], phe->h_
 //                      (unsigned char)my_ip_is[2],(unsigned char)my_ip_is[3]);
 
 */
+
+#ifdef __linux__
+
+#endif
+
+#ifdef _WIN32
 
 //On informe la structure
 sinS.sin_family=AF_INET;
@@ -402,15 +435,23 @@ else if (index_broadcast==0)
 	sprintf(string_display_dmx_params,"ART-NET: Unicast to %s Univ. %d",ip_artnet, Univers);
     }
 client_artnet_is_closed=0;
+#endif
 return(0);
 }
 
 int fermeture_client_artnet()
 {
+#ifdef __linux__
+
+#endif
+
+#ifdef _WIN32
+
  	shutdown(sockartnet,2);
     closesocket(sockartnet);
     sprintf(string_Last_Order,">>Closed Art-Net Client");
     client_artnet_is_closed=1;
+#endif
  return(0);
 }
 

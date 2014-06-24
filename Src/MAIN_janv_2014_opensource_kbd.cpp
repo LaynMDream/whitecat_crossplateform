@@ -555,11 +555,17 @@ if(index_quit==0 && index_is_saving==0)
 
  if (enable_iCat==1 && iCat_serveur_is_initialized==1 && do_send_icat_init_page==0)
       {
+      #ifdef __linux__
+
+      #endif
+      #ifdef _WIN32
+
       bytesreceivediCat=recvfrom(sockRiCat,fantastick_message,sizeof(fantastick_message),0,(SOCKADDR*)&sinServiCat,&sinsizeServiCat);
       if(bytesreceivediCat>0 && (fantastick_message[0]!='I' &&  fantastick_message[1] !='P'))//caractere d arret
       {
       fantastick_message[bytesreceivediCat]='\0';
       }
+      #endif
       ReceiveFantastick();
       DoJobFantastickTouch();
       Fantastick_check_string();
@@ -570,9 +576,15 @@ if(index_quit==0 && index_is_saving==0)
 
  if(allow_artnet_in==1 && artnet_serveur_is_initialized==1 )
       {
+      #ifdef __linux__
+
+      #endif
+      #ifdef _WIN32
+
       if((bytesreceived=recvfrom(sock,artnet_message,sizeof(artnet_message),0,(SOCKADDR*)&sinServ,&sinsizeServ)>0))
       {receiving_bytes=1;ReceiveArtDmx();}
       else {receiving_bytes=0;}
+      #endif
       }
 commandes_clavier();
 DoMouseLevel();
@@ -883,7 +895,13 @@ reset_all_bangers();
  initialisation_client_artnet();
          //ConstructArtPoll();
          ConstructArtPollReply();
+         #ifdef __linux__
+
+        #endif
+        #ifdef _WIN32
+
          nbrbytessended=sendto(sockartnet, ArtPollBuffer,sizeof( ArtPollBuffer),0,(SOCKADDR*)&sinS,sinsize);
+         #endif
          //ArtNet
          ArtDmx();
  save_load_print_to_screen("Double DMX Art-net ON");
@@ -966,8 +984,8 @@ if(enable_launchpad==1)
  if (enable_iCat==1)
  {
  initialisation_clientserveur_iCat();
-
- nbrbytessendediCat=sendto(sockiCat, "opengl 1",sizeof("opengl 1"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
+ sprintf(StrOrderToiCat,"opengl 1");
+ send_data_to_fantastick();
  init_iCat_data();//varibales de stockage
  someone_changed_in_sequences=1;//icat
  do_send_icat_init_page=1;

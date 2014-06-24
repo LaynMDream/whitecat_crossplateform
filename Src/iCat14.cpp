@@ -90,11 +90,16 @@ FS_touch_point_end[1][tp]=-999;
 
 int fermeture_client_iCat()
 {
+#ifdef __linux__
+
+#endif
+#ifdef _WIN32
 
  	shutdown(sockiCat,2);
     closesocket(sockiCat);
     sprintf(string_Last_Order,">>Closed Fantastick Client");
     client_icat_is_closed=1;
+#endif
  return(0);
 }
 
@@ -102,6 +107,11 @@ int fermeture_client_iCat()
 
 int initialisation_clientserveur_iCat()
 {
+#ifdef __linux__
+
+#endif
+#ifdef _WIN32
+
 WSADATA wsa;
 WSAStartup(MAKEWORD(2,0),&wsa);
 sinServiCat.sin_family=AF_INET;
@@ -144,11 +154,17 @@ sprintf(test_chaine,"clearmodels");
 nbrbytessendediCat=sendto(sockiCat,  test_chaine,sizeof(test_chaine),0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
 client_icat_is_closed=0; index_re_init_clientserveur_icat=0;
+#endif
 return(0);
 }
 
 int fermeture_clientserveur_iCat()
 {
+#ifdef __linux__
+
+#endif
+#ifdef _WIN32
+
  	shutdown(sockRiCat,2);
     closesocket(sockRiCat);
     sprintf(string_Last_Order,">>Closed Fantastick server");
@@ -156,6 +172,7 @@ int fermeture_clientserveur_iCat()
 
     if(client_icat_is_closed==0)
     {fermeture_client_iCat();}
+#endif
  return(0);
 }
 
@@ -3422,10 +3439,6 @@ if(finished_to_send_orders_to_iCat==1)
       init_iCat_data();
       load_iCat_page(iCatPageis);
       do_send_icat_init_page=1;
-
-      /*nbrbytessendediCat=sendto(sockiCat, "clearmodels",sizeof("clearmodels"),0,(SOCKADDR*)&siniCat,sinsizeiCat); //dans routine laod avant appel du rafraichissement
-      do_refresh_iCat(iCatPageis);*/
-
       break;
       case 2://page ++
       reset_button(iCatPageis,bt, tp);
@@ -3437,10 +3450,6 @@ if(finished_to_send_orders_to_iCat==1)
       init_iCat_data();
       load_iCat_page(iCatPageis);
       do_send_icat_init_page=1;
-
-      /*nbrbytessendediCat=sendto(sockiCat, "clearmodels",sizeof("clearmodels"),0,(SOCKADDR*)&siniCat,sinsizeiCat); //dans routine laod avant appel du rafraichissement
-      do_refresh_iCat(iCatPageis);*/
-
       break;
       case 3://page num
       reset_button(iCatPageis,bt, tp);
@@ -3778,11 +3787,11 @@ switch(slider_is_touched[iCatPageis][sl])
 {
 case 0:
 sprintf(StrOrderToiCat, "model t%d color 1.0 1.0 1.0",sl);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1:
 sprintf(StrOrderToiCat, "model t%d color 1.0 0.0 0.0",sl);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 }

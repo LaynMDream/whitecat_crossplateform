@@ -138,7 +138,8 @@ if(iCat_select_tracking_zone>iCat_nbre_de_tracking_zone[preset_page_iCat])
 iCat_select_tracking_zone=iCat_nbre_de_tracking_zone[preset_page_iCat];
 if(iCat_select_tracking_zone>max_zones_icat){iCat_select_tracking_zone=0;}
 }
-nbrbytessendediCat=sendto(sockiCat, "clearmodels",sizeof("clearmodels"),0,(SOCKADDR*)&siniCat,sinsizeiCat); //dans routine laod avant appel du rafraichissement
+sprintf(StrOrderToiCat,"clearmodels");
+send_data_to_fantastick();
 
 sprintf(string_Last_Order,"Loaded iCat page %d",preset_page_iCat+1);
 
@@ -169,12 +170,13 @@ sprintf(StrOrderToiCat,"model trackPosition%d position %d %d 0",i,
         (iCat_pos_trackzone[iCatPageis][i][0]*2)+((pos_iCat_tracker[iCatPageis][i][0]/2)*ratio_iCat_trackzone[iCatPageis][i]),
         (iCat_pos_trackzone[iCatPageis][i][1]*2)+((pos_iCat_tracker[iCatPageis][i][1]/2)*ratio_iCat_trackzone[iCatPageis][i]));
 
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 
 sprintf(string_mf_id,"%d-%d",pos_iCat_tracker[iCatPageis][i][0],pos_iCat_tracker[iCatPageis][i][1]);
 sprintf(StrOrderToiCat,"model trackTextPos%d text %s",i,string_mf_id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 
 previous_pos_iCat_tracker[iCatPageis][i][0]=pos_iCat_tracker[iCatPageis][i][0] ;
 previous_pos_iCat_tracker[iCatPageis][i][1]=pos_iCat_tracker[iCatPageis][i][1] ;
@@ -194,7 +196,8 @@ for(int col=0;col<draw_preset_parameters[draw_preset_selected][0];col++)
 int coordonnee=col+(lign*draw_preset_parameters[draw_preset_selected][0]);
 sprintf(StrOrderToiCat,"model DrawAera%dOffstet%d color 0. %.1f %.1f",i,coordonnee,
 draw_preset_levels[draw_preset_selected][coordonnee]*1.0,draw_preset_levels[draw_preset_selected][coordonnee]*0.8);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 }
 }
 }
@@ -215,8 +218,8 @@ i,
 
 (x1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][i])/draw_preset_parameters[draw_preset_selected][0]) *(draw_centre_x[draw_preset_selected]+1)),
 (y1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][i])/draw_preset_parameters[draw_preset_selected][1]) *draw_centre_y[draw_preset_selected]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 break;
 case 3://draw"Draw Matrix num");
 aire=iCat_trackzone_affectation_is[iCatPageis][i]-1;
@@ -232,7 +235,8 @@ for(int col=0;col<draw_preset_parameters[aire][0];col++)
 int coordonnee=col+(lign*draw_preset_parameters[aire][0]);
 sprintf(StrOrderToiCat,"model DrawSelAera%dOffstet%d color 0. %.1f %.1f",i,coordonnee,
 draw_preset_levels[aire][coordonnee]*1.0,draw_preset_levels[aire][coordonnee]*0.8);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 }
 }
 }
@@ -253,8 +257,8 @@ i,
 
 (x1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][i])/draw_preset_parameters[draw_preset_selected][0]) *(draw_centre_x[draw_preset_selected]+1)),
 (y1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][i])/draw_preset_parameters[draw_preset_selected][1]) *draw_centre_y[draw_preset_selected]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 
 break;
 default:
@@ -298,7 +302,8 @@ case 1://Fader
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((float)(Fader[numfad])/2)*ratio_iCat_slider[iCatPageis][i]);
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         //afffichage niveau + loop dock
        if(dmx_view==0){
        //dock loop
@@ -322,11 +327,13 @@ case 1://Fader
        sprintf(StrOrderToiCat, "model tlev%d text %d",i, Fader[numfad]);
        }
        }
-       nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+
+       send_data_to_fantastick();
         /////////TEXT DOCK
            sprintf(StrOrderToiCat, "model tdes%d text %s",i,DockName[numfad][dock_used_by_fader_is[numfad]] );
-           nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         //COULEUE FADER
          col_fader_r=0.9, col_fader_g=0.5, col_fader_b=0.0;
 
@@ -370,7 +377,8 @@ case 1://Fader
            sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",i, col_fader_r, col_fader_g, col_fader_b);
 
            }
-           nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 
 Fader_before[numfad]=Fader[numfad];
 before_dock_used_by_fader_is[numfad]=dock_used_by_fader_is[numfad];
@@ -394,9 +402,11 @@ if(iCat_affectation_slider_value_is[iCatPageis][i]==(numfad+1) && ( before_lfo_s
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((float)(lfo_speed[numfad]))*ratio_iCat_slider[iCatPageis][i]);
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i, lfo_speed[numfad]-64 );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 before_lfo_speed[numfad]=lfo_speed[numfad];
 }
 break;
@@ -440,7 +450,8 @@ if( niveauX1!=before_niveauX1 || niveauX2!=before_niveauX2 || crossfade_speed!=b
         break;
         }
 
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         if(dmx_view==0){
         sprintf(StrOrderToiCat, "model tlev%d text %d",i, (int)((float)(valA)/2.55));
         if(iCat_affectation_slider_value_is[iCatPageis][i]==1)//X2
@@ -453,11 +464,11 @@ if( niveauX1!=before_niveauX1 || niveauX2!=before_niveauX2 || crossfade_speed!=b
         if(iCat_affectation_slider_value_is[iCatPageis][i]==2)//accelero sequenciel
         {sprintf(StrOrderToiCat, "model tlev%d text %d",i, (valA/2)-64); }
 
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+        send_data_to_fantastick();
         //COULEUR FADER
          sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",i, col_fader_r, col_fader_g, col_fader_b);
-         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+        send_data_to_fantastick();
 }
 
 
@@ -475,15 +486,18 @@ if(niveauGMaster!=previous_niveauGMaster || index_refresh_valeurs_continous==1)
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((float)(niveauGMaster)/2)*ratio_iCat_slider[iCatPageis][i]);
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         if(dmx_view==0){
         sprintf(StrOrderToiCat, "model tlev%d text %d",i, (int)((float)(niveauGMaster)/2.55)); }
         else {sprintf(StrOrderToiCat, "model tlev%d text %d",i, niveauGMaster); }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         //COULEUE FADER
          col_fader_r=0.7, col_fader_g=0.0, col_fader_b=0.0;
          sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",i,col_fader_r,col_fader_g,col_fader_b);
-         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+         send_data_to_fantastick();
 previous_niveauGMaster=niveauGMaster;
 }
 break;
@@ -499,15 +513,18 @@ if(absolute_level_wheel!=previous_absolute_level_wheel || index_refresh_valeurs_
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((float)(absolute_level_wheel)/2)*ratio_iCat_slider[iCatPageis][i]);
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         if(dmx_view==0){
         sprintf(StrOrderToiCat, "model tlev%d text %d",i, (int)((float)(absolute_level_wheel)/2.55)); }
         else {sprintf(StrOrderToiCat, "model tlev%d text %d",i, absolute_level_wheel); }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         //COULEUE FADER
          col_fader_r=0.0, col_fader_g=0.7, col_fader_b=0.7;
          sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",i,col_fader_r,col_fader_g,col_fader_b);
-         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+         send_data_to_fantastick();
          previous_absolute_level_wheel=absolute_level_wheel;
 }
 break;
@@ -528,9 +545,11 @@ if(before_mover_params[numfad][0]!=mover_params[numfad][0] )
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((float)(mover_params[numfad][0]/2))*ratio_iCat_slider[iCatPageis][i]);
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i, mover_params[numfad][0] );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 
 }
@@ -547,9 +566,11 @@ if(before_mover_params[numfad][1]!=mover_params[numfad][1] )
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((float)(mover_params[numfad][1]/2))*ratio_iCat_slider[iCatPageis][i]);
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i, mover_params[numfad][1] );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 }
 
@@ -570,9 +591,11 @@ if( draw_level_to_do[drawpr]!=previous_draw_level_to_do[drawpr] || index_refresh
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_level_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_level_to_do[drawpr]*127) );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 break;
 case 8: //Draw Angle
@@ -588,9 +611,11 @@ if( draw_tilt_to_do[drawpr]!=previous_draw_tilt_to_do[drawpr] || index_refresh_v
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_tilt_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_tilt_to_do[drawpr]*127) );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 break;
 
@@ -607,9 +632,11 @@ if( draw_ghost_to_do[drawpr]!=previous_draw_ghost_to_do[drawpr] || index_refresh
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_ghost_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_ghost_to_do[drawpr]*127) );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 break;
 
@@ -626,11 +653,14 @@ if( draw_level_to_do[drawpr]!=previous_draw_level_to_do[drawpr] || index_refresh
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_level_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_level_to_do[drawpr]*127) );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model t%d text P%d",i, draw_preset_selected+1);
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 break;
 case 11: //Draw Angle selected
@@ -646,12 +676,15 @@ if( draw_tilt_to_do[drawpr]!=previous_draw_tilt_to_do[drawpr] || index_refresh_v
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_tilt_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_tilt_to_do[drawpr]*127) );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model t%d text A%d",i, draw_preset_selected+1);
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-}
+
+        send_data_to_fantastick();
+        }
 break;
 case 12: //Draw Ghost
 drawpr=draw_preset_selected;
@@ -666,11 +699,14 @@ if( draw_ghost_to_do[drawpr]!=previous_draw_ghost_to_do[drawpr] || index_refresh
         sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_ghost_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_ghost_to_do[drawpr]*127) );
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
         sprintf(StrOrderToiCat, "model t%d text G%d",i, draw_preset_selected+1);
-        nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+        send_data_to_fantastick();
 }
 break;
 
@@ -1010,11 +1046,12 @@ switch(iCat_affectation_bouton_action_is[iCatPageis][ck])
       {
       case 0:
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/go_off.jpg",ck);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       break;
       case 1:
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/go_on.jpg",ck);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       break;
       }
       }
@@ -1022,12 +1059,14 @@ switch(iCat_affectation_bouton_action_is[iCatPageis][ck])
       if(index_pause==1 && index_go_back==0)
       {
       sprintf(StrOrderToiCat, "model tBut%d color %.1f 0.0 0.0",ck,1.0);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       else
       {
       sprintf(StrOrderToiCat, "model tBut%d color 1.0 1.0 1.0",ck);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
       case 2://GO BACK
@@ -1043,7 +1082,8 @@ switch(iCat_affectation_bouton_action_is[iCatPageis][ck])
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/goback_on.jpg",ck);
       break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       if( index_go_back==1)
       {
       switch(index_pause)
@@ -1057,7 +1097,8 @@ switch(iCat_affectation_bouton_action_is[iCatPageis][ck])
       default:
       break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       }
       break;
@@ -1080,7 +1121,8 @@ case 4://EMULATE
       case 0: sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck); break;
       case 1: sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck); break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
       case 27://"F2");
@@ -1092,7 +1134,8 @@ case 4://EMULATE
       case 0: sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck); break;
       case 1: sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck); break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
       case 28://"F3");
@@ -1104,7 +1147,8 @@ case 4://EMULATE
       case 0: sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck); break;
       case 1: sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck); break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
       case 29://"F4");
@@ -1116,7 +1160,8 @@ case 4://EMULATE
       case 0: sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck); break;
       case 1: sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck); break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
       case 30://"F11");
@@ -1129,7 +1174,8 @@ case 4://EMULATE
       case 0: sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck); break;
       case 1: sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck); break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       break;
       case 33://"CTRL");
       switch( index_false_control)
@@ -1137,7 +1183,8 @@ case 4://EMULATE
       case 0: sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck); break;
       case 1: sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck); break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       break;
 
 
@@ -1165,7 +1212,8 @@ switch(iCat_affectation_bouton_action_is[iCatPageis][ck])
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/rond_banger_on.png",ck);
       break;
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
      default:
      break;
@@ -1186,7 +1234,8 @@ case 6://icat commandes
      sprintf(StrOrderToiCat, "model SimB%d color 1.0 0.0 0.0",ck) ;
      }
      else {sprintf(StrOrderToiCat, "model SimB%d color 1.0 1.0 1.0",ck);}
-     nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+     send_data_to_fantastick();
      }
      oldiCatPageis=iCatPageis;
      break;
@@ -1212,7 +1261,8 @@ case 7://draw
          default:
          break;
          }
-         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
 
       break;
@@ -1236,7 +1286,8 @@ case 7://draw
          default:
          break;
          }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
 
       break;
@@ -1255,7 +1306,8 @@ case 7://draw
          default:
          break;
          }
-         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
       case 4://draw_mode par valeur de matrice
@@ -1278,7 +1330,8 @@ case 7://draw
          default:
          break;
          }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+      send_data_to_fantastick();
       }
       break;
 
@@ -1290,8 +1343,8 @@ case 7://draw
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/draw_preset_selected.png",ck);
       }
       else {sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/draw_preset_vide.png",ck);}
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+        send_data_to_fantastick();
       //rafraichissement de la page icat des déclarations car les tailles de colonnes les circuits  etc changent !
       refresh_icatpage_please=1;;
       }
@@ -1310,7 +1363,8 @@ break;
 
 if(before_check_button_state[ck]!=check_button_state[ck])
 {
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 }
 before_check_button_state[ck]=check_button_state[ck];
 }
@@ -1333,27 +1387,30 @@ int To_iCat_DrawSlider(int id, int x1,int y1, int affectation, int valeur_sl)
 
 int draw_largeur=0; int draw_hauteur=0;
 sprintf(StrOrderToiCat,"model slider%d image http://www.le-chat-noir-numerique.fr/iCat/slider.jpg",id);
-nbrbytessendediCat=sendto(sockiCat,StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 switch ( iCat_orientation_slider[iCatPageis][id])
 {
 case 0://vertical
 sprintf(StrOrderToiCat,"model slider%d scale %.1f %d 0",id,0.125*(ratio_iCat_slider[iCatPageis][id]),(ratio_iCat_slider[iCatPageis][id]));//0.125=1/16 * largeur 8
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 draw_largeur=iCatSlidersizeX; draw_hauteur=iCatSlidersizeY;
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model slider%d rotate 0 90 0",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"model slider%d scale %d %.1f 0",id,(ratio_iCat_slider[iCatPageis][id]),0.125*(ratio_iCat_slider[iCatPageis][id]));//0.125=1/16 * largeur 8
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 draw_largeur=iCatSlidersizeY; draw_hauteur=iCatSlidersizeX;
 break;
 }
 
 sprintf(StrOrderToiCat,"model slider%d position %d %d 0",id, (x1*2)+((draw_largeur*ratio_iCat_slider[iCatPageis][id])/2), (y1*2)+((draw_hauteur*ratio_iCat_slider[iCatPageis][id])/2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 float col_fader_r=0.9, col_fader_g=0.5, col_fader_b=0.0;
 int value=0;
 switch(affectation)
@@ -1367,17 +1424,19 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 if(FaderLocked[valeur_sl-1]==0)
 {
   switch(DockTypeIs[valeur_sl-1][(dock_used_by_fader_is[valeur_sl-1])])
@@ -1421,17 +1480,21 @@ else
 
 
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id, col_fader_r, col_fader_g, col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //num de slider
 sprintf(StrOrderToiCat, "model t%d text %d",id, valeur_sl);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //afffichage niveau + loop dock
 if(dmx_view==0){
 //dock loop
@@ -1455,27 +1518,33 @@ else
 sprintf(StrOrderToiCat, "model tlev%d text %d",id, Fader[valeur_sl]);
 }
 }
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tdes%d text %s",id,DockName[valeur_sl-1][dock_used_by_fader_is[valeur_sl-1]] );
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model tdes%d position %d %d 0",id, (x1*2)-5, (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model tdes%d rotate -90 0 0 1",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model tdes%d font %s",id,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model tdes%d fontsize 15",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model tdes%d position %d %d 0",id, (x1*2)-5, (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
+
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model tdes%d rotate -90 0 0 1",id);
+
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model tdes%d font %s",id,iphone_fonts[5]);
+
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model tdes%d fontsize 15",id);
+
+send_data_to_fantastick();
 
 }
 break;
@@ -1489,37 +1558,49 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 col_fader_r=0.9, col_fader_g=0.5, col_fader_b=0.0;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id, col_fader_r, col_fader_g, col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //num acelero
 sprintf(StrOrderToiCat, "model t%d text S.%d",id, valeur_sl);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 16",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //niveau accel
 sprintf(StrOrderToiCat, "model tlev%d text %d",id, lfo_speed[valeur_sl-1]-64);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 }
 break;
 
@@ -1530,16 +1611,19 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //x1 x2 accel description
 switch(iCat_affectation_slider_value_is[iCatPageis][id])
 {
@@ -1553,23 +1637,27 @@ case 2:
 sprintf(StrOrderToiCat, "model t%d text Sp",id);
 break;
 }
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
+
+send_data_to_fantastick();
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
+
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
+
+send_data_to_fantastick();
 break;
 
 case 4://grand master
@@ -1580,36 +1668,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //COULEUE FADER
 col_fader_r=0.7, col_fader_g=0.0, col_fader_b=0.0;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+
+send_data_to_fantastick();
 //text
 sprintf(StrOrderToiCat, "model t%d text GM",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(10*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 
 case 5://level wheel
@@ -1620,41 +1712,41 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUE FADER
 col_fader_r=0.0, col_fader_g=0.7, col_fader_b=0.7;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //text
 sprintf(StrOrderToiCat, "model t%d text LvA",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(10*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //affichage niveau
 if(dmx_view==0){
         sprintf(StrOrderToiCat, "model tlev%d text %d",id, (int)((float)(absolute_level_wheel)/2.55)); }
         else {sprintf(StrOrderToiCat, "model tlev%d text %d",id, absolute_level_wheel); }
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 
 case 6://mover params
@@ -1666,29 +1758,29 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUE FADER
 col_fader_r=0.5, col_fader_g=0.0, col_fader_b=0.7;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //text
 sprintf(StrOrderToiCat, "model t%d text MoV%d",id, id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tl%d position %d %d 0",id, (x1*2)-(10*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 switch(tracker_16b_edit)
@@ -1702,14 +1794,14 @@ break;
 }
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,value);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 break;
 
@@ -1721,40 +1813,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUR FADER
 col_fader_r=0.0, col_fader_g=1.0, col_fader_b=0.9;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //text
 sprintf(StrOrderToiCat, "model t%d text P%d",id, iCat_affectation_slider_value_is[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_level_to_do[(iCat_affectation_slider_value_is[iCatPageis][id]-1)]*127));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 8: //DRAW ANGLE
 
@@ -1764,40 +1856,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUR FADER
 col_fader_r=0.0, col_fader_g=1.0, col_fader_b=0.9;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //text
 sprintf(StrOrderToiCat, "model t%d text A%d",id, iCat_affectation_slider_value_is[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_tilt_to_do[(iCat_affectation_slider_value_is[iCatPageis][id]-1)]*127));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 9: //DRAW Ghost
 
@@ -1807,40 +1899,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUR FADER
 col_fader_r=0.0, col_fader_g=1.0, col_fader_b=0.9;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //text
 sprintf(StrOrderToiCat, "model t%d text G%d",id, iCat_affectation_slider_value_is[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_ghost_to_do[(iCat_affectation_slider_value_is[iCatPageis][id]-1)]*127));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 
 //ACTIFS
@@ -1853,40 +1945,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUR FADER
 col_fader_r=0.0, col_fader_g=1.0, col_fader_b=0.9;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //text
 sprintf(StrOrderToiCat, "model t%d text P%d",id, draw_preset_selected+1);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_level_to_do[draw_preset_selected]*127));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 11: //DRAW ANGLE SELECTED
 
@@ -1896,40 +1988,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUR FADER
 col_fader_r=0.0, col_fader_g=1.0, col_fader_b=0.9;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //text
 sprintf(StrOrderToiCat, "model t%d text A%d",id, draw_preset_selected+1);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_tilt_to_do[draw_preset_selected]*127));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 12: //DRAW Ghost
 
@@ -1939,40 +2031,40 @@ case 0://vertical
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]),
 (x1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]),(y1*2)+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 case 1://horizontal
 sprintf(StrOrderToiCat,"model level%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),(x1*2),(y1*2)+(iCatSlidersizeX*ratio_iCat_slider[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 }
 sprintf(StrOrderToiCat,"model level%d width 100",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //COULEUR FADER
 col_fader_r=0.0, col_fader_g=1.0, col_fader_b=0.9;
 sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_fader_g,col_fader_b);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //text
 sprintf(StrOrderToiCat, "model t%d text G%d",id, draw_preset_selected+1);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d font %s",id,iphone_fonts[6]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage niveau
 sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_ghost_to_do[draw_preset_selected]*127));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tlev%d fontsize 12",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 
 
@@ -1984,13 +2076,13 @@ break;
 if( iCat_orientation_slider[iCatPageis][id]==1)
 {
   sprintf(StrOrderToiCat, "model t%d position %d %d 0",id,(x1*2)+10+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]), (y1*2)+(5*ratio_iCat_slider[iCatPageis][id]));
-  nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+  send_data_to_fantastick();
   sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+10+(iCatSlidersizeY*ratio_iCat_slider[iCatPageis][id]), (y1*2)+(15*ratio_iCat_slider[iCatPageis][id]));
-  nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+  send_data_to_fantastick();
   sprintf(StrOrderToiCat, "model tdes%d rotate 0 0 0 1",id);
-  nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+  send_data_to_fantastick();
   sprintf(StrOrderToiCat, "model tdes%d position %d %d 0",id,(x1*2), (y1*2));
-  nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+  send_data_to_fantastick();
 
 }
 
@@ -2068,16 +2160,16 @@ sprintf(string_temp_id,"%d",iCat_affectation_bouton_value_is[iCatPageis][id]);
       default:
       break;
       }
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 //affichage param button
 sprintf(StrOrderToiCat,"model tBut%d text %s",id,string_temp_id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d position %d %d 0",id,(x1*2)+(2*ratio_iCat_button[iCatPageis][id]), (y1*2)+(ratio_iCat_button[iCatPageis][id]*(largueur_bouton)));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d font %s",id,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d fontsize %d",id, 10*ratio_iCat_button[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 break;
       //fin faders
@@ -2135,13 +2227,13 @@ break;
       case 16://"Select M.Fader");
       sprintf(string_mf_id,"%d",iCat_affectation_bouton_value_is[iCatPageis][id]);
       sprintf(StrOrderToiCat,"model MFnum%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2)-10, (y1*2)+((ratio_iCat_button[iCatPageis][id]*(20+largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d fontsize %d",id, 18*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
 
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/mf_bt_carre_vide.png",id);
@@ -2149,26 +2241,26 @@ break;
       case 17://Unselect all
       sprintf(string_mf_id,"UnS");
       sprintf(StrOrderToiCat,"model MFnum%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton-20))/2), (y1*2)+10+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d fontsize %d",id, 12*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/mf_bt_carre_vide.png",id);
       break;
       case 18://select all
       sprintf(string_mf_id,"ALL");
       sprintf(StrOrderToiCat,"model MFnum%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton-20))/2), (y1*2)+10+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d fontsize %d",id, 12*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/mf_bt_carre_vide.png",id);
       break;
@@ -2176,13 +2268,13 @@ break;
       sprintf(string_temp_id,"MF.pst");
       sprintf(string_mf_id,"%d",iCat_affectation_bouton_value_is[iCatPageis][id]);
       sprintf(StrOrderToiCat,"model MFnum%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2)-10, (y1*2)+((ratio_iCat_button[iCatPageis][id]*(20+largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d fontsize %d",id, 18*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
 
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/mf_sel_pst.png",id);
@@ -2191,13 +2283,13 @@ break;
       sprintf(string_temp_id,"LCK.pst");
       sprintf(string_mf_id,"%d",iCat_affectation_bouton_value_is[iCatPageis][id]);
       sprintf(StrOrderToiCat,"model MFnum%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2)-10, (y1*2)+((ratio_iCat_button[iCatPageis][id]*(20+largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model MFnum%d fontsize %d",id, 18*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
 
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/mf_lck_pst.png",id);
@@ -2206,15 +2298,15 @@ break;
       default:
       break;
       }
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage param button
 sprintf(StrOrderToiCat, "model tBut%d position %d %d 0",id,(x1*2), (y1*2)+20+(ratio_iCat_button[iCatPageis][id]*(largueur_bouton+5)));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d fontsize %d",id, 10*ratio_iCat_button[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
       break;
 //fin minifaders
@@ -2269,17 +2361,17 @@ nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(
       strcpy(string_temp_id,"");
       break;
       }
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage param button
 sprintf(StrOrderToiCat,"model tBut%d text %s",id,string_temp_id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d position %d %d 0",id,(x1*2)+(  decalagex*ratio_iCat_button[iCatPageis][id]), (y1*2)+(ratio_iCat_button[iCatPageis][id]*((largueur_bouton/2)+ decalagey)));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model tBut%d fontsize %d",id, 10*ratio_iCat_button[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 break;
 //fin sequences
@@ -2410,13 +2502,13 @@ decalagex=0;
      }
 
       sprintf(StrOrderToiCat,"model SimB%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton-10-decalagex))/2), (y1*2)+((10+(ratio_iCat_button[iCatPageis][id]*largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d fontsize %d",id, 10*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/bt_carre_vide.png",id);
 break;
 //fin emulate
@@ -2424,23 +2516,23 @@ case 5://banger
       decalagex=0;
       sprintf(string_mf_id,"%d",iCat_affectation_bouton_value_is[iCatPageis][id]);
       sprintf(StrOrderToiCat,"model SimB%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton-15-decalagex))/2), (y1*2)+((20+(ratio_iCat_button[iCatPageis][id]*largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d fontsize %d",id, 10*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
       decalagex=largueur_bouton;
       sprintf(StrOrderToiCat,"model DescB%d text %s",id,bangers_name[(iCat_affectation_bouton_value_is[iCatPageis][id]-1)]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model DescB%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton-decalagex))/2), (y1*2)+((20+(ratio_iCat_button[iCatPageis][id]*largueur_bouton))));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model DescB%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model DescB%d fontsize %d",id, 5*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
 
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/rond_banger_off.png",id);
 
@@ -2470,13 +2562,13 @@ case 6://icat commandes
       }
 
       sprintf(StrOrderToiCat,"model SimB%d text %s",id,string_mf_id);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d position %d %d 0",id,(x1*2)+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2), (y1*2)+15+((ratio_iCat_button[iCatPageis][id]*(largueur_bouton))/2));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model SimB%d fontsize %d",id, 20*ratio_iCat_button[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/bt_iCat.png",id);
 break;
 case 7://DRAW
@@ -2557,14 +2649,13 @@ case 7://DRAW
       {
       sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/draw_preset_vide.png",id);
       }
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat,"model TDrawPst%d text %d",id,iCat_affectation_bouton_value_is[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat, StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model TDrawPst%d position %d %d 0",id,(x1*2)+(2*ratio_iCat_button[iCatPageis][id]), (y1*2)+(ratio_iCat_button[iCatPageis][id]*(largueur_bouton)));
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model TDrawPst%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      send_data_to_fantastick();
       sprintf(StrOrderToiCat, "model TDrawPst%d fontsize %d",id, 18*ratio_iCat_button[iCatPageis][id]);
 
       break;
@@ -2576,12 +2667,12 @@ default:
 break;
 }
 
-nbrbytessendediCat=sendto(sockiCat,StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"model button%d scale %.1f %.1f 0",id, 0.25*ratio_iCat_button[iCatPageis][id], 0.25*ratio_iCat_button[iCatPageis][id]);//0.25=128/32
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"model button%d position %d %d 0",id,  (x1*2)+((largueur_bouton*ratio_iCat_button[iCatPageis][id])/2), (y1*2)+((largueur_bouton*ratio_iCat_button[iCatPageis][id])/2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 return(0);
 }
@@ -2599,45 +2690,45 @@ case 1://MOver
 sprintf(StrOrderToiCat,"model trackzoneE%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/2),
 (x1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]),(y1*2)+((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"model trackzoneE%d color 0.4, 0.4, 0.4",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model trackzoneF%d xyz %d %d 0 %d %d 0",id,
 (x1*2)+((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/2), (y1*2),
 (x1*2)+((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/2),(y1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"model trackzoneF%d color 0.4, 0.4, 0.4",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model trackPosition%d image http://www.le-chat-noir-numerique.fr/iCat/rond_banger_on.png",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"model trackPosition%d scale %.1f %.1f 0",id, 0.2*ratio_iCat_trackzone[iCatPageis][id], 0.2*ratio_iCat_trackzone[iCatPageis][id]);//0.25=128/32
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model trackPosition%d position %d %d 0",id,(x1*2)+xtrackertodraw, (y1*2)+ytrackertodraw);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 char string_mf_id[16];
 sprintf(string_mf_id,"%d-%d",xtrackertodraw,ytrackertodraw);
 sprintf(StrOrderToiCat,"model trackTextPos%d text %s",id,string_mf_id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model trackTextPos%d position %d %d 0",id,(x1*2), (y1*2)-(1*ratio_iCat_trackzone[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model trackTextPos%d font %s",id,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model trackTextPos%d fontsize %d",id, 10*ratio_iCat_trackzone[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 break;
 
 case 2://draw"Draw Activ");
 sprintf(StrOrderToiCat,"model DrawAera%dTitle text %s",id,"Draw Activ");
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model DrawAera%dTitle position %d %d 0",id,(x1*2), (y1*2)-(1*ratio_iCat_trackzone[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model DrawAera%dTitle font %s",id,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model DrawAera%dTitle fontsize %d",id, 8*ratio_iCat_trackzone[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 
@@ -2660,28 +2751,28 @@ id,coordonnee,
 
 (x1*2)+(( (largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][0]) *(col+1)),
 (y1*2)+(( (largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][1]) *(lign)));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model DrawAera%dOffstet%d render triangle_fan",id,coordonnee);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model DrawAera%dOffstet%d color 0. %.1f %.1f",id,coordonnee,
 draw_preset_levels[draw_preset_selected][coordonnee]*1.0,draw_preset_levels[draw_preset_selected][coordonnee]*0.8);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 sprintf(StrOrderToiCat,"model track%dNumCh%d text %d",id,coordonnee,draw_preset_channel_routing[draw_preset_selected][coordonnee]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat, "model track%dNumCh%d position %d %d 0",id,coordonnee,
 (x1*2)+(int)(( (float)(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][0]) *col),
 (y1*2)+(7*ratio_iCat_trackzone[iCatPageis][id])+(int)(( (float)(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][1]) *(lign)) );
 
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model track%dNumCh%d font %s",id,coordonnee,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model track%dNumCh%d fontsize %d",id,coordonnee, 6*ratio_iCat_trackzone[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 }
@@ -2703,15 +2794,15 @@ id,
 
 (x1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][0]) *(draw_centre_x[draw_preset_selected]+1)),
 (y1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][1]) *draw_centre_y[draw_preset_selected]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 sprintf(StrOrderToiCat,"model DrawAera%dCurseur render triangle_strip",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 sprintf(StrOrderToiCat,"model DrawAera%dCurseur color 1.0 0. 0.",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 
@@ -2721,13 +2812,13 @@ case 3://draw"Draw Matrix num");
 
 aire=iCat_trackzone_affectation_is[iCatPageis][id]-1;
 sprintf(StrOrderToiCat,"model DrawAera%dTitle text Draw Num %d",id,iCat_trackzone_affectation_is[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model DrawAera%dTitle position %d %d 0",id,(x1*2), (y1*2)-(1*ratio_iCat_trackzone[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model DrawAera%dTitle font %s",id,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model DrawAera%dTitle fontsize %d",id, 8*ratio_iCat_trackzone[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 for(int lign=0;lign<draw_preset_parameters[aire][1];lign++)
@@ -2748,28 +2839,28 @@ id,coordonnee,
 
 (x1*2)+(( (largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[aire][0]) *(col+1)),
 (y1*2)+(( (largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[aire][1]) *(lign)));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model DrawSelAera%dOffstet%d render triangle_fan",id,coordonnee);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model DrawSelAera%dOffstet%d color 0. %.1f %.1f",id,coordonnee,
 draw_preset_levels[aire][coordonnee]*1.0,draw_preset_levels[aire][coordonnee]*0.8);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 sprintf(StrOrderToiCat,"model track%dNumCh%d text %d",id,coordonnee,draw_preset_channel_routing[aire][coordonnee]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat, "model track%dNumCh%d position %d %d 0",id,coordonnee,
 (x1*2)+(int)(( (float)(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[aire][0]) *col),
 (y1*2)+(7*ratio_iCat_trackzone[iCatPageis][id])+(int)(( (float)(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[aire][1]) *(lign)) );
 
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model track%dNumCh%d font %s",id,coordonnee,iphone_fonts[5]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 sprintf(StrOrderToiCat, "model track%dNumCh%d fontsize %d",id,coordonnee, 6*ratio_iCat_trackzone[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 }
@@ -2791,15 +2882,15 @@ id,
 
 (x1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][0]) *(draw_centre_x[draw_preset_selected]+1)),
 (y1*2)+( ((largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id])/draw_preset_parameters[draw_preset_selected][1]) *draw_centre_y[draw_preset_selected]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 sprintf(StrOrderToiCat,"model DrawAera%dCurseur render triangle_strip",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 sprintf(StrOrderToiCat,"model DrawAera%dCurseur color 1.0 0. 0.",id);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
 
@@ -2814,22 +2905,22 @@ break;
 sprintf(StrOrderToiCat,"model trackzoneA%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2),
 (x1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]),(y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model trackzoneB%d xyz %d %d 0 %d %d 0",id,
 (x1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]), (y1*2),
 (x1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]),(y1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model trackzoneC%d xyz %d %d 0 %d %d 0",id,
 (x1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]), (y1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]),
 (x1*2),(y1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 sprintf(StrOrderToiCat,"model trackzoneD%d xyz %d %d 0 %d %d 0",id,
 (x1*2), (y1*2)+(largeur_trackzone*ratio_iCat_trackzone[iCatPageis][id]),
 (x1*2),(y1*2));
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 
  return(0);
@@ -2837,7 +2928,7 @@ nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(
 
 int To_iCat_DrawString(int id, int x1,int y1, int affectation, int action)
 {
-char string_to_send[296];
+//char string_to_send[296]; eliminé pour laisser juste le StrOrderToiCat
 switch(iCat_affectation_string_type_is[iCatPageis][id])
 {
 case 1: //Feedback
@@ -2845,167 +2936,162 @@ case 1: //Feedback
      switch(iCat_affectation_string_action_is[iCatPageis][id])
      {
       case 1: //input
-      sprintf(string_to_send,"model Str%d text -%s",id,string_numeric_entry);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text -%s",id,string_numeric_entry);
       break;
       case 2://last ch
-      sprintf(string_to_send,"model Str%d text -%s",id,string_last_ch);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text -%s",id,string_last_ch);
       break;
       case 3://dimmers
-      sprintf(string_to_send,"model Str%d text -%s",id,string_secondary_feeback);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text -%s",id,string_secondary_feeback);
       break;
       case 4://last order
-      sprintf(string_to_send,"model Str%d text -%s",id,string_Last_Order);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text -%s",id,string_Last_Order);
       break;
       case 5://confirm string
-      sprintf(string_to_send,"model Str%d text -%s",id,string_confirmation);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text -%s",id,string_confirmation);
       break;
       default:
-      strcpy(string_to_send,"");
+      strcpy(StrOrderToiCat,"");
       break;
       }
-sprintf(string_to_send, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
-nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(string_to_send, "model Str%d font %s",id,iphone_fonts[0]);
-nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-sprintf(string_to_send, "model Str%d fontsize %d",id, 12*ratio_iCat_string[iCatPageis][id]);
-nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
+sprintf(StrOrderToiCat, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model Str%d font %s",id,iphone_fonts[0]);
+send_data_to_fantastick();
+sprintf(StrOrderToiCat, "model Str%d fontsize %d",id, 12*ratio_iCat_string[iCatPageis][id]);
+send_data_to_fantastick();
 
       //fin feedback
 break;
 case 2: //string sequences
-strcpy(string_to_send,"");
+strcpy(StrOrderToiCat,"");
      switch(iCat_affectation_string_action_is[iCatPageis][id])
      {
      case 1://Stage
      //num
-      sprintf(string_to_send,"model Str%d text %s",id,string_mem_onstage);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d fontsize %d",id, 14*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send,"model Str%d color 0.0 0.5 0.6",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      //autogo
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_mem_onstage);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d font %s",id,iphone_fonts[5]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d fontsize %d",id, 14*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat,"model Str%d color 0.0 0.5 0.6",id);
+      send_data_to_fantastick();//autogo
       if(Links_Memoires[position_onstage]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[position_onstage]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[position_onstage]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
       //time
-      sprintf(string_to_send,"model StrTime%d text D.Out: %s OUT: %s  ",id,cross_dout,cross_out);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrTime%d position %d %d 0",id,(x1*2), (y1*2)+ ((24*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrTime%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrTime%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrTime%d text D.Out: %s OUT: %s  ",id,cross_dout,cross_out);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrTime%d position %d %d 0",id,(x1*2), (y1*2)+ ((24*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrTime%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrTime%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
 
      break;
      case 2://preset
      //num
-      sprintf(string_to_send,"model Str%d text %s",id,string_mem_preset);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d fontsize %d",id, 14*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send,"model Str%d color 0.6 0.0 0.0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-            //autogo
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_mem_preset);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d font %s",id,iphone_fonts[5]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d fontsize %d",id, 14*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat,"model Str%d color 0.6 0.0 0.0",id);
+      send_data_to_fantastick();
+
+        //autogo
       if(Links_Memoires[position_preset]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+     send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[position_preset]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[position_preset]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((14*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
       //annotation
-      sprintf(string_to_send,"model StrAnn%d text %s",id,annotation_memoires[position_preset]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrAnn%d position %d %d 0",id,(x1*2), (y1*2)+ ((24*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrAnn%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrAnn%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrAnn%d text %s",id,annotation_memoires[position_preset]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrAnn%d position %d %d 0",id,(x1*2), (y1*2)+ ((24*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrAnn%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrAnn%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
       //time
-      sprintf(string_to_send,"model StrTime%d text D.In: %s IN: %s  ",id,cross_din,cross_in);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrTime%d position %d %d 0",id,(x1*2), (y1*2)+ ((34*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrTime%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrTime%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrTime%d text D.In: %s IN: %s  ",id,cross_din,cross_in);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrTime%d position %d %d 0",id,(x1*2), (y1*2)+ ((34*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrTime%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrTime%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
      break;
      case 3://mem before one
       //num
-      sprintf(string_to_send,"model Str%d text %s",id,string_mem_before_one);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Strc%d fontsize %d",id, 12*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send,"model Str%d color 1.0 1.0 1.0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_mem_before_one);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d font %s",id,iphone_fonts[5]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Strc%d fontsize %d",id, 12*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat,"model Str%d color 1.0 1.0 1.0",id);
+      send_data_to_fantastick();
       //autogo
       if(Links_Memoires[mem_before_one]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
           //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[mem_before_one]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[mem_before_one]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
 
       break;
       case 4://mem after one
@@ -3017,35 +3103,35 @@ strcpy(string_to_send,"");
       {
       mem_after_one=memsearch;
       //num
-      sprintf(string_to_send,"model Str%d text %d.%d",id,mem_after_one/10,mem_after_one%10);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Str%d font %s",id,iphone_fonts[5]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Strc%d fontsize %d",id, 12*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send,"model Str%d color 1.0 1.0 1.0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %d.%d",id,mem_after_one/10,mem_after_one%10);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Str%d font %s",id,iphone_fonts[5]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Strc%d fontsize %d",id, 12*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat,"model Str%d color 1.0 1.0 1.0",id);
+      send_data_to_fantastick();
             //autogo
       if(Links_Memoires[mem_after_one]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+     send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(x1*2)+(60*ratio_iCat_string[iCatPageis][id]), (y1*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[mem_after_one]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d font %s",id,iphone_fonts[0]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[mem_after_one]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d position %d %d 0",id,(x1*2), (y1*2)+ ((12*ratio_iCat_string[iCatPageis][id])+(12*2*ratio_iCat_string[iCatPageis][id])/2));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d font %s",id,iphone_fonts[0]);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model StrDesc%d fontsize %d",id, 10*ratio_iCat_string[iCatPageis][id]);
+      send_data_to_fantastick();
       break;
       }
       }
@@ -3072,7 +3158,7 @@ return(0);
 
 int Fantastick_check_string()
 {
-char string_to_send[256+36];
+//char string_to_send[256+36];
 for(int id=1;id<iCat_nbre_de_strings[iCatPageis]+1;id++)
 {
 switch(iCat_affectation_string_type_is[iCatPageis][id])
@@ -3083,45 +3169,45 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
       case 1: //input
       if(previous_numeric_postext!=numeric_postext)
       {
-      sprintf(string_to_send,"model Str%d text %s",id,string_numeric_entry);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_numeric_entry);
+      send_data_to_fantastick();
       }
       previous_numeric_postext=numeric_postext;
       break;
       case 2://last ch
       if(previous_last_ch_selected!=last_ch_selected)
       {
-      sprintf(string_to_send,"model Str%d text >>Last Ch.selected: %d",id,last_ch_selected);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text >>Last Ch.selected: %d",id,last_ch_selected);
+      send_data_to_fantastick();
       }
       previous_last_ch_selected=last_ch_selected;
       break;
       case 3://dimmers
       if(previous_last_dim_selected!=last_dim_selected)
       {
-      sprintf(string_to_send,"model Str%d text %s",id,string_secondary_feeback);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_secondary_feeback);
+      send_data_to_fantastick();
       }
       previous_last_dim_selected=last_dim_selected;
       break;
       case 4://last order
       if(strcmp(string_Last_Order,previous_string_Last_Order)!=0)
       {
-      sprintf(string_to_send,"model Str%d text %s",id,string_Last_Order);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_Last_Order);
+      send_data_to_fantastick();
       }
       sprintf(previous_string_Last_Order,string_Last_Order);
       break;
       case 5://confirm
       if(strcmp(string_confirmation,previous_string_confirmation)!=0)
       {
-      sprintf(string_to_send,"model Str%d text %s",id,string_confirmation);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %s",id,string_confirmation);
+      send_data_to_fantastick();
       }
       sprintf(previous_string_confirmation,string_confirmation);
       break;
       default:
-      strcpy(string_to_send,"");
+      strcpy(StrOrderToiCat,"");
       break;
       }
       break;
@@ -3130,86 +3216,86 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
      if(someone_changed_in_sequences==1)
      {
      //ventilation_temps_vers_char();//pour sytrings din dout etc
-     strcpy(string_to_send,"");
+     strcpy(StrOrderToiCat,"");
       switch(iCat_affectation_string_action_is[iCatPageis][id])
       {
       case 1://Stage
      //num
-      sprintf(string_to_send,"model Str%d text %d.%d",id,position_onstage/10,position_onstage%10);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %d.%d",id,position_onstage/10,position_onstage%10);
+      send_data_to_fantastick();
       //autogo
       if(Links_Memoires[position_onstage]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       else
       {
-      sprintf(string_to_send, "model Autogo%d position -999 -999 0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat, "model Autogo%d position -999 -999 0",id);
+      send_data_to_fantastick();
       }
       //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[position_onstage]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[position_onstage]);
+      send_data_to_fantastick();
       //time
-      sprintf(string_to_send,"model StrTime%d text D.Out: %s OUT: %s  ",id,cross_dout,cross_out);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrTime%d text D.Out: %s OUT: %s  ",id,cross_dout,cross_out);
+     send_data_to_fantastick();
      break;
      case 2://preset
      //num
-      sprintf(string_to_send,"model Str%d text %d.%d",id,position_preset/10,position_preset%10);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %d.%d",id,position_preset/10,position_preset%10);
+      send_data_to_fantastick();
       //autogo
       if(Links_Memoires[position_preset]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       else
       {
-      sprintf(string_to_send, "model Autogo%d position -999 -999 0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat, "model Autogo%d position -999 -999 0",id);
+      send_data_to_fantastick();
       }
       //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[position_preset]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[position_preset]);
+      send_data_to_fantastick();
       //annotation
-      sprintf(string_to_send,"model StrAnn%d text %s",id,annotation_memoires[position_preset]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrAnn%d text %s",id,annotation_memoires[position_preset]);
+      send_data_to_fantastick();
       //time
-      sprintf(string_to_send,"model StrTime%d text D.In: %s IN: %s  ",id,cross_din,cross_in);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrTime%d text D.In: %s IN: %s  ",id,cross_din,cross_in);
+      send_data_to_fantastick();
      break;
      case 3://mem before one
       //num
-      sprintf(string_to_send,"model Str%d text %d.%d",id,mem_before_one/10,mem_before_one%10);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %d.%d",id,mem_before_one/10,mem_before_one%10);
+      send_data_to_fantastick();
       //autogo
       if(Links_Memoires[mem_before_one]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       else
       {
-      sprintf(string_to_send, "model Autogo%d position -999 -999 0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat, "model Autogo%d position -999 -999 0",id);
+      send_data_to_fantastick();
       }
        //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[mem_before_one]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[mem_before_one]);
+      send_data_to_fantastick();
       break;
       case 4://mem after one
       mem_after_one=0;
@@ -3219,26 +3305,26 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
       {
       mem_after_one=memsearch;
       //num
-      sprintf(string_to_send,"model Str%d text %d.%d",id,mem_after_one/10,mem_after_one%10);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Str%d text %d.%d",id,mem_after_one/10,mem_after_one%10);
+      send_data_to_fantastick();
       //autogo
       if(Links_Memoires[mem_after_one]==1)
       {
-      sprintf(string_to_send,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-      sprintf(string_to_send, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model Autogo%d image http://www.le-chat-noir-numerique.fr/iCat/autogo_view.jpg",id);
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d position %d %d 0",id,(iCat_pos_string[iCatPageis][id][0]*2)+(60*ratio_iCat_string[iCatPageis][id]), (iCat_pos_string[iCatPageis][id][1]*2)+(5*ratio_iCat_string[iCatPageis][id]));
+      send_data_to_fantastick();
+      sprintf(StrOrderToiCat, "model Autogo%d scale %.1f %.1f 0",id,((float)ratio_iCat_string[iCatPageis][id]/2),((float)ratio_iCat_string[iCatPageis][id]/2));
+      send_data_to_fantastick();
       }
       else
       {
-      sprintf(string_to_send, "model Autogo%d position -999 -999 0",id);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat, "model Autogo%d position -999 -999 0",id);
+      send_data_to_fantastick();
       }
       //desc
-      sprintf(string_to_send,"model StrDesc%d text %s",id,descriptif_memoires[mem_after_one]);
-      nbrbytessendediCat=sendto(sockiCat,  string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrDesc%d text %s",id,descriptif_memoires[mem_after_one]);
+      send_data_to_fantastick();
       break;
       }
       }
@@ -3251,18 +3337,18 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
       //times changed
       if(someone_changed_in_time_sequences==1)//uniquement affichage time crossfade
       {
-      strcpy(string_to_send,"");
+      strcpy(StrOrderToiCat,"");
       switch(iCat_affectation_string_action_is[iCatPageis][id])
       {
       case 1://Stage
       //time
-      sprintf(string_to_send,"model StrTime%d text D.Out: %s OUT: %s  ",id,cross_dout,cross_out);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrTime%d text D.Out: %s OUT: %s  ",id,cross_dout,cross_out);
+      send_data_to_fantastick();
      break;
      case 2://preset
       //time
-      sprintf(string_to_send,"model StrTime%d text D.In: %s IN: %s  ",id,cross_din,cross_in);
-      nbrbytessendediCat=sendto(sockiCat, string_to_send,strlen(string_to_send)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+      sprintf(StrOrderToiCat,"model StrTime%d text D.In: %s IN: %s  ",id,cross_din,cross_in);
+      send_data_to_fantastick();
      break;
      default:
      break;
@@ -3302,9 +3388,10 @@ recalculate_iCatBuilder_window_size();
 for(int u=0;u<nbre_d_envois_de_l_info;u++)
 {
 
-nbrbytessendediCat=sendto(sockiCat,  "opengl 1",sizeof("opengl 1"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
+sprintf(StrOrderToiCat,"opengl 1");
+send_data_to_fantastick();
 sprintf(StrOrderToiCat,"orientation %d",iCat_preset_orientation[iCatPageis]);
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+send_data_to_fantastick();
 
 //affichage sliders
    for(int sl=1;sl<iCat_nbre_de_sliders[iCatPageis]+1;sl++)
