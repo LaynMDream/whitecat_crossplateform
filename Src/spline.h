@@ -37,7 +37,7 @@ WWWWWWWW           C  WWWWWWWW   |
 **/
 
 
-#include "patch_splines_2.h"
+#include "curve_node.h"
 #include <iostream> 
 
 /**
