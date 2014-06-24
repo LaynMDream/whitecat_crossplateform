@@ -462,53 +462,53 @@ int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
 	    {
 	      selected=curvenumber+(l*4);
 	      //courbe droite
-	      if(index_reset_curve==1 && 
-		 index_enable_curve_editing==1 && 
-		 index_square_curve==0 && 
-		 index_fluo_curve==0 && index_preheat_curve==0)
+	      if(index_reset==1 && 
+		 index_enable_editing==1 && 
+		 index_square==0 && 
+		 index_fluo==0 && index_preheat==0)
 		{
-		  build_default_curve(selected);
-		  index_reset_curve=0;
+		  build_default_curve(selected,gc);
+		  index_reset=0;
 		  gc.mouse_released=1;
 		}
 	      //courbe TV
-	      else if (index_square_curve==1 &&  
-		       index_enable_curve_editing==1 && 
-		       index_reset_curve==0 && 
-		       index_fluo_curve==0 && 
-		       index_preheat_curve==0)
+	      else if (index_square==1 &&  
+		       index_enable_editing==1 && 
+		       index_reset==0 && 
+		       index_fluo==0 && 
+		       index_preheat==0)
 		{
 		  build_square(selected,gc);
-		  index_square_curve=0;
-		  mouse_released=1;
+		  index_square=0;
+		  gc.mouse_released=1;
 		}
 	      //courbe preheat
-	      else if (index_preheat_curve==1 && 
-		       index_enable_curve_editing==1 && 
-		       index_square_curve==0 && 
-		       index_reset_curve==0 && 
-		       index_fluo_curve==0  )
+	      else if (index_preheat==1 && 
+		       index_enable_editing==1 && 
+		       index_square==0 && 
+		       index_reset==0 && 
+		       index_fluo==0  )
 		{
-		  build_preheat_curve(selected);
-		  index_preheat_curve=0;
-		  mouse_released=1;
+		  build_preheat(selected,gc);
+		  index_preheat=0;
+		  gc.mouse_released=1;
 		}
 	      //courbe fluo
-	      else if (index_fluo_curve==1 && 
-		       index_enable_curve_editing==1 && 
-		       index_square_curve==0 && 
-		       index_reset_curve==0 && 
-		       index_preheat_curve==0)
+	      else if (index_fluo==1 && 
+		       index_enable_editing==1 && 
+		       index_square==0 && 
+		       index_reset==0 && 
+		       index_preheat==0)
 		{
-		  build_fluo_curve(selected);
-		  index_fluo_curve=0;
+		  build_fluo(selected,gc);
+		  index_fluo=0;
 		  gc.mouse_released=1;
 		}
 
-	      else if(index_reset_curve==0 && 
-		      index_square_curve==0 && 
-		      index_fluo_curve==0 && 
-		      index_preheat_curve==0 && 
+	      else if(index_reset==0 && 
+		      index_square==0 && 
+		      index_fluo==0 && 
+		      index_preheat==0 && 
 		      gc.mouse_released==0)//selection du curve
 		{
 		  load_curve_in_temp_curve();

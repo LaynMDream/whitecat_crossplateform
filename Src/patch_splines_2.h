@@ -80,12 +80,16 @@ class curve_node
 
   /* static members */
   static bool index_writing;
+  static bool index_enable_editing;
+  static bool index_reset;
+  static bool index_square;
+  static bool index_fluo;
+  static bool index_preheat;
   static float spline_level; //report en float
   static int selected;
   static int the_spline_level[16];
   static int report[16][256];
   static int index_spline_level;//pixels de l editeur
-  static bool index_enable_editing;
   static int curves[514];//bug ?514 était en 513
   static int ctrl_pt[16][8][2]; //5 pts de controls (  pour caller 1er et dernier dummy)
   static int diam;//diametre de la poignee pour saisie du curve_node
