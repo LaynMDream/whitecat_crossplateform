@@ -306,7 +306,7 @@ int add_a_window(int id)
       index_show_faders=1;
  break;
  case W_PATCH:
-      index_patch_window=1;index_enable_curve_editing=0;
+   index_patch_window=1;curve_node::index_enable_editing=0;
       index_patch_overide=0;
       reset_check_grada_overide_dimmers();
  break;

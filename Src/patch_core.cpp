@@ -41,22 +41,6 @@ WWWWWWWW           C  WWWWWWWW   |
 *
 **/
 
-int do_curve_affectation()
-{
-for(int k=0;k<513;k++)
-{
-if(Dimmers_selected[k]==1)
-{curve_node::curves[k]=curve_node::selected;}
-}
-return(0);
-}
-
-int load_curve_in_temp_curve()
-{
-  curve_node::index_spline_level=curve_node::the_spline_level[curve_node::selected];   //pixels de l editeur    le float est recalculé dans la boucle
-return(0);
-}
-
 int check_dimmer_minus_override()
 {
 if(index_patch_overide==1)

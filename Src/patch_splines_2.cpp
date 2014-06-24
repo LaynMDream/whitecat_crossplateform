@@ -440,7 +440,14 @@ int curve_node::build_inverse(int curve,const graphic_context& gc)
   return(0);
 }
 
-int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
+/**
+ * function to do something
+ * @param XCurv abscissa of something
+ * @param YCurv ordinate of something
+ * @param gc a graphic context
+ * @param string_Last_Order a buffer to get a formatted message
+ **/
+int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc, char* string_Last_Order)
 {
   if(gc.mouse_x > (XCurv+30) &&
      gc.mouse_x < (XCurv+30+50) &&
@@ -578,10 +585,11 @@ int curve_node::do_logical_menu(int XCurv, int YCurv, graphic_context& gc)
      mouse_y>YCurv+560 && 
      mouse_y<YCurv+560+30)
     {
-      do_curve_affectation();
-      patch_unselect_all_dimmers();
-      sprintf(string_Last_Order,">>Affected Curve  %d to Dimmer", selected);
-      mouse_released=1;
+      do_affectation();
+      unselect_all_dimmers();
+      snprintf(string_Last_Order, BUFFER_LENGTH-1, 
+	       ">>Affected Curve  %d to Dimmer", selected);
+      gc.mouse_released=1;
     }
 
   return(0);
@@ -608,3 +616,153 @@ int curve_node::clear_indexes()
     index_preheat=0;
     return(0);
 }
+
+/**
+ * copies the selected setting into the table curves[]
+ * according to the boolean vector Dimmers_selected
+ **/
+int curve_node::do_affectation()
+{
+  for(int k=0;k<513;k++)
+    {
+      if(Dimmers_selected[k]==1)
+	{curves[k]=selected;}
+    }
+  return(0);
+}
+
+/**
+ * reset the boolean vector Dimmers_selected
+ **/
+int curve_node::unselect_all_dimmers()
+{
+    for(int i=0; i<513; i++)
+    {
+        Dimmers_selected[i]=0;
+    }
+    return(0);
+}
+
+/**
+ * fills the boolean vector Dimmers_selected with ones
+ **/
+int curve_node::select_all_dimmers()
+{
+    for(int i=0; i<513; i++)
+    {
+        Dimmers_selected[i]=1;
+    }
+    return(0);
+}
+
+/* initialization of index_build_patch_from_plot */
+bool curve_node::index_build_patch_from_plot=1;
+/* initialization of nbre_gelats_manufact */
+int curve_node::nbre_gelats_manufact=3; //0: LEE 1: ROSCO 2: GAMCOLOR 3: Apollo
+/* initialization of shape_id_to_select */
+int curve_node::shape_id_to_select=0;
+
+
+/**
+ * function to do something
+ **/
+int  curve_node::clear_selected()
+{
+  for(int i=0; i<513; i++)
+    {
+      if(Dimmers_selected[i]==1)
+        {
+	  Patch[i]=0;
+	  curves[i]=0;
+	  if(index_build_patch_from_plot==1)
+            {
+	      for(int c=0; c<4; c++)
+                {
+		  for(int s=1; s<=nbre_symbols_on_plot[c]; s++)
+                    {
+		      if(symbol_dimmer_is[c][s]==i)
+                        {
+			  symbol_dimmer_is[c][s]=0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+  return(0);
+}
+
+/**
+ * function checking whether a channel is patched at least once
+ * @param ch channel number
+ * @return true if the channel is patched once or more, false 
+ * if the channel is not patched
+ **/
+int  curve_node::check_channel_is_patched(int ch)
+{
+  bool the_ch_is_patched=0;
+  for (int cpatch=1; cpatch<513; cpatch++)
+    {
+      if(Patch[cpatch]==ch)
+        {
+	  the_ch_is_patched=1;
+        }
+    }
+  return(the_ch_is_patched);
+}
+
+/**
+ * function to do someting
+ **/
+int curve_node::generate_channel_preview_patch_list()
+//affichage du premier grada
+{
+  reset_channel_first_dimmer_list();
+
+  for (int ch=1; ch<513; ch++)
+    {
+      int index=0;
+      for(int d=1; d<513; d++)
+        {
+	  if(Patch[d]==ch  )
+            {
+	      bool tem=0;
+	      if(index>3)
+                {
+		  tem=1;
+                }
+	      switch(tem)
+                {
+                case 0:
+		  show_first_dim_array[ch][index]=d;
+		  index++;
+		  break;
+                case 1:
+		  show_more_than_one_dim[ch]=1;
+		  break;
+                }
+            }
+
+
+        }
+    }
+  return(0);
+}
+
+/**
+ * function to do something
+ **/
+int curve_node::reset_channel_first_dimmer_list()
+{
+    for (int ch=1; ch<513; ch++)
+    {
+        for(int d=0; d<4; d++)
+        {
+            show_first_dim_array[ch][d]=0;
+        }
+        show_more_than_one_dim[ch]=0;
+    }
+    return(0);
+}
+

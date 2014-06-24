@@ -84,7 +84,9 @@ int ClearIntoStep(int move_selected)
  return(0);
 }
 
-
+#ifndef _WIN32
+  typedef char BYTE;
+#endif
 
 
 ///////////////////////////////////////////////////////////////////////////////

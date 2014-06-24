@@ -179,19 +179,6 @@ return(0);
 }
 
 
-bool check_channel_is_patched(int ch)
-{
-    bool the_ch_is_patched=0;
-    for (int cpatch=1; cpatch<513; cpatch++)
-    {
-        if(Patch[cpatch]==ch)
-        {
-            the_ch_is_patched=1;
-        }
-    }
-    return(the_ch_is_patched);
-}
-
 int constrain_int_data_to_this_range(int data, int min, int max)
 {
     if(data<min)
@@ -787,54 +774,6 @@ int reset_indexs_confirmation()
     strcpy(string_confirmation,"");
     return(0);
 }
-
-int reset_channel_first_dimmer_list()
-{
-    for (int ch=1; ch<513; ch++)
-    {
-        for(int d=0; d<4; d++)
-        {
-            show_first_dim_array[ch][d]=0;
-        }
-        show_more_than_one_dim[ch]=0;
-    }
-    return(0);
-}
-
-int generate_channel_preview_patch_list()//affichage du premier grada
-{
-    reset_channel_first_dimmer_list();
-
-    for (int ch=1; ch<513; ch++)
-    {
-        int index=0;
-        for(int d=1; d<513; d++)
-        {
-            if(Patch[d]==ch  )
-            {
-                bool tem=0;
-                if(index>3)
-                {
-                    tem=1;
-                }
-                switch(tem)
-                {
-                case 0:
-                    show_first_dim_array[ch][index]=d;
-                    index++;
-                    break;
-                case 1:
-                    show_more_than_one_dim[ch]=1;
-                    break;
-                }
-            }
-
-
-        }
-    }
-    return(0);
-}
-
 
 int check_presence_of_a_channel_in_views( int idch)
 {
@@ -3243,45 +3182,6 @@ int patch_straight()
 
 
 
-int patch_select_all_dimmers()
-{
-    for(int i=0; i<513; i++)
-    {
-        Dimmers_selected[i]=1;
-    }
-    return(0);
-}
-
-int  patch_clear_selected()
-{
-    for(int i=0; i<513; i++)
-    {
-        if(Dimmers_selected[i]==1)
-        {
-            Patch[i]=0;
-	    curve_node::curves[i]=0;
-            if(index_build_patch_from_plot==1)
-            {
-                for(int c=0; c<4; c++)
-                {
-                    for(int s=1; s<=nbre_symbols_on_plot[c]; s++)
-                    {
-                        if(symbol_dimmer_is[c][s]==i)
-                        {
-                            symbol_dimmer_is[c][s]=0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    return(0);
-}
-
-
-
-
 int patch_to_default_selected()
 {
     for(int i=0; i<513; i++)
@@ -4286,17 +4186,6 @@ int do_go_function()
     }
     return(0);
 }
-
-
-int patch_unselect_all_dimmers()
-{
-    for(int i=0; i<513; i++)
-    {
-        Dimmers_selected[i]=0;
-    }
-    return(0);
-}
-
 
 
 ////////////////////////////////////////////////////////////////////////////////

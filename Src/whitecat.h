@@ -451,8 +451,6 @@ bool index_reset_curve=0;
 bool index_square_curve=0;
 bool index_fluo_curve=0;
 bool index_preheat_curve=0;
-bool Dimmers_selected[514];
-int Patch[514];
 bool dimmer_type[514]; //0=HTP= 1 LTP
 unsigned char MergerArray[514];
 char string_monitor_patch[1024];
@@ -2001,20 +1999,10 @@ float angle_projo_selectionne=0.0;
 int symbol_id_to_select=0;
 
 //128 symbols possibles par page x4
-const int nbre_symbol_per_layer=128;
 bool show_calc_number[4];
 short view_plot_calc_number_is=0;//num edition du calc
 bool plot_layer_mode=0;//0 calc, 1 solo
-int nbre_symbols_on_plot[4];
 
-int symbol_type[4][nbre_symbol_per_layer];
-bool symbol_is_selected[4][nbre_symbol_per_layer];
-float angle_symbol[4][nbre_symbol_per_layer];
-int pos_symbol[4][nbre_symbol_per_layer][2];
-int stored_plot_position[nbre_symbol_per_layer][2];//stockages position temporaires en edition
-int symbol_is_linked_to[4][nbre_symbol_per_layer];//couplage de projos
-
-char symbol_note[4][nbre_symbol_per_layer][4][25];
 //move dans le plan
 bool index_click_inside_plot=0;
 int plot_original_mouse_x=0;
@@ -2024,15 +2012,9 @@ int plot_facteur_move_y=0;
 
 bool plot_show_options[12];//affichage du circuit, etc etc)
 
-bool plot_delete_selection[nbre_symbol_per_layer];
 
 bool plot_name_text_size=0;
 
-int symbol_channel_is[4][nbre_symbol_per_layer];
-int symbol_dimmer_is[4][nbre_symbol_per_layer];
-int nbre_gelats_manufact=3; //0: LEE 1: ROSCO 2: GAMCOLOR 3: Apollo
-int gelat[4][nbre_symbol_per_layer][3];//3 slots de gelat par symbol
-int gelat_family[4][nbre_symbol_per_layer][3];//3 slots de gelat par symbol
 
 int last_selected_symbol_is=0;
 
@@ -2040,10 +2022,8 @@ char temp_plot_info[8];
 
 bool index_edit_relativ_xy=0;//pour dire qu on va editer
 bool index_click_inside_relativ_xy=0;//click dans la zone
-int relatif_plot_xy[4][nbre_symbol_per_layer][5][2];//calc / Symbols / Famille / X Y / rajout textes persos
 bool adjust_xy_type[5];
 
-int temp_relatif_plot_xy_array[nbre_symbol_per_layer][5][2];//pour prise de mesure
 int rlativ_xm=0;
 int rlativ_ym=0;
 
@@ -2055,20 +2035,6 @@ int plot_layer_selected=0;//pour confirm
 
 float global_symbol_size=1.0;
 
-//SNPASHOT pour manipulations sur un calque:
-bool snapshot_symbol_is_selected[nbre_symbol_per_layer];
-int snapshot_symbol_type[nbre_symbol_per_layer];
-float snapshot_angle_symbol[nbre_symbol_per_layer];
-int snapshot_pos_symbol[nbre_symbol_per_layer][2];
-int snapshot_symbol_channel_is[nbre_symbol_per_layer];
-int snapshot_symbol_dimmer_is[nbre_symbol_per_layer];
-int snapshot_gelat[nbre_symbol_per_layer][4];
-int snapshot_gelat_family[nbre_symbol_per_layer][4];
-int snapshot_relatif_plot_xy[nbre_symbol_per_layer][5][2];
-char snapshot_symbol_note[nbre_symbol_per_layer][4][25];
-int snapshot_symbol_is_linked_to[nbre_symbol_per_layer];
-
-bool index_build_patch_from_plot=1;
 
 Bitmap LightPlanBitmapMain;
 int position_relative_plan_theatre[2];
@@ -2142,18 +2108,8 @@ char temp_shape_legend_name[25];
 
 float general_alpha_for_shape=1.0;
 
-int shape_type[nbre_symbol_per_layer];
-float shape_attributes[nbre_symbol_per_layer][5];//size angle et accessoires 0= general size 1= rotation 2 size x 3 size y 4 oepning angle
-int shape_position[nbre_symbol_per_layer][4];//pour les lignes
-char shape_legend_name[nbre_symbol_per_layer][25];
-int shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
-int shape_color_type[nbre_symbol_per_layer];
-int shape_groups[nbre_symbol_per_layer];
-
-bool shape_selected[nbre_symbol_per_layer];
 
 bool handle_selected_for_line_editing=0;//0 = x1 y1 1= x2 y2
-int stored_plot_shape_position[nbre_symbol_per_layer][4];//temp pour bougeage
 
 bool index_ask_general_clear_on_plot=0;//pour confirm logical
 int editing_shape_line_number=0;
@@ -2163,18 +2119,6 @@ int nbre_branches_polygon=6;
 
 
 
-//snapshot
-bool snap_shape_selected[nbre_symbol_per_layer];
-int snap_shape_type[nbre_symbol_per_layer];
-float snap_shape_attributes[nbre_symbol_per_layer][5];//size angle et accessoires 0= general size 1= rotation 2 size x 3 size y 4 oepning angle
-int snap_shape_position[nbre_symbol_per_layer][4];//pour les lignes
-char snap_shape_legend_name[nbre_symbol_per_layer][25];
-int snap_shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
-int snap_shape_color_type[nbre_symbol_per_layer];
-int snap_shape_groups[nbre_symbol_per_layer];
-int shape_id_to_select=0;
-
-int temp_shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
 
 int fonttype_selected=0;
 TextRenderer PlotTextRenderer;
@@ -2268,8 +2212,6 @@ int size_y_mainmenu=200;
 
 int expert_mode=0;//confirmations ou pas de record etc...
 bool index_show_first_dim=0;
-int show_first_dim_array[514][4];//pour affichage du premier grada patché au circuit
-bool show_more_than_one_dim[514];
 
 
 

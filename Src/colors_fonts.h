@@ -1,3 +1,5 @@
+#ifndef color_fonts_h_included
+#define color_fonts_h_included
 /*-------------------------------------------------------------------------------------------------------------
                                  |
           CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
@@ -154,3 +156,5 @@ TextRenderer minichiffre;
 TextRenderer minichiffregris;
 TextRenderer minichiffrerouge;
 TextRenderer minichiffrenoir;
+
+#endif //color_fonts_h_included

@@ -43,12 +43,16 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 #include <allegro.h>
-#include <winalleg.h>
+#ifdef _WIN32
+  #include <winalleg.h>
+#endif
 #include <OpenLayer.hpp>
 #include <stdio.h>
 #include <loadpng.h>
 #include <assert.h>
-#include <Iphlpapi.h>
+#ifdef _WIN32
+  #include <Iphlpapi.h>
+#endif
 #include <audiere.h>
 
 #include <jpgalleg.h>
@@ -95,16 +99,23 @@ bufferSaisiesnamp=0;
 
 
 #include <hpdf.h>
-#include <MidiShare.h>
-#include <whitecat.h>
-#include <my_window_file_sample.h>//ressources juste après whitecat.h
-#include <patch_splines_2.cpp>//spline pour curves
+#ifdef _WIN32
+  // unfortunately, $(THIRDPARTY_DIR)/midishare/include/MidiShare.h begins with:
+  // #include "windows.h" which cannot work with Linux
+  #include <MidiShare.h>
+#endif
+#include "utils.h"
+#include "whitecat.h"
+#include "my_window_file_sample.h"
+#include "patch_splines_2.cpp"//spline pour curves
 
 
 #include <grider_calculs8.cpp>
 
+#ifdef _WIN32
+  #include <midi_CORE.cpp>
+#endif
 
-#include <midi_CORE.cpp>
 #include <CORE_6.cpp>
 
 
@@ -131,9 +142,10 @@ bufferSaisiesnamp=0;
 #include <audio_core5.cpp>
 
 #include <save_show_13.cpp>
-#include <network_artnet_3.cpp> //artnet functions
-
-#include <logicals_intres.cpp>
+#ifdef _WIN32
+  #include <network_artnet_3.cpp> //artnet functions
+  #include <logicals_intres.cpp>
+#endif
 
 #include <channels_9_core.cpp>
 #include <wizard.cpp>
@@ -143,8 +155,10 @@ bufferSaisiesnamp=0;
 #include <audio_visu4.cpp>
 #include <icat_core14.cpp>
 
-#include <arduino_device_core.cpp>
-#include <banger_core_8.cpp>
+#ifdef _WIN32
+  #include <arduino_device_core.cpp>
+  #include <banger_core_8.cpp>
+#endif
 #include <banger_visu_8.cpp>
 #include <Call_everybody_5.cpp>
 
@@ -184,7 +198,9 @@ bufferSaisiesnamp=0;
 
 
 #include <procs_visuels_rebuild1.cpp>
-#include <dmx_functions_13.cpp>
+#ifdef _WIN32
+  #include <dmx_functions_13.cpp>
+#endif
 
 #include <midi_13.cpp>
 #include <CFG_screen.cpp>

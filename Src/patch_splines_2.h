@@ -76,9 +76,16 @@ class curve_node
   int build_fluo(int curve, const graphic_context& gc);
   int build_preheat(int curve, const graphic_context& gc);
   int build_inverse(int curve, const graphic_context& gc);
-  int do_logical_menu(int XCurv, int YCurv, graphic_context& gc);
+  int do_logical_menu(int XCurv, int YCurv, graphic_context& gc, char* string_Last_Order);
   int load_temp();
   int clear_indexes();
+  int do_affectation();
+  int unselect_all_dimmers();
+  int select_all_dimmers();
+  int clear_selected();
+  int check_channel_is_patched(int ch);
+  int generate_channel_preview_patch_list();
+  int reset_channel_first_dimmer_list();
 
   /* static members */
   static bool index_writing;
@@ -87,6 +94,11 @@ class curve_node
   static bool index_square;
   static bool index_fluo;
   static bool index_preheat;
+  static bool Dimmers_selected[514];
+  static int  Patch[514];
+  static int show_first_dim_array[514][4];//pour affichage du premier grada patché au circuit
+  static bool show_more_than_one_dim[514];
+  static bool index_build_patch_from_plot;
   static float spline_level; //report en float
   static int selected;
   static int the_spline_level[16];
@@ -97,6 +109,60 @@ class curve_node
   static int diam;//diametre de la poignee pour saisie du curve_node
   static int node_count;
   static fixed curviness;
+  static int nbre_symbols_on_plot[4];
+  static const int nbre_symbol_per_layer=128;
+  static int symbol_channel_is[4][nbre_symbol_per_layer];
+  static int symbol_dimmer_is[4][nbre_symbol_per_layer];
+  static int symbol_type[4][nbre_symbol_per_layer];
+  static bool symbol_is_selected[4][nbre_symbol_per_layer];
+  static float angle_symbol[4][nbre_symbol_per_layer];
+  static int pos_symbol[4][nbre_symbol_per_layer][2];
+  static int stored_plot_position[nbre_symbol_per_layer][2];//stockages position temporaires en edition
+  static int symbol_is_linked_to[4][nbre_symbol_per_layer];//couplage de projos
+  static bool plot_delete_selection[nbre_symbol_per_layer];
+  static int nbre_gelats_manufact;
+  static int gelat[4][nbre_symbol_per_layer][3];//3 slots de gelat par symbol
+  static int gelat_family[4][nbre_symbol_per_layer][3];//3 slots de gelat par symbol
+  static char symbol_note[4][nbre_symbol_per_layer][4][25];
+  static int relatif_plot_xy[4][nbre_symbol_per_layer][5][2];//calc / Symbols / Famille / X Y / rajout textes persos
+  static int temp_relatif_plot_xy_array[nbre_symbol_per_layer][5][2];//pour prise de mesure
+
+  //SNPASHOT pour manipulations sur un calque:
+  static bool snapshot_symbol_is_selected[nbre_symbol_per_layer];
+  static int snapshot_symbol_type[nbre_symbol_per_layer];
+  static float snapshot_angle_symbol[nbre_symbol_per_layer];
+  static int snapshot_pos_symbol[nbre_symbol_per_layer][2];
+  static int snapshot_symbol_channel_is[nbre_symbol_per_layer];
+  static int snapshot_symbol_dimmer_is[nbre_symbol_per_layer];
+  static int snapshot_gelat[nbre_symbol_per_layer][4];
+  static int snapshot_gelat_family[nbre_symbol_per_layer][4];
+  static int snapshot_relatif_plot_xy[nbre_symbol_per_layer][5][2];
+  static char snapshot_symbol_note[nbre_symbol_per_layer][4][25];
+  static int snapshot_symbol_is_linked_to[nbre_symbol_per_layer];
+
+  static int shape_type[nbre_symbol_per_layer];
+  static float shape_attributes[nbre_symbol_per_layer][5];//size angle et accessoires 0= general size 1= rotation 2 size x 3 size y 4 oepning angle
+  static int shape_position[nbre_symbol_per_layer][4];//pour les lignes
+  static char shape_legend_name[nbre_symbol_per_layer][25];
+  static int shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
+  static int shape_color_type[nbre_symbol_per_layer];
+  static int shape_groups[nbre_symbol_per_layer];
+  static bool shape_selected[nbre_symbol_per_layer];
+  static int stored_plot_shape_position[nbre_symbol_per_layer][4];//temp pour bougeage
+
+  //snapshot
+  static bool snap_shape_selected[nbre_symbol_per_layer];
+  static int snap_shape_type[nbre_symbol_per_layer];
+  static float snap_shape_attributes[nbre_symbol_per_layer][5];//size angle et accessoires 0= general size 1= rotation 2 size x 3 size y 4 oepning angle
+  static int snap_shape_position[nbre_symbol_per_layer][4];//pour les lignes
+  static char snap_shape_legend_name[nbre_symbol_per_layer][25];
+  static int snap_shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
+  static int snap_shape_color_type[nbre_symbol_per_layer];
+  static int snap_shape_groups[nbre_symbol_per_layer];
+  static int shape_id_to_select;
+
+  static int temp_shape_relativ_position_legend_name[nbre_symbol_per_layer][2];
+
 
  private:
   /**

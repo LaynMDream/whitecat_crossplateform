@@ -1654,6 +1654,12 @@ sprintf(rep,"%s\%s\%s",mondirectory,rep_saves,nomduspectacle);
 //LPSECURITY_ATTRIBUTES attr;
 //attr=NULL;
 //CreateDirectory(rep,attr);
+
+#ifndef _WIN32
+#define mkdir(r) std::cout << "mkdir not implemented, cannot mkdir to" << r << "\n"
+#define chdir(r) std::cout << "chdir not implemented, cannot chdir to" << r << "\n"
+#endif
+
 mkdir (rep);
 //chmod (rep,0777);
 chdir (rep);

@@ -2632,7 +2632,7 @@ sprintf(header_export,"Channel %d -> Dim.",circ);
     if(Patch[cpatch]==circ)
     {
     someone_ISpatched=1;
-    sprintf(little_header," %d [%d] -",cpatch, curves[cpatch]+1);
+    sprintf(little_header," %d [%d] -",cpatch, curve_node::curves[cpatch]+1);
     strcat(header_export,little_header);
     cmptdim++;
     if(cmptdim>7)
@@ -2670,7 +2670,7 @@ int cmptdim=0;
 for (int cpatch=1; cpatch<513; cpatch++)
 {
 if(cmptdim==0){cmptline_pdf++; strcpy(header_export,"");}//retour ligne après 10 circuits
-sprintf(little_header,"Dim.%d=Ch.%d [%d]    ",cpatch, Patch[cpatch], curves[cpatch]+1);
+sprintf(little_header,"Dim.%d=Ch.%d [%d]    ",cpatch, Patch[cpatch], curve_node::curves[cpatch]+1);
 strcat(header_export,little_header);
 cmptdim++;
 if(cmptdim>4)

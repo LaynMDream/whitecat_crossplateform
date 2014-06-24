@@ -41,8 +41,10 @@ WWWWWWWW           C  WWWWWWWW   |
 *
 **/
 
-#include<winsock2.h>
-//#pragma comment(lib,"ws2_32.lib")
+#ifdef _WIN32
+  #include<winsock2.h>
+  //#pragma comment(lib,"ws2_32.lib")
+#endif
 
 // convert from shorts to bytes and back again
 #define short_get_high_byte(x) ((HIGH_BYTE & x) >> 8)
