@@ -2528,7 +2528,9 @@ typedef struct eventclic
    int  posx, posy, posz;
    time_t timer;
 } eventclic;
-eventclic mouseLeftClic, mouseMiddleClic, mouseRightClic;
+eventclic 	mouseLeftClic = {false, false, false, 0,0,0},
+			mouseMiddleClic = {false, false, false, 0,0,0},
+			mouseRightClic = {false, false, false, 0,0,0};
 std::deque<eventclic> mouseLeftClicHistory;
 std::deque<eventclic> mouseMiddleClicHistory;
 std::deque<eventclic> mouseRightClicHistory;
