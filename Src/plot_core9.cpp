@@ -3317,28 +3317,30 @@ else if(numeric_postext==0)//drag souris
 }
   if(index_edit_light_plot==1 && index_editing_theatre_plan==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0 )
   {
+   /*sab 26/06/2014
    moving_plan_relativ_x=mouse_x-original_posx;
    moving_plan_relativ_y=mouse_y-original_posy;
+   */
 
 
 
    switch(editing_plan_data_type)//décalé de +1
    {
    case 1:
-   position_relative_plan_theatre[0]=old_position_relative_plan_theatre[0]-moving_plan_relativ_y;
+   position_relative_plan_theatre[0]=old_position_relative_plan_theatre[0]-mouseMove.gap_y;
    break;
    case 2:
-   position_relative_plan_theatre[1]=old_position_relative_plan_theatre[1]-moving_plan_relativ_y;
+   position_relative_plan_theatre[1]=old_position_relative_plan_theatre[1]-mouseMove.gap_y;
    break;
    case 3:
-   taille_relative_plan_theatre[0]=old_taille_relative_plan_theatre[0]-moving_plan_relativ_y;
+   taille_relative_plan_theatre[0]=old_taille_relative_plan_theatre[0]-mouseMove.gap_y;
    if(lock_background_proportions==1)
    {
    taille_relative_plan_theatre[1]=(int)(((float)taille_relative_plan_theatre[0])/ratio_lock_plot_scale );
    }
    break;
    case 4:
-   taille_relative_plan_theatre[1]=old_taille_relative_plan_theatre[1]-moving_plan_relativ_y;
+   taille_relative_plan_theatre[1]=old_taille_relative_plan_theatre[1]-mouseMove.gap_y;
    if(lock_background_proportions==1)
    {
    taille_relative_plan_theatre[0]=(int)(((float)taille_relative_plan_theatre[1])*ratio_lock_plot_scale);

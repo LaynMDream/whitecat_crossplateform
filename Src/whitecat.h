@@ -2210,8 +2210,8 @@ int old_taille_relative_plan_theatre[2];
 bool index_editing_theatre_plan=0;
 int original_posx=0;
 int original_posy=0;
-int moving_plan_relativ_x=0;
-int moving_plan_relativ_y=0;
+//sab 26/06/2014  int moving_plan_relativ_x=0;
+//sab 26/06/2014  int moving_plan_relativ_y=0;
 
 int editing_plan_data_type=0;
 

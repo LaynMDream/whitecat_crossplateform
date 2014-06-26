@@ -415,13 +415,15 @@ if(window_focus_id==idwindow)
   {
   if(mouse_x>xmv-15 && mouse_x<xmv+15)
   {
-  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
+  //if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && mouseMove.eventProcessed)
   {
   substract_a_window(idwindow);
   mouseLeftClic.eventProcessed=true;
   }
   }
-  else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (original_posx==mouse_x && original_posy==mouse_y))
+// else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (original_posx==mouse_x && original_posy==mouse_y))
+else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (mouseMove.eventProcessed))
   {
   move_window(idwindow);
   }
