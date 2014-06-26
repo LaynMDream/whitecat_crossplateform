@@ -209,7 +209,7 @@ return(window_is);
 
 int move_window(int idwindowis)
 {
-if(mouse_button==1 && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu)
+if(mouseLeftClic.isDown && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu)
  {
 
 //set_mouse_range(mouse_x-10,mouse_x+10, mouse_y-10,mouse_y+10);//pour pas deborder
@@ -387,7 +387,8 @@ int MoveCloseBox(int xmv,int ymv, int idwindow)
   else if(mouse_x>xmv+40-15 && mouse_x<xmv+40+15)
   {
   MoveBox.Draw(CouleurSurvol);
-  if((mouse_button==1 && mouse_released==0)|| mouse_released==1)
+  if((mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+	|| mouseLeftClic.eventProcessed)
   {
   MoveBox.Draw(CouleurFader);
   }
@@ -414,10 +415,10 @@ if(window_focus_id==idwindow)
   {
   if(mouse_x>xmv-15 && mouse_x<xmv+15)
   {
-  if(mouse_button==1 && mouse_released==0 &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
   {
   substract_a_window(idwindow);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
   }
   else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (original_posx==mouse_x && original_posy==mouse_y))

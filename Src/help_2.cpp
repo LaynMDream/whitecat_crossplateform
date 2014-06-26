@@ -69,7 +69,7 @@ if(mouse_x>xhelp+660-12 && mouse_x<xhelp+660+12)
 if(mouse_y>yhelp+40-12 && mouse_y<yhelp+40+12)
 {
 LineUp.Draw(CouleurSurvol);
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 LineUp.Draw(CouleurFader);
 if(line_help>0){line_help--;}
@@ -78,7 +78,7 @@ if(line_help>0){line_help--;}
 else if(mouse_y>yhelp+260-12 && mouse_y<yhelp+260+12)
 {
 LineDown.Draw(CouleurSurvol);
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 LineDown.Draw(CouleurFader);
 if(line_help<(512-15)){line_help++;}
@@ -120,12 +120,12 @@ if(mouse_x>xhelp+570 && mouse_x<xhelp+570+50 && mouse_y>yhelp+47 && mouse_y<yhel
 {
 
 Bdoctype.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 help_lang=toggle(help_lang);
 if(help_lang==0){generate_help_file_fr();}
 else if(help_lang==1){generate_help_file_engl();}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(help_lang==0){petitchiffre.Print("FR",xhelp+585,yhelp+62);}

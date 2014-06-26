@@ -682,7 +682,7 @@ else
 position_affichage_track_num[chaser_selected]--;
 if(position_affichage_track_num[chaser_selected]<0){position_affichage_track_num[chaser_selected]=0;}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x>xcha+20-12 && mouse_x<xcha+20+12 && mouse_y>ycha+55-12 && mouse_y<ycha+55+12)
 {
@@ -696,7 +696,7 @@ else
 position_affichage_track_num[chaser_selected]++;
 if(position_affichage_track_num[chaser_selected]> core_user_define_nb_tracks_per_chasers-nbre_track_visualisables)
 {position_affichage_track_num[chaser_selected]= core_user_define_nb_tracks_per_chasers-nbre_track_visualisables;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 return(0);
@@ -719,7 +719,7 @@ else
 chaser_step_launchpad[chaser_selected]--;
 if(chaser_step_launchpad[chaser_selected]<0){chaser_step_launchpad[chaser_selected]=0;}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x>xcha+50-12 && mouse_x<xcha+50+12 && mouse_y>ycha+25-12 && mouse_y<ycha+25+12)
 {
@@ -733,7 +733,7 @@ else
 chaser_step_launchpad[chaser_selected]++;
 if(chaser_step_launchpad[chaser_selected]>nbre_de_cases_par_track-8 ) {chaser_step_launchpad[chaser_selected]=nbre_de_cases_par_track-8;}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 return(0);
 }
@@ -797,7 +797,7 @@ reset_numeric_entry();
 if(index_text_auto_close==1){index_type=0;}
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -827,7 +827,7 @@ if(midi_send_out[1023+num_track]==1){index_send_midi_out[1023+num_track]=1;}
 if(mouse_x>=xp+180-5 && mouse_x<=xp+180+5 && mouse_y>yp+22-5 && mouse_y<yp+22+5)
 {
 midi_send_out[1023+num_track]=toggle(midi_send_out[1023+num_track]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -847,7 +847,7 @@ else//sinon on toggle on off l operator
 chaser_step_operation[chaser_selected][num_track][chcase]=0;
 }
 refresh_launchpad_on_chaser();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -921,7 +921,7 @@ chaser_selected--;
 if(chaser_selected<0){chaser_selected=core_user_define_nb_chasers-1;}
 refresh_chaser_midi_out();
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x>xcha+300-12 && mouse_x<xcha+300+12 && mouse_y>ycha+25-12 && mouse_y<ycha+25+12 )
 {
@@ -936,7 +936,7 @@ chaser_selected++;
 if(chaser_selected>core_user_define_nb_chasers-1){chaser_selected=0;}
 refresh_chaser_midi_out();
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //////////////////////TEXT////////////////////////////////////////////
 
@@ -945,21 +945,21 @@ if(index_enable_edit_chaser==1 && index_type==1 && mouse_x>xcha+330 && mouse_x<x
 {
 sprintf(chaser_name[chaser_selected],numeric);
 reset_numeric_entry();if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //////////////EDIT MODE
 if(mouse_x>xcha+560 && mouse_x<xcha+560+50 && mouse_y>ycha+10 && mouse_y<ycha+10+20 )
 {
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 index_enable_edit_chaser=toggle(index_enable_edit_chaser);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
 ////////////////////////////////boutons d action de la lecture globale du chaser
 //play
-if(mouse_x>xcha+10 && mouse_x<xcha+10+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20  && mouse_released==0)
+if(mouse_x>xcha+10 && mouse_x<xcha+10+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20  && (mouseLeftClic.eventProcessed==false))
 {
 show_type_midi(978, "Play Selected CHASER");
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -977,10 +977,10 @@ if(chaser_step_is[chaser_selected]<0){chaser_step_is[chaser_selected]=0;}
 else if(chaser_step_is[chaser_selected]>35){chaser_step_is[chaser_selected]=35;}
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //seek to begin
-if(mouse_x>xcha+40 && mouse_x<xcha+40+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20  && mouse_button==1 && mouse_released==0)
+if(mouse_x>xcha+40 && mouse_x<xcha+40+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20  && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 show_type_midi(979, "Seek to Beg Selected CHASER");
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -991,11 +991,11 @@ else
 {
 chaser_seek_at_beg(chaser_selected);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //loop
-if(mouse_x>xcha+70 && mouse_x<xcha+70+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20  && mouse_button==1 && mouse_released==0)
+if(mouse_x>xcha+70 && mouse_x<xcha+70+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20  && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 show_type_midi(980, "Loop Selected CHASER");
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -1015,7 +1015,7 @@ sprintf(string_Last_Order,">> LOOP ON Chaser %d",chaser_selected+1);
 break;
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1023,7 +1023,7 @@ mouse_released=1;
 
 
 //forward sens
-if(mouse_x>xcha+110 && mouse_x<xcha+110+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20 && mouse_released==0)
+if(mouse_x>xcha+110 && mouse_x<xcha+110+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20 && (mouseLeftClic.eventProcessed==false))
 {
 show_type_midi(981, "Chaser Forward WAY");
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -1035,12 +1035,12 @@ else
 chaser_way[chaser_selected]=0;
 sprintf(string_Last_Order,">> FORWARD WAY Chaser %d",chaser_selected+1);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
 //backward sens
-if(mouse_x>xcha+140 && mouse_x<xcha+140+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20&& mouse_released==0)
+if(mouse_x>xcha+140 && mouse_x<xcha+140+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20&& (mouseLeftClic.eventProcessed==false))
 {
 show_type_midi(982, "Chaser Backward WAY");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -1052,12 +1052,12 @@ else
 chaser_way[chaser_selected]=1;
 sprintf(string_Last_Order,">> BACKWARD WAY Chaser %d",chaser_selected+1);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
 //backward and forward sens
-if(mouse_x>xcha+170 && mouse_x<xcha+170+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20 && mouse_released==0)
+if(mouse_x>xcha+170 && mouse_x<xcha+170+20 && mouse_y>ycha+50 && mouse_y<ycha+50+20 && (mouseLeftClic.eventProcessed==false))
 {
 show_type_midi(983, "Chaser ALLER-RETOUR WAY");
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -1069,12 +1069,12 @@ else
 chaser_aller_retour[chaser_selected]=toggle(chaser_aller_retour[chaser_selected]);
 sprintf(string_Last_Order,">> ALLER-RETOUR WAY Chaser %d",chaser_selected+1);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
 ////AFFECT TO DOCK
-if(mouse_x>xcha+430 && mouse_x<xcha+430+110 && mouse_y>ycha+80 && mouse_y<ycha+80+20  && mouse_released==0)
+if(mouse_x>xcha+430 && mouse_x<xcha+430+110 && mouse_y>ycha+80 && mouse_y<ycha+80+20  && (mouseLeftClic.eventProcessed==false))
 {
 if(index_affect_chaser_to_dock==0)
 {
@@ -1087,7 +1087,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_chaser_to_dock;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1104,7 +1104,7 @@ else
 //action Select ALL tracks
 chaser_select_all_track(chaser_selected);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1121,7 +1121,7 @@ else
 {
 chaser_select_inv_track(chaser_selected);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x>xcha+70 && mouse_x<xcha+70+20 && mouse_y>ycha+80 && mouse_y<ycha+80+20 )
@@ -1136,7 +1136,7 @@ else
 {
 chaser_select_off_all_track(chaser_selected);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1160,7 +1160,7 @@ else
 if(index_do_dock==0 && index_main_clear==0)
 {
 chaser_load_from_preset(chaser_selected,po);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(index_enable_edit_chaser==1)
 {
@@ -1170,7 +1170,7 @@ chaser_selected_for_record=chaser_selected;
 chaser_preset_selected_for_record=po;
 index_do_store_chaser_preset=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if( index_main_clear==1 && index_do_dock==0 )
 {
@@ -1178,7 +1178,7 @@ chaser_selected_for_record=chaser_selected;
 chaser_preset_selected_for_record=po;
 index_do_clear_chaser_preset=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -1193,7 +1193,7 @@ if(mouse_x>xcha+245 && mouse_x<xcha+245+50 && mouse_y>ycha+50 && mouse_y<ycha+50
 time_unit[chaser_selected]=atof(numeric);
 if(time_unit[chaser_selected]<=0.0001){time_unit[chaser_selected]=0.0001;}
 reset_numeric_entry();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x>xcha+305 && mouse_x<xcha+305+30 && mouse_y>ycha+50 && mouse_y<ycha+50+20)
@@ -1207,7 +1207,7 @@ else
 {
 chaser_time_mode[chaser_selected]=toggle(chaser_time_mode[chaser_selected]);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
                  ////////////////////CHASER OPERATOR/////////////////////////////////////
@@ -1224,7 +1224,7 @@ else
  if(chaser_operator_is!=1){chaser_operator_is=1; }
  else {chaser_operator_is=0;}
  }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //stay
 if(mouse_x>xcha+295 && mouse_x<xcha+295+40 && mouse_y>ycha+80 && mouse_y<ycha+80+20)
@@ -1239,7 +1239,7 @@ else
  if(chaser_operator_is!=2){chaser_operator_is=2;  }
  else {chaser_operator_is=0;}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //down
 if(mouse_x>xcha+345 && mouse_x<xcha+345+40 && mouse_y>ycha+80 && mouse_y<ycha+80+20)
@@ -1254,7 +1254,7 @@ else
  if(chaser_operator_is!=3){chaser_operator_is=3; }
  else {chaser_operator_is=0;}
  }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
                                  ///TIMELINE
@@ -1331,13 +1331,13 @@ Track_draw_logical(xcha+5,ycha+165+(track_num*40),position_affichage_track_num[c
 if(mouse_x>xcha+345 && mouse_x<xcha+345+40 && mouse_y>ycha+50 && mouse_y<ycha+50+20)
 {
 index_slave_chaser_to_accelerometre[chaser_selected]=toggle(index_slave_chaser_to_accelerometre[chaser_selected]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //allow launchpad
 if(mouse_x>xcha+410 && mouse_x<xcha+410+40 && mouse_y>ycha+50 && mouse_y<ycha+50+20)
 {
 launchpad_chaser_mode=toggle(launchpad_chaser_mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(launchpad_chaser_mode==1)
 {
@@ -1346,11 +1346,11 @@ bouton_view_launchpad_pos_core(xcha+450, ycha+35,0);
 
 //refresh midi
 
-if(mouse_x>xcha+520 && mouse_x<xcha+520+40 && mouse_y>ycha+50 && mouse_y<ycha+50+20 && mouse_released==0)
+if(mouse_x>xcha+520 && mouse_x<xcha+520+40 && mouse_y>ycha+50 && mouse_y<ycha+50+20 && (mouseLeftClic.eventProcessed==false))
 {
 refresh_midi_chasers=toggle( refresh_midi_chasers);
 set_refresh_mode_for_chaser(refresh_midi_chasers);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
  return(0);

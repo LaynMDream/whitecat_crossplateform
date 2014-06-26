@@ -59,7 +59,7 @@ int do_logical_FunctionBoxChannel(int fx,int fy, int flarg, int fhaut, int space
 {
 for (int df=0;df<5;df++)
 {
-if (mouse_x>=fx && mouse_x<=fx+flarg && mouse_y>=(fy + (df*fhaut)+ (space*df)) && mouse_y<=(fy+fhaut + (df*fhaut)+ (space*df)) && mouse_released==0 )
+if (mouse_x>=fx && mouse_x<=fx+flarg && mouse_y>=(fy + (df*fhaut)+ (space*df)) && mouse_y<=(fy+fhaut + (df*fhaut)+ (space*df)) && (mouseLeftClic.eventProcessed==false) )
 {
 
 switch (df)
@@ -126,7 +126,7 @@ case 4:
 channel_paste();
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 return(0);
@@ -190,10 +190,10 @@ int do_logical_Menus( int xmenu, int ymenu)
 if(window_focus_id==W_MAINMENU)
 {
 //AUTOCLOSE
-if(mouse_x> xmenu+330 && mouse_x< xmenu+360 && mouse_y>ymenu+8  && mouse_y<ymenu+23 && mouse_button==1 && mouse_released==0)
+if(mouse_x> xmenu+330 && mouse_x< xmenu+360 && mouse_y>ymenu+8  && mouse_y<ymenu+23 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 index_text_auto_close=toggle(index_text_auto_close);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 

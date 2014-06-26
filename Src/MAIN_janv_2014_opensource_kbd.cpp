@@ -67,11 +67,13 @@ volatile int ticks = 0;
 int ticker_rate = BPS_TO_TIMER(BPS_RATE);
 int ticker_dmxIn_rate = BPS_TO_TIMER(dmxINrate);
 int ticks_passed = 0;
+/*sab 26/06/2014 DEB - Reporté dans Whitecat.h
 volatile int mouse_button;
 volatile int mouse_released;
 volatile int mouse_maintained;
 volatile int mouse_R_button;
 volatile int mouse_R_released;
+  sab 26/06/2014 FIN - Reporté dans Whitecat.h  */
 
 volatile bool calculation_on_faders_done=0;//pour snap des faders depuis Echo
 //////////////////////////////////////////////////////////////////////////////
@@ -338,6 +340,44 @@ int do_mouse_right_click_menu()
  */
 void my_callback(int flags) {
 
+	//Mouse wheel event
+	{
+		mouseWheel.gap = mouseWheel.level - mouse_z;
+		if (not(mouseWheel.gap=0))
+			{
+				mouseWheel.level = mouse_z;
+				mouseWheel.eventProcessed = false;
+				//display :  sprintf(string_Last_Order,"Roue gap < %i > level < %i >", mouseWheel.gap, mouseWheel.level);
+			}
+			else
+			{
+				mouseWheel.eventProcessed = true;
+			}
+	}
+
+	//Mouse move event
+	{
+		mouseMove.from_x = mouseMove.to_x ; //Previous position
+		mouseMove.from_y = mouseMove.to_y ;
+		mouseMove.to_x   = mouse_x ;        //New position
+		mouseMove.to_y   = mouse_y ;
+		mouseMove.gap_x  = mouseMove.to_x - mouseMove.from_x ; //Translation
+		mouseMove.gap_y  = mouseMove.to_y - mouseMove.from_y ;
+
+		if (not((mouseMove.gap_x==0) && (mouseMove.gap_y==0)))
+			{
+				mouseMove.eventProcessed = false;
+			}
+			else
+			{
+				mouseMove.eventProcessed = true;
+			}
+	}
+
+
+	//Mouse buttons events
+
+
     if (flags & MOUSE_FLAG_LEFT_DOWN )
         {
         //sab 24/06/2014 - Doubleclic - Ajout - DEB
@@ -357,13 +397,13 @@ void my_callback(int flags) {
             if ((mouseRightClicHistory.size()>=1) && (firsttime < mouseRightClicHistory[0].timer))
             {
             	//un clic droit s'est produit entre les deux clics gauche
-				sprintf(string_Last_Order,"Double clic - clic droit intercalé");
+				//display :sprintf(string_Last_Order,"Double clic - clic droit intercalé");
             	mouseLeftClic.isDouble = false;
             }
             else if ((mouseMiddleClicHistory.size()>=1) && (firsttime < mouseMiddleClicHistory[0].timer))
             {
             	//un clic milieu s'est produit entre les deux clics gauche
-				sprintf(string_Last_Order,"Double clic - clic milieu intercalé");
+				//display :sprintf(string_Last_Order,"Double clic - clic milieu intercalé");
             	mouseLeftClic.isDouble = false;
             }
             else
@@ -371,17 +411,17 @@ void my_callback(int flags) {
 				gapSecond = lasttime-firsttime ;
 				if ((gapSecond<0.1) && (mouseLeftClicHistory[1].isDouble==false))
 				{
-					sprintf(string_Last_Order,"LeftDoubleClic %f sec", gapSecond);
+					//display :sprintf(string_Last_Order,"LeftDoubleClic %f sec", gapSecond);
 					mouseLeftClic.isDouble = true;
 				}
 				else if (mouseLeftClicHistory[1].isDouble)
 				{
-					sprintf(string_Last_Order,"xieme Clic annulant precedent");
+					//display :sprintf(string_Last_Order,"xieme Clic annulant precedent");
 					mouseLeftClic.isDouble = false;
 				}
 				else
 				{
-					sprintf(string_Last_Order,"Double clic - Trop long %f sec", gapSecond);
+					//display :sprintf(string_Last_Order,"Double clic - Trop long %f sec", gapSecond);
 					mouseLeftClic.isDouble = false;
 				}
             }
@@ -397,7 +437,6 @@ void my_callback(int flags) {
         mouseLeftClicHistory.push_front (mouseLeftClic); //up new (current)
         //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
-        mouse_button=1;
         original_posx=mouse_x;original_posy=mouse_y;
         //sab 29/05/2013 deb ---------------------------------------------------------------
         //window_focus_id=detection_over_window();
@@ -411,7 +450,6 @@ void my_callback(int flags) {
 		}
 		//sab 29/05/2013 fin ---------------------------------------------------------------
         if(window_focus_id==0 || window_focus_id==W_LIST ){snap_channels_selection_array(); }
-        mouse_released=0;
         }
 
     else if (flags & MOUSE_FLAG_LEFT_UP )//relevage bouton
@@ -435,7 +473,6 @@ void my_callback(int flags) {
         mouseLeftClicHistory.push_front (mouseLeftClic);
         //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
-        mouse_button=0; mouse_released=1;   //liberation du curseur souris
         index_click_move_faderspace=0; im_moving_a_window=0; index_mouse_is_tracking=0;
         index_moving_fader_space=0;index_moving_x_slide=0;index_moving_y_slide=0;
         index_click_inside_plot=0; plot_facteur_move_x=0;plot_facteur_move_y=0;
@@ -466,8 +503,6 @@ void my_callback(int flags) {
         //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
         original_posx=mouse_x;original_posy=mouse_y;
-        mouse_R_button=1;
-        mouse_R_released=0;
 
         if(window_focus_id==W_PLOT) {
                                     index_move_plot_view_port=1;
@@ -476,9 +511,9 @@ void my_callback(int flags) {
                                     key_unselect_ch();
                                     }
         else {
-             if(mouse_R_released==0)
+             if((mouseRightClic.eventProcessed==false))
              {
-              mouse_R_released=1;
+              mouseRightClic.eventProcessed=true;
               right_click_for_menu=1; //renvoi vers les procs en 10eme de secondes pour enlever le bug d extinctions fenetres
               }
 
@@ -498,15 +533,13 @@ void my_callback(int flags) {
         mouseRightClicHistory.push_front (mouseRightClic);
         //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
-        mouse_R_button=0;
-        mouse_R_released=1;
         index_move_plot_view_port=0;
         plot_facteur_move_x=0;plot_facteur_move_y=0;
         index_click_inside_plot=0;
         set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);//liberation du curseur souris
         }
 
-        if(mouse_button==0)
+        if(mouseLeftClic.isDown==false)
         {set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);}
 
         //sab 24/06/2014 - Doubleclic - Ajout - DEB
@@ -681,7 +714,7 @@ do_bang(i);
 sound_core_processing();
 }
 
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 switch(im_moving_a_window)
 {
@@ -1110,7 +1143,7 @@ save_load_print_to_screen("Init Backamnesia");
 init_done=1;
 if(there_is_an_error_on_save_load==1){index_show_save_load_report=1;there_is_change_on_show_save_state=1;    }
 
- mouse_released=0;
+ mouseLeftClic.eventProcessed=false; // ???
  entered_main=1;
 //launchpad séparé
 if(enable_launchpad==1)

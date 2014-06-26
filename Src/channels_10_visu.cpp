@@ -514,7 +514,7 @@ int Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
             {
                 Build.DrawOutline(CouleurFader.WithAlpha(0.5));
                 //logique a garder inside sinon ca plante grave !
-                if(mouse_button==1 && mouse_released==0)
+                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
                 {
                     channel_view_is=prst_v;
                     if(index_do_dock==1)
@@ -523,13 +523,13 @@ int Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
                         {
                             index_ask_record_selection_of_view=1 ;
                             index_ask_confirm=1;
-                            mouse_released=1;
+                            mouseLeftClic.eventProcessed=true;
                         }
                         else
                         {
                             index_ask_build_view=1;
                             index_ask_confirm=1;
-                            mouse_released=1;
+                            mouseLeftClic.eventProcessed=true;
                         }
                     }
 
@@ -537,19 +537,19 @@ int Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
                     {
                         index_ask_modify_selection_of_view=1 ;
                         index_ask_confirm=1;
-                        mouse_released=1;
+                        mouseLeftClic.eventProcessed=true;
                     }
                     else if(index_do_report==1)
                     {
                         index_ask_report_selection_of_view=1;
                         index_ask_confirm=1;
-                        mouse_released=1;
+                        mouseLeftClic.eventProcessed=true;
                     }
                     else if(index_main_clear==1)
                     {
                         index_ask_clear_selection_of_view=1;
                         index_ask_confirm=1;
-                        mouse_released=1;
+                        mouseLeftClic.eventProcessed=true;
                     }
                 }
             }

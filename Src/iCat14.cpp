@@ -189,7 +189,7 @@ if(editing_GUI_type_iCat==1)
 {Slider_M.Draw(CouleurSurvol);}
 petitchiffre.Print("Sliders",xed+10,yed+2);
 if(mouse_x>xed-15 && mouse_x<xed+90 && mouse_y>yed-10 && mouse_y<yed+10
-   && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+   && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 if(index_main_clear==1)//clear des sliders selectivement
 {
@@ -201,7 +201,7 @@ else
 if(editing_GUI_type_iCat==1) {editing_GUI_type_iCat=0;}
 else editing_GUI_type_iCat=1;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -216,21 +216,21 @@ petitpetitchiffre.Print(title_iCat_menu,xed+12,yed+27);
 
 if(mouse_y>yed+15 && mouse_y< yed+35)
 {
-if(mouse_x>xed-15 && mouse_x<xed+5 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed-15 && mouse_x<xed+5 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=1;
 previous_button_view(xed-15,yed+15,1);
 if(iCat_select_editing_slider>0){iCat_select_editing_slider--;}
 else{iCat_select_editing_slider=iCat_nbre_de_sliders[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_x>xed+50 && mouse_x<xed+70 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed+50 && mouse_x<xed+70 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=1;
 next_button_view(xed+50,yed+15,1);
 if(iCat_select_editing_slider<iCat_nbre_de_sliders[iCatPageis]){iCat_select_editing_slider++;}
 else{iCat_select_editing_slider=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -240,7 +240,7 @@ case_plus_view(xed+75,yed+35,0);
 
 if(mouse_x>xed+75 && mouse_x<xed+90)
 {
-if(mouse_y>yed+15 && mouse_y<yed+30 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT )
+if(mouse_y>yed+15 && mouse_y<yed+30 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT )
 {
 editing_GUI_type_iCat=1;
 case_moins_view(xed+75,yed+15,1);
@@ -250,15 +250,15 @@ iCat_nbre_de_sliders[iCatPageis]--;
 if(iCat_select_editing_slider>iCat_nbre_de_sliders[iCatPageis]){iCat_select_editing_slider=iCat_nbre_de_sliders[iCatPageis];
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_y>yed+35 && mouse_y<yed+50 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT )
+if(mouse_y>yed+35 && mouse_y<yed+50 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT )
 {
 editing_GUI_type_iCat=1;
 case_plus_view(xed+75,yed+35,1);
 if(iCat_nbre_de_sliders[iCatPageis]<max_sliders_icat){iCat_nbre_de_sliders[iCatPageis]++;}
 iCat_select_editing_slider=iCat_nbre_de_sliders[iCatPageis];
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -287,12 +287,12 @@ break;
 }
 pulse_bar_view(xed-12,yed+55, str_type_iCat);
 if(mouse_x>xed-12 && mouse_x<xed+18 && mouse_y>yed+55 && mouse_y<yed+75 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_slider!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_slider!=0)
 {
 editing_GUI_type_iCat=1;
 ratio_iCat_slider[iCatPageis][iCat_select_editing_slider]++;
 if(ratio_iCat_slider[iCatPageis][iCat_select_editing_slider]>3){ratio_iCat_slider[iCatPageis][iCat_select_editing_slider]=1;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -309,11 +309,11 @@ break;
 toggling_bar_view(xed+20,yed+55, 0,str_type_iCat);
 
 if(mouse_x>xed+20 && mouse_x<xed+80 && mouse_y>yed+55 && mouse_y<yed+75 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_slider!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_slider!=0)
 {
 editing_GUI_type_iCat=1;
 iCat_orientation_slider[iCatPageis][iCat_select_editing_slider]=toggle(iCat_orientation_slider[iCatPageis][iCat_select_editing_slider]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -371,12 +371,12 @@ petitpetitchiffre.Print(string_temp_familly,xed-7,yed+107);
 
 //TYPE
 if(mouse_x>xed-15 && mouse_x<xed+85 && mouse_y>yed+95 && mouse_y<yed+115 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_slider!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_slider!=0)
 {
 editing_GUI_type_iCat=1;
 iCat_affectation_slider_type_is[iCatPageis][iCat_select_editing_slider]++;
 if(iCat_affectation_slider_type_is[iCatPageis][iCat_select_editing_slider]>12){iCat_affectation_slider_type_is[iCatPageis][iCat_select_editing_slider]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //VARIABLE A LA SOURIS
@@ -390,7 +390,7 @@ petitpetitchiffre.Print(ol::ToString(iCat_affectation_slider_value_is[iCatPageis
 if(mouse_x>xed+40 && mouse_x<xed+85 && mouse_y>yed+120 && mouse_y<yed+140 &&  window_focus_id==W_iCAT )
 {
 AffectVar.DrawOutline(CouleurLigne);
-if(  mouse_button==1 && mouse_released==0 && iCat_select_editing_slider!=0)
+if(  mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && iCat_select_editing_slider!=0)
 {
 editing_GUI_type_iCat=1;
 int temp_number=atoi(numeric);
@@ -429,7 +429,7 @@ default:
 break;
 }
 iCat_affectation_slider_value_is[iCatPageis][iCat_select_editing_slider]=temp_number;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -442,7 +442,7 @@ DubB.SetRoundness(4);
 DubB.Draw(CouleurFond.WithAlpha(0.4));
 
 if(mouse_x>xed-15 && mouse_x<xed+15 && mouse_y>yed+150 && mouse_y<yed+165
-   && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+   && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=1;
 if(iCat_nbre_de_sliders[iCatPageis]<max_sliders_icat)
@@ -459,7 +459,7 @@ if(iCat_nbre_de_sliders[iCatPageis]<max_sliders_icat)
 
  sprintf(string_Last_Order,"Dubbed iCat Slider !");
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 
  return(0);
@@ -478,7 +478,7 @@ if(editing_GUI_type_iCat==2)
 {Button_M.Draw(CouleurSurvol);}
 petitchiffre.Print("Buttons",xed+10,yed+2);
 if(mouse_x>xed-15 && mouse_x<xed+90 && mouse_y>yed-10 && mouse_y<yed+10
-   && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+   && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 if(index_main_clear==1)//clear des sliders selectivement
 {
@@ -490,7 +490,7 @@ else
 if(editing_GUI_type_iCat==2) {editing_GUI_type_iCat=0;}
 else editing_GUI_type_iCat=2;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -505,21 +505,21 @@ petitpetitchiffre.Print(title_iCat_menu,xed+12,yed+27);
 
 if(mouse_y>yed+15 && mouse_y< yed+35)
 {
-if(mouse_x>xed-15 && mouse_x<xed+5 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed-15 && mouse_x<xed+5 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=2;
 previous_button_view(xed-15,yed+15,1);
 if(iCat_select_editing_button>0){iCat_select_editing_button--;}
 else{iCat_select_editing_button=iCat_nbre_de_boutons[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_x>xed+50 && mouse_x<xed+70 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed+50 && mouse_x<xed+70 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=2;
 next_button_view(xed+50,yed+15,1);
 if(iCat_select_editing_button<iCat_nbre_de_boutons[iCatPageis]){iCat_select_editing_button++;}
 else{iCat_select_editing_button=iCat_nbre_de_boutons[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -529,22 +529,22 @@ case_plus_view(xed+75,yed+35,0);
 
 if(mouse_x>xed+75 && mouse_x<xed+90)
 {
-if(mouse_y>yed+15 && mouse_y<yed+30 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_y>yed+15 && mouse_y<yed+30 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=2;
 case_moins_view(xed+75,yed+15,1);
 if(iCat_nbre_de_boutons[iCatPageis]>0){iCat_nbre_de_boutons[iCatPageis]--;
 if(iCat_select_editing_button>iCat_nbre_de_boutons[iCatPageis]){iCat_select_editing_button=iCat_nbre_de_boutons[iCatPageis];}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_y>yed+35 && mouse_y<yed+50 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT )
+if(mouse_y>yed+35 && mouse_y<yed+50 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT )
 {
 editing_GUI_type_iCat=2;
 case_plus_view(xed+75,yed+35,1);
 if(iCat_nbre_de_boutons[iCatPageis]<max_buttons_icat){iCat_nbre_de_boutons[iCatPageis]++;}
 iCat_select_editing_button=iCat_nbre_de_boutons[iCatPageis];
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -573,12 +573,12 @@ break;
 }
 pulse_bar_view(xed-12,yed+55, str_type_iCat);
 if(mouse_x>xed-12 && mouse_x<xed+18 && mouse_y>yed+55 && mouse_y<yed+75 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT && iCat_select_editing_button!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT && iCat_select_editing_button!=0)
 {
 editing_GUI_type_iCat=2;
 ratio_iCat_button[iCatPageis][iCat_select_editing_button]++;
 if(ratio_iCat_button[iCatPageis][iCat_select_editing_button]>3){ratio_iCat_button[iCatPageis][iCat_select_editing_button]=1;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -622,14 +622,14 @@ petitpetitchiffre.Print(string_temp_familly,xed-7,yed+107);
 
 //TYPE
 if(mouse_x>xed-15 && mouse_x<xed+85 && mouse_y>yed+95 && mouse_y<yed+115 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT && iCat_select_editing_button!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT && iCat_select_editing_button!=0)
 {
 editing_GUI_type_iCat=2;
 iCat_affectation_bouton_type_is[iCatPageis][iCat_select_editing_button]++;
 if(iCat_affectation_bouton_type_is[iCatPageis][iCat_select_editing_button]>7){iCat_affectation_bouton_type_is[iCatPageis][iCat_select_editing_button]=0;}
 iCat_affectation_bouton_action_is[iCatPageis][iCat_select_editing_button]=0;
 iCat_affectation_bouton_value_is[iCatPageis][iCat_select_editing_button]=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -985,7 +985,7 @@ break;
 petitpetitchiffre.Print(string_temp_familly,xed-7,yed+137);
 //sous famille
 if(mouse_x>xed-15 && mouse_x<xed+85 && mouse_y>yed+125 && mouse_y<yed+145 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_button!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_button!=0)
 {
 editing_GUI_type_iCat=2;
 iCat_affectation_bouton_action_is[iCatPageis][iCat_select_editing_button]++;
@@ -1018,7 +1018,7 @@ default:
 break;
 }
 if(iCat_affectation_bouton_action_is[iCatPageis][iCat_select_editing_button]>max_menu){iCat_affectation_bouton_action_is[iCatPageis][iCat_select_editing_button]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1033,7 +1033,7 @@ if(mouse_x>xed+40 && mouse_x<xed+85 && mouse_y>yed+150 && mouse_y<yed+170 &&  wi
 {
 editing_GUI_type_iCat=2;
 AffectVar.DrawOutline(CouleurLigne);
-if(  mouse_button==1 && mouse_released==0 && iCat_select_editing_button!=0)
+if(  mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && iCat_select_editing_button!=0)
 {
 
 int temp_number=atoi(numeric);
@@ -1059,7 +1059,7 @@ default:
 break;
 }
 iCat_affectation_bouton_value_is[iCatPageis][iCat_select_editing_button]=temp_number;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1072,7 +1072,7 @@ petitpetitchiffre.Print("Dub",xed-10,yed+160);
 DubB.SetRoundness(4);
 DubB.Draw(CouleurFond.WithAlpha(0.4));
 if(mouse_x>xed-15 && mouse_x<xed+15 && mouse_y>yed+150 && mouse_y<yed+165
-   && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+   && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=2;
 if(iCat_nbre_de_boutons[iCatPageis]<max_buttons_icat)
@@ -1088,7 +1088,7 @@ if(iCat_nbre_de_boutons[iCatPageis]<max_buttons_icat)
  iCat_affectation_bouton_value_is[iCatPageis][iCat_select_editing_button] = iCat_affectation_bouton_value_is[iCatPageis][iCatrefbutton];
  sprintf(string_Last_Order,"Dubbed iCat Button !");
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 
  return(0);
@@ -1109,7 +1109,7 @@ if(editing_GUI_type_iCat==3)
 {String_M.Draw(CouleurSurvol);}
 petitchiffre.Print("Strings",xed+10,yed+2);
 if(mouse_x>xed-15 && mouse_x<xed+90 && mouse_y>yed-10 && mouse_y<yed+10
-   && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+   && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 if(index_main_clear==1)//clear des sliders selectivement
 {
@@ -1121,7 +1121,7 @@ else
 if(editing_GUI_type_iCat==3) {editing_GUI_type_iCat=0;}
 else editing_GUI_type_iCat=3;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1136,21 +1136,21 @@ petitpetitchiffre.Print(title_iCat_menu,xed+12,yed+27);
 
 if(mouse_y>yed+15 && mouse_y< yed+35)
 {
-if(mouse_x>xed-15 && mouse_x<xed+5 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed-15 && mouse_x<xed+5 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=3;
 previous_button_view(xed-15,yed+15,1);
 if(iCat_select_editing_string>0){iCat_select_editing_string--;}
 else{iCat_select_editing_string=iCat_nbre_de_strings[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_x>xed+50 && mouse_x<xed+70 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed+50 && mouse_x<xed+70 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=3;
 next_button_view(xed+50,yed+15,1);
 if(iCat_select_editing_string<iCat_nbre_de_strings[iCatPageis]){iCat_select_editing_string++;}
 else{iCat_select_editing_string=iCat_nbre_de_strings[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1160,22 +1160,22 @@ case_plus_view(xed+75,yed+35,0);
 
 if(mouse_x>xed+75 && mouse_x<xed+90)
 {
-if(mouse_y>yed+15 && mouse_y<yed+30 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_y>yed+15 && mouse_y<yed+30 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 editing_GUI_type_iCat=3;
 case_moins_view(xed+75,yed+15,1);
 if(iCat_nbre_de_strings[iCatPageis]>0){iCat_nbre_de_strings[iCatPageis]--;
 if(iCat_select_editing_string>iCat_nbre_de_strings[iCatPageis]){iCat_select_editing_string=iCat_nbre_de_strings[iCatPageis];}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_y>yed+35 && mouse_y<yed+50 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT )
+if(mouse_y>yed+35 && mouse_y<yed+50 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT )
 {
 editing_GUI_type_iCat=3;
 case_plus_view(xed+75,yed+35,1);
 if(iCat_nbre_de_strings[iCatPageis]<max_string_icat){iCat_nbre_de_strings[iCatPageis]++;}
 iCat_select_editing_string=iCat_nbre_de_strings[iCatPageis];
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1204,12 +1204,12 @@ break;
 }
 pulse_bar_view(xed-12,yed+55, str_type_iCat);
 if(mouse_x>xed-12 && mouse_x<xed+18 && mouse_y>yed+55 && mouse_y<yed+75 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_string!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_string!=0)
 {
 editing_GUI_type_iCat=3;
 ratio_iCat_string[iCatPageis][iCat_select_editing_string]++;
 if(ratio_iCat_string[iCatPageis][iCat_select_editing_string]>3){ratio_iCat_string[iCatPageis][iCat_select_editing_string]=1;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1238,13 +1238,13 @@ petitpetitchiffre.Print(string_temp_familly,xed-7,yed+107);
 
 //TYPE
 if(mouse_x>xed-15 && mouse_x<xed+85 && mouse_y>yed+95 && mouse_y<yed+115 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_string!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_string!=0)
 {
 editing_GUI_type_iCat=3;
 iCat_affectation_string_type_is[iCatPageis][iCat_select_editing_string]++;
 if(iCat_affectation_string_type_is[iCatPageis][iCat_select_editing_string]>2){iCat_affectation_string_type_is[iCatPageis][iCat_select_editing_string]=0;}
 iCat_affectation_string_action_is[iCatPageis][iCat_select_editing_string]=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1317,7 +1317,7 @@ break;
 petitpetitchiffre.Print(string_temp_familly,xed-7,yed+137);
 //sous famille
 if(mouse_x>xed-15 && mouse_x<xed+85 && mouse_y>yed+125 && mouse_y<yed+145 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT  && iCat_select_editing_string!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT  && iCat_select_editing_string!=0)
 {
 editing_GUI_type_iCat=3;
 iCat_affectation_string_action_is[iCatPageis][iCat_select_editing_string]++;
@@ -1334,7 +1334,7 @@ default:
 break;
 }
 if(iCat_affectation_string_action_is[iCatPageis][iCat_select_editing_string]>max_menu){iCat_affectation_string_action_is[iCatPageis][iCat_select_editing_string]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //VARIABLE A LA SOURIS
@@ -1350,7 +1350,7 @@ if(mouse_x>xed+40 && mouse_x<xed+40+45 && mouse_y>yed+150 && mouse_y<yed+150+20 
 {
 editing_GUI_type_iCat=3;
 AffectVar.DrawOutline(CouleurLigne);
-if(  mouse_button==1 && mouse_released==0 && iCat_select_editing_string!=0)
+if(  mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && iCat_select_editing_string!=0)
 {
 int temp_number=atoi(numeric);
 reset_numeric_entry();
@@ -1363,7 +1363,7 @@ default:
 break;
 }
 iCat_affectation_string_value_is[iCatPageis][iCat_select_editing_string]=temp_number;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -1507,7 +1507,7 @@ if(iCat_pos_slider[iCatPageis][sl][0]<L_tablier_iCat &&  iCat_pos_slider[iCatPag
 
 
    if(mouse_x>gx && mouse_x<gx+L_tablier_iCat && mouse_y>gy && mouse_y<gy+H_tablier_iCat
-      && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+      && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
    {
    //manipulation
    switch(editing_GUI_type_iCat)
@@ -1562,7 +1562,7 @@ if(editing_GUI_type_iCat==4)
 {Button_M.Draw(CouleurSurvol);}
 petitchiffre.Print("Tracking Zones",xed-10,yed+2);
 if(mouse_x>xed-15 && mouse_x<xed+90 && mouse_y>yed-10 && mouse_y<yed+10
-   && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+   && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 if(index_main_clear==1)//clear des sliders selectivement
 {
@@ -1574,7 +1574,7 @@ else
 if(editing_GUI_type_iCat==4) {editing_GUI_type_iCat=0;}
 else editing_GUI_type_iCat=4;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1589,19 +1589,19 @@ petitpetitchiffre.Print(title_iCat_menu,xed+12,yed+27);
 
 if(mouse_y>yed+15 && mouse_y< yed+35)
 {
-if(mouse_x>xed-15 && mouse_x<xed+5 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed-15 && mouse_x<xed+5 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 previous_button_view(xed-15,yed+15,1);
 if(iCat_select_tracking_zone>0){iCat_select_tracking_zone--;}
 else{iCat_select_tracking_zone=iCat_nbre_de_tracking_zone[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_x>xed+50 && mouse_x<xed+70 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT)
+if(mouse_x>xed+50 && mouse_x<xed+70 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT)
 {
 next_button_view(xed+50,yed+15,1);
 if(iCat_select_tracking_zone<iCat_nbre_de_tracking_zone[iCatPageis]){iCat_select_tracking_zone++;}
 else{iCat_select_tracking_zone=iCat_nbre_de_tracking_zone[iCatPageis];}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1611,20 +1611,20 @@ case_plus_view(xed+75,yed+35,0);
 
 if(mouse_x>xed+75 && mouse_x<xed+90)
 {
-if(mouse_y>yed+15 && mouse_y<yed+30 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT && editing_GUI_type_iCat==4)
+if(mouse_y>yed+15 && mouse_y<yed+30 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT && editing_GUI_type_iCat==4)
 {
 case_moins_view(xed+75,yed+15,1);
 if(iCat_nbre_de_tracking_zone[iCatPageis]>0){iCat_nbre_de_tracking_zone[iCatPageis]--;
 if(iCat_select_tracking_zone>iCat_nbre_de_tracking_zone[iCatPageis]){iCat_select_tracking_zone=iCat_nbre_de_tracking_zone[iCatPageis];}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
-if(mouse_y>yed+35 && mouse_y<yed+50 && mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT && editing_GUI_type_iCat==4)
+if(mouse_y>yed+35 && mouse_y<yed+50 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT && editing_GUI_type_iCat==4)
 {
 case_plus_view(xed+75,yed+35,1);
 if(iCat_nbre_de_tracking_zone[iCatPageis]<max_zones_icat){iCat_nbre_de_tracking_zone[iCatPageis]++;}
 iCat_select_tracking_zone=iCat_nbre_de_tracking_zone[iCatPageis];
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1656,11 +1656,11 @@ break;
 }
 pulse_bar_view(xed-12,yed+55, str_type_iCat);
 if(mouse_x>xed-12 && mouse_x<xed+18 && mouse_y>yed+55 && mouse_y<yed+75 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT && editing_GUI_type_iCat==4 && iCat_select_tracking_zone!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT && editing_GUI_type_iCat==4 && iCat_select_tracking_zone!=0)
 {
 ratio_iCat_trackzone[iCatPageis][iCat_select_tracking_zone]++;
 if(ratio_iCat_trackzone[iCatPageis][iCat_select_tracking_zone]>4){ratio_iCat_trackzone[iCatPageis][iCat_select_tracking_zone]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1691,11 +1691,11 @@ petitpetitchiffre.Print(string_temp_familly,xed-7,yed+107);
 
 //TYPE
 if(mouse_x>xed-15 && mouse_x<xed+85 && mouse_y>yed+95 && mouse_y<yed+115 &&
-   mouse_button==1 && mouse_released==0 && window_focus_id==W_iCAT && editing_GUI_type_iCat==4 && iCat_select_tracking_zone!=0)
+   mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==W_iCAT && editing_GUI_type_iCat==4 && iCat_select_tracking_zone!=0)
 {
 iCat_trackzone_type_is[iCatPageis][iCat_select_tracking_zone]++;
 if(iCat_trackzone_type_is[iCatPageis][iCat_select_tracking_zone]>3){iCat_trackzone_type_is[iCatPageis][iCat_select_tracking_zone]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //VARIABLES A LA SOURIS
@@ -1709,7 +1709,7 @@ petitpetitchiffre.Print(ol::ToString(iCat_trackzone_affectation_is[iCatPageis][i
 if(mouse_x>xed+40 && mouse_x<xed+85 && mouse_y>yed+120 && mouse_y<yed+140 &&  window_focus_id==W_iCAT && editing_GUI_type_iCat==4)
 {
 AffectVar.DrawOutline(CouleurLigne);
-if(  mouse_button==1 && mouse_released==0 && iCat_select_tracking_zone!=0)
+if(  mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && iCat_select_tracking_zone!=0)
 {
 int temp_number=atoi(numeric);
 
@@ -1729,7 +1729,7 @@ default:
 break;
 }
 
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1766,12 +1766,12 @@ break;
 }
 if(mouse_x>gx+20 && mouse_x<gx+90 && mouse_y>gy+40 && mouse_y<gy+60 && window_focus_id==W_iCAT && im_moving_a_window==0 )
 {
-      if( mouse_button==1 && mouse_released==0)
+      if( mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
       {
       surface_type++;
       if(surface_type>1){surface_type=0;}
       recalculate_iCatBuilder_window_size();
-      mouse_released=1;
+      mouseLeftClic.eventProcessed=true;
       }
 }
 
@@ -1820,16 +1820,16 @@ iCatPresetO.SetRoundness(5);
     break;
     }
     sprintf(string_last_midi_id,"iCat Page Orientation is Ch: %d Pitch: %d Type: %s", miditable[1][1275],miditable[2][1275],thetypinfo);
-  if(mouse_button==1 && mouse_released==0)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
   {
   attribute_midi_to_control(1275,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 
   }
     else
     {
-    if( mouse_button==1 && mouse_released==0)
+    if( mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
 
    iCat_preset_orientation[iCatPageis]++;
@@ -1837,7 +1837,7 @@ iCatPresetO.SetRoundness(5);
    recalculate_iCatBuilder_window_size();
 
    do_refresh_iCat(iCatPageis);
-   mouse_released=1;
+   mouseLeftClic.eventProcessed=true;
    }
 }
 }
@@ -1853,14 +1853,14 @@ petitpetitchiffre.Print(ol::ToString(grid_icat_modulo), gx+200,gy+52);
 if(mouse_x>gx+180 && mouse_x<gx+225 && mouse_y>gy+40 && mouse_y<gy+60 &&  window_focus_id==W_iCAT)
 {
 AffectModulo.DrawOutline(CouleurLigne);
-if(  mouse_button==1 && mouse_released==0 )
+if(  mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
 {
 int temp_number=atoi(numeric);
 grid_icat_modulo=temp_number;
 if(grid_icat_modulo<1){grid_icat_modulo=1;}
 else if(grid_icat_modulo>50){grid_icat_modulo=50;}
 reset_numeric_entry();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1877,11 +1877,11 @@ petitpetitchiffre.Print("Copy", gx+245,gy+40+12);
 
 if(mouse_x>gx+240 && mouse_x<gx+285 && mouse_y>gy+40 && mouse_y<gy+60 &&  window_focus_id==W_iCAT)
 {
-if(  mouse_button==1 && mouse_released==0 )
+if(  mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
 {
 index_icat_copyPage=toggle(index_icat_copyPage);
 iCatPageToCopyIn=iCatPageis;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1913,19 +1913,19 @@ if(mouse_x>gx+300 && mouse_x<gx+370 && mouse_y>gy+40 && mouse_y<gy+60 && window_
     break;
     }
     sprintf(string_last_midi_id,"iCat Page Refresh is Ch: %d Pitch: %d Type: %s", miditable[1][1276],miditable[2][1276],thetypinfo);
-  if(mouse_button==1 && mouse_released==0)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
   {
   attribute_midi_to_control(1276,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 
   }
     else
     {
-    if( mouse_button==1 && mouse_released==0)
+    if( mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
    do_refresh_iCat(iCatPageis);
-   mouse_released=1;
+   mouseLeftClic.eventProcessed=true;
    }
 }
 }
@@ -1958,21 +1958,21 @@ if(mouse_x>gx+300 && mouse_x<gx+370 && mouse_y>gy+40 && mouse_y<gy+60 && window_
     break;
     }
     sprintf(string_last_midi_id,"iCat Page Minus is Ch: %d Pitch: %d Type: %s", miditable[1][1265],miditable[2][1265],thetypinfo);
-  if(mouse_button==1 && mouse_released==0)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
   {
   attribute_midi_to_control(1265,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 
   }
     else
     {
-     if( mouse_button==1 && mouse_released==0)
+     if( mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
      {   iCatPageis--;
          if(iCatPageis<0){iCatPageis=7;}
          load_iCat_page(iCatPageis);
          do_send_icat_init_page=1;
-         mouse_released=1;
+         mouseLeftClic.eventProcessed=true;
      }
      }
     }
@@ -2003,22 +2003,22 @@ if(mouse_x>gx+300 && mouse_x<gx+370 && mouse_y>gy+40 && mouse_y<gy+60 && window_
     break;
     }
     sprintf(string_last_midi_id,"iCat Page Plus is Ch: %d Pitch: %d Type: %s", miditable[1][1266],miditable[2][1266],thetypinfo);
-  if(mouse_button==1 && mouse_released==0)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
   {
   attribute_midi_to_control(1266,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 
   }
     else
     {
-    if( mouse_button==1 && mouse_released==0)
+    if( mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
     iCatPageis++;
     if(iCatPageis>7){iCatPageis=0;}
     load_iCat_page(iCatPageis);
     do_send_icat_init_page=1;
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
     }
 }
@@ -2055,16 +2055,16 @@ if(mouse_x>gx+300 && mouse_x<gx+370 && mouse_y>gy+40 && mouse_y<gy+60 && window_
     break;
     }
     sprintf(string_last_midi_id,"iCat Page %d is Ch: %d Pitch: %d Type: %s",o+1, miditable[1][1267+o],miditable[2][1267+o],thetypinfo);
-  if(mouse_button==1 && mouse_released==0)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
   {
   attribute_midi_to_control(1267+o,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 
   }
     else
     {
-    if( mouse_button==1 && mouse_released==0)
+    if( mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
 
     if(index_main_clear==1 && index_icat_copyPage==0)
@@ -2086,7 +2086,7 @@ if(mouse_x>gx+300 && mouse_x<gx+370 && mouse_y>gy+40 && mouse_y<gy+60 && window_
     do_send_icat_init_page=1;
     }
 
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
    }
    }
@@ -2133,7 +2133,7 @@ int BoxiCat ( int macx, int macy)
    if(window_focus_id==W_CFGMENU && mouse_x>macx+20 && mouse_x<macx+130 && mouse_y>macy-12 && mouse_y<macy+13)
    {
     ipFS.DrawOutline(CouleurLigne);
-    if(mouse_button==1 && mouse_released==0)
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
     if(iCat_serveur_is_initialized==1)
     {
@@ -2143,7 +2143,7 @@ int BoxiCat ( int macx, int macy)
     {specified_fs_ip[i]= numeric[i];}
     reset_numeric_entry();
     initialisation_clientserveur_iCat();
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
    }
 
@@ -2156,7 +2156,7 @@ int BoxiCat ( int macx, int macy)
    if(window_focus_id==W_CFGMENU && mouse_x>macx+75 && mouse_x<macx+125 && mouse_y>macy+15 && mouse_y<macy+40)
    {
     pservFS.DrawOutline(CouleurLigne);
-    if(mouse_button==1 && mouse_released==0)
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
     if(iCat_serveur_is_initialized==1)
     {
@@ -2165,7 +2165,7 @@ int BoxiCat ( int macx, int macy)
     serveurport_iCat=atoi(numeric);
     reset_numeric_entry();
     initialisation_clientserveur_iCat();
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
    }
 
@@ -2178,7 +2178,7 @@ int BoxiCat ( int macx, int macy)
    if(window_focus_id==W_CFGMENU && mouse_x>macx+75 && mouse_x<macx+125  && mouse_y>macy+45 && mouse_y<macy+70)
    {
     pclFS.DrawOutline(CouleurLigne);
-    if(mouse_button==1 && mouse_released==0)
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
     if(iCat_serveur_is_initialized==1)
     {
@@ -2187,7 +2187,7 @@ int BoxiCat ( int macx, int macy)
     clientport_iCat=atoi(numeric);
     reset_numeric_entry();
     initialisation_clientserveur_iCat();
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
    }
 
@@ -2201,12 +2201,12 @@ int BoxiCat ( int macx, int macy)
    if(window_focus_id==W_CFGMENU && mouse_x>macx+75 && mouse_x<macx+125  && mouse_y>macy+75 && mouse_y<macy+100)
    {
     itFS.DrawOutline(CouleurLigne);
-    if(mouse_button==1 && mouse_released==0)
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
     nbre_d_envois_de_l_info=atoi(numeric);
     if(nbre_d_envois_de_l_info<1){nbre_d_envois_de_l_info=1;}
     reset_numeric_entry();
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
    }
 
@@ -2219,11 +2219,11 @@ int BoxiCat ( int macx, int macy)
    if(window_focus_id==W_CFGMENU && mouse_x>macx+75 && mouse_x<macx+125  && mouse_y>macy+105 && mouse_y<macy+125)
    {
     resFS.Draw(CouleurBlind.WithAlpha(alpha_blinker));
-    if(mouse_button==1 && mouse_released==0)
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
     index_ask_confirm=1;
     index_ask_clear_img_icat=1;
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
    }
 

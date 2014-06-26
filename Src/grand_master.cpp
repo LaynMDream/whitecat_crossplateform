@@ -48,7 +48,7 @@ if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-5 && mouse_y<=GMY+255)
 {
 
 
-if((window_focus_id==0 || window_focus_id==906 )&& mouse_button==1 && index_allow_grand_master==1)
+if((window_focus_id==0 || window_focus_id==906 )&& mouseLeftClic.isDown && index_allow_grand_master==1)
 {
 set_mouse_range(GMX, GMY, GMX+larg, GMY+255);//pour pas deborder
 //NIVEAU
@@ -81,7 +81,7 @@ attribute_midi_solo_affectation(615,Midi_Faders_Affectation_Mode);
 }
   sprintf(string_last_midi_id,"MIDI GRAND MASTER:Ch: %d Pitch: %d Type: %s", miditable[1][615],miditable[2][615],thetypinfo);
 
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -89,11 +89,11 @@ mouse_released=1;
 //midi out on off
 if(mouse_x>GMX+larg+30-10 && mouse_x<GMX+larg+30+10 && mouse_y>GMY+250-10 && mouse_y<GMY+250+10)
 {
- if(mouse_button==1 && mouse_released==0)
+ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
  {
   if(midi_send_out[615]==0){midi_send_out[615]=1; }
   else if(midi_send_out[615]==1){midi_send_out[615]=0; }
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 }
 

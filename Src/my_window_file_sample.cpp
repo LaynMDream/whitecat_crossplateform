@@ -46,12 +46,12 @@ WWWWWWWW           C  WWWWWWWW   |
 int do_logical_my_window_Box(int mx, int my)
 {
 
-if(window_focus_id==W_MY_WINDOW && mouse_released==0)//si focus sur la fenetre my window et que bouton pas enclenché
+if(window_focus_id==W_MY_WINDOW && (mouseLeftClic.eventProcessed==false))//si focus sur la fenetre my window et que bouton pas enclenché
 {
 //BOUTON LOOP
 if(mouse_x>mx+260 && mouse_x<mx+280 && mouse_y>my+100 && mouse_y<my+120)
 {
-mouse_released=1; //on encleche le bouton pour pas avoir de double ordre
+mouseLeftClic.eventProcessed=true; //on encleche le bouton pour pas avoir de double ordre
 my_window_variable_boolean=toggle(my_window_variable_boolean);
 }
 //FADERS
@@ -152,12 +152,12 @@ neuro.Print( "My Window",(mx+110), (my+30));
 
 //BOUTON LOOP
 loop_button_view(mx+260,my+100,my_window_variable_boolean);
-if(window_focus_id==W_MY_WINDOW && mouse_released==0)//si focus sur la fenetre my window et que bouton pas enclenché
+if(window_focus_id==W_MY_WINDOW && (mouseLeftClic.eventProcessed==false))//si focus sur la fenetre my window et que bouton pas enclenché
 {
 //BOUTON LOOP
 if(mouse_x>mx+260 && mouse_x<mx+280 && mouse_y>my+100 && mouse_y<my+120)
 {
-mouse_released=1; //on encleche le bouton pour pas avoir de double ordre
+mouseLeftClic.eventProcessed=true; //on encleche le bouton pour pas avoir de double ordre
 my_window_variable_boolean=toggle(my_window_variable_boolean);
 }
 
@@ -176,7 +176,7 @@ Rect FaderLevel(Vec2D(mx+10+(i*35),my+70+127-my_window_fader_value[i] ), Vec2D(2
 FaderLevel.SetRoundness(3);
 FaderLevel.Draw(CouleurFader);
 FaderFrame.DrawOutline(CouleurLigne);
-if(window_focus_id==W_MY_WINDOW && mouse_button==1)//mouse_button n est pas utilisé dans le code scindé,
+if(window_focus_id==W_MY_WINDOW && mouseLeftClic.isDown)//mouse_button n est pas utilisé dans le code scindé,
 //car c est lui que l on regarde pour faire toutes les parties logiques
 {
 if(mouse_x>mx+10+(i*35) && mouse_x<mx+30+(i*35) && mouse_y>my+60 && mouse_y<my+207)//10 pixels en haut et en bas en plus

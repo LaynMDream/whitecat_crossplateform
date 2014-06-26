@@ -664,7 +664,7 @@ if(mouse_x>report_SL_X+290 && mouse_x<report_SL_X+340)
  if( mouse_y>report_SL_Y+76 && mouse_y<report_SL_Y+96)
  {
   MinusPosMyRep.Draw(CouleurSurvol);
-  if(mouse_button==1 &&  mouse_released==0 )
+  if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
   {
   MinusPosMyRep.Draw(CouleurFader);
   position_view_line-=5;
@@ -675,7 +675,7 @@ if(mouse_x>report_SL_X+290 && mouse_x<report_SL_X+340)
  if( mouse_y>report_SL_Y+106 && mouse_y<report_SL_Y+136)
  {
   PlusPosMyRep.Draw(CouleurSurvol);
-  if(mouse_button==1 &&  mouse_released==0 )
+  if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
   {
   PlusPosMyRep.Draw(CouleurFader);
   position_view_line+=5;

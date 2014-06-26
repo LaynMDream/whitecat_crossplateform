@@ -681,7 +681,7 @@ for(int dv=0;dv<5;dv++)
 Rect ParamN(Vec2D( xt+60,yt+5+(dv*15)),Vec2D(30,12));
 Rect LevelFrame(Vec2D(xt+180,yt+5+(dv*15)),Vec2D(255,10));
 LevelFrame.SetRoundness(5);
-if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && window_focus_id==W_MOVER && mouse_button==1 && mouse_released==0)
+if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && window_focus_id==W_MOVER && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 ParamN.Draw(CouleurBlind);
 
@@ -712,7 +712,7 @@ break;
 }
 reset_mover_buffer();
 reset_numeric_entry();numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 }
@@ -762,7 +762,7 @@ sprintf(string_param_mover_is,"%d %d", mover_params[dv][0], mover_params[dv][1])
 minichiffre.Print(string_param_mover_is,xt+110,  yt+15+(dv*15));
 
 
-if(window_focus_id==W_MOVER && mouse_x> xt+180-10 && mouse_x< xt+180+255+10 && mouse_y>=yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && mouse_button==1)
+if(window_focus_id==W_MOVER && mouse_x> xt+180-10 && mouse_x< xt+180+255+10 && mouse_y>=yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && mouseLeftClic.isDown)
 {
 set_mouse_range(xt+180-10,yt+5+(dv*15), xt+180+255+10, yt+5+(dv*15)+10);//liberation du curseur souris
 int valeur=mouse_x-(xt+180-10);
@@ -843,10 +843,10 @@ if(dv>=2)
 Rect AllowCopyParams(Vec2D(xt+445,yt+5+(dv*15)),Vec2D(10,10));
 AllowCopyParams.Draw(CouleurFader.WithAlpha(param_selected[dv]));
 AllowCopyParams.DrawOutline(CouleurLigne.WithAlpha(0.3));
-if(window_focus_id==W_MOVER && mouse_x>xt+445 && mouse_x<xt+445+10 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && mouse_button==1 && mouse_released==0)
+if(window_focus_id==W_MOVER && mouse_x>xt+445 && mouse_x<xt+445+10 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 param_selected[dv]=toggle(param_selected[dv]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -865,9 +865,9 @@ petitchiffre.Print("Set To Bank",xt+15, yt+143);
 
 if(window_focus_id==W_MOVER && mouse_x>xt+5 && mouse_x<xt+5+100 && mouse_y>yt+130 && mouse_y<yt+130+20)
 {
-if(mouse_button==1  && index_mouse_is_tracking==0 && mouse_released==0 )
+if(mouseLeftClic.isDown  && index_mouse_is_tracking==0 && (mouseLeftClic.eventProcessed==false) )
 {
-index_copy_params=toggle(index_copy_params); mouse_released=1;
+index_copy_params=toggle(index_copy_params); mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -969,7 +969,7 @@ CercleShowZoom.DrawOutline(Rgba::BLACK);
 if(tracker_16b_edit==0)
 {
 monTracker.Draw( Rgba::RED );
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 
 index_move_crossfade_is_on=0;
@@ -986,7 +986,7 @@ if(lockY_on==0){mover_params[1][0]=mouse_y-track_aera_y;}
 else if(tracker_16b_edit==1)
 {
 monTrackerfine.Draw( Rgba::YELLOW );
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 index_mouse_is_tracking=1;
 if(lockX_on==0){mover_params[0][1]=mouse_x-track_aera_x;}
@@ -1013,7 +1013,7 @@ LevelFaderSpeed.SetRoundness(15);
 LevelFaderSpeed.SetLineWidth(epaisseur_ligne_fader);
 if(window_focus_id==W_MOVER && mouse_x>x_track+420 && mouse_x<x_track+470 && mouse_y>y_track+350 && mouse_y<=y_track+350+255)
 {
-if(mouse_button==1  && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown  && index_mouse_is_tracking==0 )
 {
 Tracker_speedlevel=(y_track+350+255)-mouse_y;
 Tracker_speed_is=((float)Tracker_speedlevel)/8;
@@ -1084,7 +1084,7 @@ break;
 //ligne 1 des actions sur steps
 if( window_focus_id==W_MOVER && mouse_x>x_track+20+(lopt*40) && mouse_x<x_track+20+30+(lopt*40) && mouse_y>track_aera_y+275 && mouse_y<track_aera_y+295)
 {
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
 switch(lopt)
 {
@@ -1104,13 +1104,13 @@ else if(  index_goto_record==0 && index_main_clear==1)
 {ClearIntoStep(dock_move_selected);index_main_clear=0;}
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 //ligne 2 des actions sur steps
 if(window_focus_id==W_MOVER && mouse_x>x_track+20+(lopt*40) && mouse_x<x_track+20+30+(lopt*40) && mouse_y>track_aera_y+305 && mouse_y<track_aera_y+325)
 {
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0  )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0  )
 {
 switch(lopt)
 {
@@ -1136,7 +1136,7 @@ index_main_clear=0;
 }
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1179,7 +1179,7 @@ PlayBackMove.SetRoundness(4);
 if( window_focus_id==W_MOVER && mouse_x>x_track+20 && mouse_x<x_track+20+60 && mouse_y>y_track+360 && mouse_y<y_track+385)
 {
  PlayBackMove.Draw(CouleurSurvol);
- if(mouse_button==1  && mouse_released==0 && index_mouse_is_tracking==0 )
+ if(mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
  {
  if(index_move_back==0 )
  {
@@ -1197,7 +1197,7 @@ if( window_focus_id==W_MOVER && mouse_x>x_track+20 && mouse_x<x_track+20+60 && m
  index_move_crossfade_is_on=0; index_move_forward=0; index_move_back=0;
  }
  prepare_move_values(dock_move_selected);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
 }
 if(index_move_back==1){PlayBackMove.Draw(CouleurFader); }
@@ -1211,7 +1211,7 @@ PlayGoMove.SetRoundness(4);
 if( window_focus_id==W_MOVER && mouse_x>x_track+100 && mouse_x<x_track+100+60 && mouse_y>y_track+360 && mouse_y<y_track+385)
 {
  PlayGoMove.Draw(CouleurSurvol);
- if(mouse_button==1  && mouse_released==0 && index_mouse_is_tracking==0 )
+ if(mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
  {
  if(index_move_crossfade_is_on==0)
  {
@@ -1223,7 +1223,7 @@ if( window_focus_id==W_MOVER && mouse_x>x_track+100 && mouse_x<x_track+100+60 &&
  {
  index_move_crossfade_is_on=0;    index_move_forward=0;
  }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
 }
 if(index_move_forward==1){PlayGoMove.Draw(CouleurFader); }
@@ -1237,10 +1237,10 @@ CycleMove.SetRoundness(4);
 
 if(window_focus_id==W_MOVER && mouse_x>x_track+180 && mouse_x<x_track+240 && mouse_y>y_track+360 && mouse_y<y_track+385)
 {
- if(mouse_button==1  && mouse_released==0 && index_mouse_is_tracking==0 )
+ if(mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
  {
  index_cycle=toggle(index_cycle);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
 }
 if(index_cycle==1){CycleMove.Draw(CouleurBlind.WithAlpha(alpha_blinker)); }
@@ -1257,9 +1257,9 @@ SplineOn.SetRoundness(4);
 SplineOn.Draw(CouleurFader.WithAlpha(index_spline));
 if(window_focus_id==W_MOVER && mouse_x>x_track+260 && mouse_x<x_track+320 && mouse_y>y_track+360 && mouse_y<y_track+385)
 {
-if(mouse_button==1  && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
-index_spline=toggle(index_spline);mouse_released=1;
+index_spline=toggle(index_spline);mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1278,7 +1278,7 @@ LevelFaderSpline.SetRoundness(3);
 //SLIDER SPLINE
 if(window_focus_id==W_MOVER && mouse_x>=x_track+230-10 && mouse_x<=x_track+230+127+10 && mouse_y>=y_track+400 && mouse_y<=y_track+420)
 {
-if(mouse_button==1  && index_mouse_is_tracking==0  )
+if(mouseLeftClic.isDown  && index_mouse_is_tracking==0  )
 {
 int data=mouse_x-(x_track+230);
 Tracker_splinelevel=constrain_data_to_midi_range(data);
@@ -1299,10 +1299,10 @@ Timeshift.SetRoundness(3);
 if(window_focus_id==W_MOVER && mouse_x>x_track+300 && mouse_x<x_track+300+70 && mouse_y>y_track+490 && mouse_y<y_track+490+20)
 {
 Timeshift.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
 index_time_shift=toggle(index_time_shift);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1327,7 +1327,7 @@ DockMove.SetRoundness(5);
 if(window_focus_id==W_MOVER && mouse_x> x_track+300+(dkmov*40) && mouse_x< x_track+330+(dkmov*40) && mouse_y>y_track+(dkline*30) && mouse_y<y_track+25+(dkline*30))
 {
   DockMove.Draw(CouleurSurvol);
-  if(mouse_button==1  && mouse_released==0)//index_mouse_is_tracking==0 )
+  if(mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false))//index_mouse_is_tracking==0 )
   {
   if(index_main_clear==0 && index_goto_record==0 && index_time_shift==0 && index_copy_params==0 )
   {
@@ -1357,7 +1357,7 @@ if(window_focus_id==W_MOVER && mouse_x> x_track+300+(dkmov*40) && mouse_x< x_tra
   index_copy_params=0;
   }
 
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   }
 }
 
@@ -1403,7 +1403,7 @@ AffectToDock.Draw(CouleurFader.WithAlpha(index_affect_to_dock_mover));
 AffectToDock.DrawOutline(CouleurLigne);
 
 petitchiffre.Print("Affect Mover to Dock",x_track+315,y_track+265);
-if(window_focus_id==W_MOVER && mouse_x>x_track+310 && mouse_x<x_track+310+150 && mouse_y>y_track+250 && mouse_y<y_track+250+25 && mouse_button==1 && mouse_released==0)
+if(window_focus_id==W_MOVER && mouse_x>x_track+310 && mouse_x<x_track+310+150 && mouse_y>y_track+250 && mouse_y<y_track+250+25 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
  if(index_affect_to_dock_mover==0)
 {
@@ -1416,7 +1416,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_to_dock_mover;
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1429,9 +1429,9 @@ sprintf(string_tracker_coordonates,">> X: %d - Y: %d", buffer_moving_head[xadres
 
 if(window_focus_id==W_MOVER && mouse_x>track_aera_x+20 && mouse_x< track_aera_x+80 && mouse_y>track_aera_y+380 && mouse_y<track_aera_y+405)
 {
- if(mouse_button==1  && mouse_released==0 && index_mouse_is_tracking==0 )
+ if(mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
  {
- tracker_mode=toggle(tracker_mode);   mouse_released=1;
+ tracker_mode=toggle(tracker_mode);   mouseLeftClic.eventProcessed=true;
  }
 }
 if (tracker_mode==0)
@@ -1462,9 +1462,9 @@ EditFine.SetLineWidth(epaisseur_ligne_fader);
 if(window_focus_id==W_MOVER && mouse_x>track_aera_x+20 && mouse_x< track_aera_x+80 && mouse_y>track_aera_y+415 && mouse_y<track_aera_y+440)
 {
  EditFine.Draw(CouleurSurvol);
- if(mouse_button==1 && mouse_released==0  && index_mouse_is_tracking==0 && tracker_mode==1)
+ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)  && index_mouse_is_tracking==0 && tracker_mode==1)
  {
-tracker_16b_edit=toggle(tracker_16b_edit);mouse_released=1;
+tracker_16b_edit=toggle(tracker_16b_edit);mouseLeftClic.eventProcessed=true;
  }
 }
 if (tracker_16b_edit==1)
@@ -1484,16 +1484,16 @@ if(window_focus_id==W_MOVER && mouse_y>track_aera_y+460 && mouse_y<track_aera_y+
 {
 if(mouse_x>track_aera_x+20 && mouse_x<track_aera_x+80)
 {
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
-lockX_on=toggle(lockX_on);mouse_released=1;
+lockX_on=toggle(lockX_on);mouseLeftClic.eventProcessed=true;
 }
 }
 if(mouse_x>track_aera_x+100 && mouse_x<track_aera_x+160)
 {
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
-lockY_on=toggle(lockY_on);mouse_released=1;
+lockY_on=toggle(lockY_on);mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -1518,16 +1518,16 @@ if(window_focus_id==W_MOVER && mouse_y>track_aera_y+500 && mouse_y<track_aera_y+
 {
 if(mouse_x>track_aera_x+20 && mouse_x<track_aera_x+80)
 {
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
-invX_on=toggle(invX_on);mouse_released=1;
+invX_on=toggle(invX_on);mouseLeftClic.eventProcessed=true;
 }
 }
 if(mouse_x>track_aera_x+100 && mouse_x<track_aera_x+160)
 {
-if(mouse_button==1 && mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
-invY_on=toggle(invY_on);mouse_released=1;
+invY_on=toggle(invY_on);mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -1549,12 +1549,12 @@ ZeroPoint.SetLineWidth(epaisseur_ligne_fader);
 
 if(window_focus_id==W_MOVER && mouse_x>x_track+40 && mouse_x<x_track+180 && mouse_y>y_track+566 && mouse_y<y_track+591)
 {
-if(mouse_button==1  && index_do_dock==1 &&  mouse_released==0 && index_mouse_is_tracking==0 )
+if(mouseLeftClic.isDown  && index_do_dock==1 &&  (mouseLeftClic.eventProcessed==false) && index_mouse_is_tracking==0 )
 {
 position_defaut[0]=mover_params[0][0]-127;
 position_defaut[1]=mover_params[1][0]-127;
 sprintf(string_zero_point_is,"Offset X %d Y %d",position_defaut[0],position_defaut[1]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 

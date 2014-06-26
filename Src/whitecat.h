@@ -2522,7 +2522,12 @@ int fader_before_bounce[48];
 float snap_echo_to_recall[24][513];
 
 //sab 24/06/2014 - Doubleclic - Ajout - DEB
-typedef struct eventclic
+/** \struct eventclic whitecat.h
+ *  \brief  mouse button event in timeline,
+ *
+ * with event management flags (event is processed, event is doubleclic)
+ */
+ typedef struct eventclic
 {
    bool isDown, isDouble, eventProcessed ;
    int  posx, posy, posz;
@@ -2536,4 +2541,30 @@ std::deque<eventclic> mouseMiddleClicHistory;
 std::deque<eventclic> mouseRightClicHistory;
 double gapSecond;
 //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
+//sab 26/06/2014 DEB - Reporté depuis fichier Main
+/** \struct eventwheel whitecat.h
+ *  \brief  mouse wheel event,
+ *
+ * with event management flag (event is processed), level of wheel, gap of level with previous level (-1 / +1)
+ */
+ typedef struct eventwheel
+{
+   bool eventProcessed ;
+   int  level, gap;
+} eventwheel;
+eventwheel mouseWheel = {true,0,0};
+
+/** \struct eventmove whitecat.h
+ *  \brief  mouse move event,
+ *
+ * with event management flag (event is processed), previous position, new position and gap between old-new mouse position
+ */
+typedef struct eventmove
+{
+   bool eventProcessed ;
+   int  from_x, from_y, to_x, to_y, gap_x, gap_y;
+} eventmove;
+eventmove mouseMove = {true,0,0,0,0,0,0};
+//sab 26/06/2014 FIN - Reporté depuis fichier Main
 

@@ -1655,13 +1655,13 @@ int fenetre_confirm()
  if(mouse_x>XConfirm+110 && mouse_x<XConfirm+110+70 && mouse_y>YConfirm+60 && mouse_y<YConfirm+60+30 && window_focus_id==W_ASKCONFIRM)
  {
  EscBox.Draw(CouleurFader);
- if(mouse_button==1 && mouse_released==0)
+ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
  {
  reset_indexs_confirmation();
  reset_index_actions();
  substract_a_window(W_ASKCONFIRM);
  substract_a_window(previous_window_focus_id);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  window_focus_id=previous_window_focus_id;
  add_a_window(window_focus_id);
  }
@@ -1675,12 +1675,12 @@ int fenetre_confirm()
   if(mouse_x>XConfirm+240 && mouse_x<XConfirm+240+70 && mouse_y>YConfirm+60 && mouse_y<YConfirm+60+30  && window_focus_id==W_ASKCONFIRM)
   {
   OkBox.Draw(CouleurFader);
-  if(mouse_button==1 && mouse_released==0)
+  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
   {
   operations_confirmation();
   reset_index_actions();
   reset_indexs_confirmation();
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   substract_a_window(W_ASKCONFIRM);
   window_focus_id=previous_window_focus_id;
   add_a_window(window_focus_id);
@@ -1695,7 +1695,7 @@ int fenetre_confirm()
   operations_confirmation();
   reset_index_actions();
   reset_indexs_confirmation();
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
   substract_a_window(W_ASKCONFIRM);
   window_focus_id=previous_window_focus_id;
  }

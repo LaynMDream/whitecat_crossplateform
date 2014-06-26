@@ -50,7 +50,7 @@ int all_at_zero_panel_core(int xf, int yf)
 for (int u=0;u<8;u++)
 {
 
-if(mouse_x>xf && mouse_x<xf+50 && mouse_y>yf+10+(25*u) && mouse_y<yf+10+(25*u)+20 && mouse_released==0)
+if(mouse_x>xf && mouse_x<xf+50 && mouse_y>yf+10+(25*u) && mouse_y<yf+10+(25*u)+20 && (mouseLeftClic.eventProcessed==false))
 {
 
 
@@ -165,7 +165,7 @@ if( Midi_Faders_Affectation_Type!=0)
   }
 
  }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
 
 }
@@ -194,7 +194,7 @@ else
 position_minifader_selected--;
 if(position_minifader_selected<0){position_minifader_selected=core_user_define_nb_faders;}
 refresh_minifader_state_view_core(position_minifader_selected);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -209,7 +209,7 @@ else
 position_minifader_selected++;
 if(position_minifader_selected>core_user_define_nb_faders){position_minifader_selected=0;}
 refresh_minifader_state_view_core(position_minifader_selected);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -240,21 +240,21 @@ for(int i=0;i<core_user_define_nb_faders;i++)
 if(mouse_x>xmf+(24*larg)+10 && mouse_x<xmf+(24*larg)+55 )
 {
 
-if(mouse_y>ymf+25 && mouse_y<ymf+45 && mouse_released==0 )
+if(mouse_y>ymf+25 && mouse_y<ymf+45 && (mouseLeftClic.eventProcessed==false) )
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(776,1);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 minifaders_selected[position_minifader_selected]=toggle(minifaders_selected[position_minifader_selected]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
-else if(mouse_y>ymf+50 && mouse_y<ymf+70 && mouse_released==0 )
+else if(mouse_y>ymf+50 && mouse_y<ymf+70 && (mouseLeftClic.eventProcessed==false) )
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
@@ -267,7 +267,7 @@ for(int l=0;l<core_user_define_nb_faders;l++)
 minifaders_selected[l]=0;
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -345,7 +345,7 @@ if( Midi_Faders_Affectation_Type!=0)
 else
 {
 do_action_on_selected_minifaders(numcom);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -478,7 +478,7 @@ else
  do_lock_preset(lck);
  sprintf(string_Last_Order,">> Lock State %d called ",lck+1);
  }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -503,7 +503,7 @@ if(cmptfader+(lfad*24)<=core_user_define_nb_faders-1)//limitation nbre faders
 
 ////FX MODE
 
-if(  window_focus_id==922 && mouse_released==0 && mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg && mouse_y>(ymf+(lfad*hmfd))-12  && mouse_y<(ymf+(lfad*hmfd))-12+5 )
+if(  window_focus_id==922 && (mouseLeftClic.eventProcessed==false) && mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg && mouse_y>(ymf+(lfad*hmfd))-12  && mouse_y<(ymf+(lfad*hmfd))-12+5 )
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
@@ -514,7 +514,7 @@ else
   fader_mode_with_buffers[cmptfader+(lfad*24)]++;
  if(fader_mode_with_buffers[cmptfader+(lfad*24)]>5){fader_mode_with_buffers[cmptfader+(lfad*24)]=0;}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 ///////////SELECTION SOURIS SUR  NUMEROS AU DESSUS FADERS/////////////////////////////////////////////////////////
@@ -533,7 +533,7 @@ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0
  {
  show_who_is_in_dock( position_minifader_selected,   detect_dock_used(position_minifader_selected));
  }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -660,7 +660,7 @@ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0
  draw_preset_selected_for_order=draw_preset_selected;
  index_do_draw_affect_to_dock=1;
  index_ask_confirm=1;
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
   //echo
  else if(index_do_dock==1 && index_affect_echo_to_dock==1)
@@ -669,7 +669,7 @@ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0
  dock_selected_for_record=dock_selected_is;
  index_do_affect_echo_to_dock=1;
  index_ask_confirm=1;
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
 
  //modify
@@ -756,7 +756,7 @@ if(index_main_clear==1)//clear de tous les dock du fader
  fader_selected_for_record=cmptfader+(lfad*24);
  index_do_clear_on_faders=1;
  index_ask_confirm=1;
- mouse_released=1  ;
+ mouseLeftClic.eventProcessed=true  ;
 }
 }
 }//fin limitation nb faders user define

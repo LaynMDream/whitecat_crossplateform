@@ -93,7 +93,7 @@ return(0);
 
 int right_click_on_plot()
 {
-if(mouse_R_button==1 && mouse_R_released==0)
+if(mouseRightClic.isDown && (mouseRightClic.eventProcessed==false))
 {
 
 if(index_click_inside_plot==0 && index_move_plot_view_port==1    )
@@ -623,7 +623,7 @@ if(shape_groups[gr]==shape_groups[index_last_shape_selected])
 {shape_selected[gr]=shape_selected[index_last_shape_selected];}
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 refresh_view_shape_params(i);
 break;
 }
@@ -1393,7 +1393,7 @@ if(symbol_channel_is[calc][g]!=0 && symbol_channel_is[calc][g]==symbol_channel_i
 }
 }
 
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 break;
 }
 }
@@ -1843,7 +1843,7 @@ int logical_plot_symbol_list(int plotx, int ploty)
 {
 
 
-if(window_focus_id==W_PLOT && mouse_button==1 && mouse_released==0 && index_click_inside_relativ_xy==0)
+if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0)
 {
 
 //selection du symbol
@@ -1861,7 +1861,7 @@ if( mouse_x>plotx+12 && mouse_x<plotx+28)
  if(symbol_selected_type>max_symbol_type){symbol_selected_type=0;}
  if(index_edit_light_plot==1){change_symbol_type(view_plot_calc_number_is,symbol_selected_type);}
   }
-   mouse_released=1;
+   mouseLeftClic.eventProcessed=true;
  }
  else if(  mouse_y>ploty+69 && mouse_y<ploty+83) //DOWN
  {
@@ -1875,7 +1875,7 @@ if( mouse_x>plotx+12 && mouse_x<plotx+28)
   if(symbol_selected_type<0){symbol_selected_type=max_symbol_type;}
   if(index_edit_light_plot==1){change_symbol_type(view_plot_calc_number_is,symbol_selected_type);}
  }
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
  }
 
 }
@@ -1885,7 +1885,7 @@ if( mouse_x>=plotx+3 && mouse_x<=plotx+8 && mouse_y>=ploty+26 && mouse_y<ploty+3
 if(Midi_Faders_Affectation_Type!=0)
  {
  attribute_midi_solo_affectation(1599,Midi_Faders_Affectation_Mode);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
  else
  {
@@ -1900,7 +1900,7 @@ else if(symbol_selected_type>126){symbol_selected_type=126;}
 if(mouse_x>plotx+40 && mouse_x<plotx+40+105 && mouse_y>ploty+80 && mouse_y<ploty+80+20)
 {
 index_edit_symbol_plot=toggle(index_edit_symbol_plot);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //ADD A SYMBOL TO PLAN
 if(mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<ploty+110+20)
@@ -1913,7 +1913,7 @@ if(mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<ploty
  {
  add_a_symbol_to_plot(view_plot_calc_number_is);
  }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1926,7 +1926,7 @@ if( mouse_x>=plotx+10 && mouse_x<=plotx+10+185 && mouse_y>ploty+5 && mouse_y<plo
 {
 edit_symbol_name();
 plot_generate_appareils_list();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if( mouse_x>=plotx+50 && mouse_x<=plotx+50+50+5 && mouse_y>ploty+40 && mouse_y<ploty+40+10)
 {
@@ -1954,7 +1954,7 @@ if(symbol_id_to_select>0)
 {
 symbol_is_selected[view_plot_calc_number_is][symbol_id_to_select]=1;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //fin focus window
 }
@@ -1965,7 +1965,7 @@ int logical_plot_shape_list(int plotx, int ploty)
 {
 
 
-if(window_focus_id==W_PLOT && mouse_button==1 && mouse_released==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0)
+if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0)
 {
 
 //selection du shape
@@ -1984,7 +1984,7 @@ if( mouse_x>plotx+12 && mouse_x<plotx+28)
     if(index_edit_light_plot==1){change_shape_type(shape_selected_type);}
     refresh_shape_factors(shape_selected_type);
  }
-   mouse_released=1;
+   mouseLeftClic.eventProcessed=true;
  }
  else if(  mouse_y>ploty+69 && mouse_y<ploty+83) //DOWN
  {
@@ -1999,7 +1999,7 @@ if( mouse_x>plotx+12 && mouse_x<plotx+28)
    if(index_edit_light_plot==1){change_shape_type(shape_selected_type);}
    refresh_shape_factors(shape_selected_type);
   }
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
  }
 }
 
@@ -2012,7 +2012,7 @@ if( mouse_x>=plotx+3 && mouse_x<=plotx+8 && mouse_y>=ploty+26 && mouse_y<ploty+3
 if(Midi_Faders_Affectation_Type!=0)
  {
  attribute_midi_solo_affectation(1599,Midi_Faders_Affectation_Mode);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
  else
  {
@@ -2035,7 +2035,7 @@ if( mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<plot
  {
  add_shape_to_plot(shape_selected_type);
  }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //select id
 if(mouse_x>plotx+130 && mouse_x<plotx+130+65 && mouse_y>ploty+105 && mouse_y<ploty+105+28)
@@ -2060,7 +2060,7 @@ if(shape_groups[gr]==shape_groups[index_last_shape_selected])
 
 
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //fin focus window
@@ -2074,16 +2074,16 @@ mouse_released=1;
 int logical_shape_edition(int plotx, int ploty)
 {
 
-if(window_focus_id==W_PLOT && mouse_button==1 && index_edit_light_plot==1 )
+if(window_focus_id==W_PLOT && mouseLeftClic.isDown && index_edit_light_plot==1 )
 {
 
 //rotation
 if(mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+40 && mouse_y<ploty+40+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0)
 {
-if(mouse_released==0 &&  Midi_Faders_Affectation_Type!=0)
+if((mouseLeftClic.eventProcessed==false) &&  Midi_Faders_Affectation_Type!=0)
 {
  attribute_midi_solo_affectation(1601,Midi_Faders_Affectation_Mode);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -2095,14 +2095,14 @@ affect_angle_to_shapes(angle_shape_selected);
 }
 
 //entree rotation Rect OverRot(Vec2D(plotx+76,ploty+22),Vec2D(60,15));
-if(mouse_x>plotx+76 && mouse_x<plotx+76+60 && mouse_y>ploty+22 && mouse_y<ploty+22+15 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 && mouse_released==0)
+if(mouse_x>plotx+76 && mouse_x<plotx+76+60 && mouse_y>ploty+22 && mouse_y<ploty+22+15 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false))
 {
 float numof=atof(numeric);
 angle_shape_selected=numof;
 if(angle_shape_selected<0.0){angle_shape_selected=0.0;}
 else if(angle_shape_selected>1.0){angle_shape_selected=1.0;}
 affect_angle_to_shapes(angle_shape_selected);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 reset_numeric_entry();
 numeric_postext=0;
 }
@@ -2147,7 +2147,7 @@ break;
 default:
 break;
 }
-affect_angle_to_shapes(angle_shape_selected); mouse_released=1;
+affect_angle_to_shapes(angle_shape_selected); mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -2159,7 +2159,7 @@ for(int c=0;c<3;c++)
 for(int l=0;l<2;l++)
 {
 if(mouse_x>plotx+5+(c*65) && mouse_x<plotx+5+(c*65)+60 && mouse_y>ploty+60+(l*20) && mouse_y<ploty+60+18+(l*20)
-&& mouse_button==1 && mouse_released==0  && index_click_inside_relativ_xy==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 )
+&& mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)  && index_click_inside_relativ_xy==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 )
 {
 switch(c+(l*3))
 {
@@ -2205,7 +2205,7 @@ break;
 default:
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -2216,7 +2216,7 @@ for(int c=0;c<4;c++)
 {
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && index_click_inside_relativ_xy==0
 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0
-&& mouse_button==1 && mouse_released==0
+&& mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)
 && mouse_x>plotx+10+(c*45)&&mouse_x<plotx+10+(c*45)+40 && mouse_y>ploty+110 && mouse_y<ploty+110+18)
 {
 switch(c)
@@ -2236,7 +2236,7 @@ break;
 default:
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -2249,7 +2249,7 @@ else if(general_shape_size_to_apply>100.0){general_shape_size_to_apply=100.0;}
 affect_size_to_shape(general_shape_size_to_apply);
 }
 
-if( mouse_released==0 && mouse_x>=plotx+126 && mouse_x<=plotx+126+70 && mouse_y>ploty+136 && mouse_y<ploty+136+15 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0)
+if( (mouseLeftClic.eventProcessed==false) && mouse_x>=plotx+126 && mouse_x<=plotx+126+70 && mouse_y>ploty+136 && mouse_y<ploty+136+15 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0)
 {
 float numo=atof(numeric);
 general_shape_size_to_apply=numo;
@@ -2258,20 +2258,20 @@ else if(general_shape_size_to_apply>100.0){general_shape_size_to_apply=100.0;}
 affect_size_to_shape(general_shape_size_to_apply);
  reset_numeric_entry();
  numeric_postext=0;
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 //color pattern
-if( ( shape_selected_type>=0 && shape_selected_type<11 ) && mouse_released==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
+if( ( shape_selected_type>=0 && shape_selected_type<11 ) && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
 mouse_x>plotx+10 && mouse_x<plotx+10+45 && mouse_y>ploty+190 && mouse_y<ploty+190+20)
 {
 color_pattern_selected++;
 if(shape_selected_type>7 && color_pattern_selected>3){color_pattern_selected=0;}
 else { if(color_pattern_selected>4){color_pattern_selected=0;}}
 affect_color_pattern_to_shape(color_pattern_selected);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
-if( shape_selected_type==7 && mouse_released==0  && index_click_inside_relativ_xy==0)//rectangle
+if( shape_selected_type==7 && (mouseLeftClic.eventProcessed==false)  && index_click_inside_relativ_xy==0)//rectangle
 { //rectangle: x
 if (mouse_x>=plotx+10 && mouse_x<plotx+10+45 && mouse_y>ploty+230 && mouse_y<ploty+230+20)
 {
@@ -2282,7 +2282,7 @@ if (mouse_x>=plotx+10 && mouse_x<plotx+10+45 && mouse_y>ploty+230 && mouse_y<plo
  reset_numeric_entry();
  numeric_postext=0;
  affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
  else
  {
@@ -2299,7 +2299,7 @@ else if(mouse_x>=plotx+100 && mouse_x<plotx+100+45 && mouse_y>ploty+230 && mouse
  reset_numeric_entry();
  numeric_postext=0;
  affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
  else
  {
@@ -2309,7 +2309,7 @@ else if(mouse_x>=plotx+100 && mouse_x<plotx+100+45 && mouse_y>ploty+230 && mouse
 }
 }
 //angle de l arc opening angle
-if( shape_selected_type==9 && mouse_released==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
+if( shape_selected_type==9 && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
 mouse_x>=plotx && mouse_x<plotx+5+190 && mouse_y>ploty+240 && mouse_y<ploty+240+10)
 {
 opening_angle_selected=((float)(mouse_x-plotx))/180;
@@ -2320,7 +2320,7 @@ refresh_opening_angle(opening_angle_selected);
 
 
 
-if( shape_selected_type==10 && mouse_released==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
+if( shape_selected_type==10 && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
 mouse_x>=plotx+10 && mouse_x<plotx+10+45 && mouse_y>ploty+230 && mouse_y<ploty+230+20)
 {
 nbre_branches_polygon=atoi(numeric);
@@ -2329,10 +2329,10 @@ numeric_postext=0;
 if(nbre_branches_polygon<3){nbre_branches_polygon=3;}
 else if(nbre_branches_polygon>20){nbre_branches_polygon=20;}
 affect_polygon_nbr_of_corners(nbre_branches_polygon);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
-else if( shape_selected_type==11&& mouse_released==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
+else if( shape_selected_type==11&& (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
 mouse_x>=plotx+10 && mouse_x<plotx+10+45 && mouse_y>ploty+230 && mouse_y<ploty+230+20)
 {
 if(numeric_postext>0)
@@ -2349,14 +2349,14 @@ fonttype_selected++;
 if(fonttype_selected>13){fonttype_selected=0;}
 }
 affect_font_to_texts(fonttype_selected);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
-if( mouse_released==0 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
+if( (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
 mouse_x>=plotx+5 && mouse_x<plotx+5+10 && mouse_y>ploty+260 && mouse_y<ploty+260+10)
 {
 index_show_shape_id=toggle(index_show_shape_id);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(index_adjusting_shape_x==1 && index_click_inside_relativ_xy==0)
@@ -2372,14 +2372,14 @@ affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
 }
 
 
-if(index_type==1 && mouse_released==0 && index_click_inside_relativ_xy==0 && mouse_x>plotx+10 && mouse_x<plotx+10+175 && mouse_y>ploty+275 && mouse_y<ploty+275+18)
+if(index_type==1 && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && mouse_x>plotx+10 && mouse_x<plotx+10+175 && mouse_y>ploty+275 && mouse_y<ploty+275+18)
 {
 edit_shape_name();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //edition des relatifs dans la zone de tarcking
-if( mouse_released==0 && mouse_x > plotx+110 && mouse_x<plotx+110+70 && mouse_y>ploty+300 && mouse_y<ploty+300+70 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
+if( (mouseLeftClic.eventProcessed==false) && mouse_x > plotx+110 && mouse_x<plotx+110+70 && mouse_y>ploty+300 && mouse_y<ploty+300+70 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
 {
 
 if(index_main_clear==1)
@@ -2397,7 +2397,7 @@ index_main_clear=0;
 
 else
 {
-if(index_click_inside_relativ_xy==0 && mouse_released==0 )
+if(index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false) )
 {
 //prise de position
 index_click_inside_relativ_xy=1;
@@ -2431,7 +2431,7 @@ else if(general_alpha_for_shape>1.0){general_alpha_for_shape=1.0;}
 int logical_symbol_edition_options(int plotx, int ploty)
 {
 //actions sur les options
-if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_button==1 && mouse_released==0)
+if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 if(  index_click_inside_relativ_xy==0)
 {
@@ -2441,7 +2441,7 @@ for (int l=0;l<8;l++)
 if(mouse_x>plotx+5 && mouse_x<plotx+5+10 && mouse_y>ploty+70+(20*l) && mouse_y<ploty+70+(20*l)+10)
 {
 plot_show_options[l]=toggle(plot_show_options[l]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //edition
 switch(l)
@@ -2474,7 +2474,7 @@ Patch[(symbol_dimmer_is[view_plot_calc_number_is][i])]=(symbol_channel_is[view_p
 generate_channel_view_list_from_patched_circuits();
 reset_numeric_entry();
 numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 break;
 case 1: //"LIST:");plotx+20,ploty+65+(20*l)));
@@ -2495,7 +2495,7 @@ descriptif_projecteurs[(symbol_channel_is[view_plot_calc_number_is][tnum])][24]=
 }
 reset_numeric_entry();
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 break;
 case 2://"GEL 1:");
@@ -2511,7 +2511,7 @@ gelat[view_plot_calc_number_is][i][0]= tnum;
 }
 reset_numeric_entry();
 numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if(mouse_x>plotx+130 && mouse_x<plotx+130+50 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+65+(20*l)+18)
 {
@@ -2525,7 +2525,7 @@ if(gelat_family[view_plot_calc_number_is][i][0]>nbre_gelats_manufact){gelat_fami
 }
 }
 plot_generate_appareils_list();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 break;
 case 3: //"GEL 2:");
@@ -2542,7 +2542,7 @@ reset_numeric_entry();
 numeric_postext=0;
 }
 plot_generate_appareils_list();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if(mouse_x>plotx+130 && mouse_x<plotx+130+50 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+65+(20*l)+18)
 {
@@ -2555,7 +2555,7 @@ if(gelat_family[view_plot_calc_number_is][i][1]>nbre_gelats_manufact){gelat_fami
 }
 }
 plot_generate_appareils_list();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 break;
 case 4: //"GEL 3:");
@@ -2571,7 +2571,7 @@ gelat[view_plot_calc_number_is][i][2]= tnum;
 reset_numeric_entry();
 numeric_postext=0;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if(mouse_x>plotx+130 && mouse_x<plotx+130+50 && mouse_y>ploty+65+(20*l) && mouse_y<ploty+65+(20*l)+18)
 {
@@ -2584,7 +2584,7 @@ if(gelat_family[view_plot_calc_number_is][i][2]>nbre_gelats_manufact){gelat_fami
 }
 }
 plot_generate_appareils_list();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 break;
 case 5: //"DIMMER:");
@@ -2624,7 +2624,7 @@ if(index_build_patch_from_plot==1)
 {
 if(tnum>=0) {repatch_from_plot(view_plot_calc_number_is);    }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 break;
 default:
@@ -2650,7 +2650,7 @@ sprintf(symbol_note[view_plot_calc_number_is][last_selected_symbol_is][n],numeri
 reset_numeric_entry();
 numeric_postext=0;
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 break;
 }
 }
@@ -2660,7 +2660,7 @@ break;
 if(mouse_x>plotx+150 && mouse_x<plotx+150+30 && mouse_y>ploty+210 && mouse_y<ploty+220 )
 {
 plot_name_text_size=toggle(plot_name_text_size);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //choix des  relatifs xy
 for(int i=0;i<5;i++)
@@ -2685,7 +2685,7 @@ adjust_xy_type[i]=1;
 break;
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 
 }
 }
@@ -2694,7 +2694,7 @@ mouse_released=1;
 if(index_click_inside_relativ_xy==0 && mouse_x>plotx+75 && mouse_x<plotx+75+10 && mouse_y>ploty+350 &&  mouse_y<ploty+350+10)
 {
 mode_relatif_xy_solo=toggle(mode_relatif_xy_solo);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //choix des presets ( 6)
@@ -2734,7 +2734,7 @@ last_xyrelativ_preset=pr;
 }
 xyrelativ_preset=999;
 
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 break;
 }
 }
@@ -2750,7 +2750,7 @@ else if(mouse_x>plotx+110 && mouse_x<plotx+110+85 )//reset patch
 index_do_clear_all_the_patch=1;
 index_ask_confirm=1;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -2780,7 +2780,7 @@ index_main_clear=0;
 
 else
 {
-if(index_click_inside_relativ_xy==0 && mouse_released==0 )
+if(index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false) )
 {
 //prise de position
 index_click_inside_relativ_xy=1;
@@ -2798,16 +2798,16 @@ store_relativ_xy_position_of_activ_calc(view_plot_calc_number_is);
 int logical_plot_symbol_edition(int plotx, int ploty)
 {
 
-if(window_focus_id==W_PLOT && mouse_button==1 && mouse_released==0 && index_click_inside_relativ_xy==0)
+if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0)
 {
 //rotation
 if( mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+40 && mouse_y<ploty+40+10)
 {
 
-if(mouse_released==0 &&  Midi_Faders_Affectation_Type!=0)
+if((mouseLeftClic.eventProcessed==false) &&  Midi_Faders_Affectation_Type!=0)
 {
  attribute_midi_solo_affectation(1601,Midi_Faders_Affectation_Mode);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -2819,17 +2819,17 @@ affect_angle_to_symbols(view_plot_calc_number_is,angle_projo_selectionne);
 }
 
 //entree rotation
-if(mouse_x>plotx+76 && mouse_x<plotx+76+60 && mouse_y>ploty+22 && mouse_y<ploty+22+15 && index_click_inside_relativ_xy==0 && mouse_released==0)
+if(mouse_x>plotx+76 && mouse_x<plotx+76+60 && mouse_y>ploty+22 && mouse_y<ploty+22+15 && index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false))
 {
 float numof=atof(numeric);
 angle_projo_selectionne=numof;
 if(angle_projo_selectionne<0.0){angle_projo_selectionne=0.0;}
 else if(angle_projo_selectionne>1.0){angle_projo_selectionne=1.0;}
 affect_angle_to_symbols(view_plot_calc_number_is,angle_projo_selectionne);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 reset_numeric_entry();
 numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //pre rotations
@@ -2872,7 +2872,7 @@ break;
 default:
 break;
 }
-affect_angle_to_symbols(view_plot_calc_number_is,angle_projo_selectionne); mouse_released=1;
+affect_angle_to_symbols(view_plot_calc_number_is,angle_projo_selectionne); mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -2889,7 +2889,7 @@ for(int l=0;l<2;l++)
 //MySymbAction.MoveTo(Vec2D(plotx+5+(c*65),ploty+70+(l*20)));
 if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0 && index_click_inside_relativ_xy==0
 && mouse_x>plotx+5+(c*65) && mouse_x<plotx+5+(c*65)+60 && mouse_y>ploty+60+(l*20) && mouse_y<ploty+60+(l*20)+18
-&& mouse_button==1 && mouse_released==0)
+&& mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 switch(c+(l*3))
 {
@@ -2946,7 +2946,7 @@ break;
 default:
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -2955,7 +2955,7 @@ mouse_released=1;
 for(int c=0;c<4;c++)
 {
 if( index_edit_light_plot==1 && index_click_inside_relativ_xy==0
- && mouse_button==1 && mouse_released==0
+ && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)
 && mouse_x>plotx+10+(c*45)&&mouse_x<plotx+10+(c*45)+40 && mouse_y>ploty+110 && mouse_y<ploty+110+18)
 {
 switch(c)
@@ -2975,7 +2975,7 @@ break;
 default:
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -2990,13 +2990,13 @@ mouse_released=1;
 int logical_plot_menu_bare(int plotx,int ploty)
 {
 
-if(window_focus_id==W_PLOT && mouse_button==1 && mouse_released==0 && index_click_inside_relativ_xy==0 && index_click_inside_plot==0)
+if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && index_click_inside_plot==0)
 {
 //selection edition layers
 if(mouse_x>plotx && mouse_x<plotx+35 && mouse_y>ploty && mouse_y<ploty+20)
 {
 index_edit_light_plot=toggle(index_edit_light_plot);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 for(int i=0;i<4;i++)
 {
@@ -3015,7 +3015,7 @@ if(index_main_clear==0 && index_plot_send_to_mode==0)
 switch(plot_layer_mode)
 {
 case 0:
-show_calc_number[i]=toggle(show_calc_number[i]);mouse_released=1;
+show_calc_number[i]=toggle(show_calc_number[i]);mouseLeftClic.eventProcessed=true;
 break;
 case 1:
 for(int j=0;j<4;j++)
@@ -3024,7 +3024,7 @@ show_calc_number[j]=0;
 }
 show_calc_number[i]=1;
 view_plot_calc_number_is=i;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 break;
 }
 plot_generate_appareils_list();
@@ -3062,13 +3062,13 @@ show_calc_number[j]=0;
 }
 show_calc_number[i]=1;
 view_plot_calc_number_is=i;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 break;
 }
 plot_generate_appareils_list();
 }
 
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -3105,7 +3105,7 @@ else//clear
 index_ask_general_clear_on_plot=1;
 index_ask_confirm=1;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //viewport
@@ -3118,9 +3118,9 @@ if(index_main_clear==1)
 else
 {
   index_move_plot_view_port=toggle( index_move_plot_view_port);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //layer edit mode solo ou multichouches
@@ -3134,7 +3134,7 @@ else
 {
 plot_layer_mode=toggle(plot_layer_mode);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -3153,14 +3153,14 @@ if(mouse_x>plotx+620 && mouse_x<plotx+620+100 && mouse_y>ploty-5 && mouse_y<plot
 {
 index_do_a_plot_screen_capture=1;
 index_show_button_export=1.0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(index_type==1 && mouse_x>plotx+730 && mouse_x<plotx+730+220 && mouse_x<plotx+plot_window_x_size-position_plan_x && mouse_y>ploty-5 && mouse_y<ploty+15)
 {
 sprintf(plot_name_of_capture,numeric);
 reset_numeric_entry();numeric_postext=0;
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -3178,10 +3178,10 @@ for (int y=0;y<8;y++)
 
 if( index_editing_theatre_plan==0 && mouse_x>xrep+5 && mouse_x<xrep+5+150 && mouse_y>(yrep+185+(y*20)-10) && mouse_y<(yrep+185+(y*20)+5))
 {
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 importplan_selected=y+line_importplan;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 sprintf(Name_of_plane_is,list_import_plans[importplan_selected]);
 
 
@@ -3202,14 +3202,14 @@ if(mouse_x>xrep+190-12 && mouse_x<xrep+190+12)
 {
 if(mouse_y>yrep+180-12 && mouse_y<yrep+200+12)
 {
-if(mouse_button==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0)
+if(mouseLeftClic.isDown &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0)
 {
 if(line_importplan>0){line_importplan--;}
 }
 }
 else if(mouse_y>yrep+290-12 && mouse_y<yrep+310+12)
 {
-if(mouse_button==1 &&  index_editing_theatre_plan==0)
+if(mouseLeftClic.isDown &&  index_editing_theatre_plan==0)
 {
 if(line_importplan<127){line_importplan++;}
 }
@@ -3219,10 +3219,10 @@ if(line_importplan<127){line_importplan++;}
 if( index_editing_theatre_plan==0 && mouse_x>xrep+150 && mouse_x<xrep+150+60 && mouse_y>(yrep+345) && mouse_y<(yrep+345+20)
  && editing_plot_sizex==0 && editing_plot_sizey==0)
 {
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 scan_planfolder();
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -3233,7 +3233,7 @@ return(0);
 int logical_menu_plan(int plotx, int ploty)
 {
 
-if(window_focus_id==W_PLOT && index_edit_light_plot==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && mouse_button==1 && mouse_released==0 && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0)
+if(window_focus_id==W_PLOT && index_edit_light_plot==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0)
 {
 
 //grille taille
@@ -3243,12 +3243,12 @@ if( mouse_x>plotx+40 && mouse_x<plotx+40+40 && mouse_y>ploty+195 && mouse_y<plot
 {
 plot_quadrillage_size+=25;
 if(plot_quadrillage_size>200){plot_quadrillage_size=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if ( mouse_x>plotx+100 && mouse_x<plotx+100+40 && mouse_y>ploty+195 && mouse_y<ploty+195+20)
 {
 plot_grid_type=toggle(plot_grid_type);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if ( mouse_x>plotx+145 && mouse_x<plotx+150+60 && mouse_y>ploty+200 && mouse_y<ploty+200+10)
 {
@@ -3296,7 +3296,7 @@ break;
 editing_plan_data_type=i+1;
 reset_numeric_entry();
 numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if(numeric_postext==0)//drag souris
 {
@@ -3350,10 +3350,10 @@ else if(numeric_postext==0)//drag souris
 }
 
 //lock proportions
-if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && mouse_released==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0 && mouse_x>=plotx+5+141 && mouse_x<=plotx+5+141+8 && mouse_y>ploty+111 && mouse_y<ploty+111+8)
+if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && (mouseLeftClic.eventProcessed==false) && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0 && mouse_x>=plotx+5+141 && mouse_x<=plotx+5+141+8 && mouse_y>ploty+111 && mouse_y<ploty+111+8)
 {
 lock_background_proportions=toggle(lock_background_proportions);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //rotation plan
 if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0 && mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+140 && mouse_y<ploty+140+10)
@@ -3403,7 +3403,7 @@ break;
 default:
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -3429,7 +3429,7 @@ plot_window_x_size=atol(numeric);
 if(plot_window_x_size<840){plot_window_x_size=840;}
 reset_numeric_entry();
 numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if(numeric_postext==0)//drag souris
 {
@@ -3450,7 +3450,7 @@ plot_window_y_size=atol(numeric);
 if(plot_window_y_size<plot_minimum_y_size){plot_window_y_size=plot_minimum_y_size;}
 reset_numeric_entry();
 numeric_postext=0;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if(numeric_postext==0)//drag souris
 {
@@ -3464,12 +3464,12 @@ old_plot_sizey=plot_window_y_size;
 }
 
 if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0
-&& mouse_button==1 && mouse_x>plotx+5+100 && mouse_x<plotx+5+100+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
+&& mouseLeftClic.isDown && mouse_x>plotx+5+100 && mouse_x<plotx+5+100+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
 {
 plot_editing_color_background=1;  plot_editing_color_line=0;
 }
 if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0
-&& mouse_button==1 && mouse_x>plotx+5+150 && mouse_x<plotx+5+150+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
+&& mouseLeftClic.isDown && mouse_x>plotx+5+150 && mouse_x<plotx+5+150+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
 {
 plot_editing_color_line=1; plot_editing_color_background=0;
 }
@@ -3537,7 +3537,7 @@ break;
 }
 
 //CALCUL MOVE ATTRIBUTS
-if(index_click_inside_relativ_xy==1 && mouse_button==1 && mouse_released==0)
+if(index_click_inside_relativ_xy==1 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 switch(index_menus_lighting_plot)
 {
@@ -3580,7 +3580,7 @@ break;
 if(mouse_x> plotx+position_plan_x && mouse_x<plotx+position_plan_x+plot_window_x_size
 && mouse_y> ploty+position_plan_y && mouse_y<ploty+position_plan_y+plot_window_y_size )
 {
-if(index_click_inside_plot==0 && index_click_inside_relativ_xy==0 && mouse_button==1 && mouse_released==0 )
+if(index_click_inside_plot==0 && index_click_inside_relativ_xy==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
 {
 //prise de position
 index_click_inside_plot=1;
@@ -3609,7 +3609,7 @@ break;
 previous_plot_view_port_x=plot_view_port_x;
 previous_plot_view_port_y=plot_view_port_y;
 }
-else if (index_click_inside_plot==1 &&  index_click_inside_relativ_xy==0 && mouse_button==1 && mouse_released==0  )
+else if (index_click_inside_plot==1 &&  index_click_inside_relativ_xy==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)  )
 {
 plot_facteur_move_x=mouse_x-plot_original_mouse_x;
 plot_facteur_move_y=mouse_y-plot_original_mouse_y;

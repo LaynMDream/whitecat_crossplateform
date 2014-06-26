@@ -5119,12 +5119,12 @@ petitchiffrenoir.Print(plot_renseignements[i],xplot+15,yplot+15+(i*25));
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>xplot+10 && mouse_x<xplot+195 && mouse_y>yplot+5+(i*25) && mouse_y<yplot+25+(i*25))
 {
 UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.6));
-if(mouse_b&1 && mouse_released==0)
+if(mouse_b&1 && (mouseLeftClic.eventProcessed==false))
 {
 sprintf(plot_renseignements[i],numeric);
 reset_numeric_entry();numeric_postext=0;
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -5138,12 +5138,12 @@ petitchiffrenoir.Print(plot_renseignements[19],xplot+15,yplot+483);
 if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouse_x>xplot+10 && mouse_x<xplot+195 && mouse_y>yplot+470 && mouse_y<yplot+490)
 {
 UnderName.DrawOutline(CouleurPlotLine.WithAlpha(0.6));
-if(mouse_b&1 && mouse_released==0)
+if(mouse_b&1 && (mouseLeftClic.eventProcessed==false))
 {
 sprintf(plot_renseignements[19],numeric);
 reset_numeric_entry();numeric_postext=0;
 if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -5170,10 +5170,10 @@ break;
 if(window_focus_id==W_PLOT && mouse_x>xplot+10 && mouse_x<xplot+105 && mouse_y>yplot+580 && mouse_y<yplot+600)
 {
 Mode.DrawOutline(CouleurLigne.WithAlpha(0.6));
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 legend_view=toggle(legend_view);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
