@@ -2551,9 +2551,9 @@ double gapSecond;
  typedef struct eventwheel
 {
    bool eventProcessed ;
-   int  level, gap;
+   int  level, gap, speed;
 } eventwheel;
-eventwheel mouseWheel = {true,0,0};
+eventwheel mouseWheel = {true,0,0,0};
 
 /** \struct eventmove whitecat.h
  *  \brief  mouse move event,

@@ -501,6 +501,46 @@ int MoveCloseBox(int xmv,int ymv, int idwindow)
     return(0);
 }
 
+
+// 1ère signature de la fonction : la fonction modifie la valeur de la variable fournie f_level et la part entière signée (int)
+int level_wheelSpeedIncreased(float &f_level, float maxlevel, float minlevel, float ratiospeed)
+{
+    float f_speed;
+
+    f_speed = mouseWheel.speed / ratiospeed ;
+    f_level = f_level + f_speed;
+
+    if (f_level > maxlevel)
+    {
+        f_level=maxlevel;
+    }
+    if (f_level<minlevel)
+    {
+        f_level=minlevel ;
+    }
+    return (int) f_level;
+}
+// 2de signature de la fonction : la fonction modifie les valeurs des variables fournies i_loop et i_level
+void level_wheelSpeedIncreased(int &i_level, int maxlevel, int minlevel, int loopratio, int &i_loop)
+{
+    i_loop ++;
+
+	if (i_loop>loopratio)
+	{
+		i_loop = 1;
+		i_level = i_level + mouseWheel.speed;
+
+		if (i_level > maxlevel)
+		{
+			i_level=maxlevel;
+		}
+		if (i_level<minlevel)
+		{
+			i_level=minlevel ;
+		}
+	}
+}
+
 bool mouseMoveSinceLeftClic ()
 {
     return (mouseLeftClic.posx==mouse_x && mouseLeftClic.posy==mouse_y);

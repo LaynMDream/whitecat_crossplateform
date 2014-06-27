@@ -280,9 +280,6 @@
 		<Unit filename="../../../Src/patch_visu.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="../../../Src/plot.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="../../../Src/plot9.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -335,6 +332,7 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/whitecat.h" />
+		<Unit filename="../../../Src/whitecat_Fct.h" />
 		<Unit filename="../../../Src/whitecat_opensource.ico">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

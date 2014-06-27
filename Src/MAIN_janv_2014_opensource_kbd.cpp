@@ -332,6 +332,14 @@ int do_mouse_right_click_menu()
  return(0);
 }
 
+//test begin montée/descente accélérée
+int test_format=1;
+int test_loop =0 ;
+int test_level_i = 0 ;
+float test_level_f = 0 ;
+float test_speed_f = 0 ;
+//test end montée descente acceleree
+
 /** \brief On mouse event - Manage mouse global variable
  *
  * \param int Allegro flags (for binary compar)
@@ -342,17 +350,16 @@ void my_callback(int flags) {
 
 	//Mouse wheel event
 	{
-		mouseWheel.gap = mouseWheel.level - mouse_z;
-		if (not(mouseWheel.gap=0))
-			{
-				mouseWheel.level = mouse_z;
-				mouseWheel.eventProcessed = false;
-				//display :  sprintf(string_Last_Order,"Roue gap < %i > level < %i >", mouseWheel.gap, mouseWheel.level);
-			}
-			else
-			{
-				mouseWheel.eventProcessed = true;
-			}
+		mouseWheel.gap = mouse_z - mouseWheel.level;
+		mouseWheel.level = mouse_z;
+		mouseWheel.eventProcessed = false;
+
+		//display :  sprintf(string_Last_Order,"Roue gap < %i > level < %i >", mouseWheel.gap, mouseWheel.level);
+		if (mouseMiddleClic.isDown)
+		{
+			mouseWheel.speed = mouseWheel.speed + mouseWheel.gap;
+		}
+		//sprintf(string_Last_Order,"Roue gap < %i > level < %i > speed <%i>", mouseWheel.gap, mouseWheel.level, mouseWheel.speed);
 	}
 
 	//Mouse move event
@@ -531,6 +538,7 @@ void my_callback(int flags) {
         mouseRightClic.posz=mouse_z;
         mouseRightClic.timer = time(NULL);
         mouseRightClicHistory.push_front (mouseRightClic);
+
         //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
         index_move_plot_view_port=0;
@@ -553,6 +561,8 @@ void my_callback(int flags) {
         mouseMiddleClic.posz=mouse_z;
         mouseMiddleClic.timer = time(NULL);
 
+        mouseWheel.speed = mouseWheel.gap;
+
 		//Keep only previous down-up sequence with the current
         if (mouseMiddleClicHistory.size()==6)
         {
@@ -573,6 +583,8 @@ void my_callback(int flags) {
         mouseMiddleClic.posz=mouse_z;
         mouseMiddleClic.timer = time(NULL);
 
+        mouseWheel.speed = 0;
+
         mouseMiddleClicHistory.push_front (mouseMiddleClic);
     }
 //sab 24/06/2014 - Doubleclic - Ajout - FIN
@@ -587,6 +599,7 @@ int ticker_dixiemes_de_secondes_check = BPS_TO_TIMER(10);//10eme de secondes
 
 void dixiemes_de_secondes()
 {
+
 ticks_dixieme_for_icat_and_draw++;
 if(index_is_saving==0 && init_done==1 && index_writing_curve==0 && index_quit==0)
 {
@@ -701,6 +714,46 @@ END_OF_FUNCTION(dixiemes_de_secondes);
 int ticker_full_loop_rate = BPS_TO_TIMER(10000);
 void ticker_full_loop()
 {
+
+
+//test begin montée/descente selon vitesse
+    if (mouseMiddleClic.isDown)
+    {
+        test_format=1;
+
+        if (test_format==1)
+        {
+            /* 1ère signature de la fonction :
+            - niveau géré avec une variable (float)
+            */
+            test_level_i = level_wheelSpeedIncreased(test_level_f, 100., 0., 1000.);
+        }
+        if (test_format==2)
+        {
+            /* 2de signature de la fonction :
+            - niveau géré avec une variable (int)
+            - besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
+            */
+            level_wheelSpeedIncreased(test_level_i, 256, -255, 2000, test_loop);
+        }
+    }
+    else
+    {
+        test_loop =0;
+    }
+
+
+if (test_format==1)
+{
+    sprintf(string_Last_Order,"gap < %i > speed <%i> lvl i<%i> f<%f>",
+            mouseWheel.gap, mouseWheel.speed, test_level_i, test_level_f);
+}
+if (test_format==2)
+{
+    sprintf(string_Last_Order,"gap < %i > speed <%i> level <%i> loop i<%i> ",
+            mouseWheel.gap, mouseWheel.speed, test_level_i, test_loop);
+}
+//test end montée/descente selon vitesse
 
 if(core_do_calculations[2]==1 && starting_wcat==0)
 {
