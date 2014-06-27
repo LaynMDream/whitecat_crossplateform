@@ -1033,6 +1033,8 @@ WWWWWWWW           C  WWWWWWWW   |
     int detection_over_window();
     int move_window(int);
     int MoveCloseBox(int,int,int);
+	bool mouseMoveSinceLeftClic ();
+	bool mouseMoveSinceRightClic ();
     int do_logical_MoveCloseBox(int,int,int);
     int logical_channelspace();
     int check_graphics_mouse_handling();
