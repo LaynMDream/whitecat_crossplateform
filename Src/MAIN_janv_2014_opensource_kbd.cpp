@@ -349,41 +349,51 @@ float test_speed_f = 0 ;
 void my_callback(int flags) {
 
 	//Mouse wheel event
-	{
-		mouseWheel.gap = mouse_z - mouseWheel.level;
-		mouseWheel.level = mouse_z;
-		mouseWheel.eventProcessed = false;
+    {
+        mouseWheel.gap = mouse_z - mouseWheel.level;				//Instant mouvement of the wheel : -1, 0, +1
 
-		//display :  sprintf(string_Last_Order,"Roue gap < %i > level < %i >", mouseWheel.gap, mouseWheel.level);
-		if (mouseMiddleClic.isDown)
-		{
-			mouseWheel.speed = mouseWheel.speed + mouseWheel.gap;
-		}
-		//sprintf(string_Last_Order,"Roue gap < %i > level < %i > speed <%i>", mouseWheel.gap, mouseWheel.level, mouseWheel.speed);
-	}
+        if (mouseMiddleClic.isDown)
+        {
+            mouseWheel.speed = mouseWheel.speed + mouseWheel.gap;	//Instant acceleration of the speed
+        }
+        else
+        {
+            mouseWheel.speed = 0;
+        }
+
+        if (mouseWheel.eventProcessed)
+        {
+            mouseWheel.levelinit = mouseWheel.level ; 				//Level of the wheel when event was processed
+            // beware interaction with : position_mouse_z(0);
+        }
+
+        mouseWheel.level = mouse_z; 								//Instant level of the wheel
+        mouseWheel.yield = mouseWheel.level - mouseWheel.levelinit ;//Gain of level since last time that event was processed
+
+        mouseMove.eventProcessed = false;
+        //sprintf(string_Last_Order,"Roue gap < %i > level < %i > speed <%i>", mouseWheel.gap, mouseWheel.level, mouseWheel.speed);
+    }
 
 	//Mouse move event
 	{
-		mouseMove.from_x = mouseMove.to_x ; //Previous position
-		mouseMove.from_y = mouseMove.to_y ;
-		mouseMove.to_x   = mouse_x ;        //New position
-		mouseMove.to_y   = mouse_y ;
-		mouseMove.gap_x  = mouseMove.to_x - mouseMove.from_x ; //Translation
-		mouseMove.gap_y  = mouseMove.to_y - mouseMove.from_y ;
+		mouseMove.gap_x  = mouse_x - mouseMove.from_x ; 		//Instant mouse translation : -1, 0, +1
+		mouseMove.gap_y  = mouse_y - mouseMove.from_y ;
 
-		if (not((mouseMove.gap_x==0) && (mouseMove.gap_y==0)))
-			{
-				mouseMove.eventProcessed = false;
-			}
-			else
-			{
-				mouseMove.eventProcessed = true;
-			}
+		if (mouseMove.eventProcessed)
+		{
+			mouseMove.from_x = mouseMove.to_x ; 				//Previous position of the mouse when event was processed
+			mouseMove.from_y = mouseMove.to_y ;
+		}
+
+		mouseMove.to_x   = mouse_x ;        					//Instant position of the mouse
+		mouseMove.to_y   = mouse_y ;
+		mouseMove.yield_x = mouseMove.to_x - mouseMove.from_x ; //Mouse translation since last time that event was processed
+		mouseMove.yield_y = mouseMove.to_y - mouseMove.from_y ;
+
+		mouseMove.eventProcessed = false;
 	}
 
-
 	//Mouse buttons events
-
 
     if (flags & MOUSE_FLAG_LEFT_DOWN )
         {
@@ -561,7 +571,7 @@ void my_callback(int flags) {
         mouseMiddleClic.posz=mouse_z;
         mouseMiddleClic.timer = time(NULL);
 
-        mouseWheel.speed = mouseWheel.gap;
+//        mouseWheel.speed = mouseWheel.gap;
 
 		//Keep only previous down-up sequence with the current
         if (mouseMiddleClicHistory.size()==6)
@@ -583,7 +593,7 @@ void my_callback(int flags) {
         mouseMiddleClic.posz=mouse_z;
         mouseMiddleClic.timer = time(NULL);
 
-        mouseWheel.speed = 0;
+//        mouseWheel.speed = 0;
 
         mouseMiddleClicHistory.push_front (mouseMiddleClic);
     }

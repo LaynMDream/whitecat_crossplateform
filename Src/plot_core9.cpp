@@ -3652,20 +3652,20 @@ int logical_menu_plan(int plotx, int ploty)
             switch(editing_plan_data_type)//décalé de +1
             {
             case 1:
-                position_relative_plan_theatre[0]=old_position_relative_plan_theatre[0]-mouseMove.gap_y;
+                position_relative_plan_theatre[0]=old_position_relative_plan_theatre[0]-mouseMove.yield_y;
                 break;
             case 2:
-                position_relative_plan_theatre[1]=old_position_relative_plan_theatre[1]-mouseMove.gap_y;
+                position_relative_plan_theatre[1]=old_position_relative_plan_theatre[1]-mouseMove.yield_y;
                 break;
             case 3:
-                taille_relative_plan_theatre[0]=old_taille_relative_plan_theatre[0]-mouseMove.gap_y;
+                taille_relative_plan_theatre[0]=old_taille_relative_plan_theatre[0]-mouseMove.yield_y;
                 if(lock_background_proportions==1)
                 {
                     taille_relative_plan_theatre[1]=(int)(((float)taille_relative_plan_theatre[0])/ratio_lock_plot_scale );
                 }
                 break;
             case 4:
-                taille_relative_plan_theatre[1]=old_taille_relative_plan_theatre[1]-mouseMove.gap_y;
+                taille_relative_plan_theatre[1]=old_taille_relative_plan_theatre[1]-mouseMove.yield_y;
                 if(lock_background_proportions==1)
                 {
                     taille_relative_plan_theatre[0]=(int)(((float)taille_relative_plan_theatre[1])*ratio_lock_plot_scale);
