@@ -473,7 +473,7 @@ void my_callback(int flags) {
         {
         //sab 24/06/2014 - Doubleclic - Ajout - DEB
         mouseLeftClic.isDown=false;
-        mouseLeftClic.isDouble = false;
+        // keep the analyse done when mouse Left button was pressed down : mouseLeftClic.isDouble = false;
         mouseLeftClic.eventProcessed=false;
         mouseLeftClic.posx=mouse_x;
         mouseLeftClic.posy=mouse_y;
@@ -495,7 +495,9 @@ void my_callback(int flags) {
         index_click_inside_plot=0; plot_facteur_move_x=0;plot_facteur_move_y=0;
         index_click_inside_relativ_xy=0; rlativ_xm=0; rlativ_ym=0;
         index_editing_theatre_plan=0;
-        editing_plan_data_type=0; editing_plot_sizey=0; editing_plot_sizex=0;  moving_size_relativ_x=0; moving_size_relativ_y=0;
+        editing_plan_data_type=0;
+        //sab 28/06/2014 - lot 2 - editing_plot_sizey=0; editing_plot_sizex=0;
+        moving_size_relativ_x=0; moving_size_relativ_y=0;
         //sab 27/06/2014 plot_editing_color_line=0; plot_editing_color_background=0;
         index_adjusting_shape_x=0;index_adjusting_shape_y=0;
         handle_selected_for_line_editing=0;  editing_shape_line_number=0;
@@ -728,7 +730,7 @@ void ticker_full_loop()
 {
 
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
-    test_format=6;
+    test_format=5;
 
     if (mouseMiddleClic.isDown)
     {

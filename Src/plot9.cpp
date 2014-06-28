@@ -4395,11 +4395,21 @@ LockProp.Draw(CouleurBlind.WithAlpha(lock_background_proportions));
 LockProp.DrawOutline(CouleurPlotLine);
 
 //rotation
+/*sab 28/06/2014 lot 2 deb
 petitchiffrenoir.Print("Rotate",plotx+5,ploty+133);
+*/
+if(editing_plot_rotation)
+	if (mouseLeftClic.isDouble)
+	{minidoomblanc.Print("Rotate",plotx+5,ploty+133);}
+	else{petitchiffrerouge.Print("Rotate",plotx+5,ploty+133);}
+else
+	{petitchiffrenoir.Print("Rotate",plotx+5,ploty+133);}
+//sab 28/06/2014 lot 2 fin
 petitchiffrenoir.Print(ol::ToString(orientation_plan_theatre),plotx+95,ploty+133);
 Rect AlphaFrame(Vec2D(plotx+5,ploty+140),Vec2D(100,10));
 Rect AlphaLevel(Vec2D(plotx+5,ploty+140),Vec2D((orientation_plan_theatre*100),10));
 AlphaLevel.Draw(CouleurGreen);
+
 AlphaFrame.DrawOutline(CouleurPlotLine);
 
 
@@ -4424,7 +4434,14 @@ AnglePos.DrawOutline(CouleurPlotFill);
 AnglePos.Draw(CouleurBleuProcedure.WithAlpha(0.4));
 AnglePos.DrawOutline(CouleurBleuProcedure.WithAlpha(0.4));
 //alpha plan
+/*sab 28/06/2014 lot 2 deb
 petitchiffrenoir.Print("Alpha Picture",plotx+5,ploty+170);
+*/
+if(editing_plot_alphapic)
+	{petitchiffrerouge.Print("Alpha Picture",plotx+5,ploty+170);}
+else
+	{petitchiffrenoir.Print("Alpha Picture",plotx+5,ploty+170);}
+//sab 28/06/2014 lot 2 fin
 petitchiffrenoir.Print(ol::ToString(alpha_plan),plotx+95,ploty+170);
 Rect RotateFrame(Vec2D(plotx+5,ploty+180),Vec2D(100,10));
 Rect RotateLevel(Vec2D(plotx+5,ploty+180),Vec2D((alpha_plan*100),10));

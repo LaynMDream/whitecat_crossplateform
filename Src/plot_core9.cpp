@@ -3490,7 +3490,11 @@ int logical_deroule_repertoire_plans(int xrep, int yrep)
 
         if( index_editing_theatre_plan==0 && mouse_x>xrep+5 && mouse_x<xrep+5+150 && mouse_y>(yrep+185+(y*20)-10) && mouse_y<(yrep+185+(y*20)+5))
         {
+            /* sab 28/06/2014 lot 2 DEB
             if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            */
+            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouseLeftClic.isDouble)
+            // sab 28/06/2014 lot 2 FIN
             {
                 importplan_selected=y+line_importplan;
                 mouseLeftClic.eventProcessed=true;
@@ -3551,7 +3555,18 @@ int logical_deroule_repertoire_plans(int xrep, int yrep)
 int logical_menu_plan(int plotx, int ploty)
 {
 
-    if(window_focus_id==W_PLOT && index_edit_light_plot==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0)
+	/*sab 28/06/2014 - DEB Lot 2
+	if(window_focus_id==W_PLOT && index_edit_light_plot==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0)
+	*/
+	if(window_focus_id==W_PLOT
+	&& index_edit_light_plot==1
+	&& mouseLeftClic.isDown
+	&& (mouseLeftClic.eventProcessed==false)
+	&& index_click_inside_relativ_xy==0
+	&& index_click_inside_plot==0
+	&& plot_editing_color_background==0
+	&& plot_editing_color_line==0)
+	//sab 28/06/2014 - FIN Lot 2
     {
 
 		//grille taille
@@ -3586,6 +3601,7 @@ int logical_menu_plan(int plotx, int ploty)
         }
 
 
+		//les boutons gérant l'image de fond du plan : position x, y taille x, y
         for(int i=0; i<4; i++)
         {
             if(mouse_x>plotx+5+(50*i) && mouse_x<plotx+5+(50*i)+45 && mouse_y>ploty+90 && mouse_y<ploty+90+20)
@@ -3642,30 +3658,38 @@ int logical_menu_plan(int plotx, int ploty)
             }
 
         }
+
+        /*sab 28/06/2014 - DEB Lot 2
         if(index_edit_light_plot==1 && index_editing_theatre_plan==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0 )
+		*/
+        if(index_edit_light_plot==1
+		&& index_editing_theatre_plan==1
+		&& index_click_inside_relativ_xy==0
+		&& index_click_inside_plot==0
+		 )
+		//sab 28/06/2014 - FIN Lot 2
         {
-            /*sab 26/06/2014
-            moving_plan_relativ_x=mouse_x-original_posx;
-            moving_plan_relativ_y=mouse_y-original_posy;
-            */
+            int reduce = mouseWheel.level - mouseLeftClic.posz ;
 
             switch(editing_plan_data_type)//décalé de +1
             {
             case 1:
-                position_relative_plan_theatre[0]=old_position_relative_plan_theatre[0]-mouseMove.yield_y;
+                position_relative_plan_theatre[0]=old_position_relative_plan_theatre[0]-reduce;
                 break;
             case 2:
-                position_relative_plan_theatre[1]=old_position_relative_plan_theatre[1]-mouseMove.yield_y;
+                position_relative_plan_theatre[1]=old_position_relative_plan_theatre[1]-reduce;
                 break;
             case 3:
-                taille_relative_plan_theatre[0]=old_taille_relative_plan_theatre[0]-mouseMove.yield_y;
+                taille_relative_plan_theatre[0]=old_taille_relative_plan_theatre[0]-reduce;
+                if (taille_relative_plan_theatre[0]<1) {taille_relative_plan_theatre[0]=1;};
                 if(lock_background_proportions==1)
                 {
                     taille_relative_plan_theatre[1]=(int)(((float)taille_relative_plan_theatre[0])/ratio_lock_plot_scale );
                 }
                 break;
             case 4:
-                taille_relative_plan_theatre[1]=old_taille_relative_plan_theatre[1]-mouseMove.yield_y;
+                taille_relative_plan_theatre[1]=old_taille_relative_plan_theatre[1]-reduce;
+                if (taille_relative_plan_theatre[1]<1) {taille_relative_plan_theatre[1]=1;};
                 if(lock_background_proportions==1)
                 {
                     taille_relative_plan_theatre[0]=(int)(((float)taille_relative_plan_theatre[1])*ratio_lock_plot_scale);
@@ -3683,8 +3707,9 @@ int logical_menu_plan(int plotx, int ploty)
             mouseLeftClic.eventProcessed=true;
         }
 		//rotation plan
+		/*sab 28/06/2014 lot 2 DEB
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0 && mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+140 && mouse_y<ploty+140+10)
-        {
+		{
             orientation_plan_theatre=((float)(mouse_x-(plotx+10)))/100;
             if(orientation_plan_theatre<0.0)
             {
@@ -3695,6 +3720,35 @@ int logical_menu_plan(int plotx, int ploty)
                 orientation_plan_theatre=1.0;
             }
         }
+		*/
+        if(index_edit_light_plot==1
+        &&  index_editing_theatre_plan==0
+        && mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+140 && mouse_y<ploty+140+10)
+        {
+            mouseLeftClic.eventProcessed=true;   //The button  has a right clic property
+            if (not(mouseLeftClic.isDouble))  //if double clic : the first activate the control, the second is for more precision
+			{
+				 if(editing_plot_rotation==false)
+				{
+					editing_plot_rotation=true;
+					mouseWheel.yield = (int)(orientation_plan_theatre * 100);
+				}
+				else
+				{
+					editing_plot_rotation=false;
+				}
+			}
+			else
+			{
+				mouseWheel.yield = mouseWheel.yield * 10 ;
+			}
+        }
+        else
+        {
+            editing_plot_rotation=0;
+        }
+		//sab 28/06/2014 lot 2 FIN
+
 		//pre rotations
         for(int l=0; l<3; l++)
         {
@@ -3742,6 +3796,7 @@ int logical_menu_plan(int plotx, int ploty)
         }
 
 		//alpha plan
+		/*sab 28/06/2014 lot 2 deb
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0  && mouse_x>=plotx+5 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+180 && mouse_y<ploty+180+10)
         {
             alpha_plan=((float)(mouse_x-(plotx+10)))/100;
@@ -3754,11 +3809,35 @@ int logical_menu_plan(int plotx, int ploty)
                 alpha_plan=1.0;
             }
         }
+		*/
+        if(index_edit_light_plot==1
+        &&  index_editing_theatre_plan==0
+        && mouse_x>=plotx+5 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+180 && mouse_y<ploty+180+10)
+        {
+            mouseLeftClic.eventProcessed=true;   //The button  has à right clic property
+            if(editing_plot_alphapic)
+            {
+                editing_plot_alphapic=false;
+            }
+            else
+            {
+                editing_plot_alphapic=true ;
+                mouseWheel.yield = (int)(alpha_plan * 100);
+            }
+        }
+        else
+        {
+            editing_plot_alphapic=0;
+        }
+
+
+		//sab 28/06/2014 lot 2 fin
 
 		//logical_deroule_repertoire_plans(plotx-5,ploty+80);    sorti et mis dans boucle affichage pour rafraichissements images
 
 
 		//edition taille fenetre plot
+		/*sab 28/06/2014 lot 2 DEB
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0  &&
                 mouse_x>plotx+5 && mouse_x<plotx+5+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
         {
@@ -3806,6 +3885,81 @@ int logical_menu_plan(int plotx, int ploty)
                 }
             }
         }
+        */
+
+		//Button Plot Window size X
+        if(index_edit_light_plot==1
+		&& index_editing_theatre_plan==0
+		&& (mouse_x>plotx+5 && mouse_x<plotx+5+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20))
+        {
+            mouseLeftClic.eventProcessed=true;   //The button  has à right clic property
+
+            if(numeric_postext>0)
+            {
+                plot_window_x_size=atol(numeric);
+                if(plot_window_x_size<840)
+                {
+                    plot_window_x_size=840;
+                }
+                reset_numeric_entry();
+                numeric_postext=0;
+            }
+            else if(numeric_postext==0)//drag souris
+            {
+                editing_plot_sizey=0;
+                if(editing_plot_sizex==0)
+                {
+                    editing_plot_sizex=1;
+                    old_plot_sizex=plot_window_x_size;
+                    mouseWheel.yield = 0;
+                }
+				else
+				{
+					editing_plot_sizex=0;
+				}
+            }
+        }
+        else
+		{
+			editing_plot_sizex=0;
+		}
+
+		//Button Plot Window size Y
+        if(index_edit_light_plot==1
+		&& index_editing_theatre_plan==0
+		&& (mouse_x>plotx+5+50 && mouse_x<plotx+5+50+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20))
+        {
+            mouseLeftClic.eventProcessed=true; //The button  has à right clic property
+            if(numeric_postext>0)				//Right clic to say that the number in the edit zone is to be use for the button
+            {
+                plot_window_y_size=atol(numeric);
+                if(plot_window_y_size<plot_minimum_y_size)
+                {
+                    plot_window_y_size=plot_minimum_y_size;
+                }
+                reset_numeric_entry();
+                numeric_postext=0;
+            }
+            else if(numeric_postext==0)// no keyinput : mouse wheel is going to be used to fixe the level
+            {
+                editing_plot_sizex=0;
+                if(editing_plot_sizey==0)
+                {
+                    editing_plot_sizey=1;
+                    old_plot_sizey=plot_window_y_size;
+                    mouseWheel.yield = 0;
+                }
+				else
+                {
+                    editing_plot_sizey=0;
+                }
+            }
+        }
+        else
+		{
+			editing_plot_sizey=0;
+		}
+        //sab 28/06/2014 FIN Lot 2
     }
 
     /*sab 28/06/2014 DEB
@@ -3825,9 +3979,7 @@ int logical_menu_plan(int plotx, int ploty)
 	*/
 
     if (index_edit_light_plot==1
-    &&  index_editing_theatre_plan==0
-    && 	editing_plot_sizex==0
-    && 	editing_plot_sizey==0)
+    &&  index_editing_theatre_plan==0)
     {
 
         if ( mouseLeftClic.isDown && (not(mouseLeftClic.eventProcessed)))
@@ -3874,6 +4026,7 @@ int logical_menu_plan(int plotx, int ploty)
     //sab 28/06/2014 FIN
 
 	//sorti du mouse_button
+	/*sab 28/06/2014 lot 2 DEB
     if(editing_plot_sizex==1)
     {
         moving_size_relativ_x=mouse_y-original_posy;
@@ -3892,6 +4045,8 @@ int logical_menu_plan(int plotx, int ploty)
             plot_window_y_size=plot_minimum_y_size;
         }
     }
+    */
+
 	/*sab 28/06/2014 DEB
     else if(plot_editing_color_background==1)
     {
@@ -3923,7 +4078,82 @@ int logical_menu_plan(int plotx, int ploty)
 //sab 28/06/2014 DEB
 void plan_plot_mouseWheel_graphics_handle()
 {
-    if(plot_editing_color_background==1)
+    //sab 28/06/2014 lot 2 deb
+
+
+	if(editing_plot_alphapic)
+	{
+		alpha_plan = mouseWheel.yield / 100. ;
+		if(alpha_plan<0.0)
+		{
+			alpha_plan=0.0;
+			mouseWheel.yield = 0 ;
+		}
+		if (alpha_plan>1.0)
+		{
+			alpha_plan=1.0;
+			mouseWheel.yield = 100 ;
+		}
+	}
+
+    //rotation plan
+    if(editing_plot_rotation)
+    {
+        if (mouseLeftClic.isDouble)
+        {
+            orientation_plan_theatre = mouseWheel.yield / 1000. ;
+        }
+        else
+        {
+            orientation_plan_theatre = mouseWheel.yield / 100. ;
+        }
+
+        if(orientation_plan_theatre<0.0)
+        {
+
+            if (mouseLeftClic.isDouble)
+            {
+                orientation_plan_theatre=0.966;
+                mouseWheel.yield  = 966 ;
+            }
+            else
+            {
+                orientation_plan_theatre=0.96;
+                mouseWheel.yield  = 96 ;
+            }
+        }
+        if (orientation_plan_theatre>0.967)
+        {
+            orientation_plan_theatre=0.0;
+            mouseWheel.yield  = 0 ;
+        }
+    }
+
+    //button Plot Window size X
+    if(editing_plot_sizex)
+    {
+        plot_window_x_size=old_plot_sizex-(mouseWheel.yield*10);
+        if(plot_window_x_size<840)
+        {
+            plot_window_x_size=840;
+            mouseWheel.yield = 0 ;
+            old_plot_sizex = 840;
+        }
+    }
+    //button Plot Window size Y
+    if(editing_plot_sizey)
+    {
+        plot_window_y_size=old_plot_sizey-(mouseWheel.yield*10);
+        if(plot_window_y_size<plot_minimum_y_size)
+        {
+            plot_window_y_size=plot_minimum_y_size;
+            mouseWheel.yield = 0 ;
+            old_plot_sizey = plot_minimum_y_size;
+        }
+    }
+    //sab 28/06/2014 lot 2 fin
+
+    if(plot_editing_color_background)
     {
         Color_plotfill = mouseWheel.yield/10.;
 
@@ -3948,7 +4178,7 @@ void plan_plot_mouseWheel_graphics_handle()
         Rgba TmpPlotColor (Color_plotfill,Color_plotfill,Color_plotfill);
         CouleurPlotFill=TmpPlotColor;
     }
-    if(plot_editing_color_line==1)
+    if(plot_editing_color_line)
     {
         Color_plotline = mouseWheel.yield/10.;
 

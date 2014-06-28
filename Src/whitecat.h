@@ -2221,6 +2221,10 @@ int importplan_selected=0;
 int line_importplan=0;
 
 float alpha_plan=1.0;
+//sab 28/06/2014 lot 2 DEB
+bool editing_plot_rotation=false;
+bool editing_plot_alphapic=false;
+//sab 28/06/2014 lot 2 FIN
 bool editing_plot_sizey=0;
 bool editing_plot_sizex=0;
 int moving_size_relativ_x=0;
