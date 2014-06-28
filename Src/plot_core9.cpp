@@ -104,7 +104,7 @@ int right_click_on_plot()
 
         if(index_click_inside_plot==0 && index_move_plot_view_port==1    )
         {
-//prise de position
+		//prise de position
             plot_original_mouse_x=mouse_x;
             plot_original_mouse_y=mouse_y;
             previous_plot_view_port_x=plot_view_port_x;
@@ -166,7 +166,7 @@ int plot_generate_gels_list()
 {
 
     plot_reset_list_gelat();
-//sab 02/03/2014 unused var int pos_sym=0;
+	//sab 02/03/2014 unused var int pos_sym=0;
     for(int c=0; c<4; c++)
     {
         if( show_calc_number[c]==1)
@@ -175,7 +175,7 @@ int plot_generate_gels_list()
             {
                 for(int g=0; g<3; g++) //3 slots de gelat par symbol
                 {
-//christoph 30/03/14 correction bug comptage gélatine
+				//christoph 30/03/14 correction bug comptage gélatine
                     if( gelat[c][s][g]!=0 && gelat_family[c][s][g]<5) //si une gelat non zero et inférieure à la marque 0 à 4 pour ne pas déborder du tableau
                     {
                         tmp_gel_list[gelat_family[c][s][g]][(gelat[c][s][g])][(symbol_type[c][s])]++;
@@ -185,7 +185,7 @@ int plot_generate_gels_list()
         }
     }
 
-//creation de la liste
+	//creation de la liste
 
     char GelTyp[12];
     nbre_ligne_pour_gelats=0;
@@ -246,7 +246,7 @@ int plot_generate_appareils_list()
         }
     }
 
-//pour calcul nbre de colonnes dans plot
+	//pour calcul nbre de colonnes dans plot
     int addx=0;
     for (int i=0; i<127; i++)
     {
@@ -309,7 +309,7 @@ int scan_planfolder()//plot
 
     }
     al_findclose(&f);
-//REROLL
+	//REROLL
     sprintf(rep,"%s\\",mondirectory);
     chdir (rep);
     return(0);
@@ -551,7 +551,7 @@ int rearrange_shapes()
                 if(snap_shape_selected[sz]==0)
                 {
                     copy_shape_to_emply_slot(s,sz);
-//break; enlevé pour permettre destruction sans virer un shape en dernier de la liste
+					//break; enlevé pour permettre destruction sans virer un shape en dernier de la liste
                 }
             }
         }
@@ -665,7 +665,7 @@ int check_select_deselect_shape(int posx, int posy)
                     numeric_postext=24;
                 }
             }
-//groups
+			//groups
             if(shape_groups[index_last_shape_selected]!=0)
             {
                 for(int gr=0; gr<nbre_shapes_on_plot+1 ; gr++)
@@ -1051,7 +1051,7 @@ int duplicate_selected_symbols(int calc)
 {
     int compteur=0;
     int new_position=0;
-//sab 02/03/2014 unused var int difference=0;// pour dub du link to
+	//sab 02/03/2014 unused var int difference=0;// pour dub du link to
 
     for(int i=0; i<=nbre_symbols_on_plot[calc]; i++)
     {
@@ -1067,10 +1067,10 @@ int duplicate_selected_symbols(int calc)
                 pos_symbol[calc][new_position][0]=pos_symbol[calc][i][0]+10;
                 pos_symbol[calc][new_position][1]=pos_symbol[calc][i][1]+10;
                 symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
-//dub des links
+				//dub des links
                 if(symbol_is_linked_to[calc][i]!=0)
                 {
-//sab 02/03/2014 unused var  difference=new_position-i;
+					//sab 02/03/2014 unused var  difference=new_position-i;
                     symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position];
                 }
                 for(int opt=0; opt<5; opt++)
@@ -1139,7 +1139,7 @@ int copy_symbol_to_emply_slot(int calc, int empty, int filled)
     symbol_channel_is[calc][empty]=snapshot_symbol_channel_is[filled];
     symbol_dimmer_is[calc][empty]=snapshot_symbol_dimmer_is[filled];
 
-//groups difference
+	//groups difference
     if(snapshot_symbol_is_linked_to[filled]!=0)
     {
         symbol_is_linked_to[calc][empty]=snapshot_symbol_is_linked_to[filled]-(filled-empty);
@@ -1170,7 +1170,7 @@ int reorder_plan(int the_calc)
 {
     for(int s=1; s<=nbre_symbols_on_plot[the_calc]; s++)
     {
-//sab 02/03/2014 unused var int index_to_fill=0;
+		//sab 02/03/2014 unused var int index_to_fill=0;
         if(symbol_type[the_calc][s]==999)
         {
             for(int yu=s; yu<=nbre_symbols_on_plot[the_calc]; yu++)
@@ -1335,7 +1335,7 @@ int group_symbols_selected(int calc)
                 break;
             }
         }
-//affectation du group
+		//affectation du group
         for(int i=leading_symbol+1; i<= nbre_symbols_on_plot[calc]; i++)
         {
             if(symbol_is_selected[calc][i]==1 && symbol_channel_is[calc][i]==leading_channel)
@@ -1343,7 +1343,7 @@ int group_symbols_selected(int calc)
                 symbol_is_linked_to[calc][i]=leading_symbol;
             }
         }
-//fin groupage
+		//fin groupage
     }
     return(0);
 }
@@ -1439,12 +1439,12 @@ int check_select_deselect_symbol(int posx, int posy)
                         last_ch_selected=symbol_channel_is[calc][i];
                     }
 
-//selection déselection channels
+					//selection déselection channels
                     if((symbol_channel_is[calc][i])!=0)
                     {
                         Selected_Channel[(symbol_channel_is[calc][i])]=symbol_is_selected[calc][i];
                     }
-//check group
+					//check group
                     for(int gr=1; gr<=nbre_symbols_on_plot[calc] ; gr++)
                     {
                         if(symbol_channel_is[calc][gr]!=0 && symbol_channel_is[calc][gr]==symbol_channel_is[calc][is_manipulated] )//ismanipulated si déselection
@@ -1454,7 +1454,7 @@ int check_select_deselect_symbol(int posx, int posy)
                                 symbol_is_selected[calc][gr]=symbol_is_selected[calc][is_manipulated];
                                 second_round=gr;
                             }
-//check other grouped
+							//check other grouped
                             for (int g=1; g<=nbre_symbols_on_plot[calc]; g++)
                             {
                                 if(symbol_channel_is[calc][g]!=0 && symbol_channel_is[calc][g]==symbol_channel_is[calc][is_manipulated] &&  symbol_is_linked_to[calc][g]!=0 && ( symbol_is_linked_to[calc][g]==is_manipulated || symbol_is_linked_to[calc][g ]==second_round ) )
@@ -1982,7 +1982,7 @@ int logical_plot_symbol_list(int plotx, int ploty)
     if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0)
     {
 
-//selection du symbol
+		//selection du symbol
         if( mouse_x>plotx+12 && mouse_x<plotx+28)
         {
             if(mouse_y>ploty+36 && mouse_y<ploty+50) //UP
@@ -2027,7 +2027,7 @@ int logical_plot_symbol_list(int plotx, int ploty)
             }
 
         }
-//slider
+		//slider
         if( mouse_x>=plotx+3 && mouse_x<=plotx+8 && mouse_y>=ploty+26 && mouse_y<ploty+30+70)
         {
             if(Midi_Faders_Affectation_Type!=0)
@@ -2050,13 +2050,13 @@ int logical_plot_symbol_list(int plotx, int ploty)
             }
         }
 
-//EDIT MODE SYMBOL
+		//EDIT MODE SYMBOL
         if(mouse_x>plotx+40 && mouse_x<plotx+40+105 && mouse_y>ploty+80 && mouse_y<ploty+80+20)
         {
             index_edit_symbol_plot=toggle(index_edit_symbol_plot);
             mouseLeftClic.eventProcessed=true;
         }
-//ADD A SYMBOL TO PLAN
+		//ADD A SYMBOL TO PLAN
         if(mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<ploty+110+20)
         {
             if(Midi_Faders_Affectation_Type!=0)
@@ -2072,7 +2072,7 @@ int logical_plot_symbol_list(int plotx, int ploty)
 
 
 
-//edition de la taille du symbol
+		//edition de la taille du symbol
         if(index_edit_symbol_plot==1 )
         {
 
@@ -2109,7 +2109,7 @@ int logical_plot_symbol_list(int plotx, int ploty)
         }
 
 
-//select id
+		//select id
         if(mouse_x>plotx+130 && mouse_x<plotx+130+65 && mouse_y>ploty+105 && mouse_y<ploty+105+28)
         {
             symbol_id_to_select=atoi(numeric);
@@ -2125,7 +2125,7 @@ int logical_plot_symbol_list(int plotx, int ploty)
             }
             mouseLeftClic.eventProcessed=true;
         }
-//fin focus window
+		//fin focus window
     }
     return(0);
 }
@@ -2137,7 +2137,7 @@ int logical_plot_shape_list(int plotx, int ploty)
     if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0)
     {
 
-//selection du shape
+		//selection du shape
         if( mouse_x>plotx+12 && mouse_x<plotx+28)
         {
             if(mouse_y>ploty+36 && mouse_y<ploty+50) //UP
@@ -2184,9 +2184,9 @@ int logical_plot_shape_list(int plotx, int ploty)
             }
         }
 
-//sliderploty+30+(64-(shape_selected_type*6)))
+		//sliderploty+30+(64-(shape_selected_type*6)))
 
-//slider
+		//slider
         if( mouse_x>=plotx+3 && mouse_x<=plotx+8 && mouse_y>=ploty+26 && mouse_y<ploty+30+70)
         {
 
@@ -2210,7 +2210,7 @@ int logical_plot_shape_list(int plotx, int ploty)
             }
         }
 
-//ADD SYMBOL
+		//ADD SYMBOL
         if( mouse_x>plotx+40 && mouse_x<plotx+40+80 && mouse_y>ploty+110 && mouse_y<ploty+110+20)
         {
 
@@ -2224,7 +2224,7 @@ int logical_plot_shape_list(int plotx, int ploty)
             }
             mouseLeftClic.eventProcessed=true;
         }
-//select id
+		//select id
         if(mouse_x>plotx+130 && mouse_x<plotx+130+65 && mouse_y>ploty+105 && mouse_y<ploty+105+28)
         {
             shape_id_to_select=atoi(numeric);
@@ -2255,7 +2255,7 @@ int logical_plot_shape_list(int plotx, int ploty)
             mouseLeftClic.eventProcessed=true;
         }
 
-//fin focus window
+		//fin focus window
 
     }
     return(0);
@@ -2269,7 +2269,7 @@ int logical_shape_edition(int plotx, int ploty)
     if(window_focus_id==W_PLOT && mouseLeftClic.isDown && index_edit_light_plot==1 )
     {
 
-//rotation
+		//rotation
         if(mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+40 && mouse_y<ploty+40+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0)
         {
             if((mouseLeftClic.eventProcessed==false) &&  Midi_Faders_Affectation_Type!=0)
@@ -2292,7 +2292,7 @@ int logical_shape_edition(int plotx, int ploty)
             }
         }
 
-//entree rotation Rect OverRot(Vec2D(plotx+76,ploty+22),Vec2D(60,15));
+		//entree rotation Rect OverRot(Vec2D(plotx+76,ploty+22),Vec2D(60,15));
         if(mouse_x>plotx+76 && mouse_x<plotx+76+60 && mouse_y>ploty+22 && mouse_y<ploty+22+15 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false))
         {
             float numof=atof(numeric);
@@ -2311,7 +2311,7 @@ int logical_shape_edition(int plotx, int ploty)
             numeric_postext=0;
         }
 
-//pre rotations
+		//pre rotations
         for(int l=0; l<3; l++)
         {
             for(int c=0; c<3; c++)
@@ -2358,7 +2358,7 @@ int logical_shape_edition(int plotx, int ploty)
         }
 
 
-//actions
+		//actions
         for(int c=0; c<3; c++)
         {
             for(int l=0; l<2; l++)
@@ -2416,7 +2416,7 @@ int logical_shape_edition(int plotx, int ploty)
         }
 
 
-//alignements
+		//alignements
         for(int c=0; c<4; c++)
         {
             if(window_focus_id==W_PLOT && index_edit_light_plot==1 && index_click_inside_relativ_xy==0
@@ -2445,7 +2445,7 @@ int logical_shape_edition(int plotx, int ploty)
             }
         }
 
-//SIZE Du shape
+		//SIZE Du shape
         if( mouse_x>=plotx+10 && mouse_x<=plotx+10+150+5 && mouse_y>ploty+155 && mouse_y<ploty+155+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0)
         {
             general_shape_size_to_apply=((float)(mouse_x-(plotx+10)));
@@ -2477,7 +2477,7 @@ int logical_shape_edition(int plotx, int ploty)
             numeric_postext=0;
             mouseLeftClic.eventProcessed=true;
         }
-//color pattern
+		//color pattern
         if( ( shape_selected_type>=0 && shape_selected_type<11 ) && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
                 mouse_x>plotx+10 && mouse_x<plotx+10+45 && mouse_y>ploty+190 && mouse_y<ploty+190+20)
         {
@@ -2535,7 +2535,7 @@ int logical_shape_edition(int plotx, int ploty)
                 }
             }
         }
-//angle de l arc opening angle
+		//angle de l arc opening angle
         if( shape_selected_type==9 && (mouseLeftClic.eventProcessed==false) && index_adjusting_shape_x==0 && index_adjusting_shape_y==0  && index_click_inside_relativ_xy==0 &&
                 mouse_x>=plotx && mouse_x<plotx+5+190 && mouse_y>ploty+240 && mouse_y<ploty+240+10)
         {
@@ -2626,7 +2626,7 @@ int logical_shape_edition(int plotx, int ploty)
             mouseLeftClic.eventProcessed=true;
         }
 
-//edition des relatifs dans la zone de tarcking
+		//edition des relatifs dans la zone de tarcking
         if( (mouseLeftClic.eventProcessed==false) && mouse_x > plotx+110 && mouse_x<plotx+110+70 && mouse_y>ploty+300 && mouse_y<ploty+300+70 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
         {
 
@@ -2647,7 +2647,7 @@ int logical_shape_edition(int plotx, int ploty)
             {
                 if(index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false) )
                 {
-//prise de position
+					//prise de position
                     index_click_inside_relativ_xy=1;
                     store_relativ_xy_position_of_shape();
                 }
@@ -2659,7 +2659,7 @@ int logical_shape_edition(int plotx, int ploty)
 
 
 
-//alpha shape
+		//alpha shape
 
         if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
         {
@@ -2684,20 +2684,20 @@ int logical_shape_edition(int plotx, int ploty)
 
 int logical_symbol_edition_options(int plotx, int ploty)
 {
-//actions sur les options
+	//actions sur les options
     if(window_focus_id==W_PLOT && index_edit_light_plot==1 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
     {
         if(  index_click_inside_relativ_xy==0)
         {
             for (int l=0; l<8; l++)
             {
-//on off des affichages
+				//on off des affichages
                 if(mouse_x>plotx+5 && mouse_x<plotx+5+10 && mouse_y>ploty+70+(20*l) && mouse_y<ploty+70+(20*l)+10)
                 {
                     plot_show_options[l]=toggle(plot_show_options[l]);
                     mouseLeftClic.eventProcessed=true;
                 }
-//edition
+				//edition
                 switch(l)
                 {
                 case 0: //"CHANNEL");
@@ -2882,7 +2882,7 @@ int logical_symbol_edition_options(int plotx, int ploty)
                                             }
                                         }
                                     }
-//fin check des gradas affectés à d autres
+									//fin check des gradas affectés à d autres
                                     symbol_dimmer_is[view_plot_calc_number_is][the_symb]= tnum;
                                 }
                             }
@@ -2906,7 +2906,7 @@ int logical_symbol_edition_options(int plotx, int ploty)
                 }
             }
 
-//nOTES
+			//nOTES
             if(mouse_x>plotx+5 && mouse_x<plotx+5+195 && index_type==1)
             {
                 for(int n=0; n<4; n++)
@@ -2933,13 +2933,13 @@ int logical_symbol_edition_options(int plotx, int ploty)
                 }
             }
 
-// text size
+			// text size
             if(mouse_x>plotx+150 && mouse_x<plotx+150+30 && mouse_y>ploty+210 && mouse_y<ploty+220 )
             {
                 plot_name_text_size=toggle(plot_name_text_size);
                 mouseLeftClic.eventProcessed=true;
             }
-//choix des  relatifs xy
+			//choix des  relatifs xy
             for(int i=0; i<5; i++)
             {
                 if(index_click_inside_relativ_xy==0 && mouse_x>plotx+5 && mouse_x<plotx+5+10 && mouse_y>ploty+320+(20*i) &&  mouse_y<ploty+320+(20*i)+10)
@@ -2969,14 +2969,14 @@ int logical_symbol_edition_options(int plotx, int ploty)
                 }
             }
 
-//mode solo ou pas des relatifs xy
+			//mode solo ou pas des relatifs xy
             if(index_click_inside_relativ_xy==0 && mouse_x>plotx+75 && mouse_x<plotx+75+10 && mouse_y>ploty+350 &&  mouse_y<ploty+350+10)
             {
                 mode_relatif_xy_solo=toggle(mode_relatif_xy_solo);
                 mouseLeftClic.eventProcessed=true;
             }
 
-//choix des presets ( 6)
+			//choix des presets ( 6)
 
             for(int pr=0; pr<8; pr++)
             {
@@ -3019,7 +3019,7 @@ int logical_symbol_edition_options(int plotx, int ploty)
                     break;
                 }
             }
-//repatch en direct
+			//repatch en direct
             if( mouse_y>ploty+450 && mouse_y<ploty+450+18)
             {
                 if(mouse_x>plotx+20 && mouse_x<plotx+20+100 )//rebuild on off
@@ -3036,7 +3036,7 @@ int logical_symbol_edition_options(int plotx, int ploty)
         }
 
 
-//edition des relatifs dans la zone de tarcking
+		//edition des relatifs dans la zone de tarcking
         if( mouse_x > plotx+110 && mouse_x<plotx+110+70 && mouse_y>ploty+310 && mouse_y<ploty+310+70)
         {
 
@@ -3063,7 +3063,7 @@ int logical_symbol_edition_options(int plotx, int ploty)
             {
                 if(index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false) )
                 {
-//prise de position
+					//prise de position
                     index_click_inside_relativ_xy=1;
                     store_relativ_xy_position_of_activ_calc(view_plot_calc_number_is);
                 }
@@ -3081,7 +3081,7 @@ int logical_plot_symbol_edition(int plotx, int ploty)
 
     if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0)
     {
-//rotation
+		//rotation
         if( mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+40 && mouse_y<ploty+40+10)
         {
 
@@ -3105,7 +3105,7 @@ int logical_plot_symbol_edition(int plotx, int ploty)
             }
         }
 
-//entree rotation
+		//entree rotation
         if(mouse_x>plotx+76 && mouse_x<plotx+76+60 && mouse_y>ploty+22 && mouse_y<ploty+22+15 && index_click_inside_relativ_xy==0 && (mouseLeftClic.eventProcessed==false))
         {
             float numof=atof(numeric);
@@ -3125,7 +3125,7 @@ int logical_plot_symbol_edition(int plotx, int ploty)
             mouseLeftClic.eventProcessed=true;
         }
 
-//pre rotations
+		//pre rotations
         for(int l=0; l<3; l++)
         {
             for(int c=0; c<3; c++)
@@ -3175,12 +3175,12 @@ int logical_plot_symbol_edition(int plotx, int ploty)
 
     }
 
-//actions
+	//actions
     for(int c=0; c<3; c++)
     {
         for(int l=0; l<2; l++)
         {
-//MySymbAction.MoveTo(Vec2D(plotx+5+(c*65),ploty+70+(l*20)));
+			//MySymbAction.MoveTo(Vec2D(plotx+5+(c*65),ploty+70+(l*20)));
             if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0 && index_click_inside_relativ_xy==0
                     && mouse_x>plotx+5+(c*65) && mouse_x<plotx+5+(c*65)+60 && mouse_y>ploty+60+(l*20) && mouse_y<ploty+60+(l*20)+18
                     && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
@@ -3245,7 +3245,7 @@ int logical_plot_symbol_edition(int plotx, int ploty)
         }
 
 
-//alignements
+		//alignements
         for(int c=0; c<4; c++)
         {
             if( index_edit_light_plot==1 && index_click_inside_relativ_xy==0
@@ -3286,7 +3286,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
 
     if(window_focus_id==W_PLOT && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && index_click_inside_plot==0)
     {
-//selection edition layers
+		//selection edition layers
         if(mouse_x>plotx && mouse_x<plotx+35 && mouse_y>ploty && mouse_y<ploty+20)
         {
             index_edit_light_plot=toggle(index_edit_light_plot);
@@ -3335,7 +3335,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
                             plot_layer_selected=i;
                             send_symbols_from_calc_to_calc(view_plot_calc_number_is,plot_layer_selected)     ;
                             recount_symbols_on_calc(view_plot_calc_number_is);
-//recount_symbols_on_calc(plot_layer_selected);
+							//recount_symbols_on_calc(plot_layer_selected);
                             index_plot_send_to_mode=0;
                             plot_layer_selected=0;
                             plot_generate_appareils_list();
@@ -3371,7 +3371,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
 
         }
 
-//menus modes
+		//menus modes
         if(mouse_x>plotx+130 && mouse_x<plotx+130+100 && mouse_y>ploty-5 && mouse_y<ploty-5+25)
         {
             if(index_main_clear==0)
@@ -3415,7 +3415,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
             mouseLeftClic.eventProcessed=true;
         }
 
-//viewport
+		//viewport
         if(mouse_x>plotx+240 && mouse_x<plotx+240+120 && mouse_y>ploty-5 && mouse_y<ploty-5+25)
         {
             if(index_main_clear==1)
@@ -3431,7 +3431,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
             mouseLeftClic.eventProcessed=true;
         }
 
-//layer edit mode solo ou multichouches
+		//layer edit mode solo ou multichouches
         if(mouse_x>plotx+110 && mouse_x<plotx+110+10 && mouse_y>ploty+2 && mouse_y<ploty+2+10)
         {
             if(  Midi_Faders_Affectation_Type!=0)
@@ -3446,7 +3446,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
         }
 
 
-//view levels from plot
+		//view levels from plot
 
         command_button_logical(plotx+380,ploty-5,plot_index_show_levels,"SeeLevels","",1595,100);// int x, inty ,bool state, char *textedesc, int midiaffectation
 
@@ -3454,7 +3454,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
 
         command_button_logical(plotx+540,ploty-5,index_blind,"Blind","",754,110);// int x, inty ,bool state, char *textedesc, int midiaffectation, int the command number
 
-//export plot
+		//export plot
         if(index_menus_lighting_plot!=4)
         {
             if(mouse_x>plotx+620 && mouse_x<plotx+620+100 && mouse_y>ploty-5 && mouse_y<ploty-5+20 && mouse_x<plotx+plot_window_x_size)
@@ -3554,7 +3554,7 @@ int logical_menu_plan(int plotx, int ploty)
     if(window_focus_id==W_PLOT && index_edit_light_plot==1 && editing_plot_sizex==0 && editing_plot_sizey==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_click_inside_relativ_xy==0 && index_click_inside_plot==0 && plot_editing_color_background==0 && plot_editing_color_line==0)
     {
 
-//grille taille
+		//grille taille
         if(index_editing_theatre_plan==0 )
         {
             if( mouse_x>plotx+40 && mouse_x<plotx+40+40 && mouse_y>ploty+195 && mouse_y<ploty+195+20)
@@ -3676,13 +3676,13 @@ int logical_menu_plan(int plotx, int ploty)
             }
         }
 
-//lock proportions
+		//lock proportions
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && (mouseLeftClic.eventProcessed==false) && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0 && mouse_x>=plotx+5+141 && mouse_x<=plotx+5+141+8 && mouse_y>ploty+111 && mouse_y<ploty+111+8)
         {
             lock_background_proportions=toggle(lock_background_proportions);
             mouseLeftClic.eventProcessed=true;
         }
-//rotation plan
+		//rotation plan
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0 && mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+140 && mouse_y<ploty+140+10)
         {
             orientation_plan_theatre=((float)(mouse_x-(plotx+10)))/100;
@@ -3695,7 +3695,7 @@ int logical_menu_plan(int plotx, int ploty)
                 orientation_plan_theatre=1.0;
             }
         }
-//pre rotations
+		//pre rotations
         for(int l=0; l<3; l++)
         {
             for(int c=0; c<3; c++)
@@ -3741,7 +3741,7 @@ int logical_menu_plan(int plotx, int ploty)
             }
         }
 
-//alpha plan
+		//alpha plan
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0  && mouse_x>=plotx+5 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+180 && mouse_y<ploty+180+10)
         {
             alpha_plan=((float)(mouse_x-(plotx+10)))/100;
@@ -3755,10 +3755,10 @@ int logical_menu_plan(int plotx, int ploty)
             }
         }
 
-//logical_deroule_repertoire_plans(plotx-5,ploty+80);    sorti et mis dans boucle affichage pour rafraichissements images
+		//logical_deroule_repertoire_plans(plotx-5,ploty+80);    sorti et mis dans boucle affichage pour rafraichissements images
 
 
-//edition taille fenetre plot
+		//edition taille fenetre plot
         if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0  &&
                 mouse_x>plotx+5 && mouse_x<plotx+5+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
         {
@@ -3808,12 +3808,13 @@ int logical_menu_plan(int plotx, int ploty)
         }
     }
 
+    /*sab 28/06/2014 DEB
     if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0
             && mouseLeftClic.isDown && mouse_x>plotx+5+100 && mouse_x<plotx+5+100+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
-    {
+	{
         plot_editing_color_background=1;
         plot_editing_color_line=0;
-    }
+	}
 
     if(index_edit_light_plot==1 &&  index_editing_theatre_plan==0 && editing_plot_sizex==0 && editing_plot_sizey==0 && plot_editing_color_background==0 && plot_editing_color_line==0
 			&& mouseLeftClic.isDown && mouse_x>plotx+5+150 && mouse_x<plotx+5+150+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
@@ -3821,8 +3822,58 @@ int logical_menu_plan(int plotx, int ploty)
         plot_editing_color_line=1;
         plot_editing_color_background=0;
     }
+	*/
 
-//sorti du mouse_button
+    if (index_edit_light_plot==1
+    &&  index_editing_theatre_plan==0
+    && 	editing_plot_sizex==0
+    && 	editing_plot_sizey==0)
+    {
+
+        if ( mouseLeftClic.isDown && (not(mouseLeftClic.eventProcessed)))
+        {
+            //button Background color
+            if (mouse_x>plotx+5+100 && mouse_x<plotx+5+100+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
+            {
+                if (plot_editing_color_background==1)
+                {
+                    plot_editing_color_background=0;
+                }
+                else
+                {
+                    plot_editing_color_background=1;
+                    mouseWheel.yield = (int) (Color_plotfill *10);
+                }
+                plot_editing_color_line=0;
+                mouseLeftClic.eventProcessed = true;
+            }
+
+            //button Plot line color
+            else if(mouse_x>plotx+5+150 && mouse_x<plotx+5+150+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
+            {
+                if (plot_editing_color_line==1)
+                {
+                    plot_editing_color_line=0;
+                }
+                else
+                {
+                    plot_editing_color_line=1;
+                    mouseWheel.yield = (int) (Color_plotline *10);
+                }
+                plot_editing_color_background=0;
+                mouseLeftClic.eventProcessed = true;
+            }
+            else
+            {
+                plot_editing_color_line=0;
+                plot_editing_color_background=0;
+            }
+        }
+    }
+
+    //sab 28/06/2014 FIN
+
+	//sorti du mouse_button
     if(editing_plot_sizex==1)
     {
         moving_size_relativ_x=mouse_y-original_posy;
@@ -3841,7 +3892,7 @@ int logical_menu_plan(int plotx, int ploty)
             plot_window_y_size=plot_minimum_y_size;
         }
     }
-
+	/*sab 28/06/2014 DEB
     else if(plot_editing_color_background==1)
     {
         Color_plotfill=((float)(original_posy-mouse_y))/50;
@@ -3864,11 +3915,68 @@ int logical_menu_plan(int plotx, int ploty)
         Rgba TmpPlotColor (Color_plotline,Color_plotline,Color_plotline);
         CouleurPlotLine=TmpPlotColor;
     }
+    */
     return(0);
 }
 
 
+//sab 28/06/2014 DEB
+void plan_plot_mouseWheel_graphics_handle()
+{
+    if(plot_editing_color_background==1)
+    {
+        Color_plotfill = mouseWheel.yield/10.;
 
+        if(Color_plotfill<0.0)
+        {
+            Color_plotfill=0.0;
+            if (Color_plotline==0.0)
+            {
+                Color_plotline=0.1;
+            }
+            mouseWheel.yield = 0;  //in object mouse event should be a function
+        }
+        if(Color_plotfill>1.0)
+        {
+            Color_plotfill=1.0;
+            if (Color_plotline==1.0)
+            {
+                Color_plotline=0.9 ;
+            }
+            mouseWheel.yield = 10;  //in object mouse event should be a function
+        }
+        Rgba TmpPlotColor (Color_plotfill,Color_plotfill,Color_plotfill);
+        CouleurPlotFill=TmpPlotColor;
+    }
+    if(plot_editing_color_line==1)
+    {
+        Color_plotline = mouseWheel.yield/10.;
+
+        if(Color_plotline<0.0)
+        {
+            Color_plotline=0.0;
+            if (Color_plotfill==0.0)
+            {
+                Color_plotfill=0.1;
+            }
+            mouseWheel.yield = 0; //in object mouse event should be a function
+        }
+        if(Color_plotline>1.0)
+        {
+            Color_plotline=1.0;
+            if (Color_plotfill==1.0)
+            {
+                Color_plotfill=0.9;
+            }
+            mouseWheel.yield = 10;  //in object mouse event should be a function
+        }
+
+        Rgba TmpPlotColor (Color_plotline,Color_plotline,Color_plotline);
+        CouleurPlotLine=TmpPlotColor;
+    }
+
+}
+//sab 28/06/2014 FIN
 
 int do_logical_Plot_window(int plotx, int ploty)
 {
@@ -3898,7 +4006,7 @@ int do_logical_Plot_window(int plotx, int ploty)
             break;
         }
 
-//CALCUL MOVE ATTRIBUTS
+		//CALCUL MOVE ATTRIBUTS
         if(index_click_inside_relativ_xy==1 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
         {
             switch(index_menus_lighting_plot)
@@ -3938,13 +4046,13 @@ int do_logical_Plot_window(int plotx, int ploty)
             }
         }
 
-//editions
+		//editions
         if(mouse_x> plotx+position_plan_x && mouse_x<plotx+position_plan_x+plot_window_x_size
                 && mouse_y> ploty+position_plan_y && mouse_y<ploty+position_plan_y+plot_window_y_size )
         {
             if(index_click_inside_plot==0 && index_click_inside_relativ_xy==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
             {
-//prise de position
+			//prise de position
                 index_click_inside_plot=1;
                 plot_original_mouse_x=mouse_x;
                 plot_original_mouse_y=mouse_y;
@@ -3982,8 +4090,8 @@ int do_logical_Plot_window(int plotx, int ploty)
                 {
                     switch(index_menus_lighting_plot)
                     {
-//case 0://bckgd
-//break;
+					//case 0://bckgd
+					//break;
                     case 1://shapes
                         for(int i=1; i<=nbre_shapes_on_plot; i++)
                         {

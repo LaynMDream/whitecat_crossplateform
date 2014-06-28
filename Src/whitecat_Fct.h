@@ -1025,6 +1025,7 @@ WWWWWWWW           C  WWWWWWWW   |
     int logical_plot_menu_bare(int,int);
     int logical_deroule_repertoire_plans(int,int);
     int logical_menu_plan(int,int);
+    void plan_plot_mouseWheel_graphics_handle();
     int do_logical_Plot_window(int,int);
 //}
 //currently in procs visuels rebuild
@@ -1039,6 +1040,7 @@ WWWWWWWW           C  WWWWWWWW   |
 	bool mouseMoveSinceRightClic ();
     int do_logical_MoveCloseBox(int,int,int);
     int logical_channelspace();
+    void mouseWheel_graphics_handle();
     int check_graphics_mouse_handling();
 //}
 //currently in save show

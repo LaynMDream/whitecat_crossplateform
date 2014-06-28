@@ -607,6 +607,118 @@ int logical_channelspace()
     return(0);
 }
 
+//sab 28/06/2014 DEB
+void mouseWheel_graphics_handle()
+{
+    switch(window_focus_id)
+    {
+    case W_SAVEREPORT:
+
+        break;
+    case W_TRICHROMY:
+
+        break;
+    case W_NUMPAD:
+
+        break;
+    case W_TRACKINGVIDEO:
+
+        break;
+    case W_ARTPOLLREPLY:
+
+        break;
+    case W_FADERS :
+
+        break;
+    case W_PATCH:
+
+        break;
+    case W_TIME:
+
+        break;
+    case W_SEQUENCIEL:
+
+        break;
+    case W_ASKCONFIRM:
+
+        break;
+    case W_PLOT:
+        switch(index_menus_lighting_plot)
+        {
+        case 0://plan
+            plan_plot_mouseWheel_graphics_handle();
+            break;
+        case 1://shapes
+
+            break;
+        case 2://symbols
+
+            break;
+        case 3://légende
+
+            break;
+        case 4://plan seul
+
+            break;
+        default:
+
+            break;
+        }
+        break;
+    case W_ECHO:
+
+        break;
+    case W_DRAW:
+
+        break;
+    case W_LIST:
+
+        break;
+    case W_SAVE:
+
+        break;
+    case W_MAINMENU:
+
+        break;
+    case W_BANGER:
+
+        break;
+    case W_ALARM:
+
+        break;
+    case W_AUDIO:
+
+        break;
+    case W_CFGMENU:
+
+        break;
+    case W_WIZARD:
+
+        break;
+    case W_MINIFADERS:
+
+        break;
+    case W_CHASERS:
+
+        break;
+    case W_MOVER:
+
+        break;
+    case W_iCAT:
+
+        break;
+    case W_GRID:
+
+        break;
+    case W_MY_WINDOW:
+
+        break;
+    default:
+        break;
+    }
+}
+//sab 28/06/2014 FIN
+
 int check_graphics_mouse_handling()
 {
 

@@ -333,7 +333,7 @@ int do_mouse_right_click_menu()
 }
 
 //test begin montée/descente accélérée
-int test_format=1;
+int test_format=0;
 int test_loop =0 ;
 int test_level_i = 0 ;
 float test_level_f = 0 ;
@@ -363,14 +363,14 @@ void my_callback(int flags) {
 
         if (mouseWheel.eventProcessed)
         {
-            mouseWheel.levelinit = mouseWheel.level ; 				//Level of the wheel when event was processed
+            mouseWheel.yield = 0 ; 									//Gain was processed
             // beware interaction with : position_mouse_z(0);
         }
 
+        mouseWheel.yield = mouseWheel.yield + mouseWheel.gap ;		//Gain of level since last time that event was processed
         mouseWheel.level = mouse_z; 								//Instant level of the wheel
-        mouseWheel.yield = mouseWheel.level - mouseWheel.levelinit ;//Gain of level since last time that event was processed
 
-        mouseMove.eventProcessed = false;
+        mouseWheel.eventProcessed = false;
         //sprintf(string_Last_Order,"Roue gap < %i > level < %i > speed <%i>", mouseWheel.gap, mouseWheel.level, mouseWheel.speed);
     }
 
@@ -496,7 +496,8 @@ void my_callback(int flags) {
         index_click_inside_relativ_xy=0; rlativ_xm=0; rlativ_ym=0;
         index_editing_theatre_plan=0;
         editing_plan_data_type=0; editing_plot_sizey=0; editing_plot_sizex=0;  moving_size_relativ_x=0; moving_size_relativ_y=0;
-        plot_editing_color_line=0; plot_editing_color_background=0; index_adjusting_shape_x=0;index_adjusting_shape_y=0;
+        //sab 27/06/2014 plot_editing_color_line=0; plot_editing_color_background=0;
+        index_adjusting_shape_x=0;index_adjusting_shape_y=0;
         handle_selected_for_line_editing=0;  editing_shape_line_number=0;
         if(dragging_draw==1)
         {draw_point_is_traced[draw_preset_selected]=0;}
@@ -596,6 +597,7 @@ void my_callback(int flags) {
 //        mouseWheel.speed = 0;
 
         mouseMiddleClicHistory.push_front (mouseMiddleClic);
+
     }
 //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
@@ -725,12 +727,11 @@ int ticker_full_loop_rate = BPS_TO_TIMER(10000);
 void ticker_full_loop()
 {
 
+//ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
+    test_format=6;
 
-//test begin montée/descente selon vitesse
     if (mouseMiddleClic.isDown)
     {
-        test_format=1;
-
         if (test_format==1)
         {
             /* 1ère signature de la fonction :
@@ -753,42 +754,69 @@ void ticker_full_loop()
     }
 
 
-if (test_format==1)
-{
-    sprintf(string_Last_Order,"gap < %i > speed <%i> lvl i<%i> f<%f>",
-            mouseWheel.gap, mouseWheel.speed, test_level_i, test_level_f);
-}
-if (test_format==2)
-{
-    sprintf(string_Last_Order,"gap < %i > speed <%i> level <%i> loop i<%i> ",
-            mouseWheel.gap, mouseWheel.speed, test_level_i, test_loop);
-}
-//test end montée/descente selon vitesse
+    if (test_format==1)
+    {
+        sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i %f",
+        mouseWheel.level, mouseWheel.gap, mouseWheel.speed, test_level_i, test_level_f);
+    }
+    if (test_format==2)
+    {
+        sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i loop %i",
+        mouseWheel.level, mouseWheel.gap, mouseWheel.speed, test_level_i, test_loop);
+    }
+    if (test_format==3)
+    {
+        sprintf(string_Last_Order,"wheel %i gap %i yield %i speed %i",
+        mouseWheel.level, mouseWheel.gap, mouseWheel.yield, mouseWheel.speed);
+    }
+    if (test_format==4)
+    {
+        sprintf(string_Last_Order,"Right %i Double %i Done %i pos %i %i %i time %f",
+        (mouseRightClic.isDown ? 1:0), (mouseRightClic.isDouble ? 1:0), (mouseRightClic.eventProcessed ? 1:0), mouseRightClic.posx, mouseRightClic.posy,mouseRightClic.posz, (float) mouseRightClic.timer);
+    }
+    if (test_format==5)
+    {
+        sprintf(string_Last_Order,"Left %i Double %i Done %i pos %i %i %i time %f",
+        (mouseLeftClic.isDown ? 1:0), (mouseLeftClic.isDouble ? 1:0), (mouseLeftClic.eventProcessed ? 1:0), mouseLeftClic.posx, mouseLeftClic.posy,mouseLeftClic.posz, (float) mouseLeftClic.timer);
+    }
+    if (test_format==6)
+    {
+        sprintf(string_Last_Order,"BckGrndButton %i mouseYield %i BckGrndColor %f",
+        (plot_editing_color_background? 1:0), mouseWheel.yield, Color_plotfill);
+    }
+//sab 28/06/2014 - FIN - test
 
-if(core_do_calculations[2]==1 && starting_wcat==0)
-{
+    if(core_do_calculations[2]==1 && starting_wcat==0)
+    {
 
-for (int i=0;i<core_user_define_nb_bangers;i++)
-{
-//Mise en oeuvre de la boucle
-do_loop_bang(i);
-do_bang(i);
-}
-sound_core_processing();
-}
+        for (int i=0; i<core_user_define_nb_bangers; i++)
+        {
+			//Mise en oeuvre de la boucle
+            do_loop_bang(i);
+            do_bang(i);
+        }
+        sound_core_processing();
+    }
 
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
-{
-switch(im_moving_a_window)
-{
-case 0:
-check_graphics_mouse_handling();
-break;
-case 1:
-move_window(window_focus_id);
-break;
-}
-}
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+    {
+        switch(im_moving_a_window)
+        {
+        case 0:
+            check_graphics_mouse_handling();
+            break;
+        case 1:
+            move_window(window_focus_id);
+            break;
+        }
+    }
+	//sab 28/06/2014 DEB -
+	if (not(mouseWheel.gap==0))
+    {
+		mouseWheel_graphics_handle();
+    }
+	//sab 28/06/2014 FIN -
+
 if(index_quit==0 && index_is_saving==0)
 {
 
