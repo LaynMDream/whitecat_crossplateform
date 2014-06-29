@@ -978,7 +978,7 @@ WWWWWWWW           C  WWWWWWWW   |
     int add_shape_to_plot(int);
     int exchange_shape_position(int,int);
     int position_down_selected_shapes();
-    int add_selected_shapes();
+/* CppCheck - unusedFunction    int add_selected_shapes(); */
     int position_on_top_selected_shapes();
     int substract_channel_selection_to_layers_plot();
     int  search_affect_first_dimmer_to_symbole(int,int);
@@ -1023,8 +1023,8 @@ WWWWWWWW           C  WWWWWWWW   |
     int logical_symbol_edition_options(int,int);
     int logical_plot_symbol_edition(int,int);
     int logical_plot_menu_bare(int,int);
-    int logical_deroule_repertoire_plans(int,int);
-    int logical_menu_plan(int,int);
+    void logical_deroule_repertoire_plans(int,int);
+    void logical_menu_plan(int,int);
     void plan_plot_mouseWheel_graphics_handle();
     int do_logical_Plot_window(int,int);
 //}

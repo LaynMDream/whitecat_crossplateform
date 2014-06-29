@@ -936,7 +936,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
 
 
  //selection dock
- if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0    && index_main_clear==0 )
+ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0 && index_type==0    && index_main_clear==0 )
  {
    DockIsSelected[cmptfader][dd]=1;
    Unselect_other_docks(cmptfader, dd);

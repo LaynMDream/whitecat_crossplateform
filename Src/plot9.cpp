@@ -4348,42 +4348,85 @@ Canvas::DisableClipping();
 char coodr[8];
 Rect GridBGSelector(Vec2D(plotx+40,ploty+145),Vec2D(40,20));
 GridBGSelector.SetRoundness(3.0);
-for(int i=0;i<4;i++)
-{
+    for(int i=0; i<4; i++)
+    {
 
-GridBGSelector.MoveTo(Vec2D(plotx+5+(50*i),ploty+90));
-GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
+        GridBGSelector.MoveTo(Vec2D(plotx+5+(50*i),ploty+90));
+        GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
 
-if(window_focus_id==W_PLOT && mouse_x>plotx+5+(50*i) && mouse_x<plotx+50+(50*i) && mouse_y>ploty+90 && mouse_y<ploty+110)
-{GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.3));}
+        if(window_focus_id==W_PLOT && mouse_x>plotx+5+(50*i) && mouse_x<plotx+50+(50*i) && mouse_y>ploty+90 && mouse_y<ploty+110)
+        {
+            GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.3));
+        }
 
-if(i+1==editing_plan_data_type)
-{
-GridBGSelector.Draw(CouleurFader);
-}
-switch(i)
-{
-case 0:
-petitchiffrenoir.Print("X",plotx+20+(50*i),ploty+85);
-sprintf(coodr,"%d",position_relative_plan_theatre[0]);
-break;
-case 1:
-petitchiffrenoir.Print("Y",plotx+20+(50*i),ploty+85);
-sprintf(coodr,"%d",position_relative_plan_theatre[1]);
-break;
-case 2:
-petitchiffrenoir.Print("Scale X",plotx+5+(50*i),ploty+85);
-sprintf(coodr,"%d",taille_relative_plan_theatre[0]);
-break;
-case 3:
-petitchiffrenoir.Print("Scale Y",plotx+5+(50*i),ploty+85);
-sprintf(coodr,"%d",taille_relative_plan_theatre[1]);
-break;
-default:
-break;
-}
-petitchiffrenoir.Print(coodr, plotx+15+(50*i), ploty+102);
-}
+        if(i+1==editing_plan_data_type)
+        {
+            GridBGSelector.Draw(CouleurFader);
+        }
+        switch(i)
+        {
+        case 0:
+            /*sab 28/06/2014 lot 2 deb*/
+			if((index_editing_theatre_plan) && (editing_plan_data_type == 1))
+			{
+				if (editing_plan_data_type_double == 1)
+					{minidoomblanc.Print("X",plotx+20+(50*i),ploty+85);}
+				else
+					{petitchiffrerouge.Print("X",plotx+20+(50*i),ploty+85);}
+			}
+			else
+			//sab 28/06/2014 lot 2 fin
+			petitchiffrenoir.Print("X",plotx+20+(50*i),ploty+85);
+            sprintf(coodr,"%d",position_relative_plan_theatre[0]);
+            break;
+        case 1:
+            /*sab 28/06/2014 lot 2 deb*/
+			if((index_editing_theatre_plan) && (editing_plan_data_type == 2))
+			{
+				if (editing_plan_data_type_double == 2)
+					{minidoomblanc.Print("Y",plotx+20+(50*i),ploty+85);}
+				else
+					{petitchiffrerouge.Print("Y",plotx+20+(50*i),ploty+85);}
+			}
+			else
+			//sab 28/06/2014 lot 2 fin
+			petitchiffrenoir.Print("Y",plotx+20+(50*i),ploty+85);
+            sprintf(coodr,"%d",position_relative_plan_theatre[1]);
+            break;
+        case 2:
+            /*sab 28/06/2014 lot 2 deb*/
+			if((index_editing_theatre_plan) && (editing_plan_data_type == 3))
+			{
+				if (editing_plan_data_type_double == 3)
+					{minidoomblanc.Print("Scale X",plotx+5+(50*i),ploty+85);}
+				else
+					{petitchiffrerouge.Print("Scale X",plotx+5+(50*i),ploty+85);}
+			}
+			else
+			//sab 28/06/2014 lot 2 fin
+			petitchiffrenoir.Print("Scale X",plotx+5+(50*i),ploty+85);
+            sprintf(coodr,"%d",taille_relative_plan_theatre[0]);
+            break;
+        case 3:
+
+            /*sab 28/06/2014 lot 2 deb*/
+			if((index_editing_theatre_plan) && (editing_plan_data_type == 4))
+			{
+				if (editing_plan_data_type_double == 4)
+					{minidoomblanc.Print("Scale Y",plotx+5+(50*i),ploty+85);}
+				else
+					{petitchiffrerouge.Print("Scale Y",plotx+5+(50*i),ploty+85);}
+			}
+			else
+			//sab 28/06/2014 lot 2 fin
+			petitchiffrenoir.Print("Scale Y",plotx+5+(50*i),ploty+85);
+            sprintf(coodr,"%d",taille_relative_plan_theatre[1]);
+            break;
+        default:
+            break;
+        }
+        petitchiffrenoir.Print(coodr, plotx+15+(50*i), ploty+102);
+    }
 
 Line(Vec2D(plotx+130,ploty+110),Vec2D(plotx+130,ploty+115)).Draw(CouleurPlotLine);
 Line(Vec2D(plotx+130,ploty+115),Vec2D(plotx+146,ploty+115)).Draw(CouleurPlotLine);
@@ -4467,7 +4510,10 @@ petitchiffrenoir.Print("Line",plotx+105,ploty+210);
 break;
 }
 
-petitchiffrenoir.Print("Alpha Grid",plotx+145,ploty+195);
+if (editing_plot_alphagrid)
+	{petitchiffrerouge.Print("Alpha Grid",plotx+145,ploty+195);}
+else
+	{petitchiffrenoir.Print("Alpha Grid",plotx+145,ploty+195);}
 
 Rect AlphaG(Vec2D(plotx+150,ploty+200),Vec2D(50,10));
 AlphaG.DrawOutline(CouleurPlotLine);

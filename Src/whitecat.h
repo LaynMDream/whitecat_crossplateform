@@ -2203,8 +2203,8 @@ int taille_relative_plan_theatre[2];
 
 float orientation_plan_theatre;
 
-int old_position_relative_plan_theatre[2];
-int old_taille_relative_plan_theatre[2];
+//sab 29/09/2014 lot 3 int old_position_relative_plan_theatre[2];
+//sab 29/09/2014 lot 3 int old_taille_relative_plan_theatre[2];
 
 
 bool index_editing_theatre_plan=0;
@@ -2213,7 +2213,10 @@ int original_posy=0;
 //sab 26/06/2014  int moving_plan_relativ_x=0;
 //sab 26/06/2014  int moving_plan_relativ_y=0;
 
-int editing_plan_data_type=0;
+int editing_plan_data_type=0;          // id of a graphical object : plot - background - plan button n° (position x,y &size x,y)
+/*sab 29/06/2014 lot 3 deb */
+int editing_plan_data_type_double=0;   // id of a graphical object - same as prévious / mangement of double clic on graphical object
+/*sab 29/06/2014 lot 3 fin */
 
 char Name_of_plane_is[256];
 char list_import_plans[127][256];//menu d affichage des list de plans
@@ -2224,6 +2227,7 @@ float alpha_plan=1.0;
 //sab 28/06/2014 lot 2 DEB
 bool editing_plot_rotation=false;
 bool editing_plot_alphapic=false;
+bool editing_plot_alphagrid=false;
 //sab 28/06/2014 lot 2 FIN
 bool editing_plot_sizey=0;
 bool editing_plot_sizex=0;

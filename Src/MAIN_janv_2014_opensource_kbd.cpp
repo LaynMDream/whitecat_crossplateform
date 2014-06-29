@@ -494,8 +494,8 @@ void my_callback(int flags) {
         index_moving_fader_space=0;index_moving_x_slide=0;index_moving_y_slide=0;
         index_click_inside_plot=0; plot_facteur_move_x=0;plot_facteur_move_y=0;
         index_click_inside_relativ_xy=0; rlativ_xm=0; rlativ_ym=0;
-        index_editing_theatre_plan=0;
-        editing_plan_data_type=0;
+        //sab 29/06/2014 lot 3 index_editing_theatre_plan=0;
+        //sab 29/06/2014 lot 3 editing_plan_data_type=0;
         //sab 28/06/2014 - lot 2 - editing_plot_sizey=0; editing_plot_sizex=0;
         moving_size_relativ_x=0; moving_size_relativ_y=0;
         //sab 27/06/2014 plot_editing_color_line=0; plot_editing_color_background=0;
@@ -1361,7 +1361,7 @@ there_is_change_on_show_save_state=0;
 }
 
 Canvas::Refresh();
-if(index_do_a_screen_capture==1){do_a_screen_capture();index_do_a_screen_capture=0;}
+/* CppCheck - unusedFunction if(index_do_a_screen_capture==1){do_a_screen_capture();index_do_a_screen_capture=0;} */
 if(index_do_a_plot_screen_capture==1 ){do_plot_screen_capture(plot_name_of_capture);index_do_a_plot_screen_capture=0;}
 
 }
