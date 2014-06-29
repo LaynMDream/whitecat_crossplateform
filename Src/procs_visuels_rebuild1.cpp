@@ -259,7 +259,6 @@ int detection_over_window()
                 break;
             default:
                 break;
-                break;
             }
             if(stop_detect==1)
             {

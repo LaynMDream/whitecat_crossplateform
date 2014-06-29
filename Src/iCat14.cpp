@@ -969,7 +969,6 @@ case 7://draw
       case 4:
       sprintf(string_temp_familly,"Matrix Draw Mode");
       break;
-      break;
       case 5:
       sprintf(string_temp_familly,"Select Matrix Num:");
       break;

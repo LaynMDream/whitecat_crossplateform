@@ -2568,7 +2568,6 @@ break;
 case 53:
 plot_draw_symbol_dimmerline(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
-break;
 case 54://direct
 plot_draw_symbol_direct(plotx, ploty , size_symbol[s], 0, 0, 0);
 break;
