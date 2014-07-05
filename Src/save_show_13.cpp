@@ -1406,7 +1406,7 @@ else if(niveauGMaster==255){midi_levels[615]=127;}
 
 
 
-if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
+if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9)
 {process_assign_to_core(core_to_assign);}
 
 switch(config_page_is)
