@@ -4084,7 +4084,7 @@ switch(bangers_action[banger_num][event_num])
      if(param1_is>0 && param1_is<5)
      {
      numgridpl=param1_is-1;
-     if(param2_is>=0 || param2_is <=127)
+     if(param2_is>=0 && param2_is <=127)
      {
      grid_crossfade_speed[numgridpl]=param2_is;
      sprintf(string_event,"GridPl %d Set Accel at %d",numgridpl+1,param2_is);

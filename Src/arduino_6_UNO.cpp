@@ -441,7 +441,7 @@ arduino_digital_function_input[position_line_io+y][1]=valois;
 //faire data range pour le picth: 0 à 127
 if(
 (arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==2|| arduino_digital_type[position_line_io+y]==7)
-&& ( arduino_digital_function_input[position_line_io+y][0]>=17 || arduino_digital_function_input[position_line_io+y][0]<=32)
+&& ( arduino_digital_function_input[position_line_io+y][0]>=17 && arduino_digital_function_input[position_line_io+y][0]<=32)
 && valois>=0 && valois<=127
 )
 {
