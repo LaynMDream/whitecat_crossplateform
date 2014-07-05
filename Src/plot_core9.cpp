@@ -3181,7 +3181,7 @@ int logical_plot_symbol_edition(int plotx, int ploty)
         for(int l=0; l<2; l++)
         {
             //MySymbAction.MoveTo(Vec2D(plotx+5+(c*65),ploty+70+(l*20)));
-            if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0 && index_click_inside_relativ_xy==0
+            if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0
                     && mouse_x>plotx+5+(c*65) && mouse_x<plotx+5+(c*65)+60 && mouse_y>ploty+60+(l*20) && mouse_y<ploty+60+(l*20)+18
                     && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
             {

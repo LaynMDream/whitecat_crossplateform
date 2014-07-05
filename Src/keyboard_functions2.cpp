@@ -1272,7 +1272,7 @@ int key_time_in_out()
            {
            if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )
            {index_type_of_time_to_affect[0]=1; index_type_of_time_to_affect[2]=1; }
-            else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[0]==1 )
+            else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[2]==1 )
             {index_type_of_time_to_affect[0]=0; index_type_of_time_to_affect[2]=0; }
             }
             else//entree directe pour le preset
@@ -1289,7 +1289,7 @@ int key_time_in_out()
             {
             if(index_type_of_time_to_affect[1]==0 || index_type_of_time_to_affect[3]==0 )
             {index_type_of_time_to_affect[1]=1; index_type_of_time_to_affect[3]=1; }
-            else if(index_type_of_time_to_affect[1]==1 || index_type_of_time_to_affect[1]==1 )
+            else if(index_type_of_time_to_affect[1]==1 || index_type_of_time_to_affect[3]==1 )
             {index_type_of_time_to_affect[1]=0; index_type_of_time_to_affect[3]=0; }
             }
            else //entree directe pour le preset
