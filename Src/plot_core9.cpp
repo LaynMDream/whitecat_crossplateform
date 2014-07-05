@@ -465,7 +465,7 @@ int affect_size_to_shape(float size)
     {
         if(shape_selected[i]==1)
         {
-            shape_attributes[i][0]=general_shape_size_to_apply;
+            shape_attributes[i][0]=size; // fct appellée avec en paramètre : general_shape_size_to_apply
         }
     }
     return(0);
