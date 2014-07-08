@@ -730,7 +730,7 @@ void ticker_full_loop()
 {
 
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
-    test_format=5;
+    test_format=2;
 
     if (mouseMiddleClic.isDown)
     {
@@ -1343,7 +1343,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
  switch(index_art_polling)
  {
     case 0:
-    main_actions_on_screen();
+	  main_actions_on_screen();
     break;
     case 1:
       if((bytesreceived = recvfrom(sock,artpollreply_message,sizeof(artpollreply_message),0,(SOCKADDR*)&sinS,&sinsize)!=0))
