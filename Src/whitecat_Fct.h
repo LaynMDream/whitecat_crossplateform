@@ -907,7 +907,7 @@ WWWWWWWW           C  WWWWWWWW   |
     int plot_draw_symbol_platine_de_sol(int,int,float,float,int,int);
     int plot_draw_symbol_littlestand(int,int,float,float,int,int);
     int plot_draw_symbol_bigstand(int,int,float,float,int,int);
-    int  plot_draw_symbol_barre_de_couplage(int,int,float,float,int,int);
+    int plot_draw_symbol_barre_de_couplage(int,int,float,float,int,int);
     int plot_draw_symbol_echelle(int,int,float,float,int,int);
     int plot_draw_symbol_pont50_1m(int,int,float,float,int,int);
     int plot_draw_symbol_pont50_3m(int,int,float,float,int,int);
@@ -1025,6 +1025,8 @@ WWWWWWWW           C  WWWWWWWW   |
     int logical_plot_menu_bare(int,int);
     void logical_deroule_repertoire_plans(int,int);
     void logical_menu_plan(int,int);
+    void PLOT_in_case_of_window_lose_of_focus();
+    void case_where_init_plot_menu_background();
     void plan_plot_mouseWheel_graphics_handle();
     int do_logical_Plot_window(int,int);
 //}

@@ -3946,6 +3946,65 @@ void logical_menu_plan(int plotx, int ploty)
     }
 }
 
+//sab 07/07/2014 DEB
+/** \brief Plot - Tab Background : Menu cartridge widget : Plot window lose focus
+ *
+ * \return void
+ *
+ */
+void PLOT_in_case_of_window_lose_of_focus ()
+{
+	case_where_init_plot_menu_background ();
+}
+/** \brief Plot - Tab Background : Menu cartridge widget : Plot window lose focus
+ *
+ * \return void
+ *
+ */
+void case_where_init_plot_menu_background ()
+{
+	if ( (not(window_focus_id==W_PLOT))
+	or   (not(index_menus_lighting_plot==0)))
+	{
+        editing_plot_alphapic=false;
+        editing_plot_alphagrid=false;
+        editing_plot_rotation=false;
+        editing_plot_sizex=false;
+        editing_plot_sizey=false;
+        plot_editing_color_background=false;
+        plot_editing_color_line=false;
+        editing_plan_data_type = 0 ;
+        editing_plan_data_type_double = 0;
+	}
+
+}
+/** \brief Plot - Tab Background : Menu cartridge widget : lose of focus on a click inside Plot
+ *
+ * \param top left position of plot
+ * \return void
+ *
+ */
+void case_where_init_plot_menu_background (int plotx, int ploty)
+{
+
+	if ( (not(index_menus_lighting_plot==0))
+	      or ( (index_menus_lighting_plot==0)
+			 && ( (mouse_x>plotx+195)
+			   or (mouse_y<ploty+90))))
+	{
+        editing_plot_alphapic=false;
+        editing_plot_alphagrid=false;
+        editing_plot_rotation=false;
+        editing_plot_sizex=false;
+        editing_plot_sizey=false;
+        plot_editing_color_background=false;
+        plot_editing_color_line=false;
+        editing_plan_data_type = 0 ;
+        editing_plan_data_type_double = 0;
+	}
+
+}
+//sab 07/07/2014 FIN
 
 //sab 28/06/2014 DEB
 void plan_plot_mouseWheel_graphics_handle()
@@ -4143,6 +4202,12 @@ int do_logical_Plot_window(int plotx, int ploty)
     {
         logical_plot_menu_bare(plotx+230,ploty+10);
 
+		//sab 07/07/2014 DEB
+		// Case off click event was procedeed by before ... won't work if out of Plot window :-(
+		//... need of an event for lose focus or every graphical objet must be call to carry out its on status testing
+		case_where_init_plot_menu_background(plotx,ploty);
+		//sab 07/07/2014 FIN
+
         switch(index_menus_lighting_plot)
         {
         case 0://plan
@@ -4153,6 +4218,7 @@ int do_logical_Plot_window(int plotx, int ploty)
             logical_shape_edition(plotx+10, ploty+200);
             break;
         case 2://symbols
+
             logical_plot_symbol_list(plotx+10, ploty+50);
             logical_plot_symbol_edition(plotx+10, ploty+200);//editeur de symbol
             logical_symbol_edition_options(plotx+10, ploty+275);

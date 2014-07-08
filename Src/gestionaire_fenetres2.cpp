@@ -250,6 +250,15 @@ return(0);
 
 */
 
+//sab 07/07/2014 DEB
+void in_case_of_window_lose_of_focus()
+{
+	// Case off click event was procedeed by before out of Plot window
+	//... need of an event for lose focus or every graphical objet must be call to carry out its on status testing
+	if (not(window_focus_id==W_PLOT)) { PLOT_in_case_of_window_lose_of_focus();} //
+	//sab 07/07/2014 FIN
+}
+
 int add_a_window(int id)
 {
 /* sab 05/03/2014 begin replace */
@@ -258,6 +267,11 @@ int add_a_window(int id)
     next_free_pos=0;
     push_front_into_window_opened[next_free_pos]=id; // window is added on the top
     window_focus_id=id; // window is added on the top = it gets the focus
+
+	//sab 07/07/2014 DEB
+	in_case_of_window_lose_of_focus();
+	//sab 07/07/2014 FIN
+
  //All open window are kept openin the same order (function to be rewritten with window_opened as a deque)
  //if window added on the top, it is on the list, we skip it (no duplicate in the list)
     for(int old_pos=0; old_pos<72; old_pos++)
