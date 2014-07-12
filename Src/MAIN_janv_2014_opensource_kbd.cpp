@@ -322,14 +322,36 @@ END_OF_FUNCTION(ticker);
 
 //////////////////////////////////MOUSE/////////////////////////////////////////
 
-int do_mouse_right_click_menu()
+/** \brief GUI - menu window - set the window visible or not and define position if to be shown
+ *
+ */
+void do_mouse_right_click_menu()
 {
- x_mainmenu=mouse_x, y_mainmenu=mouse_y;
- index_show_main_menu=toggle(index_show_main_menu);
- if( index_show_main_menu==1){add_a_window(W_MAINMENU);}
- else {substract_a_window(W_MAINMENU);}
- right_click_for_menu=0;
- return(0);
+//sab 12/07/2014     x_mainmenu=mouse_x, y_mainmenu=mouse_y;
+    index_show_main_menu=toggle(index_show_main_menu);
+    if( index_show_main_menu==1)
+    {
+//sab 12/07/2014 DEB
+/** keep menu window in the limits of main window of White Cat */
+		int max_x = posX_mainwindow + largeur_ecran  - size_x_mainmenu - 10 ;
+		int max_y = posY_mainwindow + hauteur_ecran  - size_y_mainmenu - 10 ;
+
+		x_mainmenu = mouse_x ;
+		if (x_mainmenu>max_x)
+		{
+			x_mainmenu = max_x;
+		}
+
+		y_mainmenu = mouse_y ;
+		if (y_mainmenu>max_y)
+		{
+			y_mainmenu =max_y;
+		}
+//sab 12/07/2014 FIN
+        add_a_window(W_MAINMENU);
+    }
+    else {substract_a_window(W_MAINMENU);}
+    right_click_for_menu=0;
 }
 
 //test begin montée/descente accélérée
@@ -507,8 +529,8 @@ void my_callback(int flags) {
 
         }
 
-       if (flags & MOUSE_FLAG_RIGHT_DOWN )
-        {
+    if (flags & MOUSE_FLAG_RIGHT_DOWN )
+    {
         //sab 24/06/2014 - Doubleclic - Ajout - DEB
         mouseRightClic.isDown=true;
         mouseRightClic.isDouble = false;
@@ -522,23 +544,29 @@ void my_callback(int flags) {
 
         //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
-        original_posx=mouse_x;original_posy=mouse_y;
+        original_posx=mouse_x;
+        original_posy=mouse_y;
 
-        if(window_focus_id==W_PLOT) {
-                                    index_move_plot_view_port=1;
-                                    reset_symbols_selected(view_plot_calc_number_is);
-                                    unselect_all_shapes();
-                                    key_unselect_ch();
-                                    }
-        else {
-             if((mouseRightClic.eventProcessed==false))
-             {
-              mouseRightClic.eventProcessed=true;
-              right_click_for_menu=1; //renvoi vers les procs en 10eme de secondes pour enlever le bug d extinctions fenetres
-              }
-
-             }
+        /* sab 12/07/2014 DEB
+        if(window_focus_id==W_PLOT) {*/
+        if(window_focus_id==W_PLOT && isMouseOverPlot())
+		/* sab 12/07/2014 FIN */
+        {
+            index_move_plot_view_port=1;
+            reset_symbols_selected(view_plot_calc_number_is);
+            unselect_all_shapes();
+            key_unselect_ch();
         }
+        else
+        {
+            if((mouseRightClic.eventProcessed==false))
+            {
+                mouseRightClic.eventProcessed=true;
+                right_click_for_menu=1; //renvoi vers les procs en 10eme de secondes pour enlever le bug d extinctions fenetres
+            }
+
+        }
+    }
 
        else if (flags & MOUSE_FLAG_RIGHT_UP )
         {

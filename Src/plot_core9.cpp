@@ -4196,6 +4196,26 @@ void plan_plot_mouseWheel_graphics_handle()
 }
 //sab 28/06/2014 FIN
 
+/** \brief Plot - is mouse flying over Plot window
+ *
+ * \param none
+ * \return bool
+ *
+ */
+ bool isMouseOverPlot()
+{
+	if (index_plot_window==1)
+	{
+		int xx = x_plot + plot_window_x_size ;
+		int yy = y_plot + plot_window_y_size ;
+		return (((mouse_x>=x_plot) && (mouse_x<=xx)) && ((mouse_y>=y_plot)&& (mouse_y<=yy)));
+	}
+	else
+	{
+		return false;
+	}
+}
+
 int do_logical_Plot_window(int plotx, int ploty)
 {
     if(window_focus_id==W_PLOT && mouse_x> plotx && mouse_x<plotx+plot_window_x_size && mouse_y>ploty && mouse_y<ploty + plot_window_y_size)

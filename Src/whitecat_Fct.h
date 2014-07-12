@@ -49,7 +49,7 @@ WWWWWWWW           C  WWWWWWWW   |
     int time_doing();
     void ticker_dmxIn();
     void ticker();
-    int do_mouse_right_click_menu();
+    void do_mouse_right_click_menu();
     void my_callback(int);
     void dixiemes_de_secondes();
     void ticker_full_loop();
@@ -1028,6 +1028,7 @@ WWWWWWWW           C  WWWWWWWW   |
     void PLOT_in_case_of_window_lose_of_focus();
     void case_where_init_plot_menu_background();
     void plan_plot_mouseWheel_graphics_handle();
+    bool isMouseOverPlot();
     int do_logical_Plot_window(int,int);
 //}
 //currently in procs visuels rebuild
