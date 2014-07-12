@@ -102,7 +102,7 @@ W_GRID=926,
 W_MY_WINDOW=927
 };
 int max_window_identity_is=927;
-int index_to_navigate_between_window=0;
+//sab 12/07/2014 int index_to_navigate_between_window=0;
 
 int window_opened[72];//la liste des fenetres ouvertes modification en 0.4.1 d un size 64 en size 72,
 //y compris dans save_show.cpp

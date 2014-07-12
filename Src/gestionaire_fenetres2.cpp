@@ -468,7 +468,39 @@ window_focus_id=num_window;
 return(num_window);
 }
 
+/*sab 12/07/2014 DEB */
+void back_window_push_to_front()
+{
+	int last_window_idx = nbre_fenetre_actives=check_nbre_opened_windows() - 1;
+	if (last_window_idx > 0 )
+	{
+		window_bring_to_front(window_opened[last_window_idx]);
+	}
+}
 
+void front_window_push_to_back()
+{
+    int window_cnt = nbre_fenetre_actives=check_nbre_opened_windows() ;
+    if (window_cnt>0)
+	{
+		int temp_window[64];
+		for(int i=0; i<62; i++)
+		{
+			temp_window[i]=window_opened[i+1];
+		}
+		temp_window[63]=0;
+		int last_pos = check_nbre_opened_windows() - 1 ;
+		temp_window[last_pos]=window_opened[0];
+
+		for(int i=0; i<63; i++)
+		{
+			window_opened[i]=temp_window[i];
+		}
+		window_opened[0]=window_opened[0];
+		window_focus_id=window_opened[0];
+	}
+}
+/*sab 12/07/2014 FIN*/
 
 int check_save_load_report_window()
 {
