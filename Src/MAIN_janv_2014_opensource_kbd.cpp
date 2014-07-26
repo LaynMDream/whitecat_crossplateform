@@ -1080,11 +1080,10 @@ Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable
         for (int n = 1; n < argc; n++)
         {
             std::cout << std::setw( 2 ) << n << ": " << argv[ n ] << '\n';
-            if (std::string(argv[ n ])=="--border")
+            /*if (std::string(argv[ n ])=="--border")
 			{
 				Settings::SetWindowBorder(true);
-				wcat_windowborder = 25;
-			}
+			}*/
         }
     }
 

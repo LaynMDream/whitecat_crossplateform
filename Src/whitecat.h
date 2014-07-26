@@ -126,9 +126,6 @@ float size_faders=0.8;
 int index_fullscreen=0;
 int posX_mainwindow=0;//placement fenetre sur bureau
 int posY_mainwindow=0;
-/*sab 26/07/2014 DEB */
-int wcat_windowborder = 0;
-/*sab 26/07/2014 FIN */
 int index_report_customs[128]; //report des fentres on off, du view dmx, theme couleur etc etc
 //BOXES
 float epaisseur_ligne_fader=2.0;
