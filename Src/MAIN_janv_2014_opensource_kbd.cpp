@@ -1062,7 +1062,7 @@ int main_actions_on_screen()
 }
 
 
-int main() {
+int main(int argc, char* argv[]) {
 
 load_screen_config();
 
@@ -1074,6 +1074,21 @@ else
 {Settings::SetWindowBorder(true);}
 */
 Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable avec les menus
+/*sab 26/07/2014 DEB */
+    if (argc > 0)
+    {
+        for (int n = 1; n < argc; n++)
+        {
+            std::cout << std::setw( 2 ) << n << ": " << argv[ n ] << '\n';
+            if (std::string(argv[ n ])=="--border")
+			{
+				Settings::SetWindowBorder(true);
+				wcat_windowborder = 25;
+			}
+        }
+    }
+
+/*sab 26/07/2014 FIN */
 
 Setup::SetupProgram(KEYBOARD | MOUSE);
 
