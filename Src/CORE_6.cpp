@@ -1895,6 +1895,12 @@ int reset_window_positions()
     y_Wdraw=200;
     x_echo=100;
     y_echo=200;
+    /* sab 27/07/2014 DEB */
+    report_SL_X= 50;
+	report_SL_Y= 50 ;
+	X_banger=100;
+    Y_banger=100;
+    /* sab 27/07/2014 FIN */
     return(0);
 }
 

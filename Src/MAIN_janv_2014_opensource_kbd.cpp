@@ -764,7 +764,7 @@ int main_actions_on_screen()
 }
 
 
-int main() {
+int main(int argc, char* argv[]) {
 
 load_screen_config();
 
@@ -775,6 +775,7 @@ if(index_borderwindow==0)
 else
 {Settings::SetWindowBorder(true);}
 */
+/*sab 27/07/2014 DEB
 Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable avec les menus
 
 Setup::SetupProgram(KEYBOARD | MOUSE);
@@ -783,10 +784,73 @@ if(index_fullscreen==0)
 {Setup::SetupScreen( largeur_ecran, hauteur_ecran,WINDOWED, desktop_color_depth() );}
 else {Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color_depth() );}
 
-   HWND hwnd = win_get_window();
-    if (hwnd != NULL)
-        MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);
+HWND hwnd = win_get_window();
+if (hwnd != NULL)
+	MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);
+*/
 
+	Setup::SetupProgram(KEYBOARD | MOUSE);
+
+	bool window_border = false ;
+	bool window_init   = false ;
+
+    if (argc > 0)
+    {
+        for (int n = 1; n < argc; n++)
+        {
+            std::cout << std::setw( 2 ) << n << ": " << argv[ n ] << '\n';
+            if (std::string(argv[ n ])=="--border")
+			{
+				window_border = true ;
+			}
+            if (std::string(argv[ n ])=="--init")
+			{
+				window_init = true ;
+			}
+        }
+    }
+
+	if (window_init) 	{
+			posX_mainwindow = 0 ;
+			posY_mainwindow = 0 ;
+			largeur_ecran = GetSystemMetrics(SM_CXVIRTUALSCREEN) ; // X
+			hauteur_ecran = GetSystemMetrics(SM_CYVIRTUALSCREEN) ; // Y
+	}
+
+    if (window_border)
+    {
+    	Settings::SetWindowBorder(true) ; index_fullscreen=0;
+	#ifdef _WIN32
+        Setup::SetupScreen( largeur_ecran, hauteur_ecran - 30,WINDOWED, desktop_color_depth() );
+	#else
+        Setup::SetupScreen( largeur_ecran, hauteur_ecran,WINDOWED, desktop_color_depth() );
+	#endif
+    }
+    else
+	{
+		Settings::SetWindowBorder(false);
+        if(index_fullscreen==0)
+        {
+            Setup::SetupScreen( largeur_ecran, hauteur_ecran,WINDOWED, desktop_color_depth() );
+        }
+        else
+        {
+        	Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color_depth() );
+		}
+    }
+
+	hwnd = win_get_window();
+    if (hwnd != NULL)
+	{
+		#ifdef _WIN32
+		if (window_border) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H + 30, true);}
+		else  { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);}
+		#else
+		MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);
+		#endif
+	}
+
+/*sab 27/07/2014 FIN */
 
    install_joystick(JOY_TYPE_AUTODETECT);
    calibrate_joystick_name(0);
@@ -1049,7 +1113,11 @@ for(int i=0;i<4;i++)
 }
 }
 
-
+/* sab 27/07/2014 DEB */
+	if (window_init) 	{
+			reset_window_positions();
+	}
+/* sab 27/07/2014 FIN */
 
 starting_wcat=0;
 

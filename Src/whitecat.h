@@ -41,6 +41,9 @@ WWWWWWWW           C  WWWWWWWW   |
 *
 */
 
+#ifndef WHITECAT_GLOBAL_VAR_H_INCLUDED
+#define WHITECAT_GLOBAL__H_INCLUDED
+
 #include "Crossplateform.h"
 
 
@@ -2520,3 +2523,7 @@ bool bounce_is_prepared[24];
 int fader_before_bounce[48];
 
 float snap_echo_to_recall[24][513];
+/*sab 27/07/2014 DEB */
+HWND hwnd ;
+/*sab 27/07/2014 FIN */
+#endif // WHITECAT_GLOBAL_VAR_H_INCLUDED

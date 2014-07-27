@@ -217,6 +217,12 @@ if(atoi(numeric)>=1024)
 {
 largeur_ecran=atoi(numeric);
 reset_numeric_entry();
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 else {sprintf(string_Last_Order,"Screen Width must be at minimum 1024 px");}
 mouse_released=1;
@@ -231,6 +237,12 @@ if(atoi(numeric)>=600)
 {
 hauteur_ecran=atoi(numeric);
 reset_numeric_entry();
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 else {sprintf(string_Last_Order,"Screen Height must be at minimum 600 px");}
 mouse_released=1;
@@ -338,6 +350,12 @@ if(mouse_button==1 && mouse_released==0 && index_set_pos==1)
 posX_mainwindow=atoi(numeric);
 reset_numeric_entry();
 mouse_released=1;
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 }
 if(mouse_y> y_cfg_sc+225 && mouse_y<y_cfg_sc+255)
@@ -348,6 +366,12 @@ if(mouse_button==1 && mouse_released==0 && index_set_pos==1)
 posY_mainwindow=atoi(numeric);
 reset_numeric_entry();
 mouse_released=1;
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 }
 }
