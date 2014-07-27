@@ -214,9 +214,16 @@ boxlargeur.DrawOutline(CouleurLigne);
 if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_specify_size==1)
 {
 if(atoi(numeric)>=1024)
+
 {
 largeur_ecran=atoi(numeric);
 reset_numeric_entry();
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 else {sprintf(string_Last_Order,"Screen Width must be at minimum 1024 px");}
 mouseLeftClic.eventProcessed=true;
@@ -231,6 +238,12 @@ if(atoi(numeric)>=600)
 {
 hauteur_ecran=atoi(numeric);
 reset_numeric_entry();
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 else {sprintf(string_Last_Order,"Screen Height must be at minimum 600 px");}
 mouseLeftClic.eventProcessed=true;
@@ -338,6 +351,12 @@ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_set_po
 posX_mainwindow=atoi(numeric);
 reset_numeric_entry();
 mouseLeftClic.eventProcessed=true;
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 }
 if(mouse_y> y_cfg_sc+225 && mouse_y<y_cfg_sc+255)
@@ -348,6 +367,12 @@ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_set_po
 posY_mainwindow=atoi(numeric);
 reset_numeric_entry();
 mouseLeftClic.eventProcessed=true;
+/*sab 27/07/2014 DEB */
+    MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
+	#ifdef _WIN32
+		if (Settings::GetWindowBorder) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran + 30 , true);}
+	#endif
+/*sab 27/07/2014 FIN */
 }
 }
 }

@@ -41,6 +41,9 @@ WWWWWWWW           C  WWWWWWWW   |
 *
 */
 
+#ifndef WHITECAT_GLOBAL_VAR_H_INCLUDED
+#define WHITECAT_GLOBAL__H_INCLUDED
+
 #include "Crossplateform.h"
 
 
@@ -2575,4 +2578,7 @@ typedef struct eventmove
 } eventmove;
 eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
 //sab 26/06/2014 FIN - Reporté depuis fichier Main
-
+/*sab 27/07/2014 DEB */
+HWND hwnd ;
+/*sab 27/07/2014 FIN */
+#endif // WHITECAT_GLOBAL_VAR_H_INCLUDED
