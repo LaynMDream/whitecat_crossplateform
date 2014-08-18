@@ -758,7 +758,11 @@ int main_actions_on_screen()
       trichro_back_buffer(315/2,550/2,125,15);//calcul trichro ( triangle et saturation dans buffer separé)
       do_colors();//ventilation des niveaux pickés ainsi que distrib dans faders et docks
       }
+      /*sab 18/08/2014 DEB - Draw mouse only when over the application window
       DoMouse();
+      */
+       if (mouse_on_screen()) DoMouse();
+      /*sab 18/08/2014 FIN */
       previous_ch_selected=last_ch_selected;
  return(0);
 }
