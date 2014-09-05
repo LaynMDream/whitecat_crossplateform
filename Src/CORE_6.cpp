@@ -41,7 +41,6 @@ WWWWWWWW           C  WWWWWWWW   |
 *
  **/
 
-
 int reset_numeric_entry()
 {
     sprintf(numeric,"                        ");
@@ -1444,18 +1443,6 @@ int clear_completely_the_patch()
     return(0);
 }
 
-int show_title()
-{
-    logo.Blit((largeur_ecran/2)-150,(hauteur_ecran/2));//ne s'affiche que en 32 bits
-    neuroTitle.Print("WHITE CAT", (largeur_ecran/2)-200,(hauteur_ecran/2)-200);
-    neuromoyen.Print(nickname_version, (largeur_ecran/2)+200,(hauteur_ecran/2)-260);
-    neuro.Print("http://www.le-chat-noir-numerique.fr", (largeur_ecran/2)-160,(hauteur_ecran/2)-170);
-    petitchiffre.Print("(c)christoph guillermet", (largeur_ecran/2)-55,(hauteur_ecran/2)-150);
-    petitpetitchiffre.Print(versionis, (largeur_ecran/2)-70,(hauteur_ecran/2)-120);
-
-    return(0);
-}
-
 
 int load_plan_of_theatre( char name_of_plan[256], bool rescan_width_eight)
 {
@@ -2449,25 +2436,6 @@ int detect_actual_master_lock_is()
 
 
 
-//sab 02/03/2014 int save_load_print_to_screen(char string_print_to_screen[64])
-void save_load_print_to_screen(const std::string label)
-{
-    const std::string string_print_to_screen = label.substr (0,64);
-
-    if(index_do_quick_save==0)
-    {
-        show_title();
-    }
-    Rect nameAera( Vec2D( ((largeur_ecran/2)-200),((hauteur_ecran/2)-100)), Vec2D ( 400,70));
-    nameAera.SetRoundness(15);
-    nameAera.SetLineWidth(epaisseur_ligne_fader*3);
-    nameAera.Draw(CouleurSurvol);
-    nameAera.DrawOutline(CouleurLigne);
-    neuro.Print(string_print_to_screen,((largeur_ecran/2)-150),((hauteur_ecran/2)-60));
-
-    Canvas::Refresh();
-//sab 02/03/2014 return(0);
-}
 
 int minifader_selection_record(int mf_preset_is)
 {

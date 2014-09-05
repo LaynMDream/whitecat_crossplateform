@@ -105,6 +105,12 @@ bufferSaisiesnamp=0;
 
 
 #include <midi_CORE.cpp>
+
+//en attendant d'intégrer le header avec toutes les fonctions besoin de déclarer ici ces deux fonctions déplacée dans un autre fichier : splashscreen.cpp
+void show_title();
+void save_load_print_to_screen(const std::string label);
+
+#include <splashscreen_visu.cpp>
 #include <CORE_6.cpp>
 
 
