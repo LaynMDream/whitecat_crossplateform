@@ -111,6 +111,9 @@ void show_title();
 void save_load_print_to_screen(const std::string label);
 
 #include <splashscreen_visu.cpp>
+#include <whc_report.h>
+#include <savereport_window.cpp>
+
 #include <CORE_6.cpp>
 
 

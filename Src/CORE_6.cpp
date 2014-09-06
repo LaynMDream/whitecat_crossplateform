@@ -1356,38 +1356,6 @@ int affect_mover_to_fader(int thefader, int thedock)
     return(0);
 }
 
-int reset_error_on_save_load()
-{
-    for (int f=0; f<256; f++)
-    {
-        b_report_error[f]=0;
-    }
-    there_is_an_error_on_save_load=0;
-    return(0);
-}
-
-int detect_error_on_save_load()
-{
-    for (int f=0; f<256; f++)
-    {
-        if( b_report_error[f]==1)
-        {
-            there_is_an_error_on_save_load=1;
-            break;
-        }
-    }
-    return(0);
-}
-
-int clear_report_string()
-{
-    for(int i=0; i<256 ; i++)
-    {
-        sprintf(string_save_load_report[i],"-");
-    }
-    reset_error_on_save_load();
-    return(0);
-}
 
 int clear_xyrelativ_preset(int pr)
 {

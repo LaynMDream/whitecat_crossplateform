@@ -68,7 +68,8 @@ for(int i=0;i<63;i++)
 switch(window_opened[i])
 {
         case W_SAVEREPORT:
-        if( mouse_x>= report_SL_X && mouse_x<= report_SL_X+350 && mouse_y>=report_SL_Y && mouse_y<=report_SL_Y+160)
+        //if( mouse_x>= report_SL_X && mouse_x<= report_SL_X+350 && mouse_y>=report_SL_Y && mouse_y<=report_SL_Y+160)
+        if(mouseover_Show_report_save_load ())
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_TRICHROMY:
