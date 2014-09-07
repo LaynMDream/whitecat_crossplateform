@@ -137,6 +137,9 @@ void save_load_print_to_screen(const std::string label);
 #include "plot_core9.cpp"
 #include "plot9.cpp"
 
+//en attendant d'intégrer le header avec toutes les fonctions besoin de déclarer ici les fonctions déplacées dans un autre fichier
+void Load_audiofiles_cues();
+
 #include <audio_core5.cpp>
 
 #include <save_show_13.cpp>

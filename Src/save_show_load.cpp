@@ -47,112 +47,188 @@ void Read_Data_from_File(const char * data_filename, void * data_ptr, size_t sin
 
     if ((fp=fopen( data_filename, "rb"))==NULL)
     {
-        sprintf(string_save_load_report[idf],"Error opening file %s", data_filename);
-        b_report_error[idf]=1;
+        Report_Error("Error opening file %s", data_filename);
     }
     else
     {
-        //sprintf(string_save_load_report[idf],"Opening file %s",  filename);
         if (fread(data_ptr, sizeof(bool),data_size, fp) !=data_size)
         {
-            sprintf(string_save_load_report[idf],"Size Error from %s", data_filename);
-            b_report_error[idf]=1;
+            Report_Error("Size Error from %s", data_filename);
         }
         else
-            sprintf(string_save_load_report[idf],"Data Loaded from %s", data_filename);
+            Report_FYI("Data Loaded from %s", data_filename);
         fclose(fp);
     }
-
-    idf++;
 }
 //sab 06/09/2014 FIN
 
-int load_midipreset()
+void load_network_conf()
 {
-    char temp_folder_midi[256];
-    sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name);
-    chdir(temp_folder_midi);
+    FILE *cfg_file = NULL ;
+    char read_buff[ 512 ] ;
 
-	Read_Data_from_File(file_midi_affectation, miditable,     sizeof(int), midi_affectation_size);
-	Read_Data_from_File(file_midi_send_out,    midi_send_out, sizeof(bool),midi_send_out_size);
-
-    load_Fader_state_to_midi_array();
-
-	//REROLL
-    strcpy(rep,"");
-    sprintf(rep,"%s",mondirectory);
-    chdir (rep);
-
-    return(0);
+    cfg_file = fopen("user\\config_network.txt", "rt" );
+    if( !cfg_file )
+    {
+        Report_Error("Pb à ouverture de config_network.txt");
+        printf("\nPb à ouverture de config_network.txt\n");
+    }
+    else
+    {
+        //premiere ligne les args
+        if( !fgets( read_buff , sizeof( read_buff ) ,cfg_file ) )
+        {
+            Report_Error("! config_network.txt");
+        }
+        else
+        {
+            fscanf( cfg_file , "%s\n" ,  IP_artnet_IN );
+            fgets( read_buff , sizeof( read_buff ) ,cfg_file );
+            fscanf( cfg_file , "%s\n" ,  IP_artnet_OUT );
+            fgets( read_buff , sizeof( read_buff ) ,cfg_file );
+            fscanf( cfg_file , "%d / %d /\n" ,  &serveurport_artnet, &clientport_artnet );
+            fgets( read_buff , sizeof( read_buff ) ,cfg_file );
+            fscanf( cfg_file , "%s\n" ,  IP_fantastick );
+            fgets( read_buff , sizeof( read_buff ) ,cfg_file );
+            fscanf( cfg_file , "%s\n" ,  specified_fs_ip );
+            fgets( read_buff , sizeof( read_buff ) ,cfg_file );
+            fscanf( cfg_file , "%d / %d / %d /\n" ,  &serveurport_iCat, &clientport_iCat, &nbre_d_envois_de_l_info );
+            fclose( cfg_file );
+        }
+    }
 }
 
-int load_onstart_config()
+void Load_audiofiles_cues()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
-    cfg_file = fopen("user/config_onstart.txt", "rt" );
+
+    char tmp_audio_f[512];
+    sprintf(tmp_audio_f,"audio\\%s\\audio_cues_in_out.txt",audio_folder);
+    cfg_file = fopen(tmp_audio_f, "rt" );
+
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"!config_onstart.txt");
+        Report_Error("Error on opening %s",tmp_audio_f);
     }
     else
     {
         //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! config_onstart.txt");
+            Report_Error("Error on reading audio_cues_in_out.txt");
+        }
+        else
+        {
+            int temp_ain[128];
+            int temp_aout[128];
+            int index_af=0;
+            bool index_stop=0;
+            for(int u=0; u<127; u++)
+            {
+                fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file );
+                char tmp_name_f[72];
+                sscanf(read_buff_winfil , "%s / %d / %d\n" ,  tmp_name_f,&temp_ain[index_af],&temp_aout[index_af] );
+
+                for(int po=0; po<127; po++)
+                {
+                    if(strcmp(list_audio_files[po],tmp_name_f)==0 && index_stop==0)
+                    {
+                        audiofile_cue_in_out_pos[po][0]=temp_ain[index_af];
+                        audiofile_cue_in_out_pos[po][1]=temp_aout[index_af];
+                        index_stop=1;
+                        index_af++;
+                    }
+                }
+                index_stop=0;
+            }
+        }
+        Report_FYI("audio_cues_in_out.txt readed");
+        fclose( cfg_file );
+    }
+}
+
+void load_midipreset()
+{
+    char temp_folder_midi[256];
+    sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name);
+    chdir(temp_folder_midi);
+
+    Read_Data_from_File(file_midi_affectation, miditable,     sizeof(int), midi_affectation_size);
+    Read_Data_from_File(file_midi_send_out,    midi_send_out, sizeof(bool),midi_send_out_size);
+
+    load_Fader_state_to_midi_array();
+
+    //REROLL
+    strcpy(rep,"");
+    sprintf(rep,"%s",mondirectory);
+    chdir (rep);
+}
+
+void load_onstart_config()
+{
+    FILE *cfg_file = NULL ;
+    char read_buff_winfil[ 512 ] ;
+
+    cfg_file = fopen("user/config_onstart.txt", "rt" );
+    if( !cfg_file )
+    {
+        Report_Error("!config_onstart.txt");
+    }
+    else
+    {
+        //premiere ligne les args
+        if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
+        {
+            Report_Error("! config_onstart.txt");
         }
 
         fscanf( cfg_file , "%d / %d / %d / %d /\n" ,  &load_camera_on_start, &open_arduino_on_open , &enable_iCat, &expert_mode);
 
         fclose( cfg_file );
     }
-    return(0);
 }
 
-int load_screen_config()
+void load_screen_config()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("user/config_screens.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"!config_screens.txt");
+        Report_Error("!config_screens.txt");
     }
     else
     {
         //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! config_screens.txt");
+            Report_Error("! config_screens.txt");
         }
 
         fscanf( cfg_file , "%d / %d %d / %d %d /\n" ,  &index_fullscreen, &largeur_ecran, &hauteur_ecran, &posX_mainwindow, &posY_mainwindow);
 
         fclose( cfg_file );
     }
-
-    return(0);
 }
 
-int load_core_config()
+void load_core_config()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("user/config_core.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"!config_core.txt");
+        Report_Error("!config_core.txt");
     }
     else
     {
         //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! config_core.txt");
+            Report_Error("! config_core.txt");
         }
         else
         {
@@ -161,7 +237,7 @@ int load_core_config()
         //deuxieme ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! config_core.txt");
+            Report_Error("! config_core.txt");
         }
         else
         {
@@ -171,7 +247,7 @@ int load_core_config()
         //troisieme ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! config_core.txt");
+            Report_Error("! config_core.txt");
         }
         else
         {
@@ -180,10 +256,9 @@ int load_core_config()
 
         fclose( cfg_file );
     }
-    return(0);
 }
 
-int Load_Launchpad_RetroLight()
+void Load_Launchpad_RetroLight()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
@@ -191,14 +266,14 @@ int Load_Launchpad_RetroLight()
     cfg_file = fopen("user/launchpad_lighting.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"! launchpad_lighting.txt");
+        Report_Error("! launchpad_lighting.txt");
     }
     else
     {
         //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! launchpad_lighting.txt");
+            Report_Error("! launchpad_lighting.txt");
         }
 
         fscanf( cfg_file ,  "%d / %d / %d / %d / %d / %d /\n" ,  &lch_orange, &lch_green, &lch_yellow, &lch_red, &lch_ambre, &lch_orange_fonce);
@@ -212,17 +287,16 @@ int Load_Launchpad_RetroLight()
     launchpad_color[3]=lch_red;//15;
     launchpad_color[4]=lch_ambre;//31;
     launchpad_color[5]=lch_orange_fonce;//30;
-    return(0);
 }
 
-int load_draw_preset_config()
+void load_draw_preset_config()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
     cfg_file = fopen("draw_presets_states.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"!draw_presets_states.txt");
+        Report_Error("!draw_presets_states.txt");
     }
 
     else
@@ -230,7 +304,7 @@ int load_draw_preset_config()
 
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! draw_presets_states.txt");
+            Report_Error("! draw_presets_states.txt");
         }
 
         for(int i=0; i<6; i++)
@@ -238,12 +312,12 @@ int load_draw_preset_config()
 
             if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
             {
-                sprintf(string_save_load_report[idf],"! draw_presets_states.txt");
+                Report_Error("! draw_presets_states.txt");
             }
 
             if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
             {
-                sprintf(string_save_load_report[idf],"! draw_presets_states.txt");
+                Report_Error("! draw_presets_states.txt");
             }
 
             fscanf( cfg_file , "M %d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_tilt_to_do[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
@@ -270,123 +344,119 @@ int load_draw_preset_config()
         }
         fclose( cfg_file );
     }
-
-    return(0);
 }
 
-int load_arduino_config()
+void load_arduino_config()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("arduino.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"!arduino.txt");
+        Report_Error("!arduino.txt");
     }
     else
     {
         //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! arduino.txt");
+            Report_Error("! arduino.txt");
         }
 
         fscanf( cfg_file , "%d / %d / %d / %d / %d / %d /\n" ,  &arduino_com0, &arduino_baud_rate0, &ARDUINO_RATE, &arduino_max_digital,  &arduino_max_out_digi, &arduino_max_analog );
         fclose( cfg_file );
     }
-    return(0);
 }
 
 //user: windows
-int Load_Window_Conf()
+void Load_Window_Conf()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("config_windows.txt", "rt" );
+
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"!config_windows.txt");
+        Report_Error("!config_windows.txt");
     }
     else
     {
-//premiere ligne les args
+        //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"! config_windows.txt");
+            Report_Error("! config_windows.txt");
         }
         fscanf( cfg_file , "%d %d / %d %d / %d %d / %d %d /\n" ,  &xtrichro_window, &ytrichro_window, &xnum_window,&ynum_window,&videoX,&videoY, &xpatch_window, &ypatch_window);
-//2eme ligne
+        //2eme ligne
         if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
+            Report_Error("Error reading config_windows.txt");
         }
         fscanf( cfg_file , "%d %d / %d %d / %d %d /\n" ,  &report_SL_X, &report_SL_Y , &xtime_window, &ytime_window,&xseq_window, &yseq_window);
-//3eme ligne
+        //3eme ligne
         if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
+            Report_Error("Error reading config_windows.txt");
         }
         fscanf( cfg_file ,"%d / %d %d / %d %d /\n",&YFader, &XConfirm, &YConfirm, &xsave_window, &ysave_window );
-//4eme ligne
+        //4eme ligne
         if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
+            Report_Error("Error reading config_windows.txt");
         }
         fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d /\n",&XAlarm,&YAlarm,&XAudio,&YAudio, &window_cfgX, &window_cfgY, &X_banger, &Y_banger);
-//5eme ligne
+        //5eme ligne
         if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
+            Report_Error("Error reading config_windows.txt");
         }
         fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d / %d %d /\n",&Xwizard,&Ywizard,&xMinifaders,&yMinifaders, &Xlistproj, &Ylistproj, &Xchasers, &Ychasers,&xmover_window, &ymover_window);
 
-//6eme ligne
+        //6eme ligne
         if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error reading config_windows.txt");
+            Report_Error("Error reading config_windows.txt");
         }
         fscanf( cfg_file ,"%d %d / %d %d / %d %d / %d %d / %d %d / %d %d /\n",&X_gui_iCat,&Y_gui_iCat,&grider_window_x,&grider_window_y, &x_plot, &y_plot, &x_mainmenu, &y_mainmenu , &x_Wdraw, &y_Wdraw, &x_echo, &y_echo);
 
 
         fclose( cfg_file );
     }
-    return(0);
 }
 
-int Load_Sequenciel_Conf()
+void Load_Sequenciel_Conf()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("sequenciel.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"Error on opening Sequenciel.txt");
-        b_report_error[idf]=1;
+        Report_Error("Error on opening Sequenciel.txt");
     }
     else
     {
-        sprintf(string_save_load_report[idf],"Sequenciel.txt opened");
-//premiere ligne les args
+        //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error on reading Sequenciel.txt");
-            b_report_error[idf]=1;
+            Report_Error("Error on reading Sequenciel.txt");
         }
         else
         {
-            sprintf(string_save_load_report[idf],"Sequenciel.txt readed");
+            Report_FYI("Sequenciel.txt readed");
         }
         fscanf( cfg_file , "%d / %d / %d / %d / %d /\n" ,  &position_onstage, &position_preset, &niveauX1, &niveauX2, &crossfade_speed);
         fscanf( cfg_file , "%f /\n" ,  &default_time);
         fscanf( cfg_file , "%d %d /\n" ,  &go_channel_is, &pause_channel_is);
         fclose( cfg_file );
     }
+
     midi_levels[491]=niveauX1/2;
     midi_levels[492]=127-(niveauX2/2);
     midi_levels[493]=crossfade_speed;
+
     if(go_channel_is<1 || ( go_channel_is> 512))
     {
         go_channel_is=0;
@@ -395,39 +465,35 @@ int Load_Sequenciel_Conf()
     {
         pause_channel_is=0;
     }
-    return(0);
 }
 
-int Load_setup_conf()
+void Load_setup_conf()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("user/general_set_up.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"Error on opening user/general_set_up.txt");
-        b_report_error[idf]=1;
+        Report_Error("Error on opening user/general_set_up.txt");
     }
     else
     {
-        sprintf(string_save_load_report[idf],"user/general_set_up.txt opened");
-//premiere ligne les args
+        //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error on reading user/general_set_up.txt");
-            b_report_error[idf]=1;
+            Report_Error("Error on reading user/general_set_up.txt");
         }
         else
         {
-            sprintf(string_save_load_report[idf],"user/general_set_up.txt readed");
+            Report_FYI("user/general_set_up.txt readed");
         }
         fscanf( cfg_file , "%d / %d / %d / %d / %d / %d / %d / %d / %f /\n" , &default_step_level, &wheellevel_absolutemode, &check_channel_level,
                 &dimmer_check_level, &index_blink_change_memories, &index_midi_auto_desaffect, &dmx_view, &index_preloaded_sounds, &default_time_of_the_bang);
-//2eme ligne
+        //2eme ligne
         if( !fgets( read_buff_winfil, sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error reading general_set_up.txt");
+            Report_Error("Error reading general_set_up.txt");
         }
         fscanf( cfg_file , "%d / %d / %d /\n",&automatic_time_for_save, &index_nbre_players_visibles, &LargeurEspaceFaderSize);
 
@@ -442,11 +508,9 @@ int Load_setup_conf()
     {
         LargeurEspaceFaderSize=largeur_ecran;
     }
-
-    return(0);
 }
 
-int load_indexes()
+void load_indexes()
 {
     auto_reset_crossfade_speed_on_link=index_report_customs[0];
     nbre_memoires_visualisables_en_preset=index_report_customs[1];
@@ -478,8 +542,8 @@ int load_indexes()
     index_allow_sunlite_dmxIN=index_report_customs[27];//sunlite
     index_config_general=index_report_customs[28];
     niveauGMaster=index_report_customs[29];//grand master
-//tochanDMXIN=index_report_customs[30];//usbdmx512online
-//VellemanMaxGradas=index_report_customs[31];//Velleman
+    //tochanDMXIN=index_report_customs[30];//usbdmx512online
+    //VellemanMaxGradas=index_report_customs[31];//Velleman
     echo_selected=index_report_customs[32];
     index_allow_multicore=index_report_customs[33];
     allow_artnet_in=index_report_customs[34];
@@ -488,14 +552,14 @@ int load_indexes()
     index_config_network=index_report_customs[37];
     index_setup_gfx=index_report_customs[38];
     core_to_assign=index_report_customs[39];
-//index_show_config_window=index_report_customs[40];
-//index_grider_window=index_report_customs[41];
+    //index_show_config_window=index_report_customs[40];
+    //index_grider_window=index_report_customs[41];
     show_global_view_grider=index_report_customs[42];
     enable_launchpad=index_report_customs[43];
-//index_show_wizard_window=index_report_customs[44];
+    //index_show_wizard_window=index_report_customs[44];
     config_page_is=index_report_customs[45];
-//index_show_minifaders=index_report_customs[46];
-//index_window_chasers=index_report_customs[47];
+    //index_show_minifaders=index_report_customs[46];
+    //index_window_chasers=index_report_customs[47];
     nbre_track_visualisables=index_report_customs[48];
     chaser_operator_is=index_report_customs[49];
     chaser_selected=index_report_customs[50];
@@ -504,9 +568,9 @@ int load_indexes()
     index_enable_edit_chaser=index_report_customs[53];
     chaser_midi_rows=index_report_customs[54];
     line_list_is=index_report_customs[55];
-//name_will_be_for_annotation=index_report_customs[56];
-//index_show_mover_window=index_report_customs[57];
-//index_window_gui_iCat=index_report_customs[58];
+    //name_will_be_for_annotation=index_report_customs[56];
+    //index_show_mover_window=index_report_customs[57];
+    //index_window_gui_iCat=index_report_customs[58];
     iCatPageis=index_report_customs[59];
     surface_type=index_report_customs[60];
     grid_icat_modulo=index_report_customs[61];
@@ -519,7 +583,7 @@ int load_indexes()
     Midi_Force_Go=index_report_customs[68];
 
 
-//icat
+    //icat
     if(surface_type==0)
     {
         L_tablier_iCat=240;
@@ -543,8 +607,6 @@ int load_indexes()
     {
         midi_levels[615]=127;
     }
-
-
 
     if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
     {
@@ -578,62 +640,52 @@ int load_indexes()
         break;
     }
 
-//nbre memoires sequenciel
+    //nbre memoires sequenciel
     if(nbre_memoires_visualisables_en_preset<5)
     {
         nbre_memoires_visualisables_en_preset=5;
     }
     hauteur_globale_sequenciel=180+(35*(nbre_memoires_visualisables_en_preset+1))+35;
 
-//chaser midi refresh window
+    //chaser midi refresh window
     set_refresh_mode_for_chaser(refresh_midi_chasers);
 
-
-//draw
-
-    return(0);
+    //draw
 }
 
-int load_show_coming_from()
+void load_show_coming_from()
 {
-
     FILE *cfg_file = NULL ;
-    //sab 02/03/2014 unused var char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("user/show_coming_from.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"Error on opening user/show_coming_from.txt");
-        b_report_error[idf]=1;
+        Report_Error("Error on opening user/show_coming_from.txt");
     }
     else
     {
-        sprintf(string_save_load_report[idf],"user/show_coming_from.txt opened");
+        Report_FYI("user/show_coming_from.txt opened");
     }
     fgets( my_show_is_coming_from , sizeof( my_show_is_coming_from ) ,cfg_file ) ;
     fclose( cfg_file );
-    sprintf(string_save_load_report[idf],"loaded show_coming_from.txt");
-
-    return(0);
+    Report_FYI("loaded show_coming_from.txt");
 }
 
-int Load_User_Profile()
+void Load_User_Profile()
 {
-
     FILE *fpA;
 
     if ((fpA=fopen(file_color_profile, "rb"))==NULL)
     {
-        sprintf(string_save_load_report[idf],"Error opening file %s", file_color_profile);
+        Report_Error("Error opening file %s", file_color_profile);
     }
     else
     {
-        sprintf(string_save_load_report[idf],"Opening file %s",   file_color_profile);
         if (fread( couleurs_user, sizeof(float), color_profile_size, fpA) !=color_profile_size)
         {
-            sprintf(string_save_load_report[idf],"Error Loaded %s", file_color_profile);
+            Report_Error("Error Loaded %s", file_color_profile);
         }
-        else sprintf(string_save_load_report[idf],"Loaded file %s",file_color_profile);
+        else Report_FYI("Loaded file %s",file_color_profile);
         fclose(fpA);
     }
     for(int tmp=0; tmp<12; tmp++)
@@ -680,39 +732,32 @@ int Load_User_Profile()
             break;
         }
     }
-    return(0);
 }
 
-int Load_Audio_Conf()
+void Load_Audio_Conf()
 {
     FILE *cfg_file = NULL ;
     char read_buff_winfil[ 512 ] ;
-    //sab 02/03/2014 unused var int it=0;
+
     cfg_file = fopen("audio_conf.txt", "rt" );
     if( !cfg_file )
     {
-        sprintf(string_save_load_report[idf],"Error on opening Sequenciel.txt");
-        b_report_error[idf]=1;
+        Report_Error("Error on opening Sequenciel.txt");
     }
     else
     {
-        sprintf(string_save_load_report[idf],"audio_conf.txt opened");
-//premiere ligne les args
+        //premiere ligne les args
         if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
         {
-            sprintf(string_save_load_report[idf],"Error on reading audio_conf.txt");
-            b_report_error[idf]=1;
+            Report_Error("Error on reading audio_conf.txt");
         }
         else
         {
-            sprintf(string_save_load_report[idf],"audio_conf.txt readed");
+            Report_FYI("audio_conf.txt readed");
         }
         fscanf( cfg_file , "%s\n" ,  audio_folder);
         fclose( cfg_file );
     }
-
-
-    return(0);
 }
 
 void Load_Show()
@@ -723,6 +768,8 @@ void Load_Show()
     reset_all_bangers();
     clear_report_string();
     idf=0;
+    position_view_line=0;
+
     //POUR RAFRAICHIR CORRECTEMENT LES VARIABLES DE POSITIONS DE FENETRES ( TIME WHEEL COLOR WHEEL) AVANT CALCULS
     Load_Window_Conf();
 
@@ -737,7 +784,7 @@ void Load_Show()
         Read_Data_from_File(file_mem_exclues, MemoiresExclues, sizeof(bool), mem_exclues_size);
         //
         Load_Sequenciel_Conf();
-        idf++;
+
         //rafraichissement potards midi
         index_send_midi_out[491]=1;
         index_send_midi_out[492]=1;
@@ -760,7 +807,6 @@ void Load_Show()
     if(specify_who_to_save_load[4]==1)/////MEMOIRES ratio manuel////////////////////
         Read_Data_from_File(file_manual_ratio_mem, ratio_cross_manuel, sizeof(int), ratio_mem_size);
 
-
     if(specify_who_to_save_load[5]==1)//channels LIST////////////////////
     {
         Read_Data_from_File(file_spotlist, descriptif_projecteurs, sizeof(char), spotlist_size);
@@ -778,29 +824,27 @@ void Load_Show()
         {
             count_number_of_channels_in_view(i);
         }
-
     }
 
     if(specify_who_to_save_load[6]==1)/////Channels Direct Channels/////////////////
     {
         Read_Data_from_File(file_direct_channel, FaderDirectChan, sizeof(int), fader_direct_chan_size);
-		//mise à plat d init si souci
-		for(int i=0; i<48; i++)
-		{
-			for (int j=0; j<6; j++)
-			{
-				if(FaderDirectChan[i][j]<1)
-				{
-					FaderDirectChan[i][j]=1;
-				}
-				if(FaderDirectChan[i][j]>512)
-				{
-					FaderDirectChan[i][j]=512;
-				}
-			}
-		}
+        //mise à plat d init si souci
+        for(int i=0; i<48; i++)
+        {
+            for (int j=0; j<6; j++)
+            {
+                if(FaderDirectChan[i][j]<1)
+                {
+                    FaderDirectChan[i][j]=1;
+                }
+                if(FaderDirectChan[i][j]>512)
+                {
+                    FaderDirectChan[i][j]=512;
+                }
+            }
+        }
     }
-
 
     if(specify_who_to_save_load[7]==1)/////Channels Freeze/////////////////////////
     {
@@ -816,7 +860,6 @@ void Load_Show()
         generate_channel_view_list_from_patched_circuits();
     }
 
-
     if(specify_who_to_save_load[9]==1)/////Patch LTP-HTP/////////////////////////////////
         Read_Data_from_File(file_patch_ltp, dimmer_type, sizeof(bool),patch_ltp_size);
 
@@ -831,7 +874,6 @@ void Load_Show()
         rest(10);
     }
 
-
     if(specify_who_to_save_load[11]==1)/////Banger//////////////////////////////////
     {
         Read_Data_from_File(file_bangers_names, bangers_name, sizeof(char), banger_name_size);
@@ -843,7 +885,6 @@ void Load_Show()
         Read_Data_from_File(file_bangers_loop, do_loop_banger, sizeof(bool), banger_loop_size);
         Read_Data_from_File(file_bangers_looptime, time_loop_banger, sizeof(float), banger_looptime_size);
     }
-
 
     if(specify_who_to_save_load[12]==1) ////FADERS CONTENT//////////////////////////
     {
@@ -860,22 +901,22 @@ void Load_Show()
         Read_Data_from_File(file_fader_before_lock, StateOfFaderBeforeLock, sizeof(unsigned char),fader_before_lock_size);
         Read_Data_from_File(file_color_to_dock, colorpreset_linked_to_dock, sizeof(int),fader_color_to_dock_size);
 
-		//Audio dans faders
+        //Audio dans faders
         int temp_array_audio[48*3][6];
         Read_Data_from_File(file_fader_audio, temp_array_audio, sizeof(int),fader_audio_size);
         if (b_report_error[idf-1]==0)
-		{
-			//rafraichissement tableau
-			for(int u=0; u<48; u++)
-			{
-				for(int l=0; l<6; l++)
-				{
-					DockHasAudioVolume[u][l]=temp_array_audio[u][l];
-					DockHasAudioPan[u][l]=temp_array_audio[u+48][l];
-					DockHasAudioPitch[u][l]=temp_array_audio[u+96][l];
-				}
-			}
-		}
+        {
+            //rafraichissement tableau
+            for(int u=0; u<48; u++)
+            {
+                for(int l=0; l<6; l++)
+                {
+                    DockHasAudioVolume[u][l]=temp_array_audio[u][l];
+                    DockHasAudioPan[u][l]=temp_array_audio[u+48][l];
+                    DockHasAudioPitch[u][l]=temp_array_audio[u+96][l];
+                }
+            }
+        }
 
         Read_Data_from_File(file_chaser_to_fader, ChaserAffectedToDck, sizeof(int),fader_chaser_to_fader_size);
         Read_Data_from_File(file_mem_to_dock, DockHasMem, sizeof(int),fader_mem_to_dock_size);
@@ -889,7 +930,6 @@ void Load_Show()
 
         Read_Data_from_File(file_fader_echo, echo_affected_to_dock, sizeof(int),fader_echo_size);
     }
-
 
     if(specify_who_to_save_load[13]==1) ////FADERS LFOs//////////////////////////
     {
@@ -957,10 +997,8 @@ void Load_Show()
         Read_Data_from_File(file_chaser_has_mem,TrackHasMem, sizeof(int), chaser_has_mem_size);
     }
 
-
     if(specify_who_to_save_load[17]==1) /////////////MIDI AFFECTATION///////////////
     {
-
         save_load_print_to_screen("Loading Midi Config");
         Read_Data_from_File(file_midi_affectation, miditable, sizeof(int),midi_affectation_size);
         Read_Data_from_File(file_midi_send_out, midi_send_out, sizeof(bool),midi_send_out_size);
@@ -993,9 +1031,9 @@ void Load_Show()
         rest(10);
     }
 
-	////////////////////////////////////////////////////////////////////////////////
-	//////////////VIDEO TRACKING////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //////////////VIDEO TRACKING////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
     if(specify_who_to_save_load[20]==1)/////////////TRACKING VIDEO//////////////////
     {
         save_load_print_to_screen("Loading Video Tracking");
@@ -1007,11 +1045,11 @@ void Load_Show()
         refresh_ocv_settings();
     }
 
-	///////////////////TIME////////////////////////////////////////////////////////
-	//pour pos curseur
-		refresh_time_cursor();
+    ///////////////////TIME////////////////////////////////////////////////////////
+    //pour pos curseur
+    refresh_time_cursor();
 
-	////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
 
     if(specify_who_to_save_load[27]==1)/////////////////INDEXES/////////////////////
         Read_Data_from_File(file_divers_index, index_report_customs, sizeof(int), index_size);
@@ -1031,11 +1069,9 @@ void Load_Show()
 
     if(specify_who_to_save_load[22]==1)//AUDIO CONF//////////////////////////////////
     {
-
         Load_Audio_Conf();
-        idf++;
 
-		//audio autoload autopause
+        //audio autoload autopause
         bool temp_audio_array[8];
         Read_Data_from_File(file_audio_autoloadpause, temp_audio_array, sizeof(bool), audio_autoloadpause_size);
         for(int i=0; i<4; i++)
@@ -1044,9 +1080,9 @@ void Load_Show()
             audio_autopause[i]=temp_audio_array[i+4];
         }
 
-		//audio file number
+        //audio file number
         Read_Data_from_File(file_audio_filenumber, player_has_file_coming_from_pos, sizeof(int), audio_filenumber_size);
-		//position player
+        //position player
         Read_Data_from_File(file_audio_playerposition, player_position_on_save, sizeof(int), audio_playerposition_size);
     }
 
@@ -1059,7 +1095,6 @@ void Load_Show()
         Read_Data_from_File(file_arduino_an_aff, arduino_analog_attribution_input, sizeof(int),arduino_an_aff_size);
         Read_Data_from_File(file_arduino_dig_out, arduino_digital_function_output, sizeof(int),arduino_dig_out_size);
     }
-
 
     if(specify_who_to_save_load[25]==1)  ///USER COLOR PROFILE//////////////////////////////////////////////////
         Read_Data_from_File(file_color_profile, couleurs_user, sizeof(int),color_profile_size);
@@ -1088,14 +1123,14 @@ void Load_Show()
             H_tablier_iCat=160;
         }
 
-		//buttons
+        //buttons
         Read_Data_from_File(file_icat_nbbutton, iCat_nbre_de_boutons, sizeof(int),icat_nbbutton_size);
         Read_Data_from_File(file_icat_pobutton, iCat_pos_bouton, sizeof(int),icat_pobutton_size);
         Read_Data_from_File(file_icat_size_buttons, ratio_iCat_button, sizeof(int),icat_sizebuttons_size);
         Read_Data_from_File(file_icat_typbutton, iCat_affectation_bouton_type_is, sizeof(int),icat_typbutton_size);
         Read_Data_from_File(file_icat_actbutton, iCat_affectation_bouton_action_is, sizeof(int),icat_actbutton_size);
         Read_Data_from_File(file_icat_valbutton, iCat_affectation_bouton_value_is, sizeof(int),icat_valbutton_size);
-		//strings
+        //strings
         Read_Data_from_File(file_icat_nbstr, iCat_nbre_de_strings, sizeof(int),icat_nbstr_size);
         Read_Data_from_File(file_icat_posstr, iCat_pos_string, sizeof(int),icat_posstr_size);
         Read_Data_from_File(file_icat_sizestr, ratio_iCat_string, sizeof(int),icat_sizestr_size);
@@ -1114,23 +1149,23 @@ void Load_Show()
     {
         Read_Data_from_File(file_mover_mem, dock_move_xy, sizeof(int),mover_mem_saving_size);
         Read_Data_from_File(file_mover_mem16b, dock_move_xy_16b, sizeof(int),mover_mem_saving_size);
-		//nb steps
+        //nb steps
         Read_Data_from_File(file_mover_numbersteps, dock_moves_contains_steps, sizeof(int), mover_little_32file_size);
-		//actual step is
+        //actual step is
         Read_Data_from_File(file_mover_stepis, dock_move_actual_step, sizeof(int), mover_little_32file_size);
-		//divers
+        //divers
         Read_Data_from_File(file_mover_divers, valeurs_diverses, sizeof(int), mover_little_32file_size);
-		//ratio spline
+        //ratio spline
         Read_Data_from_File(file_mover_spline_ratio, spline_ratio, sizeof(float), mover_little_32file_size);
-		//iris flous divers parametres asservis
+        //iris flous divers parametres asservis
         Read_Data_from_File(file_asservis_mem, dock_asservis, sizeof(float), mover_asservis_saving_size);
-		//times
+        //times
         Read_Data_from_File(file_mover_time, dock_time, sizeof(float), mover_time_size);
-		//autostop
+        //autostop
         Read_Data_from_File(file_mover_autostop, move_auto_stop, sizeof(bool), mover_autostop_size);
-		//gotos
+        //gotos
         Read_Data_from_File(file_mover_goto, GotoMoves, sizeof(int), mover_goto_size);
-		//intos
+        //intos
         Read_Data_from_File(file_mover_into, Moves_Inpoint, sizeof(int), mover_little_32file_size);
         Read_Data_from_File(file_mover_params, mover_params_adresses, sizeof(int), mover_param_size);
 
@@ -1161,7 +1196,7 @@ void Load_Show()
         rest(10);
     }
 
-	////////////GRID////////////////////////////////////////////////////////////////
+    ////////////GRID////////////////////////////////////////////////////////////////
     if(specify_who_to_save_load[29]==1)
     {
         Read_Data_from_File(file_grid_levels_1, temp_grid_levels_for_save, sizeof(unsigned char), grid_levels_size);
@@ -1211,14 +1246,14 @@ void Load_Show()
                 }
             }
         }
-		//fin du groupe des grids levels
+        //fin du groupe des grids levels
 
         Read_Data_from_File(file_grid_times, grid_times, sizeof(float), grid_times_size);
         Read_Data_from_File(file_grid_goto, grid_goto, sizeof(int), grid_goto_size);
         Read_Data_from_File(file_grid_seekpos, grid_seekpos, sizeof(int), grid_seekpos_size);
         Read_Data_from_File(file_grid_stoplay, grid_stoplay, sizeof(bool), grid_stoplay_size);
         Read_Data_from_File(file_grid_names, grider_name, sizeof(char), grid_names_size);
-		//les grids players
+        //les grids players
         Read_Data_from_File(file_gridpl_grid, index_grider_selected, sizeof(int),gridpl_size);
         Read_Data_from_File(file_gridpl_step, index_grider_step_is, sizeof(int),gridpl_size);
         Read_Data_from_File(file_gridpl_autost, grider_autostopmode, sizeof(bool),gridpl_size);
@@ -1230,7 +1265,7 @@ void Load_Show()
         Read_Data_from_File(file_gridpl_accel, grid_crossfade_speed, sizeof(int),gridpl_size);
         Read_Data_from_File(file_gridpl_countmod, grider_count_mode, sizeof(bool),gridpl_size);
         Read_Data_from_File(file_gridpl_snapfader, GplSnapFader, sizeof(int),gridpl_snapfader_size);
-		//grider conf
+        //grider conf
         int grider_conf[3];
         Read_Data_from_File(file_grider_conf, grider_conf, sizeof(int),grider_conf_size);
         grider_begin_channel_is=grider_conf[0];
@@ -1248,7 +1283,7 @@ void Load_Show()
         {
             grider_begin_channel_is=1;
         }
-		//
+        //
         int grider_report_cross[8];
         Read_Data_from_File(file_gridpl_crosslv, grider_report_cross, sizeof(int),gridpl_croslv_size);
         for(int gr=0; gr<4; gr++)
@@ -1265,19 +1300,18 @@ void Load_Show()
         refresh_hauteur_fenetre_grider();
     }//fin grid
 
-	//GRIDPLAYER 1 in MEMS
+    //GRIDPLAYER 1 in MEMS
     if(specify_who_to_save_load[30]==1)
         Read_Data_from_File(file_grid_in_mems, set_from_seq_gridplayer1_next_step, sizeof(int),grid_in_mems_size);
 
-	//personnal save preset
+    //personnal save preset
     if(specify_who_to_save_load[35]==1)
     {
         Read_Data_from_File(file_save_preset, preset_specify_who_to_save_load, sizeof(bool),save_preset_size);
         Read_Data_from_File(file_save_pdf, specify_who_to_save_PDF, sizeof(bool),save_pdf_size);
     }
 
-
-	//DRAW
+    //DRAW
     if(specify_who_to_save_load[32]==1)
     {
         Read_Data_from_File(file_draw_presetsz, draw_preset_parameters, sizeof(int),draw_presetsz_size);
@@ -1285,10 +1319,9 @@ void Load_Show()
         Read_Data_from_File(file_draw_chrouting, draw_preset_channel_routing, sizeof(int),draw_chrouting_size);
 
         load_draw_preset_config();
-        idf++;
     }
 
-	//ECHO
+    //ECHO
     if(specify_who_to_save_load[33]==1)
     {
         Read_Data_from_File(file_echo_pointing_fader, echo_pointing_fader_num, sizeof(int),echo_pointing_fader_size);
@@ -1301,7 +1334,7 @@ void Load_Show()
         Read_Data_from_File(file_echo_presets, snap_echo_to_recall, sizeof(float),echo_presets_size);
     }
 
-	//////LIGHTING PLOT en dernier because repertoires
+    //////LIGHTING PLOT en dernier because repertoires
     if(specify_who_to_save_load[31]==1)
     {
         Read_Data_from_File(file_lib_sizes_symbol, size_symbol, sizeof(float),lib_sizes_symbol_size);
@@ -1342,11 +1375,10 @@ void Load_Show()
         {
             position_plan_x=0;
         }
-        idf++;
 
         load_plan_of_theatre(Name_of_plane_is, 0);
 
-		//plot venant de load_indexes
+        //plot venant de load_indexes
         if(view_plot_calc_number_is>3)
         {
             view_plot_calc_number_is=3;
@@ -1357,7 +1389,7 @@ void Load_Show()
     LoadWhiteCatColorProfil();// pas de fichiers, juste raffraichissement
     rest(10);
 
-	//reroll à garder pour pas larguer midishare
+    //reroll à garder pour pas larguer midishare
     sprintf(rep,"%s",mondirectory);
     chdir (rep);
 
@@ -1402,9 +1434,11 @@ void Load_Show()
         index_show_save_load_report=0;
         there_is_change_on_show_save_state=0;
     }
+
+    Show_report_save_load_nexterror ();
 }
 
-int load_the_show(char name_of_show[24])
+void load_the_show(char name_of_show[24])
 {
     index_is_saving=1;
     char vieux_nomduspectacle[24];
@@ -1418,10 +1452,9 @@ int load_the_show(char name_of_show[24])
     index_show_save_load_report=1;
     sprintf(my_show_is_coming_from,"Loaded from in %s",name_of_show);//pour retracer d ou vient la conduite
     write_show_coming_from();
-    return(0);
 }
 
-int do_wizard_reload_from_disk()
+void do_wizard_reload_from_disk()
 {
     index_save_global_is=0;
     set_all_saves_indexes_at(0);
@@ -1434,10 +1467,8 @@ int do_wizard_reload_from_disk()
     Load_Show();
     timer_save_tmp=0;
     index_is_saving=0;
-//remise en etat du systeme
+    //remise en etat du systeme
     set_all_saves_indexes_at(1);
     index_save_global_is=1;
-
-    return(0);
 }
 

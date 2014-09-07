@@ -59,6 +59,21 @@ bool mouseover_Show_report_save_load ()
                && mouse_y>= report_SL_Y && mouse_y<= report_SL_Y+320);
 }
 
+void Show_report_save_load_nexterror ()
+{
+	if (there_is_an_error_on_save_load==1)
+	for(int it=position_view_line+25; it<255; it++)
+	{
+		if(b_report_error[it]==1)
+		{
+			position_view_line = it ;
+			break;
+		}
+		if (it==254){it=0;}
+	}
+	else position_view_line =0;
+}
+
 void Show_report_save_load_logic ()
 {
     if ((window_focus_id==W_SAVEREPORT)
@@ -82,27 +97,22 @@ void Show_report_save_load_logic ()
         {
             position_view_line+=25;
             mouse_released=1;
-            if(position_view_line>229)  //(255-25))
+            if(position_view_line>230)  //(255-25))
             {
-                position_view_line=229 ; //(255-25);
+                position_view_line=230 ; //(255-25);
             }
         }
+    }
+    if ((there_is_an_error_on_save_load==1)
+	&&  (mouse_button==1 &&  mouse_released==0)
+    &&  (window_focus_id==W_SAVEREPORT)
+	&&  (mouse_x>report_SL_X+400 && mouse_x<report_SL_X+490)
+	&&  (mouse_y>report_SL_Y+136 && mouse_y<report_SL_Y+156))
+    {
         //there is error(s) - on clic on the message : scroll to next page reporting error(s)
-        if ((there_is_an_error_on_save_load==1)
-		&& ( mouse_y>report_SL_Y+136 && mouse_y<report_SL_Y+166))
-        {
-			if (position_view_line>=229) {position_view_line=0;}
-
-			for(int it=position_view_line+25; it<255; it++)
-			{
-				if(b_report_error[it]==1)
-				{
-					position_view_line = it ;
-					break;
-				}
-				if (it==254){it=0;}
-			}
-		}
+		if (position_view_line>=229) {position_view_line=0;}
+		Show_report_save_load_nexterror ();
+		mouse_released=1;
     }
 }
 
@@ -187,11 +197,11 @@ void Show_report_save_load_draw()
 
             if (nbr_error > 0)
             {
-                Rect AlarmFile(Vec2D(report_SL_X+440,report_SL_Y+136),Vec2D(50,20));
+                Rect AlarmFile(Vec2D(report_SL_X+400,report_SL_Y+136),Vec2D(90,20));
                 AlarmFile.SetRoundness(5);
                 AlarmFile.Draw(Rgba::RED.WithAlpha(alpha_blinker));
 
-                petitchiffre.Print( ol::ToString(nbr_error),report_SL_X+430, report_SL_Y+150, 20, RIGHT);
+                petitchiffre.Print( ol::ToString(nbr_error),report_SL_X+410, report_SL_Y+150, 40, RIGHT);
                 if (nbr_error==1)
                 {
                     petitchiffre.Print( " error", report_SL_X+450, report_SL_Y+150, 150, LEFT);

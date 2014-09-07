@@ -582,6 +582,34 @@ int get_current_time()
     return(0);
 }
 
+//sab 06/09/2014 DEB
+void Report_FYI(const char * c1)
+{
+	sprintf(string_save_load_report[idf],c1);
+	b_report_error[idf]=0;
+	idf++;
+}
+
+void Report_FYI(const char * c1, const char * c2)
+{
+	sprintf(string_save_load_report[idf],c1, c2);
+	b_report_error[idf]=0;
+	idf++;
+}
+
+void Report_Error(const char * c1)
+{
+	sprintf(string_save_load_report[idf],c1);
+	b_report_error[idf]=1;
+	idf++;
+}
+void Report_Error(const char * c1, const char * c2)
+{
+	sprintf(string_save_load_report[idf],c1, c2);
+	b_report_error[idf]=1;
+	idf++;
+}
+//sab 06/09/2014 FIN
 
 int Save_Core_Config()
 {
