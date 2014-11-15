@@ -234,12 +234,12 @@ if(mouse_y>y_seq+110 && mouse_y<y_seq+140)
 if(mouse_x> x_seq+10 && mouse_x<x_seq+50)//DELAYS
 {
 affect_time_entry_to_mem(2,position_preset);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+50 && mouse_x<x_seq+110)//IN OUT
 {
 affect_time_entry_to_mem(3,position_preset);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+110 && mouse_x<x_seq+170)//MEMS
 {
@@ -248,13 +248,13 @@ if(index_go==0 && index_pause==0 && index_go_back==0 )
 
 call_stage=1;call_preset=0;
 do_call_time_and_rec_f1_f2_f3(position_onstage);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(mouse_x> x_seq+170 && mouse_x<x_seq+180)//exclude mem from cuelist
 {
 MemoiresExclues[position_onstage]=toggle(MemoiresExclues[position_onstage]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x> x_seq+185 && mouse_x<x_seq+185+40)//LINKS
@@ -262,7 +262,7 @@ if(mouse_x> x_seq+185 && mouse_x<x_seq+185+40)//LINKS
 reset_indexs_confirmation();
 index_do_link_memonstage=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+225 && mouse_x<x_seq+265)//BANGER
 {
@@ -272,7 +272,7 @@ if(affect_banger_number>=0 && affect_banger_number<128)
 reset_indexs_confirmation();
 index_do_banger_memonstage=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: banger is between 1 and 127, 0 to desaffect !");}
 }
@@ -286,7 +286,7 @@ reset_indexs_confirmation();
 index_do_affect_step_gridplayer_to_mem=1;
 index_mem_to_be_affected_by_gpl=position_onstage;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: step is between 1 and 1024, 0 to desaffect !");}
 }
@@ -316,7 +316,7 @@ annotation_memoires[position_onstage][24]='\0';
 
 reset_numeric_entry();numeric_postext=0;
 someone_changed_in_sequences=1;//icat
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(index_text_auto_close==1){index_type=0;}
 
@@ -329,12 +329,12 @@ if(mouse_y>y_seq+140 && mouse_y<y_seq+170)
 if(mouse_x> x_seq+10 && mouse_x<x_seq+50)//DELAYS
 {
 affect_time_entry_to_mem(0,position_preset);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+50 && mouse_x<x_seq+110)//IN OUT
 {
 affect_time_entry_to_mem(1,position_preset);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+110 && mouse_x<x_seq+170)//MEMS
 {
@@ -344,20 +344,20 @@ if(index_go==0 && index_pause==0 && index_go_back==0 )//pas de cross en cours
 call_preset=1;call_stage=0;
 do_call_time_and_rec_f1_f2_f3(position_preset);
 
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else if((index_go==1 || index_pause==1 ) && index_go_back==0 ) //cross ou pause en cours
 {
  reset_indexs_confirmation();
  index_do_jump_while_cross=1;
  index_ask_confirm=1;
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 if(mouse_x> x_seq+170 && mouse_x<x_seq+180)//exclude mem from cuelist
 {
 MemoiresExclues[position_preset]=toggle(MemoiresExclues[position_preset]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x> x_seq+185  && mouse_x<x_seq+180+35)//LINKS
@@ -365,7 +365,7 @@ if(mouse_x> x_seq+185  && mouse_x<x_seq+180+35)//LINKS
 reset_indexs_confirmation();
 index_do_link_memonpreset=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+225 && mouse_x<x_seq+265)//BANGER
 {
@@ -375,7 +375,7 @@ if(affect_banger_number>=0 && affect_banger_number<128)
 reset_indexs_confirmation();
 index_do_banger_memonpreset=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: banger is between 1 and 127 !");}
 }
@@ -388,7 +388,7 @@ reset_indexs_confirmation();
 index_do_affect_step_gridplayer_to_mem=1;
 index_mem_to_be_affected_by_gpl=position_preset;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: step is between 1 and 1023, 0 to desaffect !");}
 }
@@ -414,7 +414,7 @@ annotation_memoires[position_preset][24]='\0';
 }
 someone_changed_in_sequences=1;//icat
 reset_numeric_entry();numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 }
@@ -425,7 +425,7 @@ if(mouse_y>y_seq+80 && mouse_y< y_seq+100)
 if(mouse_x> x_seq+170 && mouse_x<x_seq+180)//exclude mem from cuelist
 {
 MemoiresExclues[mem_before_one]=toggle(MemoiresExclues[mem_before_one]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x> x_seq+185  && mouse_x<x_seq+180+35)//LINKS
@@ -433,7 +433,7 @@ if(mouse_x> x_seq+185  && mouse_x<x_seq+180+35)//LINKS
 reset_indexs_confirmation();
 index_do_link_membefore=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x> x_seq+225 && mouse_x<x_seq+265)//BANGER
@@ -444,7 +444,7 @@ if(affect_banger_number>=0 && affect_banger_number<128)
 reset_indexs_confirmation();
 index_do_banger_membeforeone=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: banger is between 1 and 127 !");}
 }
@@ -457,7 +457,7 @@ reset_indexs_confirmation();
 index_do_affect_step_gridplayer_to_mem=1;
 index_mem_to_be_affected_by_gpl=mem_before_one;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: step is between 1 and 1023, 0 to desaffect !");}
 }
@@ -482,7 +482,7 @@ annotation_memoires[mem_before_one][tt]=numeric[tt];
 annotation_memoires[mem_before_one][24]='\0';
 }
 reset_numeric_entry();numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -506,12 +506,12 @@ if(mouse_x> x_seq+110 && mouse_x<x_seq+170)//MEMS
 {
 call_stage=0; call_preset=0;
 do_call_time_and_rec_f1_f2_f3(memsearch);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+170 && mouse_x<x_seq+180)//exclude mem from cuelist
 {
 MemoiresExclues[memsearch]=toggle(MemoiresExclues[memsearch]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 if(mouse_x> x_seq+185  && mouse_x<x_seq+180+35)//LINKS
@@ -520,7 +520,7 @@ other_mem_in_loop=memsearch;
 reset_indexs_confirmation();
 index_do_link_memother=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(mouse_x> x_seq+225 && mouse_x<x_seq+265)//BANGER
 {
@@ -531,7 +531,7 @@ other_mem_in_loop=memsearch;
 reset_indexs_confirmation();
 index_do_banger_memother=1;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: banger is between 1 and 127 !");}
 }
@@ -544,7 +544,7 @@ reset_indexs_confirmation();
 index_do_affect_step_gridplayer_to_mem=1;
 index_mem_to_be_affected_by_gpl=memsearch;
 index_ask_confirm=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {sprintf(string_Last_Order,">> Wrong entry: step is between 1 and 1023, 0 to desaffect !");}
 }
@@ -570,7 +570,7 @@ annotation_memoires[memsearch][tt]=numeric[tt];
 annotation_memoires[memsearch][24]='\0';
 }
 reset_numeric_entry();numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -616,7 +616,7 @@ sprintf(string_last_midi_id,"STAGE Fader is Ch: %d Pitch: %d Typ: %s" , miditabl
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(491,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -663,7 +663,7 @@ sprintf(string_last_midi_id,"Preset Fader is Ch: %d Pitch: %d Typ: %s" , miditab
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(492,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -689,7 +689,7 @@ if(niveauX1==0 && niveauX2==255)
 index_go=0; index_go_back=0; index_pause=0;
 next_mem_crossfade_finished(position_preset);
 index_x1_x2_together=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -733,7 +733,7 @@ if(mouse_x>  x_seq+540 && mouse_x<  x_seq+540+50 && mouse_y>y_seq+50 && mouse_y<
 {
 if(index_x1_x2_together==0){index_x1_x2_together=1;}
 else {index_x1_x2_together=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -764,7 +764,7 @@ sprintf(string_last_midi_id,"GO is Ch: %d Pitch: %d Typ: %s" , miditable[1][495]
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(495,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -773,7 +773,7 @@ if(index_go==1 && index_pause==0)
 {
 do_send_bang();
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -804,7 +804,7 @@ break;
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(494,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else
@@ -812,7 +812,7 @@ else
 do_go_back_function();
 int banger_back_is=Banger_Memoire[position_preset]-1;
 do_go_back_bang(banger_back_is);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -844,7 +844,7 @@ break;
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(496,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else
@@ -854,7 +854,7 @@ if(index_go==1 && index_pause==0)
 {
 do_send_bang();
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -886,7 +886,7 @@ sprintf(string_last_midi_id,"SpeedFader is Ch: %d Pitch: %d Typ: %s" , miditable
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(493,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -918,7 +918,7 @@ if(mouse_x> x_seq+655-10 && mouse_x<  x_seq+655+10 && mouse_y>y_seq+340-10 && mo
   else if(midi_send_out[491]==1){midi_send_out[491]=0; }
   //report pour x2 et speed crossfade
   midi_send_out[492]=midi_send_out[491];
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -928,7 +928,7 @@ if(mouse_x> x_seq+655-10 && mouse_x<  x_seq+655+10 && mouse_y>y_seq+340-10+85 &&
 {
   if(midi_send_out[493]==0){midi_send_out[493]=1; }
   else if(midi_send_out[493]==1){midi_send_out[493]=0; }
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
 }
 
 raccrochage_midi_logical_horizontal ( x_seq+490, y_seq+405, 493,127,13);
@@ -944,7 +944,7 @@ else
 {
 auto_reset_crossfade_speed_on_link=toggle(auto_reset_crossfade_speed_on_link);
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 return(0);
 }
@@ -965,21 +965,21 @@ if(mouse_x>xseq+180 && mouse_x<xseq+180+35 && mouse_y>yseq+50 && mouse_y<yseq+50
 {
 if(index_link_is_on==0){index_link_is_on=1;}
 else if(index_link_is_on==1){index_link_is_on=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 ///banger
 if(mouse_x>xseq+223 && mouse_x<xseq+263 && mouse_y>yseq+50 && mouse_y<yseq+50+15)
 {
 index_banger_is_on=toggle(index_banger_is_on);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //grid player 1 embeded
 if(mouse_x>xseq+275 && mouse_x<xseq+275+30 && mouse_y>yseq+50 && mouse_y<yseq+50+15 )
 {
 show_gridplayer_in_seq=toggle(show_gridplayer_in_seq);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -998,7 +998,7 @@ case 0:         //create
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(768,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1011,7 +1011,7 @@ case 1://delete mem
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(769,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1024,7 +1024,7 @@ case 2://stage minus
 if(  Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(770,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1047,7 +1047,7 @@ case 3://stage +
 if(  Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(771,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1071,7 +1071,7 @@ case 4://preset -
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(772,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1085,7 +1085,7 @@ case 5://preset +
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(773,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1099,7 +1099,7 @@ case 6://goto
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1645,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1120,7 +1120,7 @@ break;
 default:
 break;
 }//fin des switch
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1133,7 +1133,7 @@ if(show_gridplayer_in_seq==1)
 if(mouse_x>xseq+880-12 && mouse_x<xseq+880+12 && mouse_y>yseq+40-12 && mouse_y<yseq+40+12)
 {
 
-if(mouse_released==0)
+if((mouseLeftClic.eventProcessed==false))
 {
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -1144,7 +1144,7 @@ else
 if(index_grider_selected[0]>0)
 {index_grider_selected[0]--;}
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1152,7 +1152,7 @@ if(index_grider_selected[0]>0)
 if( mouse_x>xseq+910-12 && mouse_x<xseq+910+12 && mouse_y>yseq+40-12 && mouse_y<yseq+40+12)
 {
 
-if( mouse_released==0)
+if( (mouseLeftClic.eventProcessed==false))
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -1162,7 +1162,7 @@ else
 {
 if(index_grider_selected[0]<127){index_grider_selected[0]++;}
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1170,7 +1170,7 @@ do_logical_TheStepBox(xseq+660,yseq+90,0);
 do_logical_ThePlayCommands(xseq+760,yseq+90,0);
 do_logical_TheGrid_commands(xseq+660,yseq+130,0);//pos x, posy y, num player
 
-if(mouse_x>xseq+690 && mouse_x<xseq+690+105 && mouse_y>yseq+295 && mouse_y<yseq+295+15 && mouse_released==0)
+if(mouse_x>xseq+690 && mouse_x<xseq+690+105 && mouse_y>yseq+295 && mouse_y<yseq+295+15 && (mouseLeftClic.eventProcessed==false))
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
@@ -1185,7 +1185,7 @@ if(index_link_speed_crossfade_to_gpl1==1)
    midi_levels[1508]=crossfade_speed;
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 

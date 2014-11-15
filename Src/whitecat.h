@@ -105,7 +105,7 @@ W_GRID=926,
 W_MY_WINDOW=927
 };
 int max_window_identity_is=927;
-int index_to_navigate_between_window=0;
+//sab 12/07/2014 int index_to_navigate_between_window=0;
 
 int window_opened[72];//la liste des fenetres ouvertes modification en 0.4.1 d un size 64 en size 72,
 //y compris dans save_show.cpp
@@ -2206,17 +2206,20 @@ int taille_relative_plan_theatre[2];
 
 float orientation_plan_theatre;
 
-int old_position_relative_plan_theatre[2];
-int old_taille_relative_plan_theatre[2];
+//sab 29/09/2014 lot 3 int old_position_relative_plan_theatre[2];
+//sab 29/09/2014 lot 3 int old_taille_relative_plan_theatre[2];
 
 
 bool index_editing_theatre_plan=0;
 int original_posx=0;
 int original_posy=0;
-int moving_plan_relativ_x=0;
-int moving_plan_relativ_y=0;
+//sab 26/06/2014  int moving_plan_relativ_x=0;
+//sab 26/06/2014  int moving_plan_relativ_y=0;
 
-int editing_plan_data_type=0;
+int editing_plan_data_type=0;          // id of a graphical object : plot - background - plan button n° (position x,y &size x,y)
+/*sab 29/06/2014 lot 3 deb */
+int editing_plan_data_type_double=0;   // id of a graphical object - same as prévious / mangement of double clic on graphical object
+/*sab 29/06/2014 lot 3 fin */
 
 char Name_of_plane_is[256];
 char list_import_plans[127][256];//menu d affichage des list de plans
@@ -2224,6 +2227,11 @@ int importplan_selected=0;
 int line_importplan=0;
 
 float alpha_plan=1.0;
+//sab 28/06/2014 lot 2 DEB
+bool editing_plot_rotation=false;
+bool editing_plot_alphapic=false;
+bool editing_plot_alphagrid=false;
+//sab 28/06/2014 lot 2 FIN
 bool editing_plot_sizey=0;
 bool editing_plot_sizex=0;
 int moving_size_relativ_x=0;
@@ -2527,3 +2535,53 @@ float snap_echo_to_recall[24][513];
 HWND hwnd ;
 /*sab 27/07/2014 FIN */
 #endif // WHITECAT_GLOBAL_VAR_H_INCLUDED
+
+
+//sab 24/06/2014 - Doubleclic - Ajout - DEB
+/** \struct eventclic whitecat.h
+ *  \brief  mouse button event in timeline,
+ *
+ * with event management flags (event is processed, event is doubleclic)
+ */
+ typedef struct eventclic
+{
+   bool isDown, isDouble, eventProcessed ;
+   int  posx, posy, posz;
+   time_t timer;
+} eventclic;
+eventclic 	mouseLeftClic = {false, false, false, 0,0,0},
+			mouseMiddleClic = {false, false, false, 0,0,0},
+			mouseRightClic = {false, false, false, 0,0,0};
+std::deque<eventclic> mouseLeftClicHistory;
+std::deque<eventclic> mouseMiddleClicHistory;
+std::deque<eventclic> mouseRightClicHistory;
+double gapSecond;
+//sab 24/06/2014 - Doubleclic - Ajout - FIN
+
+//sab 26/06/2014 DEB - Reporté depuis fichier Main
+/** \struct eventwheel whitecat.h
+ *  \brief  mouse wheel event,
+ *
+ * with event management flag (event is processed), level of wheel, gap of level with previous level (-1 / +1)
+ */
+ typedef struct eventwheel
+{
+   bool eventProcessed ;
+   int  level, yield, gap, speed;
+} eventwheel;
+eventwheel mouseWheel = {true,0,0,0,0};
+
+/** \struct eventmove whitecat.h
+ *  \brief  mouse move event,
+ *
+ * with event management flag (event is processed), previous position, new position and gap between old-new mouse position
+ */
+typedef struct eventmove
+{
+   bool eventProcessed ;
+   int  from_x, from_y, to_x, to_y, yield_x, yield_y, gap_x, gap_y;
+} eventmove;
+eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
+//sab 26/06/2014 FIN - Reporté depuis fichier Main
+
+

@@ -880,13 +880,13 @@ Rect AllowGridViewerB(Vec2D(xb+495,yb+20),Vec2D(40,10));
 AllowGridViewerB.Draw(CouleurFader.WithAlpha(show_global_view_grider));
 AllowGridViewerB.DrawOutline(CouleurLigne);
 
-if( window_focus_id==W_GRID && mouse_b&1 && mouse_released==0)
+if( window_focus_id==W_GRID && mouse_b&1 && (mouseLeftClic.eventProcessed==false))
 {
 if(mouse_x>xb+495 && mouse_x<xb+535 && mouse_y>yb+20 && mouse_y<yb+30)
 {
 show_global_view_grider=toggle(show_global_view_grider);
 refresh_hauteur_fenetre_grider();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 

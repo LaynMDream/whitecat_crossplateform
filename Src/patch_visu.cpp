@@ -101,7 +101,7 @@ petitchiffre.Print(ol::ToString(curve_spline_level),XCurv+157,YCurv+350);
 //le calcul du SPLINE A GARDER DANS LA FENETRE SINON PLANTAGE///////////////////
 
 curve_spline_level=(((float)index_curve_spline_level)/127)-1;
-if( window_focus_id==W_PATCH && index_enable_curve_editing==1 && mouse_x>=XCurv+30 && mouse_x<=XCurv+285 && mouse_y>YCurv+330 && mouse_y<YCurv+355 && mouse_button==1)
+if( window_focus_id==W_PATCH && index_enable_curve_editing==1 && mouse_x>=XCurv+30 && mouse_x<=XCurv+285 && mouse_y>YCurv+330 && mouse_y<YCurv+355 && mouseLeftClic.isDown)
 {
 index_curve_spline_level=mouse_x-(XCurv+30);
 the_curve_spline_level[curve_selected]=index_curve_spline_level;

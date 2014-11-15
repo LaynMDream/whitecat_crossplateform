@@ -4084,7 +4084,7 @@ switch(bangers_action[banger_num][event_num])
      if(param1_is>0 && param1_is<5)
      {
      numgridpl=param1_is-1;
-     if(param2_is>=0 || param2_is <=127)
+     if(param2_is>=0 && param2_is <=127)
      {
      grid_crossfade_speed[numgridpl]=param2_is;
      sprintf(string_event,"GridPl %d Set Accel at %d",numgridpl+1,param2_is);
@@ -4692,42 +4692,47 @@ if(do_loop_banger[banger_is]==1 && time_loop_banger[banger_is]>0.0 && ticker_loo
 
 int do_bang(int banger_is)
 {
-if( bang_is_sended[banger_is]==0 && banger_is<127)
-{
-end_time_for_banger[banger_is]=0;//reinit pour pierre groupe laps
-//calcul bang time de fin
-for (int y=0;y<6;y++)
-{
-if(bangers_delay[banger_is][y]> end_time_for_banger[banger_is])
-{
-end_time_for_banger[banger_is]= bangers_delay[banger_is][y];
-}
-}
-if(end_time_for_banger[banger_is]<default_time_of_the_bang)
-{end_time_for_banger[banger_is]=default_time_of_the_bang;}
-///////////////////////
+//sab 29/06/2014 CppCheck if( bang_is_sended[banger_is]==0 && banger_is<127)
+    if  (banger_is>=core_user_define_nb_bangers) return 0; //Test de dépassement de capacité avant utilistion des tableaux
+
+    if( bang_is_sended[banger_is]==0)
+    {
+        end_time_for_banger[banger_is]=0;//reinit pour pierre groupe laps
+		//calcul bang time de fin
+        for (int y=0; y<6; y++)
+        {
+            if(bangers_delay[banger_is][y]> end_time_for_banger[banger_is])
+            {
+                end_time_for_banger[banger_is]= bangers_delay[banger_is][y];
+            }
+        }
+        if(end_time_for_banger[banger_is]<default_time_of_the_bang)
+        {
+            end_time_for_banger[banger_is]=default_time_of_the_bang;
+        }
+		///////////////////////
 
 
-for (int y=0;y<6;y++)
-{
-if(bangers_type[banger_is][y]!=0)
-{
+        for (int y=0; y<6; y++)
+        {
+            if(bangers_type[banger_is][y]!=0)
+            {
 
-if(actual_time>start_time_for_banger[banger_is]+ (bangers_delay[banger_is][y]*BPS_RATE) && event_sended[banger_is][y]==0)
-{
-    Bang_event(banger_is, y);
-    event_sended[banger_is][y]=1;
-}
-}
-}
+                if(actual_time>start_time_for_banger[banger_is]+ (bangers_delay[banger_is][y]*BPS_RATE) && event_sended[banger_is][y]==0)
+                {
+                    Bang_event(banger_is, y);
+                    event_sended[banger_is][y]=1;
+                }
+            }
+        }
 
-if(actual_time>(start_time_for_banger[banger_is]+ (end_time_for_banger[banger_is]*BPS_RATE)))//rajout de +50 pour visualisation send dernier event
-{
-bang_is_sended[banger_is]=1;
-}
+        if(actual_time>(start_time_for_banger[banger_is]+ (end_time_for_banger[banger_is]*BPS_RATE)))//rajout de +50 pour visualisation send dernier event
+        {
+            bang_is_sended[banger_is]=1;
+        }
 
-}
-return(0);
+    }
+    return(0);
 }
 
 
@@ -4768,7 +4773,7 @@ banger_overoll=(nb)+(lb*8);
 
 if(banger_overoll<127 && banger_overoll>=0)
 {
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 if(Midi_Faders_Affectation_Type!=0 )//config midi
 {
@@ -4781,7 +4786,7 @@ if(index_copy_banger==1)
 index_ask_copy_banger=1;
 index_ask_confirm=1;
 index_banger_to_copy_in=banger_overoll;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -4820,7 +4825,7 @@ break;
 }
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -4853,7 +4858,7 @@ else
  index_banger_to_copy_in=index_banger_selected;
  index_ask_confirm=1;
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 
 //UP DOWN bangers number selected
@@ -4881,13 +4886,13 @@ sprintf(string_last_midi_id,"Banger Plus is Ch: %d Pitch: %d Typ: %s",miditable[
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(742,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 if(index_banger_selected<126){index_banger_selected++;}
 else {index_banger_selected=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 //BANGER --
@@ -4914,27 +4919,27 @@ sprintf(string_last_midi_id,"Banger Minus is Ch: %d Pitch: %d Typ: %s",miditable
 if(Midi_Faders_Affectation_Type!=0 )//config midi
 {
 attribute_midi_solo_affectation(741,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 if(index_banger_selected>0){index_banger_selected--;}
 else{index_banger_selected=126;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 //COPY TO////////////////////////////////////////////////////////////////////////
 if(mouse_x>(xb+280) && mouse_x<(xb+280+90) && mouse_y>(yb+10) && mouse_y<(yb+10+20))
 {
 index_copy_banger=toggle(index_copy_banger);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //EDIT MODE
 if(mouse_x>(xb+410) && mouse_x<(xb+410+50) && mouse_y>(yb+10) && mouse_y<(yb+10+20))
 {
 index_enable_edit_banger=toggle(index_enable_edit_banger);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //mise en boucle
@@ -4956,14 +4961,14 @@ if(bangers_delay[index_banger_selected][o]>end_time_for_banger[index_banger_sele
 }
 bang_is_sended[index_banger_selected]=0;//reset du bang sended is
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //temps de boucle
 if(mouse_x>(xb+550) && mouse_x<(xb+600) && mouse_y>(yb+10) && mouse_y<(yb+30))
 {
 time_loop_banger[index_banger_selected]=atof(numeric);
 reset_numeric_entry();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //BANG DO IT
@@ -4991,7 +4996,7 @@ sprintf(string_last_midi_id,"Bang It Button is Ch: %d Pitch: %d Typ: %s" , midit
 if( Midi_Faders_Affectation_Type!=0 )//config midi
 {
 attribute_midi_solo_affectation(734,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -5007,7 +5012,7 @@ if(bangers_delay[index_banger_selected][o]>end_time_for_banger[index_banger_sele
 }
 bang_is_sended[index_banger_selected]=0;//reset du bang sended is
 //
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -5021,7 +5026,7 @@ if(mouse_x>xb+200 && mouse_x<xb+320 && mouse_y> (yb+40) && mouse_y< (yb+40)+30 &
  bangers_name[index_banger_selected][24]='\0';
   reset_numeric_entry();numeric_postext=0; if(index_text_auto_close==1){index_type=0;}
  sprintf(string_Last_Order,">>GIVED A NAME FOR BANGER %d ",index_banger_selected+1);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -5054,14 +5059,14 @@ sprintf(string_last_midi_id,"BangSolo %d is Ch: %d Pitch: %d Typ: %s",lp+1 , mid
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(735+lp,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
-if(mouse_released==0)
+if((mouseLeftClic.eventProcessed==false))
 {
 Bang_event(index_banger_selected,lp);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -5072,7 +5077,7 @@ if(window_focus_id==917 && mouse_x>xb+30 && mouse_x<xb+30+100 && mouse_y>yb+100+
 bangers_type[index_banger_selected][lp]++;
 reset_banger_event(index_banger_selected,lp);
 constrain_banger_type(lp);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //change type action
@@ -5081,7 +5086,7 @@ if(window_focus_id==917 && mouse_x>xb+150 && mouse_x<xb+150+100 && mouse_y>yb+10
 bangers_action[index_banger_selected][lp]++;
 reset_banger_params(index_banger_selected,lp);
 constrain_banger_param(lp);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //affectaction datas
@@ -5090,21 +5095,21 @@ if(mouse_x>xb+270 && mouse_x<xb+270+40 && mouse_y>yb+100+(lp*30) && mouse_y<yb+1
 {
 bangers_params[index_banger_selected][lp][0]=atol(numeric);
 reset_numeric_entry();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //val 2
 if(mouse_x>xb+320 && mouse_x<xb+320+40 && mouse_y>yb+100+(lp*30) && mouse_y<yb+100+(lp*30)+20 && index_enable_edit_banger==1)
 {
 bangers_params[index_banger_selected][lp][1]=atol(numeric);
 reset_numeric_entry();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 //delay
 if(mouse_x>xb+380 && mouse_x<xb+380+40 && mouse_y>yb+100+(lp*30) && mouse_y<yb+100+(lp*30)+20 && index_enable_edit_banger==1)
 {
 bangers_delay[index_banger_selected][lp]=atof(numeric);
 reset_numeric_entry();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 }

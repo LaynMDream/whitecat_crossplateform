@@ -160,12 +160,12 @@ petitchiffre.Print("Fullscreen " ,(x_cfg_sc+85), y_cfg_sc+85+(lps*30));
 if(mouse_x>x_cfg_sc+20 && mouse_x<x_cfg_sc+75 && mouse_y>y_cfg_sc+75+(lps*30) && mouse_y<y_cfg_sc+90+(lps*30)  && window_focus_id==920)
 {
 screen_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 if(index_fullscreen==0) {index_fullscreen=1;index_specify_size=0;largeur_ecran= GetSystemMetrics(SM_CXVIRTUALSCREEN);
 hauteur_ecran = GetSystemMetrics(SM_CYVIRTUALSCREEN);}
 else if (index_fullscreen==1) {index_fullscreen=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(index_fullscreen==1)
@@ -179,7 +179,7 @@ petitchiffre.Print("Set new size: " ,(x_cfg_sc+85), y_cfg_sc+50+35+(lps*30));
 if(mouse_x>x_cfg_sc+20 && mouse_x<x_cfg_sc+75 && mouse_y>y_cfg_sc+75+(lps*30) && mouse_y<y_cfg_sc+90+(lps*30)  && window_focus_id==920)
 {
 screen_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 if(index_specify_size==0)
 {
@@ -187,7 +187,7 @@ index_specify_size=1;
 index_fullscreen=0;
 }
 else if (index_specify_size==1) {index_specify_size=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(index_specify_size==1)
@@ -211,7 +211,7 @@ if(mouse_x>(x_cfg_sc+100) && mouse_x<(x_cfg_sc+165) && window_focus_id==920)
 if(mouse_y> y_cfg_sc+130 && mouse_y<y_cfg_sc+160)
 {
 boxlargeur.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0 && index_specify_size==1)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_specify_size==1)
 {
 if(atoi(numeric)>=1024)
 {
@@ -222,13 +222,13 @@ reset_numeric_entry();
 /*sab 27/07/2014 FIN */
 }
 else {sprintf(string_Last_Order,"Screen Width must be at minimum 1024 px");}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(mouse_y> y_cfg_sc+165 && mouse_y<y_cfg_sc+195)
 {
 boxhauteur.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0 && index_specify_size==1)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_specify_size==1)
 {
 if(atoi(numeric)>=600)
 {
@@ -239,7 +239,7 @@ reset_numeric_entry();
 /*sab 27/07/2014 FIN */
 }
 else {sprintf(string_Last_Order,"Screen Height must be at minimum 600 px");}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -269,11 +269,11 @@ petitchiffre.Print("         Windows" ,(x_cfg_sc+325), y_cfg_sc+50+35+(lpos*30)+
 if(mouse_x>x_cfg_sc+250 && mouse_x<x_cfg_sc+305 && mouse_y>y_cfg_sc+75+(lpos*30) && mouse_y<y_cfg_sc+90+(lpos*30)  && window_focus_id==920)
 {
 pos_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 pos_mode.Draw(CouleurFader);
 reset_window_positions();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -284,11 +284,11 @@ petitchiffre.Print("Record Pos" ,(x_cfg_sc+325), y_cfg_sc+85+(lpos*30));
 if(mouse_x>x_cfg_sc+250 && mouse_x<x_cfg_sc+305 && mouse_y>y_cfg_sc+75+(lpos*30) && mouse_y<y_cfg_sc+90+(lpos*30) && window_focus_id==920)
 {
 pos_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 pos_mode.Draw(CouleurFader);
 store_window_positions();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -299,11 +299,11 @@ petitchiffre.Print("Reload Pos" ,(x_cfg_sc+325), y_cfg_sc+85+(lpos*30));
 if(mouse_x>x_cfg_sc+250 && mouse_x<x_cfg_sc+305 && mouse_y>y_cfg_sc+75+(lpos*30) && mouse_y<y_cfg_sc+90+(lpos*30) && window_focus_id==920)
 {
 pos_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 pos_mode.Draw(CouleurFader);
 reload_window_positions();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -314,11 +314,11 @@ petitchiffre.Print("Program Position" ,(x_cfg_sc+325), y_cfg_sc+85+(lpos*30));
 if(mouse_x>x_cfg_sc+250 && mouse_x<x_cfg_sc+305 && mouse_y>y_cfg_sc+75+(lpos*30) && mouse_y<y_cfg_sc+90+(lpos*30) && window_focus_id==920)
 {
 pos_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 if(index_set_pos==0){index_set_pos=1;}
 else if(index_set_pos==1){index_set_pos=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(index_set_pos==1){pos_mode.Draw(CouleurFader);}
@@ -339,27 +339,27 @@ if(mouse_x>(x_cfg_sc+330) && mouse_x<(x_cfg_sc+395) && window_focus_id==920)
 if(mouse_y> y_cfg_sc+190 && mouse_y<y_cfg_sc+220)
 {
 boxposx.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0 && index_set_pos==1)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_set_pos==1)
 {
 posX_mainwindow=atoi(numeric);
 reset_numeric_entry();
-mouse_released=1;
 /*sab 27/07/2014 DEB */
     MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
 /*sab 27/07/2014 FIN */
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(mouse_y> y_cfg_sc+225 && mouse_y<y_cfg_sc+255)
 {
 boxposy.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0 && index_set_pos==1)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_set_pos==1)
 {
 posY_mainwindow=atoi(numeric);
 reset_numeric_entry();
-mouse_released=1;
 /*sab 27/07/2014 DEB */
     MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, largeur_ecran, hauteur_ecran, true);
 /*sab 27/07/2014 FIN */
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -411,11 +411,11 @@ petitchiffre.Print("User Colors :" ,(x_cfg_sc+550), y_cfg_sc+85+(thp*30));
 if(mouse_x>x_cfg_sc+480 && mouse_x<x_cfg_sc+535 && mouse_y>y_cfg_sc+65+(thp*30) && mouse_y<y_cfg_sc+90+(thp*30) && window_focus_id==920)
 {
 theme_mode.Draw(CouleurSurvol);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 config_color_style_is=thp;
 LoadWhiteCatColorProfil();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 if(config_color_style_is==thp){theme_mode.Draw(CouleurFader);}
@@ -432,11 +432,11 @@ petitchiffre.Print("Trichromy" ,(x_cfg_sc+730),y_cfg_sc+120);
 if(mouse_x> x_cfg_sc+665 && mouse_x< x_cfg_sc+720 && mouse_y>y_cfg_sc+105 && mouse_y<y_cfg_sc+120 && window_focus_id==920)
 {
 theme_receive.Draw(CouleurSurvol);
- if(mouse_button==1 && mouse_released==0)
+ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
  {
  if( receive_from_trichro==0){receive_from_trichro=1;}
  else if( receive_from_trichro==1){receive_from_trichro=0;}
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
 }
 
@@ -493,10 +493,10 @@ for (int lg=0;lg<3;lg++)
 
  if(mouse_x>x_cfg_sc+660+(cl*40) && mouse_x<x_cfg_sc+690+(cl*40) && mouse_y>y_cfg_sc+140+(lg*40) && mouse_y<y_cfg_sc+170+(lg*40) && window_focus_id==920)
  {
- if(mouse_button==1 && mouse_released==0)
+ if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
  {
  index_color_user_selected=cl+(lg*4);
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
  }
  }
  ColUser.DrawOutline(CouleurLigne);

@@ -70,7 +70,7 @@ if(mouse_x>xtime+150  && mouse_x< xtime+150+100 && mouse_y>ytime+150 && mouse_y<
   sprintf(string_last_midi_id,"TIMEWHEEL FADER is Ch: %d Pitch: %d Typ: %s" , miditable[1][758],miditable[2][758],thetypinfo);
 
   attribute_midi_solo_affectation(758,Midi_Faders_Affectation_Mode);
-  mouse_released=1;
+  mouseLeftClic.eventProcessed=true;
  }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -141,12 +141,12 @@ sprintf(string_last_midi_id,"ChronoPlay is Ch: %d Pitch: %d Typ: %s",miditable[1
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(765,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 Chrono_PlayPause();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -174,12 +174,12 @@ sprintf(string_last_midi_id,"ChronoReset is Ch: %d Pitch: %d Typ: %s",miditable[
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(766,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 Chrono_Reset();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -210,14 +210,14 @@ sprintf(string_last_midi_id,"TimeType is Ch: %d Pitch: %d Typ: %s",miditable[1][
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(759,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 time_wheel_datatype_is++;
 if(time_wheel_datatype_is>2){time_wheel_datatype_is=0;}
 set_time_cursor_to_time_type(time_wheel_datatype_is);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -253,13 +253,13 @@ sprintf(string_last_midi_id,"DelayIn Button is Ch: %d Pitch: %d Typ: %s",miditab
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(760,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 if(index_type_of_time_to_affect[0]==0){index_type_of_time_to_affect[0]=1;}
 else if(index_type_of_time_to_affect[0]==1){index_type_of_time_to_affect[0]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 //IN
@@ -287,13 +287,13 @@ sprintf(string_last_midi_id,"In Button is Ch: %d Pitch: %d Typ: %s",miditable[1]
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(761,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 if(index_type_of_time_to_affect[1]==0){index_type_of_time_to_affect[1]=1;}
 else if(index_type_of_time_to_affect[1]==1){index_type_of_time_to_affect[1]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 //DOUT
@@ -321,13 +321,13 @@ sprintf(string_last_midi_id,"DelayOut Button is Ch: %d Pitch: %d Typ: %s",midita
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(762,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 if(index_type_of_time_to_affect[2]==0){index_type_of_time_to_affect[2]=1;}
 else if(index_type_of_time_to_affect[2]==1){index_type_of_time_to_affect[2]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 //OUT
@@ -355,13 +355,13 @@ sprintf(string_last_midi_id,"Out Button is Ch: %d Pitch: %d Typ: %s",miditable[1
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(763,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 if(index_type_of_time_to_affect[3]==0){index_type_of_time_to_affect[3]=1;}
 else if(index_type_of_time_to_affect[3]==1){index_type_of_time_to_affect[3]=0;}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -391,7 +391,7 @@ sprintf(string_last_midi_id,"Send Tap is Ch: %d Pitch: %d Typ: %s",miditable[1][
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(1328,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -409,7 +409,7 @@ if(numeric_postext==0 && index_window_chasers==1)
             reset_numeric_entry();
             }
             }
-            mouse_released=1;
+            mouseLeftClic.eventProcessed=true;
 do_light_send_tap=1;
 }
 
@@ -442,7 +442,7 @@ sprintf(string_last_midi_id,"Record Tap is Ch: %d Pitch: %d Typ: %s",miditable[1
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(1327,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -455,7 +455,7 @@ sprintf(string_actual_tap_tempo,"Last: ");
 sprintf(string_Last_Order,"Tap Tempo Rec ON");
 }
 else{sprintf(string_Last_Order,"Tap Tempo Rec Off");}
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -487,12 +487,12 @@ sprintf(string_last_midi_id,"Tap Tempo is Ch: %d Pitch: %d Typ: %s",miditable[1]
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(1326,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 set_new_time_in_tap_tempo();
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -522,7 +522,7 @@ sprintf(string_last_midi_id,"Affect Time Button is Ch: %d Pitch: %d Typ: %s",mid
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(764,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -537,7 +537,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_time;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 

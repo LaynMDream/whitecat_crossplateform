@@ -664,7 +664,7 @@ if(mouse_x>report_SL_X+290 && mouse_x<report_SL_X+340)
  if( mouse_y>report_SL_Y+76 && mouse_y<report_SL_Y+96)
  {
   MinusPosMyRep.Draw(CouleurSurvol);
-  if(mouse_button==1 &&  mouse_released==0 )
+  if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
   {
   MinusPosMyRep.Draw(CouleurFader);
   position_view_line-=5;
@@ -675,7 +675,7 @@ if(mouse_x>report_SL_X+290 && mouse_x<report_SL_X+340)
  if( mouse_y>report_SL_Y+106 && mouse_y<report_SL_Y+136)
  {
   PlusPosMyRep.Draw(CouleurSurvol);
-  if(mouse_button==1 &&  mouse_released==0 )
+  if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
   {
   PlusPosMyRep.Draw(CouleurFader);
   position_view_line+=5;
@@ -1406,7 +1406,7 @@ else if(niveauGMaster==255){midi_levels[615]=127;}
 
 
 
-if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
+if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9)
 {process_assign_to_core(core_to_assign);}
 
 switch(config_page_is)

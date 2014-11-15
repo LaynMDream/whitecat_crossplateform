@@ -250,6 +250,15 @@ return(0);
 
 */
 
+//sab 07/07/2014 DEB
+void in_case_of_window_lose_of_focus()
+{
+	// Case off click event was procedeed by before out of Plot window
+	//... need of an event for lose focus or every graphical objet must be call to carry out its on status testing
+	if (not(window_focus_id==W_PLOT)) { PLOT_in_case_of_window_lose_of_focus();} //
+	//sab 07/07/2014 FIN
+}
+
 int add_a_window(int id)
 {
 /* sab 05/03/2014 begin replace */
@@ -258,6 +267,11 @@ int add_a_window(int id)
     next_free_pos=0;
     push_front_into_window_opened[next_free_pos]=id; // window is added on the top
     window_focus_id=id; // window is added on the top = it gets the focus
+
+	//sab 07/07/2014 DEB
+	in_case_of_window_lose_of_focus();
+	//sab 07/07/2014 FIN
+
  //All open window are kept openin the same order (function to be rewritten with window_opened as a deque)
  //if window added on the top, it is on the list, we skip it (no duplicate in the list)
     for(int old_pos=0; old_pos<72; old_pos++)
@@ -454,7 +468,39 @@ window_focus_id=num_window;
 return(num_window);
 }
 
+/*sab 12/07/2014 DEB */
+void back_window_push_to_front()
+{
+	int last_window_idx = nbre_fenetre_actives=check_nbre_opened_windows() - 1;
+	if (last_window_idx > 0 )
+	{
+		window_bring_to_front(window_opened[last_window_idx]);
+	}
+}
 
+void front_window_push_to_back()
+{
+    int window_cnt = nbre_fenetre_actives=check_nbre_opened_windows() ;
+    if (window_cnt>0)
+	{
+		int temp_window[64];
+		for(int i=0; i<62; i++)
+		{
+			temp_window[i]=window_opened[i+1];
+		}
+		temp_window[63]=0;
+		int last_pos = check_nbre_opened_windows() - 1 ;
+		temp_window[last_pos]=window_opened[0];
+
+		for(int i=0; i<63; i++)
+		{
+			window_opened[i]=temp_window[i];
+		}
+		window_opened[0]=window_opened[0];
+		window_focus_id=window_opened[0];
+	}
+}
+/*sab 12/07/2014 FIN*/
 
 int check_save_load_report_window()
 {

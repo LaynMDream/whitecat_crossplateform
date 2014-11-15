@@ -67,11 +67,13 @@ volatile int ticks = 0;
 int ticker_rate = BPS_TO_TIMER(BPS_RATE);
 int ticker_dmxIn_rate = BPS_TO_TIMER(dmxINrate);
 int ticks_passed = 0;
+/*sab 26/06/2014 DEB - Reporté dans Whitecat.h
 volatile int mouse_button;
 volatile int mouse_released;
 volatile int mouse_maintained;
 volatile int mouse_R_button;
 volatile int mouse_R_released;
+  sab 26/06/2014 FIN - Reporté dans Whitecat.h  */
 
 volatile bool calculation_on_faders_done=0;//pour snap des faders depuis Echo
 //////////////////////////////////////////////////////////////////////////////
@@ -98,6 +100,9 @@ bufferSaisiesnamp=0;
 #include <MidiShare.h>
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
+
+#include <whitecat_Fct.h>
+
 #include <patch_splines_2.cpp>//spline pour curves
 
 
@@ -317,21 +322,160 @@ END_OF_FUNCTION(ticker);
 
 //////////////////////////////////MOUSE/////////////////////////////////////////
 
-int do_mouse_right_click_menu()
+/** \brief GUI - menu window - set the window visible or not and define position if to be shown
+ *
+ */
+void do_mouse_right_click_menu()
 {
- x_mainmenu=mouse_x, y_mainmenu=mouse_y;
- index_show_main_menu=toggle(index_show_main_menu);
- if( index_show_main_menu==1){add_a_window(W_MAINMENU);}
- else {substract_a_window(W_MAINMENU);}
- right_click_for_menu=0;
- return(0);
+//sab 12/07/2014     x_mainmenu=mouse_x, y_mainmenu=mouse_y;
+    index_show_main_menu=toggle(index_show_main_menu);
+    if( index_show_main_menu==1)
+    {
+//sab 12/07/2014 DEB
+/** keep menu window in the limits of main window of White Cat */
+		int max_x = posX_mainwindow + largeur_ecran  - size_x_mainmenu - 10 ;
+		int max_y = posY_mainwindow + hauteur_ecran  - size_y_mainmenu - 10 ;
+
+		x_mainmenu = mouse_x ;
+		if (x_mainmenu>max_x)
+		{
+			x_mainmenu = max_x;
+		}
+
+		y_mainmenu = mouse_y ;
+		if (y_mainmenu>max_y)
+		{
+			y_mainmenu =max_y;
+		}
+//sab 12/07/2014 FIN
+        add_a_window(W_MAINMENU);
+    }
+    else {substract_a_window(W_MAINMENU);}
+    right_click_for_menu=0;
 }
 
+//test begin montée/descente accélérée
+int test_format=0;
+int test_loop =0 ;
+int test_level_i = 0 ;
+float test_level_f = 0 ;
+float test_speed_f = 0 ;
+//test end montée descente acceleree
+
+/** \brief On mouse event - Manage mouse global variable
+ *
+ * \param int Allegro flags (for binary compar)
+ * \return void
+ *
+ */
 void my_callback(int flags) {
+
+	//Mouse wheel event
+    {
+        mouseWheel.gap = mouse_z - mouseWheel.level;				//Instant mouvement of the wheel : -1, 0, +1
+
+        if (mouseMiddleClic.isDown)
+        {
+            mouseWheel.speed = mouseWheel.speed + mouseWheel.gap;	//Instant acceleration of the speed
+        }
+        else
+        {
+            mouseWheel.speed = 0;
+        }
+
+        if (mouseWheel.eventProcessed)
+        {
+            mouseWheel.yield = 0 ; 									//Gain was processed
+            // beware interaction with : position_mouse_z(0);
+        }
+
+        mouseWheel.yield = mouseWheel.yield + mouseWheel.gap ;		//Gain of level since last time that event was processed
+        mouseWheel.level = mouse_z; 								//Instant level of the wheel
+
+        mouseWheel.eventProcessed = false;
+        //sprintf(string_Last_Order,"Roue gap < %i > level < %i > speed <%i>", mouseWheel.gap, mouseWheel.level, mouseWheel.speed);
+    }
+
+	//Mouse move event
+	{
+		mouseMove.gap_x  = mouse_x - mouseMove.from_x ; 		//Instant mouse translation : -1, 0, +1
+		mouseMove.gap_y  = mouse_y - mouseMove.from_y ;
+
+		if (mouseMove.eventProcessed)
+		{
+			mouseMove.from_x = mouseMove.to_x ; 				//Previous position of the mouse when event was processed
+			mouseMove.from_y = mouseMove.to_y ;
+		}
+
+		mouseMove.to_x   = mouse_x ;        					//Instant position of the mouse
+		mouseMove.to_y   = mouse_y ;
+		mouseMove.yield_x = mouseMove.to_x - mouseMove.from_x ; //Mouse translation since last time that event was processed
+		mouseMove.yield_y = mouseMove.to_y - mouseMove.from_y ;
+
+		mouseMove.eventProcessed = false;
+	}
+
+	//Mouse buttons events
 
     if (flags & MOUSE_FLAG_LEFT_DOWN )
         {
-        mouse_button=1;
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseLeftClic.isDown=true;
+        mouseLeftClic.isDouble = false;
+        mouseLeftClic.eventProcessed=false;
+        mouseLeftClic.posx=mouse_x;
+        mouseLeftClic.posy=mouse_y;
+        mouseLeftClic.posz=mouse_z;
+        mouseLeftClic.timer = time(NULL);
+
+        if (mouseLeftClicHistory.size()>=2) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
+        {
+            time_t lasttime  = mouseLeftClic.timer ; // 2d down = down courant
+            time_t firsttime = mouseLeftClicHistory[1].timer ; //1er down
+
+            if ((mouseRightClicHistory.size()>=1) && (firsttime < mouseRightClicHistory[0].timer))
+            {
+            	//un clic droit s'est produit entre les deux clics gauche
+				//display :sprintf(string_Last_Order,"Double clic - clic droit intercalé");
+            	mouseLeftClic.isDouble = false;
+            }
+            else if ((mouseMiddleClicHistory.size()>=1) && (firsttime < mouseMiddleClicHistory[0].timer))
+            {
+            	//un clic milieu s'est produit entre les deux clics gauche
+				//display :sprintf(string_Last_Order,"Double clic - clic milieu intercalé");
+            	mouseLeftClic.isDouble = false;
+            }
+            else
+            {
+				gapSecond = lasttime-firsttime ;
+				if ((gapSecond<0.1) && (mouseLeftClicHistory[1].isDouble==false))
+				{
+					//display :sprintf(string_Last_Order,"LeftDoubleClic %f sec", gapSecond);
+					mouseLeftClic.isDouble = true;
+				}
+				else if (mouseLeftClicHistory[1].isDouble)
+				{
+					//display :sprintf(string_Last_Order,"xieme Clic annulant precedent");
+					mouseLeftClic.isDouble = false;
+				}
+				else
+				{
+					//display :sprintf(string_Last_Order,"Double clic - Trop long %f sec", gapSecond);
+					mouseLeftClic.isDouble = false;
+				}
+            }
+        }
+
+		//Keep only previous down-up sequence with the current
+		if (mouseLeftClicHistory.size()==6) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
+		{
+			mouseLeftClicHistory.erase(mouseLeftClicHistory.begin()+5); //   up very old
+			mouseLeftClicHistory.erase(mouseLeftClicHistory.begin()+4); // down very old
+		}
+
+        mouseLeftClicHistory.push_front (mouseLeftClic); //up new (current)
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         original_posx=mouse_x;original_posy=mouse_y;
         //sab 29/05/2013 deb ---------------------------------------------------------------
         //window_focus_id=detection_over_window();
@@ -345,19 +489,39 @@ void my_callback(int flags) {
 		}
 		//sab 29/05/2013 fin ---------------------------------------------------------------
         if(window_focus_id==0 || window_focus_id==W_LIST ){snap_channels_selection_array(); }
-        mouse_released=0;
         }
 
     else if (flags & MOUSE_FLAG_LEFT_UP )//relevage bouton
         {
-        mouse_button=0; mouse_released=1;   //liberation du curseur souris
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseLeftClic.isDown=false;
+        // keep the analyse done when mouse Left button was pressed down : mouseLeftClic.isDouble = false;
+        mouseLeftClic.eventProcessed=false;
+        mouseLeftClic.posx=mouse_x;
+        mouseLeftClic.posy=mouse_y;
+        mouseLeftClic.posz=mouse_z;
+        mouseLeftClic.timer = time(NULL);
+
+		//Keep only previous down-up sequence with the current
+        if (mouseRightClicHistory.size()==6)
+        {
+            mouseRightClicHistory.erase(mouseRightClicHistory.begin()+5);
+            mouseRightClicHistory.erase(mouseRightClicHistory.begin()+3);
+        }
+
+        mouseLeftClicHistory.push_front (mouseLeftClic);
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         index_click_move_faderspace=0; im_moving_a_window=0; index_mouse_is_tracking=0;
         index_moving_fader_space=0;index_moving_x_slide=0;index_moving_y_slide=0;
         index_click_inside_plot=0; plot_facteur_move_x=0;plot_facteur_move_y=0;
         index_click_inside_relativ_xy=0; rlativ_xm=0; rlativ_ym=0;
-        index_editing_theatre_plan=0;moving_plan_relativ_x=0;moving_plan_relativ_y=0;
-        editing_plan_data_type=0; editing_plot_sizey=0; editing_plot_sizex=0;  moving_size_relativ_x=0; moving_size_relativ_y=0;
-        plot_editing_color_line=0; plot_editing_color_background=0; index_adjusting_shape_x=0;index_adjusting_shape_y=0;
+        //sab 29/06/2014 lot 3 index_editing_theatre_plan=0;
+        //sab 29/06/2014 lot 3 editing_plan_data_type=0;
+        //sab 28/06/2014 - lot 2 - editing_plot_sizey=0; editing_plot_sizex=0;
+        moving_size_relativ_x=0; moving_size_relativ_y=0;
+        //sab 27/06/2014 plot_editing_color_line=0; plot_editing_color_background=0;
+        index_adjusting_shape_x=0;index_adjusting_shape_y=0;
         handle_selected_for_line_editing=0;  editing_shape_line_number=0;
         if(dragging_draw==1)
         {draw_point_is_traced[draw_preset_selected]=0;}
@@ -365,40 +529,107 @@ void my_callback(int flags) {
 
         }
 
-       if (flags & MOUSE_FLAG_RIGHT_DOWN )
+    if (flags & MOUSE_FLAG_RIGHT_DOWN )
+    {
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseRightClic.isDown=true;
+        mouseRightClic.isDouble = false;
+        mouseRightClic.eventProcessed=false;
+        mouseRightClic.posx=mouse_x;
+        mouseRightClic.posy=mouse_y;
+        mouseRightClic.posz=mouse_z;
+        mouseRightClic.timer = time(NULL);
+
+        mouseRightClicHistory.push_front (mouseRightClic);
+
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
+        original_posx=mouse_x;
+        original_posy=mouse_y;
+
+        /* sab 12/07/2014 DEB
+        if(window_focus_id==W_PLOT) {*/
+        if(window_focus_id==W_PLOT && isMouseOverPlot())
+		/* sab 12/07/2014 FIN */
         {
-        original_posx=mouse_x;original_posy=mouse_y;
-        mouse_R_button=1;
-        mouse_R_released=0;
-
-        if(window_focus_id==W_PLOT) {
-                                    index_move_plot_view_port=1;
-                                    reset_symbols_selected(view_plot_calc_number_is);
-                                    unselect_all_shapes();
-                                    key_unselect_ch();
-                                    }
-        else {
-             if(mouse_R_released==0)
-             {
-              mouse_R_released=1;
-              right_click_for_menu=1; //renvoi vers les procs en 10eme de secondes pour enlever le bug d extinctions fenetres
-              }
-
-             }
+            index_move_plot_view_port=1;
+            reset_symbols_selected(view_plot_calc_number_is);
+            unselect_all_shapes();
+            key_unselect_ch();
         }
+        else
+        {
+            if((mouseRightClic.eventProcessed==false))
+            {
+                mouseRightClic.eventProcessed=true;
+                right_click_for_menu=1; //renvoi vers les procs en 10eme de secondes pour enlever le bug d extinctions fenetres
+            }
+
+        }
+    }
 
        else if (flags & MOUSE_FLAG_RIGHT_UP )
         {
-        mouse_R_button=0;
-        mouse_R_released=1;
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+        mouseRightClic.isDown=false;
+        mouseRightClic.isDouble = false;
+        mouseRightClic.eventProcessed=false;
+        mouseRightClic.posx=mouse_x;
+        mouseRightClic.posy=mouse_y;
+        mouseRightClic.posz=mouse_z;
+        mouseRightClic.timer = time(NULL);
+        mouseRightClicHistory.push_front (mouseRightClic);
+
+        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+
         index_move_plot_view_port=0;
         plot_facteur_move_x=0;plot_facteur_move_y=0;
         index_click_inside_plot=0;
         set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);//liberation du curseur souris
         }
 
-        if(mouse_button==0)
+        if(mouseLeftClic.isDown==false)
         {set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);}
+
+        //sab 24/06/2014 - Doubleclic - Ajout - DEB
+    if (flags & MOUSE_FLAG_MIDDLE_DOWN )
+    {
+        mouseMiddleClic.isDown=true;
+        mouseMiddleClic.isDouble = false;
+        mouseMiddleClic.eventProcessed=false;
+        mouseMiddleClic.posx=mouse_x;
+        mouseMiddleClic.posy=mouse_y;
+        mouseMiddleClic.posz=mouse_z;
+        mouseMiddleClic.timer = time(NULL);
+
+//        mouseWheel.speed = mouseWheel.gap;
+
+		//Keep only previous down-up sequence with the current
+        if (mouseMiddleClicHistory.size()==6)
+        {
+            mouseMiddleClicHistory.erase(mouseMiddleClicHistory.begin()+5);
+            mouseMiddleClicHistory.erase(mouseMiddleClicHistory.begin()+4);
+        }
+
+        mouseMiddleClicHistory.push_front (mouseMiddleClic);
+    }
+    else if (flags & MOUSE_FLAG_MIDDLE_UP )
+    {
+
+        mouseMiddleClic.isDown=false;
+        mouseMiddleClic.isDouble = false;
+        mouseMiddleClic.eventProcessed=false;
+        mouseMiddleClic.posx=mouse_x;
+        mouseMiddleClic.posy=mouse_y;
+        mouseMiddleClic.posz=mouse_z;
+        mouseMiddleClic.timer = time(NULL);
+
+//        mouseWheel.speed = 0;
+
+        mouseMiddleClicHistory.push_front (mouseMiddleClic);
+
+    }
+//sab 24/06/2014 - Doubleclic - Ajout - FIN
 
 }
 END_OF_FUNCTION(my_callback);
@@ -410,6 +641,7 @@ int ticker_dixiemes_de_secondes_check = BPS_TO_TIMER(10);//10eme de secondes
 
 void dixiemes_de_secondes()
 {
+
 ticks_dixieme_for_icat_and_draw++;
 if(index_is_saving==0 && init_done==1 && index_writing_curve==0 && index_quit==0)
 {
@@ -525,30 +757,96 @@ int ticker_full_loop_rate = BPS_TO_TIMER(10000);
 void ticker_full_loop()
 {
 
-if(core_do_calculations[2]==1 && starting_wcat==0)
-{
+//ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
+    test_format=2;
 
-for (int i=0;i<core_user_define_nb_bangers;i++)
-{
-//Mise en oeuvre de la boucle
-do_loop_bang(i);
-do_bang(i);
-}
-sound_core_processing();
-}
+    if (mouseMiddleClic.isDown)
+    {
+        if (test_format==1)
+        {
+            /* 1ère signature de la fonction :
+            - niveau géré avec une variable (float)
+            */
+            test_level_i = level_wheelSpeedIncreased(test_level_f, 100., 0., 1000.);
+        }
+        if (test_format==2)
+        {
+            /* 2de signature de la fonction :
+            - niveau géré avec une variable (int)
+            - besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
+            */
+            level_wheelSpeedIncreased(test_level_i, 256, -255, 2000, test_loop);
+        }
+    }
+    else
+    {
+        test_loop =0;
+    }
 
-if(mouse_button==1 && mouse_released==0)
-{
-switch(im_moving_a_window)
-{
-case 0:
-check_graphics_mouse_handling();
-break;
-case 1:
-move_window(window_focus_id);
-break;
-}
-}
+
+    if (test_format==1)
+    {
+        sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i %f",
+        mouseWheel.level, mouseWheel.gap, mouseWheel.speed, test_level_i, test_level_f);
+    }
+    if (test_format==2)
+    {
+        sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i loop %i",
+        mouseWheel.level, mouseWheel.gap, mouseWheel.speed, test_level_i, test_loop);
+    }
+    if (test_format==3)
+    {
+        sprintf(string_Last_Order,"wheel %i gap %i yield %i speed %i",
+        mouseWheel.level, mouseWheel.gap, mouseWheel.yield, mouseWheel.speed);
+    }
+    if (test_format==4)
+    {
+        sprintf(string_Last_Order,"Right %i Double %i Done %i pos %i %i %i time %f",
+        (mouseRightClic.isDown ? 1:0), (mouseRightClic.isDouble ? 1:0), (mouseRightClic.eventProcessed ? 1:0), mouseRightClic.posx, mouseRightClic.posy,mouseRightClic.posz, (float) mouseRightClic.timer);
+    }
+    if (test_format==5)
+    {
+        sprintf(string_Last_Order,"Left %i Double %i Done %i pos %i %i %i time %f",
+        (mouseLeftClic.isDown ? 1:0), (mouseLeftClic.isDouble ? 1:0), (mouseLeftClic.eventProcessed ? 1:0), mouseLeftClic.posx, mouseLeftClic.posy,mouseLeftClic.posz, (float) mouseLeftClic.timer);
+    }
+    if (test_format==6)
+    {
+        sprintf(string_Last_Order,"BckGrndButton %i mouseYield %i BckGrndColor %f",
+        (plot_editing_color_background? 1:0), mouseWheel.yield, Color_plotfill);
+    }
+//sab 28/06/2014 - FIN - test
+
+    if(core_do_calculations[2]==1 && starting_wcat==0)
+    {
+
+        for (int i=0; i<core_user_define_nb_bangers; i++)
+        {
+			//Mise en oeuvre de la boucle
+            do_loop_bang(i);
+            do_bang(i);
+        }
+        sound_core_processing();
+    }
+
+    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+    {
+        switch(im_moving_a_window)
+        {
+        case 0:
+            check_graphics_mouse_handling();
+            break;
+        case 1:
+            move_window(window_focus_id);
+            break;
+        }
+    }
+	//sab 28/06/2014 DEB -
+	if (not(mouseWheel.gap==0))
+    {
+		mouseWheel_graphics_handle();
+    }
+	//sab 28/06/2014 FIN -
+
 if(index_quit==0 && index_is_saving==0)
 {
 
@@ -1034,7 +1332,7 @@ save_load_print_to_screen("Init Backamnesia");
 init_done=1;
 if(there_is_an_error_on_save_load==1){index_show_save_load_report=1;there_is_change_on_show_save_state=1;    }
 
- mouse_released=0;
+ mouseLeftClic.eventProcessed=false; // ???
  entered_main=1;
 //launchpad séparé
 if(enable_launchpad==1)
@@ -1145,7 +1443,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
  switch(index_art_polling)
  {
     case 0:
-    main_actions_on_screen();
+	  main_actions_on_screen();
     break;
     case 1:
       if((bytesreceived = recvfrom(sock,artpollreply_message,sizeof(artpollreply_message),0,(SOCKADDR*)&sinS,&sinsize)!=0))
@@ -1163,7 +1461,7 @@ there_is_change_on_show_save_state=0;
 }
 
 Canvas::Refresh();
-if(index_do_a_screen_capture==1){do_a_screen_capture();index_do_a_screen_capture=0;}
+/* CppCheck - unusedFunction if(index_do_a_screen_capture==1){do_a_screen_capture();index_do_a_screen_capture=0;} */
 if(index_do_a_plot_screen_capture==1 ){do_plot_screen_capture(plot_name_of_capture);index_do_a_plot_screen_capture=0;}
 
 }

@@ -111,7 +111,7 @@ Comport.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+30 && mouse_y<cfg_Y+55)
 {
 Comport.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 Comport.Draw(CouleurBlind);
 int new_comport=atoi(numeric);
@@ -122,7 +122,7 @@ if(arduino_device_0_is_ignited==1){arduino_close(0);}
 arduino_com0=new_comport;
 arduino_init(0);
 index_send_arduino_config=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -137,7 +137,7 @@ BaudrateB.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+60 && mouse_y<cfg_Y+85)
 {
 BaudrateB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 BaudrateB.Draw(CouleurBlind);
 int new_Baudrate=atoi(numeric);
@@ -149,7 +149,7 @@ if(arduino_device_0_is_ignited==1){arduino_close(0);}
 arduino_baud_rate0=new_Baudrate;
 arduino_init(0);
 index_send_arduino_config=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -166,7 +166,7 @@ ReqrateB.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+90 && mouse_y<cfg_Y+115)
 {
 ReqrateB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 ReqrateB.Draw(CouleurBlind);
 int new_Reqrate=atoi(numeric);
@@ -175,7 +175,7 @@ if( new_Reqrate>0 && new_Reqrate<=100 )
 {
 ARDUINO_RATE=new_Reqrate;
 install_int_ex(ticker_arduino ,BPS_TO_TIMER(ARDUINO_RATE));
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -190,7 +190,7 @@ MaxIOB.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+120 && mouse_y<cfg_Y+145)
 {
 MaxIOB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 MaxIOB.Draw(CouleurBlind);
 int new_maxio=atoi(numeric);
@@ -198,7 +198,7 @@ reset_numeric_entry();
 if( new_maxio>=0 && new_maxio<=digital_limit )
 {
 arduino_max_digital=new_maxio;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(position_line_io>arduino_max_digital-12)
 {position_line_io=0;}
@@ -215,7 +215,7 @@ MaxAnB.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+150 && mouse_y<cfg_Y+175)
 {
 MaxAnB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 MaxAnB.Draw(CouleurBlind);
 int new_maxan=atoi(numeric);
@@ -223,7 +223,7 @@ reset_numeric_entry();
 if( new_maxan>=0 && new_maxan<=analog_limit )
 {
 arduino_max_analog=new_maxan;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 if(position_line_ana>arduino_max_analog-12)
 {position_line_ana=0;}
@@ -241,7 +241,7 @@ MaxDIB.Draw(CouleurFond.WithAlpha(0.5));
 if(mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+180 && mouse_y<cfg_Y+205)
 {
 MaxDIB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 MaxDIB.Draw(CouleurBlind);
 int new_maxdi=atoi(numeric);
@@ -249,7 +249,7 @@ reset_numeric_entry();
 if( new_maxdi>=0 && new_maxdi<=digital_limit )
 {
 arduino_max_out_digi=new_maxdi;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -275,7 +275,7 @@ break;
 if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+210 && mouse_y<cfg_Y+235)
 {
 OpenB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 ticks_arduino=0;
 OpenB.Draw(CouleurBlind);
@@ -291,7 +291,7 @@ case 1:
    arduino_device_0_is_ignited=0;
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -306,7 +306,7 @@ if(window_focus_id==W_CFGMENU && arduino_device_0_is_ignited==1 && mouse_x>cfg_X
 {
 arduino_send.DrawOutline(CouleurLigne.WithAlpha(0.5));
 
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 index_send_arduino_config=1;
 index_do_light_send_config=1.0;
@@ -362,7 +362,7 @@ if(window_focus_id==W_CFGMENU && mouse_y>(cfg_Y+30+(y*20)) && mouse_y<(cfg_Y+45+
 if(mouse_x>cfg_X+205 && mouse_x<cfg_X+275)
 {
 OverTyp.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 arduino_digital_type[position_line_io+y]++;
 arduino_digital_function_input[position_line_io+y][1]=0;
@@ -384,7 +384,7 @@ else if((position_line_io+y)>=arduino_total_pin)
 
 
 OverTyp.Draw(CouleurFader);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 
 }
 }
@@ -394,7 +394,7 @@ mouse_released=1;
 if(mouse_x>cfg_X+285 && mouse_x<cfg_X+425)//famille d action
 {
 OverAction.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 if(arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==7|| arduino_digital_type[position_line_io+y]==2)//input
 {
@@ -412,7 +412,7 @@ arduino_digital_function_output[position_line_io+y][1]=0;
 }
 
 OverAction.Draw(CouleurFader);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -424,7 +424,7 @@ mouse_released=1;
 if(mouse_x>cfg_X+435 && mouse_x<cfg_X+465)//famille d action
 {
 OverVal.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 int valois=atoi(numeric);
 
@@ -441,7 +441,7 @@ arduino_digital_function_input[position_line_io+y][1]=valois;
 //faire data range pour le picth: 0 à 127
 if(
 (arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==2|| arduino_digital_type[position_line_io+y]==7)
-&& ( arduino_digital_function_input[position_line_io+y][0]>=17 || arduino_digital_function_input[position_line_io+y][0]<=32)
+&& ( arduino_digital_function_input[position_line_io+y][0]>=17 && arduino_digital_function_input[position_line_io+y][0]<=32)
 && valois>=0 && valois<=127
 )
 {
@@ -460,7 +460,7 @@ arduino_digital_function_output[position_line_io+y][1]=valois;
 }
 reset_numeric_entry();
 OverVal.Draw(CouleurFader);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 ///////////////////////////////////////
@@ -473,21 +473,21 @@ mouse_released=1;
 if(mouse_x>cfg_X+525 && mouse_x<cfg_X+630)
 {
 OverAff.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 arduino_analog_function_input[position_line_ana+y]++;
 arduino_analog_attribution_input[position_line_ana+y]=0;
 if(arduino_analog_function_input[position_line_ana+y]>20)
 {arduino_analog_function_input[position_line_ana+y]=0;}
 OverAff.Draw(CouleurFader);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 ///////////////LA VALEUR/////////////////////////////
 if(mouse_x>cfg_X+635 && mouse_x<cfg_X+665)//valeur
 {
 OverValA.DrawOutline(CouleurLigne);
-if(mouse_button==1 && mouse_released==0)
+if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
 {
 int valana=0;
 valana=atoi(numeric);
@@ -513,7 +513,7 @@ if(  arduino_analog_function_input[position_line_ana+y]>=5 &&  arduino_analog_fu
 
 
 OverValA.Draw(CouleurFader);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -858,7 +858,7 @@ if(mouse_y>cfg_Y+3 && mouse_y<cfg_Y+27)
 if(mouse_x>cfg_X+388 && mouse_x<cfg_X+412)
 {
 LineUp.Draw(CouleurSurvol);
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 LineUp.Draw(CouleurFader);
 if(position_line_io>0){position_line_io--;}
@@ -867,7 +867,7 @@ if(position_line_io>0){position_line_io--;}
 else if(mouse_x>cfg_X+428 && mouse_x<cfg_X+452)
 {
 LineDown.Draw(CouleurSurvol);
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 LineDown.Draw(CouleurFader);
 if(position_line_io<=arduino_max_digital-11){position_line_io++;}
@@ -890,7 +890,7 @@ if(window_focus_id==W_CFGMENU && mouse_y>cfg_Y+3 && mouse_y<cfg_Y+27)
 if(mouse_x>cfg_X+648 && mouse_x<cfg_X+672)
 {
 LineUpA.Draw(CouleurSurvol);
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 LineUpA.Draw(CouleurFader);
 if(position_line_ana>0){position_line_ana--;}
@@ -899,7 +899,7 @@ if(position_line_ana>0){position_line_ana--;}
 else if(mouse_x>cfg_X+688 && mouse_x<cfg_X+712)
 {
 LineDownA.Draw(CouleurSurvol);
-if(mouse_button==1)
+if(mouseLeftClic.isDown)
 {
 LineDownA.Draw(CouleurFader);
 if(position_line_ana<=arduino_max_analog-11){position_line_ana++;}

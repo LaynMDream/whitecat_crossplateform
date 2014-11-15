@@ -722,7 +722,7 @@ if(mouse_x>xp+30 && mouse_x<xp+42 && mouse_y> yp+112 && mouse_y<yp+126)
 midi_send_out[616+numero]=toggle(midi_send_out[616+numero]);
 midi_send_out[620+numero]=midi_send_out[616+numero];
 midi_send_out[624+numero]=midi_send_out[616+numero];
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -736,7 +736,7 @@ int do_logical_lecteur_audio( int xp, int yp, int numero)
 if(mouse_x>xp && mouse_x<xp+200 && mouse_y>yp && mouse_y<yp+20)
 {
 AffectSoundFile(numero);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //PLAY / Pause
@@ -753,7 +753,7 @@ if(mouse_x>xp && mouse_x<xp+20 && mouse_y>yp+30 && mouse_y<yp+30+20)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(628+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else {
@@ -812,7 +812,7 @@ case 3://PLAYER 4
 break;
 }
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -832,7 +832,7 @@ if(mouse_x>xp+25 && mouse_x<xp+45 && mouse_y>yp+30 && mouse_y<yp+30+20)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(632+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -854,7 +854,7 @@ case 3://PLAYER 4
 break;
 }
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -875,7 +875,7 @@ if(mouse_x>xp+50 && mouse_x<xp+70 && mouse_y>yp+30 && mouse_y<yp+30+20)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(636+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {
 
@@ -936,7 +936,7 @@ case 3://PLAYER 4
  }
 break;
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -956,7 +956,7 @@ if(mouse_x>xp+75 && mouse_x<xp+75+20 && mouse_y>yp+30 && mouse_y<yp+30+20)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(1821+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -980,7 +980,7 @@ default:
 break;
 }
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1000,7 +1000,7 @@ if(mouse_x>xp && mouse_x<xp+28 && mouse_y>yp+60 && mouse_y<yp+60+16)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(640+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else {
@@ -1022,7 +1022,7 @@ else {
     player4->setPosition(position_of_file_in_player[numero]-100000);
     break;
    }
-   mouse_released=1;
+   mouseLeftClic.eventProcessed=true;
    }
 
 }
@@ -1042,7 +1042,7 @@ if( Midi_Faders_Affectation_Type!=0)
 {
 
 attribute_midi_solo_affectation(644+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else {
@@ -1064,7 +1064,7 @@ else {
     player4->setPosition(position_of_file_in_player[numero]+100000);
     break;
    }
-   mouse_released=1;
+   mouseLeftClic.eventProcessed=true;
    }
 
 }
@@ -1088,7 +1088,7 @@ if(strcmp (audiofile_name,"")!=0)
 AffectSoundFile(numero);
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 //next track
@@ -1109,7 +1109,7 @@ if(strcmp (audiofile_name,"")!=0)
 AffectSoundFile(numero);
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1124,7 +1124,7 @@ if(mouse_x>xp+70 && mouse_x<xp+70+40 && mouse_y>yp+55 && mouse_y<yp+55+25)
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1809+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
@@ -1153,7 +1153,7 @@ reset_numeric_entry();numeric_postext=0;
 }
 }
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 
@@ -1173,13 +1173,13 @@ if(mouse_x>xp && mouse_x<xp+28 && mouse_y>yp+110 && mouse_y<yp+110+16)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(1800+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else
 {
 audio_autoload[numero]=toggle(audio_autoload[numero]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1195,12 +1195,12 @@ if(mouse_x>xp+35 && mouse_x<xp+35+40 && mouse_y>yp+110 && mouse_y<yp+110+16)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(1805+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else
 {
 audio_autopause[numero]=toggle(audio_autopause[numero]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1219,7 +1219,7 @@ if(mouse_x>xp+210 && mouse_x<xp+240 && mouse_y>yp && mouse_y<yp+20)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(648+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {
 if(index_edit_audio==1 )
@@ -1264,7 +1264,7 @@ break;
 }
 audiofile_cue_in_out_pos[(player_has_file_coming_from_pos[numero])][0]=player_seek_position[numero];
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -1283,7 +1283,7 @@ if(mouse_x>xp+235 && mouse_x<xp+255 && mouse_y>yp && mouse_y<yp+20)
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(652+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else {
@@ -1328,7 +1328,7 @@ break;
 }
 audiofile_cue_in_out_pos[(player_has_file_coming_from_pos[numero])][1]=player_loop_out_position[numero];
 }
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 }
@@ -1347,7 +1347,7 @@ if(mouse_x>xp+260 && mouse_x<xp+280 && mouse_y>yp && mouse_y<yp+20)
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(656+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {
 if(player_ignited[numero]==1)
@@ -1408,7 +1408,7 @@ case 3://PLAYER 4
 break;
 }
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1426,7 +1426,7 @@ if(mouse_x>xp+210 && mouse_x<xp+230 && mouse_y>yp+30 && mouse_y<yp+50)
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(660+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else {
@@ -1449,7 +1449,7 @@ case 3://PLAYER 4
 break;
 }
 }
- mouse_released=1;
+ mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1470,7 +1470,7 @@ if(mouse_x>xp+120+player_pitch[numero] && mouse_x<xp+150+player_pitch[numero] &&
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(624+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 else {
 
@@ -1525,7 +1525,7 @@ if(mouse_x>xp+120+player_pan[numero] && mouse_x<xp+150+player_pan[numero] && mou
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_solo_affectation(620+numero,Midi_Faders_Affectation_Mode);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 
 else {
@@ -1581,7 +1581,7 @@ if(index_type==1 )
 {
 index_ask_confirm=1;
 index_do_ask_call_audio_folder=1;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1594,7 +1594,7 @@ if(mouse_x>xb+355 && mouse_x<xb+355+150 && mouse_y>(yb+45+(y*20)-12) && mouse_y<
 {
 audiofile_selected=(y+line_audio);
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 }
 }
 
@@ -1604,11 +1604,11 @@ if(mouse_x>xb+570-12 && mouse_x<xb+570+12)
 {
 if(mouse_y>yb+65-12 && mouse_y<yb+65+12)
 {
-if(line_audio>0){line_audio--;mouse_released=1;}
+if(line_audio>0){line_audio--;mouseLeftClic.eventProcessed=true;}
 }
 if(mouse_y>yb+(index_nbre_players_visibles*6* 20)-7 && mouse_y<yb+(index_nbre_players_visibles*6* 20)+5)
 {
-if(line_audio+24<128){line_audio++;mouse_released=1;}
+if(line_audio+24<128){line_audio++;mouseLeftClic.eventProcessed=true;}
 }
 }
 
@@ -1616,7 +1616,7 @@ if(line_audio+24<128){line_audio++;mouse_released=1;}
 
     if(mouse_x>xb+230 && mouse_x<xb+230+50 && mouse_y>yb+10 && mouse_y<yb+10+20)
     {
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     scan_audiofolder();
    // Save_audiofiles_cues();
     Load_audiofiles_cues();
@@ -1628,7 +1628,7 @@ if(line_audio+24<128){line_audio++;mouse_released=1;}
     if(mouse_x>xb+230 && mouse_x<xb+230+50 && mouse_y>yb+40 && mouse_y<yb+40+20)
     {
     index_edit_audio=toggle(index_edit_audio);
-    mouse_released=1;
+    mouseLeftClic.eventProcessed=true;
     }
 
 
@@ -1654,7 +1654,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_audio_to_dock;
-mouse_released=1;
+mouseLeftClic.eventProcessed=true;
 
 }
 
@@ -1668,7 +1668,7 @@ for (int co=0;co<3;co++)
 
  player_to_affect_to_dock=pl;
  audio_type_for_dock_affectation_is=co; // 0 volume 1 pan 2 pitch
- mouse_released=0;
+ mouseLeftClic.eventProcessed=false; // ????
 
  }
 }

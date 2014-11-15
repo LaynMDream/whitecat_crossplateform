@@ -107,7 +107,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             {
                 substract_a_window(W_ASKCONFIRM);
                 substract_a_window(previous_window_focus_id);
-                mouse_released=1;
+                mouseLeftClic.eventProcessed=true;
                 window_focus_id=previous_window_focus_id;
                 add_a_window(window_focus_id);
             }
