@@ -119,7 +119,7 @@ volatile int before_ticks_dixieme_for_icat_and_draw=0;
 int largeur_ecran=1280;
 int hauteur_ecran=800;
 int visu_performances[32];
-Bitmap logo;
+ol::Bitmap logo;
 float myalpha=0.0;
 float myalphachan=0.0;
 float angle_souris=0.0,transparence_souris=1.0;
@@ -1253,12 +1253,12 @@ bool allow_artnet_in=0;
 //////////////////////////////////////////////////////////////////////////////////
 
 ////SOUND AUDIERE//////////////////////////////////////////////////////////////////
-AudioDevicePtr device;
+audiere::AudioDevicePtr device;
 
-OutputStreamPtr player1;
-OutputStreamPtr player2;
-OutputStreamPtr player3;
-OutputStreamPtr player4;
+audiere::OutputStreamPtr player1;
+audiere::OutputStreamPtr player2;
+audiere::OutputStreamPtr player3;
+audiere::OutputStreamPtr player4;
 
 bool starting_wcat=0;//démarrage
 

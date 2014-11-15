@@ -649,7 +649,7 @@ sprintf(list_audio_device[i],"%s-%s",devices[i].name.c_str(),devices[i].descript
 int InitSound()
 {
   ShowSupportedAudioDevices();
-  device=OpenDevice(0);// s ouvre automatiquement en winmm
+  device=audiere::OpenDevice(0);// s ouvre automatiquement en winmm
 
   if (!device) {
     sprintf (string_Last_Order,"No Sound Device available !");
