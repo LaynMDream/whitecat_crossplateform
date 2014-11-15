@@ -68,7 +68,8 @@ int detection_over_window()
             switch(window_opened[i])
             {
             case W_SAVEREPORT:
-                if( mouse_x>= report_SL_X && mouse_x<= report_SL_X+350 && mouse_y>=report_SL_Y && mouse_y<=report_SL_Y+160)
+                //if( mouse_x>= report_SL_X && mouse_x<= report_SL_X+350 && mouse_y>=report_SL_Y && mouse_y<=report_SL_Y+160)
+                if(mouseover_Show_report_save_load ())
                 {
                     window_is=window_opened[i];
                     stop_detect=1;
@@ -309,7 +310,7 @@ int move_window(int idwindowis)
         switch(window_focus_id)
         {
         case W_SAVEREPORT:
-            report_SL_X=mouse_x-(40+15);
+			report_SL_X=mouse_x-(40+15);
             report_SL_Y=mouse_y-25;
             im_moving_a_window=1;
             break;

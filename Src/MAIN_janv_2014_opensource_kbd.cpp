@@ -108,8 +108,12 @@ bufferSaisiesnamp=0;
 
 #include <grider_calculs8.cpp>
 
-
 #include <midi_CORE.cpp>
+
+#include <splashscreen_visu.cpp>
+#include <whc_report.h>
+#include <savereport_window.cpp>
+
 #include <CORE_6.cpp>
 
 

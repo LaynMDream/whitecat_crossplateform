@@ -276,14 +276,10 @@ WWWWWWWW           C  WWWWWWWW   |
     int modify_selection_in(int);
     int clear_plot_legend();
     int affect_mover_to_fader(int,int);
-    int reset_error_on_save_load();
-    int detect_error_on_save_load();
-    int clear_report_string();
     int clear_xyrelativ_preset(int);
     int affect_preset_xy_to_symbols(int);
     int record_preset_xy_from_symbol(int);
     int clear_completely_the_patch();
-    int show_title();
     int load_plan_of_theatre(char,bool);
     int set_plot_background_to_default();
     int  refresh_shape_factors(int);
@@ -1051,7 +1047,6 @@ WWWWWWWW           C  WWWWWWWW   |
     void On_Open_name_of_directory();
     int get_current_time();
     int load_midipreset();
-    int Show_report_save_load();
     int load_onstart_config();
     int load_screen_config();
     int load_core_config();
@@ -1228,6 +1223,23 @@ WWWWWWWW           C  WWWWWWWW   |
     int wizard_reset_to_default_time();
     int do_wizard_mem();
     int do_wizard_ch();
+//}
+
+//currently in splashscreen visu
+//{
+    void show_title();
+	void save_load_print_to_screen(const std::string label);
+//}
+
+//currently in savereport window
+//{
+	bool mouseover_Show_report_save_load ();
+	void Show_report_save_load_logic ();
+	void Show_report_save_load_draw();
+	void reset_error_on_save_load();
+	void detect_error_on_save_load();
+	void clear_report_string();
+	void Show_report_save_load();
 //}
 
 #endif // WHITECAT_FCT_H_INCLUDED
