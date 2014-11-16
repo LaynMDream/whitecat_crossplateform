@@ -2537,12 +2537,12 @@ HWND hwnd ;
  typedef struct eventclic
 {
    bool isDown, isDouble, eventProcessed ;
-   int  posx, posy, posz;
+//   int  posx, posy, posz;
    time_t timer;
 } eventclic;
-eventclic 	mouseLeftClic = {false, false, false, 0,0,0},
-			mouseMiddleClic = {false, false, false, 0,0,0},
-			mouseRightClic = {false, false, false, 0,0,0};
+eventclic 	mouseLeftClic = {false, false, false},  //, 0,0,0},
+			mouseMiddleClic = {false, false, false},  //, 0,0,0},
+			mouseRightClic = {false, false, false} ; //, 0,0,0};
 std::deque<eventclic> mouseLeftClicHistory;
 std::deque<eventclic> mouseMiddleClicHistory;
 std::deque<eventclic> mouseRightClicHistory;
@@ -2574,5 +2574,10 @@ typedef struct eventmove
 } eventmove;
 eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
 //sab 26/06/2014 FIN - Reporté depuis fichier Main
+
+//test
+#include <whc_mouse.h>
+
+
 
 

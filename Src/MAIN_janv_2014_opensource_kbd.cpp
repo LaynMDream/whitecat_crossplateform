@@ -54,7 +54,7 @@ WWWWWWWW           C  WWWWWWWW   |
 #include <jpgalleg.h>
 
 
-using namespace audiere;
+//using namespace audiere;
 using namespace ol;
 
 int BPS_RATE=50;//devient dmx rate
@@ -338,7 +338,7 @@ void do_mouse_right_click_menu()
 //sab 12/07/2014 DEB
 /** keep menu window in the limits of main window of White Cat */
 		int max_x = posX_mainwindow + largeur_ecran  - size_x_mainmenu - 10 ;
-		int max_y = posY_mainwindow + hauteur_ecran  - size_y_mainmenu - 10 ;
+		int max_y = posY_mainwindow + hauteur_ecran  - size_y_mainmenu - 50 ;
 
 		x_mainmenu = mouse_x ;
 		if (x_mainmenu>max_x)
@@ -359,11 +359,14 @@ void do_mouse_right_click_menu()
 }
 
 //test begin montée/descente accélérée
-int test_format=0;
+int test_format;
 int test_loop =0 ;
 int test_level_i = 0 ;
 float test_level_f = 0 ;
 float test_speed_f = 0 ;
+//test
+whc_button mouseClicLeft; whc_button mouseClicMiddle; whc_button mouseClicRight;
+whc_wheel mouseScroll; whc_wheel mouseRoll;
 //test end montée descente acceleree
 
 /** \brief On mouse event - Manage mouse global variable
@@ -374,31 +377,9 @@ float test_speed_f = 0 ;
  */
 void my_callback(int flags) {
 
-	//Mouse wheel event
-    {
-        mouseWheel.gap = mouse_z - mouseWheel.level;				//Instant mouvement of the wheel : -1, 0, +1
-
-        if (mouseMiddleClic.isDown)
-        {
-            mouseWheel.speed = mouseWheel.speed + mouseWheel.gap;	//Instant acceleration of the speed
-        }
-        else
-        {
-            mouseWheel.speed = 0;
-        }
-
-        if (mouseWheel.eventProcessed)
-        {
-            mouseWheel.yield = 0 ; 									//Gain was processed
-            // beware interaction with : position_mouse_z(0);
-        }
-
-        mouseWheel.yield = mouseWheel.yield + mouseWheel.gap ;		//Gain of level since last time that event was processed
-        mouseWheel.level = mouse_z; 								//Instant level of the wheel
-
-        mouseWheel.eventProcessed = false;
-        //sprintf(string_Last_Order,"Roue gap < %i > level < %i > speed <%i>", mouseWheel.gap, mouseWheel.level, mouseWheel.speed);
-    }
+//test
+whc_button::CollectEvent(flags, mouseClicLeft, mouseClicMiddle, mouseClicRight);
+whc_wheel::CollectEvent(flags, mouseScroll, mouseRoll);
 
 	//Mouse move event
 	{
@@ -427,9 +408,9 @@ void my_callback(int flags) {
         mouseLeftClic.isDown=true;
         mouseLeftClic.isDouble = false;
         mouseLeftClic.eventProcessed=false;
-        mouseLeftClic.posx=mouse_x;
-        mouseLeftClic.posy=mouse_y;
-        mouseLeftClic.posz=mouse_z;
+//        mouseLeftClic.posx=mouse_x;
+//        mouseLeftClic.posy=mouse_y;
+//        mouseLeftClic.posz=mouse_z;
         mouseLeftClic.timer = time(NULL);
 
         if (mouseLeftClicHistory.size()>=2) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
@@ -501,9 +482,9 @@ void my_callback(int flags) {
         mouseLeftClic.isDown=false;
         // keep the analyse done when mouse Left button was pressed down : mouseLeftClic.isDouble = false;
         mouseLeftClic.eventProcessed=false;
-        mouseLeftClic.posx=mouse_x;
-        mouseLeftClic.posy=mouse_y;
-        mouseLeftClic.posz=mouse_z;
+//        mouseLeftClic.posx=mouse_x;
+//        mouseLeftClic.posy=mouse_y;
+//        mouseLeftClic.posz=mouse_z;
         mouseLeftClic.timer = time(NULL);
 
 		//Keep only previous down-up sequence with the current
@@ -539,9 +520,9 @@ void my_callback(int flags) {
         mouseRightClic.isDown=true;
         mouseRightClic.isDouble = false;
         mouseRightClic.eventProcessed=false;
-        mouseRightClic.posx=mouse_x;
-        mouseRightClic.posy=mouse_y;
-        mouseRightClic.posz=mouse_z;
+//        mouseRightClic.posx=mouse_x;
+//        mouseRightClic.posy=mouse_y;
+//        mouseRightClic.posz=mouse_z;
         mouseRightClic.timer = time(NULL);
 
         mouseRightClicHistory.push_front (mouseRightClic);
@@ -578,9 +559,9 @@ void my_callback(int flags) {
         mouseRightClic.isDown=false;
         mouseRightClic.isDouble = false;
         mouseRightClic.eventProcessed=false;
-        mouseRightClic.posx=mouse_x;
-        mouseRightClic.posy=mouse_y;
-        mouseRightClic.posz=mouse_z;
+//        mouseRightClic.posx=mouse_x;
+//        mouseRightClic.posy=mouse_y;
+//        mouseRightClic.posz=mouse_z;
         mouseRightClic.timer = time(NULL);
         mouseRightClicHistory.push_front (mouseRightClic);
 
@@ -601,9 +582,9 @@ void my_callback(int flags) {
         mouseMiddleClic.isDown=true;
         mouseMiddleClic.isDouble = false;
         mouseMiddleClic.eventProcessed=false;
-        mouseMiddleClic.posx=mouse_x;
-        mouseMiddleClic.posy=mouse_y;
-        mouseMiddleClic.posz=mouse_z;
+//        mouseMiddleClic.posx=mouse_x;
+//        mouseMiddleClic.posy=mouse_y;
+//        mouseMiddleClic.posz=mouse_z;
         mouseMiddleClic.timer = time(NULL);
 
 //        mouseWheel.speed = mouseWheel.gap;
@@ -623,9 +604,9 @@ void my_callback(int flags) {
         mouseMiddleClic.isDown=false;
         mouseMiddleClic.isDouble = false;
         mouseMiddleClic.eventProcessed=false;
-        mouseMiddleClic.posx=mouse_x;
-        mouseMiddleClic.posy=mouse_y;
-        mouseMiddleClic.posz=mouse_z;
+//        mouseMiddleClic.posx=mouse_x;
+//        mouseMiddleClic.posy=mouse_y;
+//        mouseMiddleClic.posz=mouse_z;
         mouseMiddleClic.timer = time(NULL);
 
 //        mouseWheel.speed = 0;
@@ -764,14 +745,14 @@ void ticker_full_loop()
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
     test_format=2;
 
-    if (mouseMiddleClic.isDown)
+    if ((key[KEY_LCONTROL]))
     {
         if (test_format==1)
         {
             /* 1ère signature de la fonction :
             - niveau géré avec une variable (float)
             */
-            test_level_i = level_wheelSpeedIncreased(test_level_f, 100., 0., 1000.);
+            test_level_i = whc_wheel::leveIncrease(mouseScroll, test_level_f, 100., 0., 1000.);
         }
         if (test_format==2)
         {
@@ -779,7 +760,7 @@ void ticker_full_loop()
             - niveau géré avec une variable (int)
             - besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
             */
-            level_wheelSpeedIncreased(test_level_i, 256, -255, 2000, test_loop);
+            whc_wheel::leveIncrease(mouseScroll, test_level_i, 256, -255, test_loop, 1000);
         }
     }
     else
@@ -791,12 +772,12 @@ void ticker_full_loop()
     if (test_format==1)
     {
         sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i %f",
-        mouseWheel.level, mouseWheel.gap, mouseWheel.speed, test_level_i, test_level_f);
+        mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_level_f);
     }
     if (test_format==2)
     {
         sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i loop %i",
-        mouseWheel.level, mouseWheel.gap, mouseWheel.speed, test_level_i, test_loop);
+        mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_loop);
     }
     if (test_format==3)
     {
@@ -806,12 +787,12 @@ void ticker_full_loop()
     if (test_format==4)
     {
         sprintf(string_Last_Order,"Right %i Double %i Done %i pos %i %i %i time %f",
-        (mouseRightClic.isDown ? 1:0), (mouseRightClic.isDouble ? 1:0), (mouseRightClic.eventProcessed ? 1:0), mouseRightClic.posx, mouseRightClic.posy,mouseRightClic.posz, (float) mouseRightClic.timer);
+        (mouseRightClic.isDown ? 1:0), (mouseRightClic.isDouble ? 1:0), (mouseRightClic.eventProcessed ? 1:0), (float) mouseRightClic.timer); //mouseRightClic.posx, mouseRightClic.posy,mouseRightClic.posz,
     }
     if (test_format==5)
     {
         sprintf(string_Last_Order,"Left %i Double %i Done %i pos %i %i %i time %f",
-        (mouseLeftClic.isDown ? 1:0), (mouseLeftClic.isDouble ? 1:0), (mouseLeftClic.eventProcessed ? 1:0), mouseLeftClic.posx, mouseLeftClic.posy,mouseLeftClic.posz, (float) mouseLeftClic.timer);
+        (mouseLeftClic.isDown ? 1:0), (mouseLeftClic.isDouble ? 1:0), (mouseLeftClic.eventProcessed ? 1:0), (float) mouseLeftClic.timer); // mouseLeftClic.posx, mouseLeftClic.posy,mouseLeftClic.posz,
     }
     if (test_format==6)
     {
@@ -1113,6 +1094,21 @@ if (hwnd != NULL)
 			{
 				window_init = true ;
 			}
+            if (std::string(argv[ n ])=="--double_clic")
+			{
+				if (n+1<=argc)
+				{
+						try
+						{
+							whc_button::gapSecond = atof(argv[n+1]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							whc_button::gapSecond = 0.5000000 ;
+						}
+				}
+			}
         }
     }
 
@@ -1126,11 +1122,7 @@ if (hwnd != NULL)
     if (window_border)
     {
     	Settings::SetWindowBorder(true) ; index_fullscreen=0;
-	#ifdef _WIN32
-        Setup::SetupScreen( largeur_ecran, hauteur_ecran - 30,WINDOWED, desktop_color_depth() );
-	#else
-        Setup::SetupScreen( largeur_ecran, hauteur_ecran,WINDOWED, desktop_color_depth() );
-	#endif
+		Setup::SetupScreen( largeur_ecran, hauteur_ecran-30,WINDOWED, desktop_color_depth() );
     }
     else
 	{
@@ -1148,12 +1140,8 @@ if (hwnd != NULL)
 	hwnd = win_get_window();
     if (hwnd != NULL)
 	{
-		#ifdef _WIN32
-		if (window_border) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H + 30, true);}
+		if (window_border) { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H+30, true);}
 		else  { MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);}
-		#else
-		MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);
-		#endif
 	}
 
 /*sab 27/07/2014 FIN */

@@ -1033,8 +1033,6 @@ WWWWWWWW           C  WWWWWWWW   |
     int detection_over_window();
     int move_window(int);
     int MoveCloseBox(int,int,int);
-    int level_wheelSpeedIncreased(float &,float,float,float);
-    void level_wheelSpeedIncreased(int &,int,int,int,int &);
 	bool mouseMoveSinceLeftClic ();
 	bool mouseMoveSinceRightClic ();
     int do_logical_MoveCloseBox(int,int,int);

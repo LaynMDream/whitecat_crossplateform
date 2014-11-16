@@ -1856,6 +1856,8 @@ int reset_window_positions()
 	X_banger=100;
     Y_banger=100;
     /* sab 27/07/2014 FIN */
+    xsave_window=200;
+    ysave_window=200;
     return(0);
 }
 

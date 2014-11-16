@@ -502,53 +502,12 @@ int MoveCloseBox(int xmv,int ymv, int idwindow)
 }
 
 
-// 1ère signature de la fonction : la fonction modifie la valeur de la variable fournie f_level et la part entière signée (int)
-int level_wheelSpeedIncreased(float &f_level, float maxlevel, float minlevel, float ratiospeed)
+bool no_LeftDragDrop()
 {
-    float f_speed;
+    return (original_posx==mouse_x && original_posy==mouse_y);
 
-    f_speed = mouseWheel.speed / ratiospeed ;
-    f_level = f_level + f_speed;
-
-    if (f_level > maxlevel)
-    {
-        f_level=maxlevel;
-    }
-    if (f_level<minlevel)
-    {
-        f_level=minlevel ;
-    }
-    return (int) f_level;
-}
-// 2de signature de la fonction : la fonction modifie les valeurs des variables fournies i_loop et i_level
-void level_wheelSpeedIncreased(int &i_level, int maxlevel, int minlevel, int loopratio, int &i_loop)
-{
-    i_loop ++;
-
-	if (i_loop>loopratio)
-	{
-		i_loop = 1;
-		i_level = i_level + mouseWheel.speed;
-
-		if (i_level > maxlevel)
-		{
-			i_level=maxlevel;
-		}
-		if (i_level<minlevel)
-		{
-			i_level=minlevel ;
-		}
-	}
 }
 
-bool mouseMoveSinceLeftClic ()
-{
-    return (mouseLeftClic.posx==mouse_x && mouseLeftClic.posy==mouse_y);
-}
-bool mouseMoveSinceRightClic ()
-{
-    return (mouseRightClic.posx==mouse_x && mouseRightClic.posy==mouse_y);
-}
 
 int do_logical_MoveCloseBox(int xmv,int ymv, int idwindow)
 {
@@ -560,14 +519,14 @@ int do_logical_MoveCloseBox(int xmv,int ymv, int idwindow)
             if(mouse_x>xmv-15 && mouse_x<xmv+15)
             {
                 //if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
-                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && mouseMoveSinceLeftClic ())
+                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && no_LeftDragDrop())
                 {
                     substract_a_window(idwindow);
                     mouseLeftClic.eventProcessed=true;
                 }
             }
 // else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (original_posx==mouse_x && original_posy==mouse_y))
-            else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (mouseMoveSinceLeftClic ()))
+            else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (no_LeftDragDrop()))
             {
                 move_window(idwindow);
             }

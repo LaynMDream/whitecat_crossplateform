@@ -47,10 +47,10 @@ void show_title()
 	int x_left_ref = (largeur_ecran/2)-195 ;
 	int y_bott_ref = (hauteur_ecran/2)-120 - 50 ;
 
-	Rect background_splashscreen( Vec2D(x_left_ref-50,y_bott_ref-180), Vec2D(525,650));
+	Rect background_splashscreen( Vec2D(x_left_ref-50,y_bott_ref-180), Vec2D(525,665));
 	background_splashscreen.SetRoundness(15);
-	//background_splashscreen.SetLineWidth(epaisseur_ligne_fader);
-	//background_splashscreen.DrawOutline(CouleurLigne);
+	background_splashscreen.SetLineWidth(epaisseur_ligne_fader);
+	background_splashscreen.DrawOutline(CouleurFader);
 	background_splashscreen.Draw(CouleurFond);
 
     logo.Blit(x_left_ref+60,(hauteur_ecran/2));
