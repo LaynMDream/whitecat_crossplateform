@@ -743,7 +743,7 @@ void ticker_full_loop()
 {
 
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
-    test_format=2;
+    //test_format=2;
 
     if ((key[KEY_LCONTROL]))
     {
@@ -769,35 +769,47 @@ void ticker_full_loop()
     }
 
 
-    if (test_format==1)
+    if ((key[KEY_LCONTROL]) && (test_format==1))
     {
-        sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i %f",
+        sprintf(debugLine.logdata,"wheel %i gap %i speed %i niv %i %f",
         mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_level_f);
+		sprintf(debugLine.logtitle," fct 1 >");
+		debugLog.push_front(debugLine);
     }
-    if (test_format==2)
+    if ((key[KEY_LCONTROL]) && (test_format==2))
     {
-        sprintf(string_Last_Order,"wheel %i gap %i speed %i niv %i loop %i",
+        sprintf(debugLine.logdata,"wheel %i gap %i speed %i niv %i loop %i",
         mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_loop);
+		sprintf(debugLine.logtitle," fct 2 >");
+		debugLog.push_front(debugLine);
     }
     if (test_format==3)
     {
-        sprintf(string_Last_Order,"wheel %i gap %i yield %i speed %i",
+        sprintf(debugLine.logdata,"wheel %i gap %i yield %i speed %i",
         mouseWheel.level, mouseWheel.gap, mouseWheel.yield, mouseWheel.speed);
+		sprintf(debugLine.logtitle," fct 3 >");
+		debugLog.push_front(debugLine);
     }
     if (test_format==4)
     {
-        sprintf(string_Last_Order,"Right %i Double %i Done %i pos %i %i %i time %f",
+        sprintf(debugLine.logdata,"Right %i Double %i Done %i pos %i %i %i time %f",
         (mouseRightClic.isDown ? 1:0), (mouseRightClic.isDouble ? 1:0), (mouseRightClic.eventProcessed ? 1:0), (float) mouseRightClic.timer); //mouseRightClic.posx, mouseRightClic.posy,mouseRightClic.posz,
+		sprintf(debugLine.logtitle," fct 4 >");
+		debugLog.push_front(debugLine);
     }
     if (test_format==5)
     {
-        sprintf(string_Last_Order,"Left %i Double %i Done %i pos %i %i %i time %f",
+        sprintf(debugLine.logdata,"Left %i Double %i Done %i pos %i %i %i time %f",
         (mouseLeftClic.isDown ? 1:0), (mouseLeftClic.isDouble ? 1:0), (mouseLeftClic.eventProcessed ? 1:0), (float) mouseLeftClic.timer); // mouseLeftClic.posx, mouseLeftClic.posy,mouseLeftClic.posz,
+		sprintf(debugLine.logtitle," fct 5 >");
+		debugLog.push_front(debugLine);
     }
     if (test_format==6)
     {
-        sprintf(string_Last_Order,"BckGrndButton %i mouseYield %i BckGrndColor %f",
+        sprintf(debugLine.logdata,"BckGrndButton %i mouseYield %i BckGrndColor %f",
         (plot_editing_color_background? 1:0), mouseWheel.yield, Color_plotfill);
+		sprintf(debugLine.logtitle," fct 6 >");
+		debugLog.push_front(debugLine);
     }
 //sab 28/06/2014 - FIN - test
 
@@ -1086,16 +1098,29 @@ if (hwnd != NULL)
         for (int n = 1; n < argc; n++)
         {
             std::cout << std::setw( 2 ) << n << ": " << argv[ n ] << '\n';
+   				sprintf(debugLine.logdata," %i (%s)",n,argv[ n ]);
+				sprintf(debugLine.logtitle," InLine Arg >");
+				debugLog.push_front(debugLine);
+
             if (std::string(argv[ n ])=="--border")
 			{
 				window_border = true ;
+				sprintf(debugLine.logdata," %i (%s)",n,argv[ n ]);
+				sprintf(debugLine.logtitle," InLine Cmd >");
+				debugLog.push_front(debugLine);
 			}
             if (std::string(argv[ n ])=="--init")
 			{
 				window_init = true ;
+				sprintf(debugLine.logdata," %i (%s)",n,argv[ n ]);
+				sprintf(debugLine.logtitle," InLine Cmd >");
+				debugLog.push_front(debugLine);
 			}
             if (std::string(argv[ n ])=="--double_clic")
 			{
+				sprintf(debugLine.logdata," %i (%s) ",n,argv[ n ]);
+				sprintf(debugLine.logtitle," InLine Cmd >");
+				debugLog.push_front(debugLine);
 				if (n+1<=argc)
 				{
 						try
@@ -1107,6 +1132,30 @@ if (hwnd != NULL)
 							//cerr << e.what();
 							whc_button::gapSecond = 0.5000000 ;
 						}
+						sprintf(debugLine.logdata," %i (%s) value = %f",n,argv[ n ],whc_button::gapSecond);
+						sprintf(debugLine.logtitle," cmd value >");
+						debugLog.push_front(debugLine);
+				}
+			}
+            if (std::string(argv[ n ])=="--test")
+			{
+				sprintf(debugLine.logdata," %i (%s) ",n,argv[ n ]);
+				sprintf(debugLine.logtitle," InLine Cmd >");
+				debugLog.push_front(debugLine);
+				if (n+1<=argc)
+				{
+						try
+						{
+							test_format = atoi(argv[n+1]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							test_format = 0 ;
+						}
+						sprintf(debugLine.logdata," %i (%s) value = %i",n,argv[ n ],test_format);
+						sprintf(debugLine.logtitle," Cmd value >");
+						debugLog.push_front(debugLine);
 				}
 			}
         }

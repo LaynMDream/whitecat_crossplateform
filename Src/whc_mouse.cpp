@@ -32,7 +32,7 @@ bool whc_button::IsThisADoubleClic (whc_mousebutton button)
 
 	if (whc_button::mouseClicHistory.size()>0)
 	{
-		if (whc_button::mouseClicHistory[1].button = whc_button::mouseLastClic.button)
+		if (whc_button::mouseClicHistory[0].button = whc_button::mouseLastClic.button)
 		{
 			clock_t present  = whc_button::mouseLastClic.cpu_clock_ticks ; 			// present  down
 			clock_t past     = whc_button::mouseClicHistory[1].cpu_clock_ticks ; 	// previous down

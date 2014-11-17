@@ -216,9 +216,9 @@ void Show_report_save_load_draw()
 
     neuro.Print( "Save-Load Report",   report_SL_X+100,  report_SL_Y+30);
     petitchiffre.Print( "Directory",   report_SL_X+15,   report_SL_Y+60,  45,RIGHT);
-    petitchiffre.Print( mondirectory,  report_SL_X+65,   report_SL_Y+60, 300,LEFT);
+    petitchiffre.Print( mondirectory,  report_SL_X+65,   report_SL_Y+60, 250,LEFT);
     petitchiffre.Print( "Show",        report_SL_X+15,   report_SL_Y+75,  45,RIGHT);
-    petitchiffre.Print( nomduspectacle,report_SL_X+65,   report_SL_Y+75, 300,LEFT);
+    petitchiffre.Print( nomduspectacle,report_SL_X+65,   report_SL_Y+75, 250,LEFT);
 
 
 }

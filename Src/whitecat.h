@@ -2580,4 +2580,14 @@ eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
 
 
 
+ typedef struct whc_log
+{
+	char logtitle[35];
+	char logdata[256];
+} whc_log;
+whc_log debugLine ;
+std::deque<whc_log> debugLog;
+
+
+
 
