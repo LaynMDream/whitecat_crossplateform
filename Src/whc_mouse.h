@@ -49,6 +49,59 @@ class whc_button
 		/** Default destructor */
 		virtual ~whc_button();
 
+		/** Evaluate if down over Rectangle
+		 * \return bool
+		 * \param x_left, y_top, x_size, y_size, set_processed
+		 */
+		bool toBeProcessed_isDown_isOverRecSize(int x_left, int y_top, int x_size, int y_size, bool set_processed=false)
+		{ 	if (not m_Processed)
+			{
+				bool value = ((mouse_x>=x_left) and (mouse_x<=x_left+x_size) and (mouse_y>=y_top) and (mouse_y<=y_top+y_size));
+				m_Processed = (value and set_processed);
+				return value;
+			}
+			return false;
+		}
+		bool toBeProcessed_isDouble_isOverRecSize(int x_left, int y_top, int x_size, int y_size, bool set_processed=false)
+		{ 	if ((not m_Processed) and (m_Double))
+			{
+				bool value = ((mouse_x>=x_left) and (mouse_x<=x_left+x_size) and (mouse_y>=y_top) and (mouse_y<=y_top+y_size));
+				m_Processed = (value and set_processed);
+				return value;
+			}
+			return false;
+		}
+		bool isOverRecSize(int x_left, int y_top, int x_size, int y_size)
+		{
+			return ((mouse_x>=x_left) and (mouse_x<=x_left+x_size) and (mouse_y>=y_top) and (mouse_y<=y_top+y_size));
+		}
+		/** Evaluate if down over Rectangle
+		 * \return bool
+		 * \param x_left, y_top, x_right, y_bottom, set_processed
+		 */
+		bool toBeProcessed_isDown_isOverRecPos(int x_left, int y_top, int x_right, int y_bottom, bool set_processed=false)
+		{ 	if (not m_Processed)
+			{
+				bool value = ((mouse_x>=x_left) and (mouse_x<=x_right) and (mouse_y>=y_top) and (mouse_y<=y_bottom));
+				m_Processed = (value and set_processed);
+				return value;
+			}
+			return false;
+		}
+		bool toBeProcessed_isDouble_isOverRecPos(int x_left, int y_top, int x_right, int y_bottom, bool set_processed=false)
+		{ 	if ((not m_Processed) and (m_Double))
+			{
+				bool value = ((mouse_x>=x_left) and (mouse_x<=x_right) and (mouse_y>=y_top) and (mouse_y<=y_bottom));
+				m_Processed = (value and set_processed);
+				return value;
+			}
+			return false;
+		}
+		bool isOverRecPos(int x_left, int y_top, int x_right, int y_bottom)
+		{
+			return ((mouse_x>=x_left) and (mouse_x<=x_right) and (mouse_y>=y_top) and (mouse_y<=y_bottom));
+		}
+
 		/** Access m_Down
 		 * \return The current value of m_Down
 		 */
@@ -90,7 +143,7 @@ class whc_button
 		 * \return The current value of m_Processed
 		 */
 		bool isProcessed() { return m_Processed; }
-		bool isToProcessed() { return (not m_Processed); }
+		bool toBeProcessed() { return (not m_Processed); }
 		/** Set m_Processed
 		 * \param val New value to set
 		 */
@@ -164,7 +217,7 @@ class whc_wheel
 		 * \return The current value of m_Processed
 		 */
 		bool isProcessed() { return m_Processed; }
-		bool isToProcessed() { return (not m_Processed); }
+		bool toBeProcessed() { return (not m_Processed); }
 		/** Set m_Processed
 		 * \param val New value to set
 		 */

@@ -35,7 +35,7 @@ bool whc_button::IsThisADoubleClic (whc_mousebutton button)
 		if (whc_button::mouseClicHistory[0].button = whc_button::mouseLastClic.button)
 		{
 			clock_t present  = whc_button::mouseLastClic.cpu_clock_ticks ; 			// present  down
-			clock_t past     = whc_button::mouseClicHistory[1].cpu_clock_ticks ; 	// previous down
+			clock_t past     = whc_button::mouseClicHistory[0].cpu_clock_ticks ; 	// previous down
 
 			float nbr_ticks_per_sec = CLOCKS_PER_SEC * 1.0 ;
 			clock_t gap_in_ticks = (present - past);
@@ -125,7 +125,7 @@ void whc_wheel::CollectEvent (int& mouseSignal, whc_wheel& mouseScroll , whc_whe
     switch(mouseSignal)
     {
     	case MOUSE_FLAG_MOVE_Z  :   //Scroll
-    		mouseScroll.isToProcessed();
+    		mouseScroll.toBeProcessed();
     		mouseScroll.SetGain(mouse_z - whc_wheel::mouse_z_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
     		mouseScroll.SetLevel( mouseScroll.level() + mouseScroll.gain()); // level is not automatically set to 0 when event processed (mouse_z will be : see case default)
     		whc_wheel::mouse_z_prev = mouse_z;
@@ -141,7 +141,7 @@ void whc_wheel::CollectEvent (int& mouseSignal, whc_wheel& mouseScroll , whc_whe
 			break;
 
     	case MOUSE_FLAG_MOVE_W  :   //Roll
-    		mouseRoll.isToProcessed();
+    		mouseRoll.toBeProcessed();
     		mouseRoll.SetGain(mouse_w - whc_wheel::mouse_w_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
     		mouseRoll.SetLevel(mouseRoll.level() + mouseRoll.gain()); // level is not automatically set to 0 when event processed (mouse_w will be : see case default)
     		whc_wheel::mouse_w_prev = mouse_w;

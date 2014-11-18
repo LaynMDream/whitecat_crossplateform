@@ -811,6 +811,34 @@ void ticker_full_loop()
 		sprintf(debugLine.logtitle," fct 6 >");
 		debugLog.push_front(debugLine);
     }
+    //
+    if ((mouseClicLeft.toBeProcessed()) and (mouseClicLeft.isDouble()))
+    {
+    	bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
+    	if (tst) {
+		sprintf(debugLine.logdata," DOUBLE sur save as")	;
+    	}
+    	else
+        {
+        	sprintf(debugLine.logdata," SIMPLE en dehors de save as")	;
+        }
+		sprintf(debugLine.logtitle," LeftClic");
+		debugLog.push_front(debugLine);
+    }
+    if (mouseClicLeft.toBeProcessed())
+    {
+    	bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
+    	if (tst) {
+		sprintf(debugLine.logdata," SIMPLE sur save as")	;
+    	}
+    	else
+        {
+        	sprintf(debugLine.logdata," SIMPLE en dehors de save as")	;
+        }
+		sprintf(debugLine.logtitle," LeftClic");
+		debugLog.push_front(debugLine);
+    }
+
 //sab 28/06/2014 - FIN - test
 
     if(core_do_calculations[2]==1 && starting_wcat==0)
