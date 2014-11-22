@@ -14,6 +14,7 @@
 				<Option object_output="../../../../whitecatbuild/build/white_cat_for_mingw/obj" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Option parameters="--double_clic .75 --test 3 1 " />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="Src" />
@@ -43,6 +44,7 @@
 			<Add directory="../../../Src" />
 			<Add directory="C:/MinGW/opencv2.4.8/include" />
 			<Add directory="C:/MinGW/include/libharu" />
+			<Add directory="../../../whitecatlib/" />
 		</Compiler>
 		<Linker>
 			<Add option="-lopenlayer -lglyph-agl -lfreetype -llogg -lvorbis -lalleggl -ljpgalleg -lalleg44.dll -luser32 -lgdi32 -lglu32 -lopengl32 -lpthreadGC2 -lwsock32 -liphlpapi -lpng12.dll -lz -lhpdf" />

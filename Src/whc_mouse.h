@@ -8,6 +8,18 @@
 #include <time.h>
 //Container C compatible
 #include <vector>
+//Boost
+/*
+Boost.DateTime offers an additional class named boost::posix_time::microsec_clock
+that returns the current time including microseconds in case a higher resolution is required.
+#include "boost/date_time/local_time/local_time.hpp"
+time_zone_ptr
+  zone(new posix_time_zone("MST-07"));
+local_date_time
+  ldt((ptime(date(2005,Jan,1),hours(0))), zone);
+local_time_period ltp(ldt, hours(2));
+ltp.length(); // => 02:00:00
+*/
 
 typedef enum
 {
@@ -33,16 +45,18 @@ typedef struct whc_eventclic
 {
    whc_mousebutton button;
    clock_t cpu_clock_ticks;
+   //float cpu_clock_ticks;
 } whc_eventclic;
 
 class whc_button
 {
 	public:
-		float static gapSecond ; 	//!< Instance variable - gapSecond : max time between two clics to be a double clic
-		whc_eventclic static mouseLastClic ;	//!< Instance variable - mouseLastClic :
-		std::vector<whc_eventclic> static mouseClicHistory; //!< Instance variable - mouseClicHistory :
-		bool static IsThisADoubleClic (whc_mousebutton);
-		void static CollectEvent (int& mousesignal, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
+		//float static c_milliseconds ; 	//!< Instance variable - milliseconds
+		float static c_gapSecond ; 	//!< Instance variable - gapSecond : max time between two clics to be a double clic
+		whc_eventclic static c_mouseLastClic ;	//!< Instance variable - mouseLastClic :
+		std::vector<whc_eventclic> static c_mouseClicHistory; //!< Instance variable - mouseClicHistory :
+		bool static c_IsThisADoubleClic (whc_mousebutton);
+		void static c_CollectEvent (int& mousesignal, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
 
 		/** Default constructor */
 		whc_button();
@@ -56,8 +70,8 @@ class whc_button
 		bool toBeProcessed_isDown_isOverRecSize(int x_left, int y_top, int x_size, int y_size, bool set_processed=false)
 		{ 	if (not m_Processed)
 			{
-				bool value = ((mouse_x>=x_left) and (mouse_x<=x_left+x_size) and (mouse_y>=y_top) and (mouse_y<=y_top+y_size));
-				m_Processed = (value and set_processed);
+				bool value = isOverRecSize(x_left, y_top, x_size, y_size);
+				if (value and set_processed) {m_Processed = true ;};
 				return value;
 			}
 			return false;
@@ -65,8 +79,8 @@ class whc_button
 		bool toBeProcessed_isDouble_isOverRecSize(int x_left, int y_top, int x_size, int y_size, bool set_processed=false)
 		{ 	if ((not m_Processed) and (m_Double))
 			{
-				bool value = ((mouse_x>=x_left) and (mouse_x<=x_left+x_size) and (mouse_y>=y_top) and (mouse_y<=y_top+y_size));
-				m_Processed = (value and set_processed);
+				bool value = isOverRecSize(x_left, y_top, x_size, y_size);
+				if (value and set_processed) {m_Processed = true ;};
 				return value;
 			}
 			return false;
@@ -82,8 +96,8 @@ class whc_button
 		bool toBeProcessed_isDown_isOverRecPos(int x_left, int y_top, int x_right, int y_bottom, bool set_processed=false)
 		{ 	if (not m_Processed)
 			{
-				bool value = ((mouse_x>=x_left) and (mouse_x<=x_right) and (mouse_y>=y_top) and (mouse_y<=y_bottom));
-				m_Processed = (value and set_processed);
+				bool value = isOverRecPos(x_left, y_top, x_right, y_bottom);
+				if (value and set_processed) {m_Processed = true ;};
 				return value;
 			}
 			return false;
@@ -91,8 +105,8 @@ class whc_button
 		bool toBeProcessed_isDouble_isOverRecPos(int x_left, int y_top, int x_right, int y_bottom, bool set_processed=false)
 		{ 	if ((not m_Processed) and (m_Double))
 			{
-				bool value = ((mouse_x>=x_left) and (mouse_x<=x_right) and (mouse_y>=y_top) and (mouse_y<=y_bottom));
-				m_Processed = (value and set_processed);
+				bool value = isOverRecPos(x_left, y_top, x_right, y_bottom);
+				if (value and set_processed) {m_Processed = true ;};
 				return value;
 			}
 			return false;
@@ -164,13 +178,13 @@ class whc_button
 class whc_wheel
 {
 	public:
-		int static mouse_z_prev;
-		int static mouse_w_prev;
-		void static CollectEvent (int& mousesignal, whc_wheel& mouseScroll , whc_wheel& mouseRoll);
-		void static leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel);
-		int  static leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel);
-		void static leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel, int &i_loops, int loopsbeforeincrease);
-		int  static leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel, float speedratio);
+		int static c_mouse_z_prev;
+		int static c_mouse_w_prev;
+		void static c_CollectEvent (int& mousesignal, whc_wheel& mouseScroll , whc_wheel& mouseRoll);
+		void static c_leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel);
+		int  static c_leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel);
+		void static c_leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel, int &i_loops, int loopsbeforeincrease);
+		int  static c_leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel, float speedratio);
 
 		/** Default constructor */
 		whc_wheel();

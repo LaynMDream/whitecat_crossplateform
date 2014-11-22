@@ -94,13 +94,15 @@ bufferSaisiesnamp=0;
 */
 
 
-
+//#include <boost/format.hpp>  // <-- rajouter la bibliothèque boost à la racine whitecatlib # crossplatform (labo des futures bibliothèques standards C++)
 
 #include <hpdf.h>
 #include <MidiShare.h>
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 
+
+#include <boost/format.hpp>
 #include <whitecat_Fct.h>
 
 #include <patch_splines_2.cpp>//spline pour curves
@@ -359,7 +361,6 @@ void do_mouse_right_click_menu()
 }
 
 //test begin montée/descente accélérée
-int test_format;
 int test_loop =0 ;
 int test_level_i = 0 ;
 float test_level_f = 0 ;
@@ -378,8 +379,8 @@ whc_wheel mouseScroll; whc_wheel mouseRoll;
 void my_callback(int flags) {
 
 //test
-whc_button::CollectEvent(flags, mouseClicLeft, mouseClicMiddle, mouseClicRight);
-whc_wheel::CollectEvent(flags, mouseScroll, mouseRoll);
+whc_button::c_CollectEvent(flags, mouseClicLeft, mouseClicMiddle, mouseClicRight);
+whc_wheel::c_CollectEvent(flags, mouseScroll, mouseRoll);
 
 	//Mouse move event
 	{
@@ -733,6 +734,7 @@ arduino_do_digital_in_whitecat();arduino_do_analog_in_whitecat();
 arduino__send_config();
 }
 do_audio_midi_function_next_prev_track();//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
+
 }
 END_OF_FUNCTION(dixiemes_de_secondes);
 
@@ -743,100 +745,247 @@ void ticker_full_loop()
 {
 
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
-    //test_format=2;
 
     if ((key[KEY_LCONTROL]))
     {
-        if (test_format==1)
-        {
-            /* 1ère signature de la fonction :
-            - niveau géré avec une variable (float)
-            */
-            test_level_i = whc_wheel::leveIncrease(mouseScroll, test_level_f, 100., 0., 1000.);
-        }
-        if (test_format==2)
-        {
-            /* 2de signature de la fonction :
-            - niveau géré avec une variable (int)
-            - besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
-            */
-            whc_wheel::leveIncrease(mouseScroll, test_level_i, 256, -255, test_loop, 1000);
-        }
+		/* 1ère signature de la fonction :
+		- niveau géré avec une variable (float)
+		*/
+		test_level_i = whc_wheel::c_leveIncrease(mouseScroll, test_level_f, 100., 0., 1000.);
+
+		/* 2de signature de la fonction :
+		- niveau géré avec une variable (int)
+		- besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
+		*/
+		whc_wheel::c_leveIncrease(mouseRoll, test_level_i, 256, -255, test_loop, 1000);
     }
     else
     {
         test_loop =0;
     }
 
+    /* ====================================================================================================
+       --- Loop log ---
+	   ==================================================================================================== */
 
-    if ((key[KEY_LCONTROL]) && (test_format==1))
+    if (key[KEY_LCONTROL])
+	{
+		if ((watchDebugLoop1==1) or (watchDebugLoop2==1))
+		{
+			try
+			{
+				debug_test = 1;
+				debugLoopLog[0].tag = " Test 1 >" ; //fmt_string % " Test 1 >" ;
+				debugLoopLog[0].entry = 1 ;
+				//debugLoopLog[0].data = fmt_debugTest1 % "Scroll" % mouseScroll.level() % mouseScroll.gain() % mouseScroll.speed() % test_level_i % test_level_f ;
+				char tmp[54]="                                                     ";
+				sprintf(tmp, fmt_debugTest1, "Scroll", mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_level_f) ;
+				debugLoopLog[0].data = std::string(tmp);
+			}
+			catch ( const std::exception & e )
+			{
+				//cerr << e.what();
+				debug_test = 101;
+				debugLine.tag = " Test 1 >" ; //fmt_string %
+				debugLine.entry = 1 ;
+				debugLine.data = "Erreur format 1 " ;
+				AddToEventLog(debugLine);
+			}
+		}
+		if ((watchDebugLoop1==2) or (watchDebugLoop2==2))
+		{
+			try
+			{
+				debug_test = 2;
+				debugLoopLog[1].tag = " Test 2 >" ;
+				debugLoopLog[1].entry = 2 ;
+				//debugLoopLog[1].data = fmt_debugTest2 % "Roll" % mouseRoll.level() % mouseRoll.gain() % mouseRoll.speed() % test_level_i % test_loop ;
+				char tmp[54]="                                                     ";
+				sprintf(tmp, fmt_debugTest2, "Roll", mouseRoll.level(), mouseRoll.gain(), mouseRoll.speed(), test_level_i, test_loop) ;
+				debugLoopLog[1].data = std::string(tmp);
+			}
+			catch ( const std::exception & e )
+			{
+				//cerr << e.what();
+				debug_test = 102;
+				debugLine.tag =  " Test 2 >" ;
+				debugLine.entry = 2 ;
+				debugLine.data = "Erreur format 2 " ;
+				AddToEventLog(debugLine);
+			}
+		}
+	}
+    if ((watchDebugLoop1==3) or (watchDebugLoop2==3))
     {
-        sprintf(debugLine.logdata,"wheel %i gap %i speed %i niv %i %f",
-        mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_level_f);
-		sprintf(debugLine.logtitle," fct 1 >");
-		debugLog.push_front(debugLine);
+		try
+		{
+			debug_test = 03;
+			debugLoopLog[2].tag =  " Test 3 >" ;
+			debugLoopLog[2].entry = 3 ;
+			//debugLoopLog[2].data = fmt_debugTest3 % "Roll " % mouseRoll.level() % mouseRoll.gain() % mouseRoll.yield() % mouseRoll.speed() ;
+			char tmp[54]="                                                     ";
+			sprintf(tmp, fmt_debugTest3, "Roll", mouseRoll.level(), mouseRoll.gain(), mouseRoll.yield(), mouseRoll.speed()) ;
+			debugLoopLog[2].data = std::string(tmp);
+		}
+		catch ( const std::exception & e )
+		{
+			//cerr << e.what();
+			debug_test = 103;
+			debugLine.tag =  " Test 3 >" ;
+			debugLine.entry = 3 ;
+			debugLine.data = "Erreur format 3 " ;
+			AddToEventLog(debugLine);
+		}
     }
-    if ((key[KEY_LCONTROL]) && (test_format==2))
+    if ((watchDebugLoop1==6) or (watchDebugLoop2==6))
     {
-        sprintf(debugLine.logdata,"wheel %i gap %i speed %i niv %i loop %i",
-        mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_loop);
-		sprintf(debugLine.logtitle," fct 2 >");
-		debugLog.push_front(debugLine);
+		try
+		{
+			debug_test = 06;
+			debugLoopLog[5].tag =  " Test 6 >" ;
+			debugLoopLog[5].entry = 6 ;
+			//debugLoopLog[5].data = fmt_debugTest3 % "Scroll " % mouseScroll.level() % mouseScroll.gain() % mouseScroll.yield() % mouseScroll.speed() ;
+			char tmp[54]="                                                     ";
+			sprintf(tmp, fmt_debugTest3, "Scroll", mouseScroll.level(), mouseScroll.gain(), mouseScroll.yield(), mouseScroll.speed()) ;
+			debugLoopLog[5].data = std::string(tmp);
+		}
+		catch ( const std::exception & e )
+		{
+			//cerr << e.what();
+			debug_test = 106;
+			debugLine.tag =  " Test 6 >";
+			debugLine.entry = 6 ;
+			debugLine.data = "Erreur format 3 ";
+			AddToEventLog(debugLine);
+		}
     }
-    if (test_format==3)
+    if ((watchDebugLoop1==4) or (watchDebugLoop2==4))
     {
-        sprintf(debugLine.logdata,"wheel %i gap %i yield %i speed %i",
-        mouseWheel.level, mouseWheel.gap, mouseWheel.yield, mouseWheel.speed);
-		sprintf(debugLine.logtitle," fct 3 >");
-		debugLog.push_front(debugLine);
+		try
+		{
+			debug_test = 04;
+			debugLoopLog[3].tag = " Test 4 >" ;
+			debugLoopLog[3].entry = 4 ;
+			//debugLoopLog[3].data = fmt_debugTest4 % "Right" % (mouseRightClic.isDown ? "Yes":"No") % (mouseRightClic.isDouble ? "Yes":"No") % (mouseRightClic.eventProcessed ? "Yes":"No") % mouseRightClic.timer ;
+			char tmp[54]="                                                     ";
+			sprintf(tmp, fmt_debugTest4, "Right", (mouseRightClic.isDown ? "Yes":"No"), (mouseRightClic.isDouble ? "Yes":"No"), (mouseRightClic.eventProcessed ? "Yes":"No"), 0); //mouseRightClic.timer) ;
+			debugLoopLog[3].data = std::string(tmp);
+		}
+		catch ( const std::exception & e )
+		{
+			//cerr << e.what();
+			debug_test = 104;
+			debugLine.tag =  " Test 4 >" ;
+			debugLine.entry = 4 ;
+			debugLine.data = "Erreur format 4 " ;
+			AddToEventLog(debugLine);
+		}
     }
-    if (test_format==4)
+    if ((watchDebugLoop1==5) or (watchDebugLoop2==5))
     {
-        sprintf(debugLine.logdata,"Right %i Double %i Done %i pos %i %i %i time %f",
-        (mouseRightClic.isDown ? 1:0), (mouseRightClic.isDouble ? 1:0), (mouseRightClic.eventProcessed ? 1:0), (float) mouseRightClic.timer); //mouseRightClic.posx, mouseRightClic.posy,mouseRightClic.posz,
-		sprintf(debugLine.logtitle," fct 4 >");
-		debugLog.push_front(debugLine);
+		try
+		{
+			debug_test = 05;
+			debugLoopLog[4].tag = " Test 5 >" ;
+			debugLoopLog[4].entry = 5 ;
+			//debugLoopLog[4].data =  fmt_debugTest4 % "Left" % (mouseLeftClic.isDown ? "Yes":"No") % (mouseLeftClic.isDouble ? "Yes":"No") % (mouseLeftClic.eventProcessed ? "Yes":"No") % mouseLeftClic.timer ;
+			char tmp[54]="                                                     ";
+			sprintf(tmp, fmt_debugTest4, "Left", (mouseLeftClic.isDown ? "Yes":"No"), (mouseLeftClic.isDouble ? "Yes":"No"), (mouseLeftClic.eventProcessed ? "Yes":"No"), 0); //mouseLeftClic.timer) ;
+			debugLoopLog[4].data = std::string(tmp);
+		}
+		catch ( const std::exception & e )
+		{
+			//cerr << e.what();
+			debug_test = 105;
+			debugLine.tag =  " Test 5 >" ;
+			debugLine.entry = 5 ;
+			debugLine.data = "Erreur format 5 " ;
+			AddToEventLog(debugLine);
+		}
     }
-    if (test_format==5)
+
+    /* ====================================================================================================
+       --- Event log ---
+	   ==================================================================================================== */
     {
-        sprintf(debugLine.logdata,"Left %i Double %i Done %i pos %i %i %i time %f",
-        (mouseLeftClic.isDown ? 1:0), (mouseLeftClic.isDouble ? 1:0), (mouseLeftClic.eventProcessed ? 1:0), (float) mouseLeftClic.timer); // mouseLeftClic.posx, mouseLeftClic.posy,mouseLeftClic.posz,
-		sprintf(debugLine.logtitle," fct 5 >");
-		debugLog.push_front(debugLine);
-    }
-    if (test_format==6)
-    {
-        sprintf(debugLine.logdata,"BckGrndButton %i mouseYield %i BckGrndColor %f",
-        (plot_editing_color_background? 1:0), mouseWheel.yield, Color_plotfill);
-		sprintf(debugLine.logtitle," fct 6 >");
-		debugLog.push_front(debugLine);
-    }
-    //
-    if ((mouseClicLeft.toBeProcessed()) and (mouseClicLeft.isDouble()))
-    {
-    	bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
-    	if (tst) {
-		sprintf(debugLine.logdata," DOUBLE sur save as")	;
-    	}
-    	else
-        {
-        	sprintf(debugLine.logdata," SIMPLE en dehors de save as")	;
-        }
-		sprintf(debugLine.logtitle," LeftClic");
-		debugLog.push_front(debugLine);
+		try
+		{
+			debug_test = 9;
+			debugLoopLog[8].tag =  " Test 9 >" ;
+			debugLoopLog[8].entry = 9 ;
+			//debugLoopLog[5].data = fmt_debugTest5 % (plot_editing_color_background? "Yes":"No") % mouseWheel.yield % Color_plotfill ;
+			char tmp[54]="                                                     ";
+			sprintf(tmp, fmt_debugTest5, (plot_editing_color_background? "Yes":"No"), mouseWheel.yield, Color_plotfill) ;
+			debugLoopLog[8].data = std::string(tmp);
+		}
+		catch ( const std::exception & e )
+		{
+			//cerr << e.what();
+			debug_test = 109;
+			debugLine.tag =  " Test 9 >" ;
+			debugLine.entry = 9 ;
+			debugLine.data = "Erreur format 9 " ;
+			AddToEventLog(debugLine);
+		}
     }
     if (mouseClicLeft.toBeProcessed())
     {
-    	bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
-    	if (tst) {
-		sprintf(debugLine.logdata," SIMPLE sur save as")	;
-    	}
-    	else
+        bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
+        if (tst and mouseClicLeft.isDouble())
         {
-        	sprintf(debugLine.logdata," SIMPLE en dehors de save as")	;
+            debug_test = 07;
+            debugLine.data = " LEFT DOUBLE sur save as" ;
         }
-		sprintf(debugLine.logtitle," LeftClic");
-		debugLog.push_front(debugLine);
+        else if (tst)
+        {
+            debug_test = 17;
+            debugLine.data = " LEFT Simple sur save as" ;
+        }
+        else if (mouseClicLeft.isDouble())
+        {
+            debug_test = 27;
+            debugLine.data = " LEFT DOUBLE en dehors de save as" ;
+        }
+        else
+        {
+			debug_test = 37;
+			debugLine.data = " LEFT Simple en dehors de save as" ;
+        }
+
+		mouseClicLeft.SetIsProcessed();
+		debugLine.tag = " Mouse >" ;
+		debugLine.entry = 0 ;
+		AddToEventLog(debugLine);
+    }
+
+    if (mouseClicRight.toBeProcessed())
+    {
+        bool tst = mouseClicRight.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
+        if (tst and mouseClicRight.isDouble())
+        {
+            debug_test = 8;
+            debugLine.data = " RIGHT DOUBLE sur save as" ;
+        }
+        else if (tst)
+        {
+            debug_test = 18;
+            debugLine.data = " RIGHT Simple sur save as" ;
+        }
+        else if (mouseClicRight.isDouble())
+        {
+            debug_test = 28;
+            debugLine.data = " RIGHT DOUBLE en dehors de save as" ;
+        }
+        else
+        {
+            debug_test = 38;
+            debugLine.data = " RIGHT Simple en dehors de save as" ;
+        }
+
+		mouseClicRight.SetIsProcessed();
+		debugLine.tag = " Mouse >" ;
+		debugLine.entry = 0 ;
+		AddToEventLog(debugLine);
     }
 
 //sab 28/06/2014 - FIN - test
@@ -1126,65 +1275,80 @@ if (hwnd != NULL)
         for (int n = 1; n < argc; n++)
         {
             std::cout << std::setw( 2 ) << n << ": " << argv[ n ] << '\n';
-   				sprintf(debugLine.logdata," %i (%s)",n,argv[ n ]);
-				sprintf(debugLine.logtitle," InLine Arg >");
-				debugLog.push_front(debugLine);
+   				/*debugLine.data = boost::format(" %1% (%2%)") % n % argv[ n ];
+				debugLine.tag = boost::format(" InLine Arg >");*/
+				char tmp[54]="                                                     ";
+				sprintf(tmp," %i (%s)", n, argv[ n ]);
+				debugLine.data = std::string(tmp);
+				debugLine.tag = " InLine Arg ";
+				AddToEventLog(debugLine);
 
             if (std::string(argv[ n ])=="--border")
 			{
 				window_border = true ;
-				sprintf(debugLine.logdata," %i (%s)",n,argv[ n ]);
-				sprintf(debugLine.logtitle," InLine Cmd >");
-				debugLog.push_front(debugLine);
+				debugLine.data = "border on";
+				debugLine.tag =" Cmd >";
+				AddToEventLog(debugLine);
 			}
             if (std::string(argv[ n ])=="--init")
 			{
 				window_init = true ;
-				sprintf(debugLine.logdata," %i (%s)",n,argv[ n ]);
-				sprintf(debugLine.logtitle," InLine Cmd >");
-				debugLog.push_front(debugLine);
+				debugLine.data = "init windows position";
+				debugLine.tag = " Cmd >";
+				AddToEventLog(debugLine);
 			}
             if (std::string(argv[ n ])=="--double_clic")
 			{
-				sprintf(debugLine.logdata," %i (%s) ",n,argv[ n ]);
-				sprintf(debugLine.logtitle," InLine Cmd >");
-				debugLog.push_front(debugLine);
+				debugLine.data = "Double clic interval ";
+				debugLine.tag = " Cmd >";
 				if (n+1<=argc)
 				{
 						try
 						{
-							whc_button::gapSecond = atof(argv[n+1]) ;
+							whc_button::c_gapSecond = atof(argv[n+1]) ;
+							debugLine.data += ToString(whc_button::c_gapSecond);
 						}
 						catch ( const std::exception & e )
 						{
 							//cerr << e.what();
-							whc_button::gapSecond = 0.5000000 ;
+							whc_button::c_gapSecond = 0.5000000 ;
+							debugLine.data += " <Invalide number> default set to 0.5";
 						}
-						sprintf(debugLine.logdata," %i (%s) value = %f",n,argv[ n ],whc_button::gapSecond);
-						sprintf(debugLine.logtitle," cmd value >");
-						debugLog.push_front(debugLine);
 				}
+				AddToEventLog(debugLine);
 			}
             if (std::string(argv[ n ])=="--test")
 			{
-				sprintf(debugLine.logdata," %i (%s) ",n,argv[ n ]);
-				sprintf(debugLine.logtitle," InLine Cmd >");
-				debugLog.push_front(debugLine);
+				show_test_log = true ;
+				debugLine.data = "Show dev log";
+				debugLine.tag = " Cmd >";
 				if (n+1<=argc)
 				{
 						try
 						{
-							test_format = atoi(argv[n+1]) ;
+							watchDebugLoop1 = atoi(argv[n+1]) ;
 						}
 						catch ( const std::exception & e )
 						{
 							//cerr << e.what();
-							test_format = 0 ;
+							watchDebugLoop1 = 0 ;
 						}
-						sprintf(debugLine.logdata," %i (%s) value = %i",n,argv[ n ],test_format);
-						sprintf(debugLine.logtitle," Cmd value >");
-						debugLog.push_front(debugLine);
+						if (watchDebugLoop1 > 0) debugLine.data += " + loop watch " + ToString(watchDebugLoop1);
 				}
+				if (n+2<=argc)
+				{
+						try
+						{
+							watchDebugLoop2 = atoi(argv[n+2]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							watchDebugLoop2 = 0 ;
+						}
+						if (watchDebugLoop2 > 0) debugLine.data += " + loop watch " + ToString(watchDebugLoop2);
+				}
+				AddToEventLog(debugLine);
 			}
         }
     }

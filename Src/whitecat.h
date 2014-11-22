@@ -688,7 +688,8 @@ bool index_auto_mute_cuelist_speed=0;
 int index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
-MidiName AppliName = "white cat";
+char White_Cat[10] = "white cat";
+MidiName AppliName = White_Cat;
 
 char	  	TblLibEv[256][20];
 char my_midi_string[64];
@@ -2575,18 +2576,50 @@ typedef struct eventmove
 eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
 //sab 26/06/2014 FIN - Reporté depuis fichier Main
 
-//test
+//-- gestion sourie
 #include <whc_mouse.h>
-
-
-
- typedef struct whc_log
+//-- stockage des traces de test (max fixé à 30) ==> todo écrire fonction d'ajout qui le fasse directement
+typedef struct whc_log
 {
-	char logtitle[35];
-	char logdata[256];
+	int entry;
+	std::string tag;
+	std::string data;
+	/*boost::basic_format<char> tag;
+	boost::basic_format<char> data;*/
 } whc_log;
-whc_log debugLine ;
-std::deque<whc_log> debugLog;
+whc_log debugLine;
+std::deque<whc_log> debugEventLog;
+//std::vector<whc_log> debugLoopLog;
+whc_log debugLoopLog[10];
+int debugLoopLog_size=10;
+int watchDebugLoop1 = 0;
+int watchDebugLoop2 = 0;
+int debug_test = 0;
+
+char fmt_debugTest1[40]="%s %i gap %i speed %i niv %i niv.f %f";
+char fmt_debugTest2[40]="%s %i gap %i speed %i niv %i loop %i";
+char fmt_debugTest3[40]="%s %i gap %i yield %i speed %i";
+char fmt_debugTest4[40]="%s Double %s Done  %s time %f";
+char fmt_debugTest5[50]="BckGrndButton %s mouseYield %i BckGrndColor %f";
+char fmt_string[03]="%s";
+/*
+boost::format fmt_debugTest1("%1s %2i gap %3i speed %4i niv %5i niv.f %6f");
+boost::format fmt_debugTest2("%1s %2i gap %3i speed %4i niv %5i loop %6i");
+boost::format fmt_debugTest3("%1s %2i gap %3i yield %4i speed %4i");
+boost::format fmt_debugTest4("%1s Double %2s Done %3s time %4f");
+boost::format fmt_debugTest5("BckGrndButton %1s mouseYield %2i BckGrndColor %3f");
+boost::format fmt_string("%1s ");
+
+*/
+
+int whc_log_count =0;
+//-- restitution des traces de test : en ligne de commande --test bascule le bool à true
+#ifdef DEBUG_PROCESS
+bool show_test_log = false ;
+#else
+bool show_test_log = true ;
+#endif
+
 
 
 

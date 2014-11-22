@@ -515,6 +515,8 @@ WWWWWWWW           C  WWWWWWWW   |
 //currently in graphics rebuild
 //{
     int RetourInfos(int,int);
+    void Show_test_log(int,int);		  //to do : migrate to whc_report as a test_log object
+    void AddToEventLog(whc_log test_log); //to do : part of code of this function should migrate to whc_report as a test_log object function
     int show_windows_list_id(int,int);
     int Boxes();
     void  Procedure(const std::string,const std::string);
