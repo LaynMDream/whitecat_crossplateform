@@ -2578,6 +2578,11 @@ eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
 
 //-- gestion sourie
 #include <whc_mouse.h>
+whc_pointer mousePtr(mouse_x,mouse_y);
+whc_button mouseClicLeft; whc_button mouseClicMiddle; whc_button mouseClicRight;
+whc_wheel mouseScroll; whc_wheel mouseRoll;
+
+
 //-- stockage des traces de test (max fixé à 30) ==> todo écrire fonction d'ajout qui le fasse directement
 typedef struct whc_log
 {

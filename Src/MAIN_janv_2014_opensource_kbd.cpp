@@ -365,9 +365,7 @@ int test_loop =0 ;
 int test_level_i = 0 ;
 float test_level_f = 0 ;
 float test_speed_f = 0 ;
-//test
-whc_button mouseClicLeft; whc_button mouseClicMiddle; whc_button mouseClicRight;
-whc_wheel mouseScroll; whc_wheel mouseRoll;
+
 //test end montée descente acceleree
 
 /** \brief On mouse event - Manage mouse global variable
@@ -378,28 +376,14 @@ whc_wheel mouseScroll; whc_wheel mouseRoll;
  */
 void my_callback(int flags) {
 
-//test
-whc_button::c_CollectEvent(flags, mouseClicLeft, mouseClicMiddle, mouseClicRight);
-whc_wheel::c_CollectEvent(flags, mouseScroll, mouseRoll);
+	mousePtr.CollectEvent(mouse_x, mouse_y) ;
+	whc_button::c_CollectEvent(flags, mouse_x, mouse_y, mouseClicLeft, mouseClicMiddle, mouseClicRight);
+	whc_wheel::c_CollectEvent(flags, mouse_z, mouse_w, mouseScroll, mouseRoll);
 
-	//Mouse move event
-	{
-		mouseMove.gap_x  = mouse_x - mouseMove.from_x ; 		//Instant mouse translation : -1, 0, +1
-		mouseMove.gap_y  = mouse_y - mouseMove.from_y ;
 
-		if (mouseMove.eventProcessed)
-		{
-			mouseMove.from_x = mouseMove.to_x ; 				//Previous position of the mouse when event was processed
-			mouseMove.from_y = mouseMove.to_y ;
-		}
+	// A rajouter, une fonction de classe avec un vecteur d'abonnement
+	//pour pointer vers des fonctions abonnées des autres objets pour initialiser leur variables (essentiellement le GUI de PLOT)
 
-		mouseMove.to_x   = mouse_x ;        					//Instant position of the mouse
-		mouseMove.to_y   = mouse_y ;
-		mouseMove.yield_x = mouseMove.to_x - mouseMove.from_x ; //Mouse translation since last time that event was processed
-		mouseMove.yield_y = mouseMove.to_y - mouseMove.from_y ;
-
-		mouseMove.eventProcessed = false;
-	}
 
 	//Mouse buttons events
 
@@ -928,7 +912,7 @@ void ticker_full_loop()
 			AddToEventLog(debugLine);
 		}
     }
-    if (mouseClicLeft.toBeProcessed())
+    if (mouseClicLeft.isToBeProcessed())
     {
         bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
         if (tst and mouseClicLeft.isDouble())
@@ -952,13 +936,13 @@ void ticker_full_loop()
 			debugLine.data = " LEFT Simple en dehors de save as" ;
         }
 
-		mouseClicLeft.SetIsProcessed();
+		mouseClicLeft.SetProcessed();
 		debugLine.tag = " Mouse >" ;
 		debugLine.entry = 0 ;
 		AddToEventLog(debugLine);
     }
 
-    if (mouseClicRight.toBeProcessed())
+    if (mouseClicRight.isToBeProcessed())
     {
         bool tst = mouseClicRight.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
         if (tst and mouseClicRight.isDouble())
@@ -982,7 +966,7 @@ void ticker_full_loop()
             debugLine.data = " RIGHT Simple en dehors de save as" ;
         }
 
-		mouseClicRight.SetIsProcessed();
+		mouseClicRight.SetProcessed();
 		debugLine.tag = " Mouse >" ;
 		debugLine.entry = 0 ;
 		AddToEventLog(debugLine);
@@ -1266,6 +1250,8 @@ if (hwnd != NULL)
 */
 
 	Setup::SetupProgram(KEYBOARD | MOUSE);
+	//Mouse init
+	whc_wheel::c_Init(mouse_z, mouse_w);
 
 	bool window_border = false ;
 	bool window_init   = false ;

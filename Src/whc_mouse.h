@@ -21,42 +21,42 @@ local_time_period ltp(ldt, hours(2));
 ltp.length(); // => 02:00:00
 */
 
-typedef enum
-{
-	left   = 100,
-	middle = 010,
-	right  = 001,
-
-	leftmiddle   = 110,
-	leftright    = 101,
-	middleright  = 011,
-
-	leftmiddleright   = 111,
-
-	none   = 000
-} whc_mousebutton ;
-
-typedef struct whc_mousepos
-{
-   short int x, y , z ;
-} whc_mousepos;
-
-typedef struct whc_eventclic
-{
-   whc_mousebutton button;
-   clock_t cpu_clock_ticks;
-   //float cpu_clock_ticks;
-} whc_eventclic;
-
 class whc_button
 {
 	public:
+		typedef enum
+		{
+			left   = 100,
+			middle = 010,
+			right  = 001,
+
+			leftmiddle   = 110,
+			leftright    = 101,
+			middleright  = 011,
+
+			leftmiddleright   = 111,
+
+			none   = 000
+		} whc_mousebutton ;
+
+		typedef struct whc_eventclic
+		{
+		   whc_mousebutton button;
+		   clock_t cpu_clock_ticks;
+		   //float cpu_clock_ticks;
+		} whc_eventclic;
+
+		typedef struct whc_mousepos
+		{
+		   short int x, y ;
+		} whc_mousepos;
+
 		//float static c_milliseconds ; 	//!< Instance variable - milliseconds
 		float static c_gapSecond ; 	//!< Instance variable - gapSecond : max time between two clics to be a double clic
 		whc_eventclic static c_mouseLastClic ;	//!< Instance variable - mouseLastClic :
 		std::vector<whc_eventclic> static c_mouseClicHistory; //!< Instance variable - mouseClicHistory :
 		bool static c_IsThisADoubleClic (whc_mousebutton);
-		void static c_CollectEvent (int& mousesignal, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
+		void static c_CollectEvent (int& mousesignal, volatile int& mouse_x, volatile int& mouse_y, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
 
 		/** Default constructor */
 		whc_button();
@@ -120,20 +120,22 @@ class whc_button
 		 * \return The current value of m_Down
 		 */
 		bool isDown() { return m_Down; }
+		bool isUp() {return (not m_Down);}
 		/** Set m_Down
 		 * \param val New value to set
 		 */
-		void SetIsDown(bool val=true) { m_Down = val; }
-		void SetIsUp(bool val=true) { m_Down = (not val); }
+		void SetDown(bool val=true) { m_Down = val; }
+		void SetUp(bool val=true) { m_Down = (not val); }
 
 		/** Access m_Double
 		 * \return The current value of m_Double
 		 */
 		bool isDouble() { return m_Double; }
+		bool isSimple() { return (not m_Double); }
 		/** Set m_Double
 		 * \param val New value to set
 		 */
-		void SetIsDouble(bool val=true) { m_Double = val; }
+		void SetDouble(bool val=true) { m_Double = val; }
 
 		/** Access m_DragDrop
 		 * \return The current value of m_DragDrop
@@ -142,27 +144,29 @@ class whc_button
 		/** Set m_DragDrop
 		 * \param val New value to set
 		 */
-		void SetIsDragDrop(bool val=true) { m_DragDrop = val; }
+		void SetDragDrop(bool val=true) { m_DragDrop = val; }
 
 		/** Access m_dragpos
 		 * \param val New value to set
 		 */
 		whc_mousepos dragPos() { return m_dragpos; }
+		int  dragPosX() { return m_dragpos.x; }
+		int  dragPosY() { return m_dragpos.y; }
 		/** Set m_dragpos
 		 * \param val New value to set
 		 */
-		void SetDragPos() { m_dragpos.x = mouse_x ; m_dragpos.y = mouse_y ; m_dragpos.z = mouse_z; }
+		void SetDragPos(volatile int x, volatile int y) { m_dragpos.x = x ; m_dragpos.y = y ; }
 
 		/** Access m_Processed
 		 * \return The current value of m_Processed
 		 */
 		bool isProcessed() { return m_Processed; }
-		bool toBeProcessed() { return (not m_Processed); }
+		bool isToBeProcessed() { return (not m_Processed); }
 		/** Set m_Processed
 		 * \param val New value to set
 		 */
-		void SetIsProcessed(bool val=true) { m_Processed = val; }
-		void SetIsToProcess(bool val=true) { m_Processed = (not val); }
+		void SetProcessed(bool val=true) { m_Processed = val; }
+		void SetToBeProcessed(bool val=true) { m_Processed = (not val); }
 
 	protected:
 	private:
@@ -174,13 +178,16 @@ class whc_button
 };
 
 
+//---------------------------------------------------------------------------------------------------------------------------------------
+
 
 class whc_wheel
 {
 	public:
 		int static c_mouse_z_prev;
 		int static c_mouse_w_prev;
-		void static c_CollectEvent (int& mousesignal, whc_wheel& mouseScroll , whc_wheel& mouseRoll);
+		void static c_Init(volatile int& mouse_z, volatile int& mouse_w);
+		void static c_CollectEvent (int& mousesignal, volatile int& mouse_z, volatile int& mouse_w, whc_wheel& mouseScroll , whc_wheel& mouseRoll);
 		void static c_leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel);
 		int  static c_leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel);
 		void static c_leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel, int &i_loops, int loopsbeforeincrease);
@@ -231,12 +238,12 @@ class whc_wheel
 		 * \return The current value of m_Processed
 		 */
 		bool isProcessed() { return m_Processed; }
-		bool toBeProcessed() { return (not m_Processed); }
+		bool isToBeProcessed() { return (not m_Processed); }
 		/** Set m_Processed
 		 * \param val New value to set
 		 */
-		void SetIsProcessed(bool val=true) { m_Processed = val; if (m_Processed == true) {m_yield = 0;} }
-		void SetIsToProcess(bool val=true) { m_Processed = (not val); if (m_Processed == true) {m_yield = 0;} }
+		void SetProcessed(bool val=true) { m_Processed = val; if (m_Processed == true) {m_yield = 0;} }
+		void SetToBeProcessed(bool val=true) { m_Processed = (not val); if (m_Processed == true) {m_yield = 0;} }
 
 	protected:
 	private:
@@ -245,6 +252,53 @@ class whc_wheel
 		int  m_yield;   //!< Member variable m_yield (sum of gain until event processed : casual use)
 		int  m_speed;	//!< Member variable m_speed
 		bool m_Processed; //!< Member variable "m_Processed"
+
+};
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+
+class whc_pointer
+{
+	public:
+		/** Default constructor */
+		whc_pointer();
+		whc_pointer(volatile int& mouse_x, volatile int& mouse_y);
+		/** Default destructor */
+		virtual ~whc_pointer();
+
+		/** Access m_x
+		 * \param val New value to set
+		 */
+		int x() { return m_x; }
+		/** Set m_x
+		 * \param val New value to set
+		 */
+		void SetX(int val) { m_x=val; }
+
+		/** Access m_y
+		 * \param val New value to set
+		 */
+		int y() { return m_y; }
+		/** Set m_y
+		 * \param val New value to set
+		 */
+		void SetY(int val) { m_y=val; }
+
+		/** Set m_x m_y
+		 * \param val New value to set
+		 */
+		void CollectEvent (volatile int& mouse_x, volatile int& mouse_y)
+		{
+			m_x = mouse_x;
+			m_y = mouse_y;
+		}
+
+	protected:
+	private:
+		int  m_x;	//!< Member variable m_x
+		int  m_y;	//!< Member variable m_y
 
 };
 
