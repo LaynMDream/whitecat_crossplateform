@@ -98,6 +98,7 @@ bufferSaisiesnamp=0;
 
 #include <hpdf.h>
 #include <MidiShare.h>
+#include <whc_mouse.h>
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 
@@ -385,68 +386,12 @@ void my_callback(int flags) {
 	//pour pointer vers des fonctions abonnées des autres objets pour initialiser leur variables (essentiellement le GUI de PLOT)
 
 
-	//Mouse buttons events
+	//--> reste à reporter
 
-    if (flags & MOUSE_FLAG_LEFT_DOWN )
+    if (mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
-        //sab 24/06/2014 - Doubleclic - Ajout - DEB
-        mouseLeftClic.isDown=true;
-        mouseLeftClic.isDouble = false;
-        mouseLeftClic.eventProcessed=false;
-//        mouseLeftClic.posx=mouse_x;
-//        mouseLeftClic.posy=mouse_y;
-//        mouseLeftClic.posz=mouse_z;
-        mouseLeftClic.timer = time(NULL);
 
-        if (mouseLeftClicHistory.size()>=2) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
-        {
-            time_t lasttime  = mouseLeftClic.timer ; // 2d down = down courant
-            time_t firsttime = mouseLeftClicHistory[1].timer ; //1er down
-
-            if ((mouseRightClicHistory.size()>=1) && (firsttime < mouseRightClicHistory[0].timer))
-            {
-            	//un clic droit s'est produit entre les deux clics gauche
-				//display :sprintf(string_Last_Order,"Double clic - clic droit intercalé");
-            	mouseLeftClic.isDouble = false;
-            }
-            else if ((mouseMiddleClicHistory.size()>=1) && (firsttime < mouseMiddleClicHistory[0].timer))
-            {
-            	//un clic milieu s'est produit entre les deux clics gauche
-				//display :sprintf(string_Last_Order,"Double clic - clic milieu intercalé");
-            	mouseLeftClic.isDouble = false;
-            }
-            else
-            {
-				gapSecond = lasttime-firsttime ;
-				if ((gapSecond<0.1) && (mouseLeftClicHistory[1].isDouble==false))
-				{
-					//display :sprintf(string_Last_Order,"LeftDoubleClic %f sec", gapSecond);
-					mouseLeftClic.isDouble = true;
-				}
-				else if (mouseLeftClicHistory[1].isDouble)
-				{
-					//display :sprintf(string_Last_Order,"xieme Clic annulant precedent");
-					mouseLeftClic.isDouble = false;
-				}
-				else
-				{
-					//display :sprintf(string_Last_Order,"Double clic - Trop long %f sec", gapSecond);
-					mouseLeftClic.isDouble = false;
-				}
-            }
-        }
-
-		//Keep only previous down-up sequence with the current
-		if (mouseLeftClicHistory.size()==6) // mouseLeftClicHistory[0] = 1er up, mouseLeftClicHistory[1] = 1er down
-		{
-			mouseLeftClicHistory.erase(mouseLeftClicHistory.begin()+5); //   up very old
-			mouseLeftClicHistory.erase(mouseLeftClicHistory.begin()+4); // down very old
-		}
-
-        mouseLeftClicHistory.push_front (mouseLeftClic); //up new (current)
-        //sab 24/06/2014 - Doubleclic - Ajout - FIN
-
-        original_posx=mouse_x;original_posy=mouse_y;
+        original_posx=mouse_x;original_posy=mouse_y; // <-- mouseClicLeft.DrapPos
         //sab 29/05/2013 deb ---------------------------------------------------------------
         //window_focus_id=detection_over_window();
         if (wc_askConfirmWindowIsOpen())
@@ -463,34 +408,12 @@ void my_callback(int flags) {
 
     else if (flags & MOUSE_FLAG_LEFT_UP )//relevage bouton
         {
-        //sab 24/06/2014 - Doubleclic - Ajout - DEB
-        mouseLeftClic.isDown=false;
-        // keep the analyse done when mouse Left button was pressed down : mouseLeftClic.isDouble = false;
-        mouseLeftClic.eventProcessed=false;
-//        mouseLeftClic.posx=mouse_x;
-//        mouseLeftClic.posy=mouse_y;
-//        mouseLeftClic.posz=mouse_z;
-        mouseLeftClic.timer = time(NULL);
-
-		//Keep only previous down-up sequence with the current
-        if (mouseRightClicHistory.size()==6)
-        {
-            mouseRightClicHistory.erase(mouseRightClicHistory.begin()+5);
-            mouseRightClicHistory.erase(mouseRightClicHistory.begin()+3);
-        }
-
-        mouseLeftClicHistory.push_front (mouseLeftClic);
-        //sab 24/06/2014 - Doubleclic - Ajout - FIN
 
         index_click_move_faderspace=0; im_moving_a_window=0; index_mouse_is_tracking=0;
         index_moving_fader_space=0;index_moving_x_slide=0;index_moving_y_slide=0;
         index_click_inside_plot=0; plot_facteur_move_x=0;plot_facteur_move_y=0;
         index_click_inside_relativ_xy=0; rlativ_xm=0; rlativ_ym=0;
-        //sab 29/06/2014 lot 3 index_editing_theatre_plan=0;
-        //sab 29/06/2014 lot 3 editing_plan_data_type=0;
-        //sab 28/06/2014 - lot 2 - editing_plot_sizey=0; editing_plot_sizex=0;
         moving_size_relativ_x=0; moving_size_relativ_y=0;
-        //sab 27/06/2014 plot_editing_color_line=0; plot_editing_color_background=0;
         index_adjusting_shape_x=0;index_adjusting_shape_y=0;
         handle_selected_for_line_editing=0;  editing_shape_line_number=0;
         if(dragging_draw==1)
@@ -499,22 +422,10 @@ void my_callback(int flags) {
 
         }
 
-    if (flags & MOUSE_FLAG_RIGHT_DOWN )
+    if (mouseClicRight.isDown() && mouseClicRight.isToBeProcessed())
     {
-        //sab 24/06/2014 - Doubleclic - Ajout - DEB
-        mouseRightClic.isDown=true;
-        mouseRightClic.isDouble = false;
-        mouseRightClic.eventProcessed=false;
-//        mouseRightClic.posx=mouse_x;
-//        mouseRightClic.posy=mouse_y;
-//        mouseRightClic.posz=mouse_z;
-        mouseRightClic.timer = time(NULL);
 
-        mouseRightClicHistory.push_front (mouseRightClic);
-
-        //sab 24/06/2014 - Doubleclic - Ajout - FIN
-
-        original_posx=mouse_x;
+        original_posx=mouse_x; // <-- mouseClicRight.DrapPos
         original_posy=mouse_y;
 
         /* sab 12/07/2014 DEB
@@ -529,77 +440,25 @@ void my_callback(int flags) {
         }
         else
         {
-            if((mouseRightClic.eventProcessed==false))
+            if(mouseClicRight.isToBeProcessed())
             {
-                mouseRightClic.eventProcessed=true;
+                mouseClicRight.SetProcessed(1) ;
                 right_click_for_menu=1; //renvoi vers les procs en 10eme de secondes pour enlever le bug d extinctions fenetres
             }
-
         }
     }
 
-       else if (flags & MOUSE_FLAG_RIGHT_UP )
-        {
-        //sab 24/06/2014 - Doubleclic - Ajout - DEB
-        mouseRightClic.isDown=false;
-        mouseRightClic.isDouble = false;
-        mouseRightClic.eventProcessed=false;
-//        mouseRightClic.posx=mouse_x;
-//        mouseRightClic.posy=mouse_y;
-//        mouseRightClic.posz=mouse_z;
-        mouseRightClic.timer = time(NULL);
-        mouseRightClicHistory.push_front (mouseRightClic);
+   else if (flags & MOUSE_FLAG_RIGHT_UP )
+	{
 
-        //sab 24/06/2014 - Doubleclic - Ajout - FIN
+	index_move_plot_view_port=0;
+	plot_facteur_move_x=0;plot_facteur_move_y=0;
+	index_click_inside_plot=0;
+	set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);//liberation du curseur souris
+	}
 
-        index_move_plot_view_port=0;
-        plot_facteur_move_x=0;plot_facteur_move_y=0;
-        index_click_inside_plot=0;
-        set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);//liberation du curseur souris
-        }
-
-        if(mouseLeftClic.isDown==false)
-        {set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);}
-
-        //sab 24/06/2014 - Doubleclic - Ajout - DEB
-    if (flags & MOUSE_FLAG_MIDDLE_DOWN )
-    {
-        mouseMiddleClic.isDown=true;
-        mouseMiddleClic.isDouble = false;
-        mouseMiddleClic.eventProcessed=false;
-//        mouseMiddleClic.posx=mouse_x;
-//        mouseMiddleClic.posy=mouse_y;
-//        mouseMiddleClic.posz=mouse_z;
-        mouseMiddleClic.timer = time(NULL);
-
-//        mouseWheel.speed = mouseWheel.gap;
-
-		//Keep only previous down-up sequence with the current
-        if (mouseMiddleClicHistory.size()==6)
-        {
-            mouseMiddleClicHistory.erase(mouseMiddleClicHistory.begin()+5);
-            mouseMiddleClicHistory.erase(mouseMiddleClicHistory.begin()+4);
-        }
-
-        mouseMiddleClicHistory.push_front (mouseMiddleClic);
-    }
-    else if (flags & MOUSE_FLAG_MIDDLE_UP )
-    {
-
-        mouseMiddleClic.isDown=false;
-        mouseMiddleClic.isDouble = false;
-        mouseMiddleClic.eventProcessed=false;
-//        mouseMiddleClic.posx=mouse_x;
-//        mouseMiddleClic.posy=mouse_y;
-//        mouseMiddleClic.posz=mouse_z;
-        mouseMiddleClic.timer = time(NULL);
-
-//        mouseWheel.speed = 0;
-
-        mouseMiddleClicHistory.push_front (mouseMiddleClic);
-
-    }
-//sab 24/06/2014 - Doubleclic - Ajout - FIN
+	if(mouseClicLeft.isUp())
+	{set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);}
 
 }
 END_OF_FUNCTION(my_callback);
@@ -729,7 +588,6 @@ void ticker_full_loop()
 {
 
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
-
     if ((key[KEY_LCONTROL]))
     {
 		/* 1ère signature de la fonction :
@@ -850,9 +708,8 @@ void ticker_full_loop()
 			debug_test = 04;
 			debugLoopLog[3].tag = " Test 4 >" ;
 			debugLoopLog[3].entry = 4 ;
-			//debugLoopLog[3].data = fmt_debugTest4 % "Right" % (mouseRightClic.isDown ? "Yes":"No") % (mouseRightClic.isDouble ? "Yes":"No") % (mouseRightClic.eventProcessed ? "Yes":"No") % mouseRightClic.timer ;
 			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest4, "Right", (mouseRightClic.isDown ? "Yes":"No"), (mouseRightClic.isDouble ? "Yes":"No"), (mouseRightClic.eventProcessed ? "Yes":"No"), 0); //mouseRightClic.timer) ;
+			sprintf(tmp, fmt_debugTest4, "Right", (mouseClicRight.isDown() ? "Yes":"No"), (mouseClicRight.isDouble() ? "Yes":"No"), (mouseClicRight.isProcessed() ? "Yes":"No"), 0);
 			debugLoopLog[3].data = std::string(tmp);
 		}
 		catch ( const std::exception & e )
@@ -872,9 +729,8 @@ void ticker_full_loop()
 			debug_test = 05;
 			debugLoopLog[4].tag = " Test 5 >" ;
 			debugLoopLog[4].entry = 5 ;
-			//debugLoopLog[4].data =  fmt_debugTest4 % "Left" % (mouseLeftClic.isDown ? "Yes":"No") % (mouseLeftClic.isDouble ? "Yes":"No") % (mouseLeftClic.eventProcessed ? "Yes":"No") % mouseLeftClic.timer ;
 			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest4, "Left", (mouseLeftClic.isDown ? "Yes":"No"), (mouseLeftClic.isDouble ? "Yes":"No"), (mouseLeftClic.eventProcessed ? "Yes":"No"), 0); //mouseLeftClic.timer) ;
+			sprintf(tmp, fmt_debugTest4, "Left", (mouseClicLeft.isDown() ? "Yes":"No"), (mouseClicLeft.isDouble() ? "Yes":"No"), (mouseClicLeft.isProcessed() ? "Yes":"No"), 0);
 			debugLoopLog[4].data = std::string(tmp);
 		}
 		catch ( const std::exception & e )
@@ -899,7 +755,7 @@ void ticker_full_loop()
 			debugLoopLog[8].entry = 9 ;
 			//debugLoopLog[5].data = fmt_debugTest5 % (plot_editing_color_background? "Yes":"No") % mouseWheel.yield % Color_plotfill ;
 			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest5, (plot_editing_color_background? "Yes":"No"), mouseWheel.yield, Color_plotfill) ;
+			sprintf(tmp, fmt_debugTest5, (plot_editing_color_background? "Yes":"No"), mouseScroll.yield(), Color_plotfill) ;
 			debugLoopLog[8].data = std::string(tmp);
 		}
 		catch ( const std::exception & e )
@@ -912,7 +768,8 @@ void ticker_full_loop()
 			AddToEventLog(debugLine);
 		}
     }
-    if (mouseClicLeft.isToBeProcessed())
+
+    /*if (mouseClicLeft.isToBeProcessed())
     {
         bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
         if (tst and mouseClicLeft.isDouble())
@@ -936,7 +793,7 @@ void ticker_full_loop()
 			debugLine.data = " LEFT Simple en dehors de save as" ;
         }
 
-		mouseClicLeft.SetProcessed();
+
 		debugLine.tag = " Mouse >" ;
 		debugLine.entry = 0 ;
 		AddToEventLog(debugLine);
@@ -966,11 +823,14 @@ void ticker_full_loop()
             debugLine.data = " RIGHT Simple en dehors de save as" ;
         }
 
-		mouseClicRight.SetProcessed();
+
 		debugLine.tag = " Mouse >" ;
 		debugLine.entry = 0 ;
 		AddToEventLog(debugLine);
-    }
+    }*/
+
+
+
 
 //sab 28/06/2014 - FIN - test
 
@@ -986,7 +846,7 @@ void ticker_full_loop()
         sound_core_processing();
     }
 
-    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+    if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
     {
         switch(im_moving_a_window)
         {
@@ -999,7 +859,7 @@ void ticker_full_loop()
         }
     }
 	//sab 28/06/2014 DEB -
-	if (not(mouseWheel.gap==0))
+	if (not(mouseScroll.gain()==0))
     {
 		mouseWheel_graphics_handle();
     }
@@ -1207,6 +1067,26 @@ void Load_Fonts()
 ////////////////////////////////////////////////////////////////////////////////
 int main_actions_on_screen()
 {
+      /**/
+	/*if (mouseClicLeft.isProcessed())*/
+	{
+
+		debugLoopLog[0].tag = " qui a pris en charge >" ; //fmt_string % " Test 1 >" ;
+		debugLoopLog[0].entry = 1 ;
+		//debugLoopLog[0].data = fmt_debugTest1 % "Scroll" % mouseScroll.level() % mouseScroll.gain() % mouseScroll.speed() % test_level_i % test_level_f ;
+		char tmp[54]="                                                     ";
+		sprintf(tmp, "-- left %s pending %s  last actor %i", (mouseClicLeft.isDown() ? "true":"false"), (mouseClicLeft.isToBeProcessed() ? "true":"false"), mouseClicLeft.lastActor()) ;
+		debugLoopLog[0].data = std::string(tmp);
+
+		debugLoopLog[1].tag = " qui a pris en charge >" ; //fmt_string % " Test 1 >" ;
+		debugLoopLog[1].entry = 1 ;
+		//debugLoopLog[0].data = fmt_debugTest1 % "Scroll" % mouseScroll.level() % mouseScroll.gain() % mouseScroll.speed() % test_level_i % test_level_f ;
+		char tmp2[54]="                                                     ";
+		sprintf(tmp2, "-- left %s pending %s  last actor %i", (mouseClicRight.isDown() ? "true":"false"), (mouseClicRight.isToBeProcessed() ? "true":"false"), mouseClicRight.lastActor()) ;
+		debugLoopLog[1].data = std::string(tmp2);
+	}
+
+
       Canvas::Fill(CouleurFond);
       if(index_writing_curve==0){Boxes();}
       if(core_do_calculations[3]==1)
@@ -1217,7 +1097,15 @@ int main_actions_on_screen()
       /*sab 18/08/2014 DEB - Draw mouse only when over the application window
       DoMouse();
       */
-       if (mouse_on_screen()) DoMouse();
+       /*if (mouse_on_screen()) DoMouse();*/
+       if (mouse_on_screen())
+	   {
+			if (mousepointer.loaded)
+			{
+				mousepointer.bmp.Blit(mouse_x, mouse_y);
+			}
+			else DoMouse();
+	   }
       /*sab 18/08/2014 FIN */
       previous_ch_selected=last_ch_selected;
  return(0);
@@ -1434,7 +1322,13 @@ if (hwnd != NULL)
       exit( -1 );
       }
 
-
+/*sab 28/11/2014 deb */
+    mousepointer.loaded = mousepointer.bmp.Load( "gfx/arrow.png" );
+ /*   if (not mousepointer.loaded )
+    {
+        allegro_message( "Missing gfx/arrow.png" );
+    }
+/*sab 28/11/2014 fin */
 
     Canvas::Fill(CouleurFond);
     Canvas::Refresh();
@@ -1551,7 +1445,7 @@ save_load_print_to_screen("Init Backamnesia");
 init_done=1;
 if(there_is_an_error_on_save_load==1){index_show_save_load_report=1;there_is_change_on_show_save_state=1;    }
 
- mouseLeftClic.eventProcessed=false; // ???
+mouseClicLeft.SetToBeProcessed(); // ??? sab question 23/11/2014 : comprend pas pourquoi on fait ça en dehors des moments où l'on detecte le clic
  entered_main=1;
 //launchpad séparé
 if(enable_launchpad==1)

@@ -419,7 +419,7 @@ int Draw_point_and_perform_level_on_area_NEW(int pr, int position_x, int positio
 //affectaction des circuits
     else if(index_do_dock==1 && index_main_clear==0 )
     {
-        if(index_enable_edit_Draw==1 && (mouseLeftClic.eventProcessed==false))
+        if(index_enable_edit_Draw==1 && mouseClicLeft.isToBeProcessed())
         {
             draw_preset_channel_routing[pr][index_case[pr]]=atoi(numeric);
             if(draw_preset_channel_routing[pr][index_case[pr]]>512)
@@ -472,13 +472,13 @@ int Draw_point_and_perform_level_on_area_NEW(int pr, int position_x, int positio
             }
             reset_numeric_entry();
             index_do_dock=0;
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 //désaffectation des circuits
     else if(index_do_dock==0 && index_main_clear==1 )
     {
-        if(index_enable_edit_Draw==1 && (mouseLeftClic.eventProcessed==false))
+        if(index_enable_edit_Draw==1 && mouseClicLeft.isToBeProcessed())
         {
             draw_preset_channel_routing[pr][index_case[pr]]=0;
             //sab 02/03/2014 unused var int idpos=0;
@@ -507,7 +507,7 @@ int Draw_point_and_perform_level_on_area_NEW(int pr, int position_x, int positio
                 break;
             }
             index_main_clear=0;
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -2496,7 +2496,7 @@ int button_midi_out_core(int xmi, int ymi, int control)
     if(mouse_x>xmi-10 && mouse_x<xmi+10  && mouse_y>ymi-10 && mouse_y<ymi+10)
     {
         midi_send_out[control]=toggle(midi_send_out[control]);
-        mouseLeftClic.eventProcessed=true;
+        mouseClicLeft.SetProcessed();
     }
     return(0);
 }
@@ -4258,7 +4258,7 @@ int patch_unselect_all_dimmers()
 
 int build_default_curve(int curve)
 {
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
 
 //points
     for (int pt=1; pt<MAX_curve_nodeS-1; pt++)
@@ -4704,7 +4704,7 @@ int do_action_on_selected_minifaders(int action)
                 if(index_do_dock==0 && index_main_clear==0)
                 {
                     ActionnateStopOn[cmptfader]=toggle(ActionnateStopOn[cmptfader]);
-                    mouseLeftClic.eventProcessed=true;
+                    mouseClicLeft.SetProcessed();
                 }
 
                 else if(index_do_dock==1 && index_main_clear==0 )

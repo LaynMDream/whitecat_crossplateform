@@ -322,28 +322,28 @@ if(mouse_y> videoY+video_size_y+110 && mouse_y< videoY+video_size_y+110+25)
 if(mouse_x>videoX+30 && mouse_x<videoX+90 )
 {
 flip_image=toggle(flip_image);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 if(mouse_x>videoX+100 && mouse_x<videoX+160 )
 {
 threshold_on=toggle(threshold_on);
 camera_modes_and_settings[ocv_calcul_mode][8]=threshold_on;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 if(mouse_x>videoX+170 && mouse_x<videoX+230 )
 {
 erode_mode=toggle(erode_mode);
 camera_modes_and_settings[ocv_calcul_mode][9]=erode_mode;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 if(mouse_x>videoX+240 && mouse_x<videoX+300 )
 {
 blur_on=toggle(blur_on);
 camera_modes_and_settings[ocv_calcul_mode][10]=blur_on;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
@@ -424,7 +424,7 @@ if(mouse_x> WindowVideoX+20+(ct*60) && mouse_x< WindowVideoX+70+(ct*60))
         index_do_clear_my_roi=1;
         index_ask_confirm=1;
         }
-        mouseLeftClic.eventProcessed=true;
+        mouseClicLeft.SetProcessed();
         }
         }
 
@@ -462,7 +462,7 @@ if(mouse_x> WindowVideoX+20+(ct*60) && mouse_x< WindowVideoX+70+(ct*60))
         index_do_clear_my_roi=1;
         index_ask_confirm=1;
         }
-        mouseLeftClic.eventProcessed=true;
+        mouseClicLeft.SetProcessed();
         }
         }
         }
@@ -476,7 +476,7 @@ if(mouse_x>WindowVideoX+30 && mouse_x<WindowVideoX+90 && mouse_y>WindowVideoY+fr
 ocv_calcul_mode++;
 if(ocv_calcul_mode>1){ocv_calcul_mode=0;}
 refresh_ocv_settings();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //snap
@@ -484,7 +484,7 @@ if(mouse_x>WindowVideoX+100 && mouse_x<WindowVideoX+100+60 && mouse_y>WindowVide
 {
 index_snap_background=1;
 Snap_Background();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //FILTERING IMAGE ACCESS MENU ////////////////////////////////////////////////////////////////
@@ -496,7 +496,7 @@ do_logical_Set_Filtering_Image();
 if(mouse_x>WindowVideoX+180 && mouse_x<WindowVideoX+280 && mouse_y> WindowVideoY+frame_video_y+140 && mouse_y< WindowVideoY+frame_video_y+180)
 {
 ocvfilter_is_on=toggle(ocvfilter_is_on);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 ////clear mode
@@ -504,7 +504,7 @@ if(mouse_x>WindowVideoX+300 && mouse_x<WindowVideoX+360 && mouse_y>WindowVideoY+
 {
 if(tracker_clearmode==1){tracker_clearmode=0;}
 else if(tracker_clearmode==0){tracker_clearmode=1;move_tracker=0;edit_tracker=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //presets zones
@@ -530,7 +530,7 @@ index_do_clear_my_video_preset=1;
 index_ask_confirm=1;
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -554,7 +554,7 @@ case 1:
 edit_tracker=0;
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //move
@@ -569,7 +569,7 @@ case 1:
 move_tracker=0;
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 ///////////////////////////////////////////////////////
@@ -607,7 +607,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 type_of_midi_button=4;
 attribute_midi_solo_affectation(498,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -624,7 +624,7 @@ if(mouse_x> (videoX+365-10) && mouse_x<(videoX+365+10)
 {
 
 midi_send_out[498]=toggle(midi_send_out[498]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 raccrochage_midi_logical_horizontal (videoX+200,videoY+frame_video_y+310, 498,127,30);
 
@@ -643,7 +643,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_video_tracking_to_dock;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

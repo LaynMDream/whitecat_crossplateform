@@ -120,6 +120,16 @@ int largeur_ecran=1280;
 int hauteur_ecran=800;
 int visu_performances[32];
 ol::Bitmap logo;
+
+/*sab 28/11/2014 deb */
+typedef struct {
+bool loaded;
+ol::Bitmap bmp;
+ } olbmp;
+
+olbmp mousepointer = {false};
+/*sab 28/11/2014 fin */
+
 float myalpha=0.0;
 float myalphachan=0.0;
 float angle_souris=0.0,transparence_souris=1.0;
@@ -2535,49 +2545,7 @@ HWND hwnd ;
  *
  * with event management flags (event is processed, event is doubleclic)
  */
- typedef struct eventclic
-{
-   bool isDown, isDouble, eventProcessed ;
-//   int  posx, posy, posz;
-   time_t timer;
-} eventclic;
-eventclic 	mouseLeftClic = {false, false, false},  //, 0,0,0},
-			mouseMiddleClic = {false, false, false},  //, 0,0,0},
-			mouseRightClic = {false, false, false} ; //, 0,0,0};
-std::deque<eventclic> mouseLeftClicHistory;
-std::deque<eventclic> mouseMiddleClicHistory;
-std::deque<eventclic> mouseRightClicHistory;
-double gapSecond;
-//sab 24/06/2014 - Doubleclic - Ajout - FIN
-
-//sab 26/06/2014 DEB - Reporté depuis fichier Main
-/** \struct eventwheel whitecat.h
- *  \brief  mouse wheel event,
- *
- * with event management flag (event is processed), level of wheel, gap of level with previous level (-1 / +1)
- */
- typedef struct eventwheel
-{
-   bool eventProcessed ;
-   int  level, yield, gap, speed;
-} eventwheel;
-eventwheel mouseWheel = {true,0,0,0,0};
-
-/** \struct eventmove whitecat.h
- *  \brief  mouse move event,
- *
- * with event management flag (event is processed), previous position, new position and gap between old-new mouse position
- */
-typedef struct eventmove
-{
-   bool eventProcessed ;
-   int  from_x, from_y, to_x, to_y, yield_x, yield_y, gap_x, gap_y;
-} eventmove;
-eventmove mouseMove = {true,0,0,0,0,0,0,0,0};
-//sab 26/06/2014 FIN - Reporté depuis fichier Main
-
-//-- gestion sourie
-#include <whc_mouse.h>
+//-- gestion souris
 whc_pointer mousePtr(mouse_x,mouse_y);
 whc_button mouseClicLeft; whc_button mouseClicMiddle; whc_button mouseClicRight;
 whc_wheel mouseScroll; whc_wheel mouseRoll;
@@ -2619,13 +2587,4 @@ boost::format fmt_string("%1s ");
 
 int whc_log_count =0;
 //-- restitution des traces de test : en ligne de commande --test bascule le bool à true
-#ifdef DEBUG_PROCESS
 bool show_test_log = false ;
-#else
-bool show_test_log = true ;
-#endif
-
-
-
-
-

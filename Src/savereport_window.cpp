@@ -77,14 +77,14 @@ void Show_report_save_load_nexterror ()
 void Show_report_save_load_logic ()
 {
     if ((window_focus_id==W_SAVEREPORT)
-            && (mouse_x>report_SL_X+440 && mouse_x<report_SL_X+490)
-            && (mouseLeftClic.isDown && mouseLeftClic.eventProcessed==false))
+	&& (mouse_x>report_SL_X+440 && mouse_x<report_SL_X+490)
+	&& (mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()));
     {
 
         //-
         if ( mouse_y>report_SL_Y+76 && mouse_y<report_SL_Y+96)
         {
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
             position_view_line-=25;
             if(position_view_line<0)
             {
@@ -96,7 +96,7 @@ void Show_report_save_load_logic ()
         if( mouse_y>report_SL_Y+106 && mouse_y<report_SL_Y+136)
         {
             position_view_line+=25;
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
             if(position_view_line>230)  //(255-25))
             {
                 position_view_line=230 ; //(255-25);
@@ -104,7 +104,7 @@ void Show_report_save_load_logic ()
         }
     }
     if ((there_is_an_error_on_save_load==1)
-	&&  (mouseLeftClic.isDown && mouseLeftClic.eventProcessed==false)
+	&&  (mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
     &&  (window_focus_id==W_SAVEREPORT)
 	&&  (mouse_x>report_SL_X+400 && mouse_x<report_SL_X+490)
 	&&  (mouse_y>report_SL_Y+136 && mouse_y<report_SL_Y+156))
@@ -112,7 +112,7 @@ void Show_report_save_load_logic ()
         //there is error(s) - on clic on the message : scroll to next page reporting error(s)
 		if (position_view_line>=229) {position_view_line=0;}
 		Show_report_save_load_nexterror ();
-		mouseLeftClic.eventProcessed=true;
+		mouseClicLeft.SetProcessed();
     }
 }
 
@@ -164,7 +164,7 @@ void Show_report_save_load_draw()
         if( mouse_y>report_SL_Y+76 && mouse_y<report_SL_Y+96)
         {
             MinusPosMyRep.Draw(CouleurSurvol);
-            if(mouseLeftClic.isDown && mouseLeftClic.eventProcessed==false)
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 MinusPosMyRep.Draw(CouleurFader);
             }
@@ -174,7 +174,7 @@ void Show_report_save_load_draw()
         if( mouse_y>report_SL_Y+106 && mouse_y<report_SL_Y+136)
         {
             PlusPosMyRep.Draw(CouleurSurvol);
-            if(mouseLeftClic.isDown && mouseLeftClic.eventProcessed==false)
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 PlusPosMyRep.Draw(CouleurFader);
             }

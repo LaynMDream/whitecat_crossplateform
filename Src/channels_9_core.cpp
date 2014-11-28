@@ -279,12 +279,12 @@ int do_logical_ChannelScroller( int ScrollX, int ScrollY)
 {
 
 if(mouse_x>=ScrollX-10 && mouse_x<ScrollX-10+100 && mouse_y>ScrollY-5 && mouse_y<ScrollY+270
-&& index_over_A_window==0 &&  index_over_faderspace==0 && (mouseLeftClic.eventProcessed==false))
+&& index_over_A_window==0 &&  index_over_faderspace==0 && mouseClicLeft.isToBeProcessed())
 {
 if( Midi_Faders_Affectation_Type!=0 )
 {
 attribute_midi_solo_affectation(1624,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -338,7 +338,7 @@ if (index_ch_thruth==0)//selection normale
  {
  Channel_select_thruth(last_ch_selected,num_circ);
  index_ch_thruth=0;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  if(index_plot_window==1){add_channel_selection_to_layers_plot();substract_channel_selection_to_layers_plot();}
  }
  //
@@ -355,7 +355,7 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
 {
 
 
- if(window_focus_id==0 && mouseLeftClic.isDown  && (mouseLeftClic.eventProcessed==false) && prst_v!=0 )
+ if(window_focus_id==0 && mouseClicLeft.isDown()  && mouseClicLeft.isToBeProcessed() && prst_v!=0 )
  {
  if(mouse_y>ychan && mouse_y<ychan+20  )
  {
@@ -367,7 +367,7 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
  sprintf( channel_view_Name[prst_v],numeric);
  reset_numeric_entry();
  numeric_postext=0;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  }
  // Mem sel
@@ -375,21 +375,21 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
  {
  if(channel_view_type_of_behaviour[prst_v]!=1){channel_view_type_of_behaviour[prst_v]=1;}
  else{channel_view_type_of_behaviour[prst_v]=0;}
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  // fader sel
  else if(mouse_x>  xchan+460 && mouse_x<xchan+460+20 )
  {
  if(channel_view_type_of_behaviour[prst_v]!=2){channel_view_type_of_behaviour[prst_v]=2;}
  else{channel_view_type_of_behaviour[prst_v]=0;}
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
  //All sel
   else if(mouse_x>  xchan+485 && mouse_x<xchan+485+30  )
  {
  channel_view_mode_builder[prst_v]=toggle(channel_view_mode_builder[prst_v]);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
  //do build logique sortie car plantage grave à la reconstruction. il faut garder ca dans la boucle affichage
@@ -399,21 +399,21 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
  if(index_do_dock==1)
  {
  if(channel_view_type_of_behaviour[channel_view_is]==0 &&  channel_view_mode_builder[channel_view_is]==0)
- {index_ask_record_selection_of_view=1 ; index_ask_confirm=1; mouseLeftClic.eventProcessed=true;}
- else  {index_ask_build_view=1; index_ask_confirm=1; mouseLeftClic.eventProcessed=true;  }
+ {index_ask_record_selection_of_view=1 ; index_ask_confirm=1; mouseClicLeft.SetProcessed();}
+ else  {index_ask_build_view=1; index_ask_confirm=1; mouseClicLeft.SetProcessed();  }
  }
 
  else if(index_do_modify==1)
  {
- index_ask_modify_selection_of_view=1 ;index_ask_confirm=1;   mouseLeftClic.eventProcessed=true;
+ index_ask_modify_selection_of_view=1 ;index_ask_confirm=1;   mouseClicLeft.SetProcessed();
  }
  else if(index_do_report==1)
  {
- index_ask_report_selection_of_view=1;index_ask_confirm=1;      mouseLeftClic.eventProcessed=true;
+ index_ask_report_selection_of_view=1;index_ask_confirm=1;      mouseClicLeft.SetProcessed();
  }
  else if(index_main_clear==1)
  {
- index_ask_clear_selection_of_view=1;   mouseLeftClic.eventProcessed=true;
+ index_ask_clear_selection_of_view=1;   mouseClicLeft.SetProcessed();
  }
 
  } */
@@ -470,7 +470,7 @@ index_level_attribue=0;
  Channel_select_thruth(last_ch_selected,c+(l*12));
  last_ch_selected=c+(l*12);
  index_ch_thruth=0;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  if(index_plot_window==1){add_channel_selection_to_layers_plot();substract_channel_selection_to_layers_plot();}
  }
  //
@@ -487,8 +487,8 @@ int do_logical_ChannelsMenuSelection(int chx, int chy)
 {
 
 //LOGIQUE
-//if(window_focus_id==0 && index_over_A_window==0 && index_over_faderspace==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
-if(window_focus_id==0 && index_over_faderspace==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+//if(window_focus_id==0 && index_over_A_window==0 && index_over_faderspace==0 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
+if(window_focus_id==0 && index_over_faderspace==0 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 if( mouse_y>chy+1 && mouse_y<chy+1+18 && mouse_x>chx+70 && mouse_x<chx+70+60 )
  {
@@ -500,7 +500,7 @@ else
 {
  ClassicalChannelView=toggle(ClassicalChannelView);
 }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 for(int lv=0;lv<2;lv++)
 {
@@ -543,7 +543,7 @@ index_ask_confirm=1;
 index_ask_clear_selection_of_view=1;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }

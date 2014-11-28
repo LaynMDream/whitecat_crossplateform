@@ -109,7 +109,7 @@ break;
 if(mouse_x>cfgnetw_X+60 && mouse_x<cfgnetw_X+60+50 && mouse_y>cfgnetw_Y+25+(oi*30) && mouse_y<cfgnetw_Y+25+(oi*30)+25)
 {
 keyParam.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 int tmp_valAsc=atoi(numeric);
 if((tmp_valAsc>0 && tmp_valAsc<255)|| tmp_valAsc==999)//999 pour eviter de bloquer les commandes en 0 ascii , genre touches de fonctions
@@ -117,7 +117,7 @@ if((tmp_valAsc>0 && tmp_valAsc<255)|| tmp_valAsc==999)//999 pour eviter de bloqu
 mapping_temporaire[oi]=tmp_valAsc;
 }
 reset_numeric_entry();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 petitpetitchiffre.Print(str_iskeyfunct,cfgnetw_X,cfgnetw_Y+40+(oi*30));
@@ -185,7 +185,7 @@ break;
 if(window_focus_id==920 && mouse_x>x_cfg_sc+120 && mouse_x<x_cfg_sc+120+50 && mouse_y>y_cfg_sc+60+(l*30) && mouse_y<y_cfg_sc+60+(l*30)+25)
 {
 Param.DrawOutline(CouleurLigne);
-if(mouse_b&1 && (mouseLeftClic.eventProcessed==false)  &&  numeric_postext>0)
+if(mouse_b&1 && mouseClicLeft.isToBeProcessed()  &&  numeric_postext>0)
 {
 def_param=atoi(numeric);
 if(def_param<=def_param_max && def_param>=def_param_min)
@@ -225,7 +225,7 @@ case 6:
 core_user_define_nb_echo=def_param;
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 reset_numeric_entry();
 }
 }
@@ -284,10 +284,10 @@ break;
 }
 petitchiffre.Print(tmp_state_core,x_cfg_sc+310,y_cfg_sc+75+(l*25));
 if(window_focus_id==920 && mouse_x>x_cfg_sc+305 && mouse_x<x_cfg_sc+305+50 && mouse_y>y_cfg_sc+60+(l*25) && mouse_y<y_cfg_sc+60+(l*25)+20
-&& (mouseLeftClic.eventProcessed==false))
+&& mouseClicLeft.isToBeProcessed())
 {
 core_do_calculations[l]=toggle(core_do_calculations[l]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
@@ -315,7 +315,7 @@ break;
 if(window_focus_id==920 && mouse_x>x_cfg_sc+470 && mouse_x<x_cfg_sc+470+50 && mouse_y>y_cfg_sc+60+(l*30) && mouse_y<y_cfg_sc+60+(l*30)+25)
 {
 BCParam.DrawOutline(CouleurLevel);
-if(mouse_b&1 && (mouseLeftClic.eventProcessed==false)  &&  numeric_postext>0)
+if(mouse_b&1 && mouseClicLeft.isToBeProcessed()  &&  numeric_postext>0)
 {
 def_param=atoi(numeric);
 switch(l)
@@ -339,7 +339,7 @@ reset_numeric_entry();
 }
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -368,25 +368,25 @@ int Box_artnet_udpport(int macx, int macy)
    if(mouse_x>macx+20 && mouse_x<macx+20+45)
    {
    UDPOut.DrawOutline(CouleurLevel);
-   if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+   if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
    {
    clientport_artnet=atoi(numeric);
    reset_numeric_entry();
    index_re_init_client_artnet=1;
    index_ask_confirm=1;
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
    }
    else    if(mouse_x>macx+95 && mouse_x<macx+95+45)
    {
    UDPIn.DrawOutline(CouleurLevel);
-   if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+   if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
    {
    serveurport_artnet=atoi(numeric);
    reset_numeric_entry();
    index_re_init_serveur_artnet=1;
    index_ask_confirm=1;
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
    }
    }
@@ -424,7 +424,7 @@ UnderParam.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+155 && mouse_x<cfgnetw_X+155+50 && mouse_y>cfgnetw_Y+55+(oi*30) && mouse_y<cfgnetw_Y+55+(oi*30)+25)
 {
 UnderParam.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 int param_data_in=0;
 switch(dmx_view)
@@ -458,7 +458,7 @@ index_blink_change_memories=toggle(index_blink_change_memories);
 break;
 }
 UnderParam.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -540,7 +540,7 @@ if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+155 && mouse_x<cfgnetw_X+155
 if( mouse_y>cfgnetw_Y+235 && mouse_y<cfgnetw_Y+235+25)//nbre de channels audio
 {
 UnderParam.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 int param_data_in=0;
 param_data_in=atoi(numeric);
@@ -549,17 +549,17 @@ if(index_nbre_players_visibles<1){index_nbre_players_visibles=1;}
 else if(index_nbre_players_visibles>4){index_nbre_players_visibles=4;}
 reset_numeric_entry();
 UnderParam.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(window_focus_id==W_CFGMENU &&  mouse_y>cfgnetw_Y+265 && mouse_y<cfgnetw_Y+265+20)//nbre de channels audio
 {
 UnderParam2.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 index_preloaded_sounds=toggle(index_preloaded_sounds);
 UnderParam2.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -596,7 +596,7 @@ UnderParam.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+365 && mouse_x<cfgnetw_X+365+50 && mouse_y>cfgnetw_Y+55+(oi*30) && mouse_y<cfgnetw_Y+55+(oi*30)+25)
 {
 UnderParam.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 //sab 02/03/2014 unused var int param_data_in=0;
 
@@ -649,7 +649,7 @@ break;
 default:
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -718,11 +718,11 @@ CamOn.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525+50 && mouse_y>cfgnetw_Y+55 && mouse_y<cfgnetw_Y+55+20)
 {
 CamOn.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 load_camera_on_start=toggle(load_camera_on_start);
 CamOn.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 switch(load_camera_on_start)
@@ -747,11 +747,11 @@ ArduinOn.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525+50 && mouse_y>cfgnetw_Y+85 && mouse_y<cfgnetw_Y+85+20)
 {
 ArduinOn.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 open_arduino_on_open=toggle(open_arduino_on_open);
 ArduinOn.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 switch(open_arduino_on_open)
@@ -775,10 +775,10 @@ iCatOn.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525+50 && mouse_y>cfgnetw_Y+115 && mouse_y<cfgnetw_Y+115+20)
 {
 iCatOn.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 enable_iCat=toggle(enable_iCat);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 switch(enable_iCat)
@@ -804,11 +804,11 @@ ProcessB.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525+50 && mouse_y>cfgnetw_Y+190 && mouse_y<cfgnetw_Y+190+20)
 {
 ProcessB.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 index_allow_multicore=toggle(index_allow_multicore);
 ProcessB.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9)
 {process_assign_to_core(core_to_assign);}
 }
@@ -823,14 +823,14 @@ ProcessCorB.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525+50 && mouse_y>cfgnetw_Y+215 && mouse_y<cfgnetw_Y+215+20)
 {
 ProcessCorB.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 core_to_assign=atoi(numeric);
 reset_numeric_entry();
 if(core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
 {process_assign_to_core(core_to_assign);}
 ProcessCorB.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 petitchiffre.Print("Multicore: " ,(cfgnetw_X+430), (cfgnetw_Y+203));
@@ -861,14 +861,14 @@ faderSpace.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525+50 && mouse_y>cfgnetw_Y+265 && mouse_y<cfgnetw_Y+265+20)
 {
 faderSpace.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 LargeurEspaceFaderSize=atoi(numeric);
 reset_numeric_entry();
 if(LargeurEspaceFaderSize<1024 ){LargeurEspaceFaderSize=1024;}
 if(LargeurEspaceFaderSize>largeur_ecran){LargeurEspaceFaderSize=largeur_ecran;}
 faderSpace.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 petitchiffre.Print("Fader Space Width: " ,(cfgnetw_X+430), (cfgnetw_Y+255));
@@ -894,11 +894,11 @@ ExpertB.Draw(CouleurFader.WithAlpha(expert_mode*alpha_blinker));
 if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+740 && mouse_x<cfgnetw_X+740+50 && mouse_y>cfgnetw_Y+225 && mouse_y<cfgnetw_Y+225+20)
 {
 ExpertB.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 expert_mode=toggle(expert_mode);
 ExpertB.Draw(CouleurBlind);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -964,7 +964,7 @@ MonCallButton.DrawOutline(CouleurFader);
 petitchiffre.Print("DmxIn>Dock",callb_x+5, callb_y+20);
 if(window_focus_id==W_CFGMENU && mouse_x>callb_x && mouse_x<callb_x+100 && mouse_y>callb_y && mouse_y<callb_y+30 && window_focus_id==920)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
  if(index_affect_dmxin==0)
 {
@@ -977,7 +977,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_dmxin;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -1047,7 +1047,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+20 && mouse_x<cfgdmx_X+200 )
    {
    DeviceArtNetDevice.Draw(CouleurFond.WithAlpha(0.5));
    Survol_interface_numero=1;
-   if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
+   if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() )
    {
    SelectDmxDevice(1);
    }
@@ -1056,7 +1056,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+20 && mouse_x<cfgdmx_X+200 )
    {
    DeviceEnttecOpen.Draw(CouleurFond.WithAlpha(0.5));
    Survol_interface_numero=2;
-   if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)  )
+   if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()  )
    {
    SelectDmxDevice(2);
 
@@ -1066,7 +1066,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+20 && mouse_x<cfgdmx_X+200 )
    {
    DeviceEnttecPro.Draw(CouleurFond.WithAlpha(0.5));
    Survol_interface_numero=3;
-   if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
+   if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() )
    {
    SelectDmxDevice(3);
    }
@@ -1076,7 +1076,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+20 && mouse_x<cfgdmx_X+200 )
    {
    DeviceSunlite.Draw(CouleurFond.WithAlpha(0.5));
    Survol_interface_numero=4;
-   if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)  )
+   if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()  )
    {
    SelectDmxDevice(4);
    }
@@ -1089,13 +1089,13 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+230 && mouse_x<cfgdmx_X+300 )
    if( mouse_y>(cfgdmx_Y+60) && mouse_y< (cfgdmx_Y+80) && myDMXinterfaceis==1) //artnet
    {
    ArtNetSendUniverse.DrawOutline(CouleurLigne.WithAlpha(0.5));
-   if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
    {
    Univers=atoi(numeric);  if(Univers>15){Univers=15;}
    reset_numeric_entry();
    numeric_postext=0;
 
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
    }
 
@@ -1107,13 +1107,13 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+320 && mouse_x<cfgdmx_X+490 )
    if( mouse_y>(cfgdmx_Y+60) && mouse_y< (cfgdmx_Y+80) && myDMXinterfaceis==1) //artnet
    {
    ArtNetSendAdress.DrawOutline(CouleurLigne.WithAlpha(0.7));
-   if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false)  && numeric_postext>0)
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed()  && numeric_postext>0)
    {
    Close_dmx_interface();
    sprintf(ip_artnet,numeric);
    reset_numeric_entry();
    Init_dmx_interface();
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
    }
 
@@ -1127,7 +1127,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+520 && mouse_x<cfgdmx_X+620 )
    {
    ArtNetBroadcastMode.DrawOutline(CouleurLigne.WithAlpha(0.7));
 
-   if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
    {
    ArtNetBroadcastMode.DrawOutline(CouleurLigne.WithAlpha(0.7));
    Close_dmx_interface();
@@ -1141,7 +1141,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+520 && mouse_x<cfgdmx_X+620 )
    index_broadcast=0;
    Init_dmx_interface();
    }
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
    }
 }
@@ -1153,7 +1153,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+670 && mouse_x<cfgdmx_X+770 )
    {
    ArtNetPollforDevices.DrawOutline(CouleurLigne.WithAlpha(0.7));
 
-   if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
    {
    if (myDMXinterfaceis!=1)//dans le cas d un art poll avec interface usb
    {
@@ -1175,7 +1175,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+670 && mouse_x<cfgdmx_X+770 )
    if (myDMXinterfaceis!=1)//dans le cas d un art poll avec interface usb
    {fermeture_client_artnet();}
    }
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
 
    }
@@ -1187,10 +1187,10 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+770 && mouse_x<cfgdmx_X+830 )
    {
    ArtNetDoubleDMX.DrawOutline(CouleurLigne.WithAlpha(0.7));
 
-   if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) &&  myDMXinterfaceis!=1)
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() &&  myDMXinterfaceis!=1)
    {
    index_artnet_doubledmx=toggle(index_artnet_doubledmx);
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    switch(index_artnet_doubledmx)
    {
    case 0:
@@ -1216,7 +1216,7 @@ if (window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+270 && mouse_x<cfgdmx_X+420 &
 {
 EnttecProIN.Draw(CouleurFond.WithAlpha(0.5));
 
-   if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
    {
 
    if (index_init_EnttecPROIN_ok==0)
@@ -1227,17 +1227,17 @@ EnttecProIN.Draw(CouleurFond.WithAlpha(0.5));
    {   Close_ProIn() ; index_init_EnttecPROIN_ok=0;}
 
    }
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
 }
 
 //sunlite allows IN
 if (window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+240 && mouse_x<cfgdmx_X+390 && mouse_y>cfgdmx_Y+180 && mouse_y<cfgdmx_Y+210 && myDMXinterfaceis==5)
 {
 SunliteAllowsIN.Draw(CouleurFond.WithAlpha(0.5));
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) &&  window_focus_id==920)
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() &&  window_focus_id==920)
    {
    index_allow_sunlite_dmxIN=toggle(index_allow_sunlite_dmxIN);
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
    }
 }
 
@@ -1480,7 +1480,7 @@ if(mouse_x>(cfg_X+largeurCFGwindow-110) && mouse_x<(cfg_X+largeurCFGwindow-20)
 && mouse_y>(cfg_Y+hauteurCFGwindow-40)&& mouse_y<(cfg_Y+hauteurCFGwindow-10) )
 {
 SaveCFG.DrawOutline(CouleurLevel);
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false)  )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed()  )
 {
 SaveCFG.Draw(CouleurLevel);
 if( index_config_dmx==1)
@@ -1500,7 +1500,7 @@ else if( index_config_core==1)
 {
 Save_Core_Config();
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -1534,12 +1534,12 @@ if(config_page_is==1){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print("   dmx cfg",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_config_dmx=1;
 config_page_is=1;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;
@@ -1548,12 +1548,12 @@ if(config_page_is==2){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print("  midi cfg",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_config_midi=1;
 config_page_is=2;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;
@@ -1562,12 +1562,12 @@ if(config_page_is==3){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print("network cfg",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_config_network=1;
 config_page_is=3;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;
@@ -1576,12 +1576,12 @@ if(config_page_is==4){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print("screen cfg",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_setup_gfx=1;
 config_page_is=4;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;
@@ -1590,12 +1590,12 @@ if(config_page_is==5){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print("arduino cfg",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_config_arduino=1;
 config_page_is=5;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;
@@ -1604,12 +1604,12 @@ if(config_page_is==6){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print(" GENERAL",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_config_general=1;
 config_page_is=6;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;
@@ -1618,12 +1618,12 @@ if(config_page_is==7){MySetup.Draw(CouleurSurvol);}
 neuromoyen.Print("  core cfg",mysetupx+(choix*100)+5,window_cfgY+30);
 if(window_focus_id==W_CFGMENU && mouse_x> mysetupx+(choix*100) && mouse_x< mysetupx+(choix*100)+90 && mouse_y>window_cfgY+5 && mouse_y<window_cfgY+5+40)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && window_focus_id==920)
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && window_focus_id==920)
 {
 reset_indexes_conf();
 index_config_core=1;
 config_page_is=7;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 break;

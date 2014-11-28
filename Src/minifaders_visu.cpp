@@ -498,12 +498,12 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
                 if(numcom==0)//flash
                 {
 //BLOCK FLASHqui doit etre dans boucle principale et pas dans le core qui checke la souris
-                    if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false))
+                    if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed())
                     {
                         if( Midi_Faders_Affectation_Type!=0)
                         {
                             attribute_midi_solo_affectation(778+numcom,1);
-                            mouseLeftClic.eventProcessed=true;
+                            mouseClicLeft.SetProcessed();
                         }
                         else
                         {
@@ -516,7 +516,7 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
                             }
                         }
                     }
-                    else if(mouseLeftClic.eventProcessed && midi_levels[778]==0)
+                    else if(mouseClicLeft.isProcessed() && midi_levels[778]==0)
                     {
                         for(int tn=0; tn<core_user_define_nb_faders; tn++)
                         {
@@ -924,12 +924,12 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
 //flash ou pas
                 if(mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg-5 && mouse_y>ymf+175+(lfad*hmfd) && mouse_y<ymf+185+(lfad*hmfd))
                 {
-                    if(mouseLeftClic.isDown && FaderIsFlash[cmptfader +(lfad*24)]==0 && (mouseLeftClic.eventProcessed==false))
+                    if(mouseClicLeft.isDown() && FaderIsFlash[cmptfader +(lfad*24)]==0 && mouseClicLeft.isToBeProcessed())
                     {
                         FaderIsFlash[cmptfader +(lfad*24)]=1;
                         refresh_minifader_state_view_core(cmptfader +(lfad*24));
                     }
-                    if(mouseLeftClic.eventProcessed)
+                    if(mouseClicLeft.isProcessed())
                     {
                         FaderIsFlash[cmptfader +(lfad*24)]=0;
                     }

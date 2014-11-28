@@ -68,7 +68,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   if(mouse_x>xw-rayon_k-5 && mouse_x<xw+rayon_k+5 && mouse_y>yw-rayon_k-5 && mouse_y<yw+rayon_k+5)
   {
   Circle (Vec2D(xw,yw), rayon_k+5).DrawOutline(CouleurBlind);
-  if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+  if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
   {
   Circle (Vec2D(xw,yw), rayon_k+5).Draw(CouleurBlind);
   }

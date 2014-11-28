@@ -111,7 +111,7 @@ int do_logical_menu_curve(int XCurv, int YCurv)
 if(mouse_x>(XCurv+30) && mouse_x<(XCurv+30+50) && mouse_y>(YCurv+10) && mouse_y<(YCurv+10+20))
 {
 index_enable_curve_editing=toggle(index_enable_curve_editing);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
@@ -130,34 +130,34 @@ if(mouse_x>(XCurv+20+(curvenumber*70)) && mouse_x<(XCurv+20+(curvenumber*70)+60)
  {
  build_default_curve(curve_selected);
  index_reset_curve=0;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //courbe TV
  else if (index_square_curve==1 &&  index_enable_curve_editing==1 && index_reset_curve==0 && index_fluo_curve==0 && index_preheat_curve==0)
  {
  build_square_curve(curve_selected);
  index_square_curve=0;
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
  //courbe preheat
  else if (index_preheat_curve==1 && index_enable_curve_editing==1 && index_square_curve==0 && index_reset_curve==0 && index_fluo_curve==0  )
  {
  build_preheat_curve(curve_selected);
  index_preheat_curve=0;
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
  //courbe fluo
  else if (index_fluo_curve==1 && index_enable_curve_editing==1 && index_square_curve==0 && index_reset_curve==0 && index_preheat_curve==0)
  {
  build_fluo_curve(curve_selected);
  index_fluo_curve=0;
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
 
-else if(index_reset_curve==0 && index_square_curve==0 && index_fluo_curve==0 && index_preheat_curve==0 && (mouseLeftClic.eventProcessed==false))//selection du curve
+else if(index_reset_curve==0 && index_square_curve==0 && index_fluo_curve==0 && index_preheat_curve==0 && mouseClicLeft.isToBeProcessed())//selection du curve
  {
  load_curve_in_temp_curve();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 
@@ -190,7 +190,7 @@ if(index_fluo_curve==0){dessafect_index_curves();index_fluo_curve=1; }
 else if (index_fluo_curve==1){index_fluo_curve=0; }
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
@@ -201,7 +201,7 @@ if(mouse_x>XCurv+65 && mouse_x<XCurv+65+200 && mouse_y>YCurv+560 && mouse_y<YCur
 do_curve_affectation();
 patch_unselect_all_dimmers();
 sprintf(string_Last_Order,">>Affected Curve  %d to Dimmer", curve_selected);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 return(0);
@@ -259,7 +259,7 @@ switch(o)
  default:
  break;
 }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 
 }
@@ -297,7 +297,7 @@ index_type=0;index_level_attribue=0;
 index_affect_patch=0;
 }
 generate_channel_view_list_from_patched_circuits();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

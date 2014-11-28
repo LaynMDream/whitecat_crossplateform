@@ -534,7 +534,7 @@ else if(mouse_x>xw+495 && mouse_x<xw+495+35){OffsetGPL.DrawOutline(CouleurLigne)
 
 int do_logical_Draw_TrackingAera(int xw,int yw)
 {
-if(window_focus_id==W_DRAW && mouse_x>=xw && mouse_x<=xw+draw_tracking_aera_size_x && mouse_y>=yw && mouse_y<=yw+draw_tracking_aera_size_y && mouseLeftClic.isDown)
+if(window_focus_id==W_DRAW && mouse_x>=xw && mouse_x<=xw+draw_tracking_aera_size_x && mouse_y>=yw && mouse_y<=yw+draw_tracking_aera_size_y && mouseClicLeft.isDown())
 {
 if( dragging_draw==0){snap_state_of_draw_grid(draw_preset_selected); dragging_draw=1;}
 draw_point_is_traced[draw_preset_selected]=1;
@@ -549,7 +549,7 @@ int do_logical_Draw_Window(int xw,int yw)
 //SHAPE SELECTION
 //SHAPE
 Rect DrawBrush(Vec2D(xw+180,  yw+12), Vec2D( 50,20));
-if(window_focus_id==W_DRAW && dragging_draw==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x> xw+180 && mouse_x<xw+180+50 && mouse_y>yw+12 && mouse_y<yw+12+20)
+if(window_focus_id==W_DRAW && dragging_draw==0 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x> xw+180 && mouse_x<xw+180+50 && mouse_y>yw+12 && mouse_y<yw+12+20)
 {
 show_type_midi(1658, "Draw Brush Type");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -572,12 +572,12 @@ default:
 break;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //selection presets
 for(int pr=0;pr<6;pr++)
 {
-if(window_focus_id==W_DRAW && dragging_draw==0 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x> xw+240+(pr*58) && mouse_x<xw+240+(pr*58)+50 && mouse_y>yw+12 && mouse_y<yw+12+20)
+if(window_focus_id==W_DRAW && dragging_draw==0 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x> xw+240+(pr*58) && mouse_x<xw+240+(pr*58)+50 && mouse_y>yw+12 && mouse_y<yw+12+20)
 {
 char temp[24];
 sprintf(temp,"Draw Preset %d ",pr+1);
@@ -603,13 +603,13 @@ ask_clear_draw_preset=1;
 }
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //fin presets
 }
 
 //Drawing mode
-if(window_focus_id==W_DRAW && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x>xw+20 && mouse_x<xw+20+60 && mouse_y>yw+60 && mouse_y<yw+60+20)
+if(window_focus_id==W_DRAW && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x>xw+20 && mouse_x<xw+20+60 && mouse_y>yw+60 && mouse_y<yw+60+20)
 {
 show_type_midi(1652, "Draw Mode");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -620,19 +620,19 @@ else
 {
 draw_mode[draw_preset_selected]++;
 if(draw_mode[draw_preset_selected]>3){draw_mode[draw_preset_selected]=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //pressures etc
-if(window_focus_id==W_DRAW && mouseLeftClic.isDown && dragging_draw==0)
+if(window_focus_id==W_DRAW && mouseClicLeft.isDown() && dragging_draw==0)
 {
 for(int i=0;i<3;i++)
 {
 
-if((mouseLeftClic.eventProcessed==false) && mouse_x>=xw+311 && mouse_x<=xw+321 && mouse_y>=yw+57+(i*25) && mouse_y<=yw+67+(i*25))
+if(mouseClicLeft.isToBeProcessed() && mouse_x>=xw+311 && mouse_x<=xw+321 && mouse_y>=yw+57+(i*25) && mouse_y<=yw+67+(i*25))
 {
 midi_send_out[1653+i]=toggle(midi_send_out[1653+i]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 if(mouse_x>=xw+175 && mouse_x<=xw+315 && mouse_y>=yw+45+(i*25) && mouse_y<=yw+45+(i*25)+10)
@@ -668,7 +668,7 @@ float po=constrain_data_to_midi_range(mouse_x-(xw+175));
 }
 
 //erase draw
-if(window_focus_id==W_DRAW  && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x> xw+400 && mouse_x<xw+400+110 && mouse_y>yw+40 && mouse_y<yw+40+20 )
+if(window_focus_id==W_DRAW  && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x> xw+400 && mouse_x<xw+400+110 && mouse_y>yw+40 && mouse_y<yw+40+20 )
 {
 show_type_midi(1657, "Erase Drawing");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -679,17 +679,17 @@ else
 {
 draw_erase_drawing(draw_preset_selected);
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //affectation mode
-if(window_focus_id==W_DRAW  && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x> xw+400 && mouse_x<xw+400+110 && mouse_y>yw+75 && mouse_y<yw+75+20 )
+if(window_focus_id==W_DRAW  && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x> xw+400 && mouse_x<xw+400+110 && mouse_y>yw+75 && mouse_y<yw+75+20 )
 {
 draw_channel_recording_mode++;
 if(draw_channel_recording_mode>3){draw_channel_recording_mode=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 ////AFFECT TO DOCK
-if(window_focus_id==W_DRAW && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x>xw+400 && mouse_x<xw+400+110 && mouse_y>yw+100 && mouse_y<yw+100+20  )
+if(window_focus_id==W_DRAW && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x>xw+400 && mouse_x<xw+400+110 && mouse_y>yw+100 && mouse_y<yw+100+20  )
 {
 if(index_affect_draw_to_dock==0)
 {
@@ -702,19 +702,19 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_draw_to_dock;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
 
 //////////////EDIT MODE///////////////////////////////
 
-if(window_focus_id==W_DRAW && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) )
+if(window_focus_id==W_DRAW && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() )
 {
 if( mouse_x> xw+530 && mouse_x<xw+530+50 && mouse_y>yw+40 && mouse_y<yw+40+20)
 {
 index_enable_edit_Draw=toggle(index_enable_edit_Draw);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //nbre de col
 else if(  index_enable_edit_Draw==1 && mouse_x> xw+550 && mouse_x<xw+550+30 && mouse_y>yw+75 && mouse_y<yw+75+20 )
@@ -726,7 +726,7 @@ else if(  index_enable_edit_Draw==1 && mouse_x> xw+550 && mouse_x<xw+550+30 && m
  { draw_preset_parameters[draw_preset_selected][0]=25;}
  recalculate_draw_sizes(draw_preset_selected);
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 //nbre de rows
 else if( index_enable_edit_Draw==1 && mouse_x> xw+550 && mouse_x<xw+550+30 && mouse_y>yw+100 && mouse_y<yw+100+20 )
@@ -738,7 +738,7 @@ else if( index_enable_edit_Draw==1 && mouse_x> xw+550 && mouse_x<xw+550+30 && mo
  { draw_preset_parameters[draw_preset_selected][1]=20;}
  recalculate_draw_sizes(draw_preset_selected);
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 }
 
@@ -747,13 +747,13 @@ else if( index_enable_edit_Draw==1 && mouse_x> xw+550 && mouse_x<xw+550+30 && mo
 do_logical_Draw_TrackingAera(xw+20,yw+140);
 
 //controls midi xy
-if(window_focus_id==W_DRAW   && (mouseLeftClic.eventProcessed==false) && mouse_x>= xw+65 && mouse_x<=xw+65+127 && mouse_y>yw+580 && mouse_y<yw+580+10 )
+if(window_focus_id==W_DRAW   && mouseClicLeft.isToBeProcessed() && mouse_x>= xw+65 && mouse_x<=xw+65+127 && mouse_y>yw+580 && mouse_y<yw+580+10 )
 {
 show_type_midi(1660, "Sel. TrackingZone X");
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1660,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -761,13 +761,13 @@ else
 }
 }
 
-if(window_focus_id==W_DRAW  && (mouseLeftClic.eventProcessed==false)   && mouse_x>= xw+245 && mouse_x<=xw+245+127 && mouse_y>yw+580 && mouse_y<yw+580+10 )
+if(window_focus_id==W_DRAW  && mouseClicLeft.isToBeProcessed()   && mouse_x>= xw+245 && mouse_x<=xw+245+127 && mouse_y>yw+580 && mouse_y<yw+580+10 )
 {
 show_type_midi(1661, "Sel. TrackingZone Y");
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1661,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -778,22 +778,22 @@ else
 //capture Grid players et offset GPL
 
 //get GPL ON OFF
-if(window_focus_id==W_DRAW  && (mouseLeftClic.eventProcessed==false)  && mouse_x>= xw+455 && mouse_x<=xw+455+30 && mouse_y>yw+578 && mouse_y<yw+578+18 )
+if(window_focus_id==W_DRAW  && mouseClicLeft.isToBeProcessed()  && mouse_x>= xw+455 && mouse_x<=xw+455+30 && mouse_y>yw+578 && mouse_y<yw+578+18 )
 {
 draw_get_gpl[draw_preset_selected]=constrain_int_data_to_this_range(atoi(numeric),1,4);
 reset_numeric_entry();
 numeric_postext=0;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
 //offset de GPL
-if(window_focus_id==W_DRAW  && (mouseLeftClic.eventProcessed==false)   && index_enable_edit_Draw==1  && mouse_x>= xw+550 && mouse_x<=xw+550+35 && mouse_y>yw+578 && mouse_y<yw+578+18 && numeric_postext>0)
+if(window_focus_id==W_DRAW  && mouseClicLeft.isToBeProcessed()   && index_enable_edit_Draw==1  && mouse_x>= xw+550 && mouse_x<=xw+550+35 && mouse_y>yw+578 && mouse_y<yw+578+18 && numeric_postext>0)
 {
 draw_offset_gpl[draw_preset_selected]= constrain_int_data_to_this_range(atoi(numeric),1,512);
 reset_numeric_entry();
 numeric_postext=0;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

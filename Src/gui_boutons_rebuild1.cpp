@@ -314,10 +314,10 @@ int raccrochage_midi_logical_vertical_dmx(int Xb, int Yb, int IDmidi, int largeu
 //midi racroche
 if(mouse_x>Xb+largeur+4 && mouse_x<Xb+largeur+16 && mouse_y>=Yb+hauteur-1 && mouse_y<=Yb+hauteur+11 )
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -372,10 +372,10 @@ int raccrochage_midi_logical_vertical(int Xb, int Yb, int IDmidi, int largeur, i
 //midi racroche
 if(mouse_x>Xb+largeur+6 && mouse_x<Xb+largeur+14 && mouse_y>=Yb+hauteur-1 && mouse_y<=Yb+hauteur+9)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -409,10 +409,10 @@ int raccrochage_midi_logical_horizontal_audio(int Xb, int Yb, int IDmidi, int la
 //midi racroche
 if(mouse_x>Xb+largeur+7 && mouse_x<Xb+largeur+13 && mouse_y>=Yb+hauteur+12 && mouse_y<=Yb+hauteur+18 )
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -451,10 +451,10 @@ int raccrochage_midi_logical_horizontal(int Xb, int Yb, int IDmidi, int largeur,
 //midi racroche
 if(mouse_x>Xb+largeur+4 && mouse_x<Xb+largeur+16 && mouse_y>=Yb+hauteur+9 && mouse_y<=Yb+hauteur+21 )
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -491,10 +491,10 @@ int raccrochage_midi_logical_horizontal_little(int Xb, int Yb, int IDmidi, int l
 //midi racroche
 if(mouse_x>Xb+largeur+7 && mouse_x<Xb+largeur+14 && mouse_y>=Yb+hauteur+11 && mouse_y<=Yb+hauteur+18 )
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -532,10 +532,10 @@ int raccrochage_midi_logical_circulaire(int Xb, int Yb, int IDmidi, int largeur,
 //midi racroche
 if(mouse_x>Xb+largeur+4 && mouse_x<Xb+largeur+16 && mouse_y>=Yb+hauteur+9 && mouse_y<=Yb+hauteur+21 )
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 is_raccrochage_midi_remote[IDmidi]=toggle(is_raccrochage_midi_remote[IDmidi]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -585,20 +585,20 @@ int midi_send_faders_button_logical(int Xb, int Yb, int id_window)
 {
 if(window_focus_id==id_window)
 {
-if(mouse_x>Xb && mouse_x<Xb+60 && mouse_y>Yb && mouse_y<Yb+20 && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>Xb && mouse_x<Xb+60 && mouse_y>Yb && mouse_y<Yb+20 && mouseClicLeft.isToBeProcessed())
    {
     //config midi
  if(Midi_Faders_Affectation_Type!=0)
  {
  attribute_midi_solo_affectation(1593,Midi_Faders_Affectation_Type);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  else
  {
  index_global_midi_send_on_faders=toggle(index_global_midi_send_on_faders);
  set_all_faders_midi_out(index_global_midi_send_on_faders);
  do_light_midi_send_on_faders=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 }
@@ -730,7 +730,7 @@ petitpetitchiffre.Print(desc,xcom+5,ycom+12);
 //sab 02/03/2014 int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
 void command_button_logical( int xcom, int ycom, int isstate, const std::string desc, const std::string raccourci, int IDmidi, int thecommand)
 {
-if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT) && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && (mouseLeftClic.eventProcessed==false))
+if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT) && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && mouseClicLeft.isToBeProcessed())
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
@@ -981,10 +981,10 @@ index_midi_mute=toggle(index_midi_mute);
     }
 break;
 case 108://MAIN MENU
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 
-              mouseLeftClic.eventProcessed=true;
+              mouseClicLeft.SetProcessed();
               switch(index_show_main_menu)
               {
               case 0:add_a_window(W_MAINMENU);index_show_main_menu=1; break;
@@ -1049,7 +1049,7 @@ break;
 }
 
 if(index_show_main_menu==1 ){window_bring_to_front(W_MAINMENU);}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

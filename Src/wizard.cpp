@@ -207,40 +207,40 @@ Allmem.Draw(CouleurFader);
 break;
 }
 
-if(window_focus_id==W_WIZARD && mouse_x>xb+270 && mouse_x<xb+320 )
-{
-if(mouse_y>yb+170 && mouse_y<yb+190)//wizard global
-{
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
-{
-wizard_amplitude_is_global=1;
-bool firstmem=0;
-for(int m=0;m<10000;m++)
-{
-if(MemoiresExistantes[m]==1 && firstmem==0)
-{
-firstmem=1;
-wizard_from_mem=m;
-}
-if(MemoiresExistantes[m]==1 && firstmem!=0)
-{
-wizard_to_mem=m;
-}
-}
-wizard_calcul_nbre_de_mem();
-mouseLeftClic.eventProcessed=false; // ????
-}
-}
-if(mouse_y>yb+205 && mouse_y<yb+225 && window_focus_id==921)//wizard mem to mem
-{
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
-{
-wizard_amplitude_is_global=0;
-wizard_calcul_nbre_de_mem();
-mouseLeftClic.eventProcessed=false; // ????
-}
-}
-}
+    if(window_focus_id==W_WIZARD && mouse_x>xb+270 && mouse_x<xb+320 )
+    {
+        if(mouse_y>yb+170 && mouse_y<yb+190)//wizard global
+        {
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
+            {
+                wizard_amplitude_is_global=1;
+                bool firstmem=0;
+                for(int m=0; m<10000; m++)
+                {
+                    if(MemoiresExistantes[m]==1 && firstmem==0)
+                    {
+                        firstmem=1;
+                        wizard_from_mem=m;
+                    }
+                    if(MemoiresExistantes[m]==1 && firstmem!=0)
+                    {
+                        wizard_to_mem=m;
+                    }
+                }
+                wizard_calcul_nbre_de_mem();
+                mouseClicLeft.SetToBeProcessed(); // ??? sab question 23/11/2014 : pourquoi faire cela en dehors du traitement de détection des évenements souris ?
+            }
+        }
+        if(mouse_y>yb+205 && mouse_y<yb+225 && window_focus_id==921)//wizard mem to mem
+        {
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
+            {
+                wizard_amplitude_is_global=0;
+                wizard_calcul_nbre_de_mem();
+                //mouseClicLeft.SetToBeProcessed(); // sab 23/11/2014 : déjà vrai car condition pour rentrer dans ce pavé
+            }
+        }
+    }
 
 //FROM TO
 char mem_wiz_tmp[7];
@@ -269,7 +269,7 @@ if( mouse_y>yb+200 && mouse_y<yb+230)
 {
 wiz_fromMem.DrawOutline(CouleurLigne);
 
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 int tempentry=(int)(10*atof(numeric));
 reset_numeric_entry();
@@ -279,7 +279,7 @@ wizard_from_mem=tempentry;
 wizard_calcul_nbre_de_mem();
 }
 else {sprintf(string_Last_Order,">>Wrong entry : a Mem is from 0.0 to 999.9!");}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //to
@@ -287,7 +287,7 @@ if( mouse_y>yb+235 && mouse_y<yb+265 && window_focus_id==921)
 {
 wiz_toMem.DrawOutline(CouleurLigne);
 
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 int tempentry=(int)(10*atof(numeric));
 reset_numeric_entry();
@@ -297,7 +297,7 @@ wizard_to_mem=tempentry;
 wizard_calcul_nbre_de_mem();
 }
 else {sprintf(string_Last_Order,">>Wrong entry : a Mem is from 0.0 to 999.9!");}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -337,7 +337,7 @@ if(window_focus_id==W_WIZARD && mouse_x>xb+438 && mouse_x<xb+462)
 if(mouse_y>yb+278 && mouse_y<yb+302)
 {
 LineUp.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 LineUp.Draw(CouleurFader);
 if(position_ligne_wizard_out>0){position_ligne_wizard_out--;}
@@ -346,7 +346,7 @@ if(position_ligne_wizard_out>0){position_ligne_wizard_out--;}
 else if(mouse_y>yb+338 && mouse_y<yb+362)
 {
 LineDown.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 LineDown.Draw(CouleurFader);
 if(position_ligne_wizard_out<36){position_ligne_wizard_out++;}
@@ -366,10 +366,10 @@ wiz_mode.SetLineWidth(epaisseur_ligne_fader);
 if(window_focus_id==W_WIZARD && mouse_x>xb+105 && mouse_x<xb+235 && mouse_y>yb+3 && mouse_y<yb+33)
 {
  wiz_mode.Draw(CouleurFader);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
  index_wizard_ch_mode=toggle(index_wizard_ch_mode);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 }
 wiz_mode.DrawOutline(CouleurLigne);
@@ -389,10 +389,10 @@ for (int li=0;li<7;li++)
     domact.Draw(CouleurFond.WithAlpha(0.5));
     if(window_focus_id==W_WIZARD && mouse_x>xb+20 && mouse_x<xb+70 && mouse_y>yb+60+(li*30) && mouse_y<yb+80+(li*30) )
     {
-                     if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                     if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                      {
                      wizard_action_mem=li;
-                     mouseLeftClic.eventProcessed=true;
+                     mouseClicLeft.SetProcessed();
                      }
     }
 if(wizard_action_mem==li){domact.Draw(CouleurFader); }
@@ -457,11 +457,11 @@ case 0://REBUILD
      if(mod==mode_rebuild){choose_mode_rebuild.DrawOutline(CouleurLevel); }
      if(window_focus_id==W_WIZARD &&mouse_x>xb+300 && mouse_x<xb+330 && mouse_y> yb+200+(wizard_action_mem*30)+(mod*20) && mouse_y<yb+215+(wizard_action_mem*30)+(mod*20))
      {
-     //sab 02/03/2014 IMPACT if(mouse_button=1 && (mouseLeftClic.eventProcessed==false))
-     if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+     //sab 02/03/2014 IMPACT if(mouse_button=1 && mouseClicLeft.isToBeProcessed())
+     if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
      {
      mode_rebuild=mod;
-     mouseLeftClic.eventProcessed=true;
+     mouseClicLeft.SetProcessed();
      }
      }
      }
@@ -497,11 +497,11 @@ if(wizard_action_mem==1 || wizard_action_mem==3 || wizard_action_mem==4)
      if(window_focus_id==W_WIZARD && mouse_x> xb+410 && mouse_x<xb+470 && mouse_y> yb+190 && mouse_y<yb+210)
      {
      act_mem.DrawOutline(CouleurLevel);
-     if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+     if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
      {
      variable_wizard_mem=(int)(atof(numeric)*10);
      reset_numeric_entry();
-     mouseLeftClic.eventProcessed=true;
+     mouseClicLeft.SetProcessed();
      }
      }
      char tmp_sh_m[8];
@@ -523,10 +523,10 @@ detect_ch.SetRoundness(6);
 detect_ch.Draw(CouleurFond.WithAlpha(0.5));
 detect_ch.DrawOutline(CouleurBlanc.WithAlpha(0.5));
 petitchiffre.Print("Select unused Channels",(xb+260), (yb+25));
-if(window_focus_id==W_WIZARD  && mouse_x>xb+415 && mouse_x<xb+465 && mouse_y>yb+10 && mouse_y<yb+30 && (mouseLeftClic.eventProcessed==false))
+if(window_focus_id==W_WIZARD  && mouse_x>xb+415 && mouse_x<xb+465 && mouse_y>yb+10 && mouse_y<yb+30 && mouseClicLeft.isToBeProcessed())
 {
 detect_ch.Draw(CouleurFader);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 for (int l=1; l<514; l++)
 {
@@ -534,7 +534,7 @@ for (int l=1; l<514; l++)
 }
 
 wizard_detect_unused_channels(wizard_from_mem, wizard_to_mem);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -554,7 +554,7 @@ petitpetitchiffre.Print(show_buff_wizIN[ly+position_ligne_wizard_in],(xb+30), (y
 if(window_focus_id==W_WIZARD &&(index_do_dock==1 || index_main_clear==1 ) && mouse_x>xb+10 && mouse_x<xb+470 && mouse_y>yb+40 && mouse_y<yb+140 )
 {
 wiz_ch.DrawOutline(CouleurBlind);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 if(index_do_dock==1)
 {
@@ -564,7 +564,7 @@ else if(index_main_clear==1)
 {
 clear_wizard_store_ch_in();   index_main_clear=0;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //////////////////UP DOWN LINE SEL CHAN /////////////////////
@@ -579,7 +579,7 @@ if(window_focus_id==W_WIZARD && mouse_x>xb+438 && mouse_x<xb+462)
 if(mouse_y>yb+48 && mouse_y<yb+72)
 {
 LineUpO.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 LineUpO.Draw(CouleurFader);
 if(position_ligne_wizard_in>0){position_ligne_wizard_in--;}
@@ -588,7 +588,7 @@ if(position_ligne_wizard_in>0){position_ligne_wizard_in--;}
 else if(mouse_y>yb+108 && mouse_y<yb+132)
 {
 LineDownO.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 LineDownO.Draw(CouleurFader);
 if(position_ligne_wizard_in<36){position_ligne_wizard_in++;}
@@ -613,7 +613,7 @@ petitpetitchiffre.Print(show_buff_wizOUT[ly+position_ligne_wizard_out],(xb+30), 
 if(window_focus_id==W_WIZARD && (index_do_dock==1 || index_main_clear==1) && mouse_x>xb+10 && mouse_x<xb+470 && mouse_y>yb+270 && mouse_y<yb+370 )
 {
 wiz_ch2.DrawOutline(CouleurBlind);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
  if(index_do_dock==1)
 {
@@ -623,7 +623,7 @@ else if(index_main_clear==1)
 {
  clear_wizard_store_ch_out();    index_main_clear=0;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -653,10 +653,10 @@ doact.SetRoundness(7.5);
 doact.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_WIZARD && mouse_x>xb+20 && mouse_x<xb+70 && mouse_y>yb+150+(li*30) && mouse_y<yb+170+(li*30) )
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 wizard_action=li;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(wizard_action==li){doact.Draw(CouleurFader); }
@@ -696,10 +696,10 @@ levlTo.Draw(CouleurFond.WithAlpha(0.5));
 if(window_focus_id==W_WIZARD && mouse_x>xb+190 && mouse_x<xb+250 && mouse_y>yb+180 && mouse_y<yb+210)
 {
 levlTo.DrawOutline(CouleurLigne);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 wizard_level_is=atoi(numeric);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 reset_numeric_entry();
 switch(dmx_view)
 {
@@ -730,10 +730,10 @@ petitchiffre.Print("Swap",xb+230,yb+255);
 
 if(window_focus_id==W_WIZARD && mouse_x>xb+170 && mouse_x<xb+220 && mouse_y>yb+240 && mouse_y<yb+260)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 wizard_action=4;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -748,7 +748,7 @@ cancelit.SetLineWidth(epaisseur_ligne_fader);
 if(window_focus_id==W_WIZARD && mouse_x>xb+85 && mouse_x<xb+195 && mouse_y>yb+380 && mouse_y<yb+410 )
 {
 cancelit.Draw(CouleurFond.WithAlpha(0.5));
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 reset_indexs_confirmation();
 index_wizard_do_reload_from_disk=1;
@@ -767,7 +767,7 @@ doit.SetLineWidth(epaisseur_ligne_fader);
 if(window_focus_id==W_WIZARD && mouse_x>xb+285 && mouse_x<xb+395 && mouse_y>yb+380 && mouse_y<yb+410 )
 {
 doit.Draw(CouleurFond.WithAlpha(0.5));
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 reset_indexs_confirmation();
 switch(index_wizard_ch_mode)

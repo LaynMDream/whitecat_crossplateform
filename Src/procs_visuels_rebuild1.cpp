@@ -303,7 +303,7 @@ int detection_over_window()
 
 int move_window(int idwindowis)
 {
-    if(mouseLeftClic.isDown && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu)
+    if(mouseClicLeft.isDown() && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu)
     {
 
 //set_mouse_range(mouse_x-10,mouse_x+10, mouse_y-10,mouse_y+10);//pour pas deborder
@@ -482,8 +482,8 @@ int MoveCloseBox(int xmv,int ymv, int idwindow)
             else if(mouse_x>xmv+40-15 && mouse_x<xmv+40+15)
             {
                 MoveBox.Draw(CouleurSurvol);
-                if((mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
-                        || mouseLeftClic.eventProcessed)
+                if((mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
+                        || mouseClicLeft.isProcessed())
                 {
                     MoveBox.Draw(CouleurFader);
                 }
@@ -518,15 +518,15 @@ int do_logical_MoveCloseBox(int xmv,int ymv, int idwindow)
         {
             if(mouse_x>xmv-15 && mouse_x<xmv+15)
             {
-                //if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
-                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  im_moving_a_window==0 && no_LeftDragDrop())
+                //if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() &&  im_moving_a_window==0 && original_posx==mouse_x && original_posy==mouse_y)
+                if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() &&  im_moving_a_window==0 && mouseClicLeft.isNotDrop()) //no_LeftDragDrop())
                 {
                     substract_a_window(idwindow);
-                    mouseLeftClic.eventProcessed=true;
+                    mouseClicLeft.SetProcessed(3);
                 }
             }
 // else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (original_posx==mouse_x && original_posy==mouse_y))
-            else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& (no_LeftDragDrop()))
+            else if(((mouse_x>xmv+40-15 && mouse_x<xmv+40+15)|| im_moving_a_window==1)&& mouseClicLeft.isNotDrop()) //no_LeftDragDrop())
             {
                 move_window(idwindow);
             }

@@ -129,7 +129,7 @@ for (int cm=0;cm<2;cm++)
   if( Midi_Faders_Affectation_Type!=0)
  {
  attribute_midi_to_control(605+calcul_lock,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 
  }
  else
@@ -171,7 +171,7 @@ for (int cm=0;cm<2;cm++)
  do_lock_preset(calcul_lock);
  sprintf(string_Last_Order,">> Lock State %d called ",calcul_lock+1);
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  }
 
@@ -199,7 +199,7 @@ if(is_dock_for_lfo_selected[cmptfader][dd]==0)
 {is_dock_for_lfo_selected[cmptfader][dd]=1; }
 else if (is_dock_for_lfo_selected[cmptfader][dd]==1)
 {is_dock_for_lfo_selected[cmptfader][dd]=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 
 }
 
@@ -230,7 +230,7 @@ if( Midi_Faders_Affectation_Type!=0)
 
 {
 attribute_midi_to_control(196+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else {
 set_mouse_range(x+(cmptfader*espacement), y+375, x+(cmptfader*espacement)+127+5, y+375+ (largeur/2));//pour pas deborder
@@ -254,16 +254,16 @@ raccrochage_midi_logical_horizontal ( x+(cmptfader*espacement), y+375, 196+cmptf
 
 if(mouse_x> (x+(cmptfader*espacement)+140 )&& (mouse_x<x+(cmptfader*espacement)+160) && mouse_y>(y+397-10) && mouse_y< (y+397+10))
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 midi_send_out[cmptfader+196]=toggle(midi_send_out[cmptfader+196]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //LFOS BUTTONS
 //SET STOP POSITION
 if(mouse_x> (x+(cmptfader*espacement)-6) && mouse_x<(x+(cmptfader*espacement)-6 + (largeur/2)) && mouse_y>(y+320) && mouse_y<(y+320 + (largeur/2))
-&& (mouseLeftClic.eventProcessed==false))
+&& mouseClicLeft.isToBeProcessed())
 {
 //midi report
 switch (miditable[0][685+cmptfader])
@@ -287,13 +287,13 @@ sprintf(string_last_midi_id,"StopPos is Ch: %d Pitch: %d Typ: %s" , miditable[1]
 if(Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_to_control(685+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
 if(index_do_dock==0 && index_main_clear==0)
 {
-ActionnateStopOn[cmptfader]=toggle(ActionnateStopOn[cmptfader]);mouseLeftClic.eventProcessed=true;
+ActionnateStopOn[cmptfader]=toggle(ActionnateStopOn[cmptfader]);mouseClicLeft.SetProcessed();
 }
 
 else if(index_do_dock==1 && index_main_clear==0 )
@@ -334,7 +334,7 @@ index_main_clear=0;
 do_light_setpos[cmptfader]=1;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //UP
@@ -362,10 +362,10 @@ break;
 if( Midi_Faders_Affectation_Type!=0)
 {
 attribute_midi_to_control(245+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else{
-if((mouseLeftClic.eventProcessed==false) && (FaderLocked[cmptfader]==0 || LockFader_is_FullLevel[cmptfader]==1))//rajout lock 0.7.6
+if(mouseClicLeft.isToBeProcessed() && (FaderLocked[cmptfader]==0 || LockFader_is_FullLevel[cmptfader]==1))//rajout lock 0.7.6
 {
 //for delays
 start_time_for_delays[cmptfader]=actual_time;
@@ -379,7 +379,7 @@ if(index_midi_mute_on_lfo==1){is_raccrochage_midi_remote[cmptfader]=1;}
 else {lfo_mode_is[cmptfader]=0;}
 lfo_cycle_is_on[cmptfader]=0;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //DOWN
@@ -405,14 +405,14 @@ break;
   sprintf(string_last_midi_id,"LFO DOWN is Ch: %d Pitch: %d Typ: %s" , miditable[1][294+cmptfader],miditable[2][294+cmptfader],thetypinfo);
 if( Midi_Faders_Affectation_Type!=0)
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 attribute_midi_to_control(294+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else{
-if( (mouseLeftClic.eventProcessed==false) && (FaderLocked[cmptfader]==0 || LockFader_is_FullLevel[cmptfader]==1))//rajout lock 0.7.6
+if( mouseClicLeft.isToBeProcessed() && (FaderLocked[cmptfader]==0 || LockFader_is_FullLevel[cmptfader]==1))//rajout lock 0.7.6
 {
 //for delays
 start_time_for_delays[cmptfader]=actual_time;
@@ -425,7 +425,7 @@ if(index_midi_mute_on_lfo==1){is_raccrochage_midi_remote[cmptfader]=1;}
 }
 else {lfo_mode_is[cmptfader]=0;}
 lfo_cycle_is_on[cmptfader]=0;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -453,14 +453,14 @@ break;
 
 if(Midi_Faders_Affectation_Type!=0)
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 attribute_midi_to_control(343+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else{
-if((mouseLeftClic.eventProcessed==false) && (FaderLocked[cmptfader]==0 || LockFader_is_FullLevel[cmptfader]==1))//rajout lock 0.7.6
+if(mouseClicLeft.isToBeProcessed() && (FaderLocked[cmptfader]==0 || LockFader_is_FullLevel[cmptfader]==1))//rajout lock 0.7.6
 {
 //for delays
 start_time_for_delays[cmptfader]=actual_time;
@@ -477,7 +477,7 @@ else if(lfo_cycle_is_on[cmptfader]==1)
 {
 lfo_cycle_is_on[cmptfader]=0;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -506,18 +506,18 @@ break;
 
 if(Midi_Faders_Affectation_Type!=0)
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 attribute_midi_to_control(392+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else{
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 if (lfo_do_next_step[cmptfader][0]==0) {lfo_do_next_step[cmptfader][0]=1;lfo_do_next_step[cmptfader][1]=0;}
 else if (lfo_do_next_step[cmptfader][0]==1) {lfo_do_next_step[cmptfader][0]=0; }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -546,19 +546,19 @@ break;
 
 if( Midi_Faders_Affectation_Type!=0)
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 
 attribute_midi_to_control(441+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else{
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 if (lfo_do_next_step[cmptfader][1]==0) {lfo_do_next_step[cmptfader][1]=1;lfo_do_next_step[cmptfader][0]=0; ;}
 else if (lfo_do_next_step[cmptfader][1]==1) {lfo_do_next_step[cmptfader][1]=0; }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -587,17 +587,17 @@ break;
 
 if( Midi_Faders_Affectation_Type!=0)
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 attribute_midi_to_control(499+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else{
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 lfo_cycle_steps[cmptfader]= toggle(lfo_cycle_steps[cmptfader]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -625,19 +625,19 @@ sprintf(string_last_midi_id,"LFO LOOP ONE is Ch: %d Pitch: %d Typ: %s" , miditab
 
 if( Midi_Faders_Affectation_Type!=0 )
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 attribute_midi_to_control(802+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 int docktotouch=(dock_used_by_fader_is[cmptfader]);
 is_dock_for_lfo_selected[cmptfader][docktotouch]=toggle(is_dock_for_lfo_selected[cmptfader][docktotouch]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -664,15 +664,15 @@ sprintf(string_last_midi_id,"LFO LOOP ALL is Ch: %d Pitch: %d Typ: %s" , miditab
 
 if( Midi_Faders_Affectation_Type!=0)
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 attribute_midi_to_control(851+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else
 {
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 bool index_choose_mode_dkloop=0;//0 toggle tt le monde / 1 copie l etat du dck selctionné dans tt le monde
 
@@ -706,7 +706,7 @@ break;
 break;
 
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -728,13 +728,13 @@ if( window_focus_id==W_FADERS && mouse_x< LargeurEspaceFaderSize && mouse_y>=yde
 
 if( Midi_Faders_Affectation_Type!=0)
     {
-    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) &&  window_focus_id==W_FADERS)
+    if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() &&  window_focus_id==W_FADERS)
     {
      if(  mouse_x>scroll_faderspace+50 && mouse_x<scroll_faderspace+100  )//deplacement Y
     {attribute_midi_solo_affectation(1627,Midi_Faders_Affectation_Mode);}
     else if  (  mouse_x>scroll_faderspace && mouse_x<scroll_faderspace+50  )//deplacement X
     {attribute_midi_solo_affectation(767,Midi_Faders_Affectation_Mode);}
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
     }
     }
 else
@@ -787,12 +787,12 @@ return(0);
 int do_logical_Touche_Midi_Mute(int xmute, int ymute)
 {
 
- if(mouse_x>xmute && mouse_x<xmute+(90*size_faders) && mouse_y>ymute && mouse_y<ymute+25 && (mouseLeftClic.eventProcessed==false))
+ if(mouse_x>xmute && mouse_x<xmute+(90*size_faders) && mouse_y>ymute && mouse_y<ymute+25 && mouseClicLeft.isToBeProcessed())
  {
  index_midi_mute=toggle(index_midi_mute);
  if(index_midi_mute==1){sprintf(string_Last_Order,">>Midi IN muted");}
  else {sprintf(string_Last_Order,">>Midi IN un-muted");}
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
 return(0);
@@ -810,14 +810,14 @@ if(((x+(cmptfader*espacement)+espacement)>0)&& ((x+(cmptfader*espacement)+largeu
 {
 //route FX
 /////FX
-if((mouseLeftClic.eventProcessed==false) && mouse_x>x+(cmptfader*espacement)+(largeur+20) && mouse_x<x+(cmptfader*espacement)+(largeur+20)+10 && mouse_y>=y-30 && mouse_y<=y-20)
+if(mouseClicLeft.isToBeProcessed() && mouse_x>x+(cmptfader*espacement)+(largeur+20) && mouse_x<x+(cmptfader*espacement)+(largeur+20)+10 && mouse_y>=y-30 && mouse_y<=y-20)
 {
 fader_fx_route[cmptfader]=toggle(fader_fx_route[cmptfader]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 // NORMAL / SUBTRACT / ect....
-if((mouseLeftClic.eventProcessed==false) && mouse_x>x+(cmptfader*espacement)+(largeur+35) && mouse_x<x+(cmptfader*espacement)+(largeur+35)+largeur && mouse_y>=y-30 && mouse_y<=y-20)
+if(mouseClicLeft.isToBeProcessed() && mouse_x>x+(cmptfader*espacement)+(largeur+35) && mouse_x<x+(cmptfader*espacement)+(largeur+35)+largeur && mouse_y>=y-30 && mouse_y<=y-20)
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
@@ -828,7 +828,7 @@ else
   fader_mode_with_buffers[cmptfader]++;
  if(fader_mode_with_buffers[cmptfader]>5){fader_mode_with_buffers[cmptfader]=0;}
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //////////////AU DESSUS FADER////////////////////////////////////////////////////
 if(mouse_x>x+(cmptfader*espacement) && mouse_x<x+(cmptfader*espacement)+largeur && mouse_y>=y && mouse_y<=y+255)
@@ -878,7 +878,7 @@ if(index_main_clear==1)//clear de tous les dock du fader
  fader_selected_for_record=cmptfader;
  index_do_clear_on_faders=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true  ;
+ mouseClicLeft.SetProcessed()  ;
 }
 }
 
@@ -940,7 +940,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  {
    DockIsSelected[cmptfader][dd]=1;
    Unselect_other_docks(cmptfader, dd);
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
  }
  //nommage de dock
  else if( index_type==1)
@@ -959,7 +959,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  sprintf(descriptif_projecteurs[(FaderDirectChan[cmptfader][dd])],DockName[cmptfader][dd]);
  }
  sprintf(string_Last_Order,">>On Master %d GIVED A NAME FOR DOCK %d ", cmptfader+1,dd);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //store normal
  else if(index_do_dock==1 && index_direct_chan==0   && index_affect_chaser_to_dock==0  && index_affect_time==0 && index_affect_color_to_dock==0 && index_do_affect_net_to_dock==0
@@ -970,7 +970,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_record_on_faders=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
   //store direct CH
  else if(index_do_dock==1 && index_direct_chan==1)
@@ -980,7 +980,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
 
  index_do_record_direct_ch=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
 
@@ -1000,7 +1000,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  DoTimeToDock(cmptfader,dd);
  sprintf(string_Last_Order,">>Time affected to Master %d Dock %d", cmptfader+1,dd);
  index_affect_time=0;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //trichro
  else if(index_do_dock==1 && index_affect_color_to_dock==1)
@@ -1009,7 +1009,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_affect_color_on_faders=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
   //Store Chaser dans dock
  else if (index_do_dock==1 && index_affect_chaser_to_dock==1 )
@@ -1018,7 +1018,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_affect_fx=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
   //Store Grid dans dock
  else if ( index_do_dock==1 &&  gridplayer_to_affect_is>=0 )
@@ -1036,7 +1036,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_video_to_dock=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //audio to dock
  else if( index_do_dock==1 && index_affect_audio_to_dock==1)
@@ -1048,7 +1048,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  index_do_audio_to_dock=1;
  index_ask_confirm=1;
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
   //Store Mover dans dock
  else if (  index_do_dock==1 && index_affect_to_dock_mover==1)
@@ -1065,7 +1065,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_dmx_to_dock=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //artnet to dock
  else if(index_do_dock==1 && index_do_affect_net_to_dock==1 )
@@ -1074,7 +1074,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_artnet_to_dock=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //draw
  else if(index_do_dock==1 && index_affect_draw_to_dock==1)
@@ -1084,7 +1084,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  draw_preset_selected_for_order=draw_preset_selected;
  index_do_draw_affect_to_dock=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
   //echo
  else if(index_do_dock==1 && index_affect_echo_to_dock==1)
@@ -1093,7 +1093,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_affect_echo_to_dock=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  //modify
  else if( index_do_modify==1 )
@@ -1102,7 +1102,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_modify_on_faders=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
   //report
@@ -1112,7 +1112,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_report_on_faders=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
   //clear
@@ -1122,7 +1122,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  dock_selected_for_record=dd;
  index_do_clear_dock=1;
  index_ask_confirm=1;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
 
@@ -1130,7 +1130,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  else if(Midi_Faders_Affectation_Type!=0 && dd<2)
  {
  attribute_midi_to_control(cmptfader+48+(dd*48), Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
 }
@@ -1147,7 +1147,7 @@ if(mouse_x> x+((cmptfader*espacement)+(largeur+30)-10) && mouse_x< x+((cmptfader
   if(midi_send_out[cmptfader]==0){midi_send_out[cmptfader]=1; }
   else if(midi_send_out[cmptfader]==1){midi_send_out[cmptfader]=0; }
   //midi_send_out[cmptfader+196]= midi_send_out[cmptfader];//LFOS
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 
 //RACCROCHE MIDI
@@ -1177,7 +1177,7 @@ if(mouse_y>(y+280) && mouse_y<(y+280+(largeur/2)+7) && mouse_x>x+(cmptfader*espa
 if(Midi_Faders_Affectation_Type!=0)
 {
  attribute_midi_to_control(cmptfader+146, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
   //action lock on/off
   else
@@ -1204,7 +1204,7 @@ if(Midi_Faders_Affectation_Type!=0)
    sprintf(string_Last_Order,">> UNLOCKED Fader %d",cmptfader+1);
    break;
    }
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
   }
 
 }
@@ -1223,7 +1223,7 @@ curve_asked_for_fader=16;
 }
 index_ask_curv_to_fader=1;
 index_ask_confirm=1;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
@@ -1249,7 +1249,7 @@ else if ( DockTypeIs[cmptfader][dock_used_by_fader_is[cmptfader]]==7 ) the_audio
 else if ( DockTypeIs[cmptfader][dock_used_by_fader_is[cmptfader]]==8 ) the_audio_player=DockHasAudioPitch[cmptfader][dock_used_by_fader_is[cmptfader]]-1;
 
 //Play
-if(mouse_x>x+(cmptfader*espacement)+20 && mouse_x<x+(cmptfader*espacement)+20+20 && mouse_y>y+410 && mouse_y<y+410+20   && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>x+(cmptfader*espacement)+20 && mouse_x<x+(cmptfader*espacement)+20+20 && mouse_y>y+410 && mouse_y<y+410+20   && mouseClicLeft.isToBeProcessed())
 {
 show_type_midi(1115+cmptfader, "Play embeded");
 if(Midi_Faders_Affectation_Type!=0)//config midi
@@ -1480,12 +1480,12 @@ break;
 }
 
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
 //Seek to Beg
-if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+65 && mouse_y>y+410 && mouse_y<y+410+20  && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+65 && mouse_y>y+410 && mouse_y<y+410+20  && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 show_type_midi(1164+cmptfader, "Seek to Beg embedded");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -1581,11 +1581,11 @@ break;
 }
 }
 
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //loop
-if(mouse_x>x+(cmptfader*espacement)+70 && mouse_x<x+(cmptfader*espacement)+70+20 && mouse_y>y+410 && mouse_y<y+410+20 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>x+(cmptfader*espacement)+70 && mouse_x<x+(cmptfader*espacement)+70+20 && mouse_y>y+410 && mouse_y<y+410+20 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 show_type_midi(1213+cmptfader, "Loop Selected CHASER");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -1838,11 +1838,11 @@ break;
 }
 }
 
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //AUTOLAUNCH
-if(mouse_x>x+(cmptfader*espacement)+95 && mouse_x<x+(cmptfader*espacement)+95+20 && mouse_y>y+410 && mouse_y<y+410+20  && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>x+(cmptfader*espacement)+95 && mouse_x<x+(cmptfader*espacement)+95+20 && mouse_y>y+410 && mouse_y<y+410+20  && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 show_type_midi(1278+cmptfader, "Autolaunch Selected");
 if( Midi_Faders_Affectation_Type!=0)//config midi
@@ -1863,7 +1863,7 @@ break;
 }
 }
 
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

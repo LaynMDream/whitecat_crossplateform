@@ -53,7 +53,7 @@ int Box_IP_routing ( int macx, int macy)
     if(window_focus_id==W_CFGMENU && mouse_x>macx+130 && mouse_x<macx+130+60 && mouse_y>macy-67 && mouse_y<macy-47)
     {
      Rescan.DrawOutline(CouleurLigne);
-     if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+     if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
      {
      //adresse locale et nom de machine
      gethostname(hostnamebuffer, sizeof(hostnamebuffer));
@@ -65,7 +65,7 @@ int Box_IP_routing ( int macx, int macy)
       Ipsearch++;
      }
      detection_reseaux();
-     mouseLeftClic.eventProcessed=true;
+     mouseClicLeft.SetProcessed();
      }
     }
 
@@ -119,34 +119,34 @@ int Box_IP_routing ( int macx, int macy)
 
     if(mouse_x>macx+100 && mouse_x<macx+110 )
     {
-    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && strcmp(IP_detected_dmxOUT[u],"-")==1)
+    if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && strcmp(IP_detected_dmxOUT[u],"-")==1)
     {
     sprintf(IP_artnet_IN,IP_detected_dmxOUT[u]);
     index_re_init_serveur_artnet=1;
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
     }
     }
 
 
     else if(mouse_x>macx+130 && mouse_x<macx+140 )
     {
-    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && strcmp(IP_detected_dmxOUT[u],"-")==1)
+    if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && strcmp(IP_detected_dmxOUT[u],"-")==1)
     {
     sprintf(IP_artnet_OUT,IP_detected_dmxOUT[u]);
     index_re_init_client_artnet=1;
     index_ask_confirm=1;
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
     }
     }
 
     else if(mouse_x>macx+165 && mouse_x<macx+175 )
     {
-    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && strcmp(IP_detected_dmxOUT[u],"-")==1)
+    if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && strcmp(IP_detected_dmxOUT[u],"-")==1)
     {
     sprintf(IP_fantastick,IP_detected_dmxOUT[u]);
     index_ask_reinit_FS_client=1;
     index_ask_confirm=1;
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
     }
     }
 
@@ -189,7 +189,7 @@ break;
 if(mouse_x>cfgnetw_X+140 && mouse_x<cfgnetw_X+190 && mouse_y> cfgnetw_Y-13 && mouse_y< cfgnetw_Y+7  && window_focus_id==W_CFGMENU )
 {
 AllowIn.DrawOutline(CouleurNiveau);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 allow_artnet_in=toggle(allow_artnet_in);
 switch(allow_artnet_in)
@@ -201,7 +201,7 @@ case 1:
      initialisation_serveur_artnet();
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -215,11 +215,11 @@ AffectToDockN.DrawOutline(CouleurLigne.WithAlpha(0.7));
 
 petitchiffre.Print("Affect to dock",(cfgnetw_X+5), (cfgnetw_Y+27));
 
-if(window_focus_id==W_CFGMENU && mouse_x>cfgnetw_X && mouse_x<cfgnetw_X+100 && mouse_y>cfgnetw_Y+17 && mouse_y<cfgnetw_Y+17+15 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(window_focus_id==W_CFGMENU && mouse_x>cfgnetw_X && mouse_x<cfgnetw_X+100 && mouse_y>cfgnetw_Y+17 && mouse_y<cfgnetw_Y+17+15 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 index_do_affect_net_to_dock=toggle(index_do_affect_net_to_dock);
 index_do_dock=index_do_affect_net_to_dock;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 Rect AffectD(Vec2D(cfgnetw_X+140, cfgnetw_Y+12),Vec2D(50,25));
@@ -231,7 +231,7 @@ petitchiffre.Print(ol::ToString(select_artnet_to_listen),cfgnetw_X+160, cfgnetw_
 if(window_focus_id==W_CFGMENU && mouse_x>cfgnetw_X+140 && mouse_x<cfgnetw_X+190 && mouse_y>cfgnetw_Y+25 && mouse_y<cfgnetw_Y+47 )
 {
 AffectD.DrawOutline(CouleurLigne.WithAlpha(0.6));
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false)   )
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()   )
 {
 int nu=atoi(numeric);
 reset_numeric_entry();
@@ -242,7 +242,7 @@ select_artnet_to_listen=nu;
 }
 else{sprintf(string_Last_Order,"Universe must be from 0 to 15");}
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

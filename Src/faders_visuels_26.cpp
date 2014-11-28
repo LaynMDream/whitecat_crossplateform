@@ -206,7 +206,7 @@ int lfo_fader_functions (int cmptfader, int x, int y, int espacement)
             && mouse_y> y+320 && mouse_y< y+345)
     {
 //BLOCK FLASH qui doit etre dans boucle principale et pas dans le core qui checke la souris
-        if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed())
         {
             if( Midi_Faders_Affectation_Type==0)
             {
@@ -218,10 +218,10 @@ int lfo_fader_functions (int cmptfader, int x, int y, int espacement)
             else
             {
                 attribute_midi_to_control(900+cmptfader,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
-        else if(mouseLeftClic.eventProcessed && FaderIsFlash[cmptfader]==1 )
+        else if(mouseClicLeft.isProcessed() && FaderIsFlash[cmptfader]==1 )
         {
             FaderIsFlash[cmptfader]=0;
             //sab 02/03/2014 IMPACT midi_levels[900+cmptfader]==0;
@@ -984,10 +984,10 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     play_button_view(x+(cmptfader*espacement)+20,y+410,
                                      player_is_playing[ DockHasAudioVolume[cmptfader][dock_used_by_fader_is[cmptfader]]-1] );
 //Seek to Beg
-                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+430 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+430 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                     {
                         seek_button_view(x+(cmptfader*espacement)+45,y+410,1);//seek , affichage avant le bouton
-                        mouseLeftClic.eventProcessed=true;
+                        mouseClicLeft.SetProcessed();
                     }
                     seek_button_view(x+(cmptfader*espacement)+45,y+410,0);
 //LOOP chaser
@@ -1000,10 +1000,10 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     play_button_view(x+(cmptfader*espacement)+20,y+410,
                                      player_is_playing[ DockHasAudioPan[cmptfader][dock_used_by_fader_is[cmptfader]]-1] );
 //Seek to Beg
-                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+430 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+430 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                     {
                         seek_button_view(x+(cmptfader*espacement)+45,y+410,1);//seek , affichage avant le bouton
-                        mouseLeftClic.eventProcessed=true;
+                        mouseClicLeft.SetProcessed();
                     }
                     seek_button_view(x+(cmptfader*espacement)+45,y+410,0);
 //LOOP chaser
@@ -1016,10 +1016,10 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     play_button_view(x+(cmptfader*espacement)+20,y+410,
                                      player_is_playing[ DockHasAudioPitch[cmptfader][dock_used_by_fader_is[cmptfader]]-1] );
 //Seek to Beg
-                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+410+20 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+410+20 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                     {
                         seek_button_view(x+(cmptfader*espacement)+45,y+410,1);//seek , affichage avant le bouton
-                        mouseLeftClic.eventProcessed=true;
+                        mouseClicLeft.SetProcessed();
                     }
                     seek_button_view(x+(cmptfader*espacement)+45,y+410,0);
 //LOOP chaser
@@ -1032,10 +1032,10 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     play_button_view(x+(cmptfader*espacement)+20,y+410,
                                      chaser_is_playing[ChaserAffectedToDck[cmptfader][dock_used_by_fader_is[cmptfader]]]);
 //Seek to Beg
-                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+430 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+430 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                     {
                         seek_button_view(x+(cmptfader*espacement)+45,y+410,1);//seek , affichage avant le bouton
-                        mouseLeftClic.eventProcessed=true;
+                        mouseClicLeft.SetProcessed();
                     }
                     seek_button_view(x+(cmptfader*espacement)+45,y+410,0);
 //LOOP chaser
@@ -1047,10 +1047,10 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     play_button_view(x+(cmptfader*espacement)+20,y+410,
                                      grider_is_playing[faders_dock_grid_affectation[cmptfader][dock_used_by_fader_is[cmptfader]]]);
 //Seek to Beg
-                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+410+20 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                    if(mouse_x>x+(cmptfader*espacement)+45 && mouse_x<x+(cmptfader*espacement)+70 && mouse_y>y+410 && mouse_y<y+410+20 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                     {
                         seek_button_view(x+(cmptfader*espacement)+45,y+410,1);//seek , affichage avant le bouton
-                        mouseLeftClic.eventProcessed=true;
+                        mouseClicLeft.SetProcessed();
                     }
                     seek_button_view(x+(cmptfader*espacement)+45,y+410,0);
 //StopPlay

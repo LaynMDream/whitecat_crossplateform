@@ -14,7 +14,7 @@
 				<Option object_output="../../../../whitecatbuild/build/white_cat_for_mingw/obj" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option parameters="--double_clic .75 --test 3 1 " />
+				<Option parameters="--double_clic .75 " />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="Src" />

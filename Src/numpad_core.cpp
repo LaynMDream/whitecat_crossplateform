@@ -126,7 +126,7 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
   {
 
   attribute_midi_solo_affectation(664,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
   }
 
 }
@@ -136,14 +136,14 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
 if(mouse_x>xw+rayon_k+10 && mouse_x<xw+rayon_k+10+15 && mouse_y>yw-rayon_k && mouse_y<yw-rayon_k+15)
 {
 wheellevel_absolutemode=toggle(wheellevel_absolutemode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //midi out
 
 if(mouse_x>xw+rayon_k+10-7 && mouse_x<xw+rayon_k+10+7 && mouse_y>yw+rayon_k+10-7 && mouse_y<yw+rayon_k+10+7)
 {
 midi_send_out[664]=toggle(midi_send_out[664]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 return(0);
 }
@@ -168,14 +168,14 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad %d is Ch: %d Pitch: %d Typ: %s" , (1+loi),miditable[1][671+loi],miditable[2][671+loi],thetypinfo);
   attribute_midi_solo_affectation((671+loi),Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 if(loi==0){simulate_keypress(KEY_1<<8);}
 else if(loi==1){simulate_keypress(KEY_2<<8);}
 else if(loi==2){simulate_keypress(KEY_3<<8);}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -196,14 +196,14 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad %d is Ch: %d Pitch: %d Typ: %s" , (4+loi),miditable[1][674+loi],miditable[2][674+loi],thetypinfo);
   attribute_midi_solo_affectation((674+loi),Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 if(loi==0){simulate_keypress(KEY_4<<8);}
 else if(loi==1){simulate_keypress(KEY_5<<8);}
 else if(loi==2){simulate_keypress(KEY_6<<8);}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -224,14 +224,14 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad %d is Ch: %d Pitch: %d Typ: %s" , (7+loi),miditable[1][677+loi],miditable[2][677+loi],thetypinfo);
   attribute_midi_solo_affectation((677+loi),Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 if(loi==0){simulate_keypress(KEY_7<<8);}
 else if(loi==1){simulate_keypress(KEY_8<<8);}
 else if(loi==2){simulate_keypress(KEY_9<<8);}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -265,14 +265,14 @@ else if(loi==2)
 sprintf(string_last_midi_id,"NumPad ESC is Ch: %d Pitch: %d Typ: %s" , miditable[1][679+loi],miditable[2][679+loi],thetypinfo);
 attribute_midi_solo_affectation((679+loi),Midi_Faders_Affectation_Mode);
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
 if(loi==0){simulate_keypress(KEY_0<<8);}
 else if(loi==1){simulate_keypress(KEY_COMMA<<8);}
 else if(loi==2){simulate_keypress(KEY_ESC<<8);}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -291,7 +291,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad UP is Ch: %d Pitch: %d Typ: %s" ,miditable[1][668],miditable[2][668],thetypinfo);
   attribute_midi_solo_affectation(668,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -314,7 +314,7 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad DOWN is Ch: %d Pitch: %d Typ: %s" , miditable[1][669],miditable[2][669],thetypinfo);
   attribute_midi_solo_affectation(669,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -336,12 +336,12 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad ENTER is Ch: %d Pitch: %d Typ: %s" , miditable[1][665],miditable[2][665],thetypinfo);
   attribute_midi_solo_affectation(665,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 simulate_keypress(KEY_ENTER<<8);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -359,12 +359,12 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad PLUS is Ch: %d Pitch: %d Typ: %s" , miditable[1][666],miditable[2][666],thetypinfo);
   attribute_midi_solo_affectation(666,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 simulate_keypress(KEY_PLUS_PAD<<8);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -383,12 +383,12 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad MINUS is Ch: %d Pitch: %d Typ: %s" , miditable[1][667],miditable[2][667],thetypinfo);
   attribute_midi_solo_affectation(667,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 simulate_keypress(KEY_MINUS_PAD<<8);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -407,12 +407,12 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad AT FULL is Ch: %d Pitch: %d Typ: %s" , miditable[1][1827],miditable[2][1827],thetypinfo);
   attribute_midi_solo_affectation(1827,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 simulate_keypress(KEY_I<<8);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //AT ZERO
@@ -429,12 +429,12 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad AT ZERO is Ch: %d Pitch: %d Typ: %s" , miditable[1][1828],miditable[2][1828],thetypinfo);
   attribute_midi_solo_affectation(1828,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
 simulate_keypress(KEY_O<<8);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //CHECK MINUS
@@ -451,7 +451,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad CHECK MINUS is Ch: %d Pitch: %d Typ: %s" , miditable[1][1825],miditable[2][1825],thetypinfo);
   attribute_midi_solo_affectation(1825,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -459,7 +459,7 @@ else
      index_false_shift=0;
      simulate_keypress(KEY_LEFT<<8);
 
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -477,14 +477,14 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   }
   sprintf(string_last_midi_id,"NumPad CHECK PLUS is Ch: %d Pitch: %d Typ: %s" , miditable[1][1826],miditable[2][1826],thetypinfo);
   attribute_midi_solo_affectation(1826,Midi_Faders_Affectation_Mode);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 else
 {
      index_false_control= 1;
      index_false_shift=0;
      simulate_keypress(KEY_RIGHT<<8);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 

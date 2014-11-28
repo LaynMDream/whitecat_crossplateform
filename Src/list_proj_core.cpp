@@ -481,7 +481,7 @@ int Channel_macros_core(int xlist, int ylist)
 {
 int temp_mini;
 int temp_limit;
-if(index_edit_listproj==1 && (mouseLeftClic.eventProcessed==false) && window_focus_id==914 && last_ch_selected!=0)
+if(index_edit_listproj==1 && mouseClicLeft.isToBeProcessed() && window_focus_id==914 && last_ch_selected!=0)
 {
 for(int i=0;i<nbre_macros_per_channel;i++)
 {
@@ -494,7 +494,7 @@ if(mouse_x>xlist && mouse_x<xlist+80  )
 if(channel_macro_reaction[last_ch_selected][i]<max_channel_macro_reaction)
 {channel_macro_reaction[last_ch_selected][i]++;}
 else {channel_macro_reaction[last_ch_selected][i]=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //Val 1
@@ -536,7 +536,7 @@ reset_numeric_entry();
 }
 }
 
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //action
@@ -545,7 +545,7 @@ else if(mouse_x>xlist+140 && mouse_x<xlist+140+80  )
 if(channel_macro_action[last_ch_selected][i]<max_channel_macro_action)
 {channel_macro_action[last_ch_selected][i]++;}
 else {channel_macro_action[last_ch_selected][i]=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
@@ -633,14 +633,14 @@ if(temp_val>=temp_mini&& temp_val<=temp_limit)
 channel_macro_val[last_ch_selected][i][1]=temp_val;
 reset_numeric_entry();
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //on off de la macro
 if(mouse_x>xlist+280 && mouse_x<xlist+280+35  )
 {
 macro_channel_on[last_ch_selected][i]=toggle(macro_channel_on[last_ch_selected][i]);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
@@ -684,7 +684,7 @@ sprintf(DockName[fa][dk],descriptif_projecteurs[last_ch_selected]);
 }
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -710,7 +710,7 @@ else if (index_ch_thruth==1)//selection thruth
  Channel_select_thruth(last_ch_selected,co+line_list_is);
  index_ch_thruth=0;
   if(index_plot_window==1){add_channel_selection_to_layers_plot();substract_channel_selection_to_layers_plot();}
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 }
@@ -725,7 +725,7 @@ if(mouse_x>xlist+290 && mouse_x<xlist+330)
  {
 
   index_edit_listproj=toggle(index_edit_listproj);
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
 //-
  if( mouse_y>ylist+51 && mouse_y<ylist+71)

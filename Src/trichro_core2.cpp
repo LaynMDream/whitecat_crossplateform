@@ -122,7 +122,7 @@ for(angle = 0 ; angle <(PI*360) / 180  ; angle+=0.1)//radians
    vx = cos(angle)*rayon;
    vy = sin(angle)*rayon;
    if(mouse_x>xtrichro_window+vx-16  && mouse_x< xtrichro_window+vx+16 && mouse_y>ytrichro_window+vy-16 && mouse_y<ytrichro_window+vy+16
-      && mouseLeftClic.isDown && window_focus_id==902)
+      && mouseClicLeft.isDown() && window_focus_id==902)
 
    {
    angle_snap=angle;//angle rotation roue couleur
@@ -136,7 +136,7 @@ for(angle = 0 ; angle <(PI*360) / 180  ; angle+=0.1)//radians
     //angle=((PI*360) / (180*127))*midi_levels[497];
     midi_levels[497]=(int)(angle_snap/((PI*360) / (180*127)));
     if(midi_send_out[497]==1){index_send_midi_out[497]=1;}
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
    }
 
 }
@@ -287,7 +287,7 @@ if(mouse_x>xchroma-60 && mouse_x<xchroma+80 && mouse_y>ychroma-190 && mouse_y<yc
 
 if(index_quadri==0){index_quadri=1;dock_color_type[dock_color_selected]=1;}
 else if(index_quadri==1){index_quadri=0;dock_color_type[dock_color_selected]=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 /////////////////////AFFECTATION ON / OFF AUX DOCKS FADERS///////////////////////////
@@ -305,7 +305,7 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_color_to_dock;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -327,7 +327,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
   if(mouse_x>xchroma-140 && mouse_x<xchroma+140 && mouse_y>ychroma-140 && mouse_y<ychroma+140)
   {
     attribute_midi_solo_affectation(497,Midi_Faders_Affectation_Mode);
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
    }
 }
 
@@ -377,7 +377,7 @@ if(Selected_Channel[p]==1){bufferBlind[p]=my_red;}
 sprintf(string_Last_Order,"Pasted On the Fly RED result");
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 else if (mouse_x> xchroma-65 && mouse_x< xchroma-15 )//GREEN
@@ -412,7 +412,7 @@ if(Selected_Channel[p]==1){bufferBlind[p]=my_green;}
 sprintf(string_Last_Order,"Pasted On the Fly GREEN result");
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 else if (mouse_x> xchroma && mouse_x< xchroma+50 )//BLUE
@@ -447,7 +447,7 @@ if(Selected_Channel[p]==1){bufferBlind[p]=my_blue;}
 sprintf(string_Last_Order,"Pasted On the Fly BLUE result");
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 else if (mouse_x> xchroma+65 && mouse_x< xchroma+115 )//YELLOW
@@ -481,7 +481,7 @@ if(Selected_Channel[p]==1){bufferBlind[p]=my_yellow;}
 sprintf(string_Last_Order,"Pasted On the Fly YELLOW result");
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -493,7 +493,7 @@ if(mouse_x> xchroma+140-10 && mouse_x< xchroma+140+10 && mouse_y>ychroma+110-10 
 
   if(midi_send_out[497]==0){midi_send_out[497]=1; }
   else if(midi_send_out[497]==1){midi_send_out[497]=0; }
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
   }
 
 raccrochage_midi_logical_circulaire (xchroma-6, ychroma, 497, 125, 125);
@@ -517,7 +517,7 @@ else
 dock_color_selected=dock_color;
 load_etat_picker_dans_dockcolor(dock_color_selected);
 sprintf(string_Last_Order,">>Dock Color Selected %d",(dock_color_selected+1));
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -535,7 +535,7 @@ else
 dock_color_selected=dock_colortwo+4;
 load_etat_picker_dans_dockcolor(dock_color_selected);
 sprintf(string_Last_Order,">>Dock Color Selected %d",dock_color_selected+1);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -543,10 +543,10 @@ mouseLeftClic.eventProcessed=true;
 //PASTE ON THE FLY
 if(mouse_x>xchroma-150 && mouse_x<xchroma-20 && mouse_y>ychroma+300 && mouse_y< ychroma+330)
 {
-if(mouse_b&1 &&  (mouseLeftClic.eventProcessed==false) && window_focus_id==902)
+if(mouse_b&1 &&  mouseClicLeft.isToBeProcessed() && window_focus_id==902)
 {
 index_paste_on_the_fly=toggle(index_paste_on_the_fly);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);

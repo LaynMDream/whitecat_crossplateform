@@ -147,9 +147,9 @@ int do_logical_choose_personnal_preset_binary_save_load(int xs,int ys)
 {
     for(int i=0; i<4; i++)
     {
-        if(window_focus_id==W_SAVE && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && mouse_x>=xs+(20*i) && mouse_x<=xs+(20*i)+10 && mouse_y>=ys && mouse_y<=ys+10)
+        if(window_focus_id==W_SAVE && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && mouse_x>=xs+(20*i) && mouse_x<=xs+(20*i)+10 && mouse_y>=ys && mouse_y<=ys+10)
         {
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
 
             if(index_do_dock==1)
             {
@@ -432,7 +432,7 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
         if(window_focus_id==W_SAVE && mouse_x>xrep+5 && mouse_x<xrep+155 && mouse_y>(yrep+175+(y*20)) && mouse_y<(yrep+190+(y*20)))
         {
 
-            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 importfile_selected=(y+line_import);
                 if(y+line_import<127)
@@ -440,7 +440,7 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
                     sprintf(importfile_name,list_import_files[importfile_selected]);
                 }
                 check_import_type();
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
 
@@ -455,7 +455,7 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
     if(window_focus_id==W_SAVE && mouse_x>xrep+5 && mouse_x<xrep+205 && mouse_y>yrep+347 && mouse_y<yrep+367)
     {
 
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_type==1 )
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && index_type==1 )
         {
             for (int tt=0; tt<24; tt++)
             {
@@ -464,7 +464,7 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
             reset_numeric_entry();
             index_type=0;
             check_import_type();
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -478,25 +478,25 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
         if(mouse_y>yrep+188 && mouse_y<yrep+212)
         {
 
-            if(mouseLeftClic.isDown)
+            if(mouseClicLeft.isDown())
             {
                 if(line_import>0)
                 {
                     line_import--;
                 }
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
         else if(window_focus_id==W_SAVE && mouse_y>yrep+298 && mouse_y<yrep+322)
         {
 
-            if(mouseLeftClic.isDown)
+            if(mouseClicLeft.isDown())
             {
                 if(line_import<127)
                 {
                     line_import++;
                 }
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
     }
@@ -529,11 +529,11 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
     {
         if(window_focus_id==W_SAVE && mouse_x>xrep+40 && mouse_x<xrep+110 && mouse_y>yrep+390 && mouse_y<yrep+420)
         {
-            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 index_do_export=1;
                 index_ask_confirm=1;
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
     }
@@ -542,11 +542,11 @@ void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::
     {
         if(window_focus_id==W_SAVE && mouse_x>xrep+140 && mouse_x<xrep+210 && mouse_y>yrep+390 && mouse_y<yrep+420)
         {
-            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 index_do_import=1;
                 index_ask_confirm=1;
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
     }
@@ -695,13 +695,13 @@ for (int y=0;y<8;y++)
 if(window_focus_id==W_SAVE && mouse_x>xrep+5 && mouse_x<xrep+155 && mouse_y>(yrep+175+(y*20)) && mouse_y<(yrep+190+(y*20)))
 {
 
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 importfile_selected=(y+line_import);
 if(y+line_import<127)
 {sprintf(importfile_name,list_import_files[importfile_selected]);  }
 check_import_type();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -716,7 +716,7 @@ mouseLeftClic.eventProcessed=true;
 if(window_focus_id==W_SAVE && mouse_x>xrep+5 && mouse_x<xrep+205 && mouse_y>yrep+347 && mouse_y<yrep+367)
 {
 
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_type==1 )
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && index_type==1 )
 {
 for (int tt=0;tt<24;tt++)
 {
@@ -725,7 +725,7 @@ importfile_name[tt]=numeric[tt];
 reset_numeric_entry();
 index_type=0;
 check_import_type();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -739,19 +739,19 @@ if(window_focus_id==W_SAVE && mouse_x>xrep+208 && mouse_x<xrep+232)
 if(mouse_y>yrep+188 && mouse_y<yrep+212)
 {
 
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 if(line_import>0){line_import--;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 else if(window_focus_id==W_SAVE && mouse_y>yrep+298 && mouse_y<yrep+322)
 {
 
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 if(line_import<127){line_import++;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -761,11 +761,11 @@ if(enable_export==1)
 {
 if(window_focus_id==W_SAVE && mouse_x>xrep+40 && mouse_x<xrep+110 && mouse_y>yrep+390 && mouse_y<yrep+420)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 index_do_export=1;
 index_ask_confirm=1;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -774,11 +774,11 @@ if(enable_import==1)
 {
 if(window_focus_id==W_SAVE && mouse_x>xrep+140 && mouse_x<xrep+210 && mouse_y>yrep+390 && mouse_y<yrep+420)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 index_do_import=1;
 index_ask_confirm=1;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -900,14 +900,14 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
         if(window_focus_id==W_SAVE && mouse_x>xrep+5 && mouse_x<xrep+155 && mouse_y>(yrep+175+(y*20)) && mouse_y<(yrep+190+(y*20)))
         {
 
-            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 savefile_selected=(y+line_save);
                 sprintf(savefile_name,list_save_files[savefile_selected]);
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
 
                 //sab 17/11/2014 deb
-                if (mouseLeftClic.isDouble)
+                if (mouseClicLeft.isDouble())
 				{
 					//Double clic sur le titre d'une sauvegarde --> Load
 					index_do_loadshow=1;
@@ -923,7 +923,7 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
     if(window_focus_id==W_SAVE && mouse_x>xrep+5 && mouse_x<xrep+245 && mouse_y>yrep+347 && mouse_y<yrep+377)
     {
 
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false) && index_type==1)
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() && index_type==1)
         {
 
             for (int tt=0; tt<24; tt++)
@@ -932,7 +932,7 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
             }
             reset_numeric_entry();
             index_type=0;
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -941,27 +941,27 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
         if(mouse_y>yrep+188 && mouse_y<yrep+212)
         {
 
-            if(mouseLeftClic.isDown)
+            if(mouseClicLeft.isDown())
             {
 
                 if(line_save>0)
                 {
                     line_save--;
                 }
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
         else if(mouse_y>yrep+298 && mouse_y<yrep+322)
         {
 
-            if(mouseLeftClic.isDown)
+            if(mouseClicLeft.isDown())
             {
 
                 if(line_save<127)
                 {
                     line_save++;
                 }
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
     }
@@ -970,7 +970,7 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
     if(window_focus_id==W_SAVE && mouse_x>xrep+40 && mouse_x<xrep+110 && mouse_y>yrep+390 && mouse_y<yrep+420)
     {
 
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
 
             if(strlen(savefile_name)==0)
@@ -979,7 +979,7 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
             }
             index_do_saveshow=1;
             index_ask_confirm=1;
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -987,7 +987,7 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
 //load button
     if(window_focus_id==W_SAVE && mouse_x>xrep+140 && mouse_x<xrep+210 && mouse_y>yrep+390 && mouse_y<yrep+420)
     {
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
 
             if(strcmp(savefile_name,"")!=0)
@@ -995,7 +995,7 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
                 index_do_loadshow=1;
                 index_ask_confirm=1;
             }
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -1005,11 +1005,11 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
     if(window_focus_id==W_SAVE && mouse_x>xrep+280 && mouse_x<xrep+350 && mouse_y>yrep+390 && mouse_y<yrep+420)
     {
 
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
             index_do_resetshow=1;
             index_ask_confirm=1;
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 //sab 02/03/2014 return(0);
@@ -1130,20 +1130,20 @@ int do_logical_selecteur_PDF_save_solo_global(int xrep, int yrep)
 
         if(window_focus_id==W_SAVE && mouse_x>xrep && mouse_x<xrep+10 && mouse_y>yrep+(u*15) && mouse_y<yrep+(u*15)+10)
         {
-            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 specify_who_to_save_PDF[u]=toggle(specify_who_to_save_PDF[u]);
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
 
 //ligne 2
         if(window_focus_id==W_SAVE && mouse_x>xrep+190 && mouse_x<xrep+200 && mouse_y>yrep+(u*15) && mouse_y<yrep+(u*15)+10)
         {
-            if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+            if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
             {
                 specify_who_to_save_PDF[u+12]=toggle(specify_who_to_save_PDF[u+12]);
-                mouseLeftClic.eventProcessed=true;
+                mouseClicLeft.SetProcessed();
             }
         }
 
@@ -1352,7 +1352,7 @@ int do_logical_selecteur_binary_save_solo_global(int xrep, int yrep)
     if(window_focus_id==W_SAVE && mouse_x>xrep+170 && mouse_x<xrep+240 && mouse_y>yrep-35 && mouse_y<yrep-15)
     {
 
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
 
             index_save_global_is=toggle(index_save_global_is);
@@ -1364,7 +1364,7 @@ int do_logical_selecteur_binary_save_solo_global(int xrep, int yrep)
             {
                 set_all_saves_indexes_at(0);
             }
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -1375,11 +1375,11 @@ int do_logical_selecteur_binary_save_solo_global(int xrep, int yrep)
         if(window_focus_id==W_SAVE && mouse_x>xrep && mouse_x<xrep+50 && mouse_y>yrep+(u*15) && mouse_y<yrep+(u*15)+15)
         {
             {
-                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                 {
                     index_save_global_is=0;
                     specify_who_to_save_load[u]=toggle(specify_who_to_save_load[u]);
-                    mouseLeftClic.eventProcessed=true;
+                    mouseClicLeft.SetProcessed();
                 }
             }
         }
@@ -1390,11 +1390,11 @@ int do_logical_selecteur_binary_save_solo_global(int xrep, int yrep)
         if(window_focus_id==W_SAVE && mouse_x>xrep+110 && mouse_x<xrep+120 && mouse_y>yrep+(u*15) && mouse_y<yrep+(u*15)+10)
         {
             {
-                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                 {
                     index_save_global_is=0;
                     specify_who_to_save_load[u+12]=toggle(specify_who_to_save_load[u+12]);
-                    mouseLeftClic.eventProcessed=true;
+                    mouseClicLeft.SetProcessed();
                 }
             }
         }
@@ -1405,11 +1405,11 @@ int do_logical_selecteur_binary_save_solo_global(int xrep, int yrep)
         if(window_focus_id==W_SAVE && mouse_x>xrep+240 && mouse_x<xrep+250 && mouse_y>yrep+(u*15) && mouse_y<yrep+(u*15)+10)
         {
             {
-                if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+                if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
                 {
                     index_save_global_is=0;
                     specify_who_to_save_load[u+24]=toggle(specify_who_to_save_load[u+24]);
-                    mouseLeftClic.eventProcessed=true;
+                    mouseClicLeft.SetProcessed();
                 }
             }
         }
@@ -1479,10 +1479,10 @@ int do_logical_Save_Menu(int xsave, int ysave)
 
     if(window_focus_id==W_SAVE && mouse_x>xsave+310 && mouse_x<xsave+410 && mouse_y>ysave+15 && mouse_y<ysave+35)
     {
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
             index_save_mode_export_or_binary=toggle(index_save_mode_export_or_binary);
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
         }
     }
 
@@ -1506,10 +1506,10 @@ int do_logical_Save_Menu(int xsave, int ysave)
     }
     if(window_focus_id==W_SAVE && mouse_x>xsave+300 && mouse_x<xsave+370 && mouse_y>ysave+430 && mouse_y<ysave+455)
     {
-        if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+        if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
         {
             index_show_save_load_report=toggle(index_show_save_load_report);
-            mouseLeftClic.eventProcessed=true;
+            mouseClicLeft.SetProcessed();
             there_is_change_on_show_save_state=1;
         }
 

@@ -167,36 +167,36 @@ record_channel_ch_state_in_an_echo(echo_selected,echochanis);
 if(dragging_channel_in_echo==0)
 {
 //Prev
-if( mouse_x>xe && mouse_x<xe+25 && mouse_y>ye && mouse_y<ye+127 && (mouseLeftClic.eventProcessed==false) )
+if( mouse_x>xe && mouse_x<xe+25 && mouse_y>ye && mouse_y<ye+127 && mouseClicLeft.isToBeProcessed() )
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1691,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
 if(echo_grid_channel_position[echo_selected]>0)
 {
 echo_grid_channel_position[echo_selected]--;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
 //next
-else if( mouse_x>xe+475 && mouse_x<xe+475+25 && mouse_y>ye && mouse_y<ye+127 && (mouseLeftClic.eventProcessed==false) )
+else if( mouse_x>xe+475 && mouse_x<xe+475+25 && mouse_y>ye && mouse_y<ye+127 && mouseClicLeft.isToBeProcessed() )
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1692,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
 if(echo_grid_channel_position[echo_selected]<(511-14))
 {
 echo_grid_channel_position[echo_selected]++;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -210,14 +210,14 @@ return(0);
 
 int do_logical_echo_window(int xe, int ye)
 {
-if(window_focus_id==W_ECHO && dragging_channel_in_echo==0 && mouseLeftClic.isDown)
+if(window_focus_id==W_ECHO && dragging_channel_in_echo==0 && mouseClicLeft.isDown())
 {
 
 //edit
-if( (mouseLeftClic.eventProcessed==false) && mouse_x>xe+610 && mouse_x<xe+610+50 && mouse_y>ye+10 && mouse_y<ye+10+20 )
+if( mouseClicLeft.isToBeProcessed() && mouse_x>xe+610 && mouse_x<xe+610+50 && mouse_y>ye+10 && mouse_y<ye+10+20 )
 {
 index_enable_edit_echo=toggle(index_enable_edit_echo);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
@@ -230,7 +230,7 @@ for(int cel=0;cel<8;cel++)
 index_ec=cel+(le*8);
 if( mouse_x> xe+180+(40*cel) && mouse_x<xe+180+(40*cel)+30 && mouse_y>ye+10+(le*25) && mouse_y<ye+10+(le*25)+20)
 {
-if( (mouseLeftClic.eventProcessed==false) )
+if( mouseClicLeft.isToBeProcessed() )
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -254,7 +254,7 @@ echo_selected=index_ec;
 
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -262,13 +262,13 @@ mouseLeftClic.eventProcessed=true;
 
 
 //Set ChanPos
-if( mouse_x>xe+615 && mouse_x<xe+615+40 && mouse_y>ye+65 && mouse_y<ye+65+20 && (mouseLeftClic.eventProcessed==false) && dragging_channel_in_echo==0 && numeric_postext>0)
+if( mouse_x>xe+615 && mouse_x<xe+615+40 && mouse_y>ye+65 && mouse_y<ye+65+20 && mouseClicLeft.isToBeProcessed() && dragging_channel_in_echo==0 && numeric_postext>0)
  {
  echo_grid_channel_position[echo_selected]=atoi(numeric)-1;
  echo_grid_channel_position[echo_selected]= constrain_int_data_to_this_range(echo_grid_channel_position[echo_selected],0,511-14);
  reset_numeric_entry();
  numeric_postext=0;
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
 
@@ -279,7 +279,7 @@ for (int n=0;n<5;n++)
 //actions
 if(mouse_x>xe+30 && mouse_x<xe+30+115 && mouse_y>ye+50+(n*30) && mouse_y<ye+50+30+(n*30))
 {
-if( (mouseLeftClic.eventProcessed==false) )
+if( mouseClicLeft.isToBeProcessed() )
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -309,24 +309,24 @@ default:
 break;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
 }
 
 //Fader point to
-if( mouse_x>xe+70 && mouse_x<xe+70+45 && mouse_y>ye+200 && mouse_y<ye+200+35 && (mouseLeftClic.eventProcessed==false) && numeric_postext>0)
+if( mouse_x>xe+70 && mouse_x<xe+70+45 && mouse_y>ye+200 && mouse_y<ye+200+35 && mouseClicLeft.isToBeProcessed() && numeric_postext>0)
 {
 echo_pointing_fader_num[echo_selected]=constrain_int_data_to_this_range(atoi(numeric),1,48);
 reset_numeric_entry();
 numeric_postext=0;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
 ////AFFECT TO DOCK
-if( (mouseLeftClic.eventProcessed==false) && mouse_x>xe+10 && mouse_x<xe+10+110 && mouse_y>ye+245 && mouse_y<ye+245+20  )
+if( mouseClicLeft.isToBeProcessed() && mouse_x>xe+10 && mouse_x<xe+10+110 && mouse_y>ye+245 && mouse_y<ye+245+20  )
 {
 if(index_affect_echo_to_dock==0)
 {
@@ -339,12 +339,12 @@ else
 reset_index_actions();
 }
 index_do_dock=index_affect_echo_to_dock;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
 //manipulate channel params Level mode / ground mode
-if( (mouseLeftClic.eventProcessed==false) && mouse_x>xe+500 && mouse_x<xe+500+70 && mouse_y>ye+10 && mouse_y<ye+10+20)
+if( mouseClicLeft.isToBeProcessed() && mouse_x>xe+500 && mouse_x<xe+500+70 && mouse_y>ye+10 && mouse_y<ye+10+20)
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -370,7 +370,7 @@ else
 echo_channel_manipulate_mode[echo_selected]=toggle(echo_channel_manipulate_mode[echo_selected]);
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
@@ -384,12 +384,12 @@ for (int cl=0;cl<3;cl++)
 
 if(mouse_x>=xe+155+(cl*180) && mouse_x<=xe+155+(cl*180)+130 && mouse_y>=ye+255 && mouse_y<=ye+255+10)
 {
-if(  (mouseLeftClic.eventProcessed==false))
+if(  mouseClicLeft.isToBeProcessed())
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
 attribute_midi_solo_affectation(1693+cl,Midi_Faders_Affectation_Mode);
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 else
 {
@@ -399,10 +399,10 @@ midi_levels[1693+cl]=(int)(echo_global_params[echo_selected][cl]*127);
 }
 }
 //midi out
-if( (mouseLeftClic.eventProcessed==false) && mouse_x>=xe+290+(cl*180) && mouse_x<=xe+290+(cl*180)+10 && mouse_y>=ye+260 && mouse_y<=ye+265+10)
+if( mouseClicLeft.isToBeProcessed() && mouse_x>=xe+290+(cl*180) && mouse_x<=xe+290+(cl*180)+10 && mouse_y>=ye+260 && mouse_y<=ye+265+10)
 {
  midi_send_out[1693+cl]=toggle(midi_send_out[1693+cl]);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 
 }//fin des 3 sliders

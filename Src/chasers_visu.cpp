@@ -497,10 +497,10 @@ petitchiffre.Print("edit",xcha+570 ,ycha+22);
 play_button_view(xcha+10,ycha+50,chaser_is_playing[chaser_selected]);
 
 //seek to begin
-if(mouse_x>xcha+40 && mouse_x<xcha+60 && mouse_y>ycha+50 && mouse_y<ycha+70 && window_focus_id==923 && mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>xcha+40 && mouse_x<xcha+60 && mouse_y>ycha+50 && mouse_y<ycha+70 && window_focus_id==923 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 seek_button_view(xcha+40,ycha+50,1);//seek , affichage avant le bouton
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 seek_button_view(xcha+40,ycha+50,0);
 
@@ -552,7 +552,7 @@ petitchiffre.Print( "Affect To Dock",(xcha+440), (ycha+95));
 /////////////ACTIONS SUR ON TRACK ET SELECTIONS
 if(mouse_x>xcha+10 && mouse_x<xcha+30 && mouse_y>ycha+80 && mouse_y<ycha+100 && window_focus_id==923)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 bouton_text_view(xcha+10, ycha+80,"all", 1);
 }
@@ -563,7 +563,7 @@ bouton_text_view(xcha+10, ycha+80,"all", 0);
 //selections//////////////////////////////////////////////////
 if(mouse_x>xcha+40 && mouse_x<xcha+60 && mouse_y>ycha+80 && mouse_y<ycha+100 && window_focus_id==923)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 bouton_text_view(xcha+40, ycha+80,"inv", 1);
 }
@@ -573,7 +573,7 @@ bouton_text_view(xcha+40, ycha+80,"inv", 0);
 
 if(mouse_x>xcha+70 && mouse_x<xcha+90 && mouse_y>ycha+80 && mouse_y<ycha+100 && window_focus_id==923)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 bouton_text_view(xcha+70, ycha+80,"off", 1);
 }
@@ -591,7 +591,7 @@ for(int po=0;po<4;po++)
 sprintf(tl,"P%d",po+1);
 if(mouse_x>xcha+110+(po*30) && mouse_x<xcha+150+(po*30) && mouse_y>ycha+80 && mouse_y<ycha+100 && window_focus_id==923)
 {
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 bouton_text_view(xcha+110+(po*30), ycha+80,tl, 1);
 }

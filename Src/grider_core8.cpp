@@ -50,7 +50,7 @@ int do_logical_TheStepBox(int xb,int yb, int num_grid_player)
 //sab 02/03/2014 IMPACT ? if(mouse_x>xb & mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
 if(mouse_x>xb && mouse_x<xb+20 && mouse_y>yb && mouse_y<yb+20 )
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -60,14 +60,14 @@ else
 {
   gridplayer_step_minus(num_grid_player);
  }
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
 }
 }
  //Step plus
 //sab 02/03/2014 IMPACT if(mouse_x>xb+60 & mouse_x<xb+60+20 && mouse_y>yb && mouse_y<yb+20 )
 if(mouse_x>xb+60 && mouse_x<xb+60+20 && mouse_y>yb && mouse_y<yb+20 )
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -77,27 +77,27 @@ else
 {
   gridplayer_step_plus(num_grid_player);
 }
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
 }
 
 //set +127 box pour les pas
 if(mouse_x>xb+60 && mouse_x<xb+60+20 && mouse_y>yb-6 && mouse_y<yb-6+5)
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
  {
  if( Midi_Faders_Affectation_Type!=0)//config midi
  {
  attribute_midi_solo_affectation(1536+num_grid_player,Midi_Faders_Affectation_Mode);
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 }
 //chargement d'un pas, ou affectation d'un temps ou clear  du pas
 //sab 02/03/2014 IMPACT ? if(mouse_x>xb+22 & mouse_x<xb+22+35 && mouse_y>yb-5 && mouse_y<yb-5+30 )
 if(mouse_x>xb+22 && mouse_x<xb+22+35 && mouse_y>yb-5 && mouse_y<yb-5+30 )
  {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
  {
  if( Midi_Faders_Affectation_Type!=0)//config midi
  {
@@ -261,7 +261,7 @@ grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_gri
  }
  }
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
 }
@@ -303,7 +303,7 @@ else
 ////////////////SLAVE MODE////////////////////////////////////////////////////
 if(mouse_x>xb+150 && mouse_x<xb+150+40 && mouse_y>yb+25 && mouse_y<yb+25+15)
 {
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -313,7 +313,7 @@ else
 {
 grid_player_slave[num_grid_player]=toggle(grid_player_slave[num_grid_player]);
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -324,7 +324,7 @@ for(int sp=0;sp<4;sp++)
 {
 if( mouse_x>xb && mouse_x<xb+10 && mouse_y>yb+70+(sp*20) && mouse_y<yb+70+(sp*20)+10 )
 {
-if( (mouseLeftClic.eventProcessed==false) )
+if( mouseClicLeft.isToBeProcessed() )
 {
  if( Midi_Faders_Affectation_Type!=0)
  {
@@ -350,7 +350,7 @@ if( (mouseLeftClic.eventProcessed==false) )
  break;
  }
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 }
 }//fin boucle4
@@ -358,7 +358,7 @@ if( (mouseLeftClic.eventProcessed==false) )
 //Goto Grid num
 if( index_enable_edit_Grider==1  && mouse_x>xb+105 && mouse_x<xb+105+30 && mouse_y>yb+70 && mouse_y<yb+70+15 )
 {
- if(  (mouseLeftClic.eventProcessed==false) )
+ if(  mouseClicLeft.isToBeProcessed() )
  {
  grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][0]=atoi(numeric)-1;
  if(grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][0]<0)
@@ -366,13 +366,13 @@ if( index_enable_edit_Grider==1  && mouse_x>xb+105 && mouse_x<xb+105+30 && mouse
  if(grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][0]>127)
  {grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][0]=127;}
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 //Goto step num
 if(index_enable_edit_Grider==1  &&  mouse_x>xb+150 && mouse_x<xb+150+40 && mouse_y>yb+70 && mouse_y<yb+70+15 )
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
  {
   grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][1]=atoi(numeric)-1;
  if(grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][1]<0)
@@ -380,14 +380,14 @@ if( (mouseLeftClic.eventProcessed==false))
  if(grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][1]>1023)
  {grid_goto[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][1]=1023;}
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 
 //count num
 if( index_enable_edit_Grider==1  && mouse_x>xb+150 && mouse_x<xb+150+40 && mouse_y>yb+90 && mouse_y<yb+90+15  )
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
  {
  grid_count[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]=atoi(numeric);
  if(grid_count[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]<0)
@@ -395,7 +395,7 @@ if( (mouseLeftClic.eventProcessed==false))
  grid_count[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]=0;
  }
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 
@@ -403,7 +403,7 @@ if( (mouseLeftClic.eventProcessed==false))
 //Seek step num
 if( index_enable_edit_Grider==1  && mouse_x>xb+150 && mouse_x<xb+150+40 && mouse_y>yb+110 && mouse_y<yb+110+15  )
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
  {
   grid_seekpos[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]=atoi(numeric)-1;
  if(grid_seekpos[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]<0)
@@ -411,15 +411,15 @@ if( (mouseLeftClic.eventProcessed==false))
  if(grid_seekpos[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]>1023)
  {grid_seekpos[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]=1023;}
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 }
 
 //Stoplay button
-if( index_enable_edit_Grider==1  && mouse_x>xb+100 && mouse_x<xb+100+90 && mouse_y>yb+130 && mouse_y<yb+130+15 && mouse_b&1 && (mouseLeftClic.eventProcessed==false))
+if( index_enable_edit_Grider==1  && mouse_x>xb+100 && mouse_x<xb+100+90 && mouse_y>yb+130 && mouse_y<yb+130+15 && mouse_b&1 && mouseClicLeft.isToBeProcessed())
 {
  grid_stoplay[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]=toggle(grid_stoplay[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]]);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 return(0);
 }
@@ -436,7 +436,7 @@ int gr_st_selected=index_grider_step_is[num_grid_player];
 
 if(index_enable_edit_Grider==1 && mouse_x>=xb && mouse_x<=xb+(grider_nb_col*sizecase) && mouse_y>=yb && mouse_y<=yb+(grider_nb_row*sizecase))
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 if(numeric_postext==0)
 {
@@ -470,7 +470,7 @@ break;
 
 }
 reset_numeric_entry();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -481,7 +481,7 @@ return(0);
 int do_logical_TheGrid_divers( int xb, int yb, int num_grid_player)
 {
 //affect to dock
- if(mouse_x>xb+60 && mouse_x<xb+60+50 && mouse_y>yb && mouse_y<yb+30 &&  (mouseLeftClic.eventProcessed==false))
+ if(mouse_x>xb+60 && mouse_x<xb+60+50 && mouse_y>yb && mouse_y<yb+30 &&  mouseClicLeft.isToBeProcessed())
  {
 
 index_do_dock=index_affect_color_to_dock;
@@ -498,22 +498,22 @@ index_do_dock=index_affect_color_to_dock;
         }
 
 
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
 
- if(  index_enable_edit_Grider==1 && mouse_x>xb && mouse_x<xb+10 && mouse_y>yb+45 && mouse_y<yb+45+10 && (mouseLeftClic.eventProcessed==false))
+ if(  index_enable_edit_Grider==1 && mouse_x>xb && mouse_x<xb+10 && mouse_y>yb+45 && mouse_y<yb+45+10 && mouseClicLeft.isToBeProcessed())
  {
  to_step_editing_mode[num_grid_player]=toggle(to_step_editing_mode[num_grid_player]);
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
- if( index_enable_edit_Grider==1 && mouse_x>xb+60 && mouse_x<xb+60+40 && mouse_y>yb+45 && mouse_y<yb+45+15 && (mouseLeftClic.eventProcessed==false)  )
+ if( index_enable_edit_Grider==1 && mouse_x>xb+60 && mouse_x<xb+60+40 && mouse_y>yb+45 && mouse_y<yb+45+15 && mouseClicLeft.isToBeProcessed()  )
  {
  int tempstepto=atoi(numeric)-1;
  if(tempstepto>index_grider_step_is[num_grid_player] && tempstepto<1023)
  {index_StepTo[num_grid_player]=tempstepto;}
  reset_numeric_entry();
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
 
  ///////////COPY TO ////////////////////////////////////////////////////////////
@@ -521,7 +521,7 @@ index_do_dock=index_affect_color_to_dock;
 
 
  //copy mode
- if(  index_enable_edit_Grider==1 && mouse_x>xb && mouse_x<xb+50 && mouse_y>yb+75 && mouse_y<yb+75+15 && (mouseLeftClic.eventProcessed==false))
+ if(  index_enable_edit_Grider==1 && mouse_x>xb && mouse_x<xb+50 && mouse_y>yb+75 && mouse_y<yb+75+15 && mouseClicLeft.isToBeProcessed())
  {
   index_for_copy_grid=1;
   index_grid_tostep_or_not=to_step_editing_mode[num_grid_player];
@@ -531,7 +531,7 @@ index_do_dock=index_affect_color_to_dock;
   grid_to_clear=index_grider_selected[num_grid_player];       //utilisé pour menus confirm
   step_grid_to_clear=index_grider_step_is[num_grid_player]; //utilisé pour les menus confirm
   index_ask_confirm=1;
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
 
   //insert mode
@@ -542,29 +542,29 @@ index_do_dock=index_affect_color_to_dock;
   grid_to_clear=index_grider_selected[num_grid_player];       //utilisé pour menus confirm
   step_grid_to_clear=index_grider_step_is[num_grid_player]; //utilisé pour les menus confirm
   index_ask_confirm=1;
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
  //grid   entry
- if(index_enable_edit_Grider==1 && mouse_x>xb && mouse_x<xb+30 && mouse_y>yb+95 && mouse_y<yb+95+15 && (mouseLeftClic.eventProcessed==false))
+ if(index_enable_edit_Grider==1 && mouse_x>xb && mouse_x<xb+30 && mouse_y>yb+95 && mouse_y<yb+95+15 && mouseClicLeft.isToBeProcessed())
  {
  int tempstepto=atoi(numeric)-1;
  if(tempstepto>=0 && tempstepto<127)
  {index_Grid_copyto[num_grid_player][0]=tempstepto;}
   reset_numeric_entry();
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
  //step entry
- if(index_enable_edit_Grider==1 && mouse_x>xb+45 && mouse_x<xb+45+40 && mouse_y>yb+95 && mouse_y<yb+95+15 && (mouseLeftClic.eventProcessed==false) )
+ if(index_enable_edit_Grider==1 && mouse_x>xb+45 && mouse_x<xb+45+40 && mouse_y>yb+95 && mouse_y<yb+95+15 && mouseClicLeft.isToBeProcessed() )
  {
   int tempstepto=atoi(numeric)-1;
  if(tempstepto>=0 && tempstepto<1023)
  {index_Grid_copyto[num_grid_player][1]=tempstepto;}
   reset_numeric_entry();
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
   }
 
   //snap fader
- if( index_enable_edit_Grider==1  &&  mouse_x>xb && mouse_x<xb+105 && mouse_y>yb+135 && mouse_y<yb+135+15 && (mouseLeftClic.eventProcessed==false))
+ if( index_enable_edit_Grider==1  &&  mouse_x>xb && mouse_x<xb+105 && mouse_y>yb+135 && mouse_y<yb+135+15 && mouseClicLeft.isToBeProcessed())
  {
  if(index_do_dock==1 && numeric_postext>0)
  {
@@ -572,7 +572,7 @@ index_do_dock=index_affect_color_to_dock;
  if(getfad>=0 && getfad<48)
  {GplSnapFader[num_grid_player]=getfad;}
  reset_numeric_entry();
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
   index_do_dock=0;
   }
   else//enregistrement
@@ -584,7 +584,7 @@ index_do_dock=index_affect_color_to_dock;
    grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i]=FaderDoDmx[(GplSnapFader[num_grid_player])][i+grider_begin_channel_is];
    }
    }
-   mouseLeftClic.eventProcessed=true;
+   mouseClicLeft.SetProcessed();
   }
  }
 
@@ -592,7 +592,7 @@ index_do_dock=index_affect_color_to_dock;
 
 if(num_grid_player==0 )//asservissement speed au séquenciel
 {
-if(mouse_x>xb && mouse_x<xb+105 && mouse_y>yb+115 && mouse_y<yb+115+15 && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>xb && mouse_x<xb+105 && mouse_y>yb+115 && mouse_y<yb+115+15 && mouseClicLeft.isToBeProcessed())
 {
 if(Midi_Faders_Affectation_Type!=0)
 {
@@ -607,7 +607,7 @@ if(index_link_speed_crossfade_to_gpl1==1)
    midi_levels[1508]=crossfade_speed;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -621,7 +621,7 @@ if(mouse_y>yb && mouse_y<yb+20 )
 {
  if(mouse_x>xb+10 && mouse_x<xb+10+20 )// PLAY GRID
  {
- if((mouseLeftClic.eventProcessed==false))
+ if(mouseClicLeft.isToBeProcessed())
  {
  if(Midi_Faders_Affectation_Type!=0)//config midi
  {
@@ -632,12 +632,12 @@ if(mouse_y>yb && mouse_y<yb+20 )
  grider_is_playing[num_grider]=toggle(grider_is_playing[num_grider]);
  if(grider_is_playing[num_grider]==1){grid_crossfade_start_time[num_grider]=actual_time;}
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  }
  else if(mouse_x>xb+40 && mouse_x<xb+40+20 )//SEEK GRID
  {
- if((mouseLeftClic.eventProcessed==false))
+ if(mouseClicLeft.isToBeProcessed())
  {
  if( Midi_Faders_Affectation_Type!=0)//config midi
  {
@@ -647,14 +647,14 @@ if(mouse_y>yb && mouse_y<yb+20 )
  {
  gridplayer_seek(num_grider);
  }
-  mouseLeftClic.eventProcessed=true;
+  mouseClicLeft.SetProcessed();
  }
 }
 
 
 else if(mouse_x>xb+70 && mouse_x<xb+70+20 )//AUTO STOP PLAY GRID
  {
- if((mouseLeftClic.eventProcessed==false))
+ if(mouseClicLeft.isToBeProcessed())
  {
  if(Midi_Faders_Affectation_Type!=0)//config midi
  {
@@ -664,7 +664,7 @@ else if(mouse_x>xb+70 && mouse_x<xb+70+20 )//AUTO STOP PLAY GRID
  {
  grider_autostopmode[num_grider]=toggle(grider_autostopmode[num_grider]);
  }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
  }
  }
 }//fin check y
@@ -676,7 +676,7 @@ int do_logical_TheCallGridBox(int xb, int yb, int num_grider)
 
 if(mouse_x>xb+10 && mouse_x<xb+10+50 && mouse_y>yb && mouse_y<yb+20)
 {
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -724,11 +724,11 @@ else if(index_main_clear==1)
  index_clear_a_grid=1;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
-if(mouse_x>xb+70 && mouse_x<xb+70+170 && mouse_y>yb && mouse_y<yb+20 && index_type==1 && (mouseLeftClic.eventProcessed==false))
+if(mouse_x>xb+70 && mouse_x<xb+70+170 && mouse_y>yb && mouse_y<yb+20 && index_type==1 && mouseClicLeft.isToBeProcessed())
 {
  for(int tt=0;tt<24;tt++)
  {
@@ -736,7 +736,7 @@ if(mouse_x>xb+70 && mouse_x<xb+70+170 && mouse_y>yb && mouse_y<yb+20 && index_ty
  }
  grider_name[index_grider_selected[num_grider]][24]='\0';
  reset_numeric_entry();numeric_postext=0; if(index_text_auto_close==1){index_type=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 //UP DOWN griders number selected
@@ -744,7 +744,7 @@ mouseLeftClic.eventProcessed=true;
 if(mouse_x>xb+265-12 && mouse_x<xb+265+12 && mouse_y>yb+10-12 && mouse_y<yb+10+12)
 {
 
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -755,7 +755,7 @@ else
 if(index_grider_selected[num_grider]>0)
 {index_grider_selected[num_grider]--;}
 }
- mouseLeftClic.eventProcessed=true;
+ mouseClicLeft.SetProcessed();
 }
 }
 
@@ -763,7 +763,7 @@ if(index_grider_selected[num_grider]>0)
 if( mouse_x>xb+295-12 && mouse_x<xb+295+12 && mouse_y>yb+10-12 && mouse_y<yb+10+12)
 {
 
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -773,7 +773,7 @@ else
 {
 if(index_grider_selected[num_grider]<127){index_grider_selected[num_grider]++;}
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -808,7 +808,7 @@ int do_logical_GlobalGridViewer(int xb, int yb, int taillecase)
 
 if(mouse_x>xb+40 && mouse_x<xb+40+50 && mouse_y>yb+10 && mouse_y<yb+10+20  )
 {
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 if(numeric_postext>0)
 {
@@ -820,13 +820,13 @@ reset_numeric_entry();
 }
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 
 if(mouse_x>xb+150 && mouse_x<xb+150+50 && mouse_y>yb+10 && mouse_y<yb+10+20 )
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 if(numeric_postext>0)
 {
@@ -837,7 +837,7 @@ grid_step_view =temp_num_grid-1;
 reset_numeric_entry();
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -845,20 +845,20 @@ mouseLeftClic.eventProcessed=true;
 
 if(mouse_x>xb+220 && mouse_x<xb+220+20 && mouse_y>yb+10 && mouse_y<yb+10+20)
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 grid_step_view--;
 if(grid_step_view<0){grid_step_view=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(mouse_x>xb+250 && mouse_x<xb+250+20 && mouse_y>yb+10 && mouse_y<yb+10+20)
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 grid_step_view++;
 if(grid_step_view>1022){grid_step_view=1022;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -878,7 +878,7 @@ for(int o=0;o<core_user_define_nb_gridplayers;o++)
 {
 if( mouse_x>xb+540+(o*15) && mouse_x<xb+540+(o*15)+10 && mouse_y>yb+20 && mouse_y<yb+20+10)
 {
-if( (mouseLeftClic.eventProcessed==false))
+if( mouseClicLeft.isToBeProcessed())
 {
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -889,7 +889,7 @@ else
 index_show_grid_player[o]=toggle(index_show_grid_player[o]);
 refresh_hauteur_fenetre_grider();
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 }
@@ -899,7 +899,7 @@ if( mouse_y>yb+15 && mouse_y<yb+15+20 )
 //////def chan begin
 if(mouse_x>xb+245 && mouse_x<xb+245+40 &&  index_enable_edit_Grider==1)//chan edit
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 int temp_begchan=atoi(numeric);
 if(temp_begchan>0 && temp_begchan<512)
@@ -907,12 +907,12 @@ if(temp_begchan>0 && temp_begchan<512)
 grider_begin_channel_is=temp_begchan;
 }
 reset_numeric_entry();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(mouse_x>xb+315 && mouse_x<xb+315+40 &&  index_enable_edit_Grider==1 )//col edit
 {
-if((mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isToBeProcessed())
 {
 int temp_col=atoi(numeric);
 if(temp_col>0 && temp_col<=24)
@@ -920,13 +920,13 @@ if(temp_col>0 && temp_col<=24)
 grider_nb_col=temp_col;
 }
 reset_numeric_entry();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(mouse_x>xb+385 && mouse_x<xb+385+40 &&  index_enable_edit_Grider==1)//rows edit
 {
 
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 int temp_row=atoi(numeric);
 if(temp_row>0 && temp_row<=24)
@@ -935,12 +935,12 @@ grider_nb_row=temp_row;
 refresh_hauteur_fenetre_grider();
 }
 reset_numeric_entry();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(mouse_x>xb+430 && mouse_x<xb+430+50)//edit mode
 {
-if((mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isToBeProcessed() )
 {
 index_enable_edit_Grider=toggle(index_enable_edit_Grider);
 if(index_enable_edit_Grider==0)
@@ -950,7 +950,7 @@ for(int i=0;i<4;i++)
 to_step_editing_mode[i]=0;
 }
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 }
@@ -974,7 +974,7 @@ if(mouse_x>xb+495 && mouse_x<xb+495+40 && mouse_y>yb+20 && mouse_y<yb+20+10)
 {
 show_global_view_grider=toggle(show_global_view_grider);
 refresh_hauteur_fenetre_grider();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 
 

@@ -1119,7 +1119,7 @@ if(control>=685 && control<=733) //STOPOS FADERS
 {
 if(index_do_dock==0 && index_main_clear==0)
 {
-ActionnateStopOn[control-685]=toggle(ActionnateStopOn[control-685]);mouseLeftClic.eventProcessed=true;
+ActionnateStopOn[control-685]=toggle(ActionnateStopOn[control-685]);mouseClicLeft.SetProcessed();
 }
 
 else if(index_do_dock==1 && index_main_clear==0 )
@@ -3039,7 +3039,7 @@ show_calc_number[j]=0;
 }
 show_calc_number[calc]=1;
 view_plot_calc_number_is=calc;
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 break;
 }
 plot_generate_appareils_list();
@@ -3783,12 +3783,12 @@ ChangeCh.SetRoundness(5);
 if(mouse_x>xrep+110 && mouse_x<xrep+110+80 && mouse_y>yrep-30 && mouse_y<yrep-30+20)
 {
 ChangeCh.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 ChangeCh.Draw(CouleurFader);
 change_vel_midichan_selected++;
 if(change_vel_midichan_selected>15){change_vel_midichan_selected=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 petitchiffre.Print(string_midichan,xrep+120,yrep-17);
@@ -3808,12 +3808,12 @@ OverMidi.SetRoundness(7.5);
 if(mouse_x>xrep+5 && mouse_x<xrep+5+110 && mouse_y>(yrep+10+(y*20)-10) && mouse_y<(yrep+10+(y*20)+5))
 {
 OverMidi.DrawOutline(CouleurLigne);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]++;
 if(midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]>6)
   {midi_change_vel_type[change_vel_midichan_selected][line_midi_changesignal+y]=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(y+line_midi_changesignal<=127)
@@ -3865,7 +3865,7 @@ if(mouse_x>xrep+170-12 && mouse_x<xrep+170+12)
 if(mouse_y>yrep+25-12 && mouse_y<yrep+25+12)
 {
 LineUp.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 LineUp.Draw(CouleurFader);
 if(line_midi_changesignal>0){line_midi_changesignal--;}
@@ -3874,7 +3874,7 @@ if(line_midi_changesignal>0){line_midi_changesignal--;}
 else if(mouse_y>yrep+185-12 && mouse_y<yrep+185+12)
 {
 LineDown.Draw(CouleurSurvol);
-if(mouseLeftClic.isDown)
+if(mouseClicLeft.isDown())
 {
 LineDown.Draw(CouleurFader);
 if(line_midi_changesignal<127){line_midi_changesignal++;}
@@ -3924,12 +3924,12 @@ for (int i=1;i<3;i++)
 if(mouse_x>cfg_midiX+20 && mouse_x<cfg_midiX+20+60 && mouse_y>cfg_midiY+60+(i*30) && mouse_y<cfg_midiY+60+(i*30)+15  && window_focus_id==920)
 {
 MidiChooseTypeBox.Draw(CouleurFond);
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
 {
 MidiChooseTypeBox.Draw(CouleurSurvol);
 if(Midi_Faders_Affectation_Type==i){Midi_Faders_Affectation_Type=0; do_affectation_on_midi_affect_itself=0;}
 else{Midi_Faders_Affectation_Type=i; do_affectation_on_midi_affect_itself=1;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(i==1)
@@ -3971,7 +3971,7 @@ if(Midi_Faders_Affectation_Type==i)
 if(mouse_x> cfg_midiX+630 && mouse_x< cfg_midiX+630+70 && mouse_y> cfg_midiY+150 && mouse_y<cfg_midiY+150+30  && window_focus_id==920)
 {
 MidiChBox.Draw(CouleurFond.WithAlpha(0.5));
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
 {
 MidiChBox.Draw(CouleurFader);
 fakemidichan=atol(numeric);
@@ -3982,14 +3982,14 @@ sprintf(string_Last_Order,"A midi channel is from 0 to 15");
 }
 numeric_postext=0;
 reset_numeric_entry();
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 //set fake midi picth
  if(mouse_x> cfg_midiX+710 && mouse_x< cfg_midiX+710+70 && mouse_y> cfg_midiY+150 && mouse_y<cfg_midiY+150+30  && window_focus_id==920)
 {
 MidiPitchBox.Draw(CouleurFond.WithAlpha(0.5));
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
 {
 MidiPitchBox.Draw(CouleurFader);
 fakemidipitch=atol(numeric);
@@ -4001,19 +4001,19 @@ sprintf(string_Last_Order,"A midi pitch is from 0 to 127");
 numeric_postext=0;
 reset_numeric_entry();
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 //Fake miditype
 if(mouse_x> cfg_midiX+710 && mouse_x< cfg_midiX+710+100 && mouse_y> cfg_midiY+190 && mouse_y<cfg_midiY+190+30  && window_focus_id==920)
 {
 MidiTypeBox.Draw(CouleurFond.WithAlpha(0.5));
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
 {
 MidiTypeBox.Draw(CouleurFader);
 if(fakemiditype==1){fakemiditype=2;}
 else if(fakemiditype==2){fakemiditype=4;}
 else if(fakemiditype==4){fakemiditype=1;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -4039,12 +4039,12 @@ for (int i=1;i<3;i++)
 if(mouse_x>cfg_midiX+560 && mouse_x<cfg_midiX+560+60 && mouse_y>cfg_midiY+70+(i*30) && mouse_y<cfg_midiY+70+(i*30)+15  && window_focus_id==920)
 {
 MidiModeBox.Draw(CouleurFond);
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
 {
 MidiModeBox.Draw(CouleurSurvol);
 if(Midi_Faders_Affectation_Mode==i){Midi_Faders_Affectation_Mode=0;}
 else{Midi_Faders_Affectation_Mode=i;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(i==1)
@@ -4073,11 +4073,11 @@ MidiModeBox.Draw(CouleurFader);
 if(mouse_x>cfg_midiX+560 && mouse_x<cfg_midiX+560+60 && mouse_y>cfg_midiY+50 && mouse_y<cfg_midiY+50+25  && window_focus_id==920)
 {
 MidiTogBox.DrawOutline(CouleurFader);
-if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
 {
 if(toggle_numerical_midi_way==0){toggle_numerical_midi_way=1;}
 else if(toggle_numerical_midi_way==1){toggle_numerical_midi_way=0;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 if(toggle_numerical_midi_way==1)
@@ -4138,7 +4138,7 @@ petitpetitchiffre.Print(temp_str_lch,cfg_midiX+50,cfg_midiY+35+(pm*25));
 if(mouse_x>cfg_midiX+40 && mouse_x<cfg_midiX+40+40 && mouse_y>cfg_midiY+25+(pm*25) && mouse_y<cfg_midiY+25+(pm*25)+20)
 {
 LaunchCol.DrawOutline(CouleurLigne);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 int temp_collauch=atol(numeric);
 reset_numeric_entry();
@@ -4147,7 +4147,7 @@ if(temp_collauch>=0 && temp_collauch<=127)
 launchpad_color[pm]=temp_collauch;
 refresh_launchpad_color_callibration();
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 
@@ -4163,13 +4163,13 @@ petitpetitchiffre.Print(ol::ToString(chaser_midi_rows),cfg_midiX+55,cfg_midiY+20
 if(mouse_x>cfg_midiX+40 && mouse_x<cfg_midiX+40+40 && mouse_y>cfg_midiY+190 && mouse_y<cfg_midiY+205)
 {
 LaunchRows.DrawOutline(CouleurLigne);
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 chaser_midi_rows=atol(numeric);
 reset_numeric_entry();
 if(chaser_midi_rows<1){chaser_midi_rows=1;}
 if( chaser_midi_rows>8){chaser_midi_rows=8;}
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 return(0);
@@ -4190,7 +4190,7 @@ MidiOption.Draw(CouleurFond.WithAlpha(0.5));
 if(mouse_x>cfg_midiX+20 && mouse_x<cfg_midiX+20+55 && mouse_y>cfg_midiY+45+(pm*30) && mouse_y<cfg_midiY+45+20+(pm*30)  && window_focus_id==920)
 {
 MidiOption.Draw(CouleurSurvol) ;
-if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
 {
 switch(pm)
 {
@@ -4231,7 +4231,7 @@ case 7:
 index_midi_global_thruth=toggle(index_midi_global_thruth);
 break;
 }
-mouseLeftClic.eventProcessed=true;
+mouseClicLeft.SetProcessed();
 }
 }
 switch(pm)
@@ -4312,11 +4312,11 @@ int midipage_devices(int cfg_midiX,int cfg_midiY, int largeurCFGmidi,int hauteur
      if(mouse_x>cfg_midiX+20 && mouse_x<cfg_midiX+220 && mouse_y>cfg_midiY+15+(i*30) && mouse_y<cfg_midiY+45+(i*30))
      {
      MidiDeviceBox.Draw(CouleurBleuProcedure);
-     if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+     if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
      {
       MidiDeviceBox.Draw(CouleurFader);
       if( do_connect_in[i]==0){ do_connect_in[i]=1;  }
-      mouseLeftClic.eventProcessed=true;
+      mouseClicLeft.SetProcessed();
      }
      }
      }
@@ -4336,11 +4336,11 @@ int midipage_devices(int cfg_midiX,int cfg_midiY, int largeurCFGmidi,int hauteur
      {
      MidiDeviceBox.Draw(CouleurBleuProcedure);
 
-     if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+     if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
      {
       MidiDeviceBox.Draw(CouleurFader);
       do_connect_in[i]=1;
-      mouseLeftClic.eventProcessed=true;
+      mouseClicLeft.SetProcessed();
      }
      }
      }
@@ -4368,11 +4368,11 @@ int midipage_devices(int cfg_midiX,int cfg_midiY, int largeurCFGmidi,int hauteur
      if(mouse_x>cfg_midiX+420 && mouse_x<cfg_midiX+620 && mouse_y>cfg_midiY+15+(j*30) && mouse_y<cfg_midiY+45+(j*30))
      {
      MidiDeviceBox.Draw(CouleurBlind.WithAlpha(0.5));
-     if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+     if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
      {
       MidiDeviceBox.Draw(CouleurFader);
       if( do_connect_out[j+compt_midi_in]==0){ do_connect_out[j+compt_midi_in]=1;  }
-      mouseLeftClic.eventProcessed=true;
+      mouseClicLeft.SetProcessed();
      }
      }
      }
@@ -4393,11 +4393,11 @@ int midipage_devices(int cfg_midiX,int cfg_midiY, int largeurCFGmidi,int hauteur
      if(mouse_x>cfg_midiX+620 && mouse_x<cfg_midiX+820 && mouse_y>cfg_midiY+15+((j-8)*30) && mouse_y<cfg_midiY+45+((j-8)*30))
      {
      MidiDeviceBox.Draw(CouleurBlind.WithAlpha(0.5));
-     if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) )
+     if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() )
      {
       MidiDeviceBox.Draw(CouleurFader);
       if( do_connect_out[j+compt_midi_in]==0){ do_connect_out[j+compt_midi_in]=1;  }
-      mouseLeftClic.eventProcessed=true;
+      mouseClicLeft.SetProcessed();
      }
      }
      }
@@ -4430,13 +4430,13 @@ int midipage_devices(int cfg_midiX,int cfg_midiY, int largeurCFGmidi,int hauteur
     if(mouse_x>cfg_midiX+720 && mouse_x<cfg_midiX+720+70 && mouse_y>cfg_midiY && mouse_y<cfg_midiY+25)
     {
     MidiRescanDriver.Draw(CouleurSurvol);
-    if(mouseLeftClic.isDown && (mouseLeftClic.eventProcessed==false))
+    if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
     {
     MidiRescanDriver.Draw(CouleurFader);
     QuitMidi() ;
 
     InitMidi();//init pose souci . au chargement de white cat init pause souci des que ouv de fichiers
-    mouseLeftClic.eventProcessed=true;
+    mouseClicLeft.SetProcessed();
     }
     }
     }
@@ -4464,7 +4464,7 @@ if(mouse_y>cfg_midiY+1 && mouse_y<cfg_midiY+35)
 if(mouse_x>cfg_midiX+20+(pp*150) && mouse_x<cfg_midiX+20+(pp*150)+140)
 {
      MidiMenu.Draw(CouleurFond.WithAlpha(0.5));
-     if(mouseLeftClic.isDown &&  (mouseLeftClic.eventProcessed==false) ){midi_page=pp; mouseLeftClic.eventProcessed=true;}
+     if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed() ){midi_page=pp; mouseClicLeft.SetProcessed();}
 }
 }
 }
