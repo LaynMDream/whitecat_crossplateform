@@ -4,6 +4,8 @@
 //Allegro
 #include <allegro/mouse.h>
 #include <allegro/keyboard.h>
+//OpenLayer -  interface to graphical library
+#include <OpenLayer.hpp>
 //C library
 #include <time.h>
 //Container C compatible
@@ -56,6 +58,7 @@ public:
     whc_eventclic static c_mouseLastClic ;	//!< Instance variable - mouseLastClic :
     std::vector<whc_eventclic> static c_mouseClicHistory; //!< Instance variable - mouseClicHistory :
     bool static c_IsThisADoubleClic (whc_mousebutton);
+	bool static c_toggle(bool & pushbutton) ;
     void static c_CollectEvent (int& mousesignal, volatile int& mouse_x, volatile int& mouse_y, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
 
     /** Default constructor */
@@ -69,12 +72,12 @@ public:
      */
     bool toBeProcessed_isDown_isOverRecSize(int x_left, int y_top, int x_size, int y_size, bool set_processed=false)
     {
-        if (m_Pending)
+        if (m_pending)
         {
             bool value = isOverRecSize(x_left, y_top, x_size, y_size);
             if (value and set_processed)
             {
-                m_Pending = false ;
+                m_pending = false ;
             };
             return value;
         }
@@ -82,12 +85,12 @@ public:
     }
     bool toBeProcessed_isDouble_isOverRecSize(int x_left, int y_top, int x_size, int y_size, bool set_processed=false)
     {
-        if (m_Pending and m_Double)
+        if (m_pending and m_Double)
         {
             bool value = isOverRecSize(x_left, y_top, x_size, y_size);
             if (value and set_processed)
             {
-                m_Pending = false ;
+                m_pending = false ;
             };
             return value;
         }
@@ -103,12 +106,12 @@ public:
      */
     bool toBeProcessed_isDown_isOverRecPos(int x_left, int y_top, int x_right, int y_bottom, bool set_processed=false)
     {
-        if (m_Pending)
+        if (m_pending)
         {
             bool value = isOverRecPos(x_left, y_top, x_right, y_bottom);
             if (value and set_processed)
             {
-                m_Pending = false ;
+                m_pending = false ;
             };
             return value;
         }
@@ -116,12 +119,12 @@ public:
     }
     bool toBeProcessed_isDouble_isOverRecPos(int x_left, int y_top, int x_right, int y_bottom, bool set_processed=false)
     {
-        if (m_Pending and m_Double)
+        if (m_pending and m_Double)
         {
             bool value = isOverRecPos(x_left, y_top, x_right, y_bottom);
             if (value and set_processed)
             {
-                m_Pending = false ;
+                m_pending = false ;
             };
             return value;
         }
@@ -145,7 +148,7 @@ public:
     }
     bool isDownToBeProcessed()
     {
-        return (m_Down && m_Pending);
+        return (m_Down && m_pending);
     }
     /** Set m_Down
      * \param val New value to set
@@ -229,29 +232,29 @@ public:
         return m_Actor ;
     }
 
-    /** Access m_Pending
-     * \return The current value of m_Pending
+    /** Access m_pending
+     * \return The current value of m_pending
      */
     bool isProcessed()
     {
-        return (not m_Pending);
+        return (not m_pending);
     }
     bool isToBeProcessed()
     {
-        return m_Pending;
+        return m_pending;
     }
-    /** Set m_Pending
+    /** Set m_pending
      * \param val New value to set
      */
     void SetProcessed(int actor=0, bool val=true)
     {
         m_Actor = actor ;
-        m_Pending = (not val);
+        m_pending = (not val);
     }
     void SetToBeProcessed(int actor=0, bool val=true)
     {
         m_Actor = actor ;
-        m_Pending = val;
+        m_pending = val;
     }
 
 protected:
@@ -260,7 +263,7 @@ private:
     bool m_Down; //!< Member variable "m_Down"
     bool m_Double; //!< Member variable "m_Double"
     bool m_DragDrop; //!< Member variable "m_Double"
-    bool m_Pending; //!< Member variable "m_Pending"
+    bool m_pending; //!< Member variable "m_pending"
     int m_Actor;
 };
 
@@ -273,12 +276,18 @@ class whc_wheel
 public:
     int static c_mouse_z_prev;
     int static c_mouse_w_prev;
+    int static c_loops;
     void static c_Init(volatile int& mouse_z, volatile int& mouse_w);
     void static c_CollectEvent (int& mousesignal, volatile int& mouse_z, volatile int& mouse_w, whc_wheel& mouseScroll , whc_wheel& mouseRoll);
-    void static c_leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel);
-    int  static c_leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel);
-    void static c_leveIncrease(whc_wheel &wheel, int &i_level, int maxlevel, int minlevel, int &i_loops, int loopsbeforeincrease);
-    int  static c_leveIncrease(whc_wheel &wheel, float &f_level, float maxlevel, float minlevel, float speedratio);
+    void static c_CollectKeyStatus (whc_wheel& mouseScroll , whc_wheel& mouseRoll);
+
+    void static c_levelIncrease(whc_wheel &wheel,        int &i_level,   const int maxlevel,   const int minlevel,   const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    int  static c_levelIncrease(whc_wheel &wheel,        float &f_level, const float maxlevel, const float minlevel, const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    void static c_levelSpeedupIncrease(whc_wheel &wheel, int &i_level,   const int maxlevel,   const int minlevel,   const int time_in_number_of_loops);
+    int  static c_levelSpeedupIncrease(whc_wheel &wheel, float &f_level, const float maxlevel, const float minlevel, const float frequency_in_number_of_loops);
+
+    void static c_rotatorLevelIncrease(whc_wheel &wheel,        int &i_level,   const int maxlevel,   const int minlevel,   const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    int  static c_rotatorLevelIncrease(whc_wheel &wheel,        float &f_level, const float maxlevel, const float minlevel, const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
 
     /** Default constructor */
     whc_wheel();
@@ -346,32 +355,32 @@ public:
         m_speed = val;
     }
 
-    /** Access m_Pending
-     * \return The current value of m_Pending
+    /** Access m_pending
+     * \return The current value of m_pending
      */
     bool isProcessed()
     {
-        return (not m_Pending);
+        return (not m_pending);
     }
     bool isToBeProcessed()
     {
-        return m_Pending;
+        return m_pending;
     }
-    /** Set m_Pending
+    /** Set m_pending
      * \param val New value to set
      */
     void SetProcessed(bool val=true)
     {
-        m_Pending = (not val);
-        if (m_Pending == false)
+        m_pending = (not val);
+        if (m_pending == false)
         {
             m_yield = 0;
         }
     }
     void SetToBeProcessed(bool val=true)
     {
-        m_Pending = val;
-        if (m_Pending == false)
+        m_pending = val;
+        if (m_pending == false)
         {
             m_yield = 0;
         }
@@ -383,7 +392,7 @@ private:
     int  m_gain;	//!< Member variable m_gain (if event quickly catch, gain should be : -1,0, or +1)
     int  m_yield;   //!< Member variable m_yield (sum of gain until event processed : casual use)
     int  m_speed;	//!< Member variable m_speed
-    bool m_Pending; //!< Member variable "m_Pending"
+    bool m_pending; //!< Member variable "m_pending"
 
 };
 
@@ -394,12 +403,24 @@ private:
 class whc_pointer
 {
 public:
-	typedef enum
+    typedef enum
     {
-        arrow   = 1,
-        drag    = 2
+        arrow   = 0,
+        arrow_wheel = 1,
+        drag    = 2,
+        target = 3,
+        whc_mouselook_size = 4 //
     } whc_mouselook ;
 
+    typedef struct
+    {
+        bool loaded;
+        int mouse_x_in_png, mouse_y_in_png;
+        ol::Bitmap bmp;
+    } whc_pointerbmp;
+
+    whc_pointerbmp static c_arrow[whc_mouselook_size];
+    bool static c_Init(whc_mouselook idx,const char *pathtobmp);
 
     /** Default constructor */
     whc_pointer();
@@ -437,9 +458,28 @@ public:
         m_y=val;
     }
 
+    bool isOverRecSize(int x_left, int y_top, int x_size, int y_size)
+    {
+        return ((mouse_x>=x_left) and (mouse_x<=x_left+x_size) and (mouse_y>=y_top) and (mouse_y<=y_top+y_size));
+    }
+
+    bool isOverRecPos(int x_left, int y_top, int x_right, int y_bottom)
+    {
+        return ((mouse_x>=x_left) and (mouse_x<=x_right) and (mouse_y>=y_top) and (mouse_y<=y_bottom));
+    }
+
+    /** Set m_look
+     * \param val New value to set
+     */
+    void SetLook(whc_mouselook val)
+    {
+        m_look=val;
+    }
+
     /** Draw pointer
     */
-	void Draw();
+    bool Draw();
+
 
     /** Set m_x m_y
      * \param val New value to set
@@ -455,7 +495,6 @@ private:
     int  m_x;	//!< Member variable m_x
     int  m_y;	//!< Member variable m_y
     whc_mouselook m_look;
-
 };
 
 #endif // WHC_MOUSE_H

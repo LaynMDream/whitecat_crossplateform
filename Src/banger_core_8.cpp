@@ -5024,7 +5024,7 @@ if(mouse_x>xb+200 && mouse_x<xb+320 && mouse_y> (yb+40) && mouse_y< (yb+40)+30 &
  bangers_name[index_banger_selected][tt]=numeric[tt];
  }
  bangers_name[index_banger_selected][24]='\0';
-  reset_numeric_entry();numeric_postext=0; if(index_text_auto_close==1){index_type=0;}
+  reset_numeric_entry();keyboardStorage_numeric_postext=0; if(index_text_auto_close==1){index_type=0;}
  sprintf(string_Last_Order,">>GIVED A NAME FOR BANGER %d ",index_banger_selected+1);
 mouseClicLeft.SetProcessed();
 }

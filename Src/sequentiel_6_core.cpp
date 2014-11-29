@@ -136,7 +136,7 @@ return(0);
 
 int do_call_time_and_rec_f1_f2_f3(int mem_is)
 {
-if(numeric_postext>0 && index_affect_time==0 && index_do_dock==0 && index_do_modify==0 && index_do_report==0 )
+if(keyboardStorage_numeric_postext>0 && index_affect_time==0 && index_do_dock==0 && index_do_modify==0 && index_do_report==0 )
 {
 if(call_stage==1){call_mem_onstage();}
 else if(call_preset==1)
@@ -157,7 +157,7 @@ call_mem_onpreset();
 }
 }
 
-else if(index_affect_time==1 && index_do_dock==1 && numeric_postext==0 )//si la fenetre time est ouverte
+else if(index_affect_time==1 && index_do_dock==1 && keyboardStorage_numeric_postext==0 )//si la fenetre time est ouverte
 {
 affect_time_from_chrono_to_mem(mem_is);
 }
@@ -314,7 +314,7 @@ annotation_memoires[position_onstage][tt]=numeric[tt];
 annotation_memoires[position_onstage][24]='\0';
 }
 
-reset_numeric_entry();numeric_postext=0;
+reset_numeric_entry();keyboardStorage_numeric_postext=0;
 someone_changed_in_sequences=1;//icat
 mouseClicLeft.SetProcessed();
 }
@@ -413,7 +413,7 @@ annotation_memoires[position_preset][tt]=numeric[tt];
 annotation_memoires[position_preset][24]='\0';
 }
 someone_changed_in_sequences=1;//icat
-reset_numeric_entry();numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
+reset_numeric_entry();keyboardStorage_numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
 mouseClicLeft.SetProcessed();
 }
 
@@ -481,7 +481,7 @@ annotation_memoires[mem_before_one][tt]=numeric[tt];
 }
 annotation_memoires[mem_before_one][24]='\0';
 }
-reset_numeric_entry();numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
+reset_numeric_entry();keyboardStorage_numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
 mouseClicLeft.SetProcessed();
 }
 }
@@ -569,7 +569,7 @@ annotation_memoires[memsearch][tt]=numeric[tt];
 }
 annotation_memoires[memsearch][24]='\0';
 }
-reset_numeric_entry();numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
+reset_numeric_entry();keyboardStorage_numeric_postext=0;if(index_text_auto_close==1){index_type=0;}
 mouseClicLeft.SetProcessed();
 }
 }
@@ -1103,7 +1103,7 @@ mouseClicLeft.SetProcessed();
 }
 else
 {
-if(numeric_postext>0)
+if(keyboardStorage_numeric_postext>0)
 {
 index_atoi=(int)(atof(numeric)*10);
 if(MemoiresExistantes[index_atoi]==1)
@@ -1111,7 +1111,7 @@ if(MemoiresExistantes[index_atoi]==1)
 position_preset=index_atoi;
 refresh_mem_onpreset(position_preset);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 }
 }
 }

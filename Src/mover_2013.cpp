@@ -711,7 +711,7 @@ default:
 break;
 }
 reset_mover_buffer();
-reset_numeric_entry();numeric_postext=0;
+reset_numeric_entry();keyboardStorage_numeric_postext=0;
 mouseClicLeft.SetProcessed();
 }
 

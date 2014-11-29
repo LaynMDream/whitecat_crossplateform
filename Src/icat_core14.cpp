@@ -3167,12 +3167,12 @@ switch(iCat_affectation_string_type_is[iCatPageis][id])
      switch(iCat_affectation_string_action_is[iCatPageis][id])
      {
       case 1: //input
-      if(previous_numeric_postext!=numeric_postext)
+      if(previous_keyboardStorage_numeric_postext!=keyboardStorage_numeric_postext)
       {
       sprintf(StrOrderToiCat,"model Str%d text %s",id,string_numeric_entry);
       send_data_to_fantastick();
       }
-      previous_numeric_postext=numeric_postext;
+      previous_keyboardStorage_numeric_postext=keyboardStorage_numeric_postext;
       break;
       case 2://last ch
       if(previous_last_ch_selected!=last_ch_selected)

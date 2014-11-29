@@ -298,7 +298,7 @@ ActionnateStopOn[cmptfader]=toggle(ActionnateStopOn[cmptfader]);mouseClicLeft.Se
 
 else if(index_do_dock==1 && index_main_clear==0 )
 {
-if(numeric_postext>0 )//affectation stop pos par chaine de carcatere
+if(keyboardStorage_numeric_postext>0 )//affectation stop pos par chaine de carcatere
 {
 int lStopPos=999;
     switch(dmx_view)
@@ -318,7 +318,7 @@ if (lStopPos>=0 && lStopPos<=255)
    do_light_setpos[cmptfader]=1;
    }
 }
-else if (numeric_postext==0) //affectation stop pos depuis le cursuer fader
+else if (keyboardStorage_numeric_postext==0) //affectation stop pos depuis le cursuer fader
 {
 StopPosOn[cmptfader]=1;LevelStopPos[cmptfader]=Fader[cmptfader];
 index_do_dock=0;
@@ -950,7 +950,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  DockName[cmptfader][dd][tt]=numeric[tt];
  }
  DockName[cmptfader][dd][24]='\0';
- reset_numeric_entry();numeric_postext=0; if(index_text_auto_close==1){index_type=0;}
+ reset_numeric_entry();keyboardStorage_numeric_postext=0; if(index_text_auto_close==1){index_type=0;}
 
  //MAJ d'un fader en DCH
 
@@ -1876,8 +1876,15 @@ mouseClicLeft.SetProcessed();
 
 
 //GRAND MASTER
-do_logical_grand_master(x-140, y, (int(50*size_faders)));//x y largeur
-do_logical_grand_master(x+(48*espacement)+50, y, (int(50*size_faders)));//x y largeur
+int gm_x, gm_width;
+//GM on Left of fader window
+gm_x = x-140;
+gm_width = (int(50*size_faders));
+do_logical_grand_master(gm_x, y, gm_width);//x y largeur
+//GM on Right of fader window
+gm_x = x+(48*espacement)+50;
+gm_width = (int(50*size_faders));
+do_logical_grand_master(gm_x, y, gm_width);//x y largeur
 
 do_logical_MoveFaderSpace(y-70);// fonction pour se deplacer sur les 48 masters
 

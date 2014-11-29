@@ -2292,12 +2292,13 @@
 
 1398670212 c:\whitecat_crossplateform\src\arduino_6_uno.cpp
 
-1417202562 source:c:\whitecat_xplatform_christoph\src\whc_mouse.cpp
+1417280913 source:c:\whitecat_xplatform_christoph\src\whc_mouse.cpp
 	"whc_mouse.h"
 
-1417202562 c:\whitecat_xplatform_christoph\src\whc_mouse.h
+1417291912 c:\whitecat_xplatform_christoph\src\whc_mouse.h
 	<allegro/mouse.h>
 	<allegro/keyboard.h>
+	<OpenLayer.hpp>
 	<time.h>
 	<vector>
 	"boost/date_time/local_time/local_time.hpp"
@@ -8013,7 +8014,7 @@
 1396638948 source:c:\whitecat_xplatform_christoph\src\whitecat_private.rc
 	<windows.h>
 
-1417208314 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
+1417293575 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -8108,7 +8109,7 @@
 1393698853 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1417211169 c:\whitecat_xplatform_christoph\src\whitecat.h
+1417289327 c:\whitecat_xplatform_christoph\src\whitecat.h
 	"Crossplateform.h"
 
 1408381330 c:\whitecat_xplatform_christoph\src\crossplateform.h
@@ -8477,7 +8478,7 @@
 
 1399910779 c:\whitecat_xplatform_christoph\whitecatlib\\boost\format\detail\unset_macros.hpp
 
-1416693256 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
+1417255040 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
 
 1409943205 c:\whitecat_xplatform_christoph\src\patch_splines_2.cpp
 
@@ -8489,7 +8490,7 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\savereport_window.cpp
 
-1416804985 c:\whitecat_xplatform_christoph\src\core_6.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\core_6.cpp
 
 1409943205 c:\whitecat_xplatform_christoph\src\saves_export_pdf2.cpp
 	<setjmp.h>
@@ -8501,46 +8502,46 @@
 
 1416078043 c:\whitecat_xplatform_christoph\src\gestionaire_fenetres2.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\gui_boutons_rebuild1.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\gui_boutons_rebuild1.cpp
 
-1416804985 c:\whitecat_xplatform_christoph\src\grider_core8.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\grider_core8.cpp
 
 1408381331 c:\whitecat_xplatform_christoph\src\wizard_operations.cpp
 
-1408381330 c:\whitecat_xplatform_christoph\src\faders_operations.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\faders_operations.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\chasers_core_5.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\chasers_core_5.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\mover_spline6.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\mover_2013.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\mover_2013.cpp
 
-1416809309 c:\whitecat_xplatform_christoph\src\plot_core9.cpp
+1417291928 c:\whitecat_xplatform_christoph\src\plot_core9.cpp
 
-1416809047 c:\whitecat_xplatform_christoph\src\plot9.cpp
+1417287864 c:\whitecat_xplatform_christoph\src\plot9.cpp
 
-1417040263 c:\whitecat_xplatform_christoph\src\audio_core5.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\audio_core5.cpp
 
-1416080645 c:\whitecat_xplatform_christoph\src\save_show_13.cpp
+1417285606 c:\whitecat_xplatform_christoph\src\save_show_13.cpp
 
 1409943205 c:\whitecat_xplatform_christoph\src\network_artnet_3.cpp
 	<winsock2.h>
 
-1416806339 c:\whitecat_xplatform_christoph\src\logicals_intres.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\logicals_intres.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\channels_9_core.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\channels_9_core.cpp
 	<allegro.h>
 	<OpenLayer.hpp>
 
 1417040263 c:\whitecat_xplatform_christoph\src\wizard.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\grand_master.cpp
+1417265933 c:\whitecat_xplatform_christoph\src\grand_master.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\faders_core_24.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\faders_core_24.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\audio_visu4.cpp
 
-1408381330 c:\whitecat_xplatform_christoph\src\icat_core14.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\icat_core14.cpp
 
 1396638948 c:\whitecat_xplatform_christoph\src\arduino_device_core.cpp
 	"serial.cpp"
@@ -8550,7 +8551,7 @@
 
 1393698838 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\cserial\serial.h
 
-1416806339 c:\whitecat_xplatform_christoph\src\banger_core_8.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\banger_core_8.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\banger_visu_8.cpp
 
@@ -8560,7 +8561,7 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\patch_visu.cpp
 
-1416804986 c:\whitecat_xplatform_christoph\src\time_core_3.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\time_core_3.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\time_visu_3.cpp
 
@@ -8572,12 +8573,12 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\numpad_visuel.cpp
 
-1416078043 c:\whitecat_xplatform_christoph\src\keyboard_functions2.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\keyboard_functions2.cpp
 
-1416804986 c:\whitecat_xplatform_christoph\src\keyboard_routines2.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\keyboard_routines2.cpp
 	<allegro.h>
 
-1416804986 c:\whitecat_xplatform_christoph\src\minifaders_core.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\minifaders_core.cpp
 
 1416806339 c:\whitecat_xplatform_christoph\src\minifaders_visu.cpp
 
@@ -8679,11 +8680,11 @@
 
 1408381330 c:\whitecat_xplatform_christoph\src\list_proj_visu.cpp
 
-1416804985 c:\whitecat_xplatform_christoph\src\sequentiel_6_core.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\sequentiel_6_core.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\icat14.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\icat14.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\network_mac_adress_3.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\network_mac_adress_3.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\midi_launchpad.cpp
 
@@ -8691,13 +8692,13 @@
 
 1408381330 c:\whitecat_xplatform_christoph\src\sequentiel_7_visu.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\draw3.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\draw3.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\echo3.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\echo3.cpp
 
 1416806339 c:\whitecat_xplatform_christoph\src\my_window_file_sample.cpp
 
-1417026201 c:\whitecat_xplatform_christoph\src\procs_visuels_rebuild1.cpp
+1417293048 c:\whitecat_xplatform_christoph\src\procs_visuels_rebuild1.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
@@ -8724,7 +8725,7 @@
 
 1393698848 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\dashard\_dashard.h
 
-1416806339 c:\whitecat_xplatform_christoph\src\midi_13.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\midi_13.cpp
 
 1416806339 c:\whitecat_xplatform_christoph\src\cfg_screen.cpp
 
@@ -8732,9 +8733,9 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\arduino_6_uno.cpp
 
-1416806339 c:\whitecat_xplatform_christoph\src\cfg_config_panel_8.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\cfg_config_panel_8.cpp
 
 1416806339 c:\whitecat_xplatform_christoph\src\chasers_visu.cpp
 
-1416685391 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
+1417284883 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
 

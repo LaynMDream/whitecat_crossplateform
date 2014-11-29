@@ -235,7 +235,7 @@ if(mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()   )
 {
 int nu=atoi(numeric);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 if(nu>=0 && nu<=15)
 {
 select_artnet_to_listen=nu;

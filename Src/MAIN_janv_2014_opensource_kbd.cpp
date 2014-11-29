@@ -563,7 +563,7 @@ index_enable_edit_banger=1;
 index_edit_audio=1;
 index_enable_edit_chaser=1;
 index_enable_edit_Grider=1;
-index_edit_light_plot=1;
+light_plot_edit_mode_enable=1;
 index_enable_edit_Draw=1;
 index_enable_edit_echo=1;
 }
@@ -587,19 +587,23 @@ int ticker_full_loop_rate = BPS_TO_TIMER(10000);
 void ticker_full_loop()
 {
 
+//sab 28/11/2014 deb
+whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
+//sab 28/11/2014 fin
+
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
     if ((key[KEY_LCONTROL]))
     {
 		/* 1ère signature de la fonction :
 		- niveau géré avec une variable (float)
 		*/
-		test_level_i = whc_wheel::c_leveIncrease(mouseScroll, test_level_f, 100., 0., 1000.);
+		test_level_i = whc_wheel::c_levelSpeedupIncrease(mouseScroll, test_level_f, 100., 0., 1000.);
 
 		/* 2de signature de la fonction :
 		- niveau géré avec une variable (int)
 		- besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
 		*/
-		whc_wheel::c_leveIncrease(mouseRoll, test_level_i, 256, -255, test_loop, 1000);
+		whc_wheel::c_levelSpeedupIncrease(mouseRoll, test_level_i, 256, -255, 1000);
     }
     else
     {
@@ -753,9 +757,9 @@ void ticker_full_loop()
 			debug_test = 9;
 			debugLoopLog[8].tag =  " Test 9 >" ;
 			debugLoopLog[8].entry = 9 ;
-			//debugLoopLog[5].data = fmt_debugTest5 % (plot_editing_color_background? "Yes":"No") % mouseWheel.yield % Color_plotfill ;
+			//debugLoopLog[5].data = fmt_debugTest5 % (editing_plot_background_window_color_backgrd? "Yes":"No") % mouseWheel.yield % Color_plotfill ;
 			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest5, (plot_editing_color_background? "Yes":"No"), mouseScroll.yield(), Color_plotfill) ;
+			sprintf(tmp, fmt_debugTest5, (editing_plot_background_window_color_backgrd? "Yes":"No"), mouseScroll.yield(), Color_plotfill) ;
 			debugLoopLog[8].data = std::string(tmp);
 		}
 		catch ( const std::exception & e )
@@ -859,7 +863,7 @@ void ticker_full_loop()
         }
     }
 	//sab 28/06/2014 DEB -
-	if (not(mouseScroll.gain()==0))
+	if (mouseScroll.isToBeProcessed() or mouseRoll.isToBeProcessed()) /*(not(mouseScroll.gain()==0))*/
     {
 		mouseWheel_graphics_handle();
     }
@@ -1097,15 +1101,37 @@ int main_actions_on_screen()
       /*sab 18/08/2014 DEB - Draw mouse only when over the application window
       DoMouse();
       */
-       /*if (mouse_on_screen()) DoMouse();*/
+{
+
+		int fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
+    	int fader_y = YFader;
+
+		int fader_leftGM_x  = fader_x -  140 ;
+    	int fader_rightGM_x = fader_x + 8786 ;
+
+	   if ( editing_plot_background_grid_alpha ||
+			editing_plot_background_pic_alpha ||
+			editing_plot_blackground_pic_rotation ||
+			editing_plot_background_window_width ||
+			editing_plot_background_window_heigth||
+			( mousePtr.isOverRecSize(1050, 50, 40, 255) && (window_focus_id==W_MAINBOARD)) || // ~ grand_master(1050, 55, 40)
+			( ( mousePtr.isOverRecSize(fader_leftGM_x, YFader, 40, 255) ||
+				mousePtr.isOverRecSize(fader_rightGM_x, YFader, 40, 255) )
+					&& window_focus_id==W_FADERS)  //
+			)
+	   {
+			mousePtr.SetLook(whc_pointer::arrow_wheel);
+		}
+		else {mousePtr.SetLook(whc_pointer::arrow);}
+
        if (mouse_on_screen())
 	   {
-			if (mousepointer.loaded)
+			if (not mousePtr.Draw())   //si les images ne sont pas chargées, on dessine la souris
 			{
-				mousepointer.bmp.Blit(mouse_x, mouse_y);
+				DoMouse();
 			}
-			else DoMouse();
 	   }
+}
       /*sab 18/08/2014 FIN */
       previous_ch_selected=last_ch_selected;
  return(0);
@@ -1323,11 +1349,8 @@ if (hwnd != NULL)
       }
 
 /*sab 28/11/2014 deb */
-    mousepointer.loaded = mousepointer.bmp.Load( "gfx/arrow.png" );
- /*   if (not mousepointer.loaded )
-    {
-        allegro_message( "Missing gfx/arrow.png" );
-    }
+	whc_pointer::c_Init(whc_pointer::arrow,"gfx/arrow.png");
+	whc_pointer::c_Init(whc_pointer::arrow_wheel,"gfx/arrow_wheel.png");
 /*sab 28/11/2014 fin */
 
     Canvas::Fill(CouleurFond);

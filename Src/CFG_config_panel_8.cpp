@@ -185,7 +185,7 @@ break;
 if(window_focus_id==920 && mouse_x>x_cfg_sc+120 && mouse_x<x_cfg_sc+120+50 && mouse_y>y_cfg_sc+60+(l*30) && mouse_y<y_cfg_sc+60+(l*30)+25)
 {
 Param.DrawOutline(CouleurLigne);
-if(mouse_b&1 && mouseClicLeft.isToBeProcessed()  &&  numeric_postext>0)
+if(mouse_b&1 && mouseClicLeft.isToBeProcessed()  &&  keyboardStorage_numeric_postext>0)
 {
 def_param=atoi(numeric);
 if(def_param<=def_param_max && def_param>=def_param_min)
@@ -315,7 +315,7 @@ break;
 if(window_focus_id==920 && mouse_x>x_cfg_sc+470 && mouse_x<x_cfg_sc+470+50 && mouse_y>y_cfg_sc+60+(l*30) && mouse_y<y_cfg_sc+60+(l*30)+25)
 {
 BCParam.DrawOutline(CouleurLevel);
-if(mouse_b&1 && mouseClicLeft.isToBeProcessed()  &&  numeric_postext>0)
+if(mouse_b&1 && mouseClicLeft.isToBeProcessed()  &&  keyboardStorage_numeric_postext>0)
 {
 def_param=atoi(numeric);
 switch(l)
@@ -1093,7 +1093,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+230 && mouse_x<cfgdmx_X+300 )
    {
    Univers=atoi(numeric);  if(Univers>15){Univers=15;}
    reset_numeric_entry();
-   numeric_postext=0;
+   keyboardStorage_numeric_postext=0;
 
    mouseClicLeft.SetProcessed();
    }
@@ -1107,7 +1107,7 @@ if(window_focus_id==W_CFGMENU && mouse_x>cfgdmx_X+320 && mouse_x<cfgdmx_X+490 )
    if( mouse_y>(cfgdmx_Y+60) && mouse_y< (cfgdmx_Y+80) && myDMXinterfaceis==1) //artnet
    {
    ArtNetSendAdress.DrawOutline(CouleurLigne.WithAlpha(0.7));
-   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed()  && numeric_postext>0)
+   if(mouseClicLeft.isDown() &&  mouseClicLeft.isToBeProcessed()  && keyboardStorage_numeric_postext>0)
    {
    Close_dmx_interface();
    sprintf(ip_artnet,numeric);

@@ -475,7 +475,7 @@ sprintf(string_Last_Order,">> Cleared Chaser %d",numchaser+1);
 int DoDockChaserTrack(int numchaser, int numtrack)
 {
 
- if(numeric_postext==0)//si pas de chaine de caracteres tapés
+ if(keyboardStorage_numeric_postext==0)//si pas de chaine de caracteres tapés
  {
  TrackTypeIs[numchaser][numtrack]=0;//le type est 0, circuits normaux
  if(index_blind==0)
@@ -501,7 +501,7 @@ int DoDockChaserTrack(int numchaser, int numtrack)
  sprintf(string_Last_Order,">>n Preset Stored in Chaser %d Track %d",numchaser+1, numtrack+1);
  }
  }
- else if (numeric_postext>0)
+ else if (keyboardStorage_numeric_postext>0)
  {
  int mem_to_load_in_chaser= (int)(atof(numeric)*10.0001);
  if(MemoiresExistantes[mem_to_load_in_chaser]==1)

@@ -44,8 +44,8 @@ WWWWWWWW           C  WWWWWWWW   |
 int reset_numeric_entry()
 {
     sprintf(numeric,"                        ");
-    numeric_postext=0;
-    numeric[numeric_postext]='\0';
+    keyboardStorage_numeric_postext=0;
+    numeric[keyboardStorage_numeric_postext]='\0';
     return(0);
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -1593,7 +1593,7 @@ int constrain_banger_param(int lp)
             }
             string_alarm[index_banger_selected][24]='\0';
             reset_numeric_entry();
-            numeric_postext=0;
+            keyboardStorage_numeric_postext=0;
             sprintf(string_Last_Order,">>GIVED NAME ALARM FOR BANGER %d ",index_banger_selected+1);
         }
         break;
@@ -1882,7 +1882,7 @@ int Get_channels_from_memory(int the_mem)
     }
 //sab 02/03/2014 sprintf(numeric,"");
     strcpy(numeric,"");
-    numeric_postext=0;
+    keyboardStorage_numeric_postext=0;
     sprintf(string_Last_Order,"Got selected channel from %d.%d",the_mem/10,the_mem%10);
     return(0);
 }
@@ -3770,7 +3770,7 @@ int copy_mem_in(int mem_n)//recopie d une memoire dans l autre
 //sab 02/03/2014 sprintf(numeric,"");
     strcpy(numeric,"");
 
-    numeric_postext=0;
+    keyboardStorage_numeric_postext=0;
     return(0);
 }
 
@@ -4709,7 +4709,7 @@ int do_action_on_selected_minifaders(int action)
 
                 else if(index_do_dock==1 && index_main_clear==0 )
                 {
-                    if(numeric_postext>0 )//affectation stop pos par chaine de carcatere
+                    if(keyboardStorage_numeric_postext>0 )//affectation stop pos par chaine de carcatere
                     {
                         int lStopPos=999;
                         switch(dmx_view)
@@ -4730,7 +4730,7 @@ int do_action_on_selected_minifaders(int action)
                             do_light_setpos[cmptfader]=1;
                         }
                     }
-                    else if (numeric_postext==0) //affectation stop pos depuis le cursuer fader
+                    else if (keyboardStorage_numeric_postext==0) //affectation stop pos depuis le cursuer fader
                     {
                         StopPosOn[cmptfader]=1;
                         LevelStopPos[cmptfader]=Fader[cmptfader];
@@ -5122,7 +5122,7 @@ int match_minifaders()
 
 int affect_time_entry_to_mem(int index_t,int mem_set_to_time)
 {
-    if(numeric_postext>0)
+    if(keyboardStorage_numeric_postext>0)
     {
         read_time_string_entry();
         Times_Memoires[mem_set_to_time][index_t]=(time_minutes*60)+time_secondes+(0.01*time_centiemes);
@@ -5547,7 +5547,7 @@ void substract_a_window(int id)
     case W_PLOT:
         index_plot_window=0;
         index_plot_send_to_mode=0;
-        index_editing_theatre_plan=0;
+        editing_plot_background_plan_theatre_pos_size=0;
         break;
     case W_DRAW:
         index_draw_window=0;

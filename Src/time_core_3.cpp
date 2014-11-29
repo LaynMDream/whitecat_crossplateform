@@ -395,7 +395,7 @@ mouseClicLeft.SetProcessed();
 }
 else
 {
-if(numeric_postext==0 && index_window_chasers==1)
+if(keyboardStorage_numeric_postext==0 && index_window_chasers==1)
             {
             set_chaser_tempo_unit(chaser_selected);
             }
@@ -405,7 +405,7 @@ if(numeric_postext==0 && index_window_chasers==1)
             if(chazr>0 && chazr<128)
             {
             set_chaser_tempo_unit(chazr-1);
-            numeric_postext=0;
+            keyboardStorage_numeric_postext=0;
             reset_numeric_entry();
             }
             }

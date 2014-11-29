@@ -258,7 +258,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
         case KEY_F5:
             index_type=toggle(index_type);
             strcpy(numeric,"");
-            numeric_postext=0;
+            keyboardStorage_numeric_postext=0;
             break;
 
         case KEY_F6:
@@ -449,7 +449,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
 
 
         case KEY_TAB:
-            if(numeric_postext>0)
+            if(keyboardStorage_numeric_postext>0)
             {
                 key_thruth();
                 sprintf(string_key_id,list_keyname[10]);
@@ -474,8 +474,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if(index_type==1)
             {
-                numeric[numeric_postext]=' ';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]=' ';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[11]);
             break;
@@ -504,8 +504,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
                 }
                 else  if (index_type==1)
                 {
-                    numeric[numeric_postext]='A';
-                    numeric_postext++;
+                    numeric[keyboardStorage_numeric_postext]='A';
+                    keyboardStorage_numeric_postext++;
                 }
             }
             sprintf(string_key_id,list_keyname[12]);
@@ -517,8 +517,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='B';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='B';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[13]);
             break;
@@ -528,7 +528,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             {
                 if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
                 {
-                    if(numeric_postext==0)
+                    if(keyboardStorage_numeric_postext==0)
                     {
                         channel_copy();
                     }
@@ -555,8 +555,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='C';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='C';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[14]);
             break;
@@ -568,8 +568,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if(index_type==1)
             {
-                numeric[numeric_postext]='D';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='D';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[15]);
             break;
@@ -581,8 +581,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='E';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='E';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[16]);
             break;
@@ -595,8 +595,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
 
             else if (index_type==1)
             {
-                numeric[numeric_postext]='F';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='F';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[17]);
             break;
@@ -604,7 +604,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
         case KEY_G:
             if (index_type==0)
             {
-                if ((key_shifts & KB_CTRL_FLAG || index_false_control==1 ) && numeric_postext>0)
+                if ((key_shifts & KB_CTRL_FLAG || index_false_control==1 ) && keyboardStorage_numeric_postext>0)
                 {
                     //GET CHANNELS FROM A MEMORY
                     int mem_to_take=(int)(atof(numeric)*10);
@@ -624,8 +624,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='G';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='G';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[18]);
             break;
@@ -638,8 +638,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='H';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='H';
+                keyboardStorage_numeric_postext++;
             }
 
             sprintf(string_key_id,list_keyname[19]);
@@ -652,8 +652,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if(index_type==1)
             {
-                numeric[numeric_postext]='I';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='I';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[20]);
             break;
@@ -665,8 +665,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             if (index_type==1)
             {
-                numeric[numeric_postext]='J';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='J';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[21]);
             break;
@@ -678,8 +678,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='K';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='K';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[22]);
             break;
@@ -691,8 +691,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if(index_type==1)
             {
-                numeric[numeric_postext]='L';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='L';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[23]);
             break;
@@ -715,8 +715,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if(index_type==1)
             {
-                numeric[numeric_postext]='M';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='M';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[38]);
             break;
@@ -728,8 +728,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='N';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='N';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[24]);
             break;
@@ -743,8 +743,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='O';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='O';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[25]);
             break;
@@ -777,8 +777,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
                 }
                 else if (index_type==1)
                 {
-                    numeric[numeric_postext]='P';
-                    numeric_postext++;
+                    numeric[keyboardStorage_numeric_postext]='P';
+                    keyboardStorage_numeric_postext++;
                 }
             }
             sprintf(string_key_id,list_keyname[39]);
@@ -791,8 +791,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='Q';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='Q';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[26]);
             break;
@@ -804,8 +804,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if(index_type==1)
             {
-                numeric[numeric_postext]='R';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='R';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[27]);
             break;
@@ -828,8 +828,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='S';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='S';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[28]);
             break;
@@ -841,8 +841,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='T';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='T';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[29]);
             break;
@@ -854,8 +854,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='U';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='U';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[30]);
             break;
@@ -865,7 +865,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             {
                 if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
                 {
-                    if(numeric_postext==0)
+                    if(keyboardStorage_numeric_postext==0)
                     {
                         channel_paste();
                     }
@@ -884,8 +884,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='V';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='V';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[31]);
             break;
@@ -904,8 +904,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='W';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='W';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[32]);
             break;
@@ -925,8 +925,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else  if (index_type==1)
             {
-                numeric[numeric_postext]='X';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='X';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[33]);
             break;
@@ -939,8 +939,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             }
             else if (index_type==1)
             {
-                numeric[numeric_postext]='Y';
-                numeric_postext++;
+                numeric[keyboardStorage_numeric_postext]='Y';
+                keyboardStorage_numeric_postext++;
             }
             sprintf(string_key_id,list_keyname[34]);
             break;
@@ -967,8 +967,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
                 }
                 else if (index_type==1)
                 {
-                    numeric[numeric_postext]='Z';
-                    numeric_postext++;
+                    numeric[keyboardStorage_numeric_postext]='Z';
+                    keyboardStorage_numeric_postext++;
                 }
             }
             sprintf(string_key_id,list_keyname[35]);
@@ -995,110 +995,110 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
 //////////////////////ENTREES NUMERIQUES COMMUNES//////////////////////////////////////////
 
         case KEY_0:
-            numeric[numeric_postext]='0';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='0';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_0_PAD:
-            numeric[numeric_postext]='0';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='0';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_1:
-            numeric[numeric_postext]='1';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='1';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_1_PAD:
-            numeric[numeric_postext]='1';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='1';
+            keyboardStorage_numeric_postext++;
             break;
 
         case KEY_2:
-            numeric[numeric_postext]='2';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='2';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_2_PAD:
-            numeric[numeric_postext]='2';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='2';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_3:
-            numeric[numeric_postext]='3';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='3';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_3_PAD:
-            numeric[numeric_postext]='3';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='3';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_4:
-            numeric[numeric_postext]='4';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='4';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_4_PAD:
-            numeric[numeric_postext]='4';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='4';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_5:
-            numeric[numeric_postext]='5';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='5';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_5_PAD:
-            numeric[numeric_postext]='5';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='5';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_6:
-            numeric[numeric_postext]='6';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='6';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_6_PAD:
-            numeric[numeric_postext]='6';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='6';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_7:
-            numeric[numeric_postext]='7';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='7';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_7_PAD:
-            numeric[numeric_postext]='7';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='7';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_8:
-            numeric[numeric_postext]='8';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='8';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_8_PAD:
-            numeric[numeric_postext]='8';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='8';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_9:
-            numeric[numeric_postext]='9';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='9';
+            keyboardStorage_numeric_postext++;
             break;
         case KEY_9_PAD:
-            numeric[numeric_postext]='9';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='9';
+            keyboardStorage_numeric_postext++;
             break;
 
         case KEY_COMMA:
-            numeric[numeric_postext]='.';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='.';
+            keyboardStorage_numeric_postext++;
             break;
 
         case  KEY_DEL_PAD:
-            numeric[numeric_postext]='.';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='.';
+            keyboardStorage_numeric_postext++;
             break;
 
         case  KEY_M:
-            numeric[numeric_postext]='.';
-            numeric_postext++;
+            numeric[keyboardStorage_numeric_postext]='.';
+            keyboardStorage_numeric_postext++;
             break;
 
 
         case KEY_BACKSPACE:
-            numeric[numeric_postext]=' ';
-            numeric_postext--;
-            numeric[numeric_postext]=' ';
-            if (numeric_postext<0)
+            numeric[keyboardStorage_numeric_postext]=' ';
+            keyboardStorage_numeric_postext--;
+            numeric[keyboardStorage_numeric_postext]=' ';
+            if (keyboardStorage_numeric_postext<0)
             {
-                numeric_postext=0;
+                keyboardStorage_numeric_postext=0;
             }
             break;
 
@@ -1149,15 +1149,15 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
 
 //protections
 
-        if (numeric_postext>maxchar_numeric)
+        if (keyboardStorage_numeric_postext>maxchar_numeric)
         {
-            numeric[numeric_postext]=' ';
-            numeric_postext=maxchar_numeric-1;
+            numeric[keyboardStorage_numeric_postext]=' ';
+            keyboardStorage_numeric_postext=maxchar_numeric-1;
         }
 
-        if (numeric_postext<0)
+        if (keyboardStorage_numeric_postext<0)
         {
-            numeric_postext=0;
+            keyboardStorage_numeric_postext=0;
         }
 
 

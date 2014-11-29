@@ -230,7 +230,7 @@ int DoDock(int fad, int dk)
 {
  ClearDock(fad,dk);
 
- if(numeric_postext==0)//si pas de chaine de caracteres tapés
+ if(keyboardStorage_numeric_postext==0)//si pas de chaine de caracteres tapés
  {
  DockTypeIs[fad][dk]=0;//le type est 0, circuits normaux
  if(index_blind==0)
@@ -260,7 +260,7 @@ int DoDock(int fad, int dk)
  sprintf(string_Last_Order,">>n Preset Stored in F %d Dock %d",fad+1, dk);
  }
  }
- else if (numeric_postext>0)
+ else if (keyboardStorage_numeric_postext>0)
  {
  int mem_to_load_in_dock= (int)(atof(numeric)*10.0001);
  if(MemoiresExistantes[mem_to_load_in_dock]==1)
@@ -507,11 +507,11 @@ return(0);
 
 int do_direct_channel(int fad,int dk)
 {
-if(numeric_postext>0)
+if(keyboardStorage_numeric_postext>0)
 {
 last_ch_selected=atoi(numeric);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 }
 
 if(last_ch_selected>0 && last_ch_selected<513)

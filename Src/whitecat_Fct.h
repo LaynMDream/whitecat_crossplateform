@@ -509,7 +509,7 @@ WWWWWWWW           C  WWWWWWWW   |
 //}
 //currently in grand master
 //{
-    int do_logical_grand_master(int,int,int);
+    int do_logical_grand_master(const int&, const int&, const int&);
     int grand_master(int,int);
 //}
 //currently in graphics rebuild

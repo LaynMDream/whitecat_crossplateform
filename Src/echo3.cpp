@@ -262,12 +262,12 @@ mouseClicLeft.SetProcessed();
 
 
 //Set ChanPos
-if( mouse_x>xe+615 && mouse_x<xe+615+40 && mouse_y>ye+65 && mouse_y<ye+65+20 && mouseClicLeft.isToBeProcessed() && dragging_channel_in_echo==0 && numeric_postext>0)
+if( mouse_x>xe+615 && mouse_x<xe+615+40 && mouse_y>ye+65 && mouse_y<ye+65+20 && mouseClicLeft.isToBeProcessed() && dragging_channel_in_echo==0 && keyboardStorage_numeric_postext>0)
  {
  echo_grid_channel_position[echo_selected]=atoi(numeric)-1;
  echo_grid_channel_position[echo_selected]= constrain_int_data_to_this_range(echo_grid_channel_position[echo_selected],0,511-14);
  reset_numeric_entry();
- numeric_postext=0;
+ keyboardStorage_numeric_postext=0;
  mouseClicLeft.SetProcessed();
  }
 
@@ -316,11 +316,11 @@ mouseClicLeft.SetProcessed();
 }
 
 //Fader point to
-if( mouse_x>xe+70 && mouse_x<xe+70+45 && mouse_y>ye+200 && mouse_y<ye+200+35 && mouseClicLeft.isToBeProcessed() && numeric_postext>0)
+if( mouse_x>xe+70 && mouse_x<xe+70+45 && mouse_y>ye+200 && mouse_y<ye+200+35 && mouseClicLeft.isToBeProcessed() && keyboardStorage_numeric_postext>0)
 {
 echo_pointing_fader_num[echo_selected]=constrain_int_data_to_this_range(atoi(numeric),1,48);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 mouseClicLeft.SetProcessed();
 }
 

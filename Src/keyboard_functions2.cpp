@@ -533,7 +533,7 @@ int key_affectation()
 {
 if ((key_shifts & KB_SHIFT_FLAG  || index_false_shift==1) && index_patch_window==1)
 {
-if(numeric_postext>0)//attribution directe
+if(keyboardStorage_numeric_postext>0)//attribution directe
 {
 iddim=atoi(numeric);
 if(iddim<513 && iddim!=0)
@@ -542,7 +542,7 @@ Dimmers_selected[iddim]=1;
 }
 last_dim_selected=iddim;
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 }
 
 for(int i=0;i<513;i++)
@@ -691,9 +691,9 @@ if( iddim>0 &&  iddim<513)
 Dimmers_selected[iddim]=1;
 last_dim_selected= iddim;
 strcat(string_monitor_patch,"D.");
-strncat(string_monitor_patch,numeric,numeric_postext);
+strncat(string_monitor_patch,numeric,keyboardStorage_numeric_postext);
 strcat(string_monitor_patch,"+");
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 set_patch_scroll( iddim);
 }
@@ -721,7 +721,7 @@ if(check_presence_of_a_channel_in_views(idchannel)==1)
 {
 Selected_Channel[idchannel]=1;
 last_ch_selected=idchannel;
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 set_channel_scroll(last_ch_selected);
 add_channel_selection_to_layers_plot();
@@ -729,14 +729,14 @@ add_channel_selection_to_layers_plot();
 else if(check_presence_of_a_channel_in_views(idchannel)==0)
 {
 sprintf(string_Last_Order,"This Channel is not in an activ View");
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 }
 break;
 case 1:
 Selected_Channel[idchannel]=1;
 last_ch_selected=idchannel;
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 set_channel_scroll(last_ch_selected);
 add_channel_selection_to_layers_plot();
@@ -760,9 +760,9 @@ if(iddim>0 && iddim<513)
 {
 Dimmers_selected[iddim]=0;
 strcat(string_monitor_patch,"D.");
-strncat(string_monitor_patch,numeric,numeric_postext);
+strncat(string_monitor_patch,numeric,keyboardStorage_numeric_postext);
 strcat(string_monitor_patch,"-");
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 set_patch_scroll(iddim);
 }
@@ -780,7 +780,7 @@ if(check_presence_of_a_channel_in_views(idchannel)==1)
 {
 Selected_Channel[idchannel]=0;
 //last_ch_selected=idchannel;
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 set_channel_scroll(last_ch_selected);
 substract_channel_selection_to_layers_plot();
@@ -788,14 +788,14 @@ substract_channel_selection_to_layers_plot();
 else if(check_presence_of_a_channel_in_views(idchannel)==0)
 {
 sprintf(string_Last_Order,"This Channel is not in an activ View");
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 }
 break;
 case 1:
 Selected_Channel[idchannel]=0;
 //last_ch_selected=idchannel;
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 set_channel_scroll(last_ch_selected);
 substract_channel_selection_to_layers_plot();
@@ -1092,9 +1092,9 @@ int key_thruth()
             {
             strcat(string_monitor_patch," TO ");
             strcat(string_monitor_patch,"D.");
-            strncat(string_monitor_patch,numeric,numeric_postext);
+            strncat(string_monitor_patch,numeric,keyboardStorage_numeric_postext);
             strcat(string_monitor_patch," ");
-            numeric_postext=0;
+            keyboardStorage_numeric_postext=0;
             reset_numeric_entry();
             }
             }
@@ -1114,13 +1114,13 @@ int key_thruth()
            {
            Selected_Channel[idchannel]=1;
            last_ch_selected=idchannel;
-           numeric_postext=0;
+           keyboardStorage_numeric_postext=0;
            reset_numeric_entry();
            }
            else if(check_presence_of_a_channel_in_views(idchannel)==0)
            {
            sprintf(string_Last_Order,"This Channel is not in an activ View");
-           numeric_postext=0;
+           keyboardStorage_numeric_postext=0;
            reset_numeric_entry();
            }
 
@@ -1138,7 +1138,7 @@ int key_thruth()
 
            Selected_Channel[idchannel]=1;
            last_ch_selected=idchannel;
-           numeric_postext=0;
+           keyboardStorage_numeric_postext=0;
            reset_numeric_entry();
 
             if(previous_ch_selected<last_ch_selected)
@@ -1221,7 +1221,7 @@ int key_time_in()
            if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
            {
             // delay IN
-             if(numeric_postext==0)
+             if(keyboardStorage_numeric_postext==0)
              {
              if(index_type_of_time_to_affect[0]==0){index_type_of_time_to_affect[0]=1;}
              else if(index_type_of_time_to_affect[0]==1){index_type_of_time_to_affect[0]=0;}
@@ -1231,7 +1231,7 @@ int key_time_in()
            }
            else {
             // IN
-            if(numeric_postext==0)
+            if(keyboardStorage_numeric_postext==0)
            {
             if(index_type_of_time_to_affect[1]==0){index_type_of_time_to_affect[1]=1;}
             else if(index_type_of_time_to_affect[1]==1){index_type_of_time_to_affect[1]=0;}
@@ -1247,7 +1247,7 @@ int key_time_out()
  if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
            {
              //delay OUT
-           if(numeric_postext==0)
+           if(keyboardStorage_numeric_postext==0)
            {
            if(index_type_of_time_to_affect[2]==0){index_type_of_time_to_affect[2]=1;}
            else if(index_type_of_time_to_affect[2]==1){index_type_of_time_to_affect[2]=0;}
@@ -1259,7 +1259,7 @@ int key_time_out()
            else
            {
            //OUT
-            if(numeric_postext==0)
+            if(keyboardStorage_numeric_postext==0)
            {
            if(index_type_of_time_to_affect[3]==0){index_type_of_time_to_affect[3]=1;}
            else if(index_type_of_time_to_affect[3]==1){index_type_of_time_to_affect[3]=0;}
@@ -1276,7 +1276,7 @@ int key_time_in_out()
            if (key_shifts & KB_SHIFT_FLAG || index_false_shift==1)
            {
             //IN OUT SEL
-             if(numeric_postext==0)
+             if(keyboardStorage_numeric_postext==0)
            {
            if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )
            {index_type_of_time_to_affect[0]=1; index_type_of_time_to_affect[2]=1; }
@@ -1293,7 +1293,7 @@ int key_time_in_out()
            {
            //IN OUT SEL
 
-            if(numeric_postext==0)
+            if(keyboardStorage_numeric_postext==0)
             {
             if(index_type_of_time_to_affect[1]==0 || index_type_of_time_to_affect[3]==0 )
             {index_type_of_time_to_affect[1]=1; index_type_of_time_to_affect[3]=1; }

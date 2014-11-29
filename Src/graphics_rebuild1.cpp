@@ -433,13 +433,13 @@ int Boxes()
 
 
 //over windows if text
-    if(numeric_postext>0 || index_type==1)
+    if(keyboardStorage_numeric_postext>0 || index_type==1)
     {
         Rect nameAera( Vec2D( 670, 27), Vec2D ( 380,40));
         nameAera.SetRoundness(15);
         nameAera.SetLineWidth(triple_epaisseur_ligne_fader);
         nameAera.Draw(CouleurFader.WithAlpha(index_type));
-        Rect UnderText(Vec2D(670,32),Vec2D((numeric_postext*14)+50,30));
+        Rect UnderText(Vec2D(670,32),Vec2D((keyboardStorage_numeric_postext*14)+50,30));
         UnderText.SetRoundness(7.5);
         UnderText.Draw(CouleurFond);
         UnderText.Draw(CouleurLigne.WithAlpha(0.1));

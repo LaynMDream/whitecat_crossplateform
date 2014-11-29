@@ -1128,7 +1128,7 @@ mouseClicLeft.SetProcessed();
 }
 else
 {
-if(numeric_postext==0)
+if(keyboardStorage_numeric_postext==0)
 {
 audiofile_selected=player_has_file_coming_from_pos[numero]+1;
 if(audiofile_selected>=127){audiofile_selected=126;}
@@ -1138,7 +1138,7 @@ if(strcmp (audiofile_name,"")!=0)
 AffectSoundFile(numero);
 }
 }
-else if(numeric_postext>0)
+else if(keyboardStorage_numeric_postext>0)
 {
 int nu=atoi(numeric);
 if(nu<127  && nu>0)
@@ -1149,7 +1149,7 @@ if(strcmp (audiofile_name,"")!=0)
 {
 AffectSoundFile(numero);
 }
-reset_numeric_entry();numeric_postext=0;
+reset_numeric_entry();keyboardStorage_numeric_postext=0;
 }
 }
 }

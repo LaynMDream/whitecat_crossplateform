@@ -782,17 +782,17 @@ if(window_focus_id==W_DRAW  && mouseClicLeft.isToBeProcessed()  && mouse_x>= xw+
 {
 draw_get_gpl[draw_preset_selected]=constrain_int_data_to_this_range(atoi(numeric),1,4);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 mouseClicLeft.SetProcessed();
 }
 
 
 //offset de GPL
-if(window_focus_id==W_DRAW  && mouseClicLeft.isToBeProcessed()   && index_enable_edit_Draw==1  && mouse_x>= xw+550 && mouse_x<=xw+550+35 && mouse_y>yw+578 && mouse_y<yw+578+18 && numeric_postext>0)
+if(window_focus_id==W_DRAW  && mouseClicLeft.isToBeProcessed()   && index_enable_edit_Draw==1  && mouse_x>= xw+550 && mouse_x<=xw+550+35 && mouse_y>yw+578 && mouse_y<yw+578+18 && keyboardStorage_numeric_postext>0)
 {
 draw_offset_gpl[draw_preset_selected]= constrain_int_data_to_this_range(atoi(numeric),1,512);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 mouseClicLeft.SetProcessed();
 }
 

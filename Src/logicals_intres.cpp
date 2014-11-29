@@ -48,11 +48,11 @@ int entetes_confirmation()
  if(index_do_delete_mem==1)
  {
    int mem_to_delete=0;
-   if(numeric_postext>0)
+   if(keyboardStorage_numeric_postext>0)
    {
    mem_to_delete=(int)(atof(numeric)*10.0001);
    }
-   else if(numeric_postext==0)
+   else if(keyboardStorage_numeric_postext==0)
    {
    switch(index_blind)
    {
@@ -70,7 +70,7 @@ int entetes_confirmation()
  else if(index_do_create_mem==1)
  {
  int mem_to_create=0;
- if(numeric_postext>0)
+ if(keyboardStorage_numeric_postext>0)
    {
    mem_to_create=(int)(atof(numeric)*10.0001);
    }
@@ -89,7 +89,7 @@ int entetes_confirmation()
 
  if(MemoiresExistantes[mem_to_create]==0)
  {
- if(numeric_postext>0)
+ if(keyboardStorage_numeric_postext>0)
    {
  sprintf(string_confirmation,"Create Mem %d.%d ?", mem_to_create/10,mem_to_create%10);
    }
@@ -106,7 +106,7 @@ int entetes_confirmation()
  else if(index_do_create_mem_plus_faders==1)
  {
  int mem_to_create=0;
- if(numeric_postext>0)
+ if(keyboardStorage_numeric_postext>0)
    {
    mem_to_create=(int)(atof(numeric)*10.0001);
    }
@@ -123,7 +123,7 @@ int entetes_confirmation()
  }
  if(MemoiresExistantes[mem_to_create]==0)
  {
-  if(numeric_postext>0)
+  if(keyboardStorage_numeric_postext>0)
    {
  sprintf(string_confirmation,"Create Mem %d.%d ?", mem_to_create/10,mem_to_create%10);
     }
@@ -207,11 +207,11 @@ else if(index_copy_mem_in==1)//CTRL c v avec num de mem
  }
  else if(index_do_record_on_faders==1)
  {
- if (numeric_postext==0)
+ if (keyboardStorage_numeric_postext==0)
  {
  sprintf(string_confirmation,"Record in Fader %d Dock %d ?", (fader_selected_for_record+1),(dock_selected_for_record+1) );
  }
- else if(numeric_postext>0 )
+ else if(keyboardStorage_numeric_postext>0 )
  {
   int mem_to_load= (int)(atof(numeric)*10.0001);
   sprintf(string_confirmation,"Store in Fader %d Dock %d Mem %d.%d ?", (fader_selected_for_record+1),(dock_selected_for_record+1),mem_to_load/10,mem_to_load%10 );
@@ -796,11 +796,11 @@ int operations_confirmation()
    if(index_do_delete_mem==1)
    {
    int mem_to_delete=0;
-   if(numeric_postext>0)
+   if(keyboardStorage_numeric_postext>0)
    {
    mem_to_delete=(int)(atof(numeric)*10.0001);
    }
-   else if(numeric_postext==0)
+   else if(keyboardStorage_numeric_postext==0)
    {
    switch(index_blind)
    {
@@ -818,7 +818,7 @@ int operations_confirmation()
    else if(index_do_create_mem==1)
    {
    int mem_to_rec=0;
-   if(numeric_postext>0)
+   if(keyboardStorage_numeric_postext>0)
    {
    mem_to_rec=(int)(atof(numeric)*10.0001);
    }
@@ -839,7 +839,7 @@ int operations_confirmation()
    else if(index_do_create_mem_plus_faders==1)
    {
    int mem_to_rec=0;
-   if(numeric_postext>0)
+   if(keyboardStorage_numeric_postext>0)
    {
    mem_to_rec=(int)(atof(numeric)*10.0001);
    }
@@ -864,7 +864,7 @@ int operations_confirmation()
     {
      copy_mem_in(mem_to_rec);
      strcpy(numeric,"");
-     numeric_postext=0;
+     keyboardStorage_numeric_postext=0;
     }
     refresh_mem_onpreset(position_preset);someone_changed_in_sequences=1;//icat
    }

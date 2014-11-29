@@ -140,7 +140,7 @@ int detection_over_window()
                 }
                 break;
             case W_PLOT:
-                if(mouse_x>=x_plot && mouse_x<=x_plot+plot_window_x_size && mouse_y>=y_plot && mouse_y<=y_plot+plot_window_y_size )
+                if(mouse_x>=x_plot && mouse_x<=x_plot+plot_window_width && mouse_y>=y_plot && mouse_y<=y_plot+plot_window_height )
                 {
                     window_is=window_opened[i];
                     stop_detect=1;
@@ -569,8 +569,13 @@ int logical_channelspace()
 //sab 28/06/2014 DEB
 void mouseWheel_graphics_handle()
 {
+	int fader_x, fader_y, fader_spacing, fader_quantity, fader_gm_width, fader_leftGM_x, fader_rightGM_x;
+
     switch(window_focus_id)
     {
+	case W_MAINBOARD:
+		do_logical_grand_master(1050, 55, 40);
+		break;
     case W_SAVEREPORT:
 
         break;
@@ -588,6 +593,18 @@ void mouseWheel_graphics_handle()
         break;
     case W_FADERS :
 
+    	fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
+    	fader_y = YFader;
+
+    	fader_spacing = 182 ; //int(150+((190-150)*size_faders));
+    	fader_quantity = 48;
+    	fader_gm_width = 40 ; //(int(50*size_faders));
+
+		fader_leftGM_x = fader_x-140 ;
+    	fader_rightGM_x = fader_x+(fader_quantity*fader_spacing)+50;
+
+		do_logical_grand_master(fader_leftGM_x, fader_y, fader_gm_width);//x y largeur
+		do_logical_grand_master(fader_rightGM_x, fader_y, fader_gm_width);//x y largeur
         break;
     case W_PATCH:
 

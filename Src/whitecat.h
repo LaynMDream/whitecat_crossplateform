@@ -75,6 +75,7 @@ char kbd_custom[256][2];
 /////////////////////////////////////////////////////////////////////////////////
 enum WINDOW
 {
+	W_MAINBOARD=0,
 W_SAVEREPORT=900,
 W_DRAW=901,
 W_TRICHROMY=902,
@@ -120,16 +121,6 @@ int largeur_ecran=1280;
 int hauteur_ecran=800;
 int visu_performances[32];
 ol::Bitmap logo;
-
-/*sab 28/11/2014 deb */
-typedef struct {
-bool loaded;
-ol::Bitmap bmp;
- } olbmp;
-
-olbmp mousepointer = {false};
-/*sab 28/11/2014 fin */
-
 float myalpha=0.0;
 float myalphachan=0.0;
 float angle_souris=0.0,transparence_souris=1.0;
@@ -407,7 +398,7 @@ bool index_copy_mem_in=0;//ask confirm
 //////////////////////TEXT ENTRY////////////////////////////////////////////////
 char string_numeric_entry[36];
 
-int numeric_postext=0;
+int keyboardStorage_numeric_postext=0;
 float numeric_entry=0.0;
 char numeric[25];
 int maxchar_numeric=24;
@@ -1906,7 +1897,7 @@ int iCat_affectation_string_type_is[8][24];//type string: feedback / sequenciel 
 int iCat_affectation_string_action_is[8][24];//
 int iCat_affectation_string_value_is[8][24];//affectations valeurs sequeciels strings
 
-int previous_numeric_postext=0;//pour rafraichissement string icat
+int previous_keyboardStorage_numeric_postext=0;//pour rafraichissement string icat
 int previous_last_ch_selected=0;
 int previous_last_dim_selected=0;
 char previous_string_Last_Order[256];
@@ -2104,16 +2095,18 @@ int chan_to_manipulate=0;
 bool index_plot_window=0;
 int x_plot=100;
 int y_plot=100;
-int plot_window_x_size=1024;
-int plot_window_y_size=750;
-int plot_minimum_y_size=570;
+int plot_window_width=1024;
+int plot_window_width_minimum=840;
+int plot_window_height=750;
+int plot_window_height_minimum=700;
+
 int plot_nbre_col=10;//nbre colones plot bckgrd recalcule tt le temps
 int plot_nbre_lin=10;
 int plot_quadrillage_size=50;
 int position_plan_x=230;//plan dessin
 int position_plan_y=50;//plan dessin
 bool index_edit_symbol_plot=0;
-bool index_edit_light_plot=1;
+bool light_plot_edit_mode_enable=1;
 
 
 int index_menus_lighting_plot=0;//0 bckgs 1 shape 2 symbol 3 legend 4 working space
@@ -2208,20 +2201,12 @@ int taille_relative_plan_theatre[2];
 
 float orientation_plan_theatre;
 
-//sab 29/09/2014 lot 3 int old_position_relative_plan_theatre[2];
-//sab 29/09/2014 lot 3 int old_taille_relative_plan_theatre[2];
-
-
-bool index_editing_theatre_plan=0;
 int original_posx=0;
 int original_posy=0;
-//sab 26/06/2014  int moving_plan_relativ_x=0;
-//sab 26/06/2014  int moving_plan_relativ_y=0;
 
-int editing_plan_data_type=0;          // id of a graphical object : plot - background - plan button n° (position x,y &size x,y)
-/*sab 29/06/2014 lot 3 deb */
-int editing_plan_data_type_double=0;   // id of a graphical object - same as prévious / mangement of double clic on graphical object
-/*sab 29/06/2014 lot 3 fin */
+bool editing_plot_background_plan_theatre_pos_size=0;
+int editing_plot_background_plan_data_type=0;          // id of a graphical object : plot - background - plan button n° (position x,y &size x,y)
+
 
 char Name_of_plane_is[256];
 char list_import_plans[127][256];//menu d affichage des list de plans
@@ -2230,23 +2215,23 @@ int line_importplan=0;
 
 float alpha_plan=1.0;
 //sab 28/06/2014 lot 2 DEB
-bool editing_plot_rotation=false;
-bool editing_plot_alphapic=false;
-bool editing_plot_alphagrid=false;
+bool editing_plot_blackground_pic_rotation=false;
+bool editing_plot_background_pic_alpha=false;
+bool editing_plot_background_grid_alpha=false;
 //sab 28/06/2014 lot 2 FIN
-bool editing_plot_sizey=0;
-bool editing_plot_sizex=0;
+bool editing_plot_background_window_heigth=0;
+bool editing_plot_background_window_width=0;
 int moving_size_relativ_x=0;
 int moving_size_relativ_y=0;
-int old_plot_sizex=0;
-int old_plot_sizey=0;
+
+
 int plot_view_port_x=0;
 int plot_view_port_y=0;
 int previous_plot_view_port_x=0;
 int previous_plot_view_port_y=0;
 bool index_move_plot_view_port=0;
-bool plot_editing_color_background=0;
-bool plot_editing_color_line=0;
+bool editing_plot_background_window_color_backgrd=0;
+bool editing_plot_background_window_color_line=0;
 
 
 

@@ -153,7 +153,7 @@ dock_selected_for_record=detect_dock_used(control) ;
  DockName[fader_selected_for_record][dock_selected_for_record ][tt]=numeric[tt];
  }
  DockName[fader_selected_for_record][dock_selected_for_record ][24]='\0';
- index_type=0; reset_numeric_entry();numeric_postext=0;
+ index_type=0; reset_numeric_entry();keyboardStorage_numeric_postext=0;
  sprintf(string_Last_Order,">>On Master %d GIVED A NAME FOR DOCK %d ",fader_selected_for_record,dock_selected_for_record );
  index_ask_confirm=1;
  }
@@ -1124,7 +1124,7 @@ ActionnateStopOn[control-685]=toggle(ActionnateStopOn[control-685]);mouseClicLef
 
 else if(index_do_dock==1 && index_main_clear==0 )
 {
-if(numeric_postext>0 )//affectation stop pos par chaine de carcatere
+if(keyboardStorage_numeric_postext>0 )//affectation stop pos par chaine de carcatere
 {
 int lStopPos=999;
     switch(dmx_view)
@@ -1144,7 +1144,7 @@ if (lStopPos>=0 && lStopPos<=255)
    do_light_setpos[control-685]=1;
    }
 }
-else if (numeric_postext==0) //affectation stop pos depuis le cursuer fader
+else if (keyboardStorage_numeric_postext==0) //affectation stop pos depuis le cursuer fader
 {
 StopPosOn[control-685]=1;LevelStopPos[control-685]=Fader[control-685];
 index_do_dock=0;
@@ -1303,9 +1303,9 @@ case 746://clear
 break;
 case 747:       //NAME
                index_type=toggle(index_type);
-               //sab 02/03/2014 sprintf(numeric,"");numeric_postext=0;
+               //sab 02/03/2014 sprintf(numeric,"");keyboardStorage_numeric_postext=0;
                strcpy(numeric,"");
-               numeric_postext=0;
+               keyboardStorage_numeric_postext=0;
 break;
 case 748://TIME
           if(index_time==0){add_a_window(W_TIME);  }
@@ -2534,7 +2534,7 @@ else sprintf(string_Last_Order,"Tap Tempo Rec Off");
 if (control==1328)//set tap tempo into activ chaser
 {
 
-if(numeric_postext==0 && index_window_chasers==1)
+if(keyboardStorage_numeric_postext==0 && index_window_chasers==1)
             {
             set_chaser_tempo_unit(chaser_selected);
             }
@@ -2544,7 +2544,7 @@ if(numeric_postext==0 && index_window_chasers==1)
             if(chazr>0 && chazr<127)
             {
             set_chaser_tempo_unit(chazr-1);
-            numeric_postext=0;
+            keyboardStorage_numeric_postext=0;
             reset_numeric_entry();
             }
             }
@@ -2887,13 +2887,13 @@ switch(index_menus_lighting_plot)
 case 1://shapes
  shape_selected_type++;
  if(shape_selected_type>max_shape_type){shape_selected_type=0;}
-    if(index_edit_light_plot==1){change_shape_type(shape_selected_type);}
+    if(light_plot_edit_mode_enable==1){change_shape_type(shape_selected_type);}
     refresh_shape_factors(shape_selected_type);
 break;
 case 2://symbols
  symbol_selected_type++;
  if(symbol_selected_type>max_symbol_type){symbol_selected_type=0;}
- if(index_edit_light_plot==1){change_symbol_type(view_plot_calc_number_is,symbol_selected_type);}
+ if(light_plot_edit_mode_enable==1){change_symbol_type(view_plot_calc_number_is,symbol_selected_type);}
 break;
 default:
 break;
@@ -2907,13 +2907,13 @@ switch(index_menus_lighting_plot)
 case 1://shapes
    shape_selected_type--;
    if(shape_selected_type<0){shape_selected_type=max_shape_type;}
-   if(index_edit_light_plot==1){change_shape_type(shape_selected_type);}
+   if(light_plot_edit_mode_enable==1){change_shape_type(shape_selected_type);}
    refresh_shape_factors(shape_selected_type);
 break;
 case 2://symbols
 symbol_selected_type--;
   if(symbol_selected_type<0){symbol_selected_type=max_symbol_type;}
-  if(index_edit_light_plot==1){change_symbol_type(view_plot_calc_number_is,symbol_selected_type);}
+  if(light_plot_edit_mode_enable==1){change_symbol_type(view_plot_calc_number_is,symbol_selected_type);}
 break;
 default:
 break;
@@ -3152,7 +3152,7 @@ ClassicalChannelView=toggle(ClassicalChannelView);
 if(control==1645)//Sequenciel GOTO
 {
 int index_atoi=0;
-if(numeric_postext>0)
+if(keyboardStorage_numeric_postext>0)
 {
 index_atoi=(int)(atof(numeric)*10);
 if(MemoiresExistantes[index_atoi]==1)
@@ -3160,7 +3160,7 @@ if(MemoiresExistantes[index_atoi]==1)
 position_preset=index_atoi;
 refresh_mem_onpreset(position_preset);
 reset_numeric_entry();
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 }
 }
 }
@@ -3980,7 +3980,7 @@ if(fakemidichan>15 || fakemidichan<0)
 fakemidichan=0;
 sprintf(string_Last_Order,"A midi channel is from 0 to 15");
 }
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 mouseClicLeft.SetProcessed();
 }
@@ -3998,7 +3998,7 @@ if(fakemidipitch>127 || fakemidipitch<0)
 fakemidipitch=1;
 sprintf(string_Last_Order,"A midi pitch is from 0 to 127");
 }
-numeric_postext=0;
+keyboardStorage_numeric_postext=0;
 reset_numeric_entry();
 }
 mouseClicLeft.SetProcessed();

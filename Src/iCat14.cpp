@@ -3237,14 +3237,14 @@ switch(iCat_affectation_bouton_action_is[iCatPageis][bt])
       someone_changed_in_sequences=1;
       break;
       case 8://GOTO
-      if(numeric_postext>0)
+      if(keyboardStorage_numeric_postext>0)
       {
       if(MemoiresExistantes[(int)(atof(numeric)*10)]==1)
       {
       position_preset=(int)(atof(numeric)*10);
       refresh_mem_onpreset(position_preset);
       reset_numeric_entry();
-      numeric_postext=0;
+      keyboardStorage_numeric_postext=0;
             reset_button(iCatPageis,bt, tp);
       someone_changed_in_sequences=1;
       }

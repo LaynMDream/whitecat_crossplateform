@@ -366,7 +366,7 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
  {
  sprintf( channel_view_Name[prst_v],numeric);
  reset_numeric_entry();
- numeric_postext=0;
+ keyboardStorage_numeric_postext=0;
  mouseClicLeft.SetProcessed();
  }
  }
