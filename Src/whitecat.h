@@ -2229,7 +2229,7 @@ int plot_view_port_x=0;
 int plot_view_port_y=0;
 int previous_plot_view_port_x=0;
 int previous_plot_view_port_y=0;
-bool index_move_plot_view_port=0;
+bool light_plot_view_port_drag_mode_enable=0;
 bool editing_plot_background_window_color_backgrd=0;
 bool editing_plot_background_window_color_line=0;
 

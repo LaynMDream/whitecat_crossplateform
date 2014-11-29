@@ -58,7 +58,7 @@ public:
     whc_eventclic static c_mouseLastClic ;	//!< Instance variable - mouseLastClic :
     std::vector<whc_eventclic> static c_mouseClicHistory; //!< Instance variable - mouseClicHistory :
     bool static c_IsThisADoubleClic (whc_mousebutton);
-	bool static c_toggle(bool & pushbutton) ;
+    bool static c_toggle(bool & pushbutton) ;
     void static c_CollectEvent (int& mousesignal, volatile int& mouse_x, volatile int& mouse_y, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
 
     /** Default constructor */

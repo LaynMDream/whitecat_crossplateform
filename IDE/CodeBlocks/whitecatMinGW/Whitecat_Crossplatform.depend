@@ -2292,10 +2292,10 @@
 
 1398670212 c:\whitecat_crossplateform\src\arduino_6_uno.cpp
 
-1417280913 source:c:\whitecat_xplatform_christoph\src\whc_mouse.cpp
+1417298037 source:c:\whitecat_xplatform_christoph\src\whc_mouse.cpp
 	"whc_mouse.h"
 
-1417291912 c:\whitecat_xplatform_christoph\src\whc_mouse.h
+1417297922 c:\whitecat_xplatform_christoph\src\whc_mouse.h
 	<allegro/mouse.h>
 	<allegro/keyboard.h>
 	<OpenLayer.hpp>

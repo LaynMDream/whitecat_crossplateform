@@ -4216,7 +4216,7 @@ break;
 
 Rect OverViewPort(Vec2D(plotx+240,ploty-5),Vec2D(120,25));
 OverViewPort.SetRoundness(7.5);
-OverViewPort.Draw(CouleurFader.WithAlpha(index_move_plot_view_port));
+OverViewPort.Draw(CouleurFader.WithAlpha(light_plot_view_port_drag_mode_enable));
 OverViewPort.DrawOutline(CouleurPlotLine.WithAlpha(0.5));
 
 

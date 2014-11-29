@@ -127,7 +127,7 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
         case  KEY_TILDE://carré
             if(window_focus_id==W_PLOT)
             {
-                index_move_plot_view_port=toggle(index_move_plot_view_port);
+                light_plot_view_port_drag_mode_enable=toggle(light_plot_view_port_drag_mode_enable);
             }
             break;
 

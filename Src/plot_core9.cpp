@@ -102,7 +102,7 @@ int right_click_on_plot()
     if(mouseClicRight.isDown() && mouseClicRight.isToBeProcessed())
     {
 
-        if(index_click_inside_plot==0 && index_move_plot_view_port==1    )
+        if(index_click_inside_plot==0 && light_plot_view_port_drag_mode_enable==1    )
         {
             //prise de position
             plot_original_mouse_x=mouse_x;
@@ -111,7 +111,7 @@ int right_click_on_plot()
             previous_plot_view_port_y=plot_view_port_y;
             index_click_inside_plot=1;
         }
-        else if (index_click_inside_plot==1 && index_move_plot_view_port==1 )
+        else if (index_click_inside_plot==1 && light_plot_view_port_drag_mode_enable==1 )
         {
             plot_facteur_move_x=mouse_x-plot_original_mouse_x;
             plot_facteur_move_y=mouse_y-plot_original_mouse_y;
@@ -3406,7 +3406,7 @@ int logical_plot_menu_bare(int plotx,int ploty)
             }
             else
             {
-                index_move_plot_view_port=toggle( index_move_plot_view_port);
+                light_plot_view_port_drag_mode_enable=toggle( light_plot_view_port_drag_mode_enable);
                 mouseClicLeft.SetProcessed();
             }
             mouseClicLeft.SetProcessed();
@@ -4231,7 +4231,7 @@ int do_logical_Plot_window(int plotx, int ploty)
 
 
 
-                if(index_move_plot_view_port==0 &&  light_plot_edit_mode_enable==1)
+                if(light_plot_view_port_drag_mode_enable==0 &&  light_plot_edit_mode_enable==1)
                 {
                     switch(index_menus_lighting_plot)
                     {
@@ -4277,7 +4277,7 @@ int do_logical_Plot_window(int plotx, int ploty)
                         break;
                     }
                 }
-                else if(index_move_plot_view_port==1)
+                else if(light_plot_view_port_drag_mode_enable==1)
                 {
                     plot_view_port_x=previous_plot_view_port_x+plot_facteur_move_x;
                     plot_view_port_y=previous_plot_view_port_y+plot_facteur_move_y;

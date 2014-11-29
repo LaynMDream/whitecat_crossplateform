@@ -433,7 +433,7 @@ void my_callback(int flags) {
         if(window_focus_id==W_PLOT && isMouseOverPlot())
 		/* sab 12/07/2014 FIN */
         {
-            index_move_plot_view_port=1;
+            light_plot_view_port_drag_mode_enable=1;
             reset_symbols_selected(view_plot_calc_number_is);
             unselect_all_shapes();
             key_unselect_ch();
@@ -451,7 +451,7 @@ void my_callback(int flags) {
    else if (flags & MOUSE_FLAG_RIGHT_UP )
 	{
 
-	index_move_plot_view_port=0;
+	light_plot_view_port_drag_mode_enable=0;
 	plot_facteur_move_x=0;plot_facteur_move_y=0;
 	index_click_inside_plot=0;
 	set_mouse_range(0, 0, SCREEN_W-1, SCREEN_H-1);//liberation du curseur souris
@@ -1104,12 +1104,13 @@ int main_actions_on_screen()
 {
 
 		int fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
-    	int fader_y = YFader;
 
 		int fader_leftGM_x  = fader_x -  140 ;
     	int fader_rightGM_x = fader_x + 8786 ;
 
-	   if ( editing_plot_background_grid_alpha ||
+	   if (light_plot_view_port_drag_mode_enable)
+	   {mousePtr.SetLook(whc_pointer::drag);}
+		else if ( editing_plot_background_grid_alpha ||
 			editing_plot_background_pic_alpha ||
 			editing_plot_blackground_pic_rotation ||
 			editing_plot_background_window_width ||
@@ -1351,6 +1352,7 @@ if (hwnd != NULL)
 /*sab 28/11/2014 deb */
 	whc_pointer::c_Init(whc_pointer::arrow,"gfx/arrow.png");
 	whc_pointer::c_Init(whc_pointer::arrow_wheel,"gfx/arrow_wheel.png");
+	whc_pointer::c_Init(whc_pointer::drag,"gfx/drag.png");
 /*sab 28/11/2014 fin */
 
     Canvas::Fill(CouleurFond);

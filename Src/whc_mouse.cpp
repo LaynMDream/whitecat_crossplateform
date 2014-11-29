@@ -33,7 +33,7 @@ whc_button::~whc_button()
 
 bool whc_button::c_toggle(bool & pushbutton)
 {
-	pushbutton = (not pushbutton);
+	return pushbutton = (not pushbutton);
 }
 
 bool whc_button::c_IsThisADoubleClic (whc_mousebutton button)
