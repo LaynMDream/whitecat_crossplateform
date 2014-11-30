@@ -616,7 +616,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 
     if (key[KEY_LCONTROL])
 	{
-		if ((watchDebugLoop1==1) or (watchDebugLoop2==1))
+		if ((test_watchDebugLoop1==1) or (test_watchDebugLoop2==1))
 		{
 			try
 			{
@@ -638,7 +638,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 				AddToEventLog(debugLine);
 			}
 		}
-		if ((watchDebugLoop1==2) or (watchDebugLoop2==2))
+		if ((test_watchDebugLoop1==2) or (test_watchDebugLoop2==2))
 		{
 			try
 			{
@@ -661,7 +661,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 			}
 		}
 	}
-    if ((watchDebugLoop1==3) or (watchDebugLoop2==3))
+    if ((test_watchDebugLoop1==3) or (test_watchDebugLoop2==3))
     {
 		try
 		{
@@ -683,7 +683,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 			AddToEventLog(debugLine);
 		}
     }
-    if ((watchDebugLoop1==6) or (watchDebugLoop2==6))
+    if ((test_watchDebugLoop1==6) or (test_watchDebugLoop2==6))
     {
 		try
 		{
@@ -705,7 +705,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 			AddToEventLog(debugLine);
 		}
     }
-    if ((watchDebugLoop1==4) or (watchDebugLoop2==4))
+    if ((test_watchDebugLoop1==4) or (test_watchDebugLoop2==4))
     {
 		try
 		{
@@ -726,7 +726,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 			AddToEventLog(debugLine);
 		}
     }
-    if ((watchDebugLoop1==5) or (watchDebugLoop2==5))
+    if ((test_watchDebugLoop1==5) or (test_watchDebugLoop2==5))
     {
 		try
 		{
@@ -907,7 +907,7 @@ if(index_quit==0 && index_is_saving==0)
       #endif
       }
 commandes_clavier();
-DoMouseLevel();
+// DoMouseLevel(); -->  mouseWheel graphics handle (MainBoard / Channels)
 }
 }
 END_OF_FUNCTION(ticker_full_loop);
@@ -1118,7 +1118,10 @@ int main_actions_on_screen()
 			( mousePtr.isOverRecSize(1050, 50, 40, 255) && (window_focus_id==W_MAINBOARD)) || // ~ grand_master(1050, 55, 40)
 			( ( mousePtr.isOverRecSize(fader_leftGM_x, YFader, 40, 255) ||
 				mousePtr.isOverRecSize(fader_rightGM_x, YFader, 40, 255) )
-					&& window_focus_id==W_FADERS)  //
+				&& window_focus_id==W_FADERS)  //
+			|| (mouse_x>=ChScrollX-10 && mouse_x<ChScrollX-10+100 && mouse_y>ChScrollY-5 && mouse_y<ChScrollY+270 && index_over_A_window==0 &&  index_over_faderspace==0 && window_focus_id==W_MAINBOARD) //channels slider
+			|| (mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40) && window_focus_id==W_MAINBOARD) //channels
+				|| (window_focus_id==W_BANGER && editing_banger_family && (over_banger_event>0 || over_banger_action>0))
 			)
 	   {
 			mousePtr.SetLook(whc_pointer::arrow_wheel);
@@ -1130,6 +1133,16 @@ int main_actions_on_screen()
 			if (not mousePtr.Draw())   //si les images ne sont pas chargées, on dessine la souris
 			{
 				DoMouse();
+			}
+	   }
+	   {
+			//visualiser les zones de l'écran
+			if (test_zone_x>0 || test_zone_y>0 || test_zone_w>0 || test_zone_h>0)
+			{
+				Rgba yellowTranslucent( 1.0, 1.0, 0.0, 0.50 );
+				Rect ZoneCherchee(test_zone_x, test_zone_y, test_zone_w, test_zone_h);
+				ZoneCherchee.DrawOutline(Rgba::GREEN);
+				ZoneCherchee.Draw(yellowTranslucent);
 			}
 	   }
 }
@@ -1218,6 +1231,41 @@ if (hwnd != NULL)
 				}
 				AddToEventLog(debugLine);
 			}
+            if (std::string(argv[ n ])=="--pos")
+			{
+				show_test_log = true ;
+				debugLine.data = "Main window Position ";
+				debugLine.tag = " Cmd >";
+				if (n+1<=argc)
+				{
+						try
+						{
+							posX_mainwindow = atoi(argv[n+1]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							posX_mainwindow = 0 ;
+						}
+						 debugLine.data += " ( " + ToString(posX_mainwindow);
+				}
+				if (n+2<=argc)
+				{
+						try
+						{
+							posY_mainwindow = atoi(argv[n+2]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							posY_mainwindow = 0 ;
+						}
+						 debugLine.data += ", " + ToString(posY_mainwindow) + ")";
+				}
+				AddToEventLog(debugLine);
+			}
+
+			//---------------------
             if (std::string(argv[ n ])=="--test")
 			{
 				show_test_log = true ;
@@ -1227,30 +1275,92 @@ if (hwnd != NULL)
 				{
 						try
 						{
-							watchDebugLoop1 = atoi(argv[n+1]) ;
+							test_watchDebugLoop1 = atoi(argv[n+1]) ;
 						}
 						catch ( const std::exception & e )
 						{
 							//cerr << e.what();
-							watchDebugLoop1 = 0 ;
+							test_watchDebugLoop1 = 0 ;
 						}
-						if (watchDebugLoop1 > 0) debugLine.data += " + loop watch " + ToString(watchDebugLoop1);
+						if (test_watchDebugLoop1 > 0) debugLine.data += " + loop watch " + ToString(test_watchDebugLoop1);
 				}
 				if (n+2<=argc)
 				{
 						try
 						{
-							watchDebugLoop2 = atoi(argv[n+2]) ;
+							test_watchDebugLoop2 = atoi(argv[n+2]) ;
 						}
 						catch ( const std::exception & e )
 						{
 							//cerr << e.what();
-							watchDebugLoop2 = 0 ;
+							test_watchDebugLoop2 = 0 ;
 						}
-						if (watchDebugLoop2 > 0) debugLine.data += " + loop watch " + ToString(watchDebugLoop2);
+						if (test_watchDebugLoop2 > 0) debugLine.data += " + loop watch " + ToString(test_watchDebugLoop2);
 				}
 				AddToEventLog(debugLine);
 			}
+
+			//---------------------
+            if (std::string(argv[ n ])=="--zone")
+			{
+				show_test_log = true ;
+				debugLine.data = "Rect (";
+				debugLine.tag = " Cmd >";
+				if (n+1<=argc)
+				{
+						try
+						{
+							test_zone_x = atoi(argv[n+1]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							test_zone_x = 0 ;
+						}
+						if (test_zone_x > 0) debugLine.data += ", " + ToString(test_zone_x);
+				}
+				if (n+2<=argc)
+				{
+						try
+						{
+							test_zone_y = atoi(argv[n+2]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							test_zone_y = 0 ;
+						}
+						if (test_zone_y > 0) debugLine.data += ", "  + ToString(test_zone_y);
+				}
+				if (n+3<=argc)
+				{
+						try
+						{
+							test_zone_w = atoi(argv[n+3]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							test_zone_w = 0 ;
+						}
+						if (test_zone_w > 0) debugLine.data += ", "  + ToString(test_zone_w) + ")";
+				}
+				if (n+4<=argc)
+				{
+						try
+						{
+							test_zone_h = atoi(argv[n+4]) ;
+						}
+						catch ( const std::exception & e )
+						{
+							//cerr << e.what();
+							test_zone_h = 0 ;
+						}
+						if (test_zone_h > 0) debugLine.data += ", "  + ToString(test_zone_h) + ")";
+				}
+				AddToEventLog(debugLine);
+			}
+			//---------------------
         }
     }
 

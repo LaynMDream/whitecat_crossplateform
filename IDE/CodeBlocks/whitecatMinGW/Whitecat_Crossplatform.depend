@@ -8014,7 +8014,7 @@
 1396638948 source:c:\whitecat_xplatform_christoph\src\whitecat_private.rc
 	<windows.h>
 
-1417293575 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
+1417351723 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -8109,7 +8109,7 @@
 1393698853 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1417289327 c:\whitecat_xplatform_christoph\src\whitecat.h
+1417350914 c:\whitecat_xplatform_christoph\src\whitecat.h
 	"Crossplateform.h"
 
 1408381330 c:\whitecat_xplatform_christoph\src\crossplateform.h
@@ -8478,7 +8478,7 @@
 
 1399910779 c:\whitecat_xplatform_christoph\whitecatlib\\boost\format\detail\unset_macros.hpp
 
-1417255040 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
+1417351249 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
 
 1409943205 c:\whitecat_xplatform_christoph\src\patch_splines_2.cpp
 
@@ -8516,9 +8516,9 @@
 
 1417284883 c:\whitecat_xplatform_christoph\src\mover_2013.cpp
 
-1417291928 c:\whitecat_xplatform_christoph\src\plot_core9.cpp
+1417298608 c:\whitecat_xplatform_christoph\src\plot_core9.cpp
 
-1417287864 c:\whitecat_xplatform_christoph\src\plot9.cpp
+1417298608 c:\whitecat_xplatform_christoph\src\plot9.cpp
 
 1417284883 c:\whitecat_xplatform_christoph\src\audio_core5.cpp
 
@@ -8529,7 +8529,7 @@
 
 1417284883 c:\whitecat_xplatform_christoph\src\logicals_intres.cpp
 
-1417284883 c:\whitecat_xplatform_christoph\src\channels_9_core.cpp
+1417354488 c:\whitecat_xplatform_christoph\src\channels_9_core.cpp
 	<allegro.h>
 	<OpenLayer.hpp>
 
@@ -8551,7 +8551,7 @@
 
 1393698838 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\cserial\serial.h
 
-1417284883 c:\whitecat_xplatform_christoph\src\banger_core_8.cpp
+1417352898 c:\whitecat_xplatform_christoph\src\banger_core_8.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\banger_visu_8.cpp
 
@@ -8575,7 +8575,7 @@
 
 1417284883 c:\whitecat_xplatform_christoph\src\keyboard_functions2.cpp
 
-1417284883 c:\whitecat_xplatform_christoph\src\keyboard_routines2.cpp
+1417298609 c:\whitecat_xplatform_christoph\src\keyboard_routines2.cpp
 	<allegro.h>
 
 1417284883 c:\whitecat_xplatform_christoph\src\minifaders_core.cpp
@@ -8698,7 +8698,7 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\my_window_file_sample.cpp
 
-1417293048 c:\whitecat_xplatform_christoph\src\procs_visuels_rebuild1.cpp
+1417352898 c:\whitecat_xplatform_christoph\src\procs_visuels_rebuild1.cpp
 
 1408381330 c:\whitecat_xplatform_christoph\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
@@ -8737,5 +8737,5 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\chasers_visu.cpp
 
-1417284883 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
+1417337594 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
 

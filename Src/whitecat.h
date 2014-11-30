@@ -48,8 +48,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.1 - 16 juin 2014"};
-char nickname_version[48]={"SPRING POWER"};
+char versionis[72]={"Alpha - WIP sab 2014.11.30"};
+char nickname_version[72]={"WIP sab 2014.11.30 based on SPRING POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -2550,8 +2550,12 @@ std::deque<whc_log> debugEventLog;
 //std::vector<whc_log> debugLoopLog;
 whc_log debugLoopLog[10];
 int debugLoopLog_size=10;
-int watchDebugLoop1 = 0;
-int watchDebugLoop2 = 0;
+int test_watchDebugLoop1 = 0;
+int test_watchDebugLoop2 = 0;
+int test_zone_x = 0;
+int test_zone_y = 0;
+int test_zone_w = 0;
+int test_zone_h = 0;
 int debug_test = 0;
 
 char fmt_debugTest1[40]="%s %i gap %i speed %i niv %i niv.f %f";

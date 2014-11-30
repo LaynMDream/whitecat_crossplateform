@@ -1,0 +1,85 @@
+30/11/2014 - Sab : 
+                   USER MainBoard / Channel Scroller
+                        Pour les utilisateurs, le repère se déplace avec la roue de la souris (plus rapide avec Ctl+Left)
+
+                   User Channel
+                        les canaux sélectionnées ne sont sensibles à la roue de la souris 
+                        que si celle ci est au dessus de la zone d'affichage des canaux
+                        et que le mainboard a le focus -> image pointeur avec option souris 
+
+                   User Banger
+                        en mode edit sur survol des zones event / action 
+                        > image pointeur avec option souris 
+
+                   DEV Banger / Channel
+                       Pour les dév, fonction DoMouseLEvel coupée en deux (partie Banger reportée dans fichier banger)
+                       fonction appellée dans le mouse handler par fenêtre
+
+                   DEV Ajout commande en ligne --zone x y w h
+                       Pour les développements, permet d'afficher un rectangle jaune translucide
+
+                   DEV Ajout commande en ligne --pos x y 
+                       Pour les utilisateurs, position de la fenêtre de l'application (valeur négatives autorisées)
+
+-------------------------------------------------------------------------------------------------------------------------  Changements antérieurs
+-------------------------------------------------------------------------------------------------------------------------  
+- Pointeur de la souris 
+    (flèche, flèche avec roue, patte/drag)
+
+- Roue de la souris sur le GrandMaster 
+    (montée/descente selon la roue de la souris ; 
+    ou selon la vitesse fixée par la roue de la souris tant que la touche Left-Ctrl est maintenue pressée)
+ Roue de la souris sur le GrandMaster 
+- Roue de la souris sur Light Plot - Onglet Background - Menu de gauche
+    clic sur les sliders et pastilles pour activer les modifications à la souris (selon les cas, la touche Left-Ctrl maintenue pressée accélère les variations)
+
+- Dév : Log report 
+    (affichage des traces dév : 2 lignes plutôt dédié à ce qui est dans la boucle ; 30 lignes pour les ponctuels - affiché que si ligne de commande contient --test)
+ 
+- Save/Load
+ (double clic sur nom d'un spectacle propose le chargement : çàd économie du clic sur Load)
+
+- splashscreen / fenêtre de démarrage (ajout du remplissage du fond, calage/centrage des textes)
+
+- save report / fenêtre rapport de chargement / sauvegarde 
+    (fenêtre agrandie, liste de 25 lignes, nombre d'erreur(s), indicateur d'erreur cliquable pour défiler les pages jusqu'à la prochaine page avec des erreurs. L'écran se positionne à la première erreur de la liste)
+
+- Pointeur de la souris
+    (affiché que si la souris est effectivement sur la fenêtre applicative et que celle ci est active)
+
+- lecture du paramétrage fourni en ligne de commande 
+(voir fichier whitecat.bat : 
+    accès au mode fenêtré  "whitecat.exe --border" ; 
+    redémarrage un mono-écran après une utilisation multi écrans : "whitecat.exe --init" ; 
+    les deux options sont compatibles :  "whitecat.exe --border --init")
+- Reset des positions des fenêtres : Fenêtres Bang Save/Load prises en compte
+
+- Fenêtre Menu 
+(reste entièrement visible dans la limite de la fenêtre de WhiteCat - clic droit en dehors de fenêtre plot affiche/masque fenêtre menu)
+
+- Touche PageUp/PageDown
+(correction bug sur parcours des fenêtres)
+
+- prefix  NO_USE_ sur les fichiers sources qui ne sont plus utilisés  
+
+- CppCheck - 4  Uninitialized variable: in_speed
+(une correction sur un bug d'affichage dans Grider Player quand un accéléromètre est à zéro  )
+
+- CppCheck - 3  - Boundary check
+(une correction mover.cpp : if (mover_params[1][0]<0) {mover_params[1][0]=0;})
+
+- CppCheck - 2 - Même expression évaluée deux fois
+(correction des vrais doublons et cas de copier coller non suivi de modification d'index)
+
+- CppCheck - 1 - Condition toujours vraie
+(2 conditions corrigées)
+
+- Plot / Tab Background / Menu cartbridge / Leftclic event 
+    Add Doxygen comments in function clean up / rewrite
+
+- CppCheck - Unnecessary consecutive break
+
+- CppCheck - Defensive programming
+The variable 'banger_is' is used as an array index before it is checked that is within limits. This can mean that the array might be accessed out of bounds.
+
+                 

@@ -192,6 +192,7 @@ int Channel_at_level()
  return(0);
 }
 
+/*
 int DoMouseLevel()
 {
  if (mouse_z>last_scroll_mouse_for_chan )
@@ -270,10 +271,51 @@ int DoMouseLevel()
  }
  return(0);
 }
+*/
+void do_logical_Channel_Wheel() //remplace DoMouseLevel (la partie de code concernant Banger est reporté dans une autre fonction dans Banger Core
+{
+	if (mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40))
+	{
+		if (mouse_z>last_scroll_mouse_for_chan )
+		{
+			simulate_keypress(KEY_UP << 8);
+			last_scroll_mouse_for_chan= mouse_z;
+		}
+		else if (mouse_z<last_scroll_mouse_for_chan )
+		{
+			simulate_keypress(KEY_DOWN << 8);
+			last_scroll_mouse_for_chan= mouse_z;
+		}
+	}
+}
 
 
+void do_logical_ChannelScroller_wheel()
+{
+	int x_left,y_top;
+	x_left = ChScrollX-10;
+	y_top  = ChScrollY-5;
 
+	if (ClassicalChannelView)
+	{
+		if(mousePtr.isOverRecSize(x_left, y_top, 100, 275) && mouseScroll.isToBeProcessed())
+		{
+			mousePtr.SetLook(whc_pointer::arrow_wheel);
+			whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 245, 1, -5, -20);
+			mouseScroll.SetProcessed();
+		}
+	}
+	else
+	{
+		if(mousePtr.isOverRecSize(x_left, y_top, 100, 275) && mouseScroll.isToBeProcessed())
+		{
+			mousePtr.SetLook(whc_pointer::arrow_wheel);
+			whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 275, 1, -5, -20);
+			mouseScroll.SetProcessed();
+		}
+	}
 
+}
 
 int do_logical_ChannelScroller( int ScrollX, int ScrollY)
 {
@@ -432,54 +474,69 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
 int do_logical_ClassicalChannelSpace( int xchan, int ychan, int scroll)//les 512 circuits
 {
 
-int maxchan_per_ligne=13;
-for (int l=0;l<43;l++)
-{
-if (l==42) {maxchan_per_ligne=9;} //derniere ligne à 512
+    int maxchan_per_ligne=12;
+    for (int l=0; l<43; l++)
+    {
+        if (l==42)
+        {
+            maxchan_per_ligne=8;   //derniere ligne à 512
+        }
 
-for (int c=1; c<maxchan_per_ligne;c++)
-{
+        for (int c=1; c<=maxchan_per_ligne; c++)
+        {
 
 //Selection circuit
-if ( mouse_x>   ((xchan-10) + (45*c)) && mouse_x< ((xchan+30) + (45*c))
-&& mouse_y> (((ychan*l)+ 40) - (int)((float)(scroll)* Ch_Scroll_Factor) )
-&& mouse_y< (((ychan*l)+ 100 - (int)((float)(scroll)* Ch_Scroll_Factor)) )
-&& index_over_A_window==0 && index_over_faderspace==0
-)
-{
+            if ( mouse_x>   ((xchan-10) + (45*c)) && mouse_x< ((xchan+30) + (45*c))
+                    && mouse_y> (((ychan*l)+ 40) - (int)((float)(scroll)* Ch_Scroll_Factor) )
+                    && mouse_y< (((ychan*l)+ 100 - (int)((float)(scroll)* Ch_Scroll_Factor)) )
+                    && index_over_A_window==0 && index_over_faderspace==0
+               )
+            {
 
-if(index_level_attribue==1)//pour déselection lors prochain circuit piqué dominique guesdon 10aout 2010
-{
-for(int y=1;y<512;y++)
-{
-Selected_Channel[y]=0;
-last_ch_selected=0;
-if(index_plot_window==1){substract_channel_selection_to_layers_plot();}
-}
-index_level_attribue=0;
-}
+                if(index_level_attribue==1)//pour déselection lors prochain circuit piqué dominique guesdon 10aout 2010
+                {
+                    for(int y=1; y<512; y++)
+                    {
+                        Selected_Channel[y]=0;
+                        last_ch_selected=0;
+                        if(index_plot_window==1)
+                        {
+                            substract_channel_selection_to_layers_plot();
+                        }
+                    }
+                    index_level_attribue=0;
+                }
 
- if (index_ch_thruth==0)//selection normale
- {
- Selected_Channel[c+(l*12)]=1-(Temp_Selected_Channel[c+(l*12)]); //chainage mouse released sorti
- if(Selected_Channel[c+(l*12)]==1){ last_ch_selected=c+(l*12);}
- if(index_plot_window==1){add_channel_selection_to_layers_plot();substract_channel_selection_to_layers_plot();}
- }
- else if (index_ch_thruth==1)//selection thruth
- {
- Channel_select_thruth(last_ch_selected,c+(l*12));
- last_ch_selected=c+(l*12);
- index_ch_thruth=0;
- mouseClicLeft.SetProcessed();
- if(index_plot_window==1){add_channel_selection_to_layers_plot();substract_channel_selection_to_layers_plot();}
- }
- //
-}
-}
+                if (index_ch_thruth==0)//selection normale
+                {
+                    Selected_Channel[c+(l*12)]=1-(Temp_Selected_Channel[c+(l*12)]); //chainage mouse released sorti
+                    if(Selected_Channel[c+(l*12)]==1)
+                    {
+                        last_ch_selected=c+(l*12);
+                    }
+                    if(index_plot_window==1)
+                    {
+                        add_channel_selection_to_layers_plot();
+                        substract_channel_selection_to_layers_plot();
+                    }
+                }
+                else if (index_ch_thruth==1)//selection thruth
+                {
+                    Channel_select_thruth(last_ch_selected,c+(l*12));
+                    last_ch_selected=c+(l*12);
+                    index_ch_thruth=0;
+                    mouseClicLeft.SetProcessed();
+                    if(index_plot_window==1)
+                    {
+                        add_channel_selection_to_layers_plot();
+                        substract_channel_selection_to_layers_plot();
+                    }
+                }
+            }
+        }
+    }
 
-}
-
-return(0);
+    return(0);
 }
 
 

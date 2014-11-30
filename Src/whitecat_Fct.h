@@ -111,6 +111,7 @@ WWWWWWWW           C  WWWWWWWW   |
     int do_go_back_bang(int);
     int do_logical_feedback_banger(int,int);
     int do_logical_fenetre_banger(int,int);
+    void do_logical_Banger_Wheel();
     int refresh_banger_wx();
 //}
 //currently in banger visu
@@ -168,7 +169,8 @@ WWWWWWWW           C  WWWWWWWW   |
     int Channel_select_inv();
     int Channel_select_thruth(int,int);
     int Channel_at_level();
-    int DoMouseLevel();
+    void do_logical_Channel_Wheel(); //int DoMouseLevel();
+    void do_logical_ChannelScroller_wheel();
     int do_logical_ChannelScroller(int,int);
     int do_logical_Draw_Channel_Preset_View(int,int,int);
     int do_logical_Draw_Channel_Preset_Title(int,int,int);

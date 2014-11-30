@@ -575,6 +575,8 @@ void mouseWheel_graphics_handle()
     {
 	case W_MAINBOARD:
 		do_logical_grand_master(1050, 55, 40);
+		do_logical_ChannelScroller_wheel();
+		do_logical_Channel_Wheel(); //DoMouseLevel();
 		break;
     case W_SAVEREPORT:
 
@@ -657,7 +659,7 @@ void mouseWheel_graphics_handle()
 
         break;
     case W_BANGER:
-
+		do_logical_Banger_Wheel();
         break;
     case W_ALARM:
 

@@ -165,12 +165,12 @@ void Show_test_log(int x_info,int y_info)
 
         //int idxmax = debugLoopLog.size();
         int idxmax = debugLoopLog_size;
-        int idx1 = watchDebugLoop1;
+        int idx1 = test_watchDebugLoop1;
         if (idx1 > idxmax)
         {
             idx1 = 0 ; //can't show more than --> to do a windwow with a choice off loop data to watch ... once mouse basics tested
         }
-        int idx2 = watchDebugLoop2;
+        int idx2 = test_watchDebugLoop2;
         if (idx2 > idxmax)
         {
             idx2 = 0 ; //can't show more than --> to do a windwow with a choice off loop data to watch ... once mouse basics tested
