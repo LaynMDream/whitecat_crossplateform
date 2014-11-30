@@ -78,7 +78,7 @@ void Show_report_save_load_logic ()
 {
     if ((window_focus_id==W_SAVEREPORT)
 	&& (mouse_x>report_SL_X+440 && mouse_x<report_SL_X+490)
-	&& (mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()));
+	&& (mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()))
     {
 
         //-

@@ -496,7 +496,7 @@ void front_window_push_to_back()
 		{
 			window_opened[i]=temp_window[i];
 		}
-		window_opened[0]=window_opened[0];
+		/*window_opened[0]=window_opened[0];*/ //sab 30/11/2014 V570 The 'window_opened[0]' variable is assigned to itself. gestionaire_fenetres2.cpp 499
 		window_focus_id=window_opened[0];
 	}
 }

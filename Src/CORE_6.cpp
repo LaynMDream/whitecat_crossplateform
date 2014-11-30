@@ -3286,7 +3286,8 @@ int set_channel_scroll( int ch)
         {
             scroll_channelspace=0;
         }
-        else  if(ch>=48 && ch<97)
+        else  if(ch>=49 && ch<97)   //sab 30/11/2014 - V695 Range intersections are possible within conditional expressions. Example: if (A > 0 && A < 5) { ... } else if (A > 3 && A < 9) { ... }. Check lines: 3285, 3289. core_6.cpp 3289
+
         {
             scroll_channelspace=23;
         }
@@ -6334,7 +6335,8 @@ int GlobInit()
         size_symbol[40]=0.8;//Slide Projector
         sprintf(symbol_nickname[40],"Slide Projector");
         plot_ecartement_legende[40]=40;
-        size_symbol[401]=0.9;//rétro projecteur
+        size_symbol[41]=0.9;//rétro projecteur       //sab 30/11/2014 - V557 Array overrun is possible. The '401' index is pointing beyond array bound. core_6.cpp 6337
+
         sprintf(symbol_nickname[41],"OverHead");
         plot_ecartement_legende[41]=60;
 

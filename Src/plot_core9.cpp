@@ -1052,7 +1052,7 @@ int duplicate_selected_symbols(int calc)
                 if(symbol_is_linked_to[calc][i]!=0)
                 {
                     //sab 02/03/2014 unused var  difference=new_position-i;
-                    symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position];
+                    symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position]; //sab 30/11/2014 ??? symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position-i] ??? ou l'inverse ???
                 }
                 for(int opt=0; opt<5; opt++)
                 {
@@ -2642,7 +2642,7 @@ int logical_shape_edition(int plotx, int ploty)
 
         //alpha shape
 
-        if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
+        if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 ) //sab 30/11/2014 V501 There are identical sub-expressions 'index_click_inside_relativ_xy == 0' to the left and to the right of the '&&' operator. plot_core9.cpp 2645
         {
             general_alpha_for_shape=((float)(mouse_x-plotx))/100;
             if(general_alpha_for_shape<0)
@@ -3826,7 +3826,7 @@ void logical_menu_plan(int plotx, int ploty)
             if(keyboardStorage_numeric_postext>0)					/** assign to button value the user entry store in input widget*/
             {
                 plot_window_width=atol(numeric);
-                if(plot_window_width<plot_window_width)
+                if(plot_window_width<plot_window_width_minimum)  //sab 30/11/2014 V501 There are identical sub-expressions to the left and to the right of the '<' operator: plot_window_width < plot_window_width plot_core9.cpp 3829
                 {
                     plot_window_width=plot_window_width_minimum;
                 }

@@ -681,7 +681,7 @@ for(int dv=0;dv<5;dv++)
 Rect ParamN(Vec2D( xt+60,yt+5+(dv*15)),Vec2D(30,12));
 Rect LevelFrame(Vec2D(xt+180,yt+5+(dv*15)),Vec2D(255,10));
 LevelFrame.SetRoundness(5);
-if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && window_focus_id==W_MOVER && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed())
+if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()) // sab 30/11/2014 V501 There are identical sub-expressions 'window_focus_id == W_MOVER' to the left and to the right of the '&&' operator. mover_2013.cpp 684
 {
 ParamN.Draw(CouleurBlind);
 
