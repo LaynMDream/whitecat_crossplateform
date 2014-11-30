@@ -310,6 +310,13 @@ int Boxes()
 
 //////////////AFFICHAGES CONDITIONNES//////////////////////////////////////////////
 
+    if(not(window_focus_id==W_MAINBOARD) && mainboard_ifNotFocus_veil)
+    {
+        Rgba veil( 1.0, 1.0, 1.0, 0.09 );
+        Rect veilMainboard(0, 0, largeur_ecran, hauteur_ecran);
+        veilMainboard.Draw(veil);
+    }
+
     for (int f=63; f>=0; f--)
     {
 

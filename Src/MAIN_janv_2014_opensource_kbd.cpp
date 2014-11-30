@@ -1141,7 +1141,6 @@ int main_actions_on_screen()
 			{
 				Rgba yellowTranslucent( 1.0, 1.0, 0.0, 0.50 );
 				Rect ZoneCherchee(test_zone_x, test_zone_y, test_zone_w, test_zone_h);
-				ZoneCherchee.DrawOutline(Rgba::GREEN);
 				ZoneCherchee.Draw(yellowTranslucent);
 			}
 	   }
@@ -1233,7 +1232,6 @@ if (hwnd != NULL)
 			}
             if (std::string(argv[ n ])=="--pos")
 			{
-				show_test_log = true ;
 				debugLine.data = "Main window Position ";
 				debugLine.tag = " Cmd >";
 				if (n+1<=argc)
@@ -1265,6 +1263,14 @@ if (hwnd != NULL)
 				AddToEventLog(debugLine);
 			}
 
+
+			//---------------------
+            if (std::string(argv[ n ])=="--veil")
+			{
+				debugLine.data = "if MainBoard not focus";
+				debugLine.tag = " Cmd >";
+				mainboard_ifNotFocus_veil = true;
+			}
 			//---------------------
             if (std::string(argv[ n ])=="--test")
 			{
@@ -1303,7 +1309,6 @@ if (hwnd != NULL)
 			//---------------------
             if (std::string(argv[ n ])=="--zone")
 			{
-				show_test_log = true ;
 				debugLine.data = "Rect (";
 				debugLine.tag = " Cmd >";
 				if (n+1<=argc)
@@ -1317,7 +1322,7 @@ if (hwnd != NULL)
 							//cerr << e.what();
 							test_zone_x = 0 ;
 						}
-						if (test_zone_x > 0) debugLine.data += ", " + ToString(test_zone_x);
+						if (test_zone_x > 0) debugLine.data +=  ToString(test_zone_x);
 				}
 				if (n+2<=argc)
 				{

@@ -8014,7 +8014,7 @@
 1396638948 source:c:\whitecat_xplatform_christoph\src\whitecat_private.rc
 	<windows.h>
 
-1417351723 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
+1417362720 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -8109,7 +8109,7 @@
 1393698853 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1417350914 c:\whitecat_xplatform_christoph\src\whitecat.h
+1417362720 c:\whitecat_xplatform_christoph\src\whitecat.h
 	"Crossplateform.h"
 
 1408381330 c:\whitecat_xplatform_christoph\src\crossplateform.h
@@ -8478,7 +8478,7 @@
 
 1399910779 c:\whitecat_xplatform_christoph\whitecatlib\\boost\format\detail\unset_macros.hpp
 
-1417351249 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
+1417359160 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
 
 1409943205 c:\whitecat_xplatform_christoph\src\patch_splines_2.cpp
 
@@ -8737,5 +8737,5 @@
 
 1416806339 c:\whitecat_xplatform_christoph\src\chasers_visu.cpp
 
-1417337594 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
+1417363256 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
 

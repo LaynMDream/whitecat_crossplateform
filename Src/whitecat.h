@@ -2557,6 +2557,7 @@ int test_zone_y = 0;
 int test_zone_w = 0;
 int test_zone_h = 0;
 int debug_test = 0;
+bool mainboard_ifNotFocus_veil = false;
 
 char fmt_debugTest1[40]="%s %i gap %i speed %i niv %i niv.f %f";
 char fmt_debugTest2[40]="%s %i gap %i speed %i niv %i loop %i";
