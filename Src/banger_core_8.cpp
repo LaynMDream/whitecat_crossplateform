@@ -1318,10 +1318,11 @@ if(param1_is>=0 && param1_is<5)
      break;
      case 8:
      //sprintf(bangers_type_action,"Seek to CueIn Pl.");
-     switch(param1_is)
+      if(player_ignited[param1_is]==1 && param2_is==1)//christoph 03/12/14
      {
-     if(player_ignited[param1_is]==1 && param2_is==1)
+         switch(param1_is)
      {
+
        case 0://PLAYER 1
        player1->setPosition(audio_position_was[param1_is]);
        sprintf(string_event,"BACK: Player 1 SeekToCueIn");

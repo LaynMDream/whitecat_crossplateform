@@ -1094,27 +1094,26 @@ if (control==664)
    index_level_attribue=1;
 
 }
-if(control==665){simulate_keypress(KEY_ENTER<<8);show_numpad_midi[15]=1;}
-if(control==666){simulate_keypress(KEY_PLUS_PAD<<8);show_numpad_midi[16]=1;}
-if(control==667){simulate_keypress(KEY_MINUS_PAD<<8);show_numpad_midi[17]=1;}
-if(control==668){simulate_keypress(KEY_UP<<8);show_numpad_midi[18]=1;}
-if(control==669){simulate_keypress(KEY_DOWN<<8);show_numpad_midi[19]=1;}
-if(control==670){simulate_keypress(KEY_0<<8); show_numpad_midi[0]=1;}
-if(control==671){simulate_keypress(KEY_1<<8); show_numpad_midi[1]=1;}
-if(control==672){simulate_keypress(KEY_2<<8); show_numpad_midi[2]=1;}
-if(control==673){simulate_keypress(KEY_3<<8); show_numpad_midi[3]=1;}
-if(control==674){simulate_keypress(KEY_4<<8); show_numpad_midi[4]=1;}
-if(control==675){simulate_keypress(KEY_5<<8); show_numpad_midi[5]=1;}
-if(control==676){simulate_keypress(KEY_6<<8); show_numpad_midi[6]=1;}
-if(control==677){simulate_keypress(KEY_7<<8); show_numpad_midi[7]=1;}
-if(control==678){simulate_keypress(KEY_8<<8); show_numpad_midi[8]=1;}
-if(control==679){simulate_keypress(KEY_9<<8); show_numpad_midi[9]=1;}
-if(control==680){simulate_keypress(KEY_COMMA<<8);show_numpad_midi[10]=1;}//POINT
-if(control==681){simulate_keypress(KEY_ESC<<8);show_numpad_midi[11]=1;}//ESC
-if(control==682){simulate_keypress(KEY_Y<<8);show_numpad_midi[12]=1;}//ALL
-if(control==683){simulate_keypress(KEY_U<<8);show_numpad_midi[13]=1;}//INV
-if(control==684){simulate_keypress(KEY_TAB<<8);show_numpad_midi[14]=1;}//TO
-
+if(control==665){simulate_keypress(KEY_ENTER<<8);}
+if(control==666){simulate_keypress(KEY_PLUS_PAD<<8);}
+if(control==667){simulate_keypress(KEY_MINUS_PAD<<8);}
+if(control==668){simulate_keypress(KEY_UP<<8);}
+if(control==669){simulate_keypress(KEY_DOWN<<8);}
+if(control==670){simulate_keypress(KEY_0<<8);}
+if(control==671){simulate_keypress(KEY_1<<8);}
+if(control==672){simulate_keypress(KEY_2<<8);}
+if(control==673){simulate_keypress(KEY_3<<8);}
+if(control==674){simulate_keypress(KEY_4<<8);}
+if(control==675){simulate_keypress(KEY_5<<8);}
+if(control==676){simulate_keypress(KEY_6<<8);}
+if(control==677){simulate_keypress(KEY_7<<8);}
+if(control==678){simulate_keypress(KEY_8<<8);}
+if(control==679){simulate_keypress(KEY_9<<8);}
+if(control==680){simulate_keypress(KEY_COMMA<<8);}//POINT
+if(control==681){simulate_keypress(KEY_ESC<<8);}//ESC
+if(control==682){simulate_keypress(KEY_Y<<8);}//ALL
+if(control==683){simulate_keypress(KEY_U<<8);}//INV
+if(control==684){simulate_keypress(KEY_TAB<<8);}
 if(control>=685 && control<=733) //STOPOS FADERS
 {
 if(index_do_dock==0 && index_main_clear==0)

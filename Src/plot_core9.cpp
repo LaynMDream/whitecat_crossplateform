@@ -1008,12 +1008,7 @@ if( symbol_is_selected[calc][i]==1)
  pos_symbol[calc][new_position][0]=pos_symbol[calc][i][0]+10;
  pos_symbol[calc][new_position][1]=pos_symbol[calc][i][1]+10;
  symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
- //dub des links
- if(symbol_is_linked_to[calc][i]!=0)
- {
-//sab 02/03/2014 unused var  difference=new_position-i;
- symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position];
- }
+
  for(int opt=0;opt<5;opt++)
  {
  gelat[calc][new_position][opt]=gelat[calc][i][opt];
