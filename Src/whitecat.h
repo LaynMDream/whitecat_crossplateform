@@ -48,8 +48,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Alpha - WIP sab 2014.11.30"};
-char nickname_version[72]={"WIP sab 2014.11.30 based on SPRING POWER"};
+char versionis[72]={"Alpha - WIP sab 2014.12.09"};
+char nickname_version[72]={"WIP sab 2014.12.09 based on SPRING POWER + addons WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -594,8 +594,7 @@ int wheellevel_absolutemode=0;
 int previous_level_wheel=1;
 int absolute_level_wheel=0;//icat
 int previous_absolute_level_wheel=0;//icat
-//NUMPAD SHOW MIDI IN
-bool show_numpad_midi[24];
+
 ////////////////////////TIME CHRONO///////////////////////////////////////////
 
 float position_curseur_time_x;//=1242,
@@ -1157,8 +1156,8 @@ bool specify_who_to_save_PDF[36];
 bool freeze_array[514];
 unsigned char freeze_state[514];
 ///////////////////////////FADERS SNAPSHOTS GENERAL//////////////////////////////////
-unsigned char SnapFader[48];
-bool SnapFaderLocked[48];
+unsigned char SnapFader[49];
+bool SnapFaderLocked[49];
 bool Snapis_dock_for_lfo_selected[49][6];
 int Snaplfo_mode_is[49];// //0 NO LFO- 1 UP ONCE - 2 DOWN ONCE
 bool Snaplfo_cycle_is_on[49];// SAW up down
@@ -1199,7 +1198,7 @@ char keyname[256][16];//nom des touches
 
 
 bool  bang_in_mem_is_sended=0; //pour les envois dans les memoires, un seul index
-int remember_state_of_banged_fader[48][24];
+int remember_state_of_banged_fader[49][24];
 int memoire_asked_in_bang=0;
 char string_alarm[128][25];//une alarm par banger
 char string_THE_alarm[25];//Etait 30 . 27/10/2010 Lanion

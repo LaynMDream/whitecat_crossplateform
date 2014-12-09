@@ -760,27 +760,6 @@ return(0);
 }
 
 
-int do_scroll_fader_space()
-{
-scroll_target_val=goto_scroll_faderspace;
-//sab 02/03/2014 unused var float old_position_faderspace=scroll_faderspace;
-if(index_stop_move!=1)
-{
-  float scroll_decay_constant = 0.8;
-  float scroll_vel = (scroll_target_val - scroll_val) * scroll_decay_constant;
-  scroll_val += scroll_vel * scroll_dt;
-  scroll_faderspace=scroll_val;
-}
-if( scroll_faderspace<goto_scroll_faderspace)
-{
-if (scroll_faderspace>goto_scroll_faderspace){index_stop_move=1;}
-}
-else if( scroll_faderspace>goto_scroll_faderspace)
-{
-if (scroll_faderspace<goto_scroll_faderspace){index_stop_move=1;}
-}
-return(0);
-}
 
 
 

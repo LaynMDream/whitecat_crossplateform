@@ -773,11 +773,9 @@ case 0:
 if(tracker_16b_edit==0)
 {
 mover_params[0][0]=valeur;
-mover_params[0][0]=valeur;
 }
 else //fine
 {
-mover_params[0][1]=valeur;
 mover_params[0][1]=valeur;
 }
 break;
@@ -786,11 +784,9 @@ case 1:
 if(tracker_16b_edit==0)
 {
 mover_params[1][0]=valeur;
-mover_params[1][0]=valeur;
 }
 else //fine
 {
-mover_params[1][1]=valeur;
 mover_params[1][1]=valeur;
 }
 break;
@@ -799,11 +795,9 @@ case 2:
 if(tracker_16b_edit==0)
 {
 mover_params[2][0]=valeur;
-mover_params[2][0]=valeur;
 }
 else //fine
 {
-mover_params[2][1]=valeur;
 mover_params[2][1]=valeur;
 }
 break;
@@ -812,11 +806,9 @@ case 3:
 if(tracker_16b_edit==0)
 {
 mover_params[3][0]=valeur;
-mover_params[3][0]=valeur;
 }
 else //fine
 {
-mover_params[3][1]=valeur;
 mover_params[3][1]=valeur;
 }
 break;
@@ -825,11 +817,9 @@ case 4:
 if(tracker_16b_edit==0)
 {
 mover_params[4][0]=valeur;
-mover_params[4][0]=valeur;
 }
 else //fine
 {
-mover_params[4][1]=valeur;
 mover_params[4][1]=valeur;
 }
 break;

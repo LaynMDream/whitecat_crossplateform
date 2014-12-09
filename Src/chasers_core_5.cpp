@@ -66,8 +66,6 @@ if(chaser_way[chaser_selected]==0)////forward
 {midi_levels[981]=127;midi_levels[982]=0;midi_levels[983]=0;}
 else if(chaser_way[chaser_selected]==1)//backward
 {midi_levels[981]=0;midi_levels[982]=127;midi_levels[983]=0;}
-else  if(chaser_way[chaser_selected]==1)//AR   //sab 30/11/2014 V557 Array overrun is possible. The '401' index is pointing beyond array bound. core_6.cpp 6337
-{midi_levels[981]=0;midi_levels[982]=0;midi_levels[983]=127;}
 
 index_send_midi_out[980]=1;
 index_send_midi_out[981]=1;

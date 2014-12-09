@@ -151,17 +151,14 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 switch(df)
 {
 case 0:
-if (show_numpad_midi[12]==1){FunctionChThr.Draw(CouleurSurvol);show_numpad_midi[12]=0;}
 petitchiffre.Print("  ALL",fx+5, fy+15 + (df*fhaut)+ (space*df));
 petitpetitchiffre.Print(" Y",fx+40, fy+25 + (df*fhaut)+ (space*df));
 break;
 case 1:
-if (show_numpad_midi[13]==1){FunctionChThr.Draw(CouleurSurvol);show_numpad_midi[13]=0;}
 petitchiffre.Print("  INV",fx+5, fy+15 + (df*fhaut)+ (space*df));
 petitpetitchiffre.Print(" U",fx+40, fy+25 + (df*fhaut)+ (space*df));
 break;
 case 2:
-if (show_numpad_midi[14]==1){FunctionChThr.Draw(CouleurSurvol);show_numpad_midi[14]=0;}
 petitchiffre.Print(" THRU",fx+5, fy+15 + (df*fhaut)+ (space*df));
 petitpetitchiffre.Print("Tab",fx+40, fy+25 + (df*fhaut)+ (space*df));
 break;

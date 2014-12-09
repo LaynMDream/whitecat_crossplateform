@@ -127,7 +127,7 @@ for (int loi=0;loi<3;loi++)
 Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+16),Vec2D(60,60));
 MyNum.SetRoundness(7.5);
 MyNum.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[1+loi]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[1+loi]=0;}
+
 MyNum.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -144,7 +144,7 @@ for (int loi=0;loi<3;loi++)
 Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+86),Vec2D(60,60));
 MyNum.SetRoundness(7.5);
 MyNum.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[4+loi]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[4+loi]=0;}
+
 MyNum.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -161,7 +161,7 @@ for (int loi=0;loi<3;loi++)
 Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+156),Vec2D(60,60));
 MyNum.SetRoundness(7.5);
 MyNum.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[7+loi]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[7+loi]=0;}
+
 MyNum.DrawOutline(CouleurLigne);
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -178,20 +178,8 @@ Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+226),Vec2D(60,60));
 MyNum.SetRoundness(7.5);
 MyNum.SetLineWidth(epaisseur_ligne_fader);
 MyNum.DrawOutline(CouleurLigne);
-switch(loi)
-{
-case 0:
-if (show_numpad_midi[0]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[0]=0;}
-break;
-case 1:
-if (show_numpad_midi[10]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[10]=0;}
-break;
-case 2:
-if (show_numpad_midi[11]==1){MyNum.Draw(CouleurSurvol);show_numpad_midi[11]=0;}
-break;
-default:
-break;
-}
+
+
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
   if(mouse_x>x_num+10+(70*loi) && mouse_x<x_num+70+(70*loi) && mouse_y>y_num+226 && mouse_y<y_num+286)
@@ -206,7 +194,7 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
 Rect UPT(Vec2D(x_num+220,y_num+86),Vec2D(100,60));
 UPT.SetRoundness(7.5);
 UPT.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[18]==1){UPT.Draw(CouleurSurvol);show_numpad_midi[18]=0;}
+
 UPT.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -220,7 +208,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 Rect DOWNT(Vec2D(x_num+220,y_num+156),Vec2D(100,60));
 DOWNT.SetRoundness(7.5);
 DOWNT.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[19]==1){DOWNT.Draw(CouleurSurvol);show_numpad_midi[19]=0;}
+
 DOWNT.DrawOutline(CouleurLigne);
 if(Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -233,7 +221,7 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
 Rect ENTERT(Vec2D(x_num+220,y_num+226),Vec2D(100,60));
 ENTERT.SetRoundness(7.5);
 ENTERT.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[15]==1){ENTERT.Draw(CouleurSurvol);show_numpad_midi[15]=0;}
+
 ENTERT.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -246,7 +234,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 Rect MyPlus(Vec2D(x_num+330,y_num+86),Vec2D(60,60));
 MyPlus.SetRoundness(7.5);
 MyPlus.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[16]==1){MyPlus.Draw(CouleurSurvol);show_numpad_midi[16]=0;}
+
 MyPlus.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -259,7 +247,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 Rect MyMinus(Vec2D(x_num+330,y_num+156),Vec2D(60,60));
 MyMinus.SetRoundness(7.5);
 MyMinus.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[17]==1){MyMinus.Draw(CouleurSurvol);show_numpad_midi[17]=0;}
+
 MyMinus.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -272,7 +260,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 Rect AtFull(Vec2D(x_num+330,y_num+230),Vec2D(60,20));
 AtFull.SetRoundness(7.5);
 AtFull.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[1827]==1){AtFull.Draw(CouleurSurvol);show_numpad_midi[1827]=0;}
+
 AtFull.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -285,7 +273,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 Rect AtZ(Vec2D(x_num+330,y_num+265),Vec2D(60,20));
 AtZ.SetRoundness(7.5);
 AtZ.SetLineWidth(epaisseur_ligne_fader);
-if (show_numpad_midi[1828]==1){AtZ.Draw(CouleurSurvol);show_numpad_midi[1828]=0;}
+
 AtZ.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -299,7 +287,6 @@ Rect CheckM(Vec2D(x_num+330,y_num+15),Vec2D(55,20));
 CheckM.SetRoundness(7.5);
 CheckM.SetLineWidth(epaisseur_ligne_fader);
 
-if (show_numpad_midi[1825]==1){CheckM.Draw(CouleurSurvol);show_numpad_midi[1825]=0;}
 CheckM.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
@@ -312,7 +299,6 @@ Rect CheckP(Vec2D(x_num+330,y_num+45),Vec2D(55,20));
 CheckP.SetRoundness(7.5);
 CheckP.SetLineWidth(epaisseur_ligne_fader);
 
-if (show_numpad_midi[1826]==1){CheckP.Draw(CouleurSurvol);show_numpad_midi[1826]=0;}
 CheckP.DrawOutline(CouleurLigne);
 if( Midi_Faders_Affectation_Type!=0)//config midi
 {
