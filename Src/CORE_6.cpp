@@ -6526,7 +6526,7 @@ int GlobInit()
         size_symbol[40]=0.8;//Slide Projector
         sprintf(symbol_nickname[40],"Slide Projector");
         plot_ecartement_legende[40]=40;
-        size_symbol[401]=0.9;//rétro projecteur
+        size_symbol[40]=0.9;//rétro projecteur
         sprintf(symbol_nickname[41],"OverHead");
         plot_ecartement_legende[41]=60;
 

@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file trichro_core2.cpp
 * \brief {Core fonctions for the color whell}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -61,6 +61,25 @@ picker_trichro[dcolor_selected][3]=my_yellow;
 return(0);
 }
 
+int report_gels_to_rvb_trichro(int manufacturer, int gel_position)
+{
+
+switch(index_use_transmission)
+{
+case 0:
+    my_red=rvb_of_gels[manufacturer][gel_position][0];
+    my_green=rvb_of_gels[manufacturer][gel_position][1];
+    my_blue=rvb_of_gels[manufacturer][gel_position][2];
+break;
+case 1://use transmission data
+    my_red=(int)((((float)rvb_of_gels[manufacturer][gel_position][0])/100)*gel_transimission[manufacturer][gel_position]);
+    my_green=(int)((((float)rvb_of_gels[manufacturer][gel_position][1])/100)*gel_transimission[manufacturer][gel_position]);
+    my_blue=(int)((((float)rvb_of_gels[manufacturer][gel_position][2])/100)*gel_transimission[manufacturer][gel_position]);
+break;
+}
+sprintf(string_Last_Order,">>Gel list Called Position %d / ref %d",gel_position,refs_of_gels[manufacturer][gel_position]);
+return(0);
+}
 
 int CounterClockWise ( double Pt0_X, double Pt0_Y, double Pt1_X, double Pt1_Y, double Pt2_X, double Pt2_Y )
 {
@@ -125,6 +144,7 @@ for(angle = 0 ; angle <(PI*360) / 180  ; angle+=0.1)//radians
       && mouse_button==1 && window_focus_id==902)
 
    {
+
    angle_snap=angle;//angle rotation roue couleur
    position_curseur_hue_x= xtrichro_window+vx;//affichage
    position_curseur_hue_y=ytrichro_window+vy ;//affichage
@@ -132,10 +152,12 @@ for(angle = 0 ; angle <(PI*360) / 180  ; angle+=0.1)//radians
     r_pick=getr(cref);
     v_pick=getg(cref);
     b_pick=getb(cref);
+
    stock_etat_picker_dans_dockcolor(dock_color_selected);
     //angle=((PI*360) / (180*127))*midi_levels[497];
     midi_levels[497]=(int)(angle_snap/((PI*360) / (180*127)));
     if(midi_send_out[497]==1){index_send_midi_out[497]=1;}
+    index_snap_color_wheel_levels=1;
     mouse_released=1;
    }
 
@@ -155,6 +177,11 @@ if (miditable[0][497]==istyp && miditable[1][497]==ischan && miditable[2][497]==
   v_pick=getg(cref);
   b_pick=getb(cref);
   stock_etat_picker_dans_dockcolor(dock_color_selected);
+  if (midi_levels[497]!=previous_trichro_wheel)
+  {
+      index_snap_color_wheel_levels=1;
+      previous_trichro_wheel=midi_levels[497];
+  }
 }
 //triangle
 	V3D_f v1 =
@@ -196,11 +223,14 @@ if(mouse_b&1 && mouse_x>xtrichro_window+vxd && mouse_x<xtrichro_window+vxw && mo
 picker_x=mouse_x-xtrichro_window;
 picker_y=mouse_y-ytrichro_window;
 stock_etat_picker_dans_dockcolor(dock_color_selected);
+index_snap_color_wheel_levels=1;
 }
 
 }
 
 
+if(   index_snap_color_wheel_levels==1)//take measurement on mouse or midi
+{
 if(getpixel(bmp_buffer_trichro,(int)(xchroma+picker_x),(int)(ychroma+picker_y))!=0)
 {colorpicker=getpixel(bmp_buffer_trichro,(int)(xchroma+picker_x),(int)(ychroma+picker_y));}
 
@@ -214,6 +244,8 @@ if (index_quadri==1)
    rgb_to_hsv(my_red, my_green, my_blue, &hue, &saturation, &value);
    //saturation: plus il y en a , moins de jaune il y a
    my_yellow=(int)(255-(255*saturation));
+}
+index_snap_color_wheel_levels=0;
 }
 return(0);
 }
@@ -287,6 +319,14 @@ if(mouse_x>xchroma-60 && mouse_x<xchroma+80 && mouse_y>ychroma-190 && mouse_y<yc
 
 if(index_quadri==0){index_quadri=1;dock_color_type[dock_color_selected]=1;}
 else if(index_quadri==1){index_quadri=0;dock_color_type[dock_color_selected]=0;}
+mouse_released=1;
+}
+
+
+//GEL LIST BUTTON
+if(mouse_x>xchroma+90 && mouse_x<xchroma+150 && mouse_y>ychroma-185 && mouse_y<ychroma-165)
+{
+show_gel_list=toggle(show_gel_list);
 mouse_released=1;
 }
 
@@ -549,6 +589,92 @@ index_paste_on_the_fly=toggle(index_paste_on_the_fly);
 mouse_released=1;
 }
 }
+
+
+//GEL LIST
+if(show_gel_list==1)
+{
+
+if(mouse_x>xchroma+180 && mouse_x<xchroma+250 && mouse_y>ychroma-185 && mouse_y<ychroma-165)
+{
+index_gel_type_selected++;
+if(index_gel_type_selected>3)index_gel_type_selected=0;
+mouse_released=1;
+}
+//numeric or designer list
+if(mouse_x>xchroma+260 && mouse_x<xchroma+330 && mouse_y>ychroma-185 && mouse_y<ychroma-165)
+{
+show_designer_list=toggle(show_designer_list);
+switch(show_designer_list)
+{
+case 0://numerical order
+break;
+case 1://designer order
+break;
+}
+mouse_released=1;
+}
+
+//saisie d une ref de gelat
+if(mouse_x>xchroma+340 && mouse_x<xchroma+390 && mouse_y>ychroma-185 && mouse_y<ychroma-165)
+{
+call_ref_number=atoi(numeric);
+mouse_released=1;
+if(call_ref_number<10000 && call_ref_number!=0)
+{
+
+//repositionnemennt de la liste
+for (int i=0;i<10000;i++)
+{
+if(refs_of_gels[index_gel_type_selected][i]==call_ref_number )
+{
+gel_position[index_gel_type_selected]=i;
+report_gels_to_rvb_trichro(index_gel_type_selected,gel_position[index_gel_type_selected]);
+break;
+}
+}
+reset_numeric_entry();
+}
+
+}
+//+ - Index gelatine
+if(mouse_y>ychroma-187 && mouse_y<ychroma-163)
+{
+//- index
+if(mouse_x>xchroma+398 && mouse_x<xchroma+422)
+{
+if(gel_position[index_gel_type_selected]>10)gel_position[index_gel_type_selected]-=10;
+mouse_released=1;
+}
+//+ index
+if(mouse_x>xchroma+428 && mouse_x<xchroma+452)
+{
+if(gel_position[index_gel_type_selected]<10000-10)gel_position[index_gel_type_selected]+=10;
+mouse_released=1;
+}
+}
+
+//Transmission calculation
+if(mouse_x>xchroma+510 && mouse_x<xchroma+550 && mouse_y>ychroma-185 && mouse_y<ychroma-165)
+{
+index_use_transmission=toggle(index_use_transmission);
+mouse_released=1;
+}
+
+//sélection gel
+for(int i=0;i<30;i++)
+{
+if( mouse_x>xchroma+175 && mouse_x<xchroma+485 && mouse_y>ychroma-150+(i*16) && mouse_y<ychroma-134+(i*16) )
+{
+call_ref_number=refs_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i];
+report_gels_to_rvb_trichro(index_gel_type_selected,gel_position[index_gel_type_selected]+i);
+mouse_released=1;
+}
+}
+//fin gel list
+}
+
+
 return(0);
 }
 /////////////////////////////////////////////////////////////////

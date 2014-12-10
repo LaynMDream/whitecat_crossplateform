@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -743,7 +743,10 @@ int main_actions_on_screen()
       if(index_writing_curve==0){Boxes();}
       if(core_do_calculations[3]==1)
       {
+
       trichro_back_buffer(315/2,550/2,125,15);//calcul trichro ( triangle et saturation dans buffer separé)
+
+
       do_colors();//ventilation des niveaux pickés ainsi que distrib dans faders et docks
       }
       DoMouse();
@@ -896,10 +899,17 @@ reset_all_bangers();
  Load_Video_Conf();
  sprintf(tmp_ip_artnet,ip_artnet);
 
+
  load_show_coming_from();
  idf++;
 
+
  On_Open_name_of_directory();
+
+ save_load_print_to_screen("Loading Gels List");
+ load_gel_list_numerical();
+ idf++;
+
  Canvas::Fill(CouleurFond);
  Canvas::Refresh();
  save_load_print_to_screen("Init Sound");

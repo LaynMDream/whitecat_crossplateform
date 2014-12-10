@@ -31,7 +31,7 @@ WWWWWWWW           C  WWWWWWWW   |
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
 * \version {0.8.6.1}
-* \date {16/06/2014}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,8 +45,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.1 - 16 juin 2014"};
-char nickname_version[48]={"SPRING POWER"};
+char versionis[72]={"Beta 0.8.6.3 - 11 dec 2014"};
+char nickname_version[48]={"WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -113,7 +113,7 @@ int temp_report_window[72];
 volatile int ticks_dixieme_for_icat_and_draw=0;
 volatile int before_ticks_dixieme_for_icat_and_draw=0;
 ////////////////////AFFICHAGE///////////////////////////////////////////////////
-int largeur_ecran=1280;
+int largeur_ecran=1368;
 int hauteur_ecran=800;
 int visu_performances[32];
 Bitmap logo;
@@ -181,6 +181,25 @@ bool index_click_move_savereportwindow=0;//report
 
 bool index_click_move_banger_window=0;
 bool index_click_move_cfg_window=0;
+
+volatile bool index_snap_color_wheel_levels=0;
+int previous_trichro_wheel=0;
+//GEL LIST in TRICHROMY
+//GUI
+int gel_size_window=400;
+bool show_gel_list=1;
+int gel_position[4];
+int call_ref_number=0;//appel clavier
+//gel list trichro 0 Lee 1 Rosco 2 Gamcolor 3 Apollo
+int index_gel_type_selected=0;
+int refs_of_gels[4][10000]; //numerical reference
+char name_of_gels[4][10000][96];//nom des gels
+int rvb_of_gels[4][10000][3];//rvb of gels
+float gel_transimission[4][10000];
+int gel_position_selected[4];
+bool show_designer_list=0;
+bool index_use_transmission=0;
+
 ////////////////////RETOUR INFOS////////////////////////////////////////////////
 char string_debug[120];
 int scroll_y_info=0;
@@ -590,8 +609,7 @@ int wheellevel_absolutemode=0;
 int previous_level_wheel=1;
 int absolute_level_wheel=0;//icat
 int previous_absolute_level_wheel=0;//icat
-//NUMPAD SHOW MIDI IN
-bool show_numpad_midi[24];
+
 ////////////////////////TIME CHRONO///////////////////////////////////////////
 
 float position_curseur_time_x;//=1242,
@@ -1161,8 +1179,8 @@ bool specify_who_to_save_PDF[36];
 bool freeze_array[514];
 unsigned char freeze_state[514];
 ///////////////////////////FADERS SNAPSHOTS GENERAL//////////////////////////////////
-unsigned char SnapFader[48];
-bool SnapFaderLocked[48];
+unsigned char SnapFader[49];
+bool SnapFaderLocked[49];
 bool Snapis_dock_for_lfo_selected[49][6];
 int Snaplfo_mode_is[49];// //0 NO LFO- 1 UP ONCE - 2 DOWN ONCE
 bool Snaplfo_cycle_is_on[49];// SAW up down
@@ -1203,7 +1221,7 @@ char keyname[256][16];//nom des touches
 
 
 bool  bang_in_mem_is_sended=0; //pour les envois dans les memoires, un seul index
-int remember_state_of_banged_fader[48][24];
+int remember_state_of_banged_fader[49][24];
 int memoire_asked_in_bang=0;
 char string_alarm[128][25];//une alarm par banger
 char string_THE_alarm[25];//Etait 30 . 27/10/2010 Lanion

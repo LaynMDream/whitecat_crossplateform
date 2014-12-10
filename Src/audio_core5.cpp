@@ -476,7 +476,7 @@ if(audio_autoload[lect]==1)//chargement auto
  player1_do_stop();
  break;
  case 1:
- player3_do_stop();
+ player2_do_stop();
  break;
  case 2:
  player3_do_stop();

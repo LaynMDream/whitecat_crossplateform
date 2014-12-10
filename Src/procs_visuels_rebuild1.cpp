@@ -72,7 +72,7 @@ switch(window_opened[i])
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_TRICHROMY:
-        if( mouse_x>= xtrichro_window-158 && mouse_x<= xtrichro_window+157 && mouse_y>=ytrichro_window-206  && mouse_y<= ytrichro_window+344)
+        if( mouse_x>= xtrichro_window-158 && mouse_x<= xtrichro_window+157+(show_gel_list*gel_size_window) && mouse_y>=ytrichro_window-206  && mouse_y<= ytrichro_window+344)
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_NUMPAD:
