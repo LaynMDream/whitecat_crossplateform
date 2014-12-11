@@ -600,7 +600,7 @@ int tmp_ref=0;
 int tmprvb[3];
 int index_type_of_gel=-1;
 int marker_de_gel[4];
-float transmission;
+float transmission=-1;;
 for(int i=0;i<4;i++)
 {
 marker_de_gel[i]=0;
@@ -638,7 +638,8 @@ else
         gel_transimission[index_type_of_gel][marker_de_gel[index_type_of_gel]]=transmission;
         marker_de_gel[index_type_of_gel]++;
         }
-
+        //reset values
+        transmission=-1;
         if(strcmp(line,"ENDDATA")==0){index_ok=0;}
 		}
 		else break;

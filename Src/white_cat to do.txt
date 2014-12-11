@@ -7,7 +7,7 @@ fader compris dans un fgroup sur lui même
 
 core minifaders faders
 La sélection du bouton de ratio pour un crossfade manuel déclenche à tors le GO
-
+affichage grada plus lisible
 
 //////TO DO///////////////////////////////////////////////
 
