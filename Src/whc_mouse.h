@@ -406,7 +406,7 @@ public:
     typedef enum
     {
         arrow   = 0,
-        arrow_wheel = 1,
+        arrow_down = 1,
         drag    = 2,
         target = 3,
         whc_mouselook_size = 4 //

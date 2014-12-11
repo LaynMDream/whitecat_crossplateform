@@ -48,8 +48,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Alpha - WIP sab 2014.12.09"};
-char nickname_version[72]={"WIP sab 2014.12.09 based on SPRING POWER + addons WINTER POWER"};
+char versionis[72]={"Alpha - WIP sab 2014.12.11"};
+char nickname_version[72]={"WIP sab 2014.12.11 based on SPRING & WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////

@@ -3583,7 +3583,7 @@ void logical_menu_plan(int plotx, int ploty)
 
 		if(mousePtr.isOverRecSize(x_left, y_top, 65, 10))
         {
-            mousePtr.SetLook(whc_pointer::arrow_wheel);
+            //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             mouseClicLeft.SetProcessed();
             whc_button::c_toggle(editing_plot_background_grid_alpha) ;
         }
@@ -3712,7 +3712,7 @@ void logical_menu_plan(int plotx, int ploty)
 		if(mousePtr.isOverRecSize(x_left, y_top, 105, 10))
         {
             mouseClicLeft.SetProcessed();
-            mousePtr.SetLook(whc_pointer::arrow_wheel);
+            //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             whc_button::c_toggle(editing_plot_blackground_pic_rotation) ;
 
         }
@@ -3795,7 +3795,7 @@ void logical_menu_plan(int plotx, int ploty)
 		if(mousePtr.isOverRecSize(x_left, y_top, 110, 10))
         {
             mouseClicLeft.SetProcessed();
-            mousePtr.SetLook(whc_pointer::arrow_wheel);
+            //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             whc_button::c_toggle(editing_plot_background_pic_alpha) ;
         }
         else // in case of lose focus event : init cross-bar alpha picture
@@ -3888,7 +3888,7 @@ void logical_menu_plan(int plotx, int ploty)
 		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
-            mousePtr.SetLook(whc_pointer::arrow_wheel);
+            //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             whc_button::c_toggle(editing_plot_background_window_color_backgrd) ;
         }
         else // in case of lose focus event : lose capability to change value with wheel roll
@@ -3911,7 +3911,7 @@ void logical_menu_plan(int plotx, int ploty)
 		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
-            mousePtr.SetLook(whc_pointer::arrow_wheel);
+            //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             whc_button::c_toggle(editing_plot_background_window_color_line) ;
         }
         else

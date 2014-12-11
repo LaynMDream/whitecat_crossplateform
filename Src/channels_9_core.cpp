@@ -300,7 +300,7 @@ void do_logical_ChannelScroller_wheel()
 	{
 		if(mousePtr.isOverRecSize(x_left, y_top, 100, 275) && mouseScroll.isToBeProcessed())
 		{
-			mousePtr.SetLook(whc_pointer::arrow_wheel);
+			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
 			whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 245, 1, -5, -20);
 			mouseScroll.SetProcessed();
 		}
@@ -309,7 +309,7 @@ void do_logical_ChannelScroller_wheel()
 	{
 		if(mousePtr.isOverRecSize(x_left, y_top, 100, 275) && mouseScroll.isToBeProcessed())
 		{
-			mousePtr.SetLook(whc_pointer::arrow_wheel);
+			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
 			whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 275, 1, -5, -20);
 			mouseScroll.SetProcessed();
 		}

@@ -1103,30 +1103,40 @@ int main_actions_on_screen()
       */
 {
 
-		int fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
+//		int fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
+//
+//		int fader_leftGM_x  = fader_x -  140 ;
+//    	int fader_rightGM_x = fader_x + 8786 ;
+//
+//	   if (light_plot_view_port_drag_mode_enable)
+//	   {mousePtr.SetLook(whc_pointer::drag);}
+//		else if ( editing_plot_background_grid_alpha ||
+//			editing_plot_background_pic_alpha ||
+//			editing_plot_blackground_pic_rotation ||
+//			editing_plot_background_window_width ||
+//			editing_plot_background_window_heigth||
+//			( mousePtr.isOverRecSize(1050, 50, 40, 255) && (window_focus_id==W_MAINBOARD)) || // ~ grand_master(1050, 55, 40)
+//			( ( mousePtr.isOverRecSize(fader_leftGM_x, YFader, 40, 255) ||
+//				mousePtr.isOverRecSize(fader_rightGM_x, YFader, 40, 255) )
+//				&& window_focus_id==W_FADERS)  //
+//			|| (mouse_x>=ChScrollX-10 && mouse_x<ChScrollX-10+100 && mouse_y>ChScrollY-5 && mouse_y<ChScrollY+270 && index_over_A_window==0 &&  index_over_faderspace==0 && window_focus_id==W_MAINBOARD) //channels slider
+//			|| (mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40) && window_focus_id==W_MAINBOARD) //channels
+//				|| (window_focus_id==W_BANGER && editing_banger_family && (over_banger_event>0 || over_banger_action>0))
+//			)
+//	   {
+//			mousePtr.SetLook(whc_pointer::arrow_wheel);
+//		}
+//		else {mousePtr.SetLook(whc_pointer::arrow);}
+//
 
-		int fader_leftGM_x  = fader_x -  140 ;
-    	int fader_rightGM_x = fader_x + 8786 ;
-
-	   if (light_plot_view_port_drag_mode_enable)
-	   {mousePtr.SetLook(whc_pointer::drag);}
-		else if ( editing_plot_background_grid_alpha ||
-			editing_plot_background_pic_alpha ||
-			editing_plot_blackground_pic_rotation ||
-			editing_plot_background_window_width ||
-			editing_plot_background_window_heigth||
-			( mousePtr.isOverRecSize(1050, 50, 40, 255) && (window_focus_id==W_MAINBOARD)) || // ~ grand_master(1050, 55, 40)
-			( ( mousePtr.isOverRecSize(fader_leftGM_x, YFader, 40, 255) ||
-				mousePtr.isOverRecSize(fader_rightGM_x, YFader, 40, 255) )
-				&& window_focus_id==W_FADERS)  //
-			|| (mouse_x>=ChScrollX-10 && mouse_x<ChScrollX-10+100 && mouse_y>ChScrollY-5 && mouse_y<ChScrollY+270 && index_over_A_window==0 &&  index_over_faderspace==0 && window_focus_id==W_MAINBOARD) //channels slider
-			|| (mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40) && window_focus_id==W_MAINBOARD) //channels
-				|| (window_focus_id==W_BANGER && editing_banger_family && (over_banger_event>0 || over_banger_action>0))
-			)
-	   {
-			mousePtr.SetLook(whc_pointer::arrow_wheel);
+		if (mouseClicLeft.isDown() || mouseClicMiddle.isDown() || mouseClicRight.isDown())
+		{
+			mousePtr.SetLook(whc_pointer::arrow_down);
 		}
-		else {mousePtr.SetLook(whc_pointer::arrow);}
+		else
+		{
+			mousePtr.SetLook(whc_pointer::arrow);
+		}
 
        if (mouse_on_screen())
 	   {
@@ -1466,7 +1476,7 @@ if (hwnd != NULL)
 
 /*sab 28/11/2014 deb */
 	whc_pointer::c_Init(whc_pointer::arrow,"gfx/arrow.png");
-	whc_pointer::c_Init(whc_pointer::arrow_wheel,"gfx/arrow_wheel.png");
+	whc_pointer::c_Init(whc_pointer::arrow_down,"gfx/arrow_down.png");
 	whc_pointer::c_Init(whc_pointer::drag,"gfx/drag.png");
 /*sab 28/11/2014 fin */
 

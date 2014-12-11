@@ -46,7 +46,7 @@ int do_logical_grand_master(const int& GMX, const int& GMY, const int& larg)
 
     if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-5 && mouse_y<=GMY+255)
     {
-		mousePtr.SetLook(whc_pointer::arrow_wheel);
+		//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
 //sab 28/11/2014 deb
 		if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1)
 		{

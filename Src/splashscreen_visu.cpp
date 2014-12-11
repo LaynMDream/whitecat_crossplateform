@@ -50,7 +50,7 @@ void show_title()
 	Rect background_splashscreen( Vec2D(x_left_ref-50,y_bott_ref-180), Vec2D(525,665));
 	background_splashscreen.SetRoundness(15);
 	background_splashscreen.SetLineWidth(epaisseur_ligne_fader);
-	background_splashscreen.DrawOutline(CouleurFader);
+	//Look and feel pas de contour : background_splashscreen.DrawOutline(CouleurFader);
 	background_splashscreen.Draw(CouleurFond);
 
     logo.Blit(x_left_ref+60,(hauteur_ecran/2));
@@ -76,7 +76,7 @@ void save_load_print_to_screen(const std::string label)
     }
     Rect nameAera( Vec2D(x_ref-195,y_ref-100), Vec2D(415,70));
     nameAera.SetRoundness(15);
-    nameAera.SetLineWidth(epaisseur_ligne_fader*3);
+	nameAera.SetLineWidth(epaisseur_ligne_fader*3);
     nameAera.Draw(CouleurSurvol);
     nameAera.DrawOutline(CouleurLigne);
 
