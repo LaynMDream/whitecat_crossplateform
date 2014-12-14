@@ -274,7 +274,8 @@ int DoMouseLevel()
 */
 void do_logical_Channel_Wheel() //remplace DoMouseLevel (la partie de code concernant Banger est reporté dans une autre fonction dans Banger Core
 {
-	if (mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40))
+    if ((not (key[KEY_CAPSLOCK] || key[KEY_ALT]))
+		|| ( key[KEY_ALT] && mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40)))
 	{
 		if (mouse_z>last_scroll_mouse_for_chan )
 		{
@@ -289,32 +290,26 @@ void do_logical_Channel_Wheel() //remplace DoMouseLevel (la partie de code conce
 	}
 }
 
-
-void do_logical_ChannelScroller_wheel()
+void ALT_do_logical_ChannelScroller_wheel()
 {
-	int x_left,y_top;
-	x_left = ChScrollX-10;
-	y_top  = ChScrollY-5;
+    int x_left,y_top;
+    x_left = ChScrollX-10;
+    y_top  = ChScrollY-5;
 
-	if (ClassicalChannelView)
-	{
-		if(mousePtr.isOverRecSize(x_left, y_top, 100, 275) && mouseScroll.isToBeProcessed())
-		{
-			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-			whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 245, 1, -5, -20);
-			mouseScroll.SetProcessed();
-		}
-	}
-	else
-	{
-		if(mousePtr.isOverRecSize(x_left, y_top, 100, 275) && mouseScroll.isToBeProcessed())
-		{
-			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-			whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 275, 1, -5, -20);
-			mouseScroll.SetProcessed();
-		}
-	}
-
+    if(mousePtr.isOverRecSize(x_left, y_top, 100, 275))
+    {
+        if (ClassicalChannelView)
+        {
+            //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
+            whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 245, 1, -5, -20);
+            mouseScroll.SetProcessed();
+        }
+        else
+        {
+            whc_wheel::c_levelIncrease(mouseScroll, scroll_channelspace, 275, 1, -5, -20);
+            mouseScroll.SetProcessed();
+        }
+    }
 }
 
 int do_logical_ChannelScroller( int ScrollX, int ScrollY)

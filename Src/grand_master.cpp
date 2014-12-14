@@ -40,34 +40,49 @@ WWWWWWWW           C  WWWWWWWW   |
 *   GUI fonctions for grand master
 *
  **/
+void ALT_do_logical_grand_master_wheel(const int& GMX, const int& GMY, const int& larg)
+{
+			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
+//sab 28/11/2014 deb
+        if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
+		&& mousePtr.isOverRecSize(GMX, GMY, larg, 255))
+
+        {
+            if (key[KEY_ALT] && key[KEY_LCONTROL])
+            {
+                whc_wheel::c_levelSpeedupIncrease(mouseScroll, niveauGMaster, 255, 0, 1000);
+            }
+            else if (key[KEY_ALT] )
+			{
+				whc_wheel::c_levelIncrease(mouseScroll, niveauGMaster, 255, 0);
+				mouseScroll.SetProcessed();
+			}
+        }
+//sab 28/11/2014 fin
+}
 
 int do_logical_grand_master(const int& GMX, const int& GMY, const int& larg)
 {
 
+//sab 13/12/2014 deb
+        if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
+		&& mousePtr.isOverRecSize(GMX, GMY, larg, 255)
+		&& mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()
+		&& key[KEY_ALT] )
+		{
+			whc_wheel::whc_wheeledcontroller controleur;
+			controleur.controller = &niveauGMaster;
+			controleur.maximum = 255;
+			controleur.minimum = 0;
+			controleur.type = whc_wheel::slider;
+			mouseScroll.m_subscriberList.push_back(controleur);
+			mouseClicLeft.SetProcessed();
+		}
+		else
+//sab 13/12/2014 fin
+
     if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-5 && mouse_y<=GMY+255)
     {
-		//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-//sab 28/11/2014 deb
-		if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1)
-		{
-			if ((key[KEY_LCONTROL]))
-			{
-				/* niveauGMaster = whc_wheel::c_levelIncrease(mouseScroll, test_level_f, 255., 0., 1000.); */
-				/* 2de signature de la fonction :
-				- niveau géré avec une variable (int)
-				- besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
-				*/
-				whc_wheel::c_levelSpeedupIncrease(mouseScroll, niveauGMaster, 255, 0, 1000);
-
-			}
-			else
-			{
-				whc_wheel::c_levelIncrease(mouseScroll, niveauGMaster, 255, 0);
-			}
-		}
-
-//sab 28/11/2014 fin
-
         if((window_focus_id==0 || window_focus_id==906 )&& mouseClicLeft.isDown() && index_allow_grand_master==1)
         {
             set_mouse_range(GMX, GMY, GMX+larg, GMY+255);//pour pas deborder
@@ -161,7 +176,24 @@ int grand_master(int GMX, int GMY)
         break;
     }
     GmaNiv.Draw(CouleurBlind);
-    Gma.DrawOutline(CouleurLigne);
+    //sab 13/12/2014 deb
+//    Gma.DrawOutline(CouleurLigne);
+	ol::Rgba colorToApply = CouleurLigne ;
+	if (mouseScroll.m_subscriberList.size() > 0)
+	{
+		whc_wheel::whc_wheeledcontroller controleur;
+		for (std::vector<whc_wheel::whc_wheeledcontroller>::iterator it = mouseScroll.m_subscriberList.begin() ; it != mouseScroll.m_subscriberList.end(); ++it)
+	   {
+			controleur = *it;
+			if (controleur.controller == &niveauGMaster)
+			{
+				//gma_isCapsLock_selcted = true ;
+				colorToApply = CouleurYellow ;
+			}
+	   }
+	}
+	Gma.DrawOutline(colorToApply);
+    //sab 13/12/2014 fin
     neuro.Print(string_niveauGMaster,GMX, GMY-5); //niveau du fader
 //bouton midi out
 

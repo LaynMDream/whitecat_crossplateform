@@ -170,7 +170,7 @@ WWWWWWWW           C  WWWWWWWW   |
     int Channel_select_thruth(int,int);
     int Channel_at_level();
     void do_logical_Channel_Wheel(); //int DoMouseLevel();
-    void do_logical_ChannelScroller_wheel();
+    void ALT_do_logical_ChannelScroller_wheel();
     int do_logical_ChannelScroller(int,int);
     int do_logical_Draw_Channel_Preset_View(int,int,int);
     int do_logical_Draw_Channel_Preset_Title(int,int,int);
@@ -511,6 +511,7 @@ WWWWWWWW           C  WWWWWWWW   |
 //}
 //currently in grand master
 //{
+    void ALT_do_logical_grand_master_wheel(const int&, const int&, const int&);
     int do_logical_grand_master(const int&, const int&, const int&);
     int grand_master(int,int);
 //}
@@ -1042,6 +1043,8 @@ WWWWWWWW           C  WWWWWWWW   |
     int do_logical_MoveCloseBox(int,int,int);
     int logical_channelspace();
     void mouseWheel_graphics_handle();
+    void ALTCLIC_mouseWheel_graphics_handle();
+    void ALT_mouseWheel_graphics_handle();
     int check_graphics_mouse_handling();
 //}
 //currently in save show

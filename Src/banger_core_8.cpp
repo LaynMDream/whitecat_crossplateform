@@ -4940,6 +4940,10 @@ if(mouse_x>(xb+410) && mouse_x<(xb+410+50) && mouse_y>(yb+10) && mouse_y<(yb+10+
 {
 index_enable_edit_banger=toggle(index_enable_edit_banger);
 mouseClicLeft.SetProcessed();
+
+//sab 13/12/2014
+mouseScroll.isProcessed();
+
 }
 
 //mise en boucle
@@ -5120,9 +5124,9 @@ do_logical_feedback_banger(xb+480,yb+50);
 return(0);
 }
 
-void do_logical_Banger_Wheel()
+void ALT_do_logical_Banger_Wheel()
 {
-	if(mousePtr.isOverRecSize(X_banger, Y_banger, 480, 300))
+	if(mousePtr.isOverRecSize(X_banger, Y_banger, 480, 300) && index_enable_edit_banger)
     {
         switch(over_family)
         {

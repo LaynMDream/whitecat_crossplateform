@@ -810,56 +810,80 @@ else
 mouseClicLeft.SetProcessed();
 }
 //////////////AU DESSUS FADER////////////////////////////////////////////////////
-if(mouse_x>x+(cmptfader*espacement) && mouse_x<x+(cmptfader*espacement)+largeur && mouse_y>=y && mouse_y<=y+255)
-{
- //affichage qui dans dock si VIEW activé
-show_who_is_in_dock( cmptfader,   detect_dock_used(cmptfader));
-set_mouse_range(x+(cmptfader*espacement), y, x+(cmptfader*espacement)+largeur, y+255);//pour pas deborder
+                if(mouse_x>x+(cmptfader*espacement) && mouse_x<x+(cmptfader*espacement)+largeur && mouse_y>=y && mouse_y<=y+255)
+                {
+//affichage qui dans dock si VIEW activé
+                    show_who_is_in_dock( cmptfader,   detect_dock_used(cmptfader));
+                    set_mouse_range(x+(cmptfader*espacement), y, x+(cmptfader*espacement)+largeur, y+255);//pour pas deborder
 //click niveau fader
-if( index_main_clear==0)
-{
+                    if( index_main_clear==0)
+                    {
 //NIVEAU
-Fader[cmptfader]=((y+255)-mouse_y);
-midi_levels[cmptfader]=(Fader[cmptfader]/2);
-index_fader_is_manipulated[cmptfader]=1;
-if(midi_send_out[cmptfader]==1){ index_send_midi_out[cmptfader]=1;}
-if(lfo_mode_is[cmptfader]==1 || lfo_mode_is[cmptfader]==2 || lfo_cycle_is_on[cmptfader]==1)
-{
-lfo_mode_is[cmptfader]=0; lfo_mode_is[cmptfader]=0; lfo_cycle_is_on[cmptfader]=0;
-}
+						//sab 13/12/2014 deb
+						//Fader[cmptfader]=((y+255)-mouse_y);
+						if (mouseClicLeft.isDown()
+						&& mouseClicLeft.isToBeProcessed()
+						&& key[KEY_ALT] )
+						{
+							whc_wheel::whc_wheeledcontroller controleur;
+							controleur.controller = &Fader[cmptfader];
+							controleur.maximum = 255;
+							controleur.minimum = 0;
+							controleur.type = whc_wheel::slider;
+							mouseScroll.m_subscriberList.push_back(controleur);
+							mouseClicLeft.SetProcessed();
+						}
+						else if (mouseClicLeft.isDown()
+						&& mouseClicLeft.isToBeProcessed() )
+						{
+							Fader[cmptfader]=((y+255)-mouse_y);
+						}
+						//sab 13/12/2014 fin
+                        midi_levels[cmptfader]=(Fader[cmptfader]/2);
+                        index_fader_is_manipulated[cmptfader]=1;
+                        if(midi_send_out[cmptfader]==1)
+                        {
+                            index_send_midi_out[cmptfader]=1;
+                        }
+                        if(lfo_mode_is[cmptfader]==1 || lfo_mode_is[cmptfader]==2 || lfo_cycle_is_on[cmptfader]==1)
+                        {
+                            lfo_mode_is[cmptfader]=0;
+                            lfo_mode_is[cmptfader]=0;
+                            lfo_cycle_is_on[cmptfader]=0;
+                        }
 //midi report
- switch(miditable[0][cmptfader])
- {
-  case 0:
-  sprintf(thetypinfo,"Note");
-  break;
-  case 1:
-  sprintf(thetypinfo,"Key On");
-  break;
-  case 2:
-  sprintf(thetypinfo,"Key Off");
-  break;
-  case 4:
-  sprintf(thetypinfo,"Ctrl Change");
-  break;
-}
-  sprintf(string_last_midi_id,"Fader is Ch: %d Pitch: %d Type: %s", miditable[1][cmptfader],miditable[2][cmptfader],thetypinfo);
+                        switch(miditable[0][cmptfader])
+                        {
+                        case 0:
+                            sprintf(thetypinfo,"Note");
+                            break;
+                        case 1:
+                            sprintf(thetypinfo,"Key On");
+                            break;
+                        case 2:
+                            sprintf(thetypinfo,"Key Off");
+                            break;
+                        case 4:
+                            sprintf(thetypinfo,"Ctrl Change");
+                            break;
+                        }
+                        sprintf(string_last_midi_id,"Fader is Ch: %d Pitch: %d Type: %s", miditable[1][cmptfader],miditable[2][cmptfader],thetypinfo);
 
 //CONFIG MIDI
-if( Midi_Faders_Affectation_Type!=0)
-{
-attribute_midi_to_control(cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
-}
-}
+                        if( Midi_Faders_Affectation_Type!=0)
+                        {
+                            attribute_midi_to_control(cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+                        }
+                    }
 //NETTOYAGE DE FADER ET DOCK
-if(index_main_clear==1)//clear de tous les dock du fader
-{
- fader_selected_for_record=cmptfader;
- index_do_clear_on_faders=1;
- index_ask_confirm=1;
- mouseClicLeft.SetProcessed()  ;
-}
-}
+                    if(index_main_clear==1)//clear de tous les dock du fader
+                    {
+                        fader_selected_for_record=cmptfader;
+                        index_do_clear_on_faders=1;
+                        index_ask_confirm=1;
+                        mouseClicLeft.SetProcessed()  ;
+                    }
+                }
 
 if(mouse_x>x+(cmptfader*espacement)+largeur+95 && mouse_x<x+(cmptfader*espacement)+largeur+95+15 &&
 mouse_y>y-35 && mouse_y<y-35+15 )

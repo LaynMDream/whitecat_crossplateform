@@ -247,7 +247,12 @@ bool index_moving_y_slide=0;
 int dock_used_by_fader_is[48];
 int previous_dock_used[48];//pour autolaunch sur banger, dock + - et animations
 //RETOUR ARRIERE : plante chargement contenu dépasse max attendu  :-( - fichier icat  à creuser  surement dans la lecture //sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
-unsigned char Fader[48];
+//13/12/2014 sab deb
+//ATTENTION ATTENTION : Besoin pour gestion du fader en mode sélection par ALT+clic
+// --> demander à Christoph comment valider / quel est le bug iCat ?
+//unsigned char Fader[48];
+ int Fader[48];
+ //13/12/2014 sab fin
 unsigned char Fader_before[48];//pour icat
 unsigned char Fader_previous[48];//pour chasers autolaunch. très certainement à re organiser les backups d 'états de manière plus générale
 

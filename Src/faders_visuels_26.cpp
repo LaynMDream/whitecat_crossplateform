@@ -703,7 +703,24 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     doomrouge.Print("m",x+11+(cmptfader*espacement), y+35);
                 }
             }
-            FaderB.DrawOutline(CouleurLigne);
+			//sab 13/12/2014 deb
+            //FaderB.DrawOutline(CouleurLigne);
+			ol::Rgba colorToApply = CouleurLigne ;
+			if (mouseScroll.m_subscriberList.size() > 0)
+			{
+				whc_wheel::whc_wheeledcontroller controleur;
+				for (std::vector<whc_wheel::whc_wheeledcontroller>::iterator it = mouseScroll.m_subscriberList.begin() ; it != mouseScroll.m_subscriberList.end(); ++it)
+			   {
+					controleur = *it;
+					if (controleur.controller == &Fader[cmptfader])
+					{
+						//gma_isCapsLock_selcted = true ;
+						colorToApply = CouleurYellow ;
+					}
+			   }
+			}
+			FaderB.DrawOutline(colorToApply);
+			//sab 13/12/2014 fin
 
 
 ///////////////////////////////////////////////////////////////////////////////

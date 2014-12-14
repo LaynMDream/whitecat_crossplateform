@@ -274,6 +274,23 @@ private:
 class whc_wheel
 {
 public:
+	typedef enum
+	{
+		none   = 0,
+		slider = 1,
+		rotary = 2
+	} whc_wheeledcontrollertype ;
+
+    typedef struct whc_wheeledcontroller
+    {
+        int* controller;
+        whc_wheeledcontrollertype type;
+        int minimum;
+        int maximum;
+    } whc_wheeledcontroller;
+
+	std::vector<whc_wheeledcontroller>  m_subscriberList;
+
     int static c_mouse_z_prev;
     int static c_mouse_w_prev;
     int static c_loops;
@@ -393,6 +410,8 @@ private:
     int  m_yield;   //!< Member variable m_yield (sum of gain until event processed : casual use)
     int  m_speed;	//!< Member variable m_speed
     bool m_pending; //!< Member variable "m_pending"
+
+
 
 };
 

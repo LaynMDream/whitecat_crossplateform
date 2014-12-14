@@ -141,6 +141,7 @@ void whc_wheel::c_Init (volatile int& mouse_z, volatile int& mouse_w)
     whc_wheel::c_mouse_z_prev = mouse_z ;
     whc_wheel::c_mouse_w_prev = mouse_w ;
 }
+
 void whc_wheel::c_CollectKeyStatus (whc_wheel& mouseScroll , whc_wheel& mouseRoll)
 {
     if (not (key[KEY_LCONTROL]))

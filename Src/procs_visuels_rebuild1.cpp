@@ -569,15 +569,51 @@ int logical_channelspace()
 //sab 28/06/2014 DEB
 void mouseWheel_graphics_handle()
 {
-	int fader_x, fader_y, fader_spacing, fader_quantity, fader_gm_width, fader_leftGM_x, fader_rightGM_x;
+    if (key[KEY_ALT])
+    {
+        //ALTERATION Des MODES SELECTION (CHANNELS ou ALT+CLIC) - C'est le contrôleur SOUS LA SOURIS qui est prioritaire :: le régisseur regarde son écran
+        ALT_mouseWheel_graphics_handle() ;
+    }
+    else if (key[KEY_CAPSLOCK])
+    {
+        //c'est la sélection faite avec (ALT+CLIC) qui bénéficie de la roue en CAPS LOCK où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
+        ALTCLIC_mouseWheel_graphics_handle() ;
+    }
+
+    else  // caps off et pas de touche modificatrice
+    {
+        //c'est la sélection de channels qui bénéficie de la roue par défaut où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
+        do_logical_Channel_Wheel(); //ex DoMouseLevel();
+    }
+}
+
+void ALTCLIC_mouseWheel_graphics_handle()
+{
+    if (mouseScroll.m_subscriberList.size() > 0)
+	{
+		whc_wheel::whc_wheeledcontroller controleur;
+		for (std::vector<whc_wheel::whc_wheeledcontroller>::iterator it = mouseScroll.m_subscriberList.begin() ; it != mouseScroll.m_subscriberList.end(); ++it)
+	   {
+			//if (it.type==whc_wheel::slider)
+			//{
+				controleur = *it;
+				whc_wheel::c_levelIncrease(mouseScroll, *controleur.controller,   controleur.maximum, controleur.minimum);
+			//}
+	   }
+	}
+}
+
+void ALT_mouseWheel_graphics_handle()
+{
+    int fader_x, fader_y, fader_spacing, fader_quantity, fader_gm_width, fader_leftGM_x, fader_rightGM_x;
 
     switch(window_focus_id)
     {
-	case W_MAINBOARD:
-		do_logical_grand_master(1050, 55, 40);
-		do_logical_ChannelScroller_wheel();
-		do_logical_Channel_Wheel(); //DoMouseLevel();
-		break;
+    case W_MAINBOARD:
+        ALT_do_logical_grand_master_wheel(1050, 55, 40);
+        ALT_do_logical_ChannelScroller_wheel();
+        do_logical_Channel_Wheel(); // à l'interieur de la fonction contrôle si en caps lock ou en alt
+        break;
     case W_SAVEREPORT:
 
         break;
@@ -595,18 +631,18 @@ void mouseWheel_graphics_handle()
         break;
     case W_FADERS :
 
-    	fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
-    	fader_y = YFader;
+        fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
+        fader_y = YFader;
 
-    	fader_spacing = 182 ; //int(150+((190-150)*size_faders));
-    	fader_quantity = 48;
-    	fader_gm_width = 40 ; //(int(50*size_faders));
+        fader_spacing = 182 ; //int(150+((190-150)*size_faders));
+        fader_quantity = 48;
+        fader_gm_width = 40 ; //(int(50*size_faders));
 
-		fader_leftGM_x = fader_x-140 ;
-    	fader_rightGM_x = fader_x+(fader_quantity*fader_spacing)+50;
+        fader_leftGM_x = fader_x-140 ;
+        fader_rightGM_x = fader_x+(fader_quantity*fader_spacing)+50;
 
-		do_logical_grand_master(fader_leftGM_x, fader_y, fader_gm_width);//x y largeur
-		do_logical_grand_master(fader_rightGM_x, fader_y, fader_gm_width);//x y largeur
+        ALT_do_logical_grand_master_wheel(fader_leftGM_x, fader_y, fader_gm_width);//x y largeur
+        ALT_do_logical_grand_master_wheel(fader_rightGM_x, fader_y, fader_gm_width);//x y largeur
         break;
     case W_PATCH:
 
@@ -659,7 +695,7 @@ void mouseWheel_graphics_handle()
 
         break;
     case W_BANGER:
-		do_logical_Banger_Wheel();
+        ALT_do_logical_Banger_Wheel();
         break;
     case W_ALARM:
 
