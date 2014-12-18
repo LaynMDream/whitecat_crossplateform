@@ -1,13 +1,22 @@
 verifier icat perfs ?
 
 nouveauté: appel de références de gélatines depuis la trichro
+
 debug >
 audio autoload depuis banger
 fader compris dans un fgroup sur lui même
+grand master plus facilement remétable à full
+La sélection du bouton de ratio pour un crossfade manuel déclenchait à tors le GO
+Enregistrement automatique des ratios lors de la manipulation
 
+to do:
 core minifaders faders
-La sélection du bouton de ratio pour un crossfade manuel déclenche à tors le GO
+doc chemin relatif
 affichage grada plus lisible
+lecteur audio last level et num de fichiers + macro channel au démarrage 
+shift f1 nouvelle memoiore auto numerotage
+visu midi au dessu s pastilles banger
+liste gel debut
 
 //////TO DO///////////////////////////////////////////////
 

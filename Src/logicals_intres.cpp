@@ -408,10 +408,7 @@ else if( index_do_banger_membeforeone==1)
  {
  sprintf(string_confirmation,"Affect banger %d to memory %d.%d ?", affect_banger_number , other_mem_in_loop/10,other_mem_in_loop%10 );
  }
- else if(index_do_load_midipreset==1)
- {
- sprintf(string_confirmation,"Load midi preset %s ?",midipreset_name);
- }
+
 
   else if(index_do_wizard_ch==1)
  {
@@ -1238,12 +1235,6 @@ Banger_Memoire[other_mem_in_loop]=affect_banger_number;
 reset_numeric_entry();
 sprintf(string_Last_Order,">> Attributed banger %d to memory %d.%d", affect_banger_number, other_mem_in_loop/10,other_mem_in_loop%10 );
 
-}
-
-else if(index_do_load_midipreset==1)
-{
-load_midipreset();
-sprintf(string_Last_Order,">> Loaded midipreset %s", midipreset_name );
 }
 
 else if(index_do_wizard_ch==1)

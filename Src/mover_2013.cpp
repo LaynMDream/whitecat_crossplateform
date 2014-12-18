@@ -681,7 +681,7 @@ for(int dv=0;dv<5;dv++)
 Rect ParamN(Vec2D( xt+60,yt+5+(dv*15)),Vec2D(30,12));
 Rect LevelFrame(Vec2D(xt+180,yt+5+(dv*15)),Vec2D(255,10));
 LevelFrame.SetRoundness(5);
-if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && window_focus_id==W_MOVER && mouse_button==1 && mouse_released==0)
+if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10  && mouse_button==1 && mouse_released==0)
 {
 ParamN.Draw(CouleurBlind);
 
@@ -1721,7 +1721,7 @@ if(tracker_mode==0)//not spline
   if (mover_params[0][0]<0) {mover_params[0][0]=0;}
   else if (mover_params[0][0] >255){mover_params[0][0]=255;}
   mover_params[1][0]=(int) y_val_at_end[move_selected];
-  if (mover_params[1][0]>255) {mover_params[1][0]=255;}
+  if (mover_params[1][0]<0) {mover_params[1][0]=0;}
   else if (mover_params[1][0] >255){mover_params[1][0]=255;}
   if (mover_params[2][0]<0) {mover_params[2][0]=0;}
   else if (mover_params[2][0] >255){mover_params[2][0]=255;}

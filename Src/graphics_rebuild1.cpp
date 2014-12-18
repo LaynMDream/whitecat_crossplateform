@@ -224,6 +224,10 @@ for (int f=63;f>=0;f--)
         Save_Menu(xsave_window,ysave_window);
         MoveCloseBox(xsave_window+20,ysave_window+25,W_SAVE);
         break;
+        case W_BAZOOKAT:
+        fenetre_bazookat_menus(position_x_bazoocat_menus,position_y_bazoocat_menus);
+        MoveCloseBox(position_x_bazoocat_menus+20,position_y_bazoocat_menus+25,W_BAZOOKAT);
+        break;
         case W_BANGER:
         fenetre_banger(X_banger,Y_banger);
         MoveCloseBox(X_banger+20,Y_banger+25,W_BANGER);

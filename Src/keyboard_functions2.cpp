@@ -1270,10 +1270,10 @@ int key_time_in_out()
             //IN OUT SEL
              if(numeric_postext==0)
            {
-           if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )
-           {index_type_of_time_to_affect[0]=1; index_type_of_time_to_affect[2]=1; }
-            else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[0]==1 )
-            {index_type_of_time_to_affect[0]=0; index_type_of_time_to_affect[2]=0; }
+           if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )//Delay selection
+           {index_type_of_time_to_affect[0]=1; index_type_of_time_to_affect[2]=1; }//delay in et out sélectionnés
+            else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[2]==1 )//Delays déselection 18/12/14 christoph
+            {index_type_of_time_to_affect[0]=0; index_type_of_time_to_affect[2]=0; }//0=DIN 1=IN 2=DOUT 3=OUT
             }
             else//entree directe pour le preset
             {

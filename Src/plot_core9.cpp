@@ -2408,7 +2408,7 @@ store_relativ_xy_position_of_shape();
 
 //alpha shape
 
-if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
+if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 )
 {
 general_alpha_for_shape=((float)(mouse_x-plotx))/100;
 if(general_alpha_for_shape<0){general_alpha_for_shape=0;}
@@ -2882,7 +2882,7 @@ for(int c=0;c<3;c++)
 for(int l=0;l<2;l++)
 {
 //MySymbAction.MoveTo(Vec2D(plotx+5+(c*65),ploty+70+(l*20)));
-if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0 && index_click_inside_relativ_xy==0
+if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0
 && mouse_x>plotx+5+(c*65) && mouse_x<plotx+5+(c*65)+60 && mouse_y>ploty+60+(l*20) && mouse_y<ploty+60+(l*20)+18
 && mouse_button==1 && mouse_released==0)
 {

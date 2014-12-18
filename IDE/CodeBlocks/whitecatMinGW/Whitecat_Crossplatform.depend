@@ -1156,7 +1156,7 @@
 1390400902 c:\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1418202164 c:\whitecat_crossplateform\src\whitecat.h
+1418889981 c:\whitecat_crossplateform\src\whitecat.h
 	"Crossplateform.h"
 
 1417596507 c:\whitecat_crossplateform\src\my_window_file_sample.h
@@ -1167,9 +1167,9 @@
 
 1417596507 c:\whitecat_crossplateform\src\midi_core.cpp
 
-1418288111 c:\whitecat_crossplateform\src\core_6.cpp
+1418890983 c:\whitecat_crossplateform\src\core_6.cpp
 
-1417596507 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
+1418885712 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
 	<setjmp.h>
 	"hpdf.h"
 
@@ -1180,9 +1180,9 @@
 
 1417596507 c:\whitecat_crossplateform\src\saves_menu_8.cpp
 
-1417596506 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
+1418488552 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
 
-1417596506 c:\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
+1418488550 c:\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
 
 1417596506 c:\whitecat_crossplateform\src\grider_core8.cpp
 
@@ -1194,15 +1194,15 @@
 
 1417596507 c:\whitecat_crossplateform\src\mover_spline6.cpp
 
-1417599269 c:\whitecat_crossplateform\src\mover_2013.cpp
+1418889221 c:\whitecat_crossplateform\src\mover_2013.cpp
 
-1417599300 c:\whitecat_crossplateform\src\plot_core9.cpp
+1418889352 c:\whitecat_crossplateform\src\plot_core9.cpp
 
 1417596507 c:\whitecat_crossplateform\src\plot9.cpp
 
 1418290211 c:\whitecat_crossplateform\src\audio_core5.cpp
 
-1418213139 c:\whitecat_crossplateform\src\save_show_13.cpp
+1418889394 c:\whitecat_crossplateform\src\save_show_13.cpp
 
 1417596507 c:\whitecat_crossplateform\src\network_artnet_3.cpp
 	<winsock2.h>
@@ -1211,7 +1211,7 @@
 	<_mingw.h>
 	<windows.h>
 
-1417596506 c:\whitecat_crossplateform\src\logicals_intres.cpp
+1418888232 c:\whitecat_crossplateform\src\logicals_intres.cpp
 
 1417596506 c:\whitecat_crossplateform\src\channels_9_core.cpp
 	<allegro.h>
@@ -1219,9 +1219,9 @@
 
 1417596507 c:\whitecat_crossplateform\src\wizard.cpp
 
-1417596506 c:\whitecat_crossplateform\src\grand_master.cpp
+1418628989 c:\whitecat_crossplateform\src\grand_master.cpp
 
-1417599328 c:\whitecat_crossplateform\src\faders_core_24.cpp
+1418889530 c:\whitecat_crossplateform\src\faders_core_24.cpp
 
 1417596506 c:\whitecat_crossplateform\src\audio_visu4.cpp
 
@@ -1235,11 +1235,11 @@
 
 1390400902 c:\whitecat_crossplateform\lib\windows\cserial\serial.h
 
-1418201034 c:\whitecat_crossplateform\src\banger_core_8.cpp
+1418886571 c:\whitecat_crossplateform\src\banger_core_8.cpp
 
 1417596506 c:\whitecat_crossplateform\src\banger_visu_8.cpp
 
-1417599493 c:\whitecat_crossplateform\src\call_everybody_5.cpp
+1418485595 c:\whitecat_crossplateform\src\call_everybody_5.cpp
 
 1417596507 c:\whitecat_crossplateform\src\patch_core.cpp
 
@@ -1257,12 +1257,12 @@
 
 1417599493 c:\whitecat_crossplateform\src\numpad_visuel.cpp
 
-1417596506 c:\whitecat_crossplateform\src\keyboard_functions2.cpp
+1418889740 c:\whitecat_crossplateform\src\keyboard_functions2.cpp
 
 1417596506 c:\whitecat_crossplateform\src\keyboard_routines2.cpp
 	<allegro.h>
 
-1417596507 c:\whitecat_crossplateform\src\minifaders_core.cpp
+1418889821 c:\whitecat_crossplateform\src\minifaders_core.cpp
 
 1417596507 c:\whitecat_crossplateform\src\minifaders_visu.cpp
 
@@ -1746,7 +1746,7 @@
 
 1417596506 c:\whitecat_crossplateform\src\list_proj_visu.cpp
 
-1417596507 c:\whitecat_crossplateform\src\sequentiel_6_core.cpp
+1418630726 c:\whitecat_crossplateform\src\sequentiel_6_core.cpp
 
 1417596506 c:\whitecat_crossplateform\src\icat14.cpp
 
@@ -1764,7 +1764,7 @@
 
 1417596507 c:\whitecat_crossplateform\src\my_window_file_sample.cpp
 
-1417942141 c:\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
+1418488055 c:\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
 
 1417596506 c:\whitecat_crossplateform\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
@@ -1810,7 +1810,7 @@
 
 1390400902 c:\whitecat_crossplateform\lib\windows\dashard\_dashard.h
 
-1417599586 c:\whitecat_crossplateform\src\midi_13.cpp
+1418484854 c:\whitecat_crossplateform\src\midi_13.cpp
 
 1417596506 c:\whitecat_crossplateform\src\cfg_screen.cpp
 
@@ -1822,7 +1822,7 @@
 
 1417596506 c:\whitecat_crossplateform\src\chasers_visu.cpp
 
-1417596506 c:\whitecat_crossplateform\src\graphics_rebuild1.cpp
+1418485000 c:\whitecat_crossplateform\src\graphics_rebuild1.cpp
 
 1417596506 source:c:\whitecat_crossplateform\src\whitecat_private.rc
 	<windows.h>
@@ -2181,7 +2181,7 @@
 
 1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_6_uno.cpp
 
-1418120769 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
+1418891049 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -2248,6 +2248,7 @@
 	<iCat14.cpp>
 	<network_MAC_adress_3.cpp>
 	<midi_launchpad.cpp>
+	<bazooKAT.cpp>
 	<grider8.cpp>
 	<sequentiel_7_visu.cpp>
 	<Draw3.cpp>
@@ -2291,4 +2292,10 @@
 1417596506 c:\whitecat_crossplateform\src\arduino_core_6_uno.cpp
 
 1417596506 c:\whitecat_crossplateform\src\arduino_6_uno.cpp
+
+1418484708 source:c:\whitecat_crossplateform\src\bazoocat_video_rendering.c
+
+1418484708 c:\whitecat_crossplateform\src\bazoocat_video_rendering.c
+
+1418488229 c:\whitecat_crossplateform\src\bazookat.cpp
 

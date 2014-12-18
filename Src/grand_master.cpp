@@ -44,13 +44,13 @@ WWWWWWWW           C  WWWWWWWW   |
 int do_logical_grand_master(int GMX, int GMY, int larg)
 {
 
-if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-5 && mouse_y<=GMY+255)
+if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-20 && mouse_y<=GMY+275)
 {
 
 
 if((window_focus_id==0 || window_focus_id==906 )&& mouse_button==1 && index_allow_grand_master==1)
 {
-set_mouse_range(GMX, GMY, GMX+larg, GMY+255);//pour pas deborder
+set_mouse_range(GMX, GMY-20, GMX+larg, GMY+275);//pour pas deborder
 //NIVEAU
 niveauGMaster=((GMY+255)-mouse_y);
 if(niveauGMaster>255){niveauGMaster=255;}

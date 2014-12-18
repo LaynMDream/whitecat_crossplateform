@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.3 - 11 dec 2014"};
+char versionis[72]={"Beta 0.8.6.3 - 18 dec 2014"};
 char nickname_version[48]={"WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
@@ -82,7 +82,7 @@ W_FADERS=906,
 W_PATCH=907,
 W_TIME=908,
 W_SEQUENCIEL=909,
-//910
+W_BAZOOKAT=910,
 W_ASKCONFIRM=911,
 W_PLOT=912,
 W_ECHO=913,
@@ -547,7 +547,7 @@ float display_fps;
 //6 tracking docks // 12 espaces de tracking par tracking dock//
 int tracking_coordonates[6][12][4];//dock selected / tracker / x y largeur x largeur y
 bool tracking_contents[6][12][512];//channel affectation
-int buffer_tracker[512];
+int buffer_tracker[514];
 int tracker_level[6][12];
 int tracker_to_edit=0;
 //smooth
@@ -935,8 +935,6 @@ bool index_do_banger_memonstage=0;
 bool index_do_banger_memonpreset=0;
 bool index_do_banger_membeforeone=0;
 bool index_do_banger_memother=0; // les 8 autres memoires
-bool index_do_load_midipreset=0;//chargement midi preset
-
 /////////////////////////////////FENTRE LISTE PROJOS//////////////////////////
 bool index_list_projecteurs=1;
 bool index_edit_listproj=0;
@@ -1199,7 +1197,7 @@ int index_over_banger_window=0;
 bool index_banger_is_on=0;//on off du mode
 int index_banger_selected=0;
 bool index_enable_edit_banger=0;
-char string_event[36];
+char string_event[72];//debug debordement de tableau 18/12/14 christoph ruiserge
 int Banger_Memoire[10000];//le banger affecté à une mémoire
 char bangers_name[128][25];//128 bangers
 int bangers_type[128][6];//128 bangers // 6 events par banger
@@ -1388,11 +1386,7 @@ int pos_focus_window=0;
 
 bool im_moving_a_window=0;//index poru lros de déplacement
 int last_window_founded=0;
-/////midi presets///////////////////////////////
-char list_midipreset_files[127][72];
-int midipreset_selected=0;
-char midipreset_name[72];
-int line_midipreset=0;
+
 
 //////////////WIZARD /////////////////////////
 int Xwizard=100;
@@ -2538,3 +2532,21 @@ bool bounce_is_prepared[24];
 int fader_before_bounce[48];
 
 float snap_echo_to_recall[24][513];
+
+
+//BAZOOCAT video handler
+
+bool index_bazoocat_menu_window=0;
+bool index_bazoocat_renderer_window=0;
+
+int size_x_bazoocat_menus=800;
+int size_y_bazoocat_menus=600;
+int position_x_bazoocat_menus=100;
+int position_y_bazoocat_menus=100;
+
+int size_x_bazoocat_renderer=1280;
+int size_y_bazoocat_renderer=800;
+int position_x_bazoocat_renderer=1000;
+int position_y_bazoocat_renderer=100;
+
+bool index_click_move_bazoocat_window=0;

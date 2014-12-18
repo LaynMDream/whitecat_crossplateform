@@ -139,6 +139,9 @@
 		<Unit filename="../../../Src/banger_visu_8.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/bazooKAT.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="../../../Src/channels_10_visu.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

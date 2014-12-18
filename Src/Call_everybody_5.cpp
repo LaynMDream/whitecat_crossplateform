@@ -300,7 +300,7 @@ command_button_logical(xmenu+80,ymenu+50+(cl*25),stae,nom_commande,raccourci_com
 
 
 //3ème colonne grands blocs
-for(int cl=0;cl<5;cl++)
+for(int cl=0;cl<6;cl++)
 {
 switch(cl)
 {
@@ -339,7 +339,13 @@ strcpy(nom_commande,"GridPl.");
 strcpy(raccourci_commande,"");
 stae=index_grider_window;
 break;
-
+case 5:
+IDmidi=1829;
+IDcommand=cl+20;
+strcpy(nom_commande,"BazooKAT");
+strcpy(raccourci_commande,"");
+stae=index_bazoocat_menu_window;
+break;
 default:
 break;
 }
@@ -589,7 +595,7 @@ command_button_view(xmenu+80,ymenu+50+(cl*25),stae,nom_commande,raccourci_comman
 
 
 //3ème colonne grands blocs
-for(int cl=0;cl<5;cl++)
+for(int cl=0;cl<6;cl++)
 {
 switch(cl)
 {
@@ -628,7 +634,12 @@ strcpy(nom_commande,"GRID PL.");
 strcpy(raccourci_commande,"");
 stae=index_grider_window;
 break;
-
+case 5:
+IDmidi=1829;
+strcpy(nom_commande,"BazooKAT");
+strcpy(raccourci_commande,"");
+stae=index_bazoocat_menu_window;
+break;
 default:
 break;
 }

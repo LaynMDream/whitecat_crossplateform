@@ -174,6 +174,9 @@ bufferSaisiesnamp=0;
 #include <network_MAC_adress_3.cpp>
 #include <midi_launchpad.cpp>
 
+
+#include <bazooKAT.cpp>
+
 #include <grider8.cpp>
 #include <sequentiel_7_visu.cpp>
 #include <Draw3.cpp>
@@ -192,7 +195,6 @@ bufferSaisiesnamp=0;
 
 #include <arduino_core_6_UNO.cpp>
 #include <arduino_6_UNO.cpp>
-
 
 
 int time_doing()
@@ -743,10 +745,7 @@ int main_actions_on_screen()
       if(index_writing_curve==0){Boxes();}
       if(core_do_calculations[3]==1)
       {
-
       trichro_back_buffer(315/2,550/2,125,15);//calcul trichro ( triangle et saturation dans buffer separé)
-
-
       do_colors();//ventilation des niveaux pickés ainsi que distrib dans faders et docks
       }
       DoMouse();
@@ -1042,7 +1041,7 @@ for(int i=0;i<4;i++)
 }
 
 
-
+reset_temp_state_for_channel_macros_launch();//christoph 18/12/14 pour intialisation au démarrage de wcat des channels macros
 starting_wcat=0;
 
 
@@ -1074,7 +1073,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d / %d / %d / %d ", enable_import,index_do_import,isSchwz,index_export_choice);
+sprintf(string_debug,"%d / %d ", ratio_X1X2_together,index_go);
 
 if(there_is_change_on_show_save_state==1)
 {

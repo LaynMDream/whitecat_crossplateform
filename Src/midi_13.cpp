@@ -3477,6 +3477,15 @@ simulate_keypress(KEY_O<<8);index_false_shift=0;index_false_control=0;
 sprintf(string_Last_Order,"Midi simulate FULL");
 }
 
+if(control == 1829 )//window BazooCAT
+{
+if(index_bazoocat_menu_window==0){add_a_window(W_BAZOOKAT);}
+else {substract_a_window(W_BAZOOKAT);}
+rest(midi_keyboard_wait);
+}
+
+
+
 
 return(0);
 }

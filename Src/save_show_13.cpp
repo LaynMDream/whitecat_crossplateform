@@ -655,44 +655,6 @@ return(0);
 
 
 
-int load_midipreset()
-{
-char temp_folder_midi[256];
-sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name);
-chdir(temp_folder_midi);
-FILE *fpm;
-
-if ((fpm=fopen(file_midi_affectation, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_affectation);b_report_error[idf]=1;}
-else
-{
-sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_affectation);
-if (fread(miditable, sizeof(int),midi_affectation_size, fpm) !=midi_affectation_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_affectation);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_affectation);
-}
-
-if ((fpm=fopen(file_midi_send_out, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_send_out);b_report_error[idf]=1;}
-else
-{
-sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_send_out);
-if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fpm) !=midi_send_out_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_send_out);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_send_out);
-}
-load_Fader_state_to_midi_array();
-
-fclose(fpm);
-//REROLL
-strcpy(rep,"");
-sprintf(rep,"%s",mondirectory);
-chdir (rep);
-
- return(0);
-}
-
-
 int Show_report_save_load()
 {
 Rect Report_Save_Load(Vec2D(report_SL_X, report_SL_Y), Vec2D( 350,160));
@@ -1476,7 +1438,7 @@ else if(niveauGMaster==255){midi_levels[615]=127;}
 
 
 
-if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
+if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9)
 {process_assign_to_core(core_to_assign);}
 
 switch(config_page_is)
@@ -7206,6 +7168,7 @@ if(grider_nb_row>24){grider_nb_row=8;}
 if(grider_begin_channel_is>512){grider_begin_channel_is=1;}
 
 int grider_report_cross[8];
+
 if ((fp=fopen( file_gridpl_crosslv, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_crosslv);b_report_error[idf]=1;}
 else
@@ -7219,7 +7182,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_crosslv)
 for(int gr=0;gr<4;gr++)
 {
 grid_niveauX1[gr]=grider_report_cross[gr];
-grid_niveauX2[gr+4]=grider_report_cross[gr+4];
+grid_niveauX2[gr]=grider_report_cross[gr+4];//debug christoph ruiserge sur état crossfade 18/12/14
 grid_floatX1[gr]=(float)grid_niveauX1[gr];
 grid_floatX2[gr]=(float)grid_niveauX2[gr];
 }
