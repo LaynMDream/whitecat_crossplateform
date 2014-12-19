@@ -51,11 +51,13 @@ int scan_savesfolder()
 
     if(!al_findfirst("*.*",&f,-1))
     {
+
             while(!al_findnext(&f))
             {
+            int f_name_len = strlen(f.name);
             isDir=true;
             // check if it's a dir or a file
-            for(unsigned int a=0;a<strlen(f.name);a++)
+            for(unsigned int a=0;a<f_name_len;a++)
             {
                 if(f.name[a]=='.')
                 {
@@ -199,8 +201,10 @@ else if(strcmp(importfile_name,"schwz")==0){scan_importfolder("schwz");index_exp
 else if(strcmp(importfile_name,"..")==0){scan_importfolder("");line_import=0;}
 else
 {
+//christoph 19/12/14
+int f_name_len = strlen(importfile_name);
             // check if it's a dir or a file
-          for(unsigned int a=0;a<strlen(importfile_name);a++)
+          for(unsigned int a=0;a<f_name_len;a++)
           {
            if( importfile_name[a]=='.')
            {
@@ -258,7 +262,8 @@ return(0);
 //sab 02/03/2014 int deroule_repertoire_export_import(int xrep, int yrep, char name_of_rep[25])
 void deroule_repertoire_export_import(int xrep, int yrep, const std::string label)
 {
-const std::string name_of_rep = label.substr(0,25);
+//christoph 19/12/14 substr(0,25)>substr(0,24);
+//const std::string name_of_rep = label.substr(0,24);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 petitchiffre.Print("Content of import_export folder:",xrep+10,yrep+170);
 Rect BackDeroule(Vec2D(xrep,yrep+155),Vec2D(245,185));
@@ -388,7 +393,8 @@ LoadExport.DrawOutline(CouleurLigne);
 //sab 02/03/2014 -> void -> std::string
 void do_logical_deroule_repertoire_export_import(int xrep, int yrep, const std::string label)
 {
-const std::string name_of_rep 		= label.substr (0,25);
+//christoph 19/12/14 substr(0,25)>substr(0,24);
+const std::string name_of_rep 		= label.substr (0,24);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 
 for (int y=0;y<8;y++)
@@ -753,7 +759,8 @@ return(0);
 //sab 02/03/2014 int deroule_repertoire_classical_save(int xrep, int yrep, char name_of_rep[25])
 void deroule_repertoire_classical_save(int xrep, int yrep, const std::string label)
 {
-const std::string name_of_rep = label.substr(0,25);
+//christoph 19/12/14 substr(0,25)>substr(0,24);
+const std::string name_of_rep = label.substr(0,24);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 petitchiffre.Print("Content of SAVES folder:",xrep+10,yrep+170);
 Rect BackDeroule(Vec2D(xrep,yrep+155),Vec2D(245,185));
@@ -847,7 +854,8 @@ ResetB.DrawOutline(CouleurLigne);
 //sab 02/03/2014 int do_logical_deroule_repertoire_classical_save(int xrep, int yrep, char name_of_rep[25])
 void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std::string label)
 {
-const std::string name_of_rep = label.substr(0,25);
+//christoph 19/12/14 substr(0,25)>substr(0,24);
+const std::string name_of_rep = label.substr(0,24);
 
 for (int y=0;y<8;y++)
 {

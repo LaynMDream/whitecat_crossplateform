@@ -280,6 +280,11 @@ int snap_kill_and_bounce(int echo, int f)
     if(f>0 && f<=48 )
     {
         snap_fader_state(echo, f) ;
+
+        //si le fader est en train de jouer en LFO, christoph 19/12/14
+        if( lfo_mode_is[f]!=0){lfo_mode_is[f]=0;}
+        if ( lfo_cycle_is_on[f]!=0){lfo_cycle_is_on[f]=0;}
+
         Fader[f]=0;
         do_bounce[echo]=0;
         bounce_is_prepared[echo]=0;
@@ -2683,11 +2688,12 @@ int scan_audiofolder()
     if(!al_findfirst("*.*",&f,-1))
     {
         while(!al_findnext(&f))
-        {
-            //sab 02/03/2014 for(unsigned int a=0; a<strlen(f.name); a++)
-            for(unsigned int a=0; a<strlen(f.name); a++)
+        {//19/12/14 correction christoph ruiserge
+            int f_name_len = strlen(f.name);
+            for(unsigned int a=0; a< f_name_len; a++)
             {
-                if(f.name[a]=='.')
+                //19/12/14 correction christoph ruiserge
+                if(f.name[a]=='.' && a<=f_name_len-3)
                 {
                     if((f.name[a+1]=='W' &&  f.name[a+2]=='A' &&  f.name[a+3]=='V')
                             ||(f.name[a+1]=='w' &&  f.name[a+2]=='a' &&  f.name[a+3]=='v')

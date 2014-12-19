@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.3 - 18 dec 2014"};
+char versionis[72]={"Beta 0.8.6.3 - 19 dec 2014"};
 char nickname_version[48]={"WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
@@ -289,7 +289,7 @@ int colorpreset_linked_to_dock[8][2];//colorpreset// num fader puis num dock
 char string_docktypvideo[8];
 char DockName[48][6][25];
 unsigned char FaderDockContains[48][6][514];
-unsigned char FaderDoDmx[48][514];//la sortie de chaque fader
+unsigned char FaderDoDmx[49][514];//la sortie de chaque fader // passé à 49 pour éviter debordement pointeur ECHO SNAP 19/12/14
 bool show_who_is_in_FADER_DOCK[514];//pour affichage de qui est dans le dock
 bool FaderLocked[48];
 unsigned char OldFaderLockProc[48];//pour lancer le midi send out, prend dernier etat fader lors du lock et compare

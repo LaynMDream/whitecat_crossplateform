@@ -296,7 +296,11 @@ else if(index_copy_mem_in==1)//CTRL c v avec num de mem
  }
  else if(index_do_jump_while_cross==1)
  {
-  sprintf(string_confirmation,"Panic Jump to mem %d.%d ?",(int)(atof(numeric)*10.0001)/10,(int)(atof(numeric)*10.0001)%10);
+  //christoph 19/12/14
+  int tmpmp=(atof(numeric)*10.0001)/10;
+  int tmpmp2=(int)(atof(numeric)*10.0001)%10;
+  //sprintf(string_confirmation,"Panic Jump to mem %d.%d ?",(int)(atof(numeric)*10.0001)/10,(int)(atof(numeric)*10.0001)%10);
+  sprintf(string_confirmation,"Panic Jump to mem %d.%d ?",tmpmp,tmpmp2);
  }
 
  else if( index_do_export==1)

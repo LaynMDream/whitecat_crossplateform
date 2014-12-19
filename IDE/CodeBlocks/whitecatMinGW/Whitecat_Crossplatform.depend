@@ -1156,7 +1156,7 @@
 1390400902 c:\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1418889981 c:\whitecat_crossplateform\src\whitecat.h
+1418979520 c:\whitecat_crossplateform\src\whitecat.h
 	"Crossplateform.h"
 
 1417596507 c:\whitecat_crossplateform\src\my_window_file_sample.h
@@ -1167,7 +1167,7 @@
 
 1417596507 c:\whitecat_crossplateform\src\midi_core.cpp
 
-1418890983 c:\whitecat_crossplateform\src\core_6.cpp
+1418977696 c:\whitecat_crossplateform\src\core_6.cpp
 
 1418885712 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
 	<setjmp.h>
@@ -1178,7 +1178,7 @@
 
 1417598962 c:\whitecat_crossplateform\src\saves_export_import.cpp
 
-1417596507 c:\whitecat_crossplateform\src\saves_menu_8.cpp
+1418978538 c:\whitecat_crossplateform\src\saves_menu_8.cpp
 
 1418488552 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
 
@@ -1196,9 +1196,9 @@
 
 1418889221 c:\whitecat_crossplateform\src\mover_2013.cpp
 
-1418889352 c:\whitecat_crossplateform\src\plot_core9.cpp
+1418978696 c:\whitecat_crossplateform\src\plot_core9.cpp
 
-1417596507 c:\whitecat_crossplateform\src\plot9.cpp
+1418978840 c:\whitecat_crossplateform\src\plot9.cpp
 
 1418290211 c:\whitecat_crossplateform\src\audio_core5.cpp
 
@@ -1211,7 +1211,7 @@
 	<_mingw.h>
 	<windows.h>
 
-1418888232 c:\whitecat_crossplateform\src\logicals_intres.cpp
+1418979358 c:\whitecat_crossplateform\src\logicals_intres.cpp
 
 1417596506 c:\whitecat_crossplateform\src\channels_9_core.cpp
 	<allegro.h>

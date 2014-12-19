@@ -270,11 +270,13 @@ int scan_planfolder()//plot
     {
             while(!al_findnext(&f))
             {
+            //christoph 19/12/14
+            int f_name_len = strlen(f.name);
             isSomeone=true; // we've found a directory!
             bool index_check_is_supported=0;
-            for(unsigned int a=0;a<strlen(f.name);a++)
+            for(unsigned int a=0;a<f_name_len;a++)
            {
-           if( f.name[a]=='.')
+           if( f.name[a]=='.' && a<=f_name_len-3)
            {
                 if(
                 (f.name[a+1]=='j' &&  f.name[a+2]=='p' &&  f.name[a+3]=='g')

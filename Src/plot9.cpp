@@ -4268,7 +4268,8 @@ return(0);
 //sab 02/03/2014  int deroule_repertoire_plans(int xrep, int yrep, char name_of_rep[25])
 void deroule_repertoire_plans(int xrep, int yrep, const std::string label)
 {
-const std::string name_of_rep = label.substr(0,25);
+//chrisoph 19/12/14 label.substr(0,25) > label.substr(0,24)
+const std::string name_of_rep = label.substr(0,24);
 //////////////////////LISTE DOSSIERS ETC///////////////////////////////////////
 
 Rect BackDeroule(Vec2D(xrep,yrep+155),Vec2D(210,185));

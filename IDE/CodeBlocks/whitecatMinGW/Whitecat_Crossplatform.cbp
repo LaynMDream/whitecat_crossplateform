@@ -157,6 +157,7 @@
 		<Unit filename="../../../Src/chat_dock_machine.ico">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/debug_informations.h" />
 		<Unit filename="../../../Src/dmx_enttec_pro.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -241,6 +242,7 @@
 		<Unit filename="../../../Src/midi_CORE.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/midi_affectation_table.h" />
 		<Unit filename="../../../Src/midi_launchpad.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
