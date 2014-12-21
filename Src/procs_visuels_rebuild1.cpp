@@ -295,12 +295,6 @@ int detection_over_window()
 }
 
 
-
-
-
-
-
-
 int move_window(int idwindowis)
 {
     if(mouseClicLeft.isDown() && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu)
@@ -567,52 +561,86 @@ int logical_channelspace()
 }
 
 //sab 28/06/2014 DEB
-void mouseWheel_graphics_handle()
-{
-    if (key[KEY_ALT])
-    {
-        //ALTERATION Des MODES SELECTION (CHANNELS ou ALT+CLIC) - C'est le contrôleur SOUS LA SOURIS qui est prioritaire :: le régisseur regarde son écran
-        ALT_mouseWheel_graphics_handle() ;
-    }
-    else if (key[KEY_CAPSLOCK])
-    {
-        //c'est la sélection faite avec (ALT+CLIC) qui bénéficie de la roue en CAPS LOCK où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
-        ALTCLIC_mouseWheel_graphics_handle() ;
-    }
 
-    else  // caps off et pas de touche modificatrice
+/** \brief Mouse Wheel global handle - switch between key press  case
+ *
+ * \return void
+ *
+ */
+void mouseWheel_handle()
+{
+    if (mouseScroll.isToBeProcessed() or mouseRoll.isToBeProcessed()) /*(not(mouseScroll.gain()==0))*/
     {
-        //c'est la sélection de channels qui bénéficie de la roue par défaut où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
-        do_logical_Channel_Wheel(); //ex DoMouseLevel();
+        if (key[KEY_ALT])
+        {
+            //ALTERATION Des MODES SELECTION (CHANNELS ou ALT+CLIC) - C'est le contrôleur SOUS LA SOURIS qui est prioritaire :: le régisseur regarde son écran
+            mouseWheel_handle_onAltOver() ;
+        }
+        else if (key[KEY_CAPSLOCK])
+        {
+            //c'est la sélection faite avec (ALT+CLIC) qui bénéficie de la roue en CAPS LOCK où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
+            mouseWheel_handle_forAltClicSelection() ;
+        }
+
+        else  // caps off et pas de touche modificatrice
+        {
+            if (window_focus_id==W_PLOT && light_plot_edit_mode_enable)
+			{
+                do_logical_Plot_Wheel();
+            }
+			else if  (window_focus_id==W_BANGER && editing_banger_family)
+			{
+				do_logical_Banger_Wheel();
+			}
+			else
+            //c'est la sélection de channels qui bénéficie de la roue par défaut où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
+            do_logical_Channel_wheel(); //ex DoMouseLevel();
+        }
+
+        if (not key[KEY_LCONTROL]) /**< set to processed if not speed up and nothing sensible to wheel ; otherwise it will repeat all this tests for nothing */
+		{
+			mouseScroll.SetProcessed() ;
+			mouseRoll.SetProcessed() ;
+		}
     }
 }
 
-void ALTCLIC_mouseWheel_graphics_handle()
+
+/** \brief Mis à jour des niveaux des contrôleurs sélectionnés (par Alt Clic) pour être contrôlés par la roue de la souris quand caps lock est actif
+ *
+ * \return void
+ *
+ */
+void mouseWheel_handle_forAltClicSelection()
 {
-    if (mouseScroll.m_subscriberList.size() > 0)
+    if (mouseScroll.isToBeProcessed())
 	{
-		whc_wheel::whc_wheeledcontroller controleur;
-		for (std::vector<whc_wheel::whc_wheeledcontroller>::iterator it = mouseScroll.m_subscriberList.begin() ; it != mouseScroll.m_subscriberList.end(); ++it)
-	   {
-			//if (it.type==whc_wheel::slider)
-			//{
-				controleur = *it;
-				whc_wheel::c_levelIncrease(mouseScroll, *controleur.controller,   controleur.maximum, controleur.minimum);
-			//}
-	   }
+		mouseScroll.handOverSubscriber();
+	}
+    if (mouseRoll.isToBeProcessed())
+	{
+		mouseRoll.handOverSubscriber();
 	}
 }
 
-void ALT_mouseWheel_graphics_handle()
+/** \brief Mis à jour du niveau du contrôleur sous la souris (si ALT)
+ *
+ * \return void
+ *
+ */
+void mouseWheel_handle_onAltOver()
 {
     int fader_x, fader_y, fader_spacing, fader_quantity, fader_gm_width, fader_leftGM_x, fader_rightGM_x;
 
     switch(window_focus_id)
     {
     case W_MAINBOARD:
-        ALT_do_logical_grand_master_wheel(1050, 55, 40);
-        ALT_do_logical_ChannelScroller_wheel();
-        do_logical_Channel_Wheel(); // à l'interieur de la fonction contrôle si en caps lock ou en alt
+        do_logical_grand_master_wheel(1050, 55, 40);
+        do_logical_ChannelScroller_wheel();
+        if ( mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40))
+		{
+			do_logical_Channel_wheel();
+		}
         break;
     case W_SAVEREPORT:
 
@@ -641,8 +669,8 @@ void ALT_mouseWheel_graphics_handle()
         fader_leftGM_x = fader_x-140 ;
         fader_rightGM_x = fader_x+(fader_quantity*fader_spacing)+50;
 
-        ALT_do_logical_grand_master_wheel(fader_leftGM_x, fader_y, fader_gm_width);//x y largeur
-        ALT_do_logical_grand_master_wheel(fader_rightGM_x, fader_y, fader_gm_width);//x y largeur
+        do_logical_grand_master_wheel(fader_leftGM_x, fader_y, fader_gm_width);//x y largeur
+        do_logical_grand_master_wheel(fader_rightGM_x, fader_y, fader_gm_width);//x y largeur
         break;
     case W_PATCH:
 
@@ -660,7 +688,7 @@ void ALT_mouseWheel_graphics_handle()
         switch(index_menus_lighting_plot)
         {
         case 0://plan
-            plan_plot_mouseWheel_graphics_handle();
+            do_logical_Plot_Wheel();
             break;
         case 1://shapes
 
@@ -695,7 +723,7 @@ void ALT_mouseWheel_graphics_handle()
 
         break;
     case W_BANGER:
-        ALT_do_logical_Banger_Wheel();
+        do_logical_Banger_Wheel();
         break;
     case W_ALARM:
 

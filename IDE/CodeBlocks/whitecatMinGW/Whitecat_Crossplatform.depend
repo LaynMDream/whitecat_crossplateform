@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1392318514 source:c:\whitecat_crossplateform\src\main_nov_2013_opensource_kbd.cpp
+1419159011 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -11,11 +11,17 @@
 	<jpgalleg.h>
 	<hpdf.h>
 	<MidiShare.h>
+	<whc_mouse.h>
 	<whitecat.h>
 	<my_window_file_sample.h>
+	<boost/format.hpp>
+	<whitecat_Fct.h>
 	<patch_splines_2.cpp>
 	<grider_calculs8.cpp>
 	<midi_CORE.cpp>
+	<splashscreen_visu.cpp>
+	<whc_report.h>
+	<savereport_window.cpp>
 	<CORE_6.cpp>
 	<saves_export_pdf2.cpp>
 	<saves_export_import.cpp>
@@ -75,8 +81,9 @@
 	<dmx_functions_13.cpp>
 	<midi_13.cpp>
 	<CFG_screen.cpp>
-	<arduino_core_6_UNO_anton3.cpp>
-	<arduino_6_UNO_anton2.cpp>
+	<arduino_core_6_UNO.cpp>
+	<arduino_6_UNO.cpp>
+	<debug_log.cpp>
 	<CFG_config_panel_8.cpp>
 	<chasers_visu.cpp>
 	<graphics_rebuild1.cpp>
@@ -1070,7 +1077,7 @@
 	<_mingw.h>
 	<sys/types.h>
 
-1139867830 c:\whitecat_crossplateform\lib\windows\audiere-1.9.4-win32\include\audiere.h
+1393698838 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\audiere-1.9.4-win32\include\audiere.h
 	<vector>
 	<string>
 
@@ -1082,10 +1089,6 @@
 	"hpdf_types.h"
 	"hpdf_consts.h"
 	"hpdf_doc.h"
-
-1392319020 c:\mingw\include\hpdf_config.h
-
-1389220668 c:\mingw\include\hpdf_version.h
 
 1392594696 c:\mingw\include\hpdf_consts.h
 
@@ -1149,1153 +1152,10 @@
 1392594696 c:\mingw\include\hpdf_outline.h
 	"hpdf_objects.h"
 
-1389220668 c:\mingw\include\hpdf_pdfa.h
-	"hpdf_doc.h"
-	"hpdf_objects.h"
-
-1390400902 c:\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
+1393698853 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\midishare\include\midishare.h
 	"windows.h"
 
-1402982531 c:\whitecat_crossplateform\src\whitecat.h
-	"Crossplateform.h"
-
-1398670792 c:\whitecat_crossplateform\src\my_window_file_sample.h
-
-1398670590 c:\whitecat_crossplateform\src\patch_splines_2.cpp
-
-1398670434 c:\whitecat_crossplateform\src\grider_calculs8.cpp
-
-1398670519 c:\whitecat_crossplateform\src\midi_core.cpp
-
-1403602000 c:\whitecat_crossplateform\src\core_6.cpp
-
-1398670638 c:\whitecat_crossplateform\src\saves_export_pdf2.cpp
-	<setjmp.h>
-	"hpdf.h"
-
-1379878920 c:\mingw\include\setjmp.h
-	<_mingw.h>
-
-1402982179 c:\whitecat_crossplateform\src\saves_export_import.cpp
-
-1402982563 c:\whitecat_crossplateform\src\saves_menu_8.cpp
-
-1398670405 c:\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
-
-1399370796 c:\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
-
-1398670441 c:\whitecat_crossplateform\src\grider_core8.cpp
-
-1398670708 c:\whitecat_crossplateform\src\wizard_operations.cpp
-
-1398670382 c:\whitecat_crossplateform\src\faders_operations.cpp
-
-1398670310 c:\whitecat_crossplateform\src\chasers_core_5.cpp
-
-1398670549 c:\whitecat_crossplateform\src\mover_spline6.cpp
-
-1398670545 c:\whitecat_crossplateform\src\mover_2013.cpp
-
-1398670613 c:\whitecat_crossplateform\src\plot_core9.cpp
-
-1398670605 c:\whitecat_crossplateform\src\plot9.cpp
-
-1398670229 c:\whitecat_crossplateform\src\audio_core5.cpp
-
-1402982548 c:\whitecat_crossplateform\src\save_show_13.cpp
-
-1403597211 c:\whitecat_crossplateform\src\network_artnet_3.cpp
-	<winsock2.h>
-
-1379879798 c:\mingw\include\winsock2.h
-	<_mingw.h>
-	<windows.h>
-
-1398670502 c:\whitecat_crossplateform\src\logicals_intres.cpp
-
-1398670302 c:\whitecat_crossplateform\src\channels_9_core.cpp
-	<allegro.h>
-	<OpenLayer.hpp>
-
-1398670701 c:\whitecat_crossplateform\src\wizard.cpp
-
-1398670410 c:\whitecat_crossplateform\src\grand_master.cpp
-
-1398670376 c:\whitecat_crossplateform\src\faders_core_24.cpp
-
-1398670239 c:\whitecat_crossplateform\src\audio_visu4.cpp
-
-1403601990 c:\whitecat_crossplateform\src\icat_core14.cpp
-
-1393273860 c:\whitecat_crossplateform\src\arduino_device_core.cpp
-	"serial.cpp"
-
-1390400902 c:\whitecat_crossplateform\lib\windows\cserial\serial.cpp
-	"Serial.h"
-
-1390400902 c:\whitecat_crossplateform\lib\windows\cserial\serial.h
-
-1398670250 c:\whitecat_crossplateform\src\banger_core_8.cpp
-
-1398670260 c:\whitecat_crossplateform\src\banger_visu_8.cpp
-
-1398670269 c:\whitecat_crossplateform\src\call_everybody_5.cpp
-
-1398670585 c:\whitecat_crossplateform\src\patch_core.cpp
-
-1398670595 c:\whitecat_crossplateform\src\patch_visu.cpp
-
-1398670660 c:\whitecat_crossplateform\src\time_core_3.cpp
-
-1398670664 c:\whitecat_crossplateform\src\time_visu_3.cpp
-
-1398670673 c:\whitecat_crossplateform\src\trichro_core2.cpp
-
-1398670680 c:\whitecat_crossplateform\src\trichro_visu2.cpp
-
-1398670573 c:\whitecat_crossplateform\src\numpad_core.cpp
-
-1398670580 c:\whitecat_crossplateform\src\numpad_visuel.cpp
-
-1398670479 c:\whitecat_crossplateform\src\keyboard_functions2.cpp
-
-1398670484 c:\whitecat_crossplateform\src\keyboard_routines2.cpp
-	<allegro.h>
-
-1398670533 c:\whitecat_crossplateform\src\minifaders_core.cpp
-
-1398670540 c:\whitecat_crossplateform\src\minifaders_visu.cpp
-
-1398670391 c:\whitecat_crossplateform\src\faders_visuels_26.cpp
-
-1398670294 c:\whitecat_crossplateform\src\channels_10_visu.cpp
-
-1398670687 c:\whitecat_crossplateform\src\video_tracking_core.cpp
-	"opencv2/opencv.hpp"
-	"opencv/cv.h"
-	"opencv/highgui.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\opencv.hpp
-	"opencv2/core/core_c.h"
-	"opencv2/core/core.hpp"
-	"opencv2/flann/miniflann.hpp"
-	"opencv2/imgproc/imgproc_c.h"
-	"opencv2/imgproc/imgproc.hpp"
-	"opencv2/photo/photo.hpp"
-	"opencv2/video/video.hpp"
-	"opencv2/features2d/features2d.hpp"
-	"opencv2/objdetect/objdetect.hpp"
-	"opencv2/calib3d/calib3d.hpp"
-	"opencv2/ml/ml.hpp"
-	"opencv2/highgui/highgui_c.h"
-	"opencv2/highgui/highgui.hpp"
-	"opencv2/contrib/contrib.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\core_c.h
-	"opencv2/core/types_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\types_c.h
-	<assert.h>
-	<stdlib.h>
-	<string.h>
-	<float.h>
-	<stdint.h>
-	<intrin.h>
-	<emmintrin.h>
-	<fastmath.h>
-	<math.h>
-	<ipl.h>
-	<ipl/ipl.h>
-	"tegra_round.hpp"
-	"emmintrin.h"
-
-1379878924 c:\mingw\include\float.h
-	<_mingw.h>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\core.hpp
-	"opencv2/core/types_c.h"
-	"opencv2/core/version.hpp"
-	<limits.h>
-	<algorithm>
-	<cmath>
-	<cstddef>
-	<complex>
-	<map>
-	<new>
-	<string>
-	<vector>
-	<sstream>
-	"opencv2/core/operations.hpp"
-	"opencv2/core/mat.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\version.hpp
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\operations.hpp
-	<string.h>
-	<limits.h>
-	<ext/atomicity.h>
-	<bits/atomicity.h>
-	<limits>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\mat.hpp
-	<limits.h>
-	<string.h>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\miniflann.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/flann/defines.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\defines.h
-	"config.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\config.h
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc_c.h
-	"opencv2/core/core_c.h"
-	"opencv2/imgproc/types_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\types_c.h
-	"opencv2/core/core_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/imgproc/types_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\photo\photo.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/imgproc/imgproc.hpp"
-	"opencv2/photo/photo_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\photo\photo_c.h
-	"opencv2/core/core_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\video.hpp
-	"opencv2/video/tracking.hpp"
-	"opencv2/video/background_segm.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\tracking.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/imgproc/imgproc.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\background_segm.hpp
-	"opencv2/core/core.hpp"
-	<list>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\features2d\features2d.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/flann/miniflann.hpp"
-	<limits>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\objdetect\objdetect.hpp
-	"opencv2/core/core.hpp"
-	<map>
-	<deque>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\calib3d\calib3d.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/features2d/features2d.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\ml\ml.hpp
-	"opencv2/core/core.hpp"
-	<limits.h>
-	<map>
-	<string>
-	<iostream>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui_c.h
-	"opencv2/core/core_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/highgui/highgui_c.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\contrib.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/imgproc/imgproc.hpp"
-	"opencv2/features2d/features2d.hpp"
-	"opencv2/objdetect/objdetect.hpp"
-	"opencv2/contrib/retina.hpp"
-	"opencv2/contrib/openfabmap.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\retina.hpp
-	"opencv2/core/core.hpp"
-	<valarray>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\openfabmap.hpp
-	"opencv2/core/core.hpp"
-	"opencv2/features2d/features2d.hpp"
-	<vector>
-	<list>
-	<map>
-	<set>
-	<valarray>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv\cv.h
-	"opencv2/core/core_c.h"
-	"opencv2/core/core.hpp"
-	"opencv2/imgproc/imgproc_c.h"
-	"opencv2/imgproc/imgproc.hpp"
-	"opencv2/video/tracking.hpp"
-	"opencv2/features2d/features2d.hpp"
-	"opencv2/flann/flann.hpp"
-	"opencv2/calib3d/calib3d.hpp"
-	"opencv2/objdetect/objdetect.hpp"
-	"opencv2/legacy/compat.hpp"
-	"opencv2/core/internal.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\flann.hpp
-	"opencv2/core/types_c.h"
-	"opencv2/core/core.hpp"
-	"opencv2/flann/flann_base.hpp"
-	"opencv2/flann/miniflann.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\flann_base.hpp
-	<vector>
-	<string>
-	<cassert>
-	<cstdio>
-	"general.h"
-	"matrix.h"
-	"params.h"
-	"saving.h"
-	"all_indices.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\general.h
-	"defines.h"
-	<stdexcept>
-	<cassert>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\matrix.h
-	<stdio.h>
-	"general.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\params.h
-	"any.h"
-	"general.h"
-	<iostream>
-	<map>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\any.h
-	"defines.h"
-	<stdexcept>
-	<ostream>
-	<typeinfo>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\saving.h
-	<cstring>
-	<vector>
-	"general.h"
-	"nn_index.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\nn_index.h
-	<string>
-	"general.h"
-	"matrix.h"
-	"result_set.h"
-	"params.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\result_set.h
-	<algorithm>
-	<cstring>
-	<iostream>
-	<limits>
-	<set>
-	<vector>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\all_indices.h
-	"general.h"
-	"nn_index.h"
-	"kdtree_index.h"
-	"kdtree_single_index.h"
-	"kmeans_index.h"
-	"composite_index.h"
-	"linear_index.h"
-	"hierarchical_clustering_index.h"
-	"lsh_index.h"
-	"autotuned_index.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_index.h
-	<algorithm>
-	<map>
-	<cassert>
-	<cstring>
-	"general.h"
-	"nn_index.h"
-	"dynamic_bitset.h"
-	"matrix.h"
-	"result_set.h"
-	"heap.h"
-	"allocator.h"
-	"random.h"
-	"saving.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\dynamic_bitset.h
-	<boost/dynamic_bitset.hpp>
-	<limits.h>
-	"dist.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\dist.h
-	<cmath>
-	<cstdlib>
-	<string.h>
-	<stdint.h>
-	"defines.h"
-	<Intrin.h>
-	"arm_neon.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\heap.h
-	<algorithm>
-	<vector>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\allocator.h
-	<stdlib.h>
-	<stdio.h>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\random.h
-	<algorithm>
-	<cstdlib>
-	<vector>
-	"general.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_single_index.h
-	<algorithm>
-	<map>
-	<cassert>
-	<cstring>
-	"general.h"
-	"nn_index.h"
-	"matrix.h"
-	"result_set.h"
-	"heap.h"
-	"allocator.h"
-	"random.h"
-	"saving.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kmeans_index.h
-	<algorithm>
-	<string>
-	<map>
-	<cassert>
-	<limits>
-	<cmath>
-	"general.h"
-	"nn_index.h"
-	"dist.h"
-	"matrix.h"
-	"result_set.h"
-	"heap.h"
-	"allocator.h"
-	"random.h"
-	"saving.h"
-	"logger.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\logger.h
-	<stdio.h>
-	<stdarg.h>
-	"defines.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\composite_index.h
-	"general.h"
-	"nn_index.h"
-	"kdtree_index.h"
-	"kmeans_index.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\linear_index.h
-	"general.h"
-	"nn_index.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\hierarchical_clustering_index.h
-	<algorithm>
-	<string>
-	<map>
-	<cassert>
-	<limits>
-	<cmath>
-	"general.h"
-	"nn_index.h"
-	"dist.h"
-	"matrix.h"
-	"result_set.h"
-	"heap.h"
-	"allocator.h"
-	"random.h"
-	"saving.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_index.h
-	<algorithm>
-	<cassert>
-	<cstring>
-	<map>
-	<vector>
-	"general.h"
-	"nn_index.h"
-	"matrix.h"
-	"result_set.h"
-	"heap.h"
-	"lsh_table.h"
-	"allocator.h"
-	"random.h"
-	"saving.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_table.h
-	<algorithm>
-	<iostream>
-	<iomanip>
-	<limits.h>
-	<unordered_map>
-	<map>
-	<math.h>
-	<stddef.h>
-	"dynamic_bitset.h"
-	"matrix.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\autotuned_index.h
-	"general.h"
-	"nn_index.h"
-	"ground_truth.h"
-	"index_testing.h"
-	"sampling.h"
-	"kdtree_index.h"
-	"kdtree_single_index.h"
-	"kmeans_index.h"
-	"composite_index.h"
-	"linear_index.h"
-	"logger.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\ground_truth.h
-	"dist.h"
-	"matrix.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\index_testing.h
-	<cstring>
-	<cassert>
-	<cmath>
-	"matrix.h"
-	"nn_index.h"
-	"result_set.h"
-	"logger.h"
-	"timer.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\timer.h
-	<time.h>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\sampling.h
-	"matrix.h"
-	"random.h"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\legacy\compat.hpp
-	"opencv2/core/core_c.h"
-	"opencv2/imgproc/types_c.h"
-	<math.h>
-	<string.h>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\internal.hpp
-	<vector>
-	"opencv2/core/core.hpp"
-	"opencv2/core/types_c.h"
-	<pthread.h>
-	"ipp.h"
-	"emmintrin.h"
-	"pmmintrin.h"
-	"tmmintrin.h"
-	<smmintrin.h>
-	<nmmintrin.h>
-	<immintrin.h>
-	<Intrin.h>
-	"arm_neon.h"
-	<arm_neon.h>
-	"tbb/tbb_stddef.h"
-	"tbb/tbb.h"
-	"tbb/task.h"
-	<Eigen/Core>
-	"opencv2/core/eigen.hpp"
-
-1377171296 c:\mingw\include\pthread.h
-	<windows.h>
-	"config.h"
-	<time.h>
-	<signal.h>
-	<limits.h>
-	"need_errno.h"
-	<errno.h>
-	<sched.h>
-	<sys/types.h>
-
-1379878922 c:\mingw\include\signal.h
-	<_mingw.h>
-
-1377171296 c:\mingw\include\sched.h
-	"need_errno.h"
-	<errno.h>
-	<sys/types.h>
-	<time.h>
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\eigen.hpp
-	"opencv2/core/core_c.h"
-	"opencv2/core/core.hpp"
-
-1388131758 c:\mingw\opencv2.4.8\include\opencv\highgui.h
-	"opencv2/core/core_c.h"
-	"opencv2/core/core.hpp"
-	"opencv2/highgui/highgui_c.h"
-	"opencv2/highgui/highgui.hpp"
-
-1398670693 c:\whitecat_crossplateform\src\video_tracking_visu.cpp
-
-1398670491 c:\whitecat_crossplateform\src\list_proj_core.cpp
-
-1398670497 c:\whitecat_crossplateform\src\list_proj_visu.cpp
-
-1398670648 c:\whitecat_crossplateform\src\sequentiel_6_core.cpp
-
-1403601388 c:\whitecat_crossplateform\src\icat14.cpp
-
-1398670565 c:\whitecat_crossplateform\src\network_mac_adress_3.cpp
-
-1398670526 c:\whitecat_crossplateform\src\midi_launchpad.cpp
-
-1398670425 c:\whitecat_crossplateform\src\grider8.cpp
-
-1398670655 c:\whitecat_crossplateform\src\sequentiel_7_visu.cpp
-
-1398670366 c:\whitecat_crossplateform\src\draw3.cpp
-
-1398670371 c:\whitecat_crossplateform\src\echo3.cpp
-
-1398670555 c:\whitecat_crossplateform\src\my_window_file_sample.cpp
-
-1398670617 c:\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
-
-1403597213 c:\whitecat_crossplateform\src\dmx_functions_13.cpp
-	<odmxusb.cpp>
-	<odmxusb.h>
-	<dmx_enttec_pro.cpp>
-	<dmx_sunlite.cpp>
-
-1390400902 c:\whitecat_crossplateform\lib\windows\odmxusb_terry\odmxusb.cpp
-	"odmxusb.h"
-
-1390400902 c:\whitecat_crossplateform\lib\windows\odmxusb_terry\odmxusb.h
-	<windows.h>
-	"FTD2XX.H"
-
-1390400902 c:\whitecat_crossplateform\lib\windows\odmxusb_terry\ftd2xx.h
-
-1403597212 c:\whitecat_crossplateform\src\dmx_enttec_pro.cpp
-	<process.h>
-	<assert.h>
-	<tchar.h>
-
-1379878922 c:\mingw\include\tchar.h
-	<_mingw.h>
-	<wchar.h>
-
-1379878922 c:\mingw\include\wchar.h
-	<_mingw.h>
-	<stddef.h>
-	<stdarg.h>
-	<wctype.h>
-	<sys/types.h>
-	<stdint.h>
-	<string.h>
-	<string.h>
-	<stdint.h>
-
-1379878922 c:\mingw\include\wctype.h
-	<_mingw.h>
-	<stddef.h>
-
-1403597212 c:\whitecat_crossplateform\src\dmx_sunlite.cpp
-	<_DasHard.h>
-
-1390400902 c:\whitecat_crossplateform\lib\windows\dashard\_dashard.h
-
-1398670513 c:\whitecat_crossplateform\src\midi_13.cpp
-
-1398670287 c:\whitecat_crossplateform\src\cfg_screen.cpp
-
-1391548145 c:\whitecat_crossplateform\src\arduino_core_6_uno_anton3.cpp
-
-1391548145 c:\whitecat_crossplateform\src\arduino_6_uno_anton2.cpp
-
-1398670278 c:\whitecat_crossplateform\src\cfg_config_panel_8.cpp
-
-1398670317 c:\whitecat_crossplateform\src\chasers_visu.cpp
-
-1398670418 c:\whitecat_crossplateform\src\graphics_rebuild1.cpp
-
-1395646150 source:c:\whitecat_crossplateform\src\whitecat_private.rc
-	<windows.h>
-
-1392318514 source:c:\users\bibi\documents\github\whitecat_crossplateform\src\main_nov_2013_opensource_kbd.cpp
-	<allegro.h>
-	<winalleg.h>
-	<OpenLayer.hpp>
-	<stdio.h>
-	<loadpng.h>
-	<assert.h>
-	<Iphlpapi.h>
-	<audiere.h>
-	<jpgalleg.h>
-	<hpdf.h>
-	<MidiShare.h>
-	<whitecat.h>
-	<my_window_file_sample.h>
-	<patch_splines_2.cpp>
-	<grider_calculs8.cpp>
-	<midi_CORE.cpp>
-	<CORE_6.cpp>
-	<saves_export_pdf2.cpp>
-	<saves_export_import.cpp>
-	<saves_menu_8.cpp>
-	<gestionaire_fenetres2.cpp>
-	<gui_boutons_rebuild1.cpp>
-	<grider_core8.cpp>
-	<wizard_operations.cpp>
-	<faders_operations.cpp>
-	<chasers_core_5.cpp>
-	"mover_spline6.cpp"
-	"mover_2013.cpp"
-	"plot_core9.cpp"
-	"plot9.cpp"
-	<audio_core5.cpp>
-	<save_show_13.cpp>
-	<network_artnet_3.cpp>
-	<logicals_intres.cpp>
-	<channels_9_core.cpp>
-	<wizard.cpp>
-	<grand_master.cpp>
-	<faders_core_24.cpp>
-	<audio_visu4.cpp>
-	<icat_core14.cpp>
-	<arduino_device_core.cpp>
-	<banger_core_8.cpp>
-	<banger_visu_8.cpp>
-	<Call_everybody_5.cpp>
-	<patch_core.cpp>
-	<patch_visu.cpp>
-	<time_core_3.cpp>
-	<time_visu_3.cpp>
-	<trichro_core2.cpp>
-	<trichro_visu2.cpp>
-	<numpad_core.cpp>
-	<numpad_visuel.cpp>
-	<keyboard_functions2.cpp>
-	<keyboard_routines2.cpp>
-	<minifaders_core.cpp>
-	<minifaders_visu.cpp>
-	<faders_visuels_26.cpp>
-	<channels_10_visu.cpp>
-	<video_tracking_core.cpp>
-	<video_tracking_visu.cpp>
-	<list_proj_core.cpp>
-	<list_proj_visu.cpp>
-	<sequentiel_6_core.cpp>
-	<iCat14.cpp>
-	<network_MAC_adress_3.cpp>
-	<midi_launchpad.cpp>
-	<grider8.cpp>
-	<sequentiel_7_visu.cpp>
-	<Draw3.cpp>
-	<echo3.cpp>
-	<my_window_file_sample.cpp>
-	<procs_visuels_rebuild1.cpp>
-	<dmx_functions_13.cpp>
-	<midi_13.cpp>
-	<CFG_screen.cpp>
-	<arduino_core_6_UNO_anton3.cpp>
-	<arduino_6_UNO_anton2.cpp>
-	<CFG_config_panel_8.cpp>
-	<chasers_visu.cpp>
-	<graphics_rebuild1.cpp>
-
-1139867830 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\audiere-1.9.4-win32\include\audiere.h
-	<vector>
-	<string>
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\midishare\include\midishare.h
-	"windows.h"
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\whitecat.h
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\my_window_file_sample.h
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\patch_splines_2.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\grider_calculs8.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\midi_core.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\core_6.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\saves_export_pdf2.cpp
-	<setjmp.h>
-	"hpdf.h"
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\saves_export_import.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\saves_menu_8.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\gestionaire_fenetres2.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\gui_boutons_rebuild1.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\grider_core8.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\wizard_operations.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\faders_operations.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\chasers_core_5.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\mover_spline6.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\mover_2013.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\plot_core9.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\plot9.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\audio_core5.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\save_show_13.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\network_artnet_3.cpp
-	<winsock2.h>
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\logicals_intres.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\channels_9_core.cpp
-	<allegro.h>
-	<OpenLayer.hpp>
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\wizard.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\grand_master.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\faders_core_24.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\audio_visu4.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\icat_core14.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_device_core.cpp
-	"serial.cpp"
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\cserial\serial.cpp
-	"Serial.h"
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\cserial\serial.h
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\banger_core_8.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\banger_visu_8.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\call_everybody_5.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\patch_core.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\patch_visu.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\time_core_3.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\time_visu_3.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\trichro_core2.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\trichro_visu2.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\numpad_core.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\numpad_visuel.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\keyboard_functions2.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\keyboard_routines2.cpp
-	<allegro.h>
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\minifaders_core.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\minifaders_visu.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\faders_visuels_26.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\channels_10_visu.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\video_tracking_core.cpp
-	"opencv2/opencv.hpp"
-	"opencv/cv.h"
-	"opencv/highgui.h"
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\video_tracking_visu.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\list_proj_core.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\list_proj_visu.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\sequentiel_6_core.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\icat14.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\network_mac_adress_3.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\midi_launchpad.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\grider8.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\sequentiel_7_visu.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\draw3.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\echo3.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\my_window_file_sample.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\procs_visuels_rebuild1.cpp
-
-1392832038 c:\users\bibi\documents\github\whitecat_crossplateform\src\dmx_functions_13.cpp
-	<odmxusb.cpp>
-	<odmxusb.h>
-	<dmx_enttec_pro.cpp>
-	<dmx_sunlite.cpp>
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\odmxusb_terry\odmxusb.cpp
-	"odmxusb.h"
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\odmxusb_terry\odmxusb.h
-	<windows.h>
-	"FTD2XX.H"
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\odmxusb_terry\ftd2xx.h
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\dmx_enttec_pro.cpp
-	<process.h>
-	<assert.h>
-	<tchar.h>
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\dmx_sunlite.cpp
-	<_DasHard.h>
-
-1390400902 c:\users\bibi\documents\github\whitecat_crossplateform\lib\windows\dashard\_dashard.h
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\midi_13.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\cfg_screen.cpp
-
-1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_core_6_uno_anton3.cpp
-
-1391548145 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_6_uno_anton2.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\cfg_config_panel_8.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\chasers_visu.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\graphics_rebuild1.cpp
-
-1392832037 source:c:\users\bibi\documents\github\whitecat_crossplateform\src\whitecat_private.rc
-	<windows.h>
-
-1392832038 source:c:\users\bibi\documents\github\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
-	<allegro.h>
-	<winalleg.h>
-	<OpenLayer.hpp>
-	<stdio.h>
-	<loadpng.h>
-	<assert.h>
-	<Iphlpapi.h>
-	<audiere.h>
-	<jpgalleg.h>
-	<hpdf.h>
-	<MidiShare.h>
-	<whitecat.h>
-	<my_window_file_sample.h>
-	<patch_splines_2.cpp>
-	<grider_calculs8.cpp>
-	<midi_CORE.cpp>
-	<CORE_6.cpp>
-	<saves_export_pdf2.cpp>
-	<saves_export_import.cpp>
-	<saves_menu_8.cpp>
-	<gestionaire_fenetres2.cpp>
-	<gui_boutons_rebuild1.cpp>
-	<grider_core8.cpp>
-	<wizard_operations.cpp>
-	<faders_operations.cpp>
-	<chasers_core_5.cpp>
-	"mover_spline6.cpp"
-	"mover_2013.cpp"
-	"plot_core9.cpp"
-	"plot9.cpp"
-	<audio_core5.cpp>
-	<save_show_13.cpp>
-	<network_artnet_3.cpp>
-	<logicals_intres.cpp>
-	<channels_9_core.cpp>
-	<wizard.cpp>
-	<grand_master.cpp>
-	<faders_core_24.cpp>
-	<audio_visu4.cpp>
-	<icat_core14.cpp>
-	<arduino_device_core.cpp>
-	<banger_core_8.cpp>
-	<banger_visu_8.cpp>
-	<Call_everybody_5.cpp>
-	<patch_core.cpp>
-	<patch_visu.cpp>
-	<time_core_3.cpp>
-	<time_visu_3.cpp>
-	<trichro_core2.cpp>
-	<trichro_visu2.cpp>
-	<numpad_core.cpp>
-	<numpad_visuel.cpp>
-	<keyboard_functions2.cpp>
-	<keyboard_routines2.cpp>
-	<minifaders_core.cpp>
-	<minifaders_visu.cpp>
-	<faders_visuels_26.cpp>
-	<channels_10_visu.cpp>
-	<video_tracking_core.cpp>
-	<video_tracking_visu.cpp>
-	<list_proj_core.cpp>
-	<list_proj_visu.cpp>
-	<sequentiel_6_core.cpp>
-	<iCat14.cpp>
-	<network_MAC_adress_3.cpp>
-	<midi_launchpad.cpp>
-	<grider8.cpp>
-	<sequentiel_7_visu.cpp>
-	<Draw3.cpp>
-	<echo3.cpp>
-	<my_window_file_sample.cpp>
-	<procs_visuels_rebuild1.cpp>
-	<dmx_functions_13.cpp>
-	<midi_13.cpp>
-	<CFG_screen.cpp>
-	<arduino_core_6_UNO.cpp>
-	<arduino_6_UNO.cpp>
-	<CFG_config_panel_8.cpp>
-	<chasers_visu.cpp>
-	<graphics_rebuild1.cpp>
-
-1392830352 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_core_6_uno.cpp
-
-1392832037 c:\users\bibi\documents\github\whitecat_crossplateform\src\arduino_6_uno.cpp
-
-1403601798 source:c:\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
-	<allegro.h>
-	<winalleg.h>
-	<OpenLayer.hpp>
-	<stdio.h>
-	<loadpng.h>
-	<assert.h>
-	<Iphlpapi.h>
-	<audiere.h>
-	<jpgalleg.h>
-	<hpdf.h>
-	<MidiShare.h>
-	<whitecat.h>
-	<my_window_file_sample.h>
-	<patch_splines_2.cpp>
-	<grider_calculs8.cpp>
-	<midi_CORE.cpp>
-	<CORE_6.cpp>
-	<saves_export_pdf2.cpp>
-	<saves_export_import.cpp>
-	<saves_menu_8.cpp>
-	<gestionaire_fenetres2.cpp>
-	<gui_boutons_rebuild1.cpp>
-	<grider_core8.cpp>
-	<wizard_operations.cpp>
-	<faders_operations.cpp>
-	<chasers_core_5.cpp>
-	"mover_spline6.cpp"
-	"mover_2013.cpp"
-	"plot_core9.cpp"
-	"plot9.cpp"
-	<audio_core5.cpp>
-	<save_show_13.cpp>
-	<network_artnet_3.cpp>
-	<logicals_intres.cpp>
-	<channels_9_core.cpp>
-	<wizard.cpp>
-	<grand_master.cpp>
-	<faders_core_24.cpp>
-	<audio_visu4.cpp>
-	<icat_core14.cpp>
-	<arduino_device_core.cpp>
-	<banger_core_8.cpp>
-	<banger_visu_8.cpp>
-	<Call_everybody_5.cpp>
-	<patch_core.cpp>
-	<patch_visu.cpp>
-	<time_core_3.cpp>
-	<time_visu_3.cpp>
-	<trichro_core2.cpp>
-	<trichro_visu2.cpp>
-	<numpad_core.cpp>
-	<numpad_visuel.cpp>
-	<keyboard_functions2.cpp>
-	<keyboard_routines2.cpp>
-	<minifaders_core.cpp>
-	<minifaders_visu.cpp>
-	<faders_visuels_26.cpp>
-	<channels_10_visu.cpp>
-	<video_tracking_core.cpp>
-	<video_tracking_visu.cpp>
-	<list_proj_core.cpp>
-	<list_proj_visu.cpp>
-	<sequentiel_6_core.cpp>
-	<iCat14.cpp>
-	<network_MAC_adress_3.cpp>
-	<midi_launchpad.cpp>
-	<grider8.cpp>
-	<sequentiel_7_visu.cpp>
-	<Draw3.cpp>
-	<echo3.cpp>
-	<my_window_file_sample.cpp>
-	<procs_visuels_rebuild1.cpp>
-	<dmx_functions_13.cpp>
-	<midi_13.cpp>
-	<CFG_screen.cpp>
-	<arduino_core_6_UNO.cpp>
-	<arduino_6_UNO.cpp>
-	<CFG_config_panel_8.cpp>
-	<chasers_visu.cpp>
-	<graphics_rebuild1.cpp>
-
-1393363667 c:\whitecat_crossplateform\whitecatlib\lib\windows\audiere-1.9.4-win32\include\audiere.h
-	<vector>
-	<string>
-
-1393363697 c:\whitecat_crossplateform\whitecatlib\lib\windows\midishare\include\midishare.h
-	"windows.h"
-
-1398670787 c:\whitecat_crossplateform\src\crossplateform.h
-
-1393975294 c:\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.cpp
-	"Serial.h"
-
-1393363688 c:\whitecat_crossplateform\whitecatlib\lib\windows\cserial\serial.h
-
-1393363698 c:\whitecat_crossplateform\whitecatlib\lib\windows\odmxusb_terry\odmxusb.cpp
-	"odmxusb.h"
-
-1393363698 c:\whitecat_crossplateform\whitecatlib\lib\windows\odmxusb_terry\odmxusb.h
-	<windows.h>
-	"FTD2XX.H"
-
-1403597575 c:\whitecat_crossplateform\whitecatlib\lib\windows\odmxusb_terry\ftd2xx.h
-
-1393363688 c:\whitecat_crossplateform\whitecatlib\lib\windows\dashard\_dashard.h
-
-1398670206 c:\whitecat_crossplateform\src\arduino_core_6_uno.cpp
-
-1398670212 c:\whitecat_crossplateform\src\arduino_6_uno.cpp
-
-1418321117 source:c:\whitecat_xplatform_christoph\src\whc_mouse.cpp
-	"whc_mouse.h"
-
-1418321209 c:\whitecat_xplatform_christoph\src\whc_mouse.h
+1419090514 c:\whitecat_xplatform_christoph\src\whc_mouse.h
 	<allegro/mouse.h>
 	<allegro/keyboard.h>
 	<OpenLayer.hpp>
@@ -2416,6 +1276,24 @@
 	<cstring>
 	<errno.h>
 	<float.h>
+
+1379878922 c:\mingw\include\wchar.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<wctype.h>
+	<sys/types.h>
+	<stdint.h>
+	<string.h>
+	<string.h>
+	<stdint.h>
+
+1379878922 c:\mingw\include\wctype.h
+	<_mingw.h>
+	<stddef.h>
+
+1379878924 c:\mingw\include\float.h
+	<_mingw.h>
 
 1414327002 c:\whitecat_xplatform_christoph\whitecatlib\\boost\config\compiler\metrowerks.hpp
 
@@ -2566,6 +1444,9 @@
 1379878926 c:\mingw\include\sys\time.h
 	<_mingw.h>
 	<time.h>
+
+1379878922 c:\mingw\include\signal.h
+	<_mingw.h>
 
 1414327002 c:\whitecat_xplatform_christoph\whitecatlib\\boost\config\platform\symbian.hpp
 	<cstdlib>
@@ -4593,12 +3474,29 @@
 	<boost/predef/detail/platform_detected.h>
 	<boost/predef/detail/test.h>
 
+1377171296 c:\mingw\include\sched.h
+	"need_errno.h"
+	<errno.h>
+	<sys/types.h>
+	<time.h>
+
 1408650512 c:\whitecat_xplatform_christoph\whitecatlib\\boost\smart_ptr\detail\spinlock_sync.hpp
 	<boost/smart_ptr/detail/yield_k.hpp>
 	<ia64intrin.h>
 
 1408650512 c:\whitecat_xplatform_christoph\whitecatlib\\boost\smart_ptr\detail\spinlock_pt.hpp
 	<pthread.h>
+
+1377171296 c:\mingw\include\pthread.h
+	<windows.h>
+	"config.h"
+	<time.h>
+	<signal.h>
+	<limits.h>
+	"need_errno.h"
+	<errno.h>
+	<sched.h>
+	<sys/types.h>
 
 1408650512 c:\whitecat_xplatform_christoph\whitecatlib\\boost\smart_ptr\detail\spinlock_gcc_arm.hpp
 	<boost/smart_ptr/detail/yield_k.hpp>
@@ -8004,113 +6902,9 @@
 	<boost/date_time/time_zone_base.hpp>
 	<boost/date_time/time_parsing.hpp>
 
-1418156241 source:c:\whitecat_xplatform_christoph\src\whc_report.cpp
-	"whc_report.h"
-
-1418156241 c:\whitecat_xplatform_christoph\src\whc_report.h
-	<list>
-	<string>
-
-1417643952 source:c:\whitecat_xplatform_christoph\src\whitecat_private.rc
-	<windows.h>
-
-1418322078 source:c:\whitecat_xplatform_christoph\src\main_janv_2014_opensource_kbd.cpp
-	<allegro.h>
-	<winalleg.h>
-	<OpenLayer.hpp>
-	<stdio.h>
-	<loadpng.h>
-	<assert.h>
-	<Iphlpapi.h>
-	<audiere.h>
-	<jpgalleg.h>
-	<hpdf.h>
-	<MidiShare.h>
-	<whc_mouse.h>
-	<whitecat.h>
-	<my_window_file_sample.h>
-	<boost/format.hpp>
-	<whitecat_Fct.h>
-	<patch_splines_2.cpp>
-	<grider_calculs8.cpp>
-	<midi_CORE.cpp>
-	<splashscreen_visu.cpp>
-	<whc_report.h>
-	<savereport_window.cpp>
-	<CORE_6.cpp>
-	<saves_export_pdf2.cpp>
-	<saves_export_import.cpp>
-	<saves_menu_8.cpp>
-	<gestionaire_fenetres2.cpp>
-	<gui_boutons_rebuild1.cpp>
-	<grider_core8.cpp>
-	<wizard_operations.cpp>
-	<faders_operations.cpp>
-	<chasers_core_5.cpp>
-	"mover_spline6.cpp"
-	"mover_2013.cpp"
-	"plot_core9.cpp"
-	"plot9.cpp"
-	<audio_core5.cpp>
-	<save_show_13.cpp>
-	<network_artnet_3.cpp>
-	<logicals_intres.cpp>
-	<channels_9_core.cpp>
-	<wizard.cpp>
-	<grand_master.cpp>
-	<faders_core_24.cpp>
-	<audio_visu4.cpp>
-	<icat_core14.cpp>
-	<arduino_device_core.cpp>
-	<banger_core_8.cpp>
-	<banger_visu_8.cpp>
-	<Call_everybody_5.cpp>
-	<patch_core.cpp>
-	<patch_visu.cpp>
-	<time_core_3.cpp>
-	<time_visu_3.cpp>
-	<trichro_core2.cpp>
-	<trichro_visu2.cpp>
-	<numpad_core.cpp>
-	<numpad_visuel.cpp>
-	<keyboard_functions2.cpp>
-	<keyboard_routines2.cpp>
-	<minifaders_core.cpp>
-	<minifaders_visu.cpp>
-	<faders_visuels_26.cpp>
-	<channels_10_visu.cpp>
-	<video_tracking_core.cpp>
-	<video_tracking_visu.cpp>
-	<list_proj_core.cpp>
-	<list_proj_visu.cpp>
-	<sequentiel_6_core.cpp>
-	<iCat14.cpp>
-	<network_MAC_adress_3.cpp>
-	<midi_launchpad.cpp>
-	<grider8.cpp>
-	<sequentiel_7_visu.cpp>
-	<Draw3.cpp>
-	<echo3.cpp>
-	<my_window_file_sample.cpp>
-	<procs_visuels_rebuild1.cpp>
-	<dmx_functions_13.cpp>
-	<midi_13.cpp>
-	<CFG_screen.cpp>
-	<arduino_core_6_UNO.cpp>
-	<arduino_6_UNO.cpp>
-	<CFG_config_panel_8.cpp>
-	<chasers_visu.cpp>
-	<graphics_rebuild1.cpp>
-
-1393698838 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\audiere-1.9.4-win32\include\audiere.h
-	<vector>
-	<string>
-
-1393698853 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\midishare\include\midishare.h
-	"windows.h"
-
-1418322338 c:\whitecat_xplatform_christoph\src\whitecat.h
+1419120788 c:\whitecat_xplatform_christoph\src\whitecat.h
 	"Crossplateform.h"
+	<debug_log.h>
 
 1418156181 c:\whitecat_xplatform_christoph\src\crossplateform.h
 
@@ -8478,7 +7272,7 @@
 
 1399910779 c:\whitecat_xplatform_christoph\whitecatlib\\boost\format\detail\unset_macros.hpp
 
-1418168471 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
+1419159626 c:\whitecat_xplatform_christoph\src\whitecat_fct.h
 
 1418156181 c:\whitecat_xplatform_christoph\src\patch_splines_2.cpp
 
@@ -8486,62 +7280,73 @@
 
 1418156181 c:\whitecat_xplatform_christoph\src\midi_core.cpp
 
-1418322633 c:\whitecat_xplatform_christoph\src\splashscreen_visu.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\splashscreen_visu.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\savereport_window.cpp
+1419026847 c:\whitecat_xplatform_christoph\src\whc_report.h
+	<list>
+	<string>
 
-1418156240 c:\whitecat_xplatform_christoph\src\core_6.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\savereport_window.cpp
 
-1418156181 c:\whitecat_xplatform_christoph\src\saves_export_pdf2.cpp
+1419026844 c:\whitecat_xplatform_christoph\src\core_6.cpp
+
+1419026846 c:\whitecat_xplatform_christoph\src\saves_export_pdf2.cpp
 	<setjmp.h>
 	"hpdf.h"
 
+1379878920 c:\mingw\include\setjmp.h
+	<_mingw.h>
+
 1418156240 c:\whitecat_xplatform_christoph\src\saves_export_import.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\saves_menu_8.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\saves_menu_8.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\gestionaire_fenetres2.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\gestionaire_fenetres2.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\gui_boutons_rebuild1.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\gui_boutons_rebuild1.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\grider_core8.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\grider_core8.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\wizard_operations.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\faders_operations.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\faders_operations.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\chasers_core_5.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\chasers_core_5.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\mover_spline6.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\mover_2013.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\mover_2013.cpp
 
-1418321948 c:\whitecat_xplatform_christoph\src\plot_core9.cpp
+1419162890 c:\whitecat_xplatform_christoph\src\plot_core9.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\plot9.cpp
+1419162142 c:\whitecat_xplatform_christoph\src\plot9.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\audio_core5.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\audio_core5.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\save_show_13.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\save_show_13.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\network_artnet_3.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\network_artnet_3.cpp
 	<winsock2.h>
 
-1418156240 c:\whitecat_xplatform_christoph\src\logicals_intres.cpp
+1379879798 c:\mingw\include\winsock2.h
+	<_mingw.h>
+	<windows.h>
 
-1418321948 c:\whitecat_xplatform_christoph\src\channels_9_core.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\logicals_intres.cpp
+
+1419156170 c:\whitecat_xplatform_christoph\src\channels_9_core.cpp
 	<allegro.h>
 	<OpenLayer.hpp>
 
-1418156241 c:\whitecat_xplatform_christoph\src\wizard.cpp
+1419026847 c:\whitecat_xplatform_christoph\src\wizard.cpp
 
-1418321948 c:\whitecat_xplatform_christoph\src\grand_master.cpp
+1419156170 c:\whitecat_xplatform_christoph\src\grand_master.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\faders_core_24.cpp
+1419150588 c:\whitecat_xplatform_christoph\src\faders_core_24.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\audio_visu4.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\icat_core14.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\icat_core14.cpp
 
 1417643953 c:\whitecat_xplatform_christoph\src\arduino_device_core.cpp
 	"serial.cpp"
@@ -8551,45 +7356,301 @@
 
 1393698838 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\cserial\serial.h
 
-1418156240 c:\whitecat_xplatform_christoph\src\banger_core_8.cpp
+1419155915 c:\whitecat_xplatform_christoph\src\banger_core_8.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\banger_visu_8.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\call_everybody_5.cpp
+1419026844 c:\whitecat_xplatform_christoph\src\call_everybody_5.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\patch_core.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\patch_core.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\patch_visu.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\patch_visu.cpp
 
-1418156241 c:\whitecat_xplatform_christoph\src\time_core_3.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\time_core_3.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\time_visu_3.cpp
 
-1418156241 c:\whitecat_xplatform_christoph\src\trichro_core2.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\trichro_core2.cpp
 
-1418156181 c:\whitecat_xplatform_christoph\src\trichro_visu2.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\trichro_visu2.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\numpad_core.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\numpad_core.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\numpad_visuel.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\numpad_visuel.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\keyboard_functions2.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\keyboard_functions2.cpp
 
-1418168500 c:\whitecat_xplatform_christoph\src\keyboard_routines2.cpp
+1419121939 c:\whitecat_xplatform_christoph\src\keyboard_routines2.cpp
 	<allegro.h>
 
-1418156240 c:\whitecat_xplatform_christoph\src\minifaders_core.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\minifaders_core.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\minifaders_visu.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\minifaders_visu.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\faders_visuels_26.cpp
+1419150588 c:\whitecat_xplatform_christoph\src\faders_visuels_26.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\channels_10_visu.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\channels_10_visu.cpp
 
-1418156241 c:\whitecat_xplatform_christoph\src\video_tracking_core.cpp
+1419026847 c:\whitecat_xplatform_christoph\src\video_tracking_core.cpp
 	"opencv2/opencv.hpp"
 	"opencv/cv.h"
 	"opencv/highgui.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\opencv.hpp
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/flann/miniflann.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/photo/photo.hpp"
+	"opencv2/video/video.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/ml/ml.hpp"
+	"opencv2/highgui/highgui_c.h"
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/contrib/contrib.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\core_c.h
+	"opencv2/core/types_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\types_c.h
+	<assert.h>
+	<stdlib.h>
+	<string.h>
+	<float.h>
+	<stdint.h>
+	<intrin.h>
+	<emmintrin.h>
+	<fastmath.h>
+	<math.h>
+	<ipl.h>
+	<ipl/ipl.h>
+	"tegra_round.hpp"
+	"emmintrin.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\core.hpp
+	"opencv2/core/types_c.h"
+	"opencv2/core/version.hpp"
+	<limits.h>
+	<algorithm>
+	<cmath>
+	<cstddef>
+	<complex>
+	<map>
+	<new>
+	<string>
+	<vector>
+	<sstream>
+	"opencv2/core/operations.hpp"
+	"opencv2/core/mat.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\version.hpp
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\operations.hpp
+	<string.h>
+	<limits.h>
+	<ext/atomicity.h>
+	<bits/atomicity.h>
+	<limits>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\mat.hpp
+	<limits.h>
+	<string.h>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\miniflann.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/flann/defines.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\defines.h
+	"config.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\config.h
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc_c.h
+	"opencv2/core/core_c.h"
+	"opencv2/imgproc/types_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\types_c.h
+	"opencv2/core/core_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\imgproc\imgproc.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/types_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\photo\photo.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/photo/photo_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\photo\photo_c.h
+	"opencv2/core/core_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\video.hpp
+	"opencv2/video/tracking.hpp"
+	"opencv2/video/background_segm.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\tracking.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\video\background_segm.hpp
+	"opencv2/core/core.hpp"
+	<list>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\features2d\features2d.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/flann/miniflann.hpp"
+	<limits>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\objdetect\objdetect.hpp
+	"opencv2/core/core.hpp"
+	<map>
+	<deque>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\calib3d\calib3d.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/features2d/features2d.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\ml\ml.hpp
+	"opencv2/core/core.hpp"
+	<limits.h>
+	<map>
+	<string>
+	<iostream>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui_c.h
+	"opencv2/core/core_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\highgui\highgui.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/highgui/highgui_c.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\contrib.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/contrib/retina.hpp"
+	"opencv2/contrib/openfabmap.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\retina.hpp
+	"opencv2/core/core.hpp"
+	<valarray>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\contrib\openfabmap.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/features2d/features2d.hpp"
+	<vector>
+	<list>
+	<map>
+	<set>
+	<valarray>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv\cv.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/video/tracking.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/flann/flann.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/legacy/compat.hpp"
+	"opencv2/core/internal.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\flann.hpp
+	"opencv2/core/types_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/flann/flann_base.hpp"
+	"opencv2/flann/miniflann.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\flann_base.hpp
+	<vector>
+	<string>
+	<cassert>
+	<cstdio>
+	"general.h"
+	"matrix.h"
+	"params.h"
+	"saving.h"
+	"all_indices.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\general.h
+	"defines.h"
+	<stdexcept>
+	<cassert>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\matrix.h
+	<stdio.h>
+	"general.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\params.h
+	"any.h"
+	"general.h"
+	<iostream>
+	<map>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\any.h
+	"defines.h"
+	<stdexcept>
+	<ostream>
+	<typeinfo>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\saving.h
+	<cstring>
+	<vector>
+	"general.h"
+	"nn_index.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\nn_index.h
+	<string>
+	"general.h"
+	"matrix.h"
+	"result_set.h"
+	"params.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\result_set.h
+	<algorithm>
+	<cstring>
+	<iostream>
+	<limits>
+	<set>
+	<vector>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\all_indices.h
+	"general.h"
+	"nn_index.h"
+	"kdtree_index.h"
+	"kdtree_single_index.h"
+	"kmeans_index.h"
+	"composite_index.h"
+	"linear_index.h"
+	"hierarchical_clustering_index.h"
+	"lsh_index.h"
+	"autotuned_index.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_index.h
+	<algorithm>
+	<map>
+	<cassert>
+	<cstring>
+	"general.h"
+	"nn_index.h"
+	"dynamic_bitset.h"
+	"matrix.h"
+	"result_set.h"
+	"heap.h"
+	"allocator.h"
+	"random.h"
+	"saving.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\dynamic_bitset.h
+	<boost/dynamic_bitset.hpp>
+	<limits.h>
+	"dist.h"
 
 1403720849 c:\whitecat_xplatform_christoph\whitecatlib\\boost\dynamic_bitset.hpp
 	"boost/dynamic_bitset/dynamic_bitset.hpp"
@@ -8674,33 +7735,219 @@
 	<boost/limits.hpp>
 	<boost/config.hpp>
 
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\dist.h
+	<cmath>
+	<cstdlib>
+	<string.h>
+	<stdint.h>
+	"defines.h"
+	<Intrin.h>
+	"arm_neon.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\heap.h
+	<algorithm>
+	<vector>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\allocator.h
+	<stdlib.h>
+	<stdio.h>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\random.h
+	<algorithm>
+	<cstdlib>
+	<vector>
+	"general.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kdtree_single_index.h
+	<algorithm>
+	<map>
+	<cassert>
+	<cstring>
+	"general.h"
+	"nn_index.h"
+	"matrix.h"
+	"result_set.h"
+	"heap.h"
+	"allocator.h"
+	"random.h"
+	"saving.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\kmeans_index.h
+	<algorithm>
+	<string>
+	<map>
+	<cassert>
+	<limits>
+	<cmath>
+	"general.h"
+	"nn_index.h"
+	"dist.h"
+	"matrix.h"
+	"result_set.h"
+	"heap.h"
+	"allocator.h"
+	"random.h"
+	"saving.h"
+	"logger.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\logger.h
+	<stdio.h>
+	<stdarg.h>
+	"defines.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\composite_index.h
+	"general.h"
+	"nn_index.h"
+	"kdtree_index.h"
+	"kmeans_index.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\linear_index.h
+	"general.h"
+	"nn_index.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\hierarchical_clustering_index.h
+	<algorithm>
+	<string>
+	<map>
+	<cassert>
+	<limits>
+	<cmath>
+	"general.h"
+	"nn_index.h"
+	"dist.h"
+	"matrix.h"
+	"result_set.h"
+	"heap.h"
+	"allocator.h"
+	"random.h"
+	"saving.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_index.h
+	<algorithm>
+	<cassert>
+	<cstring>
+	<map>
+	<vector>
+	"general.h"
+	"nn_index.h"
+	"matrix.h"
+	"result_set.h"
+	"heap.h"
+	"lsh_table.h"
+	"allocator.h"
+	"random.h"
+	"saving.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\lsh_table.h
+	<algorithm>
+	<iostream>
+	<iomanip>
+	<limits.h>
+	<unordered_map>
+	<map>
+	<math.h>
+	<stddef.h>
+	"dynamic_bitset.h"
+	"matrix.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\autotuned_index.h
+	"general.h"
+	"nn_index.h"
+	"ground_truth.h"
+	"index_testing.h"
+	"sampling.h"
+	"kdtree_index.h"
+	"kdtree_single_index.h"
+	"kmeans_index.h"
+	"composite_index.h"
+	"linear_index.h"
+	"logger.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\ground_truth.h
+	"dist.h"
+	"matrix.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\index_testing.h
+	<cstring>
+	<cassert>
+	<cmath>
+	"matrix.h"
+	"nn_index.h"
+	"result_set.h"
+	"logger.h"
+	"timer.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\timer.h
+	<time.h>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\flann\sampling.h
+	"matrix.h"
+	"random.h"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\legacy\compat.hpp
+	"opencv2/core/core_c.h"
+	"opencv2/imgproc/types_c.h"
+	<math.h>
+	<string.h>
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\internal.hpp
+	<vector>
+	"opencv2/core/core.hpp"
+	"opencv2/core/types_c.h"
+	<pthread.h>
+	"ipp.h"
+	"emmintrin.h"
+	"pmmintrin.h"
+	"tmmintrin.h"
+	<smmintrin.h>
+	<nmmintrin.h>
+	<immintrin.h>
+	<Intrin.h>
+	"arm_neon.h"
+	<arm_neon.h>
+	"tbb/tbb_stddef.h"
+	"tbb/tbb.h"
+	"tbb/task.h"
+	<Eigen/Core>
+	"opencv2/core/eigen.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv2\core\eigen.hpp
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+
+1388131758 c:\mingw\opencv2.4.8\include\opencv\highgui.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/highgui/highgui_c.h"
+	"opencv2/highgui/highgui.hpp"
+
 1418156181 c:\whitecat_xplatform_christoph\src\video_tracking_visu.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\list_proj_core.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\list_proj_core.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\list_proj_visu.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\sequentiel_6_core.cpp
+1419150588 c:\whitecat_xplatform_christoph\src\sequentiel_6_core.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\icat14.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\icat14.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\network_mac_adress_3.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\network_mac_adress_3.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\midi_launchpad.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\grider8.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\grider8.cpp
 
-1418156181 c:\whitecat_xplatform_christoph\src\sequentiel_7_visu.cpp
+1419121378 c:\whitecat_xplatform_christoph\src\sequentiel_7_visu.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\draw3.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\draw3.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\echo3.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\echo3.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\my_window_file_sample.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\my_window_file_sample.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\procs_visuels_rebuild1.cpp
+1419159626 c:\whitecat_xplatform_christoph\src\procs_visuels_rebuild1.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\dmx_functions_13.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\dmx_functions_13.cpp
 	<odmxusb.cpp>
 	<odmxusb.h>
 	<dmx_enttec_pro.cpp>
@@ -8715,27 +7962,45 @@
 
 1393698853 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\odmxusb_terry\ftd2xx.h
 
-1418156240 c:\whitecat_xplatform_christoph\src\dmx_enttec_pro.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\dmx_enttec_pro.cpp
 	<process.h>
 	<assert.h>
 	<tchar.h>
 
-1418156240 c:\whitecat_xplatform_christoph\src\dmx_sunlite.cpp
+1379878922 c:\mingw\include\tchar.h
+	<_mingw.h>
+	<wchar.h>
+
+1419026845 c:\whitecat_xplatform_christoph\src\dmx_sunlite.cpp
 	<_DasHard.h>
 
 1393698848 c:\whitecat_xplatform_christoph\whitecatlib\lib\windows\dashard\_dashard.h
 
-1418156240 c:\whitecat_xplatform_christoph\src\midi_13.cpp
+1419026846 c:\whitecat_xplatform_christoph\src\midi_13.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\cfg_screen.cpp
+1419026844 c:\whitecat_xplatform_christoph\src\cfg_screen.cpp
 
 1418156181 c:\whitecat_xplatform_christoph\src\arduino_core_6_uno.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\arduino_6_uno.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\arduino_6_uno.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\cfg_config_panel_8.cpp
+1419026844 c:\whitecat_xplatform_christoph\src\cfg_config_panel_8.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\chasers_visu.cpp
+1419026845 c:\whitecat_xplatform_christoph\src\chasers_visu.cpp
 
-1418156240 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
+1419074739 c:\whitecat_xplatform_christoph\src\graphics_rebuild1.cpp
+
+1419026847 source:c:\whitecat_xplatform_christoph\src\whc_report.cpp
+	"whc_report.h"
+
+1417643952 source:c:\whitecat_xplatform_christoph\src\whitecat_private.rc
+	<windows.h>
+
+1419158078 source:c:\whitecat_xplatform_christoph\src\whc_mouse.cpp
+	"whc_mouse.h"
+
+1419075970 c:\whitecat_xplatform_christoph\src\debug_log.cpp
+	<debug_log.h>
+
+1419074739 c:\whitecat_xplatform_christoph\src\debug_log.h
 

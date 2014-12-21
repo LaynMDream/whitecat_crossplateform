@@ -232,7 +232,21 @@ if( Midi_Faders_Affectation_Type!=0)
 attribute_midi_to_control(196+cmptfader, Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
 mouseClicLeft.SetProcessed();
 }
-else {
+//sab 13/12/2014 deb
+//else {
+            else if (mouseClicLeft.isDownToBeProcessed()
+				&& key[KEY_ALT] )
+            {
+                if (not mouseRoll.unsubscribe(lfo_speed[cmptfader]))
+                {
+                    mouseRoll.addSubscriber(lfo_speed[cmptfader], whc_mouseWheel::slider, 0, 127, whc_mouseWheel::nokey);
+                }
+                mouseClicLeft.SetProcessed();
+            }
+
+            else if (mouseClicLeft.isDownToBeProcessed())
+            {
+//sab 13/12/2014 fin
 set_mouse_range(x+(cmptfader*espacement), y+375, x+(cmptfader*espacement)+127+5, y+375+ (largeur/2));//pour pas deborder
 lfo_speed[cmptfader]=mouse_x-(x+(cmptfader*espacement));
 if(lfo_speed[cmptfader]<0){lfo_speed[cmptfader]=0;}
@@ -821,20 +835,17 @@ mouseClicLeft.SetProcessed();
 //NIVEAU
 						//sab 13/12/2014 deb
 						//Fader[cmptfader]=((y+255)-mouse_y);
-						if (mouseClicLeft.isDown()
-						&& mouseClicLeft.isToBeProcessed()
-						&& key[KEY_ALT] )
-						{
-							whc_wheel::whc_wheeledcontroller controleur;
-							controleur.controller = &Fader[cmptfader];
-							controleur.maximum = 255;
-							controleur.minimum = 0;
-							controleur.type = whc_wheel::slider;
-							mouseScroll.m_subscriberList.push_back(controleur);
-							mouseClicLeft.SetProcessed();
-						}
-						else if (mouseClicLeft.isDown()
-						&& mouseClicLeft.isToBeProcessed() )
+////Fader est un char --> besoin de passer à int  ==> revoir en premier la gestion des calculs des channels et des sauvegardes correspondantes - créer un utilitaire pour convertir ancien save char en save int 							mouseScroll.addSubscriber(Fader[cmptfader], whc_mouseWheel::slider, 0, 255, whc_mouseWheel::nokey);
+//						if (mouseClicLeft.isDownToBeProcessed()
+//						&& key[KEY_ALT] )
+//						{
+//							if (not mouseScroll.unsubscribe(Fader[cmptfader]))
+//							{
+//							}
+//							mouseClicLeft.SetProcessed();
+//						}
+//						else
+							 if (mouseClicLeft.isDownToBeProcessed() )
 						{
 							Fader[cmptfader]=((y+255)-mouse_y);
 						}

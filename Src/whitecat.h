@@ -46,8 +46,6 @@ WWWWWWWW           C  WWWWWWWW   |
 
 #include "Crossplateform.h"
 
-
-
 char versionis[72]={"Alpha - WIP sab 2014.12.11"};
 char nickname_version[72]={"WIP sab 2014.12.11 based on SPRING & WINTER POWER"};
 
@@ -247,11 +245,12 @@ bool index_moving_y_slide=0;
 int dock_used_by_fader_is[48];
 int previous_dock_used[48];//pour autolaunch sur banger, dock + - et animations
 //RETOUR ARRIERE : plante chargement contenu dépasse max attendu  :-( - fichier icat  à creuser  surement dans la lecture //sab 02/03/2014 ATTENTION IMPACT - COMMENT CONTROLER FONCTION ? unsigned char --> unsigned int
+unsigned char Fader[48];
 //13/12/2014 sab deb
 //ATTENTION ATTENTION : Besoin pour gestion du fader en mode sélection par ALT+clic
-// --> demander à Christoph comment valider / quel est le bug iCat ?
-//unsigned char Fader[48];
- int Fader[48];
+// --> il faudrait revoir la gestion des sauvegardes des données (changement de format) et autres variables impliquées dans les calculs
+// --> bonus : amélioraion en terme de perf versus calcul avec des caractères et toutes les convertions cachées durant les calculs entre numérique et charactère
+//int Fader[48];
  //13/12/2014 sab fin
 unsigned char Fader_before[48];//pour icat
 unsigned char Fader_previous[48];//pour chasers autolaunch. très certainement à re organiser les backups d 'états de manière plus générale
@@ -2525,60 +2524,43 @@ float snap_echo_to_recall[24][513];
 /*sab 27/07/2014 DEB */
 HWND hwnd ;
 /*sab 27/07/2014 FIN */
+
+
+
+//sab 14/12/2014 - Gestion de la souris - DEB
+ /** \brief Gestion de la souris
+  *
+  *
+  */
+//--
+whc_mousePointer mousePtr(mouse_x,mouse_y);
+whc_mouseButton& mouseClicLeft = whc_mouseButton::c_buttonLeft ;
+whc_mouseButton& mouseClicMiddle = whc_mouseButton::c_buttonMiddle ;
+whc_mouseButton& mouseClicRight = whc_mouseButton::c_buttonRight ;
+whc_mouseWheel& mouseScroll = whc_mouseWheel::c_mouseScroll ;
+whc_mouseWheel& mouseRoll = whc_mouseWheel::c_mouseRoll ;
+//sab 14/12/2014 - Gestion de la souris - FIN
+
+//sab 30/11/2014 - Commandes en lignes - DEB
+ /** \brief Veil on mainboard when it'snt focus - Voile sur l'écran de fond s'il n'a pas le focus
+  *
+  *
+  *
+  */
+bool mainboard_ifNotFocus_veil = false; // Voile opaque sur mainboard si le focus est sur une autre fenêtre (visuellement indique qu'il faut un clic pour donner le focus au mainboard)
+
+ /** \brief Pour les dév - aide à identifier une zone de l'écran (si param non nuls alors voile jaunâtre sur la zone)
+  *
+  *
+  *
+  */
+int test_zone_x = 0; // Voile opaque pour identifier une zone de l'écran - position x
+int test_zone_y = 0; // Voile opaque pour identifier une zone de l'écran - position y
+int test_zone_w = 0; // Voile opaque pour identifier une zone de l'écran - largeur
+int test_zone_h = 0; // Voile opaque pour identifier une zone de l'écran - hauteur
+//sab 30/11/2014 - Commandes en lignes - FIN
+
+#include <debug_log.h>
+
 #endif // WHITECAT_GLOBAL_VAR_H_INCLUDED
 
-
-//sab 24/06/2014 - Doubleclic - Ajout - DEB
-/** \struct eventclic whitecat.h
- *  \brief  mouse button event in timeline,
- *
- * with event management flags (event is processed, event is doubleclic)
- */
-//-- gestion souris
-whc_pointer mousePtr(mouse_x,mouse_y);
-whc_button mouseClicLeft; whc_button mouseClicMiddle; whc_button mouseClicRight;
-whc_wheel mouseScroll; whc_wheel mouseRoll;
-
-
-//-- stockage des traces de test (max fixé à 30) ==> todo écrire fonction d'ajout qui le fasse directement
-typedef struct whc_log
-{
-	int entry;
-	std::string tag;
-	std::string data;
-	/*boost::basic_format<char> tag;
-	boost::basic_format<char> data;*/
-} whc_log;
-whc_log debugLine;
-std::deque<whc_log> debugEventLog;
-//std::vector<whc_log> debugLoopLog;
-whc_log debugLoopLog[10];
-int debugLoopLog_size=10;
-int test_watchDebugLoop1 = 0;
-int test_watchDebugLoop2 = 0;
-int test_zone_x = 0;
-int test_zone_y = 0;
-int test_zone_w = 0;
-int test_zone_h = 0;
-int debug_test = 0;
-bool mainboard_ifNotFocus_veil = false;
-
-char fmt_debugTest1[40]="%s %i gap %i speed %i niv %i niv.f %f";
-char fmt_debugTest2[40]="%s %i gap %i speed %i niv %i loop %i";
-char fmt_debugTest3[40]="%s %i gap %i yield %i speed %i";
-char fmt_debugTest4[40]="%s Double %s Done  %s time %f";
-char fmt_debugTest5[50]="BckGrndButton %s mouseYield %i BckGrndColor %f";
-char fmt_string[03]="%s";
-/*
-boost::format fmt_debugTest1("%1s %2i gap %3i speed %4i niv %5i niv.f %6f");
-boost::format fmt_debugTest2("%1s %2i gap %3i speed %4i niv %5i loop %6i");
-boost::format fmt_debugTest3("%1s %2i gap %3i yield %4i speed %4i");
-boost::format fmt_debugTest4("%1s Double %2s Done %3s time %4f");
-boost::format fmt_debugTest5("BckGrndButton %1s mouseYield %2i BckGrndColor %3f");
-boost::format fmt_string("%1s ");
-
-*/
-
-int whc_log_count =0;
-//-- restitution des traces de test : en ligne de commande --test bascule le bool à true
-bool show_test_log = false ;

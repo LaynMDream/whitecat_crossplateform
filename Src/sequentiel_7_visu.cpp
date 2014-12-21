@@ -565,7 +565,16 @@ Line(Vec2D(x_seq+602, y_seq+385), Vec2D(x_seq+602, y_seq+382)).Draw(CouleurLigne
 Rect SequencielSpeedFrame(Vec2D(x_seq+485, y_seq+405),Vec2D( 127+10, 22) );
 SequencielSpeedFrame.SetLineWidth(epaisseur_ligne_fader);
 SequencielSpeedFrame.SetRoundness(5);
-SequencielSpeedFrame.DrawOutline(CouleurLigne);
+    //sab 13/12/2014 deb
+//    SequencielSpeedFrame.DrawOutline(CouleurLigne);
+	ol::Rgba colorToApply = CouleurLigne ;
+	if (mouseRoll.isSubscriber(crossfade_speed))
+	{
+		colorToApply = CouleurYellow ;
+	}
+	SequencielSpeedFrame.DrawOutline(colorToApply);
+    //sab 13/12/2014 fin
+
 Rect SequencielSpeed(Vec2D(x_seq+485+crossfade_speed, y_seq+405),Vec2D( 10, 22) );
 SequencielSpeed.SetLineWidth(tiers_epaisseur_ligne_fader);
 SequencielSpeed.SetRoundness(5);

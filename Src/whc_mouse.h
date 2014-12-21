@@ -23,7 +23,7 @@ local_time_period ltp(ldt, hours(2));
 ltp.length(); // => 02:00:00
 */
 
-class whc_button
+class whc_mouseButton
 {
 public:
     typedef enum
@@ -59,12 +59,15 @@ public:
     std::vector<whc_eventclic> static c_mouseClicHistory; //!< Instance variable - mouseClicHistory :
     bool static c_IsThisADoubleClic (whc_mousebutton);
     bool static c_toggle(bool & pushbutton) ;
-    void static c_CollectEvent (int& mousesignal, volatile int& mouse_x, volatile int& mouse_y, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
+    whc_mouseButton static c_buttonLeft ;
+    whc_mouseButton static c_buttonMiddle ;
+    whc_mouseButton static c_buttonRight ;
+    void static c_CollectEvent (const int& mousesignal, volatile int& mouse_x, volatile int& mouse_y); //, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight);
 
     /** Default constructor */
-    whc_button();
+    whc_mouseButton();
     /** Default destructor */
-    virtual ~whc_button();
+    virtual ~whc_mouseButton();
 
     /** Evaluate if down over Rectangle
      * \return bool
@@ -271,9 +274,15 @@ private:
 //---------------------------------------------------------------------------------------------------------------------------------------
 
 
-class whc_wheel
+class whc_mouseWheel
 {
 public:
+	typedef enum
+    {
+        scroll = 1,
+        roll   = 2
+    } whc_mousewheel ;
+
 	typedef enum
 	{
 		none   = 0,
@@ -281,35 +290,46 @@ public:
 		rotary = 2
 	} whc_wheeledcontrollertype ;
 
+	typedef enum
+    {
+        nokey  = 0,
+        ctlkey = 1,
+		altkey = 2
+    } whc_mousewheelkey ;
+
     typedef struct whc_wheeledcontroller
     {
         int* controller;
         whc_wheeledcontrollertype type;
         int minimum;
         int maximum;
+        whc_mousewheelkey keypress;
     } whc_wheeledcontroller;
-
-	std::vector<whc_wheeledcontroller>  m_subscriberList;
 
     int static c_mouse_z_prev;
     int static c_mouse_w_prev;
     int static c_loops;
+
+    whc_mouseWheel static c_mouseRoll;
+    whc_mouseWheel static c_mouseScroll;
+
     void static c_Init(volatile int& mouse_z, volatile int& mouse_w);
-    void static c_CollectEvent (int& mousesignal, volatile int& mouse_z, volatile int& mouse_w, whc_wheel& mouseScroll , whc_wheel& mouseRoll);
-    void static c_CollectKeyStatus (whc_wheel& mouseScroll , whc_wheel& mouseRoll);
+    void static c_CollectEvent (const int& mousesignal, volatile int& mouse_z, volatile int& mouse_w) ; //, whc_mouseWheel& mouseScroll , whc_mouseWheel& mouseRoll);
+    void static c_CollectKeyStatus () ;//(whc_mouseWheel& mouseScroll , whc_mouseWheel& mouseRoll);
 
-    void static c_levelIncrease(whc_wheel &wheel,        int &i_level,   const int maxlevel,   const int minlevel,   const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
-    int  static c_levelIncrease(whc_wheel &wheel,        float &f_level, const float maxlevel, const float minlevel, const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
-    void static c_levelSpeedupIncrease(whc_wheel &wheel, int &i_level,   const int maxlevel,   const int minlevel,   const int time_in_number_of_loops);
-    int  static c_levelSpeedupIncrease(whc_wheel &wheel, float &f_level, const float maxlevel, const float minlevel, const float frequency_in_number_of_loops);
+    void static c_levelIncrease(const whc_mousewheel &type,        int &i_level,   const int maxlevel,   const int minlevel,   const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    int  static c_levelIncrease(const whc_mousewheel &type,        float &f_level, const float maxlevel, const float minlevel, const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    void static c_levelSpeedupIncrease(const whc_mousewheel &type, int &i_level,   const int maxlevel,   const int minlevel,   const int time_in_number_of_loops);
+    int  static c_levelSpeedupIncrease(const whc_mousewheel &type, float &f_level, const float maxlevel, const float minlevel, const float frequency_in_number_of_loops);
 
-    void static c_rotatorLevelIncrease(whc_wheel &wheel,        int &i_level,   const int maxlevel,   const int minlevel,   const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
-    int  static c_rotatorLevelIncrease(whc_wheel &wheel,        float &f_level, const float maxlevel, const float minlevel, const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    void static c_rotatorLevelIncrease(const whc_mousewheel &type,        int &i_level,   const int maxlevel,   const int minlevel,   const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
+    int  static c_rotatorLevelIncrease(const whc_mousewheel &type,        float &f_level, const float maxlevel, const float minlevel, const float increaseFactor=1., const float increaseFactor_onLeftCtl=1.);
 
     /** Default constructor */
-    whc_wheel();
+    whc_mouseWheel();
+    whc_mouseWheel(whc_mousewheel wheel);
     /** Default destructor */
-    virtual ~whc_wheel();
+    virtual ~whc_mouseWheel();
 
     /** Access m_level
      * \param val New value to set
@@ -403,6 +423,53 @@ public:
         }
     }
 
+    /** \brief Clear all subscription to wheel link
+     *
+     * \return void
+     *
+     */
+	void unsubscribeAll()
+	{
+		m_subscriberList.clear();
+	}
+
+    /** \brief data is subscripter - it's linked to wheel when control mode is active
+     * data est abonné - la variable est liée à celle de la roue quand le mode de contrôle est activé
+     * \param data const int&
+     * \return bool
+     *
+     */
+	bool isSubscriber(const int &data);
+
+    /** \brief unsubscipte data if is so - défait le lien entre la roue et data si le lien existe
+     *
+     * \param data const int&
+     * \return bool (true if a subsciption did existe - vrai si un abonnement existait)
+     *
+     */
+	bool unsubscribe(const int &data);
+
+    /** \brief link data to wheel when control mode activeted - lien entre data et la roue quand le mode de contrôl est activé
+     *
+     * \param data int&
+     * \param type const whc_wheeledcontrollertype slider or rotary
+     * \param minimum const int (data can't be less than mininum ; if rotary from minimum pass to maximum)
+     * \param maximum const int (data can't be more than maximum ; if rotary from maximum pass to minimum)
+     * \param whc_mousewheelkey keypress défault is nokey (ctl key)
+     * \return void
+     *
+     */
+	void addSubscriber(int &data, const whc_wheeledcontrollertype type, const int minimum, const int maximum, whc_mousewheelkey keypress = nokey);
+
+    /** \brief erase all subscription for data
+     *
+     * \param data const int&
+     * \return void
+     *
+     */
+	void pullSubscriber(const int &data);
+	void handOverSubscriber(whc_mousewheelkey keypress = nokey);
+
 protected:
 private:
     int  m_level;	//!< Member variable m_level
@@ -410,16 +477,15 @@ private:
     int  m_yield;   //!< Member variable m_yield (sum of gain until event processed : casual use)
     int  m_speed;	//!< Member variable m_speed
     bool m_pending; //!< Member variable "m_pending"
-
-
-
+   	whc_mousewheel m_wheel;
+   	std::vector<whc_wheeledcontroller>  m_subscriberList;
 };
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 
 
-class whc_pointer
+class whc_mousePointer
 {
 public:
     typedef enum
@@ -428,7 +494,7 @@ public:
         arrow_down = 1,
         drag    = 2,
         target = 3,
-        whc_mouselook_size = 4 //
+        whc_mouselook_size = 4 // use to define array size : c_arrow[whc_mouselook_size]
     } whc_mouselook ;
 
     typedef struct
@@ -442,10 +508,10 @@ public:
     bool static c_Init(whc_mouselook idx,const char *pathtobmp);
 
     /** Default constructor */
-    whc_pointer();
-    whc_pointer(volatile int& mouse_x, volatile int& mouse_y);
+    whc_mousePointer();
+    whc_mousePointer(volatile int& mouse_x, volatile int& mouse_y);
     /** Default destructor */
-    virtual ~whc_pointer();
+    virtual ~whc_mousePointer();
 
     /** Access m_x
      * \param val New value to set

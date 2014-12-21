@@ -64,14 +64,23 @@ int lfo_fader_functions (int cmptfader, int x, int y, int espacement)
     Rect LFOSpeedFrame(Vec2D(x+(cmptfader*espacement)-5, y+375),Vec2D( 137, 25) );
     LFOSpeedFrame.SetLineWidth(epaisseur_ligne_fader);
     LFOSpeedFrame.SetRoundness(5);
-    LFOSpeedFrame.DrawOutline(CouleurLigne.WithAlpha(0.4));
+	//sab 13/12/2014 deb
+//  LFOSpeedFrame.DrawOutline(CouleurLigne.WithAlpha(0.4));
+	ol::Rgba colorToApply = CouleurLigne.WithAlpha(0.4) ;
+	if (mouseRoll.isSubscriber(lfo_speed[cmptfader]))
+	{
+		colorToApply = CouleurYellow ;
+	}
+	LFOSpeedFrame.DrawOutline(colorToApply);
+    //sab 13/12/2014 fin
     Rect LFOSpeed(Vec2D(x+(cmptfader*espacement)-5+lfo_speed[cmptfader], y+375),Vec2D( 10, 25) );
     LFOSpeed.SetLineWidth(tiers_epaisseur_ligne_fader);
     LFOSpeed.SetRoundness(5);
     Line (Vec2D(x+(cmptfader*espacement)+64,y+370),Vec2D(x+(cmptfader*espacement)+64,y+400)).Draw(CouleurLigne);
     petitchiffre.Print(ol::ToString(lfo_speed[cmptfader]-64),x+(cmptfader*espacement)+145,y+380);
     LFOSpeed.Draw(CouleurFader);
-    LFOSpeed.DrawOutline(CouleurLigne);
+	LFOSpeed.DrawOutline(CouleurLigne);
+
 
 
     Circle BMidiOut( x+((cmptfader*espacement)+150),y+397, 10);//box du fader
@@ -706,20 +715,11 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
 			//sab 13/12/2014 deb
             //FaderB.DrawOutline(CouleurLigne);
 			ol::Rgba colorToApply = CouleurLigne ;
-			if (mouseScroll.m_subscriberList.size() > 0)
+			if (mouseScroll.isSubscriber(Fader[cmptfader]))
 			{
-				whc_wheel::whc_wheeledcontroller controleur;
-				for (std::vector<whc_wheel::whc_wheeledcontroller>::iterator it = mouseScroll.m_subscriberList.begin() ; it != mouseScroll.m_subscriberList.end(); ++it)
-			   {
-					controleur = *it;
-					if (controleur.controller == &Fader[cmptfader])
-					{
-						//gma_isCapsLock_selcted = true ;
-						colorToApply = CouleurYellow ;
-					}
-			   }
+				colorToApply = CouleurYellow ;
 			}
-			FaderB.DrawOutline(colorToApply);
+  			FaderB.DrawOutline(colorToApply);
 			//sab 13/12/2014 fin
 
 

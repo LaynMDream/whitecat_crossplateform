@@ -169,8 +169,8 @@ WWWWWWWW           C  WWWWWWWW   |
     int Channel_select_inv();
     int Channel_select_thruth(int,int);
     int Channel_at_level();
-    void do_logical_Channel_Wheel(); //int DoMouseLevel();
-    void ALT_do_logical_ChannelScroller_wheel();
+    void do_logical_Channel_wheel(); //int DoMouseLevel();
+    void do_logical_ChannelScroller_wheel();
     int do_logical_ChannelScroller(int,int);
     int do_logical_Draw_Channel_Preset_View(int,int,int);
     int do_logical_Draw_Channel_Preset_Title(int,int,int);
@@ -511,15 +511,13 @@ WWWWWWWW           C  WWWWWWWW   |
 //}
 //currently in grand master
 //{
-    void ALT_do_logical_grand_master_wheel(const int&, const int&, const int&);
+    void do_logical_grand_master_wheel(const int&, const int&, const int&);
     int do_logical_grand_master(const int&, const int&, const int&);
     int grand_master(int,int);
 //}
 //currently in graphics rebuild
 //{
     int RetourInfos(int,int);
-    void Show_test_log(int,int);		  //to do : migrate to whc_report as a test_log object
-    void AddToEventLog(whc_log test_log); //to do : part of code of this function should migrate to whc_report as a test_log object function
     int show_windows_list_id(int,int);
     int Boxes();
     void  Procedure(const std::string,const std::string);
@@ -1028,7 +1026,7 @@ WWWWWWWW           C  WWWWWWWW   |
     void logical_menu_plan(int,int);
     void PLOT_in_case_of_window_lose_of_focus();
     void case_where_init_plot_menu_background();
-    void plan_plot_mouseWheel_graphics_handle();
+    void do_logical_Plot_Wheel();
     bool isMouseOverPlot();
     int do_logical_Plot_window(int,int);
 //}
@@ -1042,9 +1040,9 @@ WWWWWWWW           C  WWWWWWWW   |
 	bool mouseMoveSinceRightClic ();
     int do_logical_MoveCloseBox(int,int,int);
     int logical_channelspace();
-    void mouseWheel_graphics_handle();
-    void ALTCLIC_mouseWheel_graphics_handle();
-    void ALT_mouseWheel_graphics_handle();
+    void mouseWheel_handle();
+    void mouseWheel_handle_forAltClicSelection();
+    void mouseWheel_handle_onAltOver();
     int check_graphics_mouse_handling();
 //}
 //currently in save show
@@ -1245,6 +1243,20 @@ WWWWWWWW           C  WWWWWWWW   |
 	void detect_error_on_save_load();
 	void clear_report_string();
 	void Show_report_save_load();
+//}
+//currently in debug log
+//to do : migrate to whc_report as a test_log object
+//{
+    void debug_log_addToEventLog(whc_log test_log); //to do : part of code of this function should migrate to whc_report as a test_log object function
+    void debug_log_main_actions_on_screen();
+    void debug_log_ticker_full_loop();
+	void debug_log_show_test_log(int,int);
+	void debug_log_test_01 ();
+	void debug_log_test_02 ();
+	void debug_log_test_03 ();
+	void debug_log_test_04 ();
+	void debug_log_test_05 ();
+	void debug_log_test_06 ();
 //}
 
 #endif // WHITECAT_FCT_H_INCLUDED

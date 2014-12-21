@@ -80,151 +80,6 @@ int RetourInfos(int x_info,int y_info)
     return(0);
 }
 
-//sab 20/11/2014 - log dev
-void AddToEventLog(whc_log test_log)
-//void AddToEventLog(boost::basic_format<char> tag,boost::basic_format<char> data)
-//void AddToEventLog(std::string tag, std::string data)
-{
-		whc_log_count ++;
-		//whc_log test_log;
-		test_log.entry = whc_log_count;
-		debugEventLog.push_front(test_log);
-		if (whc_log_count>99999) {whc_log_count=0;}
-		if (debugEventLog.size() > 30)
-		{
-			debugEventLog.resize(31); // keep only last 30 messages
-		}
-}
-
-void Show_test_log(int x_info,int y_info)
-{
-    if ((debugEventLog.size()>0) and (show_test_log))
-    {
-
-		int xxJournal = x_info + 0 ;
-		int yyJournal = y_info + 300 ;
-		int xxxJournal = 450 ;
-		int yyyJournal = 400 ;
-
-		Rect Journal(Vec2D(xxJournal,yyJournal),Vec2D(xxxJournal,yyyJournal));
-		Journal.SetRoundness(5);
-		Journal.DrawOutline(CouleurLigne);
-		petitchiffre.Print("Event log ( max 30 - order < )",xxJournal+5,yyJournal+12);
-
-        int idx = 0;
-        int idxmax = debugEventLog.size();
-        if (idxmax > 30)
-        {
-            idxmax = 30 ; //can't show more than --> to do a windwow with scroll facility .. once mouse basics tested
-        }
-        int xx = xxJournal+5 ;
-        int xxx = 100 ;
-        int xxdata  = xx + xxx + 2;
-        int yy = yyJournal+16 ;
-        int xxxdata = xxxJournal - xxx - 2 - 10;
-        int xx_number = xxJournal - 76 ;
-
-        while (idx <= idxmax)
-        {
-            yy += 12 ;
-			try
-			{
-				debugLine = debugEventLog.at(idx);
-
-				petitchiffre.Print(ToString(debugLine.entry), xx_number, yy, xxx,     RIGHT);
-				/*
-				petitchiffre.Print(debugLine.tag.str(),       xx,        yy, xxx,     RIGHT);
-				petitchiffre.Print(debugLine.data.str(),      xxdata,    yy, xxxdata, LEFT);
-				*/
-				petitchiffre.Print(debugLine.tag,       xx,        yy, xxx,     RIGHT);
-				petitchiffre.Print(debugLine.data,      xxdata,    yy, xxxdata, LEFT);
-			}
-			catch ( const std::exception & e )
-			{
-				//cerr << e.what();
-				petitchiffre.Print(e.what(),       xxdata,        yy, xxx,     RIGHT);
-			}
-			idx ++;
-        }
-
-    }
-
-	//if ((debugEventLogInLoop.size()>0) and (show_test_log))
-	if ((debugLoopLog_size>0) and (show_test_log))
-    {
-
-		int xxJournal = x_info + 0 ;
-		int yyJournal = y_info + 250 ;
-		int xxxJournal = 340 ;
-		int yyyJournal = 45 ;
-
-		Rect Journal(Vec2D(xxJournal,yyJournal),Vec2D(xxxJournal,yyyJournal));
-		Journal.SetRoundness(5);
-		Journal.DrawOutline(CouleurLigne);
-		petitchiffre.Print("Looping data :",xxJournal+5,yyJournal+12);
-
-        //int idxmax = debugLoopLog.size();
-        int idxmax = debugLoopLog_size;
-        int idx1 = test_watchDebugLoop1;
-        if (idx1 > idxmax)
-        {
-            idx1 = 0 ; //can't show more than --> to do a windwow with a choice off loop data to watch ... once mouse basics tested
-        }
-        int idx2 = test_watchDebugLoop2;
-        if (idx2 > idxmax)
-        {
-            idx2 = 0 ; //can't show more than --> to do a windwow with a choice off loop data to watch ... once mouse basics tested
-        }
-
-        int xx = xxJournal+5 ;
-        int xxx = 20 ;
-        int xxdata  = xx + xxx + 2;
-        int yy = yyJournal+16 ;
-        int xxxdata = xxxJournal - xxx - 2 - 10;
-
-        if (idx1 > 0)
-        {
-            yy += 12 ;
-			idx1--;
-			try
-			{
-				debugLine = debugLoopLog[idx1];
-
-				petitchiffre.Print(ToString(debugLine.entry), xx, yy, xxx,     RIGHT);
-				//petitchiffre.Print(debugLine.data.str(),      xxdata,    yy, xxxdata, LEFT);
-				petitchiffre.Print(debugLine.data,      xxdata,    yy, xxxdata, LEFT);
-			}
-			catch ( const std::exception & e )
-			{
-				//cerr << e.what();
-				petitchiffre.Print(ToString(idx1), xx, yy, xxx,     RIGHT);
-				petitchiffre.Print(e.what(),      xxdata,    yy, xxxdata, LEFT);
-			}
-        }
-        if (idx2 > 0)
-        {
-            yy += 12 ;
-			idx2--;
-			try
-			{
-				debugLine = debugLoopLog[idx2];
-
-				petitchiffre.Print(ToString(debugLine.entry), xx, yy, xxx,     RIGHT);
-				//petitchiffre.Print(debugLine.tag.str(),       xx,        yy, xxx,     RIGHT);
-				petitchiffre.Print(debugLine.data,      xxdata,    yy, xxxdata, LEFT);
-			}
-			catch ( const std::exception & e )
-			{
-				//cerr << e.what();
-				petitchiffre.Print(ToString(idx2), xx, yy, xxx,     RIGHT);
-				petitchiffre.Print(e.what(),      xxdata,    yy, xxxdata, LEFT);
-			}
-        }
-
-    }
-
-}
-
 int show_windows_list_id(int x_info, int y_info)
 {
     petitpetitchiffre.Print("Nb.W.:",x_info,y_info);
@@ -273,7 +128,7 @@ int Boxes()
 
     RetourInfos(680,40);
     //20/11/2014 sab - dev log
-    Show_test_log(680,40);
+    debug_log_show_test_log(680,40);
 
 //mis dans la fenetre banger Christoph 30/03/14
 //feedback_banger(xVisuBanger,yVisuBanger);
@@ -515,10 +370,10 @@ int DoMouse()
     Line( Vec2D( mouse_x+20,mouse_y+30), Vec2D( mouse_x+30,mouse_y+10),2.0).Draw( CouleurLigne );
     Line( Vec2D( mouse_x+30,mouse_y+10), Vec2D( mouse_x-1,mouse_y-1),2.0).Draw(CouleurLigne);
 
-    if(Midi_Faders_Affectation_Type!=0  )
-    {
-        neuromoyen.Print( string_shortview_midi, mouse_x-20,mouse_y+40);
-    };
+//    if(Midi_Faders_Affectation_Type!=0  )
+//    {
+//        neuromoyen.Print( string_shortview_midi, mouse_x-20,mouse_y+40);
+//    };
 
     return(0);
 }

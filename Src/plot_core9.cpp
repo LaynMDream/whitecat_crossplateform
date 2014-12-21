@@ -3585,13 +3585,13 @@ void logical_menu_plan(int plotx, int ploty)
         {
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             mouseClicLeft.SetProcessed();
-            whc_button::c_toggle(editing_plot_background_grid_alpha) ;
+            whc_mouseButton::c_toggle(editing_plot_background_grid_alpha) ;
         }
         else // in case of lose focus event : init cross-bar capability
         {
 			if (editing_plot_background_grid_alpha==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_background_grid_alpha=false;
             }
@@ -3663,7 +3663,7 @@ void logical_menu_plan(int plotx, int ploty)
                         editing_plot_background_plan_theatre_pos_size = false;
                         editing_plot_background_plan_data_type = 0;
 
-						mousePtr.SetLook(whc_pointer::arrow);
+						mousePtr.SetLook(whc_mousePointer::arrow);
 						mouseRoll.SetProcessed();
                     }
                     else /** single left clic to turn on the button edit mode */
@@ -3680,7 +3680,7 @@ void logical_menu_plan(int plotx, int ploty)
             editing_plot_background_plan_theatre_pos_size = false;
             editing_plot_background_plan_data_type = 0;
 
-			mousePtr.SetLook(whc_pointer::arrow);
+			mousePtr.SetLook(whc_mousePointer::arrow);
 			mouseRoll.SetProcessed();
         }
 
@@ -3713,14 +3713,14 @@ void logical_menu_plan(int plotx, int ploty)
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-            whc_button::c_toggle(editing_plot_blackground_pic_rotation) ;
+            whc_mouseButton::c_toggle(editing_plot_blackground_pic_rotation) ;
 
         }
         else // in case of lose focus event : init cross-bar capability
         {
             if (editing_plot_blackground_pic_rotation==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_blackground_pic_rotation=false;
             }
@@ -3796,13 +3796,13 @@ void logical_menu_plan(int plotx, int ploty)
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-            whc_button::c_toggle(editing_plot_background_pic_alpha) ;
+            whc_mouseButton::c_toggle(editing_plot_background_pic_alpha) ;
         }
         else // in case of lose focus event : init cross-bar alpha picture
         {
 			if (editing_plot_background_pic_alpha==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_background_pic_alpha=false;
             }
@@ -3830,14 +3830,14 @@ void logical_menu_plan(int plotx, int ploty)
             }
             else if(keyboardStorage_numeric_postext==0) /** turn on/off capability to change button value with mouse wheel */
             {
-                whc_button::c_toggle(editing_plot_background_window_width) ;
+                whc_mouseButton::c_toggle(editing_plot_background_window_width) ;
             }
         }
         else // in case of lose focus event : lose capability to change value with wheel roll
         {
  			if (editing_plot_background_window_width==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_background_window_width=false;
             }
@@ -3865,14 +3865,14 @@ void logical_menu_plan(int plotx, int ploty)
             }
             else if(keyboardStorage_numeric_postext==0)	/** no user entry : mouse wheel is going to be used to fixe the level*/
             {
-                whc_button::c_toggle(editing_plot_background_window_heigth) ;
+                whc_mouseButton::c_toggle(editing_plot_background_window_heigth) ;
             }
         }
         else // in case of lose focus event : lose capability to change value with wheel roll
         {
 			if (editing_plot_background_window_heigth==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_background_window_heigth=false;
             }
@@ -3889,13 +3889,13 @@ void logical_menu_plan(int plotx, int ploty)
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-            whc_button::c_toggle(editing_plot_background_window_color_backgrd) ;
+            whc_mouseButton::c_toggle(editing_plot_background_window_color_backgrd) ;
         }
         else // in case of lose focus event : lose capability to change value with wheel roll
         {
             if (editing_plot_background_window_color_backgrd==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_background_window_color_backgrd=false;
             }
@@ -3912,13 +3912,13 @@ void logical_menu_plan(int plotx, int ploty)
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
-            whc_button::c_toggle(editing_plot_background_window_color_line) ;
+            whc_mouseButton::c_toggle(editing_plot_background_window_color_line) ;
         }
         else
         {
             if (editing_plot_background_window_color_line==true)
             {
-                mousePtr.SetLook(whc_pointer::arrow);
+                mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
                 editing_plot_background_window_color_line=false;
             }
@@ -3985,31 +3985,31 @@ void case_where_init_plot_menu_background (int plotx, int ploty)
 //sab 07/07/2014 FIN
 
 //sab 28/06/2014 DEB
-void plan_plot_mouseWheel_graphics_handle()
+void do_logical_Plot_Wheel()
 {
     //sab 28/06/2014 lot 2 deb
 
 
     if(editing_plot_background_pic_alpha)
     {
-        whc_wheel::c_levelIncrease(mouseScroll, alpha_plan, 1., 0., 0.01, 0.1);
+        whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, alpha_plan, 1., 0., 0.01, 0.1);
     }
 
     if (editing_plot_background_grid_alpha)
     {
-        whc_wheel::c_levelIncrease(mouseScroll, alpha_grille, 1., 0., 0.02, 0.1);
+        whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, alpha_grille, 1., 0., 0.02, 0.1);
     }
 
     //rotation plan
     if(editing_plot_blackground_pic_rotation)
     {
-        whc_wheel::c_rotatorLevelIncrease(mouseScroll, orientation_plan_theatre, .966, 0, 0.001, 0.01);
+        whc_mouseWheel::c_rotatorLevelIncrease(whc_mouseWheel::scroll, orientation_plan_theatre, .966, 0, 0.001, 0.01);
     }
 
     //button Plot Window size X
     if(editing_plot_background_window_width)
     {
-        whc_wheel::c_levelIncrease(mouseScroll, plot_window_width, 9999, 839, 10, 50);
+        whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, plot_window_width, 9999, 839, 10, 50);
         if(plot_window_width<840)
         {
             plot_window_width=840;
@@ -4019,7 +4019,7 @@ void plan_plot_mouseWheel_graphics_handle()
     //button Plot Window size Y
     if(editing_plot_background_window_heigth)
     {
-        whc_wheel::c_levelIncrease(mouseScroll, plot_window_height, 9999, plot_window_height_minimum-1, 10, 50);
+        whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, plot_window_height, 9999, plot_window_height_minimum-1, 10, 50);
         if(plot_window_height<plot_window_height_minimum)
         {
             plot_window_height=plot_window_height_minimum;
@@ -4029,7 +4029,7 @@ void plan_plot_mouseWheel_graphics_handle()
 
     if(editing_plot_background_window_color_backgrd)
     {
-        whc_wheel::c_levelIncrease(mouseScroll, Color_plotfill, 1, 0, 0.01, 0.1);
+        whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, Color_plotfill, 1, 0, 0.01, 0.1);
         if (Color_plotfill==0.0 && Color_plotline==0.0)
         {
             Color_plotline=0.1;
@@ -4044,7 +4044,7 @@ void plan_plot_mouseWheel_graphics_handle()
     }
     if(editing_plot_background_window_color_line)
     {
-        whc_wheel::c_levelIncrease(mouseScroll, Color_plotline, 1, 0, 0.01, 0.1);
+        whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, Color_plotline, 1, 0, 0.01, 0.1);
         if (Color_plotline==0.0 && Color_plotfill==0.0)
         {
             Color_plotfill=0.1;
@@ -4062,13 +4062,13 @@ void plan_plot_mouseWheel_graphics_handle()
         switch(editing_plot_background_plan_data_type)//décalé de +1
         {
         case 1:
-            whc_wheel::c_levelIncrease(mouseScroll, position_relative_plan_theatre[0], 9999, -9999, 1, 15);
+            whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, position_relative_plan_theatre[0], 9999, -9999, 1, 15);
             break;
         case 2:
-            whc_wheel::c_levelIncrease(mouseScroll, position_relative_plan_theatre[1], 9999, -9999, 1, 15);
+            whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, position_relative_plan_theatre[1], 9999, -9999, 1, 15);
             break;
         case 3:
-            whc_wheel::c_levelIncrease(mouseScroll, taille_relative_plan_theatre[0], 1000, 1, 1, 15);
+            whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, taille_relative_plan_theatre[0], 1000, 1, 1, 15);
 
             if(lock_background_proportions==1)
             {
@@ -4076,8 +4076,8 @@ void plan_plot_mouseWheel_graphics_handle()
             }
             break;
         case 4:
-            whc_wheel::c_levelIncrease(mouseScroll, taille_relative_plan_theatre[1], 1000, 1, 1, 15);
-            if (taille_relative_plan_theatre[1]<1)
+            whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, taille_relative_plan_theatre[1], 1000, 1, 1, 15);
+            //if (taille_relative_plan_theatre[1]<1)
 
                 if(lock_background_proportions==1)
                 {
@@ -4087,7 +4087,7 @@ void plan_plot_mouseWheel_graphics_handle()
         default:
             break;
         }
-        ratio_lock_plot_scale=(float)(taille_relative_plan_theatre[0])/(float)(taille_relative_plan_theatre[1]);
+        if (taille_relative_plan_theatre[1]!=0) ratio_lock_plot_scale=(float)(taille_relative_plan_theatre[0])/(float)(taille_relative_plan_theatre[1]);
     }
 }
 
@@ -4113,7 +4113,7 @@ bool isMouseOverPlot()
 
 int do_logical_Plot_window(int plotx, int ploty)
 {
-    if(window_focus_id==W_PLOT && mouse_x> plotx && mouse_x<plotx+plot_window_width && mouse_y>ploty && mouse_y<ploty + plot_window_height)
+    if(window_focus_id==W_PLOT && mousePtr.isOverRecSize(plotx, ploty, plot_window_width, plot_window_height))
     {
         logical_plot_menu_bare(plotx+230,ploty+10);
 
@@ -4187,8 +4187,7 @@ int do_logical_Plot_window(int plotx, int ploty)
         }
 
         //editions
-        if(mouse_x> plotx+position_plan_x && mouse_x<plotx+position_plan_x+plot_window_width
-                && mouse_y> ploty+position_plan_y && mouse_y<ploty+position_plan_y+plot_window_height )
+        if(mousePtr.isOverRecSize(plotx+position_plan_x, ploty+position_plan_y, plot_window_width-position_plan_x, plot_window_height-position_plan_y))
         {
             if(index_click_inside_plot==0 && index_click_inside_relativ_xy==0 && mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed() )
             {

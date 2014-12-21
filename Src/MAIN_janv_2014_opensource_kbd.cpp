@@ -41,7 +41,6 @@ WWWWWWWW           C  WWWWWWWW   |
 *
  **/
 
-
 #include <allegro.h>
 #include <winalleg.h>
 #include <OpenLayer.hpp>
@@ -53,7 +52,6 @@ WWWWWWWW           C  WWWWWWWW   |
 
 #include <jpgalleg.h>
 
-
 //using namespace audiere;
 using namespace ol;
 
@@ -61,19 +59,11 @@ int BPS_RATE=50;//devient dmx rate
 int dmxINrate=25;
 int ARDUINO_RATE=20;
 
-
 //ticks
 volatile int ticks = 0;
 int ticker_rate = BPS_TO_TIMER(BPS_RATE);
 int ticker_dmxIn_rate = BPS_TO_TIMER(dmxINrate);
 int ticks_passed = 0;
-/*sab 26/06/2014 DEB - Reporté dans Whitecat.h
-volatile int mouse_button;
-volatile int mouse_released;
-volatile int mouse_maintained;
-volatile int mouse_R_button;
-volatile int mouse_R_released;
-  sab 26/06/2014 FIN - Reporté dans Whitecat.h  */
 
 volatile bool calculation_on_faders_done=0;//pour snap des faders depuis Echo
 //////////////////////////////////////////////////////////////////////////////
@@ -93,7 +83,6 @@ bufferSaisiesnamp=0;
    }
 */
 
-
 //#include <boost/format.hpp>  // <-- rajouter la bibliothèque boost à la racine whitecatlib # crossplatform (labo des futures bibliothèques standards C++)
 
 #include <hpdf.h>
@@ -102,12 +91,10 @@ bufferSaisiesnamp=0;
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 
-
 #include <boost/format.hpp>
 #include <whitecat_Fct.h>
 
 #include <patch_splines_2.cpp>//spline pour curves
-
 
 #include <grider_calculs8.cpp>
 
@@ -118,9 +105,6 @@ bufferSaisiesnamp=0;
 #include <savereport_window.cpp>
 
 #include <CORE_6.cpp>
-
-
-
 
 #include <saves_export_pdf2.cpp>
 #include <saves_export_import.cpp>
@@ -133,7 +117,6 @@ bufferSaisiesnamp=0;
 
 #include <faders_operations.cpp>
 #include <chasers_core_5.cpp>
-
 
 #include "mover_spline6.cpp"
 #include "mover_2013.cpp"
@@ -180,7 +163,6 @@ bufferSaisiesnamp=0;
 #include <list_proj_core.cpp>
 #include <list_proj_visu.cpp>//liste projecteurs
 
-
 #include <sequentiel_6_core.cpp>
 #include <iCat14.cpp>//iCat remote
 #include <network_MAC_adress_3.cpp>
@@ -191,9 +173,7 @@ bufferSaisiesnamp=0;
 #include <Draw3.cpp>
 #include <echo3.cpp>
 
-
 #include <my_window_file_sample.cpp>//creation de fenetres utilisateurs, doit être avant proc visuels
-
 
 #include <procs_visuels_rebuild1.cpp>
 #include <dmx_functions_13.cpp>
@@ -201,11 +181,10 @@ bufferSaisiesnamp=0;
 #include <midi_13.cpp>
 #include <CFG_screen.cpp>
 
-
 #include <arduino_core_6_UNO.cpp>
 #include <arduino_6_UNO.cpp>
 
-
+#include <debug_log.cpp>
 
 int time_doing()
 {
@@ -334,14 +313,14 @@ END_OF_FUNCTION(ticker);
  */
 void do_mouse_right_click_menu()
 {
-//sab 12/07/2014     x_mainmenu=mouse_x, y_mainmenu=mouse_y;
+	//sab 12/07/2014     x_mainmenu=mouse_x, y_mainmenu=mouse_y;
     index_show_main_menu=toggle(index_show_main_menu);
     if( index_show_main_menu==1)
     {
-//sab 12/07/2014 DEB
-/** keep menu window in the limits of main window of White Cat */
+		//sab 12/07/2014 DEB
+		/** keep menu window in the limits of main window of White Cat */
 		int max_x = posX_mainwindow + largeur_ecran  - size_x_mainmenu - 10 ;
-		int max_y = posY_mainwindow + hauteur_ecran  - size_y_mainmenu - 50 ;
+		int max_y = posY_mainwindow + hauteur_ecran  - size_y_mainmenu - 10 ;
 
 		x_mainmenu = mouse_x ;
 		if (x_mainmenu>max_x)
@@ -354,20 +333,12 @@ void do_mouse_right_click_menu()
 		{
 			y_mainmenu =max_y;
 		}
-//sab 12/07/2014 FIN
+		//sab 12/07/2014 FIN
         add_a_window(W_MAINMENU);
     }
     else {substract_a_window(W_MAINMENU);}
     right_click_for_menu=0;
 }
-
-//test begin montée/descente accélérée
-int test_loop =0 ;
-int test_level_i = 0 ;
-float test_level_f = 0 ;
-float test_speed_f = 0 ;
-
-//test end montée descente acceleree
 
 /** \brief On mouse event - Manage mouse global variable
  *
@@ -378,8 +349,8 @@ float test_speed_f = 0 ;
 void my_callback(int flags) {
 
 	mousePtr.CollectEvent(mouse_x, mouse_y) ;
-	whc_button::c_CollectEvent(flags, mouse_x, mouse_y, mouseClicLeft, mouseClicMiddle, mouseClicRight);
-	whc_wheel::c_CollectEvent(flags, mouse_z, mouse_w, mouseScroll, mouseRoll);
+	whc_mouseButton::c_CollectEvent(flags, mouse_x, mouse_y); //, mouseClicLeft, mouseClicMiddle, mouseClicRight);
+	whc_mouseWheel::c_CollectEvent(flags, mouse_z, mouse_w); //, mouseScroll, mouseRoll);
 
 
 	// A rajouter, une fonction de classe avec un vecteur d'abonnement
@@ -588,255 +559,12 @@ void ticker_full_loop()
 {
 
 //sab 28/11/2014 deb
-whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
+whc_mouseWheel::c_CollectKeyStatus (); // (mouseScroll , mouseRoll);
 //sab 28/11/2014 fin
 
 //ruiserge 28/06/2014 - DEB - test begin montée/descente selon vitesse
-    if ((key[KEY_LCONTROL]))
-    {
-		/* 1ère signature de la fonction :
-		- niveau géré avec une variable (float)
-		*/
-		test_level_i = whc_wheel::c_levelSpeedupIncrease(mouseScroll, test_level_f, 100., 0., 1000.);
-
-		/* 2de signature de la fonction :
-		- niveau géré avec une variable (int)
-		- besoin d'une seconde variable (int) décompte du nombre de passage dans la boucle
-		*/
-		whc_wheel::c_levelSpeedupIncrease(mouseRoll, test_level_i, 256, -255, 1000);
-    }
-    else
-    {
-        test_loop =0;
-    }
-
-    /* ====================================================================================================
-       --- Loop log ---
-	   ==================================================================================================== */
-
-    if (key[KEY_LCONTROL])
-	{
-		if ((test_watchDebugLoop1==1) or (test_watchDebugLoop2==1))
-		{
-			try
-			{
-				debug_test = 1;
-				debugLoopLog[0].tag = " Test 1 >" ; //fmt_string % " Test 1 >" ;
-				debugLoopLog[0].entry = 1 ;
-				//debugLoopLog[0].data = fmt_debugTest1 % "Scroll" % mouseScroll.level() % mouseScroll.gain() % mouseScroll.speed() % test_level_i % test_level_f ;
-				char tmp[54]="                                                     ";
-				sprintf(tmp, fmt_debugTest1, "Scroll", mouseScroll.level(), mouseScroll.gain(), mouseScroll.speed(), test_level_i, test_level_f) ;
-				debugLoopLog[0].data = std::string(tmp);
-			}
-			catch ( const std::exception & e )
-			{
-				//cerr << e.what();
-				debug_test = 101;
-				debugLine.tag = " Test 1 >" ; //fmt_string %
-				debugLine.entry = 1 ;
-				debugLine.data = "Erreur format 1 " ;
-				AddToEventLog(debugLine);
-			}
-		}
-		if ((test_watchDebugLoop1==2) or (test_watchDebugLoop2==2))
-		{
-			try
-			{
-				debug_test = 2;
-				debugLoopLog[1].tag = " Test 2 >" ;
-				debugLoopLog[1].entry = 2 ;
-				//debugLoopLog[1].data = fmt_debugTest2 % "Roll" % mouseRoll.level() % mouseRoll.gain() % mouseRoll.speed() % test_level_i % test_loop ;
-				char tmp[54]="                                                     ";
-				sprintf(tmp, fmt_debugTest2, "Roll", mouseRoll.level(), mouseRoll.gain(), mouseRoll.speed(), test_level_i, test_loop) ;
-				debugLoopLog[1].data = std::string(tmp);
-			}
-			catch ( const std::exception & e )
-			{
-				//cerr << e.what();
-				debug_test = 102;
-				debugLine.tag =  " Test 2 >" ;
-				debugLine.entry = 2 ;
-				debugLine.data = "Erreur format 2 " ;
-				AddToEventLog(debugLine);
-			}
-		}
-	}
-    if ((test_watchDebugLoop1==3) or (test_watchDebugLoop2==3))
-    {
-		try
-		{
-			debug_test = 03;
-			debugLoopLog[2].tag =  " Test 3 >" ;
-			debugLoopLog[2].entry = 3 ;
-			//debugLoopLog[2].data = fmt_debugTest3 % "Roll " % mouseRoll.level() % mouseRoll.gain() % mouseRoll.yield() % mouseRoll.speed() ;
-			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest3, "Roll", mouseRoll.level(), mouseRoll.gain(), mouseRoll.yield(), mouseRoll.speed()) ;
-			debugLoopLog[2].data = std::string(tmp);
-		}
-		catch ( const std::exception & e )
-		{
-			//cerr << e.what();
-			debug_test = 103;
-			debugLine.tag =  " Test 3 >" ;
-			debugLine.entry = 3 ;
-			debugLine.data = "Erreur format 3 " ;
-			AddToEventLog(debugLine);
-		}
-    }
-    if ((test_watchDebugLoop1==6) or (test_watchDebugLoop2==6))
-    {
-		try
-		{
-			debug_test = 06;
-			debugLoopLog[5].tag =  " Test 6 >" ;
-			debugLoopLog[5].entry = 6 ;
-			//debugLoopLog[5].data = fmt_debugTest3 % "Scroll " % mouseScroll.level() % mouseScroll.gain() % mouseScroll.yield() % mouseScroll.speed() ;
-			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest3, "Scroll", mouseScroll.level(), mouseScroll.gain(), mouseScroll.yield(), mouseScroll.speed()) ;
-			debugLoopLog[5].data = std::string(tmp);
-		}
-		catch ( const std::exception & e )
-		{
-			//cerr << e.what();
-			debug_test = 106;
-			debugLine.tag =  " Test 6 >";
-			debugLine.entry = 6 ;
-			debugLine.data = "Erreur format 3 ";
-			AddToEventLog(debugLine);
-		}
-    }
-    if ((test_watchDebugLoop1==4) or (test_watchDebugLoop2==4))
-    {
-		try
-		{
-			debug_test = 04;
-			debugLoopLog[3].tag = " Test 4 >" ;
-			debugLoopLog[3].entry = 4 ;
-			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest4, "Right", (mouseClicRight.isDown() ? "Yes":"No"), (mouseClicRight.isDouble() ? "Yes":"No"), (mouseClicRight.isProcessed() ? "Yes":"No"), 0);
-			debugLoopLog[3].data = std::string(tmp);
-		}
-		catch ( const std::exception & e )
-		{
-			//cerr << e.what();
-			debug_test = 104;
-			debugLine.tag =  " Test 4 >" ;
-			debugLine.entry = 4 ;
-			debugLine.data = "Erreur format 4 " ;
-			AddToEventLog(debugLine);
-		}
-    }
-    if ((test_watchDebugLoop1==5) or (test_watchDebugLoop2==5))
-    {
-		try
-		{
-			debug_test = 05;
-			debugLoopLog[4].tag = " Test 5 >" ;
-			debugLoopLog[4].entry = 5 ;
-			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest4, "Left", (mouseClicLeft.isDown() ? "Yes":"No"), (mouseClicLeft.isDouble() ? "Yes":"No"), (mouseClicLeft.isProcessed() ? "Yes":"No"), 0);
-			debugLoopLog[4].data = std::string(tmp);
-		}
-		catch ( const std::exception & e )
-		{
-			//cerr << e.what();
-			debug_test = 105;
-			debugLine.tag =  " Test 5 >" ;
-			debugLine.entry = 5 ;
-			debugLine.data = "Erreur format 5 " ;
-			AddToEventLog(debugLine);
-		}
-    }
-
-    /* ====================================================================================================
-       --- Event log ---
-	   ==================================================================================================== */
-    {
-		try
-		{
-			debug_test = 9;
-			debugLoopLog[8].tag =  " Test 9 >" ;
-			debugLoopLog[8].entry = 9 ;
-			//debugLoopLog[5].data = fmt_debugTest5 % (editing_plot_background_window_color_backgrd? "Yes":"No") % mouseWheel.yield % Color_plotfill ;
-			char tmp[54]="                                                     ";
-			sprintf(tmp, fmt_debugTest5, (editing_plot_background_window_color_backgrd? "Yes":"No"), mouseScroll.yield(), Color_plotfill) ;
-			debugLoopLog[8].data = std::string(tmp);
-		}
-		catch ( const std::exception & e )
-		{
-			//cerr << e.what();
-			debug_test = 109;
-			debugLine.tag =  " Test 9 >" ;
-			debugLine.entry = 9 ;
-			debugLine.data = "Erreur format 9 " ;
-			AddToEventLog(debugLine);
-		}
-    }
-
-    /*if (mouseClicLeft.isToBeProcessed())
-    {
-        bool tst = mouseClicLeft.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
-        if (tst and mouseClicLeft.isDouble())
-        {
-            debug_test = 07;
-            debugLine.data = " LEFT DOUBLE sur save as" ;
-        }
-        else if (tst)
-        {
-            debug_test = 17;
-            debugLine.data = " LEFT Simple sur save as" ;
-        }
-        else if (mouseClicLeft.isDouble())
-        {
-            debug_test = 27;
-            debugLine.data = " LEFT DOUBLE en dehors de save as" ;
-        }
-        else
-        {
-			debug_test = 37;
-			debugLine.data = " LEFT Simple en dehors de save as" ;
-        }
-
-
-		debugLine.tag = " Mouse >" ;
-		debugLine.entry = 0 ;
-		AddToEventLog(debugLine);
-    }
-
-    if (mouseClicRight.isToBeProcessed())
-    {
-        bool tst = mouseClicRight.toBeProcessed_isDown_isOverRecSize(680,240,270,40,true); //sur espace de retour d'info : SAVE as/
-        if (tst and mouseClicRight.isDouble())
-        {
-            debug_test = 8;
-            debugLine.data = " RIGHT DOUBLE sur save as" ;
-        }
-        else if (tst)
-        {
-            debug_test = 18;
-            debugLine.data = " RIGHT Simple sur save as" ;
-        }
-        else if (mouseClicRight.isDouble())
-        {
-            debug_test = 28;
-            debugLine.data = " RIGHT DOUBLE en dehors de save as" ;
-        }
-        else
-        {
-            debug_test = 38;
-            debugLine.data = " RIGHT Simple en dehors de save as" ;
-        }
-
-
-		debugLine.tag = " Mouse >" ;
-		debugLine.entry = 0 ;
-		AddToEventLog(debugLine);
-    }*/
-
-
-
-
-//sab 28/06/2014 - FIN - test
+debug_log_ticker_full_loop();
+//ruiserge 28/06/2014 - FIN - test begin montée/descente selon vitesse
 
     if(core_do_calculations[2]==1 && starting_wcat==0)
     {
@@ -865,7 +593,7 @@ whc_wheel::c_CollectKeyStatus (mouseScroll , mouseRoll);
 	//sab 28/06/2014 DEB -
 	if (mouseScroll.isToBeProcessed() or mouseRoll.isToBeProcessed()) /*(not(mouseScroll.gain()==0))*/
     {
-		mouseWheel_graphics_handle();
+		mouseWheel_handle();
     }
 	//sab 28/06/2014 FIN -
 
@@ -906,7 +634,7 @@ if(index_quit==0 && index_is_saving==0)
       else {receiving_bytes=0;}
       #endif
       }
-commandes_clavier();
+commandes_clavier(); //keyboard
 // DoMouseLevel(); -->  mouseWheel graphics handle (MainBoard / Channels)
 }
 }
@@ -1071,25 +799,12 @@ void Load_Fonts()
 ////////////////////////////////////////////////////////////////////////////////
 int main_actions_on_screen()
 {
-      /**/
-	/*if (mouseClicLeft.isProcessed())*/
+
 	{
-
-		debugLoopLog[0].tag = " qui a pris en charge >" ; //fmt_string % " Test 1 >" ;
-		debugLoopLog[0].entry = 1 ;
-		//debugLoopLog[0].data = fmt_debugTest1 % "Scroll" % mouseScroll.level() % mouseScroll.gain() % mouseScroll.speed() % test_level_i % test_level_f ;
-		char tmp[54]="                                                     ";
-		sprintf(tmp, "-- left %s pending %s  last actor %i", (mouseClicLeft.isDown() ? "true":"false"), (mouseClicLeft.isToBeProcessed() ? "true":"false"), mouseClicLeft.lastActor()) ;
-		debugLoopLog[0].data = std::string(tmp);
-
-		debugLoopLog[1].tag = " qui a pris en charge >" ; //fmt_string % " Test 1 >" ;
-		debugLoopLog[1].entry = 1 ;
-		//debugLoopLog[0].data = fmt_debugTest1 % "Scroll" % mouseScroll.level() % mouseScroll.gain() % mouseScroll.speed() % test_level_i % test_level_f ;
-		char tmp2[54]="                                                     ";
-		sprintf(tmp2, "-- left %s pending %s  last actor %i", (mouseClicRight.isDown() ? "true":"false"), (mouseClicRight.isToBeProcessed() ? "true":"false"), mouseClicRight.lastActor()) ;
-		debugLoopLog[1].data = std::string(tmp2);
+		/**<  to do : objet visuel numeroté ; clic enregistre le numero de l'objet : ici on restitue l'identifiant par le biais du log si le test est sélectionné */
+		/*if (mouseClicLeft.isProcessed())*/
+		debug_log_main_actions_on_screen();
 	}
-
 
       Canvas::Fill(CouleurFond);
       if(index_writing_curve==0){Boxes();}
@@ -1129,13 +844,15 @@ int main_actions_on_screen()
 //		else {mousePtr.SetLook(whc_pointer::arrow);}
 //
 
-		if (mouseClicLeft.isDown() || mouseClicMiddle.isDown() || mouseClicRight.isDown())
+	   if (light_plot_view_port_drag_mode_enable && mousePtr.isOverRecSize(x_plot+position_plan_x, y_plot+position_plan_y, plot_window_width-position_plan_x, plot_window_height-position_plan_y))
+	   {mousePtr.SetLook(whc_mousePointer::drag);}
+	   else if (mouseClicLeft.isDown() || mouseClicMiddle.isDown() || mouseClicRight.isDown())
 		{
-			mousePtr.SetLook(whc_pointer::arrow_down);
+			mousePtr.SetLook(whc_mousePointer::arrow_down);
 		}
 		else
 		{
-			mousePtr.SetLook(whc_pointer::arrow);
+			mousePtr.SetLook(whc_mousePointer::arrow);
 		}
 
        if (mouse_on_screen())
@@ -1144,9 +861,18 @@ int main_actions_on_screen()
 			{
 				DoMouse();
 			}
+			if(Midi_Faders_Affectation_Type!=0  )
+			{
+				neuromoyen.Print( string_shortview_midi, mouse_x-20,mouse_y+40);
+			};
 	   }
 	   {
 			//visualiser les zones de l'écran
+//			test_zone_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space)) ; 	// x+(cmptfader*espacement)
+//			test_zone_y = YFader+375;														// y+375
+//			test_zone_w = 132 ;																// +127+5
+//			test_zone_h = 24 ;																// (largeur/2)
+
 			if (test_zone_x>0 || test_zone_y>0 || test_zone_w>0 || test_zone_h>0)
 			{
 				Rgba yellowTranslucent( 1.0, 1.0, 0.0, 0.50 );
@@ -1188,7 +914,7 @@ if (hwnd != NULL)
 
 	Setup::SetupProgram(KEYBOARD | MOUSE);
 	//Mouse init
-	whc_wheel::c_Init(mouse_z, mouse_w);
+	whc_mouseWheel::c_Init(mouse_z, mouse_w);
 
 	bool window_border = false ;
 	bool window_init   = false ;
@@ -1204,21 +930,21 @@ if (hwnd != NULL)
 				sprintf(tmp," %i (%s)", n, argv[ n ]);
 				debugLine.data = std::string(tmp);
 				debugLine.tag = " InLine Arg ";
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 
             if (std::string(argv[ n ])=="--border")
 			{
 				window_border = true ;
 				debugLine.data = "border on";
 				debugLine.tag =" Cmd >";
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 			}
             if (std::string(argv[ n ])=="--init")
 			{
 				window_init = true ;
 				debugLine.data = "init windows position";
 				debugLine.tag = " Cmd >";
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 			}
             if (std::string(argv[ n ])=="--double_clic")
 			{
@@ -1228,17 +954,17 @@ if (hwnd != NULL)
 				{
 						try
 						{
-							whc_button::c_gapSecond = atof(argv[n+1]) ;
-							debugLine.data += ToString(whc_button::c_gapSecond);
+							whc_mouseButton::c_gapSecond = atof(argv[n+1]) ;
+							debugLine.data += ToString(whc_mouseButton::c_gapSecond);
 						}
 						catch ( const std::exception & e )
 						{
 							//cerr << e.what();
-							whc_button::c_gapSecond = 0.5000000 ;
+							whc_mouseButton::c_gapSecond = 0.5000000 ;
 							debugLine.data += " <Invalide number> default set to 0.5";
 						}
 				}
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 			}
             if (std::string(argv[ n ])=="--pos")
 			{
@@ -1270,7 +996,7 @@ if (hwnd != NULL)
 						}
 						 debugLine.data += ", " + ToString(posY_mainwindow) + ")";
 				}
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 			}
 
 
@@ -1313,7 +1039,7 @@ if (hwnd != NULL)
 						}
 						if (test_watchDebugLoop2 > 0) debugLine.data += " + loop watch " + ToString(test_watchDebugLoop2);
 				}
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 			}
 
 			//---------------------
@@ -1373,7 +1099,7 @@ if (hwnd != NULL)
 						}
 						if (test_zone_h > 0) debugLine.data += ", "  + ToString(test_zone_h) + ")";
 				}
-				AddToEventLog(debugLine);
+				debug_log_addToEventLog(debugLine);
 			}
 			//---------------------
         }
@@ -1475,9 +1201,9 @@ if (hwnd != NULL)
       }
 
 /*sab 28/11/2014 deb */
-	whc_pointer::c_Init(whc_pointer::arrow,"gfx/arrow.png");
-	whc_pointer::c_Init(whc_pointer::arrow_down,"gfx/arrow_down.png");
-	whc_pointer::c_Init(whc_pointer::drag,"gfx/drag.png");
+	whc_mousePointer::c_Init(whc_mousePointer::arrow,"gfx/arrow.png");
+	whc_mousePointer::c_Init(whc_mousePointer::arrow_down,"gfx/arrow_down.png");
+	whc_mousePointer::c_Init(whc_mousePointer::drag,"gfx/drag.png");
 /*sab 28/11/2014 fin */
 
     Canvas::Fill(CouleurFond);

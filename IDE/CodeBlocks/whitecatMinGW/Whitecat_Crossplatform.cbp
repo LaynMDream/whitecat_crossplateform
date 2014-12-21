@@ -160,13 +160,13 @@
 		<Unit filename="../../../Src/chat_dock_machine.ico">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/debug_log.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="../../../Src/debug_log.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="../../../Src/dmx_enttec_pro.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="../../../Src/dmx_enttec_pro_FTDI.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="../../../Src/dmx_ftdi_IN_test_enttec_pro.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/dmx_functions_13.cpp">
@@ -190,9 +190,6 @@
 		<Unit filename="../../../Src/faders_visuels_26.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="../../../Src/generate_strings_arrays.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="../../../Src/gestionaire_fenetres2.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -212,9 +209,6 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/gui_boutons_rebuild1.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="../../../Src/help_2.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/iCat14.cpp">
@@ -286,9 +280,6 @@
 		<Unit filename="../../../Src/patch_visu.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="../../../Src/plot.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="../../../Src/plot9.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -302,7 +293,7 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/savereport_window.cpp">
-			<Option target="Release" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/saves_export_import.cpp">
 			<Option target="&lt;{~None~}&gt;" />
@@ -328,9 +319,6 @@
 		<Unit filename="../../../Src/time_visu_3.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="../../../Src/tracker_main14nov.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="../../../Src/trichro_core2.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -351,6 +339,7 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="../../../Src/whitecat.h" />
+		<Unit filename="../../../Src/whitecat_Fct.h" />
 		<Unit filename="../../../Src/whitecat_opensource.ico">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

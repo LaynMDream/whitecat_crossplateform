@@ -5124,7 +5124,7 @@ do_logical_feedback_banger(xb+480,yb+50);
 return(0);
 }
 
-void ALT_do_logical_Banger_Wheel()
+void do_logical_Banger_Wheel()
 {
 	if(mousePtr.isOverRecSize(X_banger, Y_banger, 480, 300) && index_enable_edit_banger)
     {

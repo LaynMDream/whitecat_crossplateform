@@ -4356,7 +4356,7 @@ GridBGSelector.SetRoundness(3.0);
 
         if(window_focus_id==W_PLOT && mouse_x>plotx+5+(50*i) && mouse_x<plotx+50+(50*i) && mouse_y>ploty+90 && mouse_y<ploty+110)
         {
-            GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.3));
+            GridBGSelector.DrawOutline(CouleurYellow); // (CouleurLigne.WithAlpha(0.3));
         }
 
         if(editing_plot_background_plan_data_type == i+1)
@@ -4429,6 +4429,7 @@ GridBGSelector.SetRoundness(3.0);
     {
         petitchiffrerouge.Print("Rotate picture",plotx+5,ploty+133);
         AlphaLevel.Draw(CouleurGreen);
+        AlphaFrame.DrawOutline(CouleurYellow);
     }
     else
     {
@@ -4465,6 +4466,7 @@ GridBGSelector.SetRoundness(3.0);
     {
         petitchiffrerouge.Print("Picture opacity",plotx+5,ploty+170);
         RotateLevel.Draw(CouleurGreen);
+        RotateFrame.DrawOutline(CouleurYellow);
     }
     else
     {
@@ -4505,6 +4507,7 @@ GridBGSelector.SetRoundness(3.0);
     {
         petitchiffrerouge.Print("Alpha Grid",plotx+145,ploty+195);
         AlphaLev.Draw(CouleurGreen);
+        AlphaG.DrawOutline(CouleurYellow);
     }
     else
     {
@@ -4524,42 +4527,72 @@ PlotSize.DrawOutline(CouleurPlotLine.WithAlpha(0.4));
 
 petitchiffrenoir.Print("Light Plot Window    Color",plotx+10,ploty+465);
 
-GridBGSelector.MoveTo(Vec2D(plotx+5,ploty+480));
-GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
-petitchiffrenoir.Print("width",plotx+7,ploty+478);
-if(window_focus_id==W_PLOT && mouse_x>plotx+5 && mouse_x<plotx+45 && mouse_y>ploty+480 && mouse_y<ploty+500)
-{
-GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.5));
-}
-if(editing_plot_background_window_width==1){GridBGSelector.Draw(CouleurFader);}
-petitchiffrenoir.Print(ol::ToString(plot_window_width),plotx+10,ploty+493);
+//Light plot - Background - Cartouche Window width
+    GridBGSelector.MoveTo(Vec2D(plotx+5,ploty+480));
+    GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
+
+    if(window_focus_id==W_PLOT && mousePtr.isOverRecSize(plotx+5, ploty+480, 40, 20)) // mouse_x>plotx+5 && mouse_x<plotx+45 && mouse_y>ploty+480 && mouse_y<ploty+500)
+    {
+        GridBGSelector.DrawOutline(CouleurYellow);
+    }
+    if(editing_plot_background_window_width==1)
+    {
+        GridBGSelector.Draw(CouleurGreen);
+        GridBGSelector.DrawOutline(CouleurYellow);
+		petitchiffrerouge.Print(ol::ToString(plot_window_width),plotx+10,ploty+493);
+		petitchiffrerouge.Print("width",plotx+7,ploty+478);
+    }
+    else
+	{
+		petitchiffrenoir.Print(ol::ToString(plot_window_width),plotx+10,ploty+493);
+		petitchiffrenoir.Print("width",plotx+7,ploty+478);
+	}
 
 
-GridBGSelector.MoveTo(Vec2D(plotx+55,ploty+480));
-GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
-petitchiffrenoir.Print("height",plotx+7+50,ploty+478);
-if(window_focus_id==W_PLOT && mouse_x>plotx+55 && mouse_x<plotx+95 && mouse_y>ploty+480 && mouse_y<ploty+500)
-{
-GridBGSelector.DrawOutline(CouleurLigne.WithAlpha(0.5));
-}
-if(editing_plot_background_window_heigth==1){GridBGSelector.Draw(CouleurFader);}
-petitchiffrenoir.Print(ol::ToString(plot_window_height),plotx+60,ploty+493);
+//Light plot - Background - Cartouche Window height
+    GridBGSelector.MoveTo(Vec2D(plotx+55,ploty+480));
+    GridBGSelector.Draw(CouleurPlotLine.WithAlpha(0.3));
 
+    if(window_focus_id==W_PLOT && mousePtr.isOverRecSize(plotx+55, ploty+480, 40, 20)) // mouse_x>plotx+55 && mouse_x<plotx+95 && mouse_y>ploty+480 && mouse_y<ploty+500)
+    {
+        GridBGSelector.DrawOutline(CouleurYellow);
+    }
+    if(editing_plot_background_window_heigth==1)
+    {
+        GridBGSelector.Draw(CouleurGreen);
+        GridBGSelector.DrawOutline(CouleurYellow);
+        petitchiffrerouge.Print(ol::ToString(plot_window_height),plotx+60,ploty+493);
+        petitchiffrerouge.Print("height",plotx+7+50,ploty+478);
+    }
+    else
+	{
+        petitchiffrenoir.Print(ol::ToString(plot_window_height),plotx+60,ploty+493);
+        petitchiffrenoir.Print("height",plotx+7+50,ploty+478);
+	}
 
-GridBGSelector.MoveTo(Vec2D(plotx+105,ploty+480));
-GridBGSelector.Draw(CouleurPlotFill);
-GridBGSelector.DrawOutline(CouleurLigne);
-if(editing_plot_background_window_color_backgrd==1)
-{GridBGSelector.Draw(CouleurFader);}
-petitchiffrenoir.Print("Bkg",plotx+110,ploty+478);
+//Light plot - Background - Cartouche Color Bkg
+    GridBGSelector.MoveTo(Vec2D(plotx+105,ploty+480));
+    GridBGSelector.Draw(CouleurPlotFill);
+    GridBGSelector.DrawOutline(CouleurLigne);
+    if(editing_plot_background_window_color_backgrd==1)
+    {
+        petitchiffrerouge.Print("Bkg",plotx+110,ploty+478);
+        GridBGSelector.DrawOutline(CouleurYellow);
+    }
+    else
+        petitchiffrenoir.Print("Bkg",plotx+110,ploty+478);
 
-
-GridBGSelector.MoveTo(Vec2D(plotx+155,ploty+480));
-GridBGSelector.Draw(CouleurPlotLine);
-GridBGSelector.DrawOutline(CouleurLigne);
-if(editing_plot_background_window_color_line==1)
-{GridBGSelector.Draw(CouleurFader);}
-petitchiffrenoir.Print("Line",plotx+160,ploty+478);
+//Light plot - Background - Cartouche Color Line
+    GridBGSelector.MoveTo(Vec2D(plotx+155,ploty+480));
+    GridBGSelector.Draw(CouleurPlotLine);
+    GridBGSelector.DrawOutline(CouleurLigne);
+    if(editing_plot_background_window_color_line==1)
+    {
+        petitchiffrerouge.Print("Line",plotx+160,ploty+478);
+        GridBGSelector.DrawOutline(CouleurYellow);
+    }
+    else
+        petitchiffrenoir.Print("Line",plotx+160,ploty+478);
 
  return(0);
 }

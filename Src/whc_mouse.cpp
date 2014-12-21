@@ -3,51 +3,56 @@
 /*Initialisation des variables de classe*/
 
 //Buttons
-float whc_button::c_gapSecond = 0.25; // Default Initialisation of  max time between two clics to be a double clic
-whc_button::whc_eventclic whc_button::c_mouseLastClic = {none,clock()} ; /*{none,whc_button::c_milliseconds};*/
+float whc_mouseButton::c_gapSecond = 0.25; // Default Initialisation of  max time between two clics to be a double clic
+whc_mouseButton::whc_eventclic whc_mouseButton::c_mouseLastClic = {none,clock()} ; /*{none,whc_button::c_milliseconds};*/
+whc_mouseButton  whc_mouseButton::c_buttonLeft ;
+whc_mouseButton  whc_mouseButton::c_buttonMiddle ;
+whc_mouseButton  whc_mouseButton::c_buttonRight ;
 
-std::vector<whc_button::whc_eventclic> whc_button::c_mouseClicHistory;
+std::vector<whc_mouseButton::whc_eventclic> whc_mouseButton::c_mouseClicHistory;
 
 //Wheels
-int whc_wheel::c_mouse_z_prev = 0;
-int whc_wheel::c_mouse_w_prev = 0;
-int whc_wheel::c_loops = 0;
+int whc_mouseWheel::c_mouse_z_prev = 0;
+int whc_mouseWheel::c_mouse_w_prev = 0;
+int whc_mouseWheel::c_loops = 0;
+whc_mouseWheel whc_mouseWheel::c_mouseRoll(whc_mouseWheel::roll);
+whc_mouseWheel whc_mouseWheel::c_mouseScroll(whc_mouseWheel::scroll);
 
 //Pointer
-whc_pointer::whc_pointerbmp  whc_pointer::c_arrow[whc_mouselook_size] = {{false,0,0},{false,0,0},{false,0,0},{false,0,0}};
+whc_mousePointer::whc_pointerbmp  whc_mousePointer::c_arrow[whc_mouselook_size] = {{false,0,0},{false,0,0},{false,0,0},{false,0,0}};
 
 //
-whc_button::whc_button() : m_Down(false), m_Double(false), m_DragDrop(false), m_pending(false), m_Actor(0)
+whc_mouseButton::whc_mouseButton() : m_Down(false), m_Double(false), m_DragDrop(false), m_pending(false), m_Actor(0)
 {
     //ctor
     m_dragpos.x = 0;
     m_dragpos.y = 0;
-    whc_button::c_mouseClicHistory.clear();
-    whc_button::c_mouseClicHistory.push_back (whc_button::c_mouseLastClic);
+    whc_mouseButton::c_mouseClicHistory.clear();
+    whc_mouseButton::c_mouseClicHistory.push_back (whc_mouseButton::c_mouseLastClic);
 }
 
-whc_button::~whc_button()
+whc_mouseButton::~whc_mouseButton()
 {
     //dtor
 }
 
-bool whc_button::c_toggle(bool & pushbutton)
+bool whc_mouseButton::c_toggle(bool & pushbutton)
 {
-	return pushbutton = (not pushbutton);
+    return pushbutton = (not pushbutton);
 }
 
-bool whc_button::c_IsThisADoubleClic (whc_mousebutton button)
+bool whc_mouseButton::c_IsThisADoubleClic (whc_mousebutton button)
 {
     bool result = false ;
-    whc_button::c_mouseLastClic = {button,clock()} ;  //{button,whc_button::c_milliseconds};
+    whc_mouseButton::c_mouseLastClic = {button,clock()} ;  //{button,whc_button::c_milliseconds};
 
-    if (whc_button::c_mouseClicHistory.size()>0)
+    if (whc_mouseButton::c_mouseClicHistory.size()>0)
     {
-        if (whc_button::c_mouseClicHistory[0].button == whc_button::c_mouseLastClic.button)
+        if (whc_mouseButton::c_mouseClicHistory[0].button == whc_mouseButton::c_mouseLastClic.button)
         {
 
-            clock_t present  = whc_button::c_mouseLastClic.cpu_clock_ticks ; 			// present  down
-            clock_t past     = whc_button::c_mouseClicHistory[0].cpu_clock_ticks ; 	// previous down
+            clock_t present  = whc_mouseButton::c_mouseLastClic.cpu_clock_ticks ; 			// present  down
+            clock_t past     = whc_mouseButton::c_mouseClicHistory[0].cpu_clock_ticks ; 	// previous down
             //
             //float present  = whc_button::c_mouseLastClic.cpu_clock_ticks ; 			// present  down
             //float past     = whc_button::c_mouseClicHistory[0].cpu_clock_ticks ; 	// previous down
@@ -58,67 +63,69 @@ bool whc_button::c_IsThisADoubleClic (whc_mousebutton button)
             clock_t gap_in_ticks = (present - past) ;
             float gap_in_sec = gap_in_ticks / nbr_ticks_per_sec ;
 
-            if (gap_in_sec < whc_button::c_gapSecond)
+            if (gap_in_sec < whc_mouseButton::c_gapSecond)
             {
                 result = true ;
             }
         }
     }
 
-    whc_button::c_mouseClicHistory.clear();
-    whc_button::c_mouseClicHistory.push_back (whc_button::c_mouseLastClic);
+    whc_mouseButton::c_mouseClicHistory.clear();
+    whc_mouseButton::c_mouseClicHistory.push_back (whc_mouseButton::c_mouseLastClic);
 
     return result ;
 }
 
-void whc_button::c_CollectEvent (int& mouseSignal, volatile int& mouse_x, volatile int& mouse_y, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight)
+
+
+void whc_mouseButton::c_CollectEvent (const int& mouseSignal, volatile int& mouse_x, volatile int& mouse_y)   //, whc_button& mouseClicLeft, whc_button& mouseClicMiddle, whc_button& mouseClicRight)
 {
     if (mouseSignal & MOUSE_FLAG_LEFT_DOWN)
     {
-        mouseClicLeft.m_Down = true ;
-        mouseClicLeft.m_pending = true ;
-        mouseClicLeft.m_Double = c_IsThisADoubleClic(left);
-        mouseClicLeft.m_DragDrop = false;
-        mouseClicLeft.m_dragpos.x = mouse_x;
-        mouseClicLeft.m_dragpos.y = mouse_y ;
+        c_buttonLeft.m_Down = true ;
+        c_buttonLeft.m_pending = true ;
+        c_buttonLeft.m_Double = c_IsThisADoubleClic(left);
+        c_buttonLeft.m_DragDrop = false;
+        c_buttonLeft.m_dragpos.x = mouse_x;
+        c_buttonLeft.m_dragpos.y = mouse_y ;
     }
 
     if (mouseSignal & MOUSE_FLAG_LEFT_UP)
     {
-        mouseClicLeft.m_Down = false ;
-        mouseClicLeft.m_DragDrop = ((mouseClicLeft.m_dragpos.x == mouse_x) && (mouseClicLeft.m_dragpos.y == mouse_y));
+        c_buttonLeft.m_Down = false ;
+        c_buttonLeft.m_DragDrop = ((c_buttonLeft.m_dragpos.x == mouse_x) && (c_buttonLeft.m_dragpos.y == mouse_y));
     }
 
     if (mouseSignal & MOUSE_FLAG_MIDDLE_DOWN)
     {
-        mouseClicMiddle.m_Down = true ;
-        mouseClicMiddle.m_pending = true ;
-        mouseClicMiddle.m_Double = c_IsThisADoubleClic(middle);
-        mouseClicMiddle.m_DragDrop = false;
-        mouseClicMiddle.m_dragpos.x = mouse_x;
-        mouseClicMiddle.m_dragpos.y = mouse_y ;
+        c_buttonMiddle.m_Down = true ;
+        c_buttonMiddle.m_pending = true ;
+        c_buttonMiddle.m_Double = c_IsThisADoubleClic(middle);
+        c_buttonMiddle.m_DragDrop = false;
+        c_buttonMiddle.m_dragpos.x = mouse_x;
+        c_buttonMiddle.m_dragpos.y = mouse_y ;
     }
 
     if (mouseSignal & MOUSE_FLAG_MIDDLE_UP)
     {
-        mouseClicMiddle.m_Down = false ;
-        mouseClicMiddle.m_DragDrop = ((mouseClicMiddle.m_dragpos.x == mouse_x) && (mouseClicMiddle.m_dragpos.y == mouse_y));
+        c_buttonMiddle.m_Down = false ;
+        c_buttonMiddle.m_DragDrop = ((c_buttonMiddle.m_dragpos.x == mouse_x) && (c_buttonMiddle.m_dragpos.y == mouse_y));
     }
 
     if (mouseSignal & MOUSE_FLAG_RIGHT_DOWN)
     {
-        mouseClicRight.m_Down = true ;
-        mouseClicRight.m_pending = true ;
-        mouseClicRight.m_Double = c_IsThisADoubleClic(right);
-        mouseClicRight.m_DragDrop = false;
-        mouseClicRight.m_dragpos.x = mouse_x;
-        mouseClicRight.m_dragpos.y = mouse_y ;
+        c_buttonRight.m_Down = true ;
+        c_buttonRight.m_pending = true ;
+        c_buttonRight.m_Double = c_IsThisADoubleClic(right);
+        c_buttonRight.m_DragDrop = false;
+        c_buttonRight.m_dragpos.x = mouse_x;
+        c_buttonRight.m_dragpos.y = mouse_y ;
     }
 
     if (mouseSignal & MOUSE_FLAG_RIGHT_UP)
     {
-        mouseClicRight.m_Down = false ;
-        mouseClicRight.m_DragDrop = ((mouseClicRight.m_dragpos.x == mouse_x) && (mouseClicRight.m_dragpos.y == mouse_y));
+        c_buttonRight.m_Down = false ;
+        c_buttonRight.m_DragDrop = ((c_buttonRight.m_dragpos.x == mouse_x) && (c_buttonRight.m_dragpos.y == mouse_y));
     }
 }
 
@@ -126,81 +133,92 @@ void whc_button::c_CollectEvent (int& mouseSignal, volatile int& mouse_x, volati
 //------------------------------------------------------------------------------------------------------------------------------
 
 
-whc_wheel::whc_wheel() : m_level(0), m_gain(0), m_yield(0), m_speed(0), m_pending(false)
+whc_mouseWheel::whc_mouseWheel() : m_level(0), m_gain(0), m_yield(0), m_speed(0), m_pending(false)
 {
     //ctor
 }
+whc_mouseWheel::whc_mouseWheel(whc_mousewheel wheel) : m_level(0), m_gain(0), m_yield(0), m_speed(0), m_pending(false)
+{
+    m_wheel = wheel;
+}
 
-whc_wheel::~whc_wheel()
+whc_mouseWheel::~whc_mouseWheel()
 {
     //dtor
 }
 
-void whc_wheel::c_Init (volatile int& mouse_z, volatile int& mouse_w)
+void whc_mouseWheel::c_Init (volatile int& mouse_z, volatile int& mouse_w)
 {
-    whc_wheel::c_mouse_z_prev = mouse_z ;
-    whc_wheel::c_mouse_w_prev = mouse_w ;
+    whc_mouseWheel::c_mouse_z_prev = mouse_z ;
+    whc_mouseWheel::c_mouse_w_prev = mouse_w ;
 }
 
-void whc_wheel::c_CollectKeyStatus (whc_wheel& mouseScroll , whc_wheel& mouseRoll)
+void whc_mouseWheel::c_CollectKeyStatus () //(whc_mouseWheel& mouseScroll , whc_mouseWheel& mouseRoll)
 {
     if (not (key[KEY_LCONTROL]))
     {
-        whc_wheel::c_loops = 0;
+        c_loops = 0;
 
-        if (not (mouseScroll.m_speed==0))
+        if (not (c_mouseScroll.m_speed==0))
         {
-            mouseScroll.m_speed = 0;
-            mouseScroll.m_yield = 0;
-            mouseScroll.m_pending = false;
+            c_mouseScroll.m_speed = 0;
+            c_mouseScroll.m_yield = 0;
+            c_mouseScroll.m_pending = false;
         }
-        if (not (mouseScroll.m_speed==0))
+        if (not (c_mouseScroll.m_speed==0))
         {
-            mouseRoll.m_speed = 0;
-            mouseRoll.m_yield = 0;
-            mouseRoll.m_pending = false;
+            c_mouseRoll.m_speed = 0;
+            c_mouseRoll.m_yield = 0;
+            c_mouseRoll.m_pending = false;
+        }
+    }
+    else
+    {
+        if (c_mouseScroll.m_speed==0 && c_mouseRoll.m_speed==0)
+        {
+            c_loops = 0;
         }
     }
 }
 
-void whc_wheel::c_CollectEvent (int& mouseSignal, volatile int& mouse_z, volatile int& mouse_w, whc_wheel& mouseScroll , whc_wheel& mouseRoll)
+void whc_mouseWheel::c_CollectEvent (const int& mouseSignal, volatile int& mouse_z, volatile int& mouse_w) //, whc_mouseWheel& mouseScroll , whc_mouseWheel& mouseRoll)
 {
-    mouseRoll.m_gain = 0 ;
-    mouseScroll.m_gain = 0 ;
+    c_mouseRoll.m_gain = 0 ;
+    c_mouseScroll.m_gain = 0 ;
 
     if (mouseSignal & MOUSE_FLAG_MOVE_Z)
     {
         //Scroll
         if (key[KEY_LSHIFT]) 	//emulate Roll with Scroll (Z)
         {
-            mouseRoll.m_pending=true;
-            mouseRoll.SetGain(mouse_z - whc_wheel::c_mouse_z_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
-            mouseRoll.SetLevel(mouseRoll.level() + mouseRoll.gain()); // level is not automatically set to 0 when event processed (mouse_w will be : see case default)
-            whc_wheel::c_mouse_z_prev = mouse_z;
+            c_mouseRoll.m_pending=true;
+            c_mouseRoll.SetGain(mouse_z - c_mouse_z_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
+            c_mouseRoll.SetLevel(c_mouseRoll.level() + c_mouseRoll.gain()); // level is not automatically set to 0 when event processed (mouse_w will be : see case default)
+            c_mouse_z_prev = mouse_z;
 
             if ((key[KEY_LCONTROL]))
             {
-                mouseRoll.SetSpeed(mouseRoll.speed() + mouseRoll.gain());	//Instant acceleration
+                c_mouseRoll.SetSpeed(c_mouseRoll.speed() + c_mouseRoll.gain());	//Instant acceleration
             }
             else
             {
-                mouseRoll.SetSpeed(0);
+                c_mouseRoll.SetSpeed(0);
             }
         }
         else					//Scroll
         {
-            mouseScroll.m_pending=true;
-            mouseScroll.SetGain(mouse_z - whc_wheel::c_mouse_z_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
-            mouseScroll.SetLevel( mouseScroll.level() + mouseScroll.gain()); // level is not automatically set to 0 when event processed (mouse_z will be : see case default)
-            whc_wheel::c_mouse_z_prev = mouse_z;
+            c_mouseScroll.m_pending=true;
+            c_mouseScroll.SetGain(mouse_z - c_mouse_z_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
+            c_mouseScroll.SetLevel(c_mouseScroll.level() + c_mouseScroll.gain()); // level is not automatically set to 0 when event processed (mouse_z will be : see case default)
+            c_mouse_z_prev = mouse_z;
 
             if ((key[KEY_LCONTROL]))
             {
-                mouseScroll.SetSpeed(mouseScroll.speed() + mouseScroll.gain());	//Instant acceleration
+                c_mouseScroll.SetSpeed(c_mouseScroll.speed() + c_mouseScroll.gain());	//Instant acceleration
             }
             else
             {
-                mouseScroll.SetSpeed(0);
+                c_mouseScroll.SetSpeed(0);
             }
         }
     }
@@ -208,51 +226,57 @@ void whc_wheel::c_CollectEvent (int& mouseSignal, volatile int& mouse_z, volatil
     if (mouseSignal & MOUSE_FLAG_MOVE_W)
     {
         //Roll
-        mouseRoll.m_pending=true;
-        mouseRoll.SetGain(mouse_w - whc_wheel::c_mouse_w_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
-        mouseRoll.SetLevel(mouseRoll.level() + mouseRoll.gain()); // level is not automatically set to 0 when event processed (mouse_w will be : see case default)
-        whc_wheel::c_mouse_w_prev = mouse_w;
+        c_mouseRoll.m_pending=true;
+        c_mouseRoll.SetGain(mouse_w - c_mouse_w_prev); //Instant mouvement of the wheel : -1, 0, +1 // Yield is updated in the same time
+        c_mouseRoll.SetLevel(c_mouseRoll.level() + c_mouseRoll.gain()); // level is not automatically set to 0 when event processed (mouse_w will be : see case default)
+        c_mouse_w_prev = mouse_w;
 
         if ((key[KEY_LCONTROL]))
         {
-            mouseRoll.SetSpeed(mouseRoll.speed() + mouseRoll.gain());	//Instant acceleration
+            c_mouseRoll.SetSpeed(c_mouseRoll.speed() + c_mouseRoll.gain());	//Instant acceleration
         }
         else
         {
-            mouseRoll.SetSpeed(0);
+            c_mouseRoll.SetSpeed(0);
         }
     }
 
-    if (mouseScroll.isProcessed() && (not (mouse_z==0)))
+    if (c_mouseScroll.isProcessed() && (not (mouse_z==0)))
     {
-        //position_mouse_z(0);
-        //whc_wheel::c_mouse_z_prev = 0 ;
-        mouseScroll.m_yield = 0;
-        whc_wheel::c_loops = 0;
+        c_mouseScroll.m_yield = 0;
+        c_loops = 0;
     }
 
-    if (mouseRoll.isProcessed() && (not (mouse_w==0)))
+    if (c_mouseRoll.isProcessed() && (not (mouse_w==0)))
     {
-        //position_mouse_w(0);
-        //whc_wheel::c_mouse_w_prev = 0;
-        mouseRoll.m_yield = 0;
-        whc_wheel::c_loops = 0;
+        c_mouseRoll.m_yield = 0;
+        c_loops = 0;
     }
 }
 
 // SANS ACCELERATION
-void whc_wheel::c_levelIncrease(whc_wheel & wheel, int & i_level, const int maxlevel, const int minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
+void whc_mouseWheel::c_levelIncrease(const whc_mousewheel & type, int & i_level, const int maxlevel, const int minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
 {
-    if ((key[KEY_LCONTROL]))
-	{
-		i_level = i_level + int(wheel.gain() * increaseFactor_onLeftCtl) ;
-	}
-	else
-	{
-		i_level = i_level + int(wheel.gain() * increaseFactor) ;
-	}
+    whc_mouseWheel * wheel ;
+    if (type == roll)
+    {
+        wheel = &c_mouseRoll;
+    }
+    else
+    {
+        wheel = &c_mouseScroll;
+    }
 
-    wheel.SetProcessed();
+    if ((key[KEY_LCONTROL]))
+    {
+        i_level = i_level + int(wheel->gain() * increaseFactor_onLeftCtl) ;
+    }
+    else
+    {
+        i_level = i_level + int(wheel->gain() * increaseFactor) ;
+    }
+
+    wheel->SetProcessed();
 
     if (i_level > maxlevel)
     {
@@ -264,18 +288,28 @@ void whc_wheel::c_levelIncrease(whc_wheel & wheel, int & i_level, const int maxl
     }
 }
 
-int whc_wheel::c_levelIncrease(whc_wheel & wheel, float & f_level, const float maxlevel, const float minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
+int whc_mouseWheel::c_levelIncrease(const whc_mousewheel & type, float & f_level, const float maxlevel, const float minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
 {
-    if ((key[KEY_LCONTROL]))
-	{
-		f_level = f_level + (wheel.gain() * increaseFactor_onLeftCtl) ;
-	}
-	else
-	{
-		f_level = f_level + (wheel.gain() * increaseFactor) ;
-	}
+    whc_mouseWheel * wheel ;
+    if (type == roll)
+    {
+        wheel = &c_mouseRoll;
+    }
+    else
+    {
+        wheel = &c_mouseScroll;
+    }
 
-    wheel.SetProcessed();
+    if ((key[KEY_LCONTROL]))
+    {
+        f_level = f_level + (wheel->gain() * increaseFactor_onLeftCtl) ;
+    }
+    else
+    {
+        f_level = f_level + (wheel->gain() * increaseFactor) ;
+    }
+
+    wheel->SetProcessed();
 
     if (f_level > maxlevel)
     {
@@ -288,18 +322,28 @@ int whc_wheel::c_levelIncrease(whc_wheel & wheel, float & f_level, const float m
     return (int) f_level;
 }
 
-void whc_wheel::c_rotatorLevelIncrease(whc_wheel & wheel, int & i_level, const int maxlevel, const int minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
+void whc_mouseWheel::c_rotatorLevelIncrease(const whc_mousewheel & type, int & i_level, const int maxlevel, const int minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
 {
-     if ((key[KEY_LCONTROL]))
-	{
-		i_level = i_level + int(wheel.gain() * increaseFactor_onLeftCtl) ;
-	}
-	else
-	{
-			i_level = i_level + int(wheel.gain() * increaseFactor) ;
-	}
+    whc_mouseWheel * wheel ;
+    if (type == roll)
+    {
+        wheel = &c_mouseRoll;
+    }
+    else
+    {
+        wheel = &c_mouseScroll;
+    }
 
-    wheel.SetProcessed();
+    if ((key[KEY_LCONTROL]))
+    {
+        i_level = i_level + int(wheel->gain() * increaseFactor_onLeftCtl) ;
+    }
+    else
+    {
+        i_level = i_level + int(wheel->gain() * increaseFactor) ;
+    }
+
+    wheel->SetProcessed();
 
     if (i_level > maxlevel)
     {
@@ -311,18 +355,28 @@ void whc_wheel::c_rotatorLevelIncrease(whc_wheel & wheel, int & i_level, const i
     }
 }
 
-int whc_wheel::c_rotatorLevelIncrease(whc_wheel & wheel, float & f_level, const float maxlevel, const float minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
+int whc_mouseWheel::c_rotatorLevelIncrease(const whc_mousewheel & type, float & f_level, const float maxlevel, const float minlevel, const float increaseFactor, const float increaseFactor_onLeftCtl)
 {
-        if ((key[KEY_LCONTROL]))
-	{
-		f_level = f_level + (wheel.gain() * increaseFactor_onLeftCtl) ;
-	}
-	else
-	{
-		f_level = f_level + (wheel.gain() * increaseFactor) ;
-	}
+    whc_mouseWheel * wheel ;
+    if (type == roll)
+    {
+        wheel = &c_mouseRoll;
+    }
+    else
+    {
+        wheel = &c_mouseScroll;
+    }
 
-    wheel.SetProcessed();
+    if ((key[KEY_LCONTROL]))
+    {
+        f_level = f_level + (wheel->gain() * increaseFactor_onLeftCtl) ;
+    }
+    else
+    {
+        f_level = f_level + (wheel->gain() * increaseFactor) ;
+    }
+
+    wheel->SetProcessed();
 
     if (f_level > maxlevel)
     {
@@ -340,15 +394,25 @@ int whc_wheel::c_rotatorLevelIncrease(whc_wheel & wheel, float & f_level, const 
 
 // AUGMENTATION selon SPEED et TIME le nombre de passage dans la boucle --
 // Après un nombre de passage dans la boucle (loopsbystep) le niveau (level) est augmentation/diminué selon (speed) courant
-void whc_wheel::c_levelSpeedupIncrease(whc_wheel & wheel, int & i_level, const int maxlevel, const int minlevel, const int time_in_number_of_loops)
+void whc_mouseWheel::c_levelSpeedupIncrease(const whc_mousewheel & type, int & i_level, const int maxlevel, const int minlevel, const int time_in_number_of_loops)
 {
 
-    whc_wheel::c_loops ++;
-
-    if (whc_wheel::c_loops>=time_in_number_of_loops)
+    whc_mouseWheel * wheel ;
+    if (type == roll)
     {
-        whc_wheel::c_loops = 1;
-        i_level = i_level + wheel.speed();
+        wheel = &c_mouseRoll;
+    }
+    else
+    {
+        wheel = &c_mouseScroll;
+    }
+
+    whc_mouseWheel::c_loops ++;
+
+    if (whc_mouseWheel::c_loops>=time_in_number_of_loops)
+    {
+        whc_mouseWheel::c_loops = 1;
+        i_level = i_level + wheel->speed();
 
         if (i_level > maxlevel)
         {
@@ -358,13 +422,23 @@ void whc_wheel::c_levelSpeedupIncrease(whc_wheel & wheel, int & i_level, const i
         {
             i_level=minlevel ;
         }
-        wheel.isProcessed();
+        wheel->isProcessed();
     }
 }
 
-int whc_wheel::c_levelSpeedupIncrease(whc_wheel & wheel, float & f_level, const float maxlevel, const float minlevel, const float frequency_in_number_of_loops)
+int whc_mouseWheel::c_levelSpeedupIncrease(const whc_mousewheel & type, float & f_level, const float maxlevel, const float minlevel, const float frequency_in_number_of_loops)
 {
-    float speedratio_per_loop = wheel.speed() / frequency_in_number_of_loops ;
+    whc_mouseWheel * wheel ;
+    if (type == roll)
+    {
+        wheel = &c_mouseRoll;
+    }
+    else
+    {
+        wheel = &c_mouseScroll;
+    }
+
+    float speedratio_per_loop = wheel->speed() / frequency_in_number_of_loops ;
     f_level = f_level + speedratio_per_loop;
 
     if (f_level > maxlevel)
@@ -378,53 +452,134 @@ int whc_wheel::c_levelSpeedupIncrease(whc_wheel & wheel, float & f_level, const 
     return (int) f_level;
 }
 
+bool whc_mouseWheel::isSubscriber(const int & data)
+{
+    if (m_subscriberList.size() > 0)
+    {
+        whc_mouseWheel::whc_wheeledcontroller controleur;
+        for (std::vector<whc_mouseWheel::whc_wheeledcontroller>::iterator it = m_subscriberList.begin() ;
+                it != m_subscriberList.end();
+                ++it)
+        {
+            controleur = *it;
+            if (controleur.controller == &data)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void whc_mouseWheel::addSubscriber(int &data, const whc_wheeledcontrollertype type, const int minimum, const int maximum, whc_mousewheelkey keypress)
+{
+    whc_mouseWheel::whc_wheeledcontroller controleur;
+    controleur.controller 	= &data ;
+    controleur.type 		= type ;
+    controleur.maximum 		= maximum ;
+    controleur.minimum 		= minimum ;
+    controleur.keypress     = keypress ;
+    m_subscriberList.push_back(controleur);
+}
+
+bool whc_mouseWheel::unsubscribe(const int & data)
+{
+	if (isSubscriber(data))
+	{
+		pullSubscriber(data);
+		return true;
+	}
+	return false ;
+}
+
+void whc_mouseWheel::pullSubscriber(const int & data)
+{
+	whc_mouseWheel::whc_wheeledcontroller controleur;
+	std::vector<whc_mouseWheel::whc_wheeledcontroller>::iterator it_to_del;
+
+    while (isSubscriber(data))
+    {
+        for (std::vector<whc_mouseWheel::whc_wheeledcontroller>::iterator it = m_subscriberList.begin() ;
+                it != m_subscriberList.end();
+                ++it)
+        {
+            controleur = *it;
+            if (controleur.controller == &data)
+            {
+                it_to_del = it;
+            }
+        }
+        m_subscriberList.erase(it_to_del);
+    }
+}
+
+void whc_mouseWheel::handOverSubscriber(whc_mousewheelkey keypress)
+{
+    if (m_subscriberList.size() > 0)
+	{
+		whc_mouseWheel::whc_wheeledcontroller controleur;
+		for (std::vector<whc_mouseWheel::whc_wheeledcontroller>::iterator it = m_subscriberList.begin() ; it != m_subscriberList.end(); ++it)
+	   {
+			controleur = *it;
+			if (controleur.keypress==keypress)
+			{
+				if (controleur.type==whc_mouseWheel::slider)
+				{
+					whc_mouseWheel::c_levelIncrease(this->m_wheel, *controleur.controller,   controleur.maximum, controleur.minimum);
+				}
+				else // rotary
+				{
+					whc_mouseWheel::c_rotatorLevelIncrease(this->m_wheel, *controleur.controller,   controleur.maximum, controleur.minimum);
+				}
+			}
+	   }
+	}
+}
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 
-
-whc_pointer::whc_pointer() : m_x(0), m_y(0)
+whc_mousePointer::whc_mousePointer() : m_x(0), m_y(0)
 {
     //ctor
 }
 
-whc_pointer::whc_pointer(volatile int& mouse_x, volatile int& mouse_y)
+whc_mousePointer::whc_mousePointer(volatile int& mouse_x, volatile int& mouse_y)
 {
     //ctor
     m_x = mouse_x ;
     m_y = mouse_y ;
 }
-whc_pointer::~whc_pointer()
+whc_mousePointer::~whc_mousePointer()
 {
     //dtor
 }
 
-bool whc_pointer::c_Init(whc_mouselook idx, const char *pathtobmp)
+bool whc_mousePointer::c_Init(whc_mouselook idx, const char *pathtobmp)
 {
-    whc_pointer::c_arrow[idx].loaded = whc_pointer::c_arrow[idx].bmp.Load( pathtobmp );
-    return whc_pointer::c_arrow[idx].loaded ;
+    whc_mousePointer::c_arrow[idx].loaded = whc_mousePointer::c_arrow[idx].bmp.Load( pathtobmp );
+    return whc_mousePointer::c_arrow[idx].loaded ;
 }
 
-bool whc_pointer::Draw()
+bool whc_mousePointer::Draw()
 {
 
-	try
-	{
-		if (whc_pointer::c_arrow[m_look].loaded)
-		{
-			int xx = mouse_x + c_arrow[m_look].mouse_x_in_png;
-			int yy = mouse_y + c_arrow[m_look].mouse_y_in_png;
-			whc_pointer::c_arrow[m_look].bmp.Blit(xx, yy);
-			return true;
-		}
-		else
-		{
-			return false ;  //pas d'image chargée
-		}
-	}
-	catch ( const std::exception & e )
-	{
-			return false;
-	}
+    try
+    {
+        if (whc_mousePointer::c_arrow[m_look].loaded)
+        {
+            int xx = mouse_x + c_arrow[m_look].mouse_x_in_png;
+            int yy = mouse_y + c_arrow[m_look].mouse_y_in_png;
+            whc_mousePointer::c_arrow[m_look].bmp.Blit(xx, yy);
+            return true;
+        }
+        else
+        {
+            return false ;  //pas d'image chargée
+        }
+    }
+    catch ( const std::exception & e )
+    {
+        return false;
+    }
     return false;
 }
-

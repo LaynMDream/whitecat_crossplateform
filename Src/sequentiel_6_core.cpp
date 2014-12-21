@@ -888,7 +888,19 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
 attribute_midi_solo_affectation(493,Midi_Faders_Affectation_Mode);
 mouseClicLeft.SetProcessed();
 }
-else
+//sab 13/12/2014 deb
+//else
+        if(mouseClicLeft.isDownToBeProcessed()
+        && key[KEY_ALT] )
+        {
+            if (not mouseRoll.unsubscribe(crossfade_speed))
+            {
+                mouseRoll.addSubscriber(crossfade_speed, whc_mouseWheel::slider, 0, 255, whc_mouseWheel::nokey);
+            }
+            mouseClicLeft.SetProcessed();
+        }
+        else if (mouseClicLeft.isDownToBeProcessed())
+//sab 13/12/2014 fin
 {
 set_mouse_range(x_seq+490, y_seq+405, x_seq+490+127, y_seq+405+(45/2));//pour pas deborder
 crossfade_speed=mouse_x-(x_seq+490);

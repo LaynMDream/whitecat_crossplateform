@@ -40,7 +40,7 @@ WWWWWWWW           C  WWWWWWWW   |
 *   GUI fonctions for grand master
 *
  **/
-void ALT_do_logical_grand_master_wheel(const int& GMX, const int& GMY, const int& larg)
+void do_logical_grand_master_wheel(const int& GMX, const int& GMY, const int& larg)
 {
 			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
 //sab 28/11/2014 deb
@@ -50,11 +50,11 @@ void ALT_do_logical_grand_master_wheel(const int& GMX, const int& GMY, const int
         {
             if (key[KEY_ALT] && key[KEY_LCONTROL])
             {
-                whc_wheel::c_levelSpeedupIncrease(mouseScroll, niveauGMaster, 255, 0, 1000);
+                whc_mouseWheel::c_levelSpeedupIncrease(whc_mouseWheel::scroll, niveauGMaster, 255, 0, 1000);
             }
             else if (key[KEY_ALT] )
 			{
-				whc_wheel::c_levelIncrease(mouseScroll, niveauGMaster, 255, 0);
+				whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, niveauGMaster, 255, 0);
 				mouseScroll.SetProcessed();
 			}
         }
@@ -67,15 +67,13 @@ int do_logical_grand_master(const int& GMX, const int& GMY, const int& larg)
 //sab 13/12/2014 deb
         if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
 		&& mousePtr.isOverRecSize(GMX, GMY, larg, 255)
-		&& mouseClicLeft.isDown() && mouseClicLeft.isToBeProcessed()
+		&& mouseClicLeft.isDownToBeProcessed()
 		&& key[KEY_ALT] )
 		{
-			whc_wheel::whc_wheeledcontroller controleur;
-			controleur.controller = &niveauGMaster;
-			controleur.maximum = 255;
-			controleur.minimum = 0;
-			controleur.type = whc_wheel::slider;
-			mouseScroll.m_subscriberList.push_back(controleur);
+			if (not mouseScroll.unsubscribe(niveauGMaster))
+			{
+				mouseScroll.addSubscriber(niveauGMaster, whc_mouseWheel::slider, 0, 255, whc_mouseWheel::nokey);
+			}
 			mouseClicLeft.SetProcessed();
 		}
 		else
@@ -179,18 +177,9 @@ int grand_master(int GMX, int GMY)
     //sab 13/12/2014 deb
 //    Gma.DrawOutline(CouleurLigne);
 	ol::Rgba colorToApply = CouleurLigne ;
-	if (mouseScroll.m_subscriberList.size() > 0)
+	if (mouseScroll.isSubscriber(niveauGMaster))
 	{
-		whc_wheel::whc_wheeledcontroller controleur;
-		for (std::vector<whc_wheel::whc_wheeledcontroller>::iterator it = mouseScroll.m_subscriberList.begin() ; it != mouseScroll.m_subscriberList.end(); ++it)
-	   {
-			controleur = *it;
-			if (controleur.controller == &niveauGMaster)
-			{
-				//gma_isCapsLock_selcted = true ;
-				colorToApply = CouleurYellow ;
-			}
-	   }
+		colorToApply = CouleurYellow ;
 	}
 	Gma.DrawOutline(colorToApply);
     //sab 13/12/2014 fin

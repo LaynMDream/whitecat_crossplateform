@@ -98,7 +98,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
 			//key_unselect_ch();
 			if (key[KEY_CAPSLOCK])
 			{
-				mouseScroll.m_subscriberList.clear();
+				mouseScroll.unsubscribeAll();
+				mouseRoll.unsubscribeAll();
 			}
 			else
 			{
