@@ -1318,10 +1318,11 @@ if(param1_is>=0 && param1_is<5)
      break;
      case 8:
      //sprintf(bangers_type_action,"Seek to CueIn Pl.");
-     if(player_ignited[param1_is]==1 && param2_is==1)
+      if(player_ignited[param1_is]==1 && param2_is==1)//christoph 03/12/14
      {
-		switch(param1_is)
+         switch(param1_is)
      {
+
        case 0://PLAYER 1
        player1->setPosition(audio_position_was[param1_is]);
        sprintf(string_event,"BACK: Player 1 SeekToCueIn");
@@ -2550,7 +2551,11 @@ if(param1_is>=0 && param1_is<5)
      sprintf(audiofile_name_was[param1_is],sound_files[param1_is]);
      //sprintf(bangers_type_action,"Load in Player");
      sprintf(audiofile_name,list_audio_files[param2_is]);
+     //debug christoph 11/12/14
+     audiofile_selected=param2_is;
+     //
      AffectSoundFile(param1_is);
+
      player_seek_position[param1_is]=audiofile_cue_in_out_pos[param2_is][0];
      player_loop_out_position[param1_is]=audiofile_cue_in_out_pos[param2_is][1];
      sprintf(string_event,"Affected Audio %d to Player %d",param2_is,param1_is);
@@ -2612,6 +2617,9 @@ if(param1_is>=0 && param1_is<5)
      sprintf(audiofile_name_was[param1_is],sound_files[param1_is]);
      //sprintf(bangers_type_action,"Load in Player");
      sprintf(audiofile_name,list_audio_files[param2_is]);
+    //debug christoph 11/12/14
+     audiofile_selected=param2_is;
+     //
      AffectSoundFile(param1_is);
      player_seek_position[param1_is]=audiofile_cue_in_out_pos[param2_is][0];
      player_loop_out_position[param1_is]=audiofile_cue_in_out_pos[param2_is][1];

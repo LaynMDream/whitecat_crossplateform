@@ -638,7 +638,7 @@ if(midi_send_out[492]==1){index_send_midi_out[492]=1;}
 }
 
 ////////////////////X2////////////////////////////////////////////////////////////////
-if(mouse_x> x_seq+580 && mouse_x< x_seq+580+45)
+else if(mouse_x> x_seq+580 && mouse_x< x_seq+580+45)
 {
 
 
@@ -684,6 +684,7 @@ if(midi_send_out[491]==1){index_send_midi_out[491]=1;}
 }
 }
 }
+
 if(niveauX1==0 && niveauX2==255)
 {
 index_go=0; index_go_back=0; index_pause=0;
@@ -698,13 +699,16 @@ raccrochage_midi_logical_vertical_dmx ( x_seq+480, (y_seq+80), 491, 45, 255);//X
 raccrochage_midi_logical_vertical_dmx ( x_seq+580, (y_seq+80), 492, 45, 255);//X2 séparés car inversés pour l'affichage etc
 
 //TOGETHER
-
-
-if(mouse_x>  x_seq+535 && mouse_x<  x_seq+535+40 && mouse_y>=y_seq+80 && mouse_y<=y_seq+80+255)
+if(mouse_x> x_seq+540 && mouse_x< x_seq+540+50 && mouse_y>y_seq+50 && mouse_y<y_seq+50+20)
 {
-
+if(index_x1_x2_together==0){index_x1_x2_together=1;}
+else {index_x1_x2_together=0;}
+mouse_released=1;
+}
+//ratio
+if(mouse_x> x_seq+535 && mouse_x< x_seq+575 && mouse_y>y_seq+80 && mouse_y<y_seq+350)
+{
 ratio_X1X2_together=(int)((mouse_y)-(y_seq+80+255));
-
 float fract_remplaX1=(255.0-ratio_X1X2_together)/255;
 float remapis=255.0;
 float fract_remplaX2=(255.0-ratio_X1X2_together)/255;
@@ -718,7 +722,6 @@ else
 remapX1[mop]=(int)(remapis);
 }
 }
-
 for(int mop=0;mop<256;mop++)
 {
 remapis+=fract_remplaX2;
@@ -726,23 +729,14 @@ if (remapis>255){remapX2[mop]=255;}
 else if(remapis<0){remapX2[mop]=0;}
 else {remapX2[mop]=(int)(remapis);  }
 }
+//christoph 15/12/14 debug go déclenché par manip ratio (??? why ???) + enregistrement auto du ratio
+index_go=0;
+ratio_cross_manuel[position_preset]=ratio_X1X2_together;
 }
 
-
-if(mouse_x>  x_seq+540 && mouse_x<  x_seq+540+50 && mouse_y>y_seq+50 && mouse_y<y_seq+50+20)
+//GO
+if(mouse_x>x_seq+534 && mouse_x<x_seq+574 && mouse_y>y_seq+355 && mouse_y<y_seq+395)
 {
-if(index_x1_x2_together==0){index_x1_x2_together=1;}
-else {index_x1_x2_together=0;}
-mouseClicLeft.SetProcessed();
-}
-
-
-
-
-if(mouse_x>x_seq+540+14-20 && mouse_x<x_seq+540+14+20 && mouse_y>y_seq+80+255+40-20 && mouse_y<y_seq+80+255+40+20)
-{
-
-
 //midi report
  switch(miditable[0][495])
 {
@@ -758,6 +752,8 @@ sprintf(thetypinfo,"Key Off");
 break;
 case 4:
 sprintf(thetypinfo,"Ctrl Change");
+break;
+default:
 break;
 }
 sprintf(string_last_midi_id,"GO is Ch: %d Pitch: %d Typ: %s" , miditable[1][495],miditable[2][495],thetypinfo);

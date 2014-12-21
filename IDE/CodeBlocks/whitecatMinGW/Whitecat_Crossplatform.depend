@@ -858,7 +858,7 @@
 	"General.hpp"
 	"Declspec.hpp"
 
-1393160226 c:\mingw\include\openlayer\general.hpp
+1392012440 c:\mingw\include\openlayer\general.hpp
 	<sstream>
 	"Declspec.hpp"
 
@@ -1089,6 +1089,10 @@
 	"hpdf_types.h"
 	"hpdf_consts.h"
 	"hpdf_doc.h"
+
+1392319020 c:\mingw\include\hpdf_config.h
+
+1389220668 c:\mingw\include\hpdf_version.h
 
 1392594696 c:\mingw\include\hpdf_consts.h
 

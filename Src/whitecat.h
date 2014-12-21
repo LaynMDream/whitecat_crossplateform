@@ -31,7 +31,7 @@ WWWWWWWW           C  WWWWWWWW   |
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
 * \version {0.8.6.1}
-* \date {16/06/2014}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -46,8 +46,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 #include "Crossplateform.h"
 
-char versionis[72]={"Alpha - WIP sab 2014.12.11"};
-char nickname_version[72]={"WIP sab 2014.12.11 based on SPRING & WINTER POWER"};
+char versionis[72]={"Alpha - WIP sab 2014.12.21"};
+char nickname_version[72]={"WIP sab 2014.12.21 based on SPRING & WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -84,7 +84,7 @@ W_FADERS=906,
 W_PATCH=907,
 W_TIME=908,
 W_SEQUENCIEL=909,
-//910
+W_BAZOOKAT=910,
 W_ASKCONFIRM=911,
 W_PLOT=912,
 W_ECHO=913,
@@ -115,7 +115,7 @@ int temp_report_window[72];
 volatile int ticks_dixieme_for_icat_and_draw=0;
 volatile int before_ticks_dixieme_for_icat_and_draw=0;
 ////////////////////AFFICHAGE///////////////////////////////////////////////////
-int largeur_ecran=1280;
+int largeur_ecran=1368;
 int hauteur_ecran=800;
 int visu_performances[32];
 ol::Bitmap logo;
@@ -183,6 +183,25 @@ bool index_click_move_savereportwindow=0;//report
 
 bool index_click_move_banger_window=0;
 bool index_click_move_cfg_window=0;
+
+volatile bool index_snap_color_wheel_levels=0;
+int previous_trichro_wheel=0;
+//GEL LIST in TRICHROMY
+//GUI
+int gel_size_window=400;
+bool show_gel_list=1;
+int gel_position[4];
+int call_ref_number=0;//appel clavier
+//gel list trichro 0 Lee 1 Rosco 2 Gamcolor 3 Apollo
+int index_gel_type_selected=0;
+int refs_of_gels[4][10000]; //numerical reference
+char name_of_gels[4][10000][96];//nom des gels
+int rvb_of_gels[4][10000][3];//rvb of gels
+float gel_transimission[4][10000];
+int gel_position_selected[4];
+bool show_designer_list=0;
+bool index_use_transmission=0;
+
 ////////////////////RETOUR INFOS////////////////////////////////////////////////
 char string_debug[120];
 int scroll_y_info=0;
@@ -278,7 +297,7 @@ int colorpreset_linked_to_dock[8][2];//colorpreset// num fader puis num dock
 char string_docktypvideo[8];
 char DockName[48][6][25];
 unsigned char FaderDockContains[48][6][514];
-unsigned char FaderDoDmx[48][514];//la sortie de chaque fader
+unsigned char FaderDoDmx[49][514];//la sortie de chaque fader // passé à 49 pour éviter debordement pointeur ECHO SNAP 19/12/14
 bool show_who_is_in_FADER_DOCK[514];//pour affichage de qui est dans le dock
 bool FaderLocked[48];
 unsigned char OldFaderLockProc[48];//pour lancer le midi send out, prend dernier etat fader lors du lock et compare
@@ -536,7 +555,7 @@ float display_fps;
 //6 tracking docks // 12 espaces de tracking par tracking dock//
 int tracking_coordonates[6][12][4];//dock selected / tracker / x y largeur x largeur y
 bool tracking_contents[6][12][512];//channel affectation
-int buffer_tracker[512];
+int buffer_tracker[514];
 int tracker_level[6][12];
 int tracker_to_edit=0;
 //smooth
@@ -916,8 +935,6 @@ bool index_do_banger_memonstage=0;
 bool index_do_banger_memonpreset=0;
 bool index_do_banger_membeforeone=0;
 bool index_do_banger_memother=0; // les 8 autres memoires
-bool index_do_load_midipreset=0;//chargement midi preset
-
 /////////////////////////////////FENTRE LISTE PROJOS//////////////////////////
 bool index_list_projecteurs=1;
 bool index_edit_listproj=0;
@@ -1180,7 +1197,7 @@ int index_over_banger_window=0;
 bool index_banger_is_on=0;//on off du mode
 int index_banger_selected=0;
 bool index_enable_edit_banger=0;
-char string_event[36];
+char string_event[72];//debug debordement de tableau 18/12/14 christoph ruiserge
 int Banger_Memoire[10000];//le banger affecté à une mémoire
 char bangers_name[128][25];//128 bangers
 int bangers_type[128][6];//128 bangers // 6 events par banger
@@ -1369,11 +1386,7 @@ int pos_focus_window=0;
 
 bool im_moving_a_window=0;//index poru lros de déplacement
 int last_window_founded=0;
-/////midi presets///////////////////////////////
-char list_midipreset_files[127][72];
-int midipreset_selected=0;
-char midipreset_name[72];
-int line_midipreset=0;
+
 
 //////////////WIZARD /////////////////////////
 int Xwizard=100;
@@ -2521,6 +2534,25 @@ bool bounce_is_prepared[24];
 int fader_before_bounce[48];
 
 float snap_echo_to_recall[24][513];
+
+
+//BAZOOCAT video handler
+
+bool index_bazoocat_menu_window=0;
+bool index_bazoocat_renderer_window=0;
+
+int size_x_bazoocat_menus=800;
+int size_y_bazoocat_menus=600;
+int position_x_bazoocat_menus=100;
+int position_y_bazoocat_menus=100;
+
+int size_x_bazoocat_renderer=1280;
+int size_y_bazoocat_renderer=800;
+int position_x_bazoocat_renderer=1000;
+int position_y_bazoocat_renderer=100;
+
+bool index_click_move_bazoocat_window=0;
+
 /*sab 27/07/2014 DEB */
 HWND hwnd ;
 /*sab 27/07/2014 FIN */

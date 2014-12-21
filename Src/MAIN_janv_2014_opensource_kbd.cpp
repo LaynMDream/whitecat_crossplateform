@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -83,7 +83,8 @@ bufferSaisiesnamp=0;
    }
 */
 
-//#include <boost/format.hpp>  // <-- rajouter la bibliothèque boost à la racine whitecatlib # crossplatform (labo des futures bibliothèques standards C++)
+
+
 
 #include <hpdf.h>
 #include <MidiShare.h>
@@ -167,6 +168,9 @@ bufferSaisiesnamp=0;
 #include <iCat14.cpp>//iCat remote
 #include <network_MAC_adress_3.cpp>
 #include <midi_launchpad.cpp>
+
+
+#include <bazooKAT.cpp>
 
 #include <grider8.cpp>
 #include <sequentiel_7_visu.cpp>
@@ -1269,10 +1273,17 @@ reset_all_bangers();
  Load_Video_Conf();
  sprintf(tmp_ip_artnet,ip_artnet);
 
+
  load_show_coming_from();
  idf++;
 
+
  On_Open_name_of_directory();
+
+ save_load_print_to_screen("Loading Gels List");
+ load_gel_list_numerical();
+ idf++;
+
  Canvas::Fill(CouleurFond);
  Canvas::Refresh();
  save_load_print_to_screen("Init Sound");
@@ -1410,6 +1421,8 @@ for(int i=0;i<4;i++)
 	}
 /* sab 27/07/2014 FIN */
 
+reset_temp_state_for_channel_macros_launch();//christoph 18/12/14 pour intialisation au démarrage de wcat des channels macros
+
 starting_wcat=0;
 
 
@@ -1441,7 +1454,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d / %d / %d / %d ", enable_import,index_do_import,isSchwz,index_export_choice);
+sprintf(string_debug,"%d / %d ", ratio_X1X2_together,index_go);
 
 if(there_is_change_on_show_save_state==1)
 {

@@ -274,30 +274,29 @@ int scan_planfolder()//plot
 
     if(!al_findfirst("*.*",&f,-1))
     {
-        while(!al_findnext(&f))
-        {
+            while(!al_findnext(&f))
+            {
+            //christoph 19/12/14
+            int f_name_len = strlen(f.name);
             isSomeone=true; // we've found a directory!
             bool index_check_is_supported=0;
-            for(unsigned int a=0; a<strlen(f.name); a++)
-            {
-                if( f.name[a]=='.')
-                {
-                    if(
-                        (f.name[a+1]=='j' &&  f.name[a+2]=='p' &&  f.name[a+3]=='g')
-                        || (f.name[a+1]=='b' &&  f.name[a+2]=='m' &&  f.name[a+3]=='p')
-                        || (f.name[a+1]=='t' &&  f.name[a+2]=='g' &&  f.name[a+3]=='a')
-                        || (f.name[a+1]=='p' &&  f.name[a+2]=='n' &&  f.name[a+3]=='g')
-                        || (f.name[a+1]=='J' &&  f.name[a+2]=='P' &&  f.name[a+3]=='G')
-                        || (f.name[a+1]=='B' &&  f.name[a+2]=='M' &&  f.name[a+3]=='P')
-                        || (f.name[a+1]=='T' &&  f.name[a+2]=='G' &&  f.name[a+3]=='A')
-                        || (f.name[a+1]=='P' &&  f.name[a+2]=='N' &&  f.name[a+3]=='G')
-                    )
-                    {
-                        index_check_is_supported=1;
-                        break;
-                    }
-                }
-            }
+            for(unsigned int a=0;a<f_name_len;a++)
+           {
+           if( f.name[a]=='.' && a<=f_name_len-3)
+           {
+                if(
+                (f.name[a+1]=='j' &&  f.name[a+2]=='p' &&  f.name[a+3]=='g')
+                || (f.name[a+1]=='b' &&  f.name[a+2]=='m' &&  f.name[a+3]=='p')
+                || (f.name[a+1]=='t' &&  f.name[a+2]=='g' &&  f.name[a+3]=='a')
+                || (f.name[a+1]=='p' &&  f.name[a+2]=='n' &&  f.name[a+3]=='g')
+                || (f.name[a+1]=='J' &&  f.name[a+2]=='P' &&  f.name[a+3]=='G')
+                || (f.name[a+1]=='B' &&  f.name[a+2]=='M' &&  f.name[a+3]=='P')
+                || (f.name[a+1]=='T' &&  f.name[a+2]=='G' &&  f.name[a+3]=='A')
+                || (f.name[a+1]=='P' &&  f.name[a+2]=='N' &&  f.name[a+3]=='G')
+                )
+           {index_check_is_supported=1; break;}
+           }
+           }
 
 
             if(isSomeone && nrbe_de_fichiers<127 && index_check_is_supported==1 )
@@ -1030,47 +1029,44 @@ int add_a_symbol_to_plot(int plot_calc_number_is)
 
 int duplicate_selected_symbols(int calc)
 {
-    int compteur=0;
-    int new_position=0;
-    //sab 02/03/2014 unused var int difference=0;// pour dub du link to
+int compteur=0;
+int new_position=0;
+//sab 02/03/2014 unused var int difference=0;// pour dub du link to
 
-    for(int i=0; i<=nbre_symbols_on_plot[calc]; i++)
-    {
-        if( symbol_is_selected[calc][i]==1)
-        {
-            compteur++;
-            new_position=nbre_symbols_on_plot[calc]+compteur;
-            if(new_position<127)
-            {
-                symbol_type[calc][new_position]=symbol_type[calc][i];
-                symbol_is_selected[calc][new_position]=symbol_is_selected[calc][i];
-                angle_symbol[calc][new_position]=angle_symbol[calc][i];
-                pos_symbol[calc][new_position][0]=pos_symbol[calc][i][0]+10;
-                pos_symbol[calc][new_position][1]=pos_symbol[calc][i][1]+10;
-                symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
+for(int i=0;i<=nbre_symbols_on_plot[calc];i++)
+{
+if( symbol_is_selected[calc][i]==1)
+{
+ compteur++;
+ new_position=nbre_symbols_on_plot[calc]+compteur;
+ if(new_position<127)
+ {
+ symbol_type[calc][new_position]=symbol_type[calc][i];
+ symbol_is_selected[calc][new_position]=symbol_is_selected[calc][i];
+ angle_symbol[calc][new_position]=angle_symbol[calc][i];
+ pos_symbol[calc][new_position][0]=pos_symbol[calc][i][0]+10;
+ pos_symbol[calc][new_position][1]=pos_symbol[calc][i][1]+10;
+ symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
 
-                for(int opt=0; opt<5; opt++)
-                {
-                    gelat[calc][new_position][opt]=gelat[calc][i][opt];
-                    gelat_family[calc][new_position][opt]=gelat_family[calc][i][opt];
-                    relatif_plot_xy[calc][new_position][opt][0]=relatif_plot_xy[calc][i][opt][0];
-                    relatif_plot_xy[calc][new_position][opt][1]=relatif_plot_xy[calc][i][opt][1];
-                }
-                symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
-                symbol_dimmer_is[calc][new_position]=0;                       //PAS LES DIMMERS SINON SOUCI D AFFECTATION AVEC LE PATCH
-            }
-            else
-            {
-                break;
-            }
-            symbol_is_selected[calc][i]=0;
-        }
-    }
-    nbre_symbols_on_plot[calc]+=compteur;
-    last_selected_symbol_is=nbre_symbols_on_plot[calc];
-    plot_generate_appareils_list();
+ for(int opt=0;opt<5;opt++)
+ {
+ gelat[calc][new_position][opt]=gelat[calc][i][opt];
+ gelat_family[calc][new_position][opt]=gelat_family[calc][i][opt];
+ relatif_plot_xy[calc][new_position][opt][0]=relatif_plot_xy[calc][i][opt][0];
+ relatif_plot_xy[calc][new_position][opt][1]=relatif_plot_xy[calc][i][opt][1];
+ }
+ symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
+ symbol_dimmer_is[calc][new_position]=0;                       //PAS LES DIMMERS SINON SOUCI D AFFECTATION AVEC LE PATCH
+ }
+ else {break;}
+ symbol_is_selected[calc][i]=0;
+}
+}
+nbre_symbols_on_plot[calc]+=compteur;
+last_selected_symbol_is=nbre_symbols_on_plot[calc];
+plot_generate_appareils_list();
 
-    return(0);
+return(0);
 }
 
 int snapshot_calc(int calc)

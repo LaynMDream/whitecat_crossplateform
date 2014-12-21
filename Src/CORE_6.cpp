@@ -98,13 +98,12 @@ int constrain_data_to_midi_range(int valeur)
 }
 
 
-int send_data_to_fantastick()
+int reset_temp_state_for_channel_macros_launch()
 {
-#ifdef __linux__
-#endif
-#ifdef _WIN32
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-#endif
+ for(int i=0;i<514;i++)
+ {
+     previous_state_of_outputted_channels[i]=-1;
+ }
 return(0);
 }
 
@@ -280,6 +279,11 @@ int snap_kill_and_bounce(int echo, int f)
     if(f>0 && f<=48 )
     {
         snap_fader_state(echo, f) ;
+
+        //si le fader est en train de jouer en LFO, christoph 19/12/14
+        if( lfo_mode_is[f]!=0){lfo_mode_is[f]=0;}
+        if ( lfo_cycle_is_on[f]!=0){lfo_cycle_is_on[f]=0;}
+
         Fader[f]=0;
         do_bounce[echo]=0;
         bounce_is_prepared[echo]=0;
@@ -697,9 +701,6 @@ int reset_indexs_confirmation()
     index_do_banger_memonpreset=0;
     index_do_banger_membeforeone=0;
     index_do_banger_memother=0;
-    //midipreset
-    index_do_load_midipreset=0;
-    midipreset_selected=0;//ligne 0
 
     //wizard
     index_do_wizard_ch=0;
@@ -1402,10 +1403,14 @@ int clear_completely_the_patch()
         Patch[i]=0;
         curves[i]=0;
         dimmer_type[i]=0;
-        snapshot_symbol_dimmer_is[i]=0;
-        for(int c=0; c<4; c++)
+    }
+    //modif 18/12/14 merci rui serge
+     for(int pl=0;pl<128;pl++)
+    {
+    snapshot_symbol_dimmer_is[pl]=0;
+    for(int c=0; c<4; c++)
         {
-            symbol_dimmer_is[c][i]=0;
+            symbol_dimmer_is[c][pl]=0;
         }
     }
     return(0);
@@ -2484,7 +2489,6 @@ int reset_indexes_conf()//menu setup cfg
     index_affect_dmxin=0;
     Midi_Faders_Affectation_Type=0;//pour ne pas affecter quoi que ce soit en midi
     Midi_Faders_Affectation_Mode=0;
-    midipreset_selected=0;//vider l affectation du preset midi en mem
     do_affectation_on_midi_affect_itself=0;//pour affectation midi on itself
     return(0);
 }
@@ -2635,11 +2639,12 @@ int scan_audiofolder()
     if(!al_findfirst("*.*",&f,-1))
     {
         while(!al_findnext(&f))
-        {
-            //sab 02/03/2014 for(unsigned int a=0; a<strlen(f.name); a++)
-            for(unsigned int a=0; a<strlen(f.name); a++)
+        {//19/12/14 correction christoph ruiserge
+            int f_name_len = strlen(f.name);
+            for(unsigned int a=0; a< f_name_len; a++)
             {
-                if(f.name[a]=='.')
+                //19/12/14 correction christoph ruiserge
+                if(f.name[a]=='.' && a<=f_name_len-3)
                 {
                     if((f.name[a+1]=='W' &&  f.name[a+2]=='A' &&  f.name[a+3]=='V')
                             ||(f.name[a+1]=='w' &&  f.name[a+2]=='a' &&  f.name[a+3]=='v')
@@ -3282,7 +3287,7 @@ int set_channel_scroll( int ch)
     }
     case 1:
     {
-        if(ch>0 && ch<49)
+        if(ch>0 && ch<48)
         {
             scroll_channelspace=0;
         }
@@ -5586,7 +5591,7 @@ void substract_a_window(int id)
         index_affect_dmxin=0;
         Midi_Faders_Affectation_Type=0;//pour ne pas affecter quoi que ce soit en midi
         Midi_Faders_Affectation_Mode=0;
-        midipreset_selected=0;//vider l affectation du preset midi en mem
+
         remember_config_page();
         do_affectation_on_midi_affect_itself=0;
         break;
@@ -5614,6 +5619,9 @@ void substract_a_window(int id)
         {
             grid_affect_to_dock[i]=0;
         }
+        break;
+    case W_BAZOOKAT:
+        index_bazoocat_menu_window=0;
         break;
     case W_MY_WINDOW:
         index_my_window=0;
@@ -5715,6 +5723,7 @@ int GlobInit()
             strcpy(descriptif_projecteurs[io],"");
 
             descriptif_projecteurs[io][24]='\n';
+            previous_state_of_outputted_channels[io]=-1;//18/12/14 christoph pour rafraichissement macros a ouv whitecat
             for(int macr=0; macr<4; macr++)
             {
                 macro_channel_on[io][macr]=0;
@@ -6335,8 +6344,7 @@ int GlobInit()
         size_symbol[40]=0.8;//Slide Projector
         sprintf(symbol_nickname[40],"Slide Projector");
         plot_ecartement_legende[40]=40;
-        size_symbol[41]=0.9;//rétro projecteur       //sab 30/11/2014 - V557 Array overrun is possible. The '401' index is pointing beyond array bound. core_6.cpp 6337
-
+        size_symbol[40]=0.9;//rétro projecteur
         sprintf(symbol_nickname[41],"OverHead");
         plot_ecartement_legende[41]=60;
 

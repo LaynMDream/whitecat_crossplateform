@@ -709,6 +709,7 @@ Command.DrawOutline(CouleurLigne);
 Command.DrawOutline(CouleurBleuProcedure.WithAlpha(alpha_blinker));  //animation qui est faite dans le fichier main
 //chercher alpha_blinker ....
 break;
+
 default:
 if(isstate==1)
 {Command.Draw(CouleurFader);}
@@ -827,6 +828,10 @@ break;
 case 24://grider
  if(index_grider_window==0){add_a_window(W_GRID);substract_a_window(W_MAINMENU);}
  else {substract_a_window(W_GRID);}
+break;
+case 25:
+     if(index_bazoocat_menu_window==0){add_a_window(W_BAZOOKAT);substract_a_window(W_MAINMENU);}
+ else {substract_a_window(W_BAZOOKAT);}
 break;
 
 

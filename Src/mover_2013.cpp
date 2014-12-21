@@ -1722,7 +1722,7 @@ if(tracker_mode==0)//not spline
   else if (mover_params[0][0] >255){mover_params[0][0]=255;}
 
   mover_params[1][0]=(int) y_val_at_end[move_selected];
-  if (mover_params[1][0]<0) {mover_params[1][0]=0;}           //after init assume that it stays in the bounds [0;255]
+  if (mover_params[1][0]<0) {mover_params[1][0]=0;}
   else if (mover_params[1][0] >255){mover_params[1][0]=255;}
 
   if (mover_params[2][0]<0) {mover_params[2][0]=0;}

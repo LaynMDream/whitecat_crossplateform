@@ -319,6 +319,9 @@ int add_a_window(int id)
  case W_FADERS:
       index_show_faders=1;
  break;
+ case W_BAZOOKAT:
+     index_bazoocat_menu_window=1;
+ break;
  case W_PATCH:
       index_patch_window=1;index_enable_curve_editing=0;
       index_patch_overide=0;

@@ -445,6 +445,11 @@ int move_window(int idwindowis)
             y_Wdraw=mouse_y-25;
             im_moving_a_window=1;
             break;
+        case W_BAZOOKAT:
+            position_x_bazoocat_menus=mouse_x-(40+15);
+            position_y_bazoocat_menus=mouse_y-25;
+            im_moving_a_window=1;
+            break;
         case W_MY_WINDOW:
             my_window_x=mouse_x-(40+15);
             my_window_y=mouse_y-25;
@@ -892,6 +897,10 @@ int check_graphics_mouse_handling()
         case W_MY_WINDOW:
             do_logical_my_window_Box(my_window_x, my_window_y);
             do_logical_MoveCloseBox( my_window_x+20,my_window_y+20,W_MY_WINDOW);
+            break;
+        case W_BAZOOKAT:
+            do_logical_fenetre_bazookat_menus(position_x_bazoocat_menus, position_y_bazoocat_menus);
+            do_logical_MoveCloseBox( position_x_bazoocat_menus+20,position_y_bazoocat_menus+20,W_BAZOOKAT);
             break;
         default:
             break;

@@ -110,7 +110,7 @@ player1=OpenSound(device,soundfile_temp_loader, index_preloaded_sounds);
 if (!player1)
 {
 sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
-player_ignited[player]=0;
+player_ignited[player]=0; player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
 }
 else
 {
@@ -143,7 +143,8 @@ player2=OpenSound(device,soundfile_temp_loader, index_preloaded_sounds);
 if (!player2)
 {
 sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
-player_ignited[player]=0;
+player_ignited[player]=0;player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
+
 }
 else {
 player_ignited[player]=1;
@@ -176,7 +177,7 @@ player3=OpenSound(device,soundfile_temp_loader, index_preloaded_sounds);
 if (!player3)
 {
 sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
-player_ignited[player]=0;
+player_ignited[player]=0;player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
 }
 else {
 player_ignited[player]=1;
@@ -209,7 +210,7 @@ player4=OpenSound(device,soundfile_temp_loader, index_preloaded_sounds);
 if (!player4)
 {
 sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
-player_ignited[player]=0;
+player_ignited[player]=0;player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
 }
 else {
 player_ignited[player]=1;
@@ -232,6 +233,8 @@ switch(player_is_onloop[player])
  break;
  }
 }
+break;
+default:
 break;
 }
 if(player_ignited[player]==1)
@@ -476,7 +479,7 @@ if(audio_autoload[lect]==1)//chargement auto
  player1_do_stop();
  break;
  case 1:
- player3_do_stop();
+ player2_do_stop();
  break;
  case 2:
  player3_do_stop();

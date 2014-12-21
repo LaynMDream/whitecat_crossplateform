@@ -569,6 +569,9 @@ void On_Open_name_of_directory()
 }
 
 
+
+
+
 int get_current_time()
 {
       time_t timestamp;
@@ -583,44 +586,156 @@ int get_current_time()
 }
 
 
-
-
-int load_midipreset()
+int load_gel_list_numerical()
 {
-char temp_folder_midi[256];
-sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name);
-chdir(temp_folder_midi);
-FILE *fpm;
+sprintf(rep,"%s\\",mondirectory);
+chdir(rep);
+sprintf(rep,"%s\\ressources",mondirectory);
+chdir(rep);
+volatile bool index_ok=1;
+char line [256];
+char tmp_name_of_mark[72];
+char tmp_name_of_gel[96];
+int tmp_ref=0;
+int tmprvb[3];
+int index_type_of_gel=-1;
+int marker_de_gel[4];
+float transmission=-1;;
+for(int i=0;i<4;i++)
+{
+marker_de_gel[i]=0;
+}
 
-if ((fpm=fopen(file_midi_affectation, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_affectation);b_report_error[idf]=1;}
+FILE *f=NULL;
+
+
+if ((f=fopen("gel_list_num_order.txt", "rt"))== NULL)
+{
+    sprintf(string_save_load_report[0],"Error opening %s","gel_list_num_order.txt"); b_report_error[0]=1;
+    idf++;
+}
 else
+    {
+	do {
+		if (fgets(line,256,f)!=NULL)
+		{
+		sscanf(line,"%s\t%d\t%s\t%d\t%d\t%d\t%f\n",&tmp_name_of_mark,&tmp_ref,&tmp_name_of_gel,&tmprvb[0],&tmprvb[1],&tmprvb[2],&transmission);
+
+        if(strcmp(tmp_name_of_mark,"Lee")==0){index_type_of_gel=0;}
+        if(strcmp(tmp_name_of_mark,"Rosco")==0){index_type_of_gel=1;}
+        if(strcmp(tmp_name_of_mark,"GamColor")==0){index_type_of_gel=2;}
+        if(strcmp(tmp_name_of_mark,"Apollo")==0){index_type_of_gel=3;}
+
+        if(marker_de_gel[index_type_of_gel]<10000 && index_type_of_gel>=0 && index_type_of_gel<=3 )
+        {
+
+        refs_of_gels[index_type_of_gel][marker_de_gel[index_type_of_gel]]=tmp_ref; //numerical reference
+        sprintf(name_of_gels[index_type_of_gel][marker_de_gel[index_type_of_gel]],tmp_name_of_gel);//nom des gels
+        for(int i=0;i<3;i++)
+        {
+            rvb_of_gels[index_type_of_gel][(marker_de_gel[index_type_of_gel])][i]=tmprvb[i];//rvb of gels
+        }
+        gel_transimission[index_type_of_gel][marker_de_gel[index_type_of_gel]]=transmission;
+        marker_de_gel[index_type_of_gel]++;
+        }
+        //reset values
+        transmission=-1;
+        if(strcmp(line,"ENDDATA")==0){index_ok=0;}
+		}
+		else break;
+	}
+	while (index_ok!=0);
+
+}
+
+sprintf(rep,"%s\\",mondirectory);
+chdir(rep);
+return(0);
+}
+
+
+
+int Show_report_save_load()
 {
-sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_affectation);
-if (fread(miditable, sizeof(int),midi_affectation_size, fpm) !=midi_affectation_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_affectation);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_affectation);
-}
+Rect Report_Save_Load(Vec2D(report_SL_X, report_SL_Y), Vec2D( 350,160));
+Report_Save_Load.SetRoundness(15);
+Report_Save_Load.SetLineWidth(epaisseur_ligne_fader*3);
+Report_Save_Load.Draw(CouleurFond);
+Report_Save_Load.DrawOutline(CouleurLigne);
+if(window_focus_id==W_SAVEREPORT){Report_Save_Load.DrawOutline(CouleurFader);}
 
-if ((fpm=fopen(file_midi_send_out, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_send_out);b_report_error[idf]=1;}
-else
+//+ minus debug
+//Plus Minus buttons debug show
+Rect MinusPosMyRep(Vec2D(report_SL_X+290,report_SL_Y+76),Vec2D(50,20));
+MinusPosMyRep.SetRoundness(7.5);
+MinusPosMyRep.SetLineWidth(epaisseur_ligne_fader);
+Rect PlusPosMyRep(Vec2D(report_SL_X+290,report_SL_Y+106),Vec2D(50,20));
+PlusPosMyRep.SetRoundness(7.5);
+PlusPosMyRep.SetLineWidth(epaisseur_ligne_fader);
+
+for(int co=0;co<10;co++)
 {
-sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_send_out);
-if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fpm) !=midi_send_out_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_send_out);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_send_out);
+Rect AlarmFile(Vec2D((report_SL_X+5),(report_SL_Y+52+(10*co))),Vec2D(300,12));
+AlarmFile.SetRoundness(5);
+if(b_report_error[co+position_view_line]==1)
+{
+ AlarmFile.Draw(Rgba::RED.WithAlpha(alpha_blinker));
 }
-load_Fader_state_to_midi_array();
-
-fclose(fpm);
-//REROLL
-strcpy(rep,"");
-sprintf(rep,"%s",mondirectory);
-chdir (rep);
-
- return(0);
+petitchiffre.Print( ol::ToString(co+position_view_line),(report_SL_X+5), (report_SL_Y+60+(10*co)));
+petitchiffre.Print( string_save_load_report[co+position_view_line],(report_SL_X+30), (report_SL_Y+60+(10*co)));
 }
+
+MinusPosMyRep.Draw(CouleurFond);
+PlusPosMyRep.Draw(CouleurFond);
+if(window_focus_id==W_SAVEREPORT)
+{
+if(mouse_x>report_SL_X+290 && mouse_x<report_SL_X+340)
+{
+
+//-
+ if( mouse_y>report_SL_Y+76 && mouse_y<report_SL_Y+96)
+ {
+  MinusPosMyRep.Draw(CouleurSurvol);
+  if(mouse_button==1 &&  mouse_released==0 )
+  {
+  MinusPosMyRep.Draw(CouleurFader);
+  position_view_line-=5;
+  if(position_view_line<0) {position_view_line=0;  }
+  }
+ }
+//+
+ if( mouse_y>report_SL_Y+106 && mouse_y<report_SL_Y+136)
+ {
+  PlusPosMyRep.Draw(CouleurSurvol);
+  if(mouse_button==1 &&  mouse_released==0 )
+  {
+  PlusPosMyRep.Draw(CouleurFader);
+  position_view_line+=5;
+  if(position_view_line>(255-10)) {position_view_line=(255-10);  }
+  }
+ }
+
+}
+
+}
+
+MinusPosMyRep.DrawOutline(CouleurLigne);
+PlusPosMyRep.DrawOutline(CouleurLigne);
+petitchiffre.Print("line -",report_SL_X+300, report_SL_Y+90);
+petitchiffre.Print("line +",report_SL_X+300, report_SL_Y+120);
+
+
+
+
+petitchiffre.Print( mondirectory,(report_SL_X+10+90), (report_SL_Y+20));
+petitchiffre.Print( nomduspectacle,(report_SL_X+10+90), (report_SL_Y+35));
+
+
+return(0);
+}
+
+
+
 
 int load_onstart_config()
 {
@@ -7053,6 +7168,7 @@ if(grider_nb_row>24){grider_nb_row=8;}
 if(grider_begin_channel_is>512){grider_begin_channel_is=1;}
 
 int grider_report_cross[8];
+
 if ((fp=fopen( file_gridpl_crosslv, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_crosslv);b_report_error[idf]=1;}
 else
@@ -7066,7 +7182,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_crosslv)
 for(int gr=0;gr<4;gr++)
 {
 grid_niveauX1[gr]=grider_report_cross[gr];
-grid_niveauX2[gr+4]=grider_report_cross[gr+4];
+grid_niveauX2[gr]=grider_report_cross[gr+4];//debug christoph ruiserge sur état crossfade 18/12/14
 grid_floatX1[gr]=(float)grid_niveauX1[gr];
 grid_floatX2[gr]=(float)grid_niveauX2[gr];
 }
