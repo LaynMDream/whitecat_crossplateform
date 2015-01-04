@@ -95,16 +95,16 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             reset_indexs_confirmation();
             reset_index_actions();
             //sab 13/12/2014 deb
-			//key_unselect_ch();
-			if (key[KEY_CAPSLOCK])
-			{
-				mouseScroll.unsubscribeAll();
-				mouseRoll.unsubscribeAll();
-			}
-			else
-			{
-				key_unselect_ch();
-			}
+            //key_unselect_ch();
+            if (key[KEY_CAPSLOCK])
+            {
+                mouseScroll.unsubscribeAll();
+                mouseRoll.unsubscribeAll();
+            }
+            else
+            {
+                key_unselect_ch();
+            }
             //sab 13/12/2014 fin
             if(window_focus_id==W_PLOT )
             {

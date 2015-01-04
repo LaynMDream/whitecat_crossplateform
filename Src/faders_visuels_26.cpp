@@ -64,14 +64,14 @@ int lfo_fader_functions (int cmptfader, int x, int y, int espacement)
     Rect LFOSpeedFrame(Vec2D(x+(cmptfader*espacement)-5, y+375),Vec2D( 137, 25) );
     LFOSpeedFrame.SetLineWidth(epaisseur_ligne_fader);
     LFOSpeedFrame.SetRoundness(5);
-	//sab 13/12/2014 deb
+    //sab 13/12/2014 deb
 //  LFOSpeedFrame.DrawOutline(CouleurLigne.WithAlpha(0.4));
-	ol::Rgba colorToApply = CouleurLigne.WithAlpha(0.4) ;
-	if (mouseRoll.isSubscriber(lfo_speed[cmptfader]))
-	{
-		colorToApply = CouleurYellow ;
-	}
-	LFOSpeedFrame.DrawOutline(colorToApply);
+    ol::Rgba colorToApply = CouleurLigne.WithAlpha(0.4) ;
+    if (mouseRoll.isSubscriber(lfo_speed[cmptfader]))
+    {
+        colorToApply = CouleurYellow ;
+    }
+    LFOSpeedFrame.DrawOutline(colorToApply);
     //sab 13/12/2014 fin
     Rect LFOSpeed(Vec2D(x+(cmptfader*espacement)-5+lfo_speed[cmptfader], y+375),Vec2D( 10, 25) );
     LFOSpeed.SetLineWidth(tiers_epaisseur_ligne_fader);
@@ -79,7 +79,7 @@ int lfo_fader_functions (int cmptfader, int x, int y, int espacement)
     Line (Vec2D(x+(cmptfader*espacement)+64,y+370),Vec2D(x+(cmptfader*espacement)+64,y+400)).Draw(CouleurLigne);
     petitchiffre.Print(ol::ToString(lfo_speed[cmptfader]-64),x+(cmptfader*espacement)+145,y+380);
     LFOSpeed.Draw(CouleurFader);
-	LFOSpeed.DrawOutline(CouleurLigne);
+    LFOSpeed.DrawOutline(CouleurLigne);
 
 
 
@@ -712,15 +712,15 @@ int FaderSpace(int x, int y, int espacement,int nbr_fader)
                     doomrouge.Print("m",x+11+(cmptfader*espacement), y+35);
                 }
             }
-			//sab 13/12/2014 deb
+            //sab 13/12/2014 deb
             //FaderB.DrawOutline(CouleurLigne);
-			ol::Rgba colorToApply = CouleurLigne ;
-			if (mouseScroll.isSubscriber(Fader[cmptfader]))
-			{
-				colorToApply = CouleurYellow ;
-			}
-  			FaderB.DrawOutline(colorToApply);
-			//sab 13/12/2014 fin
+            ol::Rgba colorToApply = CouleurLigne ;
+            if (mouseScroll.isSubscriber(Fader[cmptfader]))
+            {
+                colorToApply = CouleurYellow ;
+            }
+            FaderB.DrawOutline(colorToApply);
+            //sab 13/12/2014 fin
 
 
 ///////////////////////////////////////////////////////////////////////////////

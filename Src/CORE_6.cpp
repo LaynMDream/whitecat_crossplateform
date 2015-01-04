@@ -52,19 +52,31 @@ int reset_numeric_entry()
 
 int return_lowest(int data1, int data2)
 {
- int lowest_is;
- if (data1>data2){lowest_is=data2;}
- else {lowest_is=data1;}
- return(lowest_is);
+    int lowest_is;
+    if (data1>data2)
+    {
+        lowest_is=data2;
+    }
+    else
+    {
+        lowest_is=data1;
+    }
+    return(lowest_is);
 }
 
 
 int return_highest(int data1, int data2)
 {
- int highest_is;
- if (data1>data2){highest_is=data1;}
- else {highest_is=data2;}
- return(highest_is);
+    int highest_is;
+    if (data1>data2)
+    {
+        highest_is=data1;
+    }
+    else
+    {
+        highest_is=data2;
+    }
+    return(highest_is);
 }
 
 
@@ -103,77 +115,101 @@ int send_data_to_fantastick()
 #ifdef __linux__
 #endif
 #ifdef _WIN32
-nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
+    nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 #endif
-return(0);
+    return(0);
 }
 
 //christoph 14/04/14 avoiding clippling on stop
 int player1_do_stop()//fade out to avoid clipping in sound when stopping
 {
-float value_lecteur=(((float)player_niveauson[0])/127);
-for(float i=value_lecteur*30; i>0.0;i--)
-{
-if(i>=0.0){player1->setVolume(i/30);}
-}
-player1->setVolume(0.0);
-player1->stop();
-for(float i=value_lecteur*30; i<1.0;i++)
-{
-if(i<1.0){player1->setVolume(i/30);}
-}
-player1->setVolume(value_lecteur);
-return(0);
+    float value_lecteur=(((float)player_niveauson[0])/127);
+    for(float i=value_lecteur*30; i>0.0; i--)
+    {
+        if(i>=0.0)
+        {
+            player1->setVolume(i/30);
+        }
+    }
+    player1->setVolume(0.0);
+    player1->stop();
+    for(float i=value_lecteur*30; i<1.0; i++)
+    {
+        if(i<1.0)
+        {
+            player1->setVolume(i/30);
+        }
+    }
+    player1->setVolume(value_lecteur);
+    return(0);
 }
 
 int player2_do_stop()//fade out to avoid clipping in sound when stopping
 {
-float value_lecteur=(((float)player_niveauson[1])/127);
-for(float i=value_lecteur*30; i>0.0;i--)
-{
-if(i>=0.0){player2->setVolume(i/30);}
-}
-player2->setVolume(0.0);
-player2->stop();
-for(float i=value_lecteur*30; i<1.0;i++)
-{
-if(i<1.0){player2->setVolume(i/30);}
-}
-player2->setVolume(value_lecteur);
-return(0);
+    float value_lecteur=(((float)player_niveauson[1])/127);
+    for(float i=value_lecteur*30; i>0.0; i--)
+    {
+        if(i>=0.0)
+        {
+            player2->setVolume(i/30);
+        }
+    }
+    player2->setVolume(0.0);
+    player2->stop();
+    for(float i=value_lecteur*30; i<1.0; i++)
+    {
+        if(i<1.0)
+        {
+            player2->setVolume(i/30);
+        }
+    }
+    player2->setVolume(value_lecteur);
+    return(0);
 }
 
 int player3_do_stop()//fade out to avoid clipping in sound when stopping
 {
-float value_lecteur=(((float)player_niveauson[2])/127);
-for(float i=value_lecteur*30; i>0.0;i--)
-{
-if(i>=0.0){player3->setVolume(i/30);}
-}
-player3->setVolume(0.0);
-player3->stop();
-for(float i=value_lecteur*30; i<1.0;i++)
-{
-if(i<1.0){player3->setVolume(i/30);}
-}
-player3->setVolume(value_lecteur);
-return(0);
+    float value_lecteur=(((float)player_niveauson[2])/127);
+    for(float i=value_lecteur*30; i>0.0; i--)
+    {
+        if(i>=0.0)
+        {
+            player3->setVolume(i/30);
+        }
+    }
+    player3->setVolume(0.0);
+    player3->stop();
+    for(float i=value_lecteur*30; i<1.0; i++)
+    {
+        if(i<1.0)
+        {
+            player3->setVolume(i/30);
+        }
+    }
+    player3->setVolume(value_lecteur);
+    return(0);
 }
 int player4_do_stop()//fade out to avoid clipping in sound when stopping
 {
-float value_lecteur=(((float)player_niveauson[3])/127);
-for(float i=value_lecteur*30; i>0.0;i--)
-{
-if(i>=0.0){player4->setVolume(i/30);}
-}
-player4->setVolume(0.0);
-player4->stop();
-for(float i=value_lecteur*30; i<1.0;i++)
-{
-if(i<1.0){player4->setVolume(i/30);}
-}
-player4->setVolume(value_lecteur);
-return(0);
+    float value_lecteur=(((float)player_niveauson[3])/127);
+    for(float i=value_lecteur*30; i>0.0; i--)
+    {
+        if(i>=0.0)
+        {
+            player4->setVolume(i/30);
+        }
+    }
+    player4->setVolume(0.0);
+    player4->stop();
+    for(float i=value_lecteur*30; i<1.0; i++)
+    {
+        if(i<1.0)
+        {
+            player4->setVolume(i/30);
+        }
+    }
+    player4->setVolume(value_lecteur);
+    return(0);
 }
 
 
@@ -1852,8 +1888,8 @@ int reset_window_positions()
     y_echo=200;
     /* sab 27/07/2014 DEB */
     report_SL_X= 50;
-	report_SL_Y= 50 ;
-	X_banger=100;
+    report_SL_Y= 50 ;
+    X_banger=100;
     Y_banger=100;
     /* sab 27/07/2014 FIN */
     xsave_window=200;
@@ -2116,10 +2152,10 @@ int reset_and_recall_iCat_images()
 
 
 //effacage total
-sprintf(StrOrderToiCat,"clearmodels");
-send_data_to_fantastick();
-sprintf(StrOrderToiCat,"clearimagecache");
-send_data_to_fantastick();
+        sprintf(StrOrderToiCat,"clearmodels");
+        send_data_to_fantastick();
+        sprintf(StrOrderToiCat,"clearimagecache");
+        send_data_to_fantastick();
 
 
         char name_library[128][25];
@@ -2226,7 +2262,7 @@ send_data_to_fantastick();
         for(int loopi=0; loopi<85; loopi++)
         {
             sprintf(StrOrderToiCat,"model button%d image http://www.le-chat-noir-numerique.fr/iCat/%s",loopi,name_library[loopi]);
-         send_data_to_fantastick();
+            send_data_to_fantastick();
 //rest(10);
         }
 
@@ -2897,81 +2933,90 @@ int set_time_cursor_to_time_type(int the_time_wheel_datatype)
 
 int read_time_string_entry()
 {
-time_minutes=0;
-time_secondes=0;
-time_centiemes=0;
+    time_minutes=0;
+    time_secondes=0;
+    time_centiemes=0;
 
-int position_minutes=0;// dans chaine
+    int position_minutes=0;// dans chaine
 
 
-char str_tmp[24];
-sprintf(str_tmp, numeric);
+    char str_tmp[24];
+    sprintf(str_tmp, numeric);
 
 //lecture d'une chaine minutes / secondes / centiemes ou bien secondes / centiemes
-if(numeric[0]!='.')//si la chaine n'est pas des centiemes de secondes)
-{
+    if(numeric[0]!='.')//si la chaine n'est pas des centiemes de secondes)
+    {
 //sortir les minutes
-for(int i=0;i<23;i++)
-{
-if(str_tmp[i]=='.' && str_tmp[i+1]=='.' && numeric[0]!='.')
-{
-char tmp_tmp[24];
-sprintf(tmp_tmp,numeric);
-tmp_tmp[i]='\0';
-time_minutes=atoi(tmp_tmp);
-position_minutes=i+1;
-}
-}
-sprintf(str_tmp,"%s", "");
+        for(int i=0; i<23; i++)
+        {
+            if(str_tmp[i]=='.' && str_tmp[i+1]=='.' && numeric[0]!='.')
+            {
+                char tmp_tmp[24];
+                sprintf(tmp_tmp,numeric);
+                tmp_tmp[i]='\0';
+                time_minutes=atoi(tmp_tmp);
+                position_minutes=i+1;
+            }
+        }
+        sprintf(str_tmp,"%s", "");
 //expurgation chaine des minutes
-for(int i=0;i<(24-position_minutes);i++)
-{
-str_tmp[i]=numeric[position_minutes+i];
-}
+        for(int i=0; i<(24-position_minutes); i++)
+        {
+            str_tmp[i]=numeric[position_minutes+i];
+        }
 //report secondes centiemes
-char chaine_multiple[2][8];
-char *pch;
-pch = strtok (str_tmp,".");
-int pass=0;
- while (pch != NULL)
-  {
-    sprintf(chaine_multiple[pass],pch);
-    pch = strtok (NULL, ".");
-    pass++;
-  }
+        char chaine_multiple[2][8];
+        char *pch;
+        pch = strtok (str_tmp,".");
+        int pass=0;
+        while (pch != NULL)
+        {
+            sprintf(chaine_multiple[pass],pch);
+            pch = strtok (NULL, ".");
+            pass++;
+        }
 
-time_secondes=atoi(chaine_multiple[0]);
-time_centiemes=atoi(chaine_multiple[1]);
-}
+        time_secondes=atoi(chaine_multiple[0]);
+        time_centiemes=atoi(chaine_multiple[1]);
+    }
 
-else if (numeric[0]=='.')//centiemes appelés uniquement
-{
-char cent_t[4];
-for (int i=0;i<4;i++)
-{
-cent_t[i]=numeric[i+1];
-time_centiemes=atoi(cent_t);
-}
-}
+    else if (numeric[0]=='.')//centiemes appelés uniquement
+    {
+        char cent_t[4];
+        for (int i=0; i<4; i++)
+        {
+            cent_t[i]=numeric[i+1];
+            time_centiemes=atoi(cent_t);
+        }
+    }
 
-sprintf(string_Last_Order,"Your entry: %d min %d sec %d 1/100", time_minutes, time_secondes, time_centiemes);
-reset_numeric_entry();
+    sprintf(string_Last_Order,"Your entry: %d min %d sec %d 1/100", time_minutes, time_secondes, time_centiemes);
+    reset_numeric_entry();
 
-if(time_minutes>59){time_minutes=59;}
-if(time_secondes>59){time_secondes=59;}
-if(time_centiemes>99){time_centiemes=99;}
+    if(time_minutes>59)
+    {
+        time_minutes=59;
+    }
+    if(time_secondes>59)
+    {
+        time_secondes=59;
+    }
+    if(time_centiemes>99)
+    {
+        time_centiemes=99;
+    }
 
 //report des angles popur garder la mesure en fin de chrono.
-angle_timesnap_min=((float)(time_minutes)/59)*5.980005;//=(int)((angle_timesnap_min/6.280005)*63);
-angle_timesnap_sec=((float)(time_secondes)/59)*5.980005;//=(int)((angle_timesnap_sec/((PI*360) / 180))*63);
-angle_timesnap_dix=((float)(time_centiemes)/99)*5.980005;//=(int)((angle_timesnap_dix/6.280005)*10);
+    angle_timesnap_min=((float)(time_minutes)/59)*5.980005;//=(int)((angle_timesnap_min/6.280005)*63);
+    angle_timesnap_sec=((float)(time_secondes)/59)*5.980005;//=(int)((angle_timesnap_sec/((PI*360) / 180))*63);
+    angle_timesnap_dix=((float)(time_centiemes)/99)*5.980005;//=(int)((angle_timesnap_dix/6.280005)*10);
 //pb sur les minutes et secondes, ajustage manuel
 //if(time_wheel_datatype_is==0){angle_timesnap_min+=(5.980005/59/2);}
 //if(time_wheel_datatype_is==1){angle_timesnap_sec+=((PI*360) / 180);}
 
-set_time_cursor_to_time_type(time_wheel_datatype_is);
+    set_time_cursor_to_time_type(time_wheel_datatype_is);
 
-return(0);
+    return(0);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5467,7 +5512,7 @@ int window_who_is_on_top()
 
 void substract_a_window(int id)
 {
-/* christoph 11/04/2014 begin replace */
+    /* christoph 11/04/2014 begin replace */
     int erase_window_opened[64];
     int next_free_pos;
     next_free_pos=0;
@@ -5476,8 +5521,8 @@ void substract_a_window(int id)
     for(int old_pos=0; old_pos<63; old_pos++)
     {
         if((window_opened[old_pos]!=id)  //id has been erase from the deque
-  && (window_opened[old_pos]!=0)  //shouldn't hapen
-  && (next_free_pos<63))    // don't overflow
+                && (window_opened[old_pos]!=0)  //shouldn't hapen
+                && (next_free_pos<63))    // don't overflow
         {
             erase_window_opened[next_free_pos]=window_opened[old_pos];
             next_free_pos = next_free_pos+1;
@@ -5492,15 +5537,15 @@ void substract_a_window(int id)
         }
     }
     //copy
- for(int i=0; i<63; i++) //both are 72 occurences long
+    for(int i=0; i<63; i++) //both are 72 occurences long
     {
-  window_opened[i] = erase_window_opened[i];
+        window_opened[i] = erase_window_opened[i];
     }
     //first window get focus
     window_focus_id=window_opened[0];
-/* sab 05/03/2014 end replace */
+    /* sab 05/03/2014 end replace */
 
-   reset_index_actions();
+    reset_index_actions();
 
     switch(id)
     {
@@ -5622,9 +5667,13 @@ void substract_a_window(int id)
         break;
     }
 
-nbre_fenetre_actives--;
+    nbre_fenetre_actives--;
 
-if (nbre_fenetre_actives<=0){nbre_fenetre_actives=0;window_focus_id=0;}
+    if (nbre_fenetre_actives<=0)
+    {
+        nbre_fenetre_actives=0;
+        window_focus_id=0;
+    }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 int GlobInit()

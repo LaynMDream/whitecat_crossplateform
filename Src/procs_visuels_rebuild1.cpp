@@ -304,7 +304,7 @@ int move_window(int idwindowis)
         switch(window_focus_id)
         {
         case W_SAVEREPORT:
-			report_SL_X=mouse_x-(40+15);
+            report_SL_X=mouse_x-(40+15);
             report_SL_Y=mouse_y-25;
             im_moving_a_window=1;
             break;
@@ -585,23 +585,23 @@ void mouseWheel_handle()
         else  // caps off et pas de touche modificatrice
         {
             if (window_focus_id==W_PLOT && light_plot_edit_mode_enable)
-			{
+            {
                 do_logical_Plot_Wheel();
             }
-			else if  (window_focus_id==W_BANGER && editing_banger_family)
-			{
-				do_logical_Banger_Wheel();
-			}
-			else
-            //c'est la sélection de channels qui bénéficie de la roue par défaut où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
-            do_logical_Channel_wheel(); //ex DoMouseLevel();
+            else if  (window_focus_id==W_BANGER && editing_banger_family)
+            {
+                do_logical_Banger_Wheel();
+            }
+            else
+                //c'est la sélection de channels qui bénéficie de la roue par défaut où que soit la souris (le régisseur ne regarde pas son écran mais le plateau)
+                do_logical_Channel_wheel(); //ex DoMouseLevel();
         }
 
         if (not key[KEY_LCONTROL]) /**< set to processed if not speed up and nothing sensible to wheel ; otherwise it will repeat all this tests for nothing */
-		{
-			mouseScroll.SetProcessed() ;
-			mouseRoll.SetProcessed() ;
-		}
+        {
+            mouseScroll.SetProcessed() ;
+            mouseRoll.SetProcessed() ;
+        }
     }
 }
 
@@ -614,13 +614,13 @@ void mouseWheel_handle()
 void mouseWheel_handle_forAltClicSelection()
 {
     if (mouseScroll.isToBeProcessed())
-	{
-		mouseScroll.handOverSubscriber();
-	}
+    {
+        mouseScroll.handOverSubscriber();
+    }
     if (mouseRoll.isToBeProcessed())
-	{
-		mouseRoll.handOverSubscriber();
-	}
+    {
+        mouseRoll.handOverSubscriber();
+    }
 }
 
 /** \brief Mis à jour du niveau du contrôleur sous la souris (si ALT)
@@ -638,9 +638,9 @@ void mouseWheel_handle_onAltOver()
         do_logical_grand_master_wheel(1050, 55, 40);
         do_logical_ChannelScroller_wheel();
         if ( mousePtr.isOverRecSize(10, 40, 555, hauteur_ecran - 40))
-		{
-			do_logical_Channel_wheel();
-		}
+        {
+            do_logical_Channel_wheel();
+        }
         break;
     case W_SAVEREPORT:
 

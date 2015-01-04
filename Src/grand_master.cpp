@@ -42,22 +42,22 @@ WWWWWWWW           C  WWWWWWWW   |
  **/
 void do_logical_grand_master_wheel(const int& GMX, const int& GMY, const int& larg)
 {
-			//à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
+    //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
 //sab 28/11/2014 deb
-        if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
-		&& mousePtr.isOverRecSize(GMX, GMY, larg, 255))
+    if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
+            && mousePtr.isOverRecSize(GMX, GMY, larg, 255))
 
+    {
+        if (key[KEY_ALT] && key[KEY_LCONTROL])
         {
-            if (key[KEY_ALT] && key[KEY_LCONTROL])
-            {
-                whc_mouseWheel::c_levelSpeedupIncrease(whc_mouseWheel::scroll, niveauGMaster, 255, 0, 1000);
-            }
-            else if (key[KEY_ALT] )
-			{
-				whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, niveauGMaster, 255, 0);
-				mouseScroll.SetProcessed();
-			}
+            whc_mouseWheel::c_levelSpeedupIncrease(whc_mouseWheel::scroll, niveauGMaster, 255, 0, 1000);
         }
+        else if (key[KEY_ALT] )
+        {
+            whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, niveauGMaster, 255, 0);
+            mouseScroll.SetProcessed();
+        }
+    }
 //sab 28/11/2014 fin
 }
 
@@ -65,68 +65,68 @@ int do_logical_grand_master(const int& GMX, const int& GMY, const int& larg)
 {
 
 //sab 13/12/2014 deb
-        if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
-		&& mousePtr.isOverRecSize(GMX, GMY, larg, 255)
-		&& mouseClicLeft.isDownToBeProcessed()
-		&& key[KEY_ALT] )
-		{
-			if (not mouseScroll.unsubscribe(niveauGMaster))
-			{
-				mouseScroll.addSubscriber(niveauGMaster, whc_mouseWheel::slider, 0, 255, whc_mouseWheel::nokey);
-			}
-			mouseClicLeft.SetProcessed();
-		}
-		else
+    if((window_focus_id==0 || window_focus_id==906) && index_allow_grand_master==1
+            && mousePtr.isOverRecSize(GMX, GMY, larg, 255)
+            && mouseClicLeft.isDownToBeProcessed()
+            && key[KEY_ALT] )
+    {
+        if (not mouseScroll.unsubscribe(niveauGMaster))
+        {
+            mouseScroll.addSubscriber(niveauGMaster, whc_mouseWheel::slider, 0, 255, whc_mouseWheel::nokey);
+        }
+        mouseClicLeft.SetProcessed();
+    }
+    else
 //sab 13/12/2014 fin
 
-    if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-5 && mouse_y<=GMY+255)
-    {
-        if((window_focus_id==0 || window_focus_id==906 )&& mouseClicLeft.isDown() && index_allow_grand_master==1)
+        if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-5 && mouse_y<=GMY+255)
         {
-            set_mouse_range(GMX, GMY, GMX+larg, GMY+255);//pour pas deborder
+            if((window_focus_id==0 || window_focus_id==906 )&& mouseClicLeft.isDown() && index_allow_grand_master==1)
+            {
+                set_mouse_range(GMX, GMY, GMX+larg, GMY+255);//pour pas deborder
 //NIVEAU
-            niveauGMaster=((GMY+255)-mouse_y);
-            if(niveauGMaster>255)
-            {
-                niveauGMaster=255;
-            }
-            if(niveauGMaster<0)
-            {
-                niveauGMaster=0;
-            }
-            midi_levels[615]=(niveauGMaster/2);
-            if(midi_send_out[615]==1)
-            {
-                index_send_midi_out[615]=1;
-            }
+                niveauGMaster=((GMY+255)-mouse_y);
+                if(niveauGMaster>255)
+                {
+                    niveauGMaster=255;
+                }
+                if(niveauGMaster<0)
+                {
+                    niveauGMaster=0;
+                }
+                midi_levels[615]=(niveauGMaster/2);
+                if(midi_send_out[615]==1)
+                {
+                    index_send_midi_out[615]=1;
+                }
 
 //CONFIG MIDI
-            if(Midi_Faders_Affectation_Type!=0)//config midi
-            {
-                attribute_midi_solo_affectation(615,Midi_Faders_Affectation_Mode);
+                if(Midi_Faders_Affectation_Type!=0)//config midi
+                {
+                    attribute_midi_solo_affectation(615,Midi_Faders_Affectation_Mode);
 
 //midi report
-                switch(miditable[0][615])
-                {
-                case 0:
-                    sprintf(thetypinfo,"Note");
-                    break;
-                case 1:
-                    sprintf(thetypinfo,"Key On");
-                    break;
-                case 2:
-                    sprintf(thetypinfo,"Key Off");
-                    break;
-                case 4:
-                    sprintf(thetypinfo,"Ctrl Change");
-                    break;
-                }
-                sprintf(string_last_midi_id,"MIDI GRAND MASTER:Ch: %d Pitch: %d Type: %s", miditable[1][615],miditable[2][615],thetypinfo);
+                    switch(miditable[0][615])
+                    {
+                    case 0:
+                        sprintf(thetypinfo,"Note");
+                        break;
+                    case 1:
+                        sprintf(thetypinfo,"Key On");
+                        break;
+                    case 2:
+                        sprintf(thetypinfo,"Key Off");
+                        break;
+                    case 4:
+                        sprintf(thetypinfo,"Ctrl Change");
+                        break;
+                    }
+                    sprintf(string_last_midi_id,"MIDI GRAND MASTER:Ch: %d Pitch: %d Type: %s", miditable[1][615],miditable[2][615],thetypinfo);
 
-                mouseClicLeft.SetProcessed();
+                    mouseClicLeft.SetProcessed();
+                }
             }
         }
-    }
 
 //midi out on off
     if(mouse_x>GMX+larg+30-10 && mouse_x<GMX+larg+30+10 && mouse_y>GMY+250-10 && mouse_y<GMY+250+10)
@@ -176,12 +176,12 @@ int grand_master(int GMX, int GMY)
     GmaNiv.Draw(CouleurBlind);
     //sab 13/12/2014 deb
 //    Gma.DrawOutline(CouleurLigne);
-	ol::Rgba colorToApply = CouleurLigne ;
-	if (mouseScroll.isSubscriber(niveauGMaster))
-	{
-		colorToApply = CouleurYellow ;
-	}
-	Gma.DrawOutline(colorToApply);
+    ol::Rgba colorToApply = CouleurLigne ;
+    if (mouseScroll.isSubscriber(niveauGMaster))
+    {
+        colorToApply = CouleurYellow ;
+    }
+    Gma.DrawOutline(colorToApply);
     //sab 13/12/2014 fin
     neuro.Print(string_niveauGMaster,GMX, GMY-5); //niveau du fader
 //bouton midi out

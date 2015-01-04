@@ -908,12 +908,12 @@ void do_logical_deroule_repertoire_classical_save(int xrep, int yrep, const std:
 
                 //sab 17/11/2014 deb
                 if (mouseClicLeft.isDouble())
-				{
-					//Double clic sur le titre d'une sauvegarde --> Load
-					index_do_loadshow=1;
-					index_ask_confirm=1;
-				}
-				//sab 17/11/2014 fin
+                {
+                    //Double clic sur le titre d'une sauvegarde --> Load
+                    index_do_loadshow=1;
+                    index_ask_confirm=1;
+                }
+                //sab 17/11/2014 fin
             }
         }
 

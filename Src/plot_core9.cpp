@@ -3529,9 +3529,9 @@ void logical_menu_plan(int plotx, int ploty)
     if(window_focus_id==W_PLOT
 //        && index_click_inside_relativ_xy==0
 //        && index_click_inside_plot==0
-		&& light_plot_edit_mode_enable        /** Button (Edit) is SELECTED on the main menu of Plot */
-		&& mouseClicLeft.isDown()
-		&& mouseClicLeft.isToBeProcessed())
+            && light_plot_edit_mode_enable        /** Button (Edit) is SELECTED on the main menu of Plot */
+            && mouseClicLeft.isDown()
+            && mouseClicLeft.isToBeProcessed())
     {
 
         /** \brief Handle Left Clic event on : Button (grid size)
@@ -3541,7 +3541,7 @@ void logical_menu_plan(int plotx, int ploty)
         int x_left = plotx+40 ;
         int y_top  = ploty+195 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
+        if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
             plot_quadrillage_size+=25;
@@ -3560,10 +3560,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic, turn over differents style of the grid mesh
          */
         //if (mouse_x>plotx+100 && mouse_x<plotx+100+40 && mouse_y>ploty+195 && mouse_y<ploty+195+20)
-		x_left = plotx+100 ;
+        x_left = plotx+100 ;
         y_top  = ploty+195 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
+        if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             plot_grid_type=toggle(plot_grid_type);
             mouseClicLeft.SetProcessed();
@@ -3578,10 +3578,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic, turn on/off capatility to change according to mouse whell yield
          */
         //if (mouse_x>plotx+145 && mouse_x<plotx+150+60 && mouse_y>ploty+200 && mouse_y<ploty+200+10)
-		x_left = plotx+145 ;
+        x_left = plotx+145 ;
         y_top  = ploty+200 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 65, 10))
+        if(mousePtr.isOverRecSize(x_left, y_top, 65, 10))
         {
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
             mouseClicLeft.SetProcessed();
@@ -3589,7 +3589,7 @@ void logical_menu_plan(int plotx, int ploty)
         }
         else // in case of lose focus event : init cross-bar capability
         {
-			if (editing_plot_background_grid_alpha==true)
+            if (editing_plot_background_grid_alpha==true)
             {
                 mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
@@ -3605,10 +3605,10 @@ void logical_menu_plan(int plotx, int ploty)
         for(int i=0; i<4; i++)
         {
             //if(mouse_x>plotx+5+(50*i) && mouse_x<plotx+5+(50*i)+45 && mouse_y>ploty+90 && mouse_y<ploty+90+20)
-			x_left = plotx+5+(50*i) ;
-			y_top  = ploty+90 ;
+            x_left = plotx+5+(50*i) ;
+            y_top  = ploty+90 ;
 
-			if(mousePtr.isOverRecSize(x_left, y_top, 45, 20))
+            if(mousePtr.isOverRecSize(x_left, y_top, 45, 20))
             {
                 mouseClicLeft.SetProcessed();
                 loseFocus = false ;
@@ -3663,8 +3663,8 @@ void logical_menu_plan(int plotx, int ploty)
                         editing_plot_background_plan_theatre_pos_size = false;
                         editing_plot_background_plan_data_type = 0;
 
-						mousePtr.SetLook(whc_mousePointer::arrow);
-						mouseRoll.SetProcessed();
+                        mousePtr.SetLook(whc_mousePointer::arrow);
+                        mouseRoll.SetProcessed();
                     }
                     else /** single left clic to turn on the button edit mode */
                     {
@@ -3680,18 +3680,18 @@ void logical_menu_plan(int plotx, int ploty)
             editing_plot_background_plan_theatre_pos_size = false;
             editing_plot_background_plan_data_type = 0;
 
-			mousePtr.SetLook(whc_mousePointer::arrow);
-			mouseRoll.SetProcessed();
+            mousePtr.SetLook(whc_mousePointer::arrow);
+            mouseRoll.SetProcessed();
         }
 
         /** \brief Handle Left Clic event on : Check box : keep proportions (betwen size/rate of plan)
          * on left clic, turn check/uncheck
          */
         //if (mouse_x>=plotx+5+141 && mouse_x<=plotx+5+141+8 && mouse_y>ploty+111 && mouse_y<ploty+111+8)
-		x_left = plotx+5+141 ;
-		y_top  = ploty+111 ;
+        x_left = plotx+5+141 ;
+        y_top  = ploty+111 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 8, 8))
+        if(mousePtr.isOverRecSize(x_left, y_top, 8, 8))
         {
             lock_background_proportions=toggle(lock_background_proportions);
             mouseClicLeft.SetProcessed();
@@ -3706,10 +3706,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic turn on/off capatility to change according to mouse whell yield
          */
         //if(mouse_x>=plotx+10 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+140 && mouse_y<ploty+140+10)
-		x_left = plotx+10 ;
-		y_top  = ploty+140 ;
+        x_left = plotx+10 ;
+        y_top  = ploty+140 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 105, 10))
+        if(mousePtr.isOverRecSize(x_left, y_top, 105, 10))
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
@@ -3735,13 +3735,13 @@ void logical_menu_plan(int plotx, int ploty)
             {
                 int pos2=(l*3) + c;
                 /*if(mouse_x>plotx+140+(c*15)
-				&& mouse_x<plotx+140+(c*15)+10
-				&& mouse_y>ploty+125+(l*15)
-				&& mouse_y<ploty+125+(l*15)+10 )*/
-				x_left = plotx+140+(c*15) ;
-				y_top  = ploty+125+(l*15) ;
+                && mouse_x<plotx+140+(c*15)+10
+                && mouse_y>ploty+125+(l*15)
+                && mouse_y<ploty+125+(l*15)+10 )*/
+                x_left = plotx+140+(c*15) ;
+                y_top  = ploty+125+(l*15) ;
 
-				if(mousePtr.isOverRecSize(x_left, y_top, 10, 10))
+                if(mousePtr.isOverRecSize(x_left, y_top, 10, 10))
                 {
                     switch(pos2)
                     {
@@ -3779,7 +3779,7 @@ void logical_menu_plan(int plotx, int ploty)
                 }
             }
         }
-		/* else (click not on ...) = (no change event or lose focus event)
+        /* else (click not on ...) = (no change event or lose focus event)
          - no change event
          - or lose focus event
         }
@@ -3789,10 +3789,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic turn on/off capatility to change according to mouse whell yield
          */
         //if(mouse_x>=plotx+5 && mouse_x<=plotx+10+100+5 && mouse_y>ploty+180 && mouse_y<ploty+180+10)
-		x_left = plotx+5 ;
-		y_top  = ploty+180 ;
+        x_left = plotx+5 ;
+        y_top  = ploty+180 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 110, 10))
+        if(mousePtr.isOverRecSize(x_left, y_top, 110, 10))
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
@@ -3800,7 +3800,7 @@ void logical_menu_plan(int plotx, int ploty)
         }
         else // in case of lose focus event : init cross-bar alpha picture
         {
-			if (editing_plot_background_pic_alpha==true)
+            if (editing_plot_background_pic_alpha==true)
             {
                 mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
@@ -3812,10 +3812,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic get user entry from input widget or turn on/off capatility to change according to mouse whell yield
          */
         //if(mouse_x>plotx+5 && mouse_x<plotx+5+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
-		x_left = plotx+5 ;
-		y_top  = ploty+480 ;
+        x_left = plotx+5 ;
+        y_top  = ploty+480 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
+        if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
             if(keyboardStorage_numeric_postext>0)					/** assign to button value the user entry store in input widget*/
@@ -3835,7 +3835,7 @@ void logical_menu_plan(int plotx, int ploty)
         }
         else // in case of lose focus event : lose capability to change value with wheel roll
         {
- 			if (editing_plot_background_window_width==true)
+            if (editing_plot_background_window_width==true)
             {
                 mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
@@ -3847,10 +3847,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic get user entry from input widget or turn on/off capatility to change according to mouse whell yield
          */
         //if(mouse_x>plotx+5+50 && mouse_x<plotx+5+50+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
-		x_left = plotx+55 ;
-		y_top  = ploty+480 ;
+        x_left = plotx+55 ;
+        y_top  = ploty+480 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
+        if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
             if(keyboardStorage_numeric_postext>0)				/** user entry is store in input widget, ready to be assign to button value */
@@ -3870,7 +3870,7 @@ void logical_menu_plan(int plotx, int ploty)
         }
         else // in case of lose focus event : lose capability to change value with wheel roll
         {
-			if (editing_plot_background_window_heigth==true)
+            if (editing_plot_background_window_heigth==true)
             {
                 mousePtr.SetLook(whc_mousePointer::arrow);
                 mouseRoll.SetProcessed();
@@ -3882,10 +3882,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic get user entry from input widget or turn on/off capatility to change according to mouse whell yield
          */
         //if (mouse_x>plotx+5+100 && mouse_x<plotx+5+100+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
-		x_left = plotx+105 ;
-		y_top  = ploty+480 ;
+        x_left = plotx+105 ;
+        y_top  = ploty+480 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
+        if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
@@ -3905,10 +3905,10 @@ void logical_menu_plan(int plotx, int ploty)
          * on left clic get user entry from input widget or turn on/off capatility to change according to mouse whell yield
          */
         //if(mouse_x>plotx+5+150 && mouse_x<plotx+5+150+40 && mouse_y>ploty+480 && mouse_y<ploty+480+20)
-		x_left = plotx+155 ;
-		y_top  = ploty+480 ;
+        x_left = plotx+155 ;
+        y_top  = ploty+480 ;
 
-		if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
+        if(mousePtr.isOverRecSize(x_left, y_top, 40, 20))
         {
             mouseClicLeft.SetProcessed();
             //à faire : liseré jaune : mousePtr.SetLook(whc_pointer::arrow_wheel);
@@ -4079,10 +4079,10 @@ void do_logical_Plot_Wheel()
             whc_mouseWheel::c_levelIncrease(whc_mouseWheel::scroll, taille_relative_plan_theatre[1], 1000, 1, 1, 15);
             //if (taille_relative_plan_theatre[1]<1)
 
-                if(lock_background_proportions==1)
-                {
-                    taille_relative_plan_theatre[0]=(int)(((float)taille_relative_plan_theatre[1])*ratio_lock_plot_scale);
-                }
+            if(lock_background_proportions==1)
+            {
+                taille_relative_plan_theatre[0]=(int)(((float)taille_relative_plan_theatre[1])*ratio_lock_plot_scale);
+            }
             break;
         default:
             break;
