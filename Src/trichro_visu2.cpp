@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file trichro_visu2.cpp
 * \brief {GUI fonctions for the color whell}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -46,7 +46,7 @@ int Interface_Trichromie(int xchroma, int ychroma, int rayon, int largeurchroma)
 {
 
 //background window
-    Rect TrichroBackground(Vec2D (xchroma-158, ychroma-206 ), Vec2D ( 315,550));
+    Rect TrichroBackground(Vec2D (xchroma-158, ychroma-206 ), Vec2D ( 315+(show_gel_list*gel_size_window),550));
     TrichroBackground.SetRoundness(15);
     TrichroBackground.SetLineWidth(triple_epaisseur_ligne_fader);
     TrichroBackground.Draw(CouleurFond);
@@ -141,6 +141,13 @@ int Interface_Trichromie(int xchroma, int ychroma, int rayon, int largeurchroma)
         petitchiffre.Print("QUADRICHROMY",xchroma-45, ychroma-172);
     }
 
+/////////////////////Gel LIST CALL///////////////////////////////////////////////////
+    Rect Show_Gel( Vec2D(xchroma+90,(ychroma-185)),Vec2D(60,20));
+    Show_Gel.SetRoundness(5);
+    Show_Gel.SetLineWidth(1);
+    Show_Gel.Draw(CouleurFader.WithAlpha(show_gel_list));
+    Show_Gel.DrawOutline(CouleurLigne);
+    petitchiffre.Print("GEL LIST",xchroma+95, ychroma-172);
 
 /////////////////////AFFECTATION ON / OFF AUX DOCKS FADERS///////////////////////////
 
@@ -271,6 +278,113 @@ int Interface_Trichromie(int xchroma, int ychroma, int rayon, int largeurchroma)
                 DockBoxColor2.DrawOutline(CouleurBlind);
             }
         }
+
+    }
+
+//GEL LIST
+    if(show_gel_list==1)
+    {
+//Line (Vec2D( xchroma+170,ychroma-150),Vec2D(xchroma+170,ychroma+260)).Draw(CouleurLigne);
+
+        Rect mytype_of_gel(Vec2D((xchroma+180),ychroma-185),Vec2D(70,20));
+        mytype_of_gel.SetLineWidth(1);
+        mytype_of_gel.DrawOutline(CouleurLigne);
+        switch(index_gel_type_selected)
+        {
+        case 0:
+            petitchiffre.Print("LEE",xchroma+210, ychroma-172);
+            break;
+        case 1:
+            petitchiffre.Print("ROSCO",xchroma+196, ychroma-172);
+            break;
+        case 2:
+            petitchiffre.Print("GAMCOLOR",xchroma+182, ychroma-172);
+            break;
+        case 3:
+            petitchiffre.Print("APOLLO",xchroma+190, ychroma-172);
+            break;
+        default:
+            break;
+        }
+
+
+        Rect mytype_of_list(Vec2D((xchroma+260),ychroma-185),Vec2D(70,20));
+        mytype_of_list.SetLineWidth(1);
+        mytype_of_list.DrawOutline(CouleurLigne);
+        switch(show_designer_list)
+        {
+        case 0:
+            petitchiffre.Print("NUMERIC",xchroma+270, ychroma-172);
+            break;
+        case 1:
+            petitchiffre.Print("DESIGNER",xchroma+267, ychroma-172);
+            break;
+        default:
+            break;
+        }
+
+//call my gel
+        Rect call_my_number(Vec2D((xchroma+340),ychroma-185),Vec2D(50,20));
+        call_my_number.SetRoundness(5);
+        call_my_number.SetLineWidth(1);
+        call_my_number.DrawOutline(CouleurLigne.WithAlpha(0.5));
+        if(window_focus_id==W_TRICHROMY && mouse_x>xchroma+340 && mouse_x<xchroma+390 && mouse_y>ychroma-185 && mouse_y<ychroma-165)
+        {
+            call_my_number.DrawOutline(CouleurLigne);
+        }
+        petitchiffre.Print(ol::ToString(call_ref_number),xchroma+345,ychroma-172);
+
+
+
+//+ - position
+//UP DOWN bangers number selected
+        Circle indexPlus(Vec2D(xchroma+410,ychroma-175),12);
+        Circle indexMinus(Vec2D(xchroma+440,ychroma-175),12);
+
+        petitchiffre.Print("-",xchroma+406,ychroma-173);
+        petitchiffre.Print("+",xchroma+436,ychroma-173);
+        indexPlus.DrawOutline(CouleurLigne);
+        indexMinus.DrawOutline(CouleurLigne);
+
+
+//petitpetitchiffre.Print(ol::ToString(gel_position[index_gel_type_selected]),xchroma+460,ychroma-173);
+        Rect Transm(Vec2D(xchroma+510,ychroma-185),Vec2D(40,20));
+        Transm.SetRoundness(5);
+        Transm.Draw(CouleurBlind.WithAlpha(index_use_transmission));
+        Transm.DrawOutline(CouleurLigne.WithAlpha(0.6));
+        petitchiffre.Print("Trans.",xchroma+512,ychroma-173);
+
+//affichage des gélats
+        Rect CarreColor(Vec2D(0,0),Vec2D(16,16));
+        Rect Underline(Vec2D(0,0),Vec2D(310,16));
+        volatile bool one_line=0;//one line on two
+
+        for(int i=0; i<30; i++)
+        {
+            one_line=toggle(one_line);//just for data visualisation
+            Underline.MoveTo(Vec2D(xchroma+175,ychroma-150+(i*16)));
+            Underline.Draw(CouleurLigne.WithAlpha(0.2*one_line));//une ligne sur deux
+            if(window_focus_id==W_TRICHROMY && mouse_x>xchroma+175 && mouse_x<xchroma+485 && mouse_y>ychroma-150+(i*16) && mouse_y<ychroma-134+(i*16) )
+            {
+                Underline.DrawOutline(CouleurLigne);
+            }
+            petitchiffre.Print(ol::ToString(refs_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i]),xchroma+180,ychroma-138+(i*16));
+            petitchiffre.Print(name_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i],xchroma+215,ychroma-138+(i*16));
+            petitpetitchiffre.Print(ol::ToString(rvb_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i][0]),xchroma+410,ychroma-138+(i*16));
+            petitpetitchiffre.Print(ol::ToString(rvb_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i][1]),xchroma+435,ychroma-138+(i*16));
+            petitpetitchiffre.Print(ol::ToString(rvb_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i][2]),xchroma+460,ychroma-138+(i*16));
+
+            CarreColor.MoveTo(Vec2D(xchroma+487,ychroma-150+(i*16)));
+            CarreColor.Draw(CouleurLigne);
+            Rgba TmpColor (float(rvb_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i][0])/255,
+                           float(rvb_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i][1])/255,
+                           float(rvb_of_gels[index_gel_type_selected][gel_position[index_gel_type_selected]+i][2])/255);
+            petitpetitchiffre.Print(ol::ToString(gel_transimission[index_gel_type_selected][gel_position[index_gel_type_selected]+i]),xchroma+515,ychroma-138+(i*16));
+
+            CarreColor.Draw(TmpColor);
+            CarreColor.DrawOutline(CouleurFond);
+        }
+
 
     }
 

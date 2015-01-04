@@ -998,6 +998,17 @@ void command_button_logical( int xcom, int ycom, int isstate, const std::string 
                     substract_a_window(W_GRID);
                 }
                 break;
+            case 25:
+                if(index_bazoocat_menu_window==0)
+                {
+                    add_a_window(W_BAZOOKAT);
+                    substract_a_window(W_MAINMENU);
+                }
+                else
+                {
+                    substract_a_window(W_BAZOOKAT);
+                }
+                break;
 
 
 //4eme colonne

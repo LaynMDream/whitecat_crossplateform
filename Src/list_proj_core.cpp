@@ -76,13 +76,13 @@ int do_the_macro_of_the_channel(int the_chan, int num_macro)
                 {
                     audiofile_selected=100-(int)(((float)MergerArray[the_chan])/2.55);
                 }
-                if(audiofile_selected>100)
-                {
-                    audiofile_selected=100;
-                }
                 if(audiofile_selected<0)
                 {
                     audiofile_selected=0;
+                }
+                if(audiofile_selected>100)
+                {
+                    audiofile_selected=100;
                 }
                 break;
             case 1:
@@ -91,20 +91,21 @@ int do_the_macro_of_the_channel(int the_chan, int num_macro)
                 {
                     audiofile_selected=127-audiofile_selected;
                 }
-                if(audiofile_selected>127)
-                {
-                    audiofile_selected=127;
-                }
                 if(audiofile_selected<0)
                 {
                     audiofile_selected=0;
                 }
+                if(audiofile_selected>127)
+                {
+                    audiofile_selected=127;
+                }
                 break;
             }
+            sprintf(audiofile_name,list_audio_files[audiofile_selected]);
+            AffectSoundFile(channel_macro_val[the_chan][num_macro][1]-1);
         }
 
-        sprintf(audiofile_name,list_audio_files[audiofile_selected]);
-        AffectSoundFile(channel_macro_val[the_chan][num_macro][1]-1);
+
         break;
     case 3://Play A.Pl
         if(player_ignited[channel_macro_val[the_chan][num_macro][1]-1]==1)

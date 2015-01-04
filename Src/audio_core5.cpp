@@ -123,6 +123,7 @@ int AffectSoundFile(int player)
         {
             sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
             player_ignited[player]=0;
+            player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
         }
         else
         {
@@ -162,6 +163,8 @@ int AffectSoundFile(int player)
         {
             sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
             player_ignited[player]=0;
+            player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
+
         }
         else
         {
@@ -201,6 +204,7 @@ int AffectSoundFile(int player)
         {
             sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
             player_ignited[player]=0;
+            player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
         }
         else
         {
@@ -240,6 +244,7 @@ int AffectSoundFile(int player)
         {
             sprintf (string_Last_Order,"Can't load Sound %s  !",sound_files[player]);
             player_ignited[player]=0;
+            player_is_playing[player]=0;//christoph 11/12/14 bug d.guesdon
         }
         else
         {
@@ -264,6 +269,8 @@ int AffectSoundFile(int player)
                 break;
             }
         }
+        break;
+    default:
         break;
     }
     if(player_ignited[player]==1)
@@ -517,7 +524,7 @@ int sound_core_processing()
                             player1_do_stop();
                             break;
                         case 1:
-                            player3_do_stop();
+                            player2_do_stop();
                             break;
                         case 2:
                             player3_do_stop();

@@ -842,9 +842,6 @@ int do_logical_MoveFaderSpace(int ydelimitation)
 }
 
 
-
-
-
 int do_logical_Touche_Midi_Mute(int xmute, int ymute)
 {
 

@@ -69,7 +69,6 @@ int Init_dmx_interface()
         break;
 
     case 2:
-#ifdef _WIN32
         pUsbDmx = new Open_USB_DMX();
         if (pUsbDmx == NULL)//creation class
         {
@@ -101,10 +100,6 @@ int Init_dmx_interface()
             sprintf(string_display_dmx_params,"Interface Opened !");
             index_init_dmx_ok=1;
         }
-#endif
-# ifdef UNIX
-        /* Do __linux__ stuff */
-#endif
         break;
 
 
@@ -158,7 +153,6 @@ int Close_dmx_interface()
         break;
 //enttec Open
     case 2:
-#ifdef _WIN32
         if (pUsbDmx != NULL)
         {
             pUsbDmx->close_dmx_devices();
@@ -171,11 +165,6 @@ int Close_dmx_interface()
             pUsbDmx = NULL;
             sprintf(string_display_dmx_params,"Pointer Deleted");
         }
-#endif // _WIN32
-
-#ifdef __linux__
-
-#endif
         break;
 //enttec PRO
     case 3:
@@ -245,18 +234,12 @@ int SendData_to_interface()
             {
                 DmxBlockEnttecOpen[ko]=DmxBlock[ko+1];
             }
-
-#ifdef _WIN32
             if (pUsbDmx!= NULL)
             {
                 /*int iRet;
                 iRet = pUsbDmx->get_dmx_device_count();*/
                 pUsbDmx->send_dmx_packet(DmxBlockEnttecOpen);
             }
-#endif
-#ifdef __linux__
-
-#endif
             break;
 //enttec pro
         case 3:
@@ -294,12 +277,7 @@ int SendData_to_interface()
         check_if_dmx_change();
         if(do_send_on_change==1)
         {
-#ifdef _WIN32
             nbrbytessended=sendto(sockartnet, ArtDmxBuffer,sizeof( ArtDmxBuffer),0,(SOCKADDR*)&sinS,sinsize);
-#endif
-#ifdef __linux__
-
-#endif
             do_send_on_change=0;
             for(int bup=0; bup<512; bup++)
             {

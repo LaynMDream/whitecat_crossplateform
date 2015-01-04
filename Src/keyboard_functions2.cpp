@@ -919,7 +919,6 @@ int key_up()
     switch(index_do_hipass)
     {
     case 0://mode normal
-
         if(index_blind==0)
         {
 
@@ -1032,7 +1031,6 @@ int key_up()
                         }
                     }
                 }
-
             }
         }
 
@@ -1488,12 +1486,12 @@ int key_time_in_out()
         {
             if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )
             {
-                index_type_of_time_to_affect[0]=1;
+                index_type_of_time_to_affect[0]=1;    //delay in et out sélectionnés
                 index_type_of_time_to_affect[2]=1;
             }
             else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[2]==1 )
             {
-                index_type_of_time_to_affect[0]=0;
+                index_type_of_time_to_affect[0]=0;    //0=DIN 1=IN 2=DOUT 3=OUT
                 index_type_of_time_to_affect[2]=0;
             }
         }

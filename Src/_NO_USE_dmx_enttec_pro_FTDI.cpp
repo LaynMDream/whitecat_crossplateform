@@ -50,16 +50,16 @@ FT_HANDLE device_handle = NULL ;
 
 #define DMX_DATA_LENGTH 513 // Includes the start code
 
-	// declare all needed variables
-	WORD wVID = 0x0403;
-	WORD wPID = 0x6001;
-	uint8_t Num_Devices =0;
-	uint16_t device_connected =0;
+// declare all needed variables
+WORD wVID = 0x0403;
+WORD wPID = 0x6001;
+uint8_t Num_Devices =0;
+uint16_t device_connected =0;
 
-	uint32_t length =DMX_DATA_LENGTH;
-	int i=0;
-	int device_num=0;
-	BOOL resEnttecPro = 0;
+uint32_t length =DMX_DATA_LENGTH;
+int i=0;
+int device_num=0;
+BOOL resEnttecPro = 0;
 
 
 /* Function : FTDI_ClosePort
@@ -69,8 +69,8 @@ FT_HANDLE device_handle = NULL ;
  **/
 void FTDI_ClosePort()
 {
-	if (device_handle != NULL)
-		FT_Close(device_handle);
+    if (device_handle != NULL)
+        FT_Close(device_handle);
 }
 
 /* Function : FTDI_ListDevices
@@ -80,12 +80,12 @@ void FTDI_ClosePort()
  **/
 int FTDI_ListDevices()
 {
-	FT_STATUS ftStatus;
-	DWORD numDevs=0;
-	ftStatus = FT_ListDevices((PVOID)&numDevs,NULL,FT_LIST_NUMBER_ONLY);
-	if(ftStatus == FT_OK)
-		return numDevs;
-	return NO_RESPONSE;
+    FT_STATUS ftStatus;
+    DWORD numDevs=0;
+    ftStatus = FT_ListDevices((PVOID)&numDevs,NULL,FT_LIST_NUMBER_ONLY);
+    if(ftStatus == FT_OK)
+        return numDevs;
+    return NO_RESPONSE;
 }
 
 
@@ -96,31 +96,31 @@ int FTDI_ListDevices()
  **/
 int FTDI_SendData(int label, unsigned char *data, int length)
 {
-	unsigned char end_code = DMX_END_CODE;
-	FT_STATUS resEnttecPro = 0;
-	DWORD bytes_to_write = length;
-	DWORD bytes_written = 0;
-	HANDLE event = NULL;
-	int size=0;
-	// Form Packet Header
-	unsigned char header[DMX_HEADER_LENGTH];
-	header[0] = DMX_START_CODE;
-	header[1] = label;
-	header[2] = length & OFFSET;
-	header[3] = length >> BYTE_LENGTH;
-	// Write The Header
-	resEnttecPro = FT_Write(	device_handle,(unsigned char *)header,DMX_HEADER_LENGTH,&bytes_written);
-	if (bytes_written != DMX_HEADER_LENGTH) return  NO_RESPONSE;
-	// Write The Data
-	resEnttecPro = FT_Write(	device_handle,(unsigned char *)data,length,&bytes_written);
-	if (bytes_written != length) return  NO_RESPONSE;
-	// Write End Code
-	resEnttecPro = FT_Write(	device_handle,(unsigned char *)&end_code,ONE_BYTE,&bytes_written);
-	if (bytes_written != ONE_BYTE) return  NO_RESPONSE;
-	if (resEnttecPro == FT_OK)
-		return true;
-	else
-		return false;
+    unsigned char end_code = DMX_END_CODE;
+    FT_STATUS resEnttecPro = 0;
+    DWORD bytes_to_write = length;
+    DWORD bytes_written = 0;
+    HANDLE event = NULL;
+    int size=0;
+    // Form Packet Header
+    unsigned char header[DMX_HEADER_LENGTH];
+    header[0] = DMX_START_CODE;
+    header[1] = label;
+    header[2] = length & OFFSET;
+    header[3] = length >> BYTE_LENGTH;
+    // Write The Header
+    resEnttecPro = FT_Write(	device_handle,(unsigned char *)header,DMX_HEADER_LENGTH,&bytes_written);
+    if (bytes_written != DMX_HEADER_LENGTH) return  NO_RESPONSE;
+    // Write The Data
+    resEnttecPro = FT_Write(	device_handle,(unsigned char *)data,length,&bytes_written);
+    if (bytes_written != length) return  NO_RESPONSE;
+    // Write End Code
+    resEnttecPro = FT_Write(	device_handle,(unsigned char *)&end_code,ONE_BYTE,&bytes_written);
+    if (bytes_written != ONE_BYTE) return  NO_RESPONSE;
+    if (resEnttecPro == FT_OK)
+        return true;
+    else
+        return false;
 }
 
 /* Function : FTDI_ReceiveData
@@ -131,44 +131,44 @@ int FTDI_SendData(int label, unsigned char *data, int length)
 int FTDI_ReceiveData(int label, unsigned char *data, unsigned int expected_length)
 {
 
-	FT_STATUS resEnttecPro = 0;
-	DWORD length = 0;
-	DWORD bytes_to_read = 1;
-	DWORD bytes_read =0;
-	unsigned char byte = 0;
-	HANDLE event = NULL;
-	char buffer[600];
-	// Check for Start Code and matching Label
-	while (byte != label)
-	{
-		while (byte != DMX_START_CODE)
-		{
-			resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
-			if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
-		}
-		resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
-		if (bytes_read== NO_RESPONSE) return  NO_RESPONSE;
-	}
-	// Read the rest of the Header Byte by Byte -- Get Length
-	resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
-	if (bytes_read== NO_RESPONSE) return  NO_RESPONSE;
-	length = byte;
-	resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
-	if (resEnttecPro != FT_OK) return  NO_RESPONSE;
-	length += ((uint32_t)byte)<<BYTE_LENGTH;
-	// Check Length is not greater than allowed
-	if (length > DMX_PACKET_SIZE)
-		return  NO_RESPONSE;
-	// Read the actual Response Data
-	resEnttecPro = FT_Read(device_handle,buffer,length,&bytes_read);
-	if(bytes_read != length) return  NO_RESPONSE;
-	// Check The End Code
-	resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
-	if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
-	if (byte != DMX_END_CODE) return  NO_RESPONSE;
-	// Copy The Data read to the buffer passed
-	memcpy(data,buffer,expected_length);
-	return true;
+    FT_STATUS resEnttecPro = 0;
+    DWORD length = 0;
+    DWORD bytes_to_read = 1;
+    DWORD bytes_read =0;
+    unsigned char byte = 0;
+    HANDLE event = NULL;
+    char buffer[600];
+    // Check for Start Code and matching Label
+    while (byte != label)
+    {
+        while (byte != DMX_START_CODE)
+        {
+            resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
+            if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
+        }
+        resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
+        if (bytes_read== NO_RESPONSE) return  NO_RESPONSE;
+    }
+    // Read the rest of the Header Byte by Byte -- Get Length
+    resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
+    if (bytes_read== NO_RESPONSE) return  NO_RESPONSE;
+    length = byte;
+    resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
+    if (resEnttecPro != FT_OK) return  NO_RESPONSE;
+    length += ((uint32_t)byte)<<BYTE_LENGTH;
+    // Check Length is not greater than allowed
+    if (length > DMX_PACKET_SIZE)
+        return  NO_RESPONSE;
+    // Read the actual Response Data
+    resEnttecPro = FT_Read(device_handle,buffer,length,&bytes_read);
+    if(bytes_read != length) return  NO_RESPONSE;
+    // Check The End Code
+    resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
+    if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
+    if (byte != DMX_END_CODE) return  NO_RESPONSE;
+    // Copy The Data read to the buffer passed
+    memcpy(data,buffer,expected_length);
+    return true;
 }
 
 /* Function : FTDI_PurgeBuffer
@@ -178,8 +178,8 @@ int FTDI_ReceiveData(int label, unsigned char *data, unsigned int expected_lengt
  **/
 void FTDI_PurgeBuffer()
 {
-	FT_Purge (device_handle,FT_PURGE_TX);
-	FT_Purge (device_handle,FT_PURGE_RX);
+    FT_Purge (device_handle,FT_PURGE_TX);
+    FT_Purge (device_handle,FT_PURGE_RX);
 }
 
 
@@ -190,108 +190,115 @@ void FTDI_PurgeBuffer()
  **/
 uint16_t FTDI_OpenDevice(int device_num)
 {
-int RTimeout =120;
-	int WTimeout =100;
-	int VersionMSB =0;
-	int VersionLSB =0;
-	uint8_t temp[4];
-	long version;
-	uint8_t major_ver,minor_ver,build_ver;
-	int recvd =0;
-	unsigned char byte = 0;
-	int size = 0;
-	int res = 0;
-	int tries =0;
-	uint8_t latencyTimer;
-	FT_STATUS ftStatus;
-	int BreakTime;
-	int MABTime;
-	// Try at least 3 times
-	do  {
-		sprintf(string_display_dmx_params,"D2XX Opening [Device %d] Try %d",device_num,tries);
-		// Open the PRO
-		ftStatus = FT_Open(device_num,&device_handle);
-		// delay for next try
-		Sleep(750);
-		tries ++;
-	} while ((ftStatus != FT_OK) && (tries < 3));
-	// PRO Opened succesfully
-	if (ftStatus == FT_OK)
-	{
-		// GET D2XX Driver Version
-		ftStatus = FT_GetDriverVersion(device_handle,(LPDWORD)&version);
-		if (ftStatus == FT_OK)
-		{
-			major_ver = (uint8_t) version >> 16;
-			minor_ver = (uint8_t) version >> 8;
-			build_ver = (uint8_t) version & 0xFF;
-			sprintf(string_display_dmx_params,"D2XX Driver Version:: %02X.%02X.%02X ",major_ver,minor_ver,build_ver);
-		}
-		else
-			sprintf(string_display_dmx_params,"Unable to Get D2XX Driver Version") ;*/
+    int RTimeout =120;
+    int WTimeout =100;
+    int VersionMSB =0;
+    int VersionLSB =0;
+    uint8_t temp[4];
+    long version;
+    uint8_t major_ver,minor_ver,build_ver;
+    int recvd =0;
+    unsigned char byte = 0;
+    int size = 0;
+    int res = 0;
+    int tries =0;
+    uint8_t latencyTimer;
+    FT_STATUS ftStatus;
+    int BreakTime;
+    int MABTime;
+    // Try at least 3 times
+    do
+    {
+        sprintf(string_display_dmx_params,"D2XX Opening [Device %d] Try %d",device_num,tries);
+        // Open the PRO
+        ftStatus = FT_Open(device_num,&device_handle);
+        // delay for next try
+        Sleep(750);
+        tries ++;
+    }
+    while ((ftStatus != FT_OK) && (tries < 3));
+    // PRO Opened succesfully
+    if (ftStatus == FT_OK)
+    {
+        // GET D2XX Driver Version
+        ftStatus = FT_GetDriverVersion(device_handle,(LPDWORD)&version);
+        if (ftStatus == FT_OK)
+        {
+            major_ver = (uint8_t) version >> 16;
+            minor_ver = (uint8_t) version >> 8;
+            build_ver = (uint8_t) version & 0xFF;
+            sprintf(string_display_dmx_params,"D2XX Driver Version:: %02X.%02X.%02X ",major_ver,minor_ver,build_ver);
+        }
+        else
+            sprintf(string_display_dmx_params,"Unable to Get D2XX Driver Version") ;
+        */
 
-		// GET Latency Timer
-		ftStatus = FT_GetLatencyTimer (device_handle,(PUCHAR)&latencyTimer);
-		if (ftStatus == FT_OK)
-			sprintf(string_display_dmx_params,"Latency Timer:: %d ",latencyTimer);
-		else
-			sprintf(string_display_dmx_params,"Unable to Get Latency Timer") ;
-		// SET Default Read & Write Timeouts (in micro sec ~ 100)
-		FT_SetTimeouts(device_handle,RTimeout,WTimeout);
-		// Piurges the buffer
-		FT_Purge (device_handle,FT_PURGE_RX);
-		// Send Get Widget Parameters to get Device Info
-		sprintf(string_display_dmx_params,"Sending GET_WIDGET_PARAMS packet... ");
- 		res = FTDI_SendData(GET_WIDGET_PARAMS,(unsigned char *)&size,2);
-		// Check Response
-		if (res == NO_RESPONSE)
-		{
-			FT_Purge (device_handle,FT_PURGE_TX);
- 			res = FTDI_SendData(GET_WIDGET_PARAMS,(unsigned char *)&size,2);
-			if (res == NO_RESPONSE)
-			{
-				FTDI_ClosePort();
-				return  NO_RESPONSE;
-			}
-		}
-		else
-			sprintf(string_display_dmx_params,"PRO Connected Succesfully");
-		// Receive Widget Response
-		sprintf(string_display_dmx_params,"Waiting for GET_WIDGET_PARAMS_REPLY packet... ");
-		res=FTDI_ReceiveData(GET_WIDGET_PARAMS_REPLY,(unsigned char *)&PRO_Params,sizeof(DMXUSBPROParamsType));
-		// Check Response
-		if (res == NO_RESPONSE)
-		{
-			// Recive Widget Response packet
-			res=FTDI_ReceiveData(GET_WIDGET_PARAMS_REPLY,(unsigned char *)&PRO_Params,sizeof(DMXUSBPROParamsType));
-			if (res == NO_RESPONSE)
-			{
-				FTDI_ClosePort();
-				return  NO_RESPONSE;
-			}
-		}
-		else
-			sprintf(string_display_dmx_params,"GET WIDGET REPLY Received ... ");*/
-		// Firmware  Version
-		VersionMSB = PRO_Params.FirmwareMSB;
-		VersionLSB = PRO_Params.FirmwareLSB;
-		// GET PRO's serial number
-		res = FTDI_SendData(GET_WIDGET_SN,(unsigned char *)&size,2);
-		res=FTDI_ReceiveData(GET_WIDGET_SN,(unsigned char *)&temp,4);
-		// Display All PRO Parametrs & Info avialable
-		sprintf(string_display_dmx_params,"PRO Connected [Information Follows]::------------");
-		sprintf(string_display_dmx_params,"FIRMWARE VERSION: %d.%d",VersionMSB,VersionLSB);
-		BreakTime = (int) (PRO_Params.BreakTime * 10.67) + 100;
-		sprintf(string_display_dmx_params,"BREAK TIME: %d micro sec ",BreakTime);
-		MABTime = (int) (PRO_Params.MaBTime * 10.67);
-		sprintf(string_display_dmx_params,"MAB TIME: %d micro sec",MABTime);
-		sprintf(string_display_dmx_params,"SEND REFRESH RATE: %d packets/sec",PRO_Params.RefreshRate);
-		// return success
-		return true;
-	}
-	else // Can't open Device
-	{	sprintf(string_display_dmx_params,"Can't open Pro");	return FALSE;}
-	return(0);
+        // GET Latency Timer
+        ftStatus = FT_GetLatencyTimer (device_handle,(PUCHAR)&latencyTimer);
+        if (ftStatus == FT_OK)
+            sprintf(string_display_dmx_params,"Latency Timer:: %d ",latencyTimer);
+        else
+            sprintf(string_display_dmx_params,"Unable to Get Latency Timer") ;
+        // SET Default Read & Write Timeouts (in micro sec ~ 100)
+        FT_SetTimeouts(device_handle,RTimeout,WTimeout);
+        // Piurges the buffer
+        FT_Purge (device_handle,FT_PURGE_RX);
+        // Send Get Widget Parameters to get Device Info
+        sprintf(string_display_dmx_params,"Sending GET_WIDGET_PARAMS packet... ");
+        res = FTDI_SendData(GET_WIDGET_PARAMS,(unsigned char *)&size,2);
+        // Check Response
+        if (res == NO_RESPONSE)
+        {
+            FT_Purge (device_handle,FT_PURGE_TX);
+            res = FTDI_SendData(GET_WIDGET_PARAMS,(unsigned char *)&size,2);
+            if (res == NO_RESPONSE)
+            {
+                FTDI_ClosePort();
+                return  NO_RESPONSE;
+            }
+        }
+        else
+            sprintf(string_display_dmx_params,"PRO Connected Succesfully");
+        // Receive Widget Response
+        sprintf(string_display_dmx_params,"Waiting for GET_WIDGET_PARAMS_REPLY packet... ");
+        res=FTDI_ReceiveData(GET_WIDGET_PARAMS_REPLY,(unsigned char *)&PRO_Params,sizeof(DMXUSBPROParamsType));
+        // Check Response
+        if (res == NO_RESPONSE)
+        {
+            // Recive Widget Response packet
+            res=FTDI_ReceiveData(GET_WIDGET_PARAMS_REPLY,(unsigned char *)&PRO_Params,sizeof(DMXUSBPROParamsType));
+            if (res == NO_RESPONSE)
+            {
+                FTDI_ClosePort();
+                return  NO_RESPONSE;
+            }
+        }
+        else
+            sprintf(string_display_dmx_params,"GET WIDGET REPLY Received ... ");
+        */
+        // Firmware  Version
+        VersionMSB = PRO_Params.FirmwareMSB;
+        VersionLSB = PRO_Params.FirmwareLSB;
+        // GET PRO's serial number
+        res = FTDI_SendData(GET_WIDGET_SN,(unsigned char *)&size,2);
+        res=FTDI_ReceiveData(GET_WIDGET_SN,(unsigned char *)&temp,4);
+        // Display All PRO Parametrs & Info avialable
+        sprintf(string_display_dmx_params,"PRO Connected [Information Follows]::------------");
+        sprintf(string_display_dmx_params,"FIRMWARE VERSION: %d.%d",VersionMSB,VersionLSB);
+        BreakTime = (int) (PRO_Params.BreakTime * 10.67) + 100;
+        sprintf(string_display_dmx_params,"BREAK TIME: %d micro sec ",BreakTime);
+        MABTime = (int) (PRO_Params.MaBTime * 10.67);
+        sprintf(string_display_dmx_params,"MAB TIME: %d micro sec",MABTime);
+        sprintf(string_display_dmx_params,"SEND REFRESH RATE: %d packets/sec",PRO_Params.RefreshRate);
+        // return success
+        return true;
+    }
+    else // Can't open Device
+    {
+        sprintf(string_display_dmx_params,"Can't open Pro");
+        return FALSE;
+    }
+    return(0);
 }
 
 
@@ -299,38 +306,38 @@ int RTimeout =120;
 uint8_t FTDI_RxDMX(uint8_t label, unsigned char *data, uint32_t* expected_length)
 {
 
-	FT_STATUS resEnttecPro = 0;
-	DWORD length = 0;
-	DWORD bytes_to_read = 1;
-	DWORD bytes_read =0;
-	unsigned char byte = 0;
-	unsigned char header[3];
-	HANDLE event = NULL;
-	unsigned char buffer[600];
-	// Check for Start Code and matching Label
-	while (byte != DMX_START_CODE)
-	{
-		resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
-		if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
-	}
-	resEnttecPro = FT_Read(device_handle,header,3,&bytes_read);
-	if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
-	if(header[0] != label) return NO_RESPONSE;
-	length = header[1];
-	length += ((uint32_t)header[2])<<BYTE_LENGTH;
-	length += 1;
-	// Check Length is not greater than allowed
-	if (length > DMX_PACKET_SIZE +3)
-		return  NO_RESPONSE;
-	// Read the actual Response Data
-	resEnttecPro= FT_Read(device_handle,buffer,length,&bytes_read);
-	if(bytes_read != length) return  NO_RESPONSE;
-	// Check The End Code
-	if (buffer[length-1] != DMX_END_CODE) return  NO_RESPONSE;
-	*expected_length = (unsigned int)length;
-	// Copy The Data read to the buffer passed
-	memcpy(data,buffer,*expected_length);
-	return true;
+    FT_STATUS resEnttecPro = 0;
+    DWORD length = 0;
+    DWORD bytes_to_read = 1;
+    DWORD bytes_read =0;
+    unsigned char byte = 0;
+    unsigned char header[3];
+    HANDLE event = NULL;
+    unsigned char buffer[600];
+    // Check for Start Code and matching Label
+    while (byte != DMX_START_CODE)
+    {
+        resEnttecPro = FT_Read(device_handle,(unsigned char *)&byte,ONE_BYTE,&bytes_read);
+        if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
+    }
+    resEnttecPro = FT_Read(device_handle,header,3,&bytes_read);
+    if(bytes_read== NO_RESPONSE) return  NO_RESPONSE;
+    if(header[0] != label) return NO_RESPONSE;
+    length = header[1];
+    length += ((uint32_t)header[2])<<BYTE_LENGTH;
+    length += 1;
+    // Check Length is not greater than allowed
+    if (length > DMX_PACKET_SIZE +3)
+        return  NO_RESPONSE;
+    // Read the actual Response Data
+    resEnttecPro= FT_Read(device_handle,buffer,length,&bytes_read);
+    if(bytes_read != length) return  NO_RESPONSE;
+    // Check The End Code
+    if (buffer[length-1] != DMX_END_CODE) return  NO_RESPONSE;
+    *expected_length = (unsigned int)length;
+    // Copy The Data read to the buffer passed
+    memcpy(data,buffer,*expected_length);
+    return true;
 }
 
 // our good main function with everything to do the test
@@ -365,18 +372,18 @@ int main(int argc, char**argv)
 			device_num = 0;
 			device_connected = FTDI_OpenDevice(device_num);
 */
-		// If you want to open all; use for loop ; uncomment the folllowing
-		/*
-		 for (i=0;i<Num_Devices;i++)
-		 {
-			if (device_connected)
-				break;
-			device_num = i;
-			device_connected = FTDI_OpenDevice(device_num);
-		 }
-		 */
+// If you want to open all; use for loop ; uncomment the folllowing
+/*
+ for (i=0;i<Num_Devices;i++)
+ {
+	if (device_connected)
+		break;
+	device_num = i;
+	device_connected = FTDI_OpenDevice(device_num);
+ }
+ */
 
-		// Send DMX Code
+// Send DMX Code
 /*		if (device_connected)
 		{
 			unsigned char myDmx[DMX_DATA_LENGTH];

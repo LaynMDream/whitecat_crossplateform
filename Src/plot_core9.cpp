@@ -276,11 +276,13 @@ int scan_planfolder()//plot
     {
         while(!al_findnext(&f))
         {
+            //christoph 19/12/14
+            int f_name_len = strlen(f.name);
             isSomeone=true; // we've found a directory!
             bool index_check_is_supported=0;
-            for(unsigned int a=0; a<strlen(f.name); a++)
+            for(unsigned int a=0; a<f_name_len; a++)
             {
-                if( f.name[a]=='.')
+                if( f.name[a]=='.' && a<=f_name_len-3)
                 {
                     if(
                         (f.name[a+1]=='j' &&  f.name[a+2]=='p' &&  f.name[a+3]=='g')
@@ -2637,7 +2639,7 @@ int logical_shape_edition(int plotx, int ploty)
 
         //alpha shape
 
-        if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 ) //sab 30/11/2014 V501 There are identical sub-expressions 'index_click_inside_relativ_xy == 0' to the left and to the right of the '&&' operator. plot_core9.cpp 2645
+        if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 )
         {
             general_alpha_for_shape=((float)(mouse_x-plotx))/100;
             if(general_alpha_for_shape<0)

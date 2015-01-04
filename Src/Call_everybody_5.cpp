@@ -325,7 +325,7 @@ int do_logical_Menus( int xmenu, int ymenu)
 
 
 //3ème colonne grands blocs
-        for(int cl=0; cl<5; cl++)
+        for(int cl=0; cl<6; cl++)
         {
             switch(cl)
             {
@@ -364,7 +364,13 @@ int do_logical_Menus( int xmenu, int ymenu)
                 strcpy(raccourci_commande,"");
                 stae=index_grider_window;
                 break;
-
+            case 5:
+                IDmidi=1829;
+                IDcommand=cl+20;
+                strcpy(nom_commande,"BazooKAT");
+                strcpy(raccourci_commande,"");
+                stae=index_bazoocat_menu_window;
+                break;
             default:
                 break;
             }
@@ -617,7 +623,7 @@ int Menus( int xmenu, int ymenu)
 
 
 //3ème colonne grands blocs
-    for(int cl=0; cl<5; cl++)
+    for(int cl=0; cl<6; cl++)
     {
         switch(cl)
         {
@@ -656,7 +662,12 @@ int Menus( int xmenu, int ymenu)
             strcpy(raccourci_commande,"");
             stae=index_grider_window;
             break;
-
+        case 5:
+            IDmidi=1829;
+            strcpy(nom_commande,"BazooKAT");
+            strcpy(raccourci_commande,"");
+            stae=index_bazoocat_menu_window;
+            break;
         default:
             break;
         }

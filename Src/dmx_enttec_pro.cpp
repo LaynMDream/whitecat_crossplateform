@@ -35,9 +35,9 @@ WWWWWWWW           C  WWWWWWWW   |
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
-*   Gère les envoie du data dmx et autre fonction vers l'enttec usb pro, specifique pour _WIN32
+*   Gère les envoie du data dmx et autre fonction vers l'enttec usb pro, specifique pour windows
 *
-*   send dmx data and other fonctions to the enttec usb pro, only for _WIN32
+*   send dmx data and other fonctions to the enttec usb pro, only for windows
 *
  **/
 //enttec pro
@@ -105,8 +105,6 @@ DMXUSBPROParamsType params_;
 
 int Enttec_Pro_SetCommParams()
 {
-#ifdef _WIN32
-
     // SetCommState & Timeouts
     DCB dcb;
     GetCommState(com_handle_, &dcb);
@@ -147,11 +145,7 @@ int Enttec_Pro_SetCommParams()
     timeouts.WriteTotalTimeoutConstant = 500;
 
     SetCommTimeouts(com_handle_, &timeouts);
-#endif
 
-#ifdef __linux__
-
-#endif
     return 0;
 }
 
@@ -164,9 +158,6 @@ int Enttec_Pro_SetCommParams()
 // send a packet, overlapped code has not been implemented yet
 int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPOVERLAPPED lpOverlapped)
 {
-
-#ifdef _WIN32
-
 
 //label is SEND_DMX_RDM_TX
     BOOL res = false;
@@ -184,7 +175,7 @@ int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPO
               (unsigned char *)header,		//Pointeur sur la donnée à écrire
               4,								//Nombre de bytes à écrire
               &bytes_written,					//pointeur to number of bytes written
-              lpOverlapped					//Doit être NULL pour _WIN32 CE
+              lpOverlapped					//Doit être NULL pour windows CE
           );
     if (!res || (bytes_written != 4)) return -1;
 
@@ -194,7 +185,7 @@ int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPO
               (unsigned char *)data,			//Pointeur sur la donnée à écrire
               length,							//Nombre de bytes à écrire
               &bytes_written,					//pointeur to number of bytes written
-              lpOverlapped			        //Doit être NULL pour _WIN32 CE
+              lpOverlapped			        //Doit être NULL pour windows CE
           );
     if (!res || (bytes_written != length)) return -1;
 
@@ -205,14 +196,10 @@ int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPO
               (unsigned char *)&end_code,		//Pointeur sur la donnée à écrire
               1,								//Nombre de bytes à écrire
               &bytes_written,					//pointeur to number of bytes written
-              lpOverlapped					//Doit être NULL pour _WIN32 CE
+              lpOverlapped					//Doit être NULL pour windows CE
           );
     if (!res || (bytes_written != 1)) return -1;
-#endif
 
-#ifdef __linux__
-
-#endif
     return 0;
 }
 
@@ -221,10 +208,6 @@ int Enttec_Pro_SendData(int label, unsigned char *data, unsigned int length, LPO
 
 int Enttec_Pro_SetCommParamsIN()
 {
-
-#ifdef _WIN32
-
-
     // SetCommState & Timeouts
     DCB dcbIN;
     GetCommState(com_handle_IN, &dcbIN);
@@ -267,11 +250,7 @@ int Enttec_Pro_SetCommParamsIN()
     timeoutsIN.WriteTotalTimeoutConstant = 500;
 
     SetCommTimeouts(com_handle_IN, &timeoutsIN);
-#endif
 
-#ifdef __linux__
-
-#endif
     return 0;
 }
 
@@ -283,9 +262,6 @@ int Enttec_Pro_SetCommParamsIN()
 
 uint16_t Enttec_Pro_ReceiveData(uint16_t label, uint8_t *data, uint32_t expected_length)
 {
-
-#ifdef _WIN32
-
 
     BOOL resIn = 0;
     DWORD length = 0;
@@ -327,22 +303,15 @@ uint16_t Enttec_Pro_ReceiveData(uint16_t label, uint8_t *data, uint32_t expected
     if (byte != 0xE7) return  0;
 
     memcpy(data,buffer,expected_length);
-#endif
 
-#ifdef __linux__
-
-#endif
     return expected_length;
 }
 
 
 int Detect_EnttecProOut()
 {
-
-#ifdef _WIN32
-
     com_handle_ = NULL;
-    // Search in _WIN32 Registry for serial COM
+    // Search in Windows Registry for serial COM
     {
         HKEY        hKey;
         DWORD       DeviceNameLen, KeyNameLen;
@@ -385,20 +354,11 @@ int Detect_EnttecProOut()
         sprintf(string_display_dmx_params,"ENTTEC PRO Out is on : %s",DeviceName);
     }
 
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 int Open_EnttecProOut()
 {
-
-#ifdef _WIN32
-
-
     char com_str[10];
     sprintf(com_str,"%s:",DeviceName);
     LPSTR lpszPortName = _T(com_str);
@@ -434,38 +394,22 @@ int Open_EnttecProOut()
         com_handle_ = NULL;
         return(0);
     }
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 int Close_EnttecProOut()
 {
-
-#ifdef _WIN32
-
-
     CloseHandle(com_handle_);
     com_handle_ = NULL;
     sprintf(string_display_dmx_params,"ENTTEC PRO OUT : Closed...");
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 
 int Detect_EnttecProIn()
 {
-
-#ifdef _WIN32
     com_handle_IN = NULL;
-    // Search in _WIN32 Registry for serial COM
+    // Search in Windows Registry for serial COM
     {
         HKEY        hKeyIN;
         DWORD       DeviceNameLenIN, KeyNameLenIN;
@@ -504,24 +448,15 @@ int Detect_EnttecProIn()
         }
         sprintf(string_display_dmx_params,"Founded Enttec Pro In :%s",DeviceNameIN);
     }
-
-#endif
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 int Open_ProIn()
 {
-
-#ifdef _WIN32
-
     char com_str[10];
     sprintf(com_str,"%s:",DeviceNameIN);
     LPSTR lpszPortName = _T(com_str);
     com_handle_IN = CreateFile(
-
                         lpszPortName,
                         GENERIC_READ | GENERIC_WRITE,
                         0,								// DWORD dwShareMode,
@@ -557,27 +492,14 @@ int Open_ProIn()
         return(0);
     }
     index_init_EnttecPROIN_ok=1;
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 int Close_ProIn()
 {
-
-#ifdef _WIN32
-
     CloseHandle(com_handle_IN);
     com_handle_IN = NULL;
     sprintf(string_display_dmx_params,"Enttec Pro IN %s is now closed",DeviceNameIN) ;
     index_init_EnttecPROIN_ok=0;
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }

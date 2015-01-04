@@ -543,7 +543,7 @@ int mini_faders_panel_core(int xmf, int ymf, int larg)
 
 
 //SELECTION
-                    if(index_do_dock==0 && index_do_modify==0 && index_type==0    && index_main_clear==0 )
+                    if(index_do_dock==0 && index_do_modify==0  && index_type==0    && index_main_clear==0 )
                     {
                         minifaders_selected[position_minifader_selected]=toggle(minifaders_selected[position_minifader_selected]);
                         if(index_inspekt==1)//affichage qui dans dock si VIEW activé

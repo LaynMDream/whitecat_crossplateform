@@ -93,16 +93,11 @@ int init_iCat_data()
 
 int fermeture_client_iCat()
 {
-#ifdef __linux__
-
-#endif
-#ifdef _WIN32
 
     shutdown(sockiCat,2);
     closesocket(sockiCat);
     sprintf(string_Last_Order,">>Closed Fantastick Client");
     client_icat_is_closed=1;
-#endif
     return(0);
 }
 
@@ -110,11 +105,6 @@ int fermeture_client_iCat()
 
 int initialisation_clientserveur_iCat()
 {
-#ifdef __linux__
-
-#endif
-#ifdef _WIN32
-
     WSADATA wsa;
     WSAStartup(MAKEWORD(2,0),&wsa);
     sinServiCat.sin_family=AF_INET;
@@ -158,17 +148,11 @@ int initialisation_clientserveur_iCat()
 
     client_icat_is_closed=0;
     index_re_init_clientserveur_icat=0;
-#endif
     return(0);
 }
 
 int fermeture_clientserveur_iCat()
 {
-#ifdef __linux__
-
-#endif
-#ifdef _WIN32
-
     shutdown(sockRiCat,2);
     closesocket(sockRiCat);
     sprintf(string_Last_Order,">>Closed Fantastick server");
@@ -178,7 +162,6 @@ int fermeture_clientserveur_iCat()
     {
         fermeture_client_iCat();
     }
-#endif
     return(0);
 }
 
@@ -1057,6 +1040,7 @@ int Menu_edition_iCat_boutons(int xed, int yed)
             break;
         case 4:
             sprintf(string_temp_familly,"Matrix Draw Mode");
+            break;
             break;
         case 5:
             sprintf(string_temp_familly,"Select Matrix Num:");
@@ -3756,6 +3740,10 @@ int check_button( int tp)
                         init_iCat_data();
                         load_iCat_page(iCatPageis);
                         do_send_icat_init_page=1;
+
+                        /*nbrbytessendediCat=sendto(sockiCat, "clearmodels",sizeof("clearmodels"),0,(SOCKADDR*)&siniCat,sinsizeiCat); //dans routine laod avant appel du rafraichissement
+                        do_refresh_iCat(iCatPageis);*/
+
                         break;
                     case 2://page ++
                         reset_button(iCatPageis,bt, tp);
@@ -3767,6 +3755,10 @@ int check_button( int tp)
                         init_iCat_data();
                         load_iCat_page(iCatPageis);
                         do_send_icat_init_page=1;
+
+                        /*nbrbytessendediCat=sendto(sockiCat, "clearmodels",sizeof("clearmodels"),0,(SOCKADDR*)&siniCat,sinsizeiCat); //dans routine laod avant appel du rafraichissement
+                        do_refresh_iCat(iCatPageis);*/
+
                         break;
                     case 3://page num
                         reset_button(iCatPageis,bt, tp);
@@ -4193,11 +4185,11 @@ int check_slider( int tp)
             {
             case 0:
                 sprintf(StrOrderToiCat, "model t%d color 1.0 1.0 1.0",sl);
-                send_data_to_fantastick();
+                nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
                 break;
             case 1:
                 sprintf(StrOrderToiCat, "model t%d color 1.0 0.0 0.0",sl);
-                send_data_to_fantastick();
+                nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
                 break;
             }
         }

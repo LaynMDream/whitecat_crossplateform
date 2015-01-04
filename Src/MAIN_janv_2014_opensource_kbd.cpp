@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file MAIN_janv_2014_opensource_kbd.cpp
 * \brief {main loop}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {09/12/2014}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -168,6 +168,9 @@ bufferSaisiesnamp=0;
 #include <iCat14.cpp>//iCat remote
 #include <network_MAC_adress_3.cpp>
 #include <midi_launchpad.cpp>
+
+
+#include <bazooKAT.cpp>
 
 #include <grider8.cpp>
 #include <sequentiel_7_visu.cpp>
@@ -485,7 +488,6 @@ int ticker_dixiemes_de_secondes_check = BPS_TO_TIMER(10);//10eme de secondes
 
 void dixiemes_de_secondes()
 {
-
     ticks_dixieme_for_icat_and_draw++;
     if(index_is_saving==0 && init_done==1 && index_writing_curve==0 && index_quit==0)
     {
@@ -603,7 +605,6 @@ void dixiemes_de_secondes()
         arduino__send_config();
     }
     do_audio_midi_function_next_prev_track();//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
-
 }
 END_OF_FUNCTION(dixiemes_de_secondes);
 
@@ -658,17 +659,11 @@ void ticker_full_loop()
 
         if (enable_iCat==1 && iCat_serveur_is_initialized==1 && do_send_icat_init_page==0)
         {
-#ifdef __linux__
-
-#endif
-#ifdef _WIN32
-
             bytesreceivediCat=recvfrom(sockRiCat,fantastick_message,sizeof(fantastick_message),0,(SOCKADDR*)&sinServiCat,&sinsizeServiCat);
             if(bytesreceivediCat>0 && (fantastick_message[0]!='I' &&  fantastick_message[1] !='P'))//caractere d arret
             {
                 fantastick_message[bytesreceivediCat]='\0';
             }
-#endif
             ReceiveFantastick();
             DoJobFantastickTouch();
             Fantastick_check_string();
@@ -684,11 +679,6 @@ void ticker_full_loop()
 
         if(allow_artnet_in==1 && artnet_serveur_is_initialized==1 )
         {
-#ifdef __linux__
-
-#endif
-#ifdef _WIN32
-
             if((bytesreceived=recvfrom(sock,artnet_message,sizeof(artnet_message),0,(SOCKADDR*)&sinServ,&sinsizeServ)>0))
             {
                 receiving_bytes=1;
@@ -698,7 +688,7 @@ void ticker_full_loop()
             {
                 receiving_bytes=0;
             }
-#endif
+
         }
         commandes_clavier(); //keyboard
 // DoMouseLevel(); -->  mouseWheel graphics handle (MainBoard / Channels)
@@ -1356,13 +1346,7 @@ int main(int argc, char* argv[])
         initialisation_client_artnet();
         //ConstructArtPoll();
         ConstructArtPollReply();
-#ifdef __linux__
-
-#endif
-#ifdef _WIN32
-
         nbrbytessended=sendto(sockartnet, ArtPollBuffer,sizeof( ArtPollBuffer),0,(SOCKADDR*)&sinS,sinsize);
-#endif
         //ArtNet
         ArtDmx();
         save_load_print_to_screen("Double DMX Art-net ON");
@@ -1375,10 +1359,17 @@ int main(int argc, char* argv[])
     Load_Video_Conf();
     sprintf(tmp_ip_artnet,ip_artnet);
 
+
     load_show_coming_from();
     idf++;
 
+
     On_Open_name_of_directory();
+
+    save_load_print_to_screen("Loading Gels List");
+    load_gel_list_numerical();
+    idf++;
+
     Canvas::Fill(CouleurFond);
     Canvas::Refresh();
     save_load_print_to_screen("Init Sound");
@@ -1453,8 +1444,8 @@ int main(int argc, char* argv[])
     if (enable_iCat==1)
     {
         initialisation_clientserveur_iCat();
-        sprintf(StrOrderToiCat,"opengl 1");
-        send_data_to_fantastick();
+
+        nbrbytessendediCat=sendto(sockiCat, "opengl 1",sizeof("opengl 1"),0,(SOCKADDR*)&siniCat,sinsizeiCat);
         init_iCat_data();//varibales de stockage
         someone_changed_in_sequences=1;//icat
         do_send_icat_init_page=1;
@@ -1525,6 +1516,8 @@ int main(int argc, char* argv[])
     }
     /* sab 27/07/2014 FIN */
 
+
+    reset_temp_state_for_channel_macros_launch();//christoph 18/12/14 pour intialisation au démarrage de wcat des channels macros
     starting_wcat=0;
 
 
@@ -1558,7 +1551,7 @@ int main(int argc, char* argv[])
             break;
         }
 //DEBUG
-        sprintf(string_debug,"%d / %d / %d / %d ", enable_import,index_do_import,isSchwz,index_export_choice);
+        sprintf(string_debug,"%d / %d ", ratio_X1X2_together,index_go);
 
         if(there_is_change_on_show_save_state==1)
         {

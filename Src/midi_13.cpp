@@ -1345,25 +1345,24 @@ int do_midi_job(int control)
     }
     if(control==680)
     {
-        simulate_keypress(KEY_COMMA<<8);    //POINT
+        simulate_keypress(KEY_COMMA<<8);   //POINT
     }
     if(control==681)
     {
-        simulate_keypress(KEY_ESC<<8);    //ESC
+        simulate_keypress(KEY_ESC<<8);   //ESC
     }
     if(control==682)
     {
-        simulate_keypress(KEY_Y<<8);    //ALL
+        simulate_keypress(KEY_Y<<8);   //ALL
     }
     if(control==683)
     {
-        simulate_keypress(KEY_U<<8);    //INV
+        simulate_keypress(KEY_U<<8);   //INV
     }
     if(control==684)
     {
         simulate_keypress(KEY_TAB<<8);
     }
-
     if(control>=685 && control<=733) //STOPOS FADERS
     {
         if(index_do_dock==0 && index_main_clear==0)
@@ -4136,6 +4135,21 @@ int do_midi_job(int control)
         index_false_control=0;
         sprintf(string_Last_Order,"Midi simulate FULL");
     }
+
+    if(control == 1829 )//window BazooCAT
+    {
+        if(index_bazoocat_menu_window==0)
+        {
+            add_a_window(W_BAZOOKAT);
+        }
+        else
+        {
+            substract_a_window(W_BAZOOKAT);
+        }
+        rest(midi_keyboard_wait);
+    }
+
+
 
 
     return(0);

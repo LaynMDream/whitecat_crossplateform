@@ -540,15 +540,15 @@ int do_logical_Draw_Channel_Preset_Title(int xchan, int ychan, int prst_v)
 int do_logical_ClassicalChannelSpace( int xchan, int ychan, int scroll)//les 512 circuits
 {
 
-    int maxchan_per_ligne=12;
+    int maxchan_per_ligne=13;
     for (int l=0; l<43; l++)
     {
         if (l==42)
         {
-            maxchan_per_ligne=8;   //derniere ligne à 512
+            maxchan_per_ligne=9;   //derniere ligne à 512
         }
 
-        for (int c=1; c<=maxchan_per_ligne; c++)
+        for (int c=1; c<maxchan_per_ligne; c++)
         {
 
 //Selection circuit
@@ -598,8 +598,10 @@ int do_logical_ClassicalChannelSpace( int xchan, int ychan, int scroll)//les 512
                         substract_channel_selection_to_layers_plot();
                     }
                 }
+//
             }
         }
+
     }
 
     return(0);

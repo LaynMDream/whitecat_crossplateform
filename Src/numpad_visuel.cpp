@@ -130,7 +130,6 @@ int visual_numeric_pad (int x_num, int y_num)
         Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+16),Vec2D(60,60));
         MyNum.SetRoundness(7.5);
         MyNum.SetLineWidth(epaisseur_ligne_fader);
-
         MyNum.DrawOutline(CouleurLigne);
         if( Midi_Faders_Affectation_Type!=0)//config midi
         {
@@ -147,7 +146,6 @@ int visual_numeric_pad (int x_num, int y_num)
         Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+86),Vec2D(60,60));
         MyNum.SetRoundness(7.5);
         MyNum.SetLineWidth(epaisseur_ligne_fader);
-
         MyNum.DrawOutline(CouleurLigne);
         if( Midi_Faders_Affectation_Type!=0)//config midi
         {
@@ -164,7 +162,6 @@ int visual_numeric_pad (int x_num, int y_num)
         Rect MyNum(Vec2D(x_num+10+(70*loi),y_num+156),Vec2D(60,60));
         MyNum.SetRoundness(7.5);
         MyNum.SetLineWidth(epaisseur_ligne_fader);
-
         MyNum.DrawOutline(CouleurLigne);
         if(Midi_Faders_Affectation_Type!=0)//config midi
         {
@@ -181,8 +178,6 @@ int visual_numeric_pad (int x_num, int y_num)
         MyNum.SetRoundness(7.5);
         MyNum.SetLineWidth(epaisseur_ligne_fader);
         MyNum.DrawOutline(CouleurLigne);
-
-
         if(Midi_Faders_Affectation_Type!=0)//config midi
         {
             if(mouse_x>x_num+10+(70*loi) && mouse_x<x_num+70+(70*loi) && mouse_y>y_num+226 && mouse_y<y_num+286)
@@ -197,7 +192,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect UPT(Vec2D(x_num+220,y_num+86),Vec2D(100,60));
     UPT.SetRoundness(7.5);
     UPT.SetLineWidth(epaisseur_ligne_fader);
-
     UPT.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -211,7 +205,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect DOWNT(Vec2D(x_num+220,y_num+156),Vec2D(100,60));
     DOWNT.SetRoundness(7.5);
     DOWNT.SetLineWidth(epaisseur_ligne_fader);
-
     DOWNT.DrawOutline(CouleurLigne);
     if(Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -224,7 +217,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect ENTERT(Vec2D(x_num+220,y_num+226),Vec2D(100,60));
     ENTERT.SetRoundness(7.5);
     ENTERT.SetLineWidth(epaisseur_ligne_fader);
-
     ENTERT.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -237,7 +229,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect MyPlus(Vec2D(x_num+330,y_num+86),Vec2D(60,60));
     MyPlus.SetRoundness(7.5);
     MyPlus.SetLineWidth(epaisseur_ligne_fader);
-
     MyPlus.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -250,7 +241,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect MyMinus(Vec2D(x_num+330,y_num+156),Vec2D(60,60));
     MyMinus.SetRoundness(7.5);
     MyMinus.SetLineWidth(epaisseur_ligne_fader);
-
     MyMinus.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -263,7 +253,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect AtFull(Vec2D(x_num+330,y_num+230),Vec2D(60,20));
     AtFull.SetRoundness(7.5);
     AtFull.SetLineWidth(epaisseur_ligne_fader);
-
     AtFull.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -276,7 +265,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect AtZ(Vec2D(x_num+330,y_num+265),Vec2D(60,20));
     AtZ.SetRoundness(7.5);
     AtZ.SetLineWidth(epaisseur_ligne_fader);
-
     AtZ.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -289,7 +277,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect CheckM(Vec2D(x_num+330,y_num+15),Vec2D(55,20));
     CheckM.SetRoundness(7.5);
     CheckM.SetLineWidth(epaisseur_ligne_fader);
-
     CheckM.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {
@@ -301,7 +288,6 @@ int visual_numeric_pad (int x_num, int y_num)
     Rect CheckP(Vec2D(x_num+330,y_num+45),Vec2D(55,20));
     CheckP.SetRoundness(7.5);
     CheckP.SetLineWidth(epaisseur_ligne_fader);
-
     CheckP.DrawOutline(CouleurLigne);
     if( Midi_Faders_Affectation_Type!=0)//config midi
     {

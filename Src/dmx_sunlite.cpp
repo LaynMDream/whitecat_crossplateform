@@ -66,9 +66,6 @@ int sunlite_serial_number=0;
 
 int open_sunlite()
 {
-
-#ifdef _WIN32
-
 //chargement dll
     hLibSunlite = LoadLibrary("DasHard2006.dll");
     if (hLibSunlite == NULL)
@@ -114,19 +111,12 @@ int open_sunlite()
         sprintf(string_sunlite_is,"SIDUI-6C interface");
     }
 
-#endif
 
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 int close_sunlite()
 {
-
-#ifdef _WIN32
-
 //fermeture device
     if (dasusbcommand != NULL)
     {
@@ -156,13 +146,6 @@ int close_sunlite()
     }
 
     sprintf(string_display_dmx_params,">>Sunlite closed");
-
-#endif
-
-#ifdef __linux__
-
-#endif
-
     return(0);
 }
 
@@ -170,9 +153,6 @@ int close_sunlite()
 
 int sunlite_send_data()
 {
-
-#ifdef _WIN32
-
     do_send_dmx_on_change_siudi=0;
     for(int z=0; z<512; z++)
     {
@@ -209,20 +189,12 @@ int sunlite_send_data()
     dmxbackup_sunlite[z]=DmxBlockSunlite[z];
     }
     }*/
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 
 int Receive_sunlite_dmxIN()
 {
-
-#ifdef _WIN32
-
     if(dasusbcommand >0 && index_quit==0 && index_allow_sunlite_dmxIN==1)
     {
 //int Reto=dasusbcommand(DHC_DMX2IN,512,dmxINsunlite);
@@ -231,23 +203,11 @@ int Receive_sunlite_dmxIN()
             dmxIN[p+2]=dmxINsunlite[p];   //ok +2 fonctionne tres bien de 1 à 512 compris
         }
     }
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
 
 int reset_dmx_out()
 {
-
-#ifdef _WIN32
     dasusbcommand(DHC_DMXOUTOFF,0,0);
-#endif
-
-#ifdef __linux__
-
-#endif
     return(0);
 }
