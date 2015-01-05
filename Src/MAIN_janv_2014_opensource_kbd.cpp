@@ -92,7 +92,7 @@ bufferSaisiesnamp=0;
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 
-#include <boost/format.hpp>
+//#include <boost/format.hpp>
 #include <whitecat_Fct.h>
 
 #include <patch_splines_2.cpp>//spline pour curves
