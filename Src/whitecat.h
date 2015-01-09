@@ -590,7 +590,7 @@ int nbre_de_videos=0;
 int XChannels=-20, YChannels=70;
 int ChScrollX=580, ChScrollY=50; //scroller ascenceur
 float Ch_Scroll_Factor=12.0;
-int last_scroll_mouse_for_chan=0;
+//int last_scroll_mouse_for_chan=0;
 
 char string_last_ch[36];
 

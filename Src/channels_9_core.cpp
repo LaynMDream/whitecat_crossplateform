@@ -329,15 +329,13 @@ int Channel_at_level()
 
 void do_logical_Channel_wheel() //remplace DoMouseLevel (la partie de code concernant Banger est reporté dans une autre fonction dans Banger Core
 {
-    if (mouse_z>last_scroll_mouse_for_chan )
+    if (mouseScroll.gain() > 0)
     {
         simulate_keypress(KEY_UP << 8);
-        last_scroll_mouse_for_chan= mouse_z;
     }
-    else if (mouse_z<last_scroll_mouse_for_chan )
+    else if (mouseScroll.gain() < 0)
     {
         simulate_keypress(KEY_DOWN << 8);
-        last_scroll_mouse_for_chan= mouse_z;
     }
 }
 
