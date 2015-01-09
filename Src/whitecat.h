@@ -396,7 +396,8 @@ unsigned char bufferPourcentStepdefaultlevel[514];//buffer tampon pour simplifie
 
 bool SelectedForCopyPaste[514];
 bool Selected_Channel[514];
-bool Temp_Selected_Channel[514];//pour selection chainee souris ( comme ds schwz)
+bool snapshot_Selected_Channel[514];//pour selection chainee souris ( comme ds schwz)
+bool snapshotOfChannels; // 09/01/2015 sab : pour gérer la prise d'image lors du prochain début clic down
 int last_ch_selected=0;
 int check_channel_level=255;
 int previous_ch_selected=0;

@@ -44,13 +44,16 @@ WWWWWWWW           C  WWWWWWWW   |
 #include <allegro.h>
 #include <OpenLayer.hpp>
 
-int snap_channels_selection_array()//pour saisie continue des circuits, au click button
+void snap_channels_selection_array()//pour saisie continue des circuits, au click button
 {
-    for (int i=0; i<513; i++)
+    if (not snapshotOfChannels) // 09/01/2015 sab : prise d'image qu'une fois, lors du début clic down
     {
-        Temp_Selected_Channel[i]=Selected_Channel[i];
+    	for (int i=0; i<513; i++)
+		{
+			snapshot_Selected_Channel[i]=Selected_Channel[i];
+		}
+		snapshotOfChannels = true;
     }
-    return(0);
 }
 
 
@@ -418,7 +421,7 @@ int do_logical_Draw_Channel_Preset_View( int xchan, int ychan,   int prst_v)
 
                 if (index_ch_thruth==0)//selection normale
                 {
-                    Selected_Channel[num_circ]=1-(Temp_Selected_Channel[num_circ]); //chainage mouse released sorti
+                    Selected_Channel[num_circ]=1-(snapshot_Selected_Channel[num_circ]); //chainage mouse released sorti
                     last_ch_selected=num_circ;
                     if(index_plot_window==1)
                     {
@@ -575,7 +578,7 @@ int do_logical_ClassicalChannelSpace( int xchan, int ychan, int scroll)//les 512
 
                 if (index_ch_thruth==0)//selection normale
                 {
-                    Selected_Channel[c+(l*12)]=1-(Temp_Selected_Channel[c+(l*12)]); //chainage mouse released sorti
+                    Selected_Channel[c+(l*12)]=1-(snapshot_Selected_Channel[c+(l*12)]); //chainage mouse released sorti
                     if(Selected_Channel[c+(l*12)]==1)
                     {
                         last_ch_selected=c+(l*12);

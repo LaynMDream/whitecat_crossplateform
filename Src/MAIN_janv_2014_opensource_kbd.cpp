@@ -401,7 +401,7 @@ void my_callback(int flags)
             window_focus_id=detection_over_window();
         }
         //sab 29/05/2013 fin ---------------------------------------------------------------
-        if(window_focus_id==0 || window_focus_id==W_LIST )
+        if(window_focus_id==W_MAINBOARD || window_focus_id==W_LIST )
         {
             snap_channels_selection_array();
         }
@@ -409,6 +409,8 @@ void my_callback(int flags)
 
     else if (flags & MOUSE_FLAG_LEFT_UP )//relevage bouton
     {
+
+        snapshotOfChannels = false ; // 09/01/2015 sab : pour renouveler la prise d'image lors du prochain début clic down
 
         index_click_move_faderspace=0;
         im_moving_a_window=0;

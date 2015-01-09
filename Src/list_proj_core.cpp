@@ -787,7 +787,7 @@ int do_logical_liste_projecteurs(int xlist,int ylist)
 
                     if (index_ch_thruth==0)//selection normale
                     {
-                        Selected_Channel[co+line_list_is]=1-(Temp_Selected_Channel[co+line_list_is]); //chainage mouse released sorti
+                        Selected_Channel[co+line_list_is]=1-(snapshot_Selected_Channel[co+line_list_is]); //chainage mouse released sorti
                         last_ch_selected=co+line_list_is;
                         if(index_plot_window==1)
                         {

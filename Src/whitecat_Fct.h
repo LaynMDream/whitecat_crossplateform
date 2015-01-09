@@ -161,7 +161,7 @@ WWWWWWWW           C  WWWWWWWW   |
 //}
 //currently in channels core
 //{
-    int snap_channels_selection_array();//pour saisie continue des circuits,au click button
+    void snap_channels_selection_array();// prise d'image de l'état des sélections des circuits au moment où le bouton est pressé
     int channel_copy();
     int channel_paste();
     int reset_blind();

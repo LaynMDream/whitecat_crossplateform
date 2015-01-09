@@ -7,7 +7,6 @@ whitecatlib/
 lib/
 
 # build folder
-IDE/CodeBlocks
 IDE/DEV-C++
 
 # build folder
