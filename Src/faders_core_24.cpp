@@ -2008,19 +2008,23 @@ int do_logical_FaderSpace(int x, int y,int largeur, int espacement, int nbr_fade
 //fin des 48
     }//fin de la condition moving fader space
 
-
 //GRAND MASTER
+//sab 18/01/2014 DEB
+//    do_logical_grand_master(x-140, y, (int(50*size_faders)));//x y largeur
+//    do_logical_grand_master(x+(48*espacement)+50, y, (int(50*size_faders)));//x y largeur
+
     int gm_x, gm_width;
-//GM on Left of fader window
+	//GM on Left of fader window
     gm_x = x-140;
     gm_width = (int(50*size_faders));
     do_logical_grand_master(gm_x, y, gm_width);//x y largeur
-//GM on Right of fader window
+	//GM on Right of fader window
     gm_x = x+(48*espacement)+50;
     gm_width = (int(50*size_faders));
     do_logical_grand_master(gm_x, y, gm_width);//x y largeur
 
     do_logical_MoveFaderSpace(y-70);// fonction pour se deplacer sur les 48 masters
+//sab 18/01/2014 FIN
 
     return(0);
 }

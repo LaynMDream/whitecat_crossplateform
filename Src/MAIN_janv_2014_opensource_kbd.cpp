@@ -900,10 +900,10 @@ int main_actions_on_screen()
         trichro_back_buffer(315/2,550/2,125,15);//calcul trichro ( triangle et saturation dans buffer separé)
         do_colors();//ventilation des niveaux pickés ainsi que distrib dans faders et docks
     }
-    /*sab 18/08/2014 DEB - Draw mouse only when over the application window
-    DoMouse();
-    */
-    {
+    /*sab 18/08/2014 DEB - Draw mouse only when over the application window*/
+//    DoMouse();
+
+//    {
 
 //		int fader_x = XFader-((int)(scroll_faderspace*facteur_scroll_fader_space));
 //
@@ -969,7 +969,7 @@ int main_actions_on_screen()
                 ZoneCherchee.Draw(yellowTranslucent);
             }
         }
-    }
+//    }
     /*sab 18/08/2014 FIN */
     previous_ch_selected=last_ch_selected;
     return(0);
@@ -989,17 +989,17 @@ int main(int argc, char* argv[])
     {Settings::SetWindowBorder(true);}
     */
     /*sab 27/07/2014 DEB
-    Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable avec les menus
-
-    Setup::SetupProgram(KEYBOARD | MOUSE);
-
-    if(index_fullscreen==0)
-    {Setup::SetupScreen( largeur_ecran, hauteur_ecran,WINDOWED, desktop_color_depth() );}
-    else {Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color_depth() );}
-
-    HWND hwnd = win_get_window();
-    if (hwnd != NULL)
-    	MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);
+//    Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable avec les menus
+//
+//    Setup::SetupProgram(KEYBOARD | MOUSE);
+//
+//    if(index_fullscreen==0)
+//    {Setup::SetupScreen( largeur_ecran, hauteur_ecran,WINDOWED, desktop_color_depth() );}
+//    else {Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color_depth() );}
+//
+//    HWND hwnd = win_get_window();
+//    if (hwnd != NULL)
+//    	MoveWindow(hwnd, posX_mainwindow, posY_mainwindow, SCREEN_W, SCREEN_H, true);
     */
 
     Setup::SetupProgram(KEYBOARD | MOUSE);

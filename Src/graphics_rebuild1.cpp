@@ -164,13 +164,14 @@ int Boxes()
     petitchiffre.Print("F-Ctrl",980,277);
 
 //////////////AFFICHAGES CONDITIONNES//////////////////////////////////////////////
-
+//sab 18/01/2014 deb
     if(not(window_focus_id==W_MAINBOARD) && mainboard_ifNotFocus_veil)
     {
         Rgba veil( 1.0, 1.0, 1.0, 0.09 );
         Rect veilMainboard(0, 0, largeur_ecran, hauteur_ecran);
         veilMainboard.Draw(veil);
     }
+//sab 18/01/2014 fin
 
     for (int f=63; f>=0; f--)
     {
@@ -374,10 +375,12 @@ int DoMouse()
     Line( Vec2D( mouse_x+20,mouse_y+30), Vec2D( mouse_x+30,mouse_y+10),2.0).Draw( CouleurLigne );
     Line( Vec2D( mouse_x+30,mouse_y+10), Vec2D( mouse_x-1,mouse_y-1),2.0).Draw(CouleurLigne);
 
+//18/01/2015 sab deb
 //    if(Midi_Faders_Affectation_Type!=0  )
 //    {
 //        neuromoyen.Print( string_shortview_midi, mouse_x-20,mouse_y+40);
 //    };
+//18/01/2015 sab fin
 
     return(0);
 }

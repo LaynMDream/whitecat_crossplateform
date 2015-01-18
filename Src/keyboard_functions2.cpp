@@ -556,16 +556,16 @@ int key_switch_window_up()
 
     else//passage dune fenetre à l autre
     {
-        /*sab 12/07/2014 DEB
-        index_to_navigate_between_window++;
-        nbre_fenetre_actives=check_nbre_opened_windows();
-        if(index_to_navigate_between_window>=nbre_fenetre_actives+1){index_to_navigate_between_window=0;}
-        if(window_opened[index_to_navigate_between_window]>0)
-        {
-        window_bring_to_front(window_opened[index_to_navigate_between_window]);
-        }
-        else {window_bring_to_front(window_opened[0]);   }
-        */
+        /*sab 12/07/2014 DEB*/
+//        index_to_navigate_between_window++;
+//        nbre_fenetre_actives=check_nbre_opened_windows();
+//        if(index_to_navigate_between_window>=nbre_fenetre_actives+1){index_to_navigate_between_window=0;}
+//        if(window_opened[index_to_navigate_between_window]>0)
+//        {
+//        window_bring_to_front(window_opened[index_to_navigate_between_window]);
+//        }
+//        else {window_bring_to_front(window_opened[0]);   }
+
         back_window_push_to_front();
         /*sab 12/07/2014 FIN */
     }
@@ -593,14 +593,13 @@ int key_switch_window_down()
 
     else//passage dune fenetre à l autre
     {
-        /*sab 12/07/201 DEB
-        index_to_navigate_between_window--;
-        nbre_fenetre_actives=check_nbre_opened_windows();
-        if(index_to_navigate_between_window<1){index_to_navigate_between_window=nbre_fenetre_actives+1;}
-        window_bring_to_front(window_opened[index_to_navigate_between_window]);
-        */
+        /*sab 12/07/2014 DEB */
+//        index_to_navigate_between_window--;
+//        nbre_fenetre_actives=check_nbre_opened_windows();
+//        if(index_to_navigate_between_window<1){index_to_navigate_between_window=nbre_fenetre_actives+1;}
+//        window_bring_to_front(window_opened[index_to_navigate_between_window]);
         front_window_push_to_back();
-        /*sab 12/07/201 FIN*/
+        /*sab 12/07/2014 FIN*/
     }
     return(0);
 }
