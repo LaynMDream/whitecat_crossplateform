@@ -47,6 +47,13 @@ int affichage_time_format(float time_to_convert)
 //int time_insecondes=(int)(time_to_convert)%60;
 //int time_indixiemes=(int)(time_to_convert*10)%10;
     float fin_du_temps_secondes=time_to_convert-(time_inminutes*60);
+    //sab 26/01/2015 deb
+    //Affichage du temps du crossfade en cours : l'affichage du temps restant, commence souvent à moins "quelque chose".
+    if (fin_du_temps_secondes <0)
+    {
+		fin_du_temps_secondes = 0 ;
+    }
+    //sab 26/01/2015 fin
 
     sprintf(string_conversion_timeis,"%d..%.2f",time_inminutes,fin_du_temps_secondes);
 
