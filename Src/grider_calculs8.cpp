@@ -41,24 +41,30 @@ WWWWWWWW           C  WWWWWWWW   |
 *
  **/
 
-int affichage_time_format(float time_to_convert)
+//sab 26/01/2015 deb
+//Affichage du temps du crossfade en cours : l'affichage du temps restant, commence souvent à moins "quelque chose".
+//int affichage_time_format(float time_to_convert)
+//{
+//    int time_inminutes=(int)(time_to_convert/60)%60;
+////int time_insecondes=(int)(time_to_convert)%60;
+////int time_indixiemes=(int)(time_to_convert*10)%10;
+//    float fin_du_temps_secondes=time_to_convert-(time_inminutes*60);
+//
+//    sprintf(string_conversion_timeis,"%d..%.2f",time_inminutes,fin_du_temps_secondes);
+//
+//    return(0);
+//}
+int affichage_time_format(float time_in_sec)
 {
-    int time_inminutes=(int)(time_to_convert/60)%60;
-//int time_insecondes=(int)(time_to_convert)%60;
-//int time_indixiemes=(int)(time_to_convert*10)%10;
-    float fin_du_temps_secondes=time_to_convert-(time_inminutes*60);
-    //sab 26/01/2015 deb
-    //Affichage du temps du crossfade en cours : l'affichage du temps restant, commence souvent à moins "quelque chose".
-    if (fin_du_temps_secondes <0)
-    {
-		fin_du_temps_secondes = 0 ;
-    }
-    //sab 26/01/2015 fin
+	float time_in_min = time_in_sec / 60.0 ;
+	int   time_minutes  = trunc(time_in_min) ;
+    float time_secondes = time_in_sec - (time_minutes * 60.0) ;
 
-    sprintf(string_conversion_timeis,"%d..%.2f",time_inminutes,fin_du_temps_secondes);
+    sprintf(string_conversion_timeis, "%d..%.2f", time_minutes, time_secondes);
 
     return(0);
 }
+//sab 26/01/2015 fin
 
 int refresh_step_in_player(int grid_number, int num_step, int grider_player)
 {
