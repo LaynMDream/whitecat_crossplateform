@@ -446,7 +446,11 @@ int do_goback()
 
     if(index_go_back==1 && index_pause==0)
     {
-        crossfade_done_time=0;
+        //sab 27/01/2015 deb
+        //Affichage du temps du crossfade en cours : l'affichage du temps restant, commence souvent à moins "quelque chose".
+        //crossfade_done_time=0;
+        crossfade_done_time--;
+        //sab 27/01/2015 fin
         crossfade_time_delay_in=0;
         crossfade_time_delay_out=0;
 
