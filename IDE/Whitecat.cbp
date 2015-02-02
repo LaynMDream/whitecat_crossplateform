@@ -45,6 +45,7 @@
 			<Add directory="../Src" />
 			<Add directory="../Src/csv" />
 			<Add directory="../Src/hotkey" />
+			<Add directory="../Src/toolbox" />
 			<Add directory="C:/MinGW/opencv2.4.8/include" />
 			<Add directory="C:/MinGW/include/libharu" />
 			<Add directory="../whitecatlib/" />
@@ -334,6 +335,8 @@
 		<Unit filename="../Src/time_visu_3.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../Src/toolbox/whc_toolbox.cpp" />
+		<Unit filename="../Src/toolbox/whc_toolbox.h" />
 		<Unit filename="../Src/trichro_core2.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

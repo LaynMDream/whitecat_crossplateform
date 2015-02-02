@@ -12,6 +12,8 @@
 #include <whc_hk_input.h>
 #include <whc_hk_apply.h>
 
+#include <whc_toolbox.h>
+
 class whc_hotkey
 {
 	typedef void (*ptrMthd)(void);
@@ -35,12 +37,12 @@ class whc_hotkey
 		void Setuser_signature(whc_hk_input val) { m_user_signature = val; }
 
 		int collect();
-		void inputflag(bool val){m_inputIsOn = &val ; }
-		std::vector<std::string> split(const std::string &text, char sep);
-		int string_to_int(const std::string &text);
+		void inputIsOn_Flag(bool val){m_inputIsOn = &val ; }
 		int shortcutprocess(int isreadkey);
 		whc_hk_apply searchfct(whc_hk_input signature);
-		void initload(std::string fic_name);
+		void init(std::string fic_name);
+		void load(std::string fic_name);
+		void save(std::string fic_name);
 		void link_fct_ptr(int fctid, ptrMthd fctptr);
 		void link_fct_hk(int fctid, whc_hk_input signature);
 		void replace_link_fct_hk();

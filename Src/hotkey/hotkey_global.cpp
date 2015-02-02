@@ -1,4 +1,5 @@
 #include "hotkey_global.h"
+#include "whc_toolbox.h"
 
 void whc_hk_save() //Sauvegarde générale - Quick save
 {
@@ -29,10 +30,19 @@ void whc_hk_exit() //Quitter sans sauvegarde - Quit without save
 
 void whc_hk_main_init()
 {
-    hk_manager.initload("C:\\whitecat_xplatform_christoph\\whitecatbuild\\appli\\hotkey.whc") ;
-    hk_manager.inputflag(index_type);
+	std::string user_file = "C:\\whitecat_xplatform_christoph\\whitecatbuild\\appli\\hotkey_user.whc";
+	std::string init_file  = "C:\\whitecat_xplatform_christoph\\whitecatbuild\\appli\\hotkey_init.whc";
+	whc_toolbox tool;
+
+    if (tool.fileexist(user_file))
+	{
+		 hk_manager.init(user_file) ;
+	}
+	else hk_manager.init(init_file) ;
+
+    hk_manager.inputIsOn_Flag(index_type);
+
     hk_manager.link_fct_ptr(01,&whc_hk_save);
     hk_manager.link_fct_ptr(02,&whc_hk_save_and_exit);
     hk_manager.link_fct_ptr(03,&whc_hk_exit);
 }
-

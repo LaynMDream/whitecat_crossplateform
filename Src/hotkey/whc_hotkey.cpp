@@ -1,4 +1,5 @@
 #include "whc_hotkey.h"
+
 //initialistion des variables statiques communes à tous les objets de la classe
 int whc_hotkey::c_nbr = 0;
 std::vector<whc_hotkey> whc_hotkey::c_list;
@@ -135,25 +136,6 @@ whc_hk_apply whc_hotkey::searchfct(whc_hk_input signature)
     return null_fct ;
 }
 
-std::vector<std::string> whc_hotkey::split(const std::string &text, char sep)
-{
-    std::vector<std::string> tokens ;
-    int start = 0, end = 0 ;
-    while ((end = text.find(sep, start)) != std::string::npos)
-    {
-        tokens.push_back(text.substr(start, end - start)) ;
-        start = end + 1 ;
-    }
-    tokens.push_back(text.substr(start)) ;
-    return tokens ;
-}
-
-int whc_hotkey::string_to_int(const std::string &text)
-{
-    const char *tmp  = text.c_str() ;
-    return atoi(tmp) ;
-}
-
 void whc_hotkey::link_fct_ptr(int fctid, ptrMthd fctptr)
 {
     int i = c_list.size();
@@ -178,13 +160,21 @@ void whc_hotkey::link_fct_ptr(int fctid, ptrMthd fctptr)
     }
 }
 
-void whc_hotkey::initload(std::string fic_name)
+void whc_hotkey::init(std::string fic_name)
+{
+	std::vector<whc_hotkey> clear_list;
+	c_list.swap(clear_list);
+	load(fic_name);
+}
+
+void whc_hotkey::load(std::string fic_name)
 {
     std::ifstream fic_stream(fic_name.c_str(), std::ios::in);
 
     if (not(fic_stream.fail()))
     {
         std::string ligne ;
+        whc_toolbox tool;
         while(getline(fic_stream, ligne))
         {
             int tmp_id;
@@ -196,15 +186,52 @@ void whc_hotkey::initload(std::string fic_name)
             int  tmp_scancode;
             std::string tmp_wording;
 
-            std::vector<std::string> tokens = split(ligne,';');
+            std::vector<std::string> tokens = tool.split_string(ligne,';');
 
-            tmp_id               = whc_hotkey::string_to_int (tokens[0]);
+            tmp_id               = tool.string_to_int (tokens[0]);
             tmp_module           = tokens[1] ;
             tmp_description      = tokens[2] ;
-            tmp_shift            = (whc_hotkey::string_to_int (tokens[3])==1);
-            tmp_ctrl             = (whc_hotkey::string_to_int (tokens[4])==1);
-            tmp_alt              = (whc_hotkey::string_to_int (tokens[5])==1);
-            tmp_scancode         = whc_hotkey::string_to_int (tokens[6]);
+            tmp_shift            = (tool.string_to_int (tokens[3])==1);
+            tmp_ctrl             = (tool.string_to_int (tokens[4])==1);
+            tmp_alt              = (tool.string_to_int (tokens[5])==1);
+            tmp_scancode         = tool.string_to_int (tokens[6]);
+            tmp_wording          = tokens[7] ;
+
+            whc_hk_input signature( tmp_shift,  tmp_ctrl,  tmp_alt,  tmp_scancode) ;
+            whc_hk_apply fonctionality(tmp_id, tmp_module, tmp_description, nullptr) ;
+            c_list.push_back(whc_hotkey(fonctionality, signature));
+        }
+    }
+}
+
+void whc_hotkey::save(std::string fic_name)
+{
+    std::ifstream fic_stream(fic_name.c_str(), std::ios::in);
+
+    if (not(fic_stream.fail()))
+    {
+        std::string ligne ;
+        whc_toolbox tool;
+        while(getline(fic_stream, ligne))
+        {
+            int tmp_id;
+            std::string tmp_module;
+            std::string tmp_description;
+            bool tmp_shift;
+            bool tmp_ctrl;
+            bool tmp_alt;
+            int  tmp_scancode;
+            std::string tmp_wording;
+
+            std::vector<std::string> tokens = tool.split_string(ligne,';');
+
+            tmp_id               = tool.string_to_int (tokens[0]);
+            tmp_module           = tokens[1] ;
+            tmp_description      = tokens[2] ;
+            tmp_shift            = (tool.string_to_int (tokens[3])==1);
+            tmp_ctrl             = (tool.string_to_int (tokens[4])==1);
+            tmp_alt              = (tool.string_to_int (tokens[5])==1);
+            tmp_scancode         = tool.string_to_int (tokens[6]);
             tmp_wording          = tokens[7] ;
 
             whc_hk_input signature( tmp_shift,  tmp_ctrl,  tmp_alt,  tmp_scancode) ;
@@ -280,4 +307,3 @@ void whc_hotkey::user_hk_init()
     m_user_conflictfunc = null_fct ;
     //surtout pas réinit m_user_signature
 }
-

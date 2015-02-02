@@ -43,9 +43,12 @@ WWWWWWWW           C  WWWWWWWW   |
 #ifndef WHC_HOTKEY_FCT_H
 #define WHC_HOTKEY_FCT_H
 
+	// global - hotkey
     void whc_hk_save(); //Sauvegarde générale - Quick save
     void whc_hk_save_and_exit(); // Quitter avec sauvegarde - Quit and save
     void whc_hk_exit(); //Quitter sans sauvegarde - Quit without save
+    //
+    void whc_hk_main_init();
 
 #endif // WHC_HOTKEY_FCT_H
 
