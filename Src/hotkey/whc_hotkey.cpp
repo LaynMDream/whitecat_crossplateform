@@ -26,7 +26,6 @@ whc_hotkey::~whc_hotkey()
 
 int whc_hotkey::collect()
 {
-
     if ( keypressed())
     {
         int isreadkey = readkey();
@@ -40,9 +39,43 @@ int whc_hotkey::collect()
         if(not m_user_askconfirm) // except if last input is a hk to link and wait for confirmation
             m_user_signature = whc_hk_input::c_scan(tmp_scancode);
 
-        //if(not m_inputIsOn)  //language de commande actif
-        {
+		bool signature_allowed = true ;
 
+		// shortcut : pas de signature avec pavé num simple ou shift
+		// ni tab ni backspace ni enter
+		if (not(m_user_signature.ctrl() || m_user_signature.alt()))
+		{
+			switch (tmp_scancode)
+			{
+				case KEY_TAB:
+				case KEY_BACKSPACE:
+				case KEY_ENTER:
+				case KEY_ENTER_PAD:
+				case KEY_DEL_PAD: // numeric pad
+				case KEY_PLUS_PAD:
+				case KEY_MINUS_PAD:
+				case KEY_SLASH_PAD:
+				case KEY_ASTERISK:
+				case KEY_0_PAD:
+				case KEY_1_PAD:
+				case KEY_2_PAD:
+				case KEY_3_PAD:
+				case KEY_4_PAD:
+				case KEY_5_PAD:
+				case KEY_6_PAD:
+				case KEY_7_PAD:
+				case KEY_8_PAD:
+				case KEY_9_PAD:
+					signature_allowed = false ;
+					break;
+				default:
+					break;
+			}
+		}
+
+        //if(not m_inputIsOn)  //language de commande actif
+        if(signature_allowed)
+        {
             if (not(tmp_scancode == KEY_ESC)) //pas de raccourci clavier si Esc ou si input
             {
                 if((m_user_selectfunc >0) && (not m_user_askconfirm))
@@ -100,7 +133,10 @@ int whc_hotkey::shortcutprocess(int isreadkey)
     {
         void (*fctptr)(void);       /*déclaration du pointeur*/
         fctptr = fctlink.processOnHotkey();   /*Initialisation*/
-        fctptr();  /* Execution de la méthode */
+        if (fctptr!=nullptr)
+        {
+        	fctptr();  /* Execution de la méthode */
+        }
         whc_hk_input neutre ;
         m_user_signature = neutre ;
         return -1 ;
@@ -188,18 +224,21 @@ void whc_hotkey::load(std::string fic_name)
 
             std::vector<std::string> tokens = tool.split_string(ligne,';');
 
-            tmp_id               = tool.string_to_int (tokens[0]);
-            tmp_module           = tokens[1] ;
-            tmp_description      = tokens[2] ;
-            tmp_shift            = (tool.string_to_int (tokens[3])==1);
-            tmp_ctrl             = (tool.string_to_int (tokens[4])==1);
-            tmp_alt              = (tool.string_to_int (tokens[5])==1);
-            tmp_scancode         = tool.string_to_int (tokens[6]);
-            tmp_wording          = tokens[7] ;
+			if (tokens.size()==8)
+			{
+				tmp_id               = tool.string_to_int (tokens[0]);
+				tmp_module           = tokens[1] ;
+				tmp_description      = tokens[2] ;
+				tmp_shift            = (tool.string_to_int (tokens[3])==1);
+				tmp_ctrl             = (tool.string_to_int (tokens[4])==1);
+				tmp_alt              = (tool.string_to_int (tokens[5])==1);
+				tmp_scancode         = tool.string_to_int (tokens[6]);
+				tmp_wording          = tokens[7] ;
 
-            whc_hk_input signature( tmp_shift,  tmp_ctrl,  tmp_alt,  tmp_scancode) ;
-            whc_hk_apply fonctionality(tmp_id, tmp_module, tmp_description, nullptr) ;
-            c_list.push_back(whc_hotkey(fonctionality, signature));
+				whc_hk_input signature( tmp_shift,  tmp_ctrl,  tmp_alt,  tmp_scancode) ;
+				whc_hk_apply fonctionality(tmp_id, tmp_module, tmp_description, nullptr) ;
+				c_list.push_back(whc_hotkey(fonctionality, signature));
+			}
         }
         fic_stream.close();
     }
@@ -224,7 +263,7 @@ void whc_hotkey::save(std::string fic_name)
 			whc_hk_apply list_fonctionality ;
 			whc_hk_input list_signature ;
 			whc_hotkey* hotkey;
-			hotkey = &whc_hotkey::c_list[i];
+			hotkey = &whc_hotkey::c_list[k];
 			list_fonctionality = hotkey->fonctionality();
 			list_signature     = hotkey->signature();
 

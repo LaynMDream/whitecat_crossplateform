@@ -143,14 +143,14 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             break;
 
 ///////////////////////PAGE UP DOWN POUR FENETRES /////////////////////////////
-        case KEY_PGUP:
-            sprintf(string_key_id,list_keyname[0]);
-            key_switch_window_up();
-            break;
-        case KEY_PGDN:
-            sprintf(string_key_id,list_keyname[0]);
-            key_switch_window_down();
-            break;
+//        case KEY_PGUP:
+//            sprintf(string_key_id,list_keyname[0]);
+//            key_switch_window_up();
+//            break;
+//        case KEY_PGDN:
+//            sprintf(string_key_id,list_keyname[0]);
+//            key_switch_window_down();
+//            break;
 //////////////////SPECIAL KEYS ////////////////////////////////////////////////
         case  KEY_TILDE://carré
             if(window_focus_id==W_PLOT)
@@ -1139,9 +1139,9 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             break;
 
 ////////////////////MISE EN MEMOIRES DES FENETRES ET TOGGLE/////////////////////
-        case KEY_PRTSCR:
-            key_printscreen();
-            break;
+//        case KEY_PRTSCR:
+//            key_printscreen();
+//            break;
 
         default:
 
