@@ -78,13 +78,30 @@ int recall_config_page()
 
 int commandes_clavier()//la fonction sprintf tue l acces clavier
 {
-    if ( keypressed())
-    {
+//++sab+++ 31/01/2015 deb TEST
+//    if ( keypressed())
+//    {
+//        int chi = readkey();
 
-        int chi = readkey();
+	int chi = hk_manager.collect();
+	if (chi>0) // dans les cas : keypressed + pas un raccourcis clavier ou une définition
+    {
+    	if (not ((chi >> 8)==KEY_ESC))
+		{
+			if (show_test_log)
+			{
+				debugLine.data = hk_manager.user_signature().wording();
+				debugLine.data += " (scancode = ";
+				debugLine.data +=  ToString(hk_manager.user_signature().scancode()) ;
+				debugLine.data += " )";
+				debugLine.tag = " signature >";
+				debug_log_addToEventLog(debugLine);
+			}
+		}
+//++sab+++ 31/01/2015 fin TEST
+
         scan_ascii_is=(chi & 0xff);//prend pas en compte touches fonctions
         scan_allegro_key_is=(chi >> 8);//prend en compte tout le monde mais à redistribuer fr et anglais
-
 
         switch (chi >> 8)
         {
@@ -374,25 +391,25 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             break;
 
         case KEY_F12://black out
-
-            if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
-            {
-                index_ask_confirm=1;
-                index_do_quit_with_save=1;
-            }
-
-            else if (key_shifts & KB_SHIFT_FLAG   || index_false_shift==1)
-            {
-                for (int i=0; i<12; i++)
-                {
-                    specify_who_to_save_load[i]=0;
-                }
-                reset_save_load_report_string();
-                index_ask_confirm=1;
-                index_do_quit_without_save=1;
-            }
-
-            else
+//sab 01/02/2015 deb TEST
+//            if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
+//            {
+//                index_ask_confirm=1;
+//                index_do_quit_with_save=1;
+//            }
+//
+//            else if (key_shifts & KB_SHIFT_FLAG   || index_false_shift==1)
+//            {
+//                for (int i=0; i<12; i++)
+//                {
+//                    specify_who_to_save_load[i]=0;
+//                }
+//                reset_save_load_report_string();
+//                index_ask_confirm=1;
+//                index_do_quit_without_save=1;
+//            }
+//            else
+//sab 01/02/2015 fin TEST
             {
                 if(index_blind==0)
                 {
@@ -822,22 +839,30 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
             break;
 
         case KEY_S:
+//sab 01/02/2015 deb TEST
+//            if (index_type==0)
+//            {
+//                if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
+//                {
+//                    if(index_is_saving==0)
+//                    {
+//                        index_save_global_is=1;
+//                        index_do_quick_save=1;
+//                    }
+//                }
+//                else
+//                {
+//                    key_roi(1);
+//                }
+//            }
+//            else if (index_type==1)
+
             if (index_type==0)
-            {
-                if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
-                {
-                    if(index_is_saving==0)
-                    {
-                        index_save_global_is=1;
-                        index_do_quick_save=1;
-                    }
-                }
-                else
-                {
-                    key_roi(1);
-                }
-            }
-            else if (index_type==1)
+			{
+				key_roi(1);
+			}
+			 else
+//sab 01/02/2015 fin TEST
             {
                 numeric[keyboardStorage_numeric_postext]='S';
                 keyboardStorage_numeric_postext++;

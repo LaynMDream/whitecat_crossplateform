@@ -190,6 +190,10 @@ bufferSaisiesnamp=0;
 
 #include <debug_log.cpp>
 
+//sab 01/02/2015 deb TEST
+#include <hotkey_global.cpp>
+//sab 01/02/2015 fin TEST
+
 int time_doing()
 {
     if (index_play_chrono==1)
@@ -1303,6 +1307,10 @@ int main(int argc, char* argv[])
     whc_mousePointer::c_Init(whc_mousePointer::arrow_down,"gfx/arrow_down.png");
     whc_mousePointer::c_Init(whc_mousePointer::drag,"gfx/drag.png");
     /*sab 28/11/2014 fin */
+
+    //sab 31/01/2015 deb TEST
+	whc_hk_main_init() ;
+    //sab 31/01/2015 fin TEST
 
     Canvas::Fill(CouleurFond);
     Canvas::Refresh();

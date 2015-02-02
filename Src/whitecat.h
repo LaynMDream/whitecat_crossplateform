@@ -2601,6 +2601,8 @@ int test_zone_h = 0; // Voile opaque pour identifier une zone de l'écran - haut
 //sab 30/11/2014 - Commandes en lignes - FIN
 
 #include <debug_log.h>
+#include <whc_hotkey.h>
+whc_hotkey hk_manager;
 
 #endif // WHITECAT_GLOBAL_VAR_H_INCLUDED
 
