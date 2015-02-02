@@ -8,16 +8,23 @@ void whc_hk_save() //Sauvegarde générale - Quick save
         index_save_global_is=1;
         index_do_quick_save=1;
     }
+	std::string user_file = "C:\\whitecat_xplatform_christoph\\whitecatbuild\\appli\\hotkey_user.whc";
+	hk_manager.save(user_file);
+
 }
 
-void whc_hk_save_and_exit() // Quitter avec sauvegarde - Quit and save
+void whc_hk_save_and_quit() // Quitter avec sauvegarde - Quit and save
 {
     index_ask_confirm=1;
     index_do_quit_with_save=1;
     index_do_quit_without_save=0;
+
+   	std::string user_file = "C:\\whitecat_xplatform_christoph\\whitecatbuild\\appli\\hotkey_user.whc";
+	hk_manager.save(user_file);
+
 }
 
-void whc_hk_exit() //Quitter sans sauvegarde - Quit without save
+void whc_hk_quit() //Quitter sans sauvegarde - Quit without save
 {
     for (int i=0; i<12; i++)
     {
@@ -42,7 +49,7 @@ void whc_hk_main_init()
 
     hk_manager.inputIsOn_Flag(index_type);
 
-    hk_manager.link_fct_ptr(01,&whc_hk_save);
-    hk_manager.link_fct_ptr(02,&whc_hk_save_and_exit);
-    hk_manager.link_fct_ptr(03,&whc_hk_exit);
+    hk_manager.connect_fct(01,&whc_hk_save);
+    hk_manager.connect_fct(02,&whc_hk_save_and_quit);
+    hk_manager.connect_fct(03,&whc_hk_quit);
 }

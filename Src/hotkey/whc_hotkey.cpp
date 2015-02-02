@@ -48,7 +48,7 @@ int whc_hotkey::collect()
                 if((m_user_selectfunc >0) && (not m_user_askconfirm))
                 {
                     //search if user_signature is allready associate to a fonctionality
-                    whc_hk_apply fctlink = searchfct(m_user_signature);
+                    whc_hk_apply fctlink = search_fct(m_user_signature);
 
                     if (fctlink.id()==m_user_selectfunc) // this signature is allready associated to the aim fonctionnality
                     {
@@ -95,7 +95,7 @@ int whc_hotkey::collect()
 int whc_hotkey::shortcutprocess(int isreadkey)
 {
     //search if signature is known in subscription list
-    whc_hk_apply fctlink = searchfct(m_user_signature);
+    whc_hk_apply fctlink = search_fct(m_user_signature);
     if (fctlink.id()>0)
     {
         void (*fctptr)(void);       /*déclaration du pointeur*/
@@ -109,7 +109,7 @@ int whc_hotkey::shortcutprocess(int isreadkey)
         return isreadkey;
 }
 
-whc_hk_apply whc_hotkey::searchfct(whc_hk_input signature)
+whc_hk_apply whc_hotkey::search_fct(whc_hk_input signature)
 {
     int i = c_list.size();
 
@@ -136,7 +136,7 @@ whc_hk_apply whc_hotkey::searchfct(whc_hk_input signature)
     return null_fct ;
 }
 
-void whc_hotkey::link_fct_ptr(int fctid, ptrMthd fctptr)
+void whc_hotkey::connect_fct(int fctid, ptrMthd fctptr)
 {
     int i = c_list.size();
 
@@ -201,43 +201,54 @@ void whc_hotkey::load(std::string fic_name)
             whc_hk_apply fonctionality(tmp_id, tmp_module, tmp_description, nullptr) ;
             c_list.push_back(whc_hotkey(fonctionality, signature));
         }
+        fic_stream.close();
     }
 }
 
 void whc_hotkey::save(std::string fic_name)
 {
-    std::ifstream fic_stream(fic_name.c_str(), std::ios::in);
+    std::ofstream fic_stream(fic_name.c_str(), std::ios::out | std::ios::trunc);
 
     if (not(fic_stream.fail()))
     {
-        std::string ligne ;
         whc_toolbox tool;
-        while(getline(fic_stream, ligne))
-        {
-            int tmp_id;
-            std::string tmp_module;
-            std::string tmp_description;
-            bool tmp_shift;
-            bool tmp_ctrl;
-            bool tmp_alt;
-            int  tmp_scancode;
-            std::string tmp_wording;
 
-            std::vector<std::string> tokens = tool.split_string(ligne,';');
+		int i = c_list.size();
+		int j = i ;
 
-            tmp_id               = tool.string_to_int (tokens[0]);
-            tmp_module           = tokens[1] ;
-            tmp_description      = tokens[2] ;
-            tmp_shift            = (tool.string_to_int (tokens[3])==1);
-            tmp_ctrl             = (tool.string_to_int (tokens[4])==1);
-            tmp_alt              = (tool.string_to_int (tokens[5])==1);
-            tmp_scancode         = tool.string_to_int (tokens[6]);
-            tmp_wording          = tokens[7] ;
+		while (i>0)
+		{
+			int k = j-i;
+			i--;
 
-            whc_hk_input signature( tmp_shift,  tmp_ctrl,  tmp_alt,  tmp_scancode) ;
-            whc_hk_apply fonctionality(tmp_id, tmp_module, tmp_description, nullptr) ;
-            c_list.push_back(whc_hotkey(fonctionality, signature));
+			whc_hk_apply list_fonctionality ;
+			whc_hk_input list_signature ;
+			whc_hotkey* hotkey;
+			hotkey = &whc_hotkey::c_list[i];
+			list_fonctionality = hotkey->fonctionality();
+			list_signature     = hotkey->signature();
+
+			std::string ligne ;
+			ligne += tool.int_to_string(list_fonctionality.id());
+			ligne +=";" ;
+			ligne += list_fonctionality.module();
+			ligne +=";" ;
+			ligne += list_fonctionality.description();
+			ligne +=";" ;
+			ligne += tool.bool_to_string(list_signature.shift());
+			ligne +=";" ;
+			ligne += tool.bool_to_string(list_signature.ctrl());
+			ligne +=";" ;
+			ligne += tool.bool_to_string(list_signature.alt());
+			ligne +=";" ;
+			ligne += tool.int_to_string(list_signature.scancode());
+			ligne +=";" ;
+			ligne += list_signature.wording();
+			ligne +=";" ;
+
+			fic_stream << ligne << std::endl ;
         }
+        fic_stream.close();
     }
 }
 

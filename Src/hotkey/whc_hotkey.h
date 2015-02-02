@@ -39,11 +39,11 @@ class whc_hotkey
 		int collect();
 		void inputIsOn_Flag(bool val){m_inputIsOn = &val ; }
 		int shortcutprocess(int isreadkey);
-		whc_hk_apply searchfct(whc_hk_input signature);
+		whc_hk_apply search_fct(whc_hk_input signature);
 		void init(std::string fic_name);
 		void load(std::string fic_name);
 		void save(std::string fic_name);
-		void link_fct_ptr(int fctid, ptrMthd fctptr);
+		void connect_fct(int fctid, ptrMthd fctptr);
 		void link_fct_hk(int fctid, whc_hk_input signature);
 		void replace_link_fct_hk();
 		void user_hk_init();
