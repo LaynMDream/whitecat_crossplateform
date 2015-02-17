@@ -30,8 +30,9 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file video_tracking_visu.cpp
 * \brief {GUI fonctions for the tracking video}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
+
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   GUI fonctions pour la fenêtre de tracking video

@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file banger_core_8.cpp
 * \brief {Bangers fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -4200,6 +4200,18 @@ param2_is=bangers_params[banger_num][event_num][1];
      arduino_baud_rate0=param2_is;
      arduino_init(0);
      sprintf(string_event,"Arduino BaudRate %d",param2_is);
+     }
+     break;
+     case 2://on off analog input
+     if(param1_is>=0 && param1_is<64)
+     {
+         if(param2_is!=0)
+         {
+         param2_is=1;
+         sprintf(string_event,"Arduino Analog %d ON",param1_is);
+         }
+         else {sprintf(string_event,"Arduino Analog %d OFF",param1_is);}
+         ventilate_analog_data[param1_is]=param2_is;
      }
      break;
      default:

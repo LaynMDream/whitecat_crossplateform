@@ -31,20 +31,23 @@ WWWWWWWW           C  WWWWWWWW   |
 * \brief {main loop}
 * \author Christoph Guillermet
 * \version {0.8.6.3}
-* \date {09/12/2014}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
-*   Main loop avec include des libraries et des différents fichiers C++ de whitecat. Whitecat est en fait coder en C.
+*   Main loop avec include des libraries et des différents fichiers C++ de whitecat. Whitecat est en fait codé en C.
 *
 *   Main loop with include of librairies and the C++ files used in whitecat. Whitecat is in fact coded in C.
 *
  **/
 
 
+//pour whitecat solo
 #include <allegro.h>
 #include <winalleg.h>
 #include <OpenLayer.hpp>
+
+
 #include <stdio.h>
 #include <loadpng.h>
 #include <assert.h>
@@ -83,23 +86,12 @@ volatile bool calculation_on_faders_done=0;//pour snap des faders depuis Echo
 template <class T> const T& Tmax ( const T& a, const T& b ) {
   return (b<a)?a:b;     // or: return comp(b,a)?a:b; for the comp version
 }
-/* exemple
-bufferSaisiesnamp=0;
-   for(int j=0;j<48;j++)
-   {
-   bufferSaisiesnamp= Tmax (bufferSaisiesnamp,(int)bufferSaisie[j]);
-   }
-*/
-
-
-
 
 #include <hpdf.h>
 #include <MidiShare.h>
 #include <whitecat.h>
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 #include <patch_splines_2.cpp>//spline pour curves
-
 
 #include <grider_calculs8.cpp>
 
@@ -203,7 +195,9 @@ if (index_play_chrono==1){++actual_tickers_chrono;}
 ++ticks;
 actual_time++;
 alpha_blinker+=0.05;
+alpha_smooth_blinker+=0.001;
 if(alpha_blinker>1){alpha_blinker=0.2;}
+if(alpha_smooth_blinker>1){alpha_smooth_blinker=0.0;}
 return(0);
 }
 /////////////////TIMER POUR DATA ET REFRESH RATE////////////////////////////////
@@ -325,6 +319,7 @@ int do_mouse_right_click_menu()
  index_show_main_menu=toggle(index_show_main_menu);
  if( index_show_main_menu==1){add_a_window(W_MAINMENU);}
  else {substract_a_window(W_MAINMENU);}
+
  right_click_for_menu=0;
  return(0);
 }
@@ -746,7 +741,6 @@ int main_actions_on_screen()
       if(core_do_calculations[3]==1)
       {
       trichro_back_buffer(315/2,550/2,125,15);//calcul trichro ( triangle et saturation dans buffer separé)
-      do_colors();//ventilation des niveaux pickés ainsi que distrib dans faders et docks
       }
       DoMouse();
       previous_ch_selected=last_ch_selected;
@@ -758,13 +752,6 @@ int main() {
 
 load_screen_config();
 
-/*Christoph 11/04/14 Begin replace*/
-/*
-if(index_borderwindow==0)
-{Settings::SetWindowBorder(false);}
-else
-{Settings::SetWindowBorder(true);}
-*/
 Settings::SetWindowBorder(false);//plus de momde border window, car inutilisable avec les menus
 
 Setup::SetupProgram(KEYBOARD | MOUSE);
@@ -843,6 +830,8 @@ else {Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color
 
     Canvas::Fill(CouleurFond);
     Canvas::Refresh();
+
+
 
    save_load_print_to_screen("Loaded Gfx");
 
@@ -1042,6 +1031,7 @@ for(int i=0;i<4;i++)
 
 
 reset_temp_state_for_channel_macros_launch();//christoph 18/12/14 pour intialisation au démarrage de wcat des channels macros
+
 starting_wcat=0;
 
 
@@ -1081,7 +1071,16 @@ check_save_load_report_window();
 there_is_change_on_show_save_state=0;
 }
 
+
 Canvas::Refresh();
+//19/12/14 bazookat ignition
+
+
+
+
+
+
+
 if(index_do_a_screen_capture==1){do_a_screen_capture();index_do_a_screen_capture=0;}
 if(index_do_a_plot_screen_capture==1 ){do_plot_screen_capture(plot_name_of_capture);index_do_a_plot_screen_capture=0;}
 
@@ -1130,6 +1129,12 @@ Save_setup_conf();
 
 }
 destroy_bitmap(bmp_buffer_trichro);
+/*
+if(index_bazoocat_renderer_window==1)
+{
+close_bazoocat_rendering_window();
+}*/
+
 //destroy_bitmap(Draw0);
 remove_timer();
 WSACleanup ();//liberation librairie socket

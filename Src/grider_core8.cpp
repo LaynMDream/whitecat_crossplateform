@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file grider_core8.cpp
 * \brief {Core fonctions for grid players}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -484,7 +484,7 @@ int do_logical_TheGrid_divers( int xb, int yb, int num_grid_player)
  if(mouse_x>xb+60 && mouse_x<xb+60+50 && mouse_y>yb && mouse_y<yb+30 &&  mouse_released==0)
  {
 
-index_do_dock=index_affect_color_to_dock;
+  index_do_dock=index_affect_color_to_dock;
   if(num_grid_player==gridplayer_to_affect_is)
   {
   reset_index_actions();

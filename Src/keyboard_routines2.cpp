@@ -31,8 +31,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file keyboard_routines2.cpp
 * \brief {keyboard shortcut}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -169,7 +169,8 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
                             break;
                         }
                     }
-                    break;
+                if(index_do_dock==0){gridplayer_to_affect_is=-1;}
+                break;
                 case W_MOVER:
                     index_affect_to_dock_mover=index_do_dock;
                     break;

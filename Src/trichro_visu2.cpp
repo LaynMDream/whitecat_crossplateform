@@ -31,7 +31,7 @@ WWWWWWWW           C  WWWWWWWW   |
 * \brief {GUI fonctions for the color whell}
 * \author Christoph Guillermet
 * \version {0.8.6.3}
-* \date {09/12/2014}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

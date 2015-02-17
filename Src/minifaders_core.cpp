@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file minifaders_core.cpp
 * \brief {minifaders Core}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

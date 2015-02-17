@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {09/12/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.3 - 19 dec 2014"};
+char versionis[72]={"Beta 0.8.6.3 - 12 fev 2015"};
 char nickname_version[48]={"WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
@@ -539,7 +539,7 @@ int camera_modes_and_settings[8][16];//ocv_calcul_mode /levels
 float level_visu=1.0;
 int index_count_trackers=0;
 int frame_video_x, frame_video_y;
-int video_size_x=352 , video_size_y=288;
+int video_size_x=320 , video_size_y=200;
 bool camera_is_on=0;
 int load_camera_on_start=0;
 int camera_original_fps_is=15;
@@ -857,7 +857,8 @@ int crossfade_time_delay_in=0;
 int crossfade_time_delay_out=0;
 float fraction_goback_X2_in=0.0;
 float fraction_goback_X1_out=0.0;
-float alpha_blinker=0.3;
+float alpha_blinker=0.0;
+float alpha_smooth_blinker=0.0;
 float default_time_back=3.0;
 int ratio_cross_manuel[10000];
 bool index_get_back_faders_need_to_be_done=0;//pour crossfade manuel en midi
@@ -1484,6 +1485,7 @@ int previous_digital_data_from_arduino[128];
 int arduino_max_digital=54;
 int analog_data_from_arduino[64];//tableau des datas gardé tres large au cas ou grande extension
 int previous_analog_data_from_arduino[64];
+bool ventilate_analog_data[64];//pour muter demuter les entrées arduino
 int arduino_max_analog=5;
 bool digital_data_is_switch[128];//pour comportements switch
 bool snap_dig_for_switch[128];
@@ -2536,17 +2538,15 @@ float snap_echo_to_recall[24][513];
 
 //BAZOOCAT video handler
 
-bool index_bazoocat_menu_window=0;
-bool index_bazoocat_renderer_window=0;
+bool index_bazoocat_menu_window=1;
+
+
+
 
 int size_x_bazoocat_menus=800;
 int size_y_bazoocat_menus=600;
 int position_x_bazoocat_menus=100;
 int position_y_bazoocat_menus=100;
 
-int size_x_bazoocat_renderer=1280;
-int size_y_bazoocat_renderer=800;
-int position_x_bazoocat_renderer=1000;
-int position_y_bazoocat_renderer=100;
 
 bool index_click_move_bazoocat_window=0;

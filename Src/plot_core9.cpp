@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file plot_core9.cpp
 * \brief {Plot Core fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -2358,13 +2358,13 @@ mouse_released=1;
 
 if(index_adjusting_shape_x==1 && index_click_inside_relativ_xy==0)
 {
-shape_rect_size_x=(temp_shape_rect_size_x)-(((float)(mouse_y-original_posy))/10);
+//shape_rect_size_x=(temp_shape_rect_size_x)-(((float)(mouse_y-original_posy))/10);
 affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
 }
 else if
 (index_adjusting_shape_y==1  && index_click_inside_relativ_xy==0)
 {
-shape_rect_size_y=(temp_shape_rect_size_y)-(((float)(mouse_y-original_posy))/10);
+//shape_rect_size_y=(temp_shape_rect_size_y)-(((float)(mouse_y-original_posy))/10);
 affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
 }
 

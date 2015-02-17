@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file faders_visuels_26.cpp
 * \brief {GUI fonctions for the faders}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

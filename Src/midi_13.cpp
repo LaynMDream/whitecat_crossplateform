@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file midi_13.cpp
 * \brief {midi GUI}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -3484,7 +3484,11 @@ else {substract_a_window(W_BAZOOKAT);}
 rest(midi_keyboard_wait);
 }
 
-
+if(control>=1830 && control<=1830+63)//arduino analogic on/off
+{
+int d=control-1830;
+ventilate_analog_data[d]=toggle(ventilate_analog_data[d]);
+}
 
 
 return(0);

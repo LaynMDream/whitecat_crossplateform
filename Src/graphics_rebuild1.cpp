@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file graphics_rebuild1.cpp
 * \brief {GUI fonctions to redraw graphics}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

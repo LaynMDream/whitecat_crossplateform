@@ -31,7 +31,7 @@ WWWWWWWW           C  WWWWWWWW   |
 * \brief {import and export the show in ASCII}
 * \author Christoph Guillermet
 * \version {0.8.6.3}
-* \date {3/12/2014}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

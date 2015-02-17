@@ -30,8 +30,9 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file save_show_13.cpp
 * \brief {save and load fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
+
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions de sauvegarde et de rappel
@@ -271,6 +272,8 @@ const char file_arduino_an_typ[24]={"arduino_AN_typ.whc"};//
 unsigned int arduino_an_typ_size=64;//int arduino_analog_function_input[64];
 const char file_arduino_an_aff[24]={"arduino_AN_aff.whc"};//
 unsigned int arduino_an_aff_size=64;//int arduino_analog_attribution_input[64];
+const char file_arduino_an_on[24]={"arduino_AN_ON.whc"};//
+unsigned int arduino_an_on_size=64;//bool ventilate_analog_data[64];
 const char file_arduino_pwm_aff[24]={"arduino_PWM_typ.whc"};//
 unsigned int arduino_pwm_aff_size=36*2;//int arduino_pwm_function_input[36][2];//Action // Val  fader
 const char file_arduino_dig_out[24]={"arduino_PWM_typ.whc"};//
@@ -3144,6 +3147,19 @@ else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_an_aff);
 fclose(fp);
 }
  idf++;
+
+if ((fp=fopen( file_arduino_an_on, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_an_on); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_an_on);
+if (fwrite( ventilate_analog_data, sizeof(bool),arduino_an_on_size, fp) !=  arduino_an_on_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_arduino_an_on); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_an_on);
+fclose(fp);
+}
+ idf++;
+
 
 
 if ((fp=fopen( file_arduino_dig_out, "wb"))==NULL)
@@ -6305,6 +6321,18 @@ sprintf(string_save_load_report[idf],"Opening file %s", file_arduino_an_aff);
 if (fread(arduino_analog_attribution_input, sizeof(int),arduino_an_aff_size, fp) !=arduino_an_aff_size)
 { sprintf(string_save_load_report[idf],"Error Loaded %s", file_arduino_an_aff);b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_an_aff);
+ fclose(fp);
+}
+idf++;
+
+if ((fp=fopen( file_arduino_an_on, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_an_on);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s", file_arduino_an_on);
+if (fread(ventilate_analog_data, sizeof(bool),arduino_an_on_size, fp) !=arduino_an_on_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_arduino_an_on);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_an_on);
  fclose(fp);
 }
 idf++;

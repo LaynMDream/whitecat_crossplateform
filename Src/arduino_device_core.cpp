@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file arduino_device_core.cpp
 * \brief {arduino serial open close fonction}
 * \author Christoph Guillermet, Anton Langhoff
-* \version {0.8.5.2}
-* \date {19/02/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

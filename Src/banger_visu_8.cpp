@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file banger_visu_8.cpp
 * \brief {Bangers GUI fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -78,7 +78,7 @@ BangerFeedback.Draw(CouleurBlind.WithAlpha(alpha_blinker));
 }
 
 
-if(index_over_A_window==0 && mouse_x>xvis+(nb*12)+25 && mouse_x<xvis+(nb*12)+35 && mouse_y>yvis+(lb*12)+25 && mouse_y<yvis+(lb*12)+35)
+if(window_focus_id==W_BANGER &&  mouse_x>xvis+(nb*12)+25 && mouse_x<xvis+(nb*12)+35 && mouse_y>yvis+(lb*12)+25 && mouse_y<yvis+(lb*12)+35)
 {
 banger_overoll=(nb)+(lb*8);
 if(banger_overoll<127)
@@ -1045,6 +1045,9 @@ sprintf(bangers_type_affiche,"Hardware");
      break;
      case 1:
      sprintf(bangers_type_action,"Arduino Baudrate");
+     break;
+     case 2:
+     sprintf(bangers_type_action,"Analog input ON");
      break;
      }
 break;

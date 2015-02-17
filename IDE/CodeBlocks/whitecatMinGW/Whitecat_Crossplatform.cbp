@@ -9,9 +9,9 @@
 		<Build>
 			<Target title="Debug">
 				<Option platforms="Windows;" />
-				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../whitecatbuild/build/white_cat_for_mingw" />
-				<Option object_output="../../../../whitecatbuild/build/white_cat_for_mingw/obj" />
+				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_0_8_6_3" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../whitecatbuild/build/white_cat_for_mingw/" />
+				<Option object_output="../../../whitecatbuild" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -21,10 +21,14 @@
 			<Target title="Release">
 				<Option platforms="Windows;" />
 				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../whitecatbuild/build/white_cat_for_mingw" />
-				<Option object_output="../../../../whitecatbuild/build/white_cat_for_mingw/obj" />
+				<Option working_dir="../../../whitecatbuild/build/white_cat_for_mingw" />
+				<Option object_output="../../../whitecatbuild" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="0" />
+				<Linker>
+					<Add library="..\..\..\..\MinGW\lib\libglu32.a" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>

@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file procs_visuels_rebuild1.cpp
 * \brief {Redraw fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

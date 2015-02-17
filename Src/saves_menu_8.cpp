@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file saves_menu_8.cpp
 * \brief {GUI window of save and load menu}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 

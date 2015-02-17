@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file Core_6.cpp
 * \brief {Global fonctions for the core of whitecat}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -613,13 +613,15 @@ int reset_index_actions()
     index_affect_dmxin=0;
     index_affect_video_tracking_to_dock=0;
     index_affect_audio_to_dock=0;
-    gridplayer_to_affect_is=-1 ;
+
     index_do_fgroup=0;
     index_affect_to_dock_mover=0;
     index_direct_chan=0;
     multiple_direct_chan=0;
     index_affect_draw_to_dock=0;
     index_affect_echo_to_dock=0;
+
+    //gridplayer_to_affect_is=-1;
     return(0);
 }
 
@@ -749,6 +751,7 @@ int reset_indexs_confirmation()
     index_grid_tostep_or_not=0;
     from_gridstep_to=0;
     gridplayer_to_affect_is=-1;
+
     index_do_affect_grid_to_fader=0;
 
     index_do_affect_step_gridplayer_to_mem=0;
@@ -1708,7 +1711,7 @@ int constrain_banger_param(int lp)
         }
         break;
     case 15://hardware
-        if(bangers_action[index_banger_selected][lp]>1)
+        if(bangers_action[index_banger_selected][lp]>2)
         {
             bangers_action[index_banger_selected][lp]=0;
         }
@@ -4335,12 +4338,14 @@ int build_default_curve(int curve)
     curve_spline_level=(((float)index_curve_spline_level)/127)-1;
     curve_node_count=6;
     curve_curviness = ftofix(curve_spline_level);
-    curve_calc_tangents();
-    curve_draw_splines();
+
 
     curve_spline_level=(((float)index_curve_spline_level)/127)-1;
 
-//write_curve(); //fait planter si debordement de memoire
+    for (int i=0;i<255;i++)
+    {
+    curve_report[curve][i]=255-i;
+    }
 
     view_curve_after_draw();
     return(0);

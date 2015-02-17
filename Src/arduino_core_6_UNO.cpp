@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file arduino_core_6_UNO.cpp
 * \brief {arduino fonctions}
 * \author Christoph Guillermet, Anton Langhoff
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -76,6 +76,9 @@ int temp_ardniveauX2=0;
 
 for(int p=0;p<arduino_max_analog;p++)
 {
+if(ventilate_analog_data[p]==1)//activation de la reception
+{
+
 if(analog_data_from_arduino[p]!=previous_analog_data_from_arduino[p])
 {
 switch(arduino_analog_function_input[p])
@@ -233,6 +236,7 @@ break;
 
 }
 previous_analog_data_from_arduino[p]=analog_data_from_arduino[p];
+}
 //mise en boite des datas
 
 }
