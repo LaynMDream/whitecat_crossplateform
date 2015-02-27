@@ -289,6 +289,7 @@ mouse_released=1;
 else
 {
 scroll_channelspace=mouse_y-ScrollY;
+index_moving_channel_scroller=1;
 }
 }
 return(0);

@@ -940,6 +940,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  sprintf(string_Last_Order,">>On Master %d GIVED A NAME FOR DOCK %d ", cmptfader+1,dd);
  mouse_released=1;
  }
+
  //store normal
  else if(index_do_dock==1 && index_direct_chan==0   && index_affect_chaser_to_dock==0  && index_affect_time==0 && index_affect_color_to_dock==0 && index_do_affect_net_to_dock==0
  && index_affect_dmxin==0 && index_affect_video_tracking_to_dock==0 && index_affect_audio_to_dock==0 && gridplayer_to_affect_is==-1

@@ -4447,7 +4447,7 @@ if(param1_is>=0 && param1_is<=6)
       sprintf(string_event,"Draw Pressure %d on Matrix %d",param2_is, param1_is+1);
      break;
      case 4://"Set Angle");
-     draw_tilt_to_do[param1_is]=(float)(constrain_data_to_midi_range(param2_is))/127;
+     draw_damper_decay_factor[param1_is]=(float)(constrain_data_to_midi_range(param2_is))/127;
      sprintf(string_event,"Draw Angle %d on Matrix %d",param2_is, param1_is+1);
      break;
      case 5://"Set Ghost");

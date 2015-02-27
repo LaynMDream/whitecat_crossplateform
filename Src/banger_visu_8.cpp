@@ -1271,7 +1271,7 @@ case 17:
      sprintf(bangers_type_action,"Set Pressure");
      break;
      case 4:
-     sprintf(bangers_type_action,"Set Angle");
+     sprintf(bangers_type_action,"Set Damper");
      break;
      case 5:
      sprintf(bangers_type_action,"Set Ghost");

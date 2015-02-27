@@ -970,7 +970,7 @@ for(int i=0;i<6;i++)
 {
 fprintf(fpp,"#arguments Preset %d:MODE (0 to 3) / LEVEL (float) / TILT (float)/ SIZE (float)/ GHOST (float) / BRUSH TYPE (int) /\n",i+1);
 fprintf(fpp,"#arguments 2ndLine :GPL NUM ( 1 to 4 ) / Offset ( 1 to 513 ) / position point / col / row /\n");
-fprintf(fpp, "M %d / %f / %f / %f / %d /\n",draw_mode[i],draw_level_to_do[i],draw_tilt_to_do[i],draw_ghost_to_do[i],draw_brush_type[i]);
+fprintf(fpp, "M %d / %f / %f / %f / %d /\n",draw_mode[i],draw_level_to_do[i],draw_damper_decay_factor[i],draw_ghost_to_do[i],draw_brush_type[i]);
 fprintf(fpp, "G %d / %d / %d / %d / %d /\n",draw_get_gpl[i],draw_offset_gpl[i], index_case[i],draw_centre_x[i], draw_centre_y[i]);
 }
 fclose(fpp);
@@ -1012,7 +1012,7 @@ int load_draw_preset_config()
    	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}
 
-    fscanf( cfg_file , "M %d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_tilt_to_do[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
+    fscanf( cfg_file , "M %d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_damper_decay_factor[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
 
     fscanf( cfg_file , "G %d / %d / %d / %d / %d /\n" ,&draw_get_gpl[i],&draw_offset_gpl[i], &index_case[i], &draw_centre_x[i], &draw_centre_y[i]);
 
@@ -1021,7 +1021,7 @@ int load_draw_preset_config()
     draw_offset_gpl[i]=constrain_int_data_to_this_range(draw_offset_gpl[i],1,512);
 
     if(draw_level_to_do[i]>1.0){draw_level_to_do[i]=1.0;}
-    if(draw_tilt_to_do[i]>1.0){draw_tilt_to_do[i]=1.0;}
+    if(draw_damper_decay_factor[i]>1.0){draw_damper_decay_factor[i]=1.0;}
     if(draw_ghost_to_do[i]>1.0){draw_ghost_to_do[i]=1.0;}
 
     }

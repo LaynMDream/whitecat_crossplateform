@@ -3180,26 +3180,10 @@ if(control==1653)//pressure
 {
 draw_level_to_do[draw_preset_selected]=((float)(midi_levels[control])/127);
 }
-if(control==1654)//rotate
+if(control==1654)//damper decay factor
 {
-previous_draw_tilt_to_do[draw_preset_selected]=draw_tilt_to_do[draw_preset_selected];
-draw_tilt_to_do[draw_preset_selected]=((float)(midi_levels[control])/127);
-if(midi_levels[control]==0)
-{
-draw_tilt_to_do[draw_preset_selected]=0.0;
-}
-else if(midi_levels[control]==32)
-{
-draw_tilt_to_do[draw_preset_selected]=0.25;
-}
-else if(midi_levels[control]==64)
-{
-draw_tilt_to_do[draw_preset_selected]=0.5;
-}
-else if(midi_levels[control]==92)
-{
-draw_tilt_to_do[draw_preset_selected]=0.75;
-}
+previous_draw_damper_decay_factor[draw_preset_selected]=draw_damper_decay_factor[draw_preset_selected];
+draw_damper_decay_factor[draw_preset_selected]=((float)(midi_levels[control])/127);
 }
 
 if(control==1655)//ghost

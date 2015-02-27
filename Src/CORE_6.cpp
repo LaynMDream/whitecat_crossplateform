@@ -550,7 +550,7 @@ int clear_draw_preset(int p)
     draw_preset_parameters[p][1]=4;
     recalculate_draw_sizes(p);
     draw_level_to_do[p]=0.1;
-    draw_tilt_to_do[p]=0.1;
+    draw_damper_decay_factor[p]=0.1;
     draw_ghost_to_do[p]=0.01;
 
     draw_mode[p]=0;

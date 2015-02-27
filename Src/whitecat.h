@@ -45,7 +45,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.3 - 12 fev 2015"};
+char versionis[72]={"Beta 0.8.6.3 - 27 fev 2015"};
 char nickname_version[48]={"WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
@@ -514,7 +514,7 @@ int numero_de_dock_goto_spline=1;
 ////////////////////////VIDEO //////////////////////////////////////////////////
 double image_recording_size;
 double image_recorded_size;
-int fps_video_rate=25;
+int fps_video_rate=30;
 int default_fps_video_rate=12;
 int recup_val_pix_video=0;
 bool ocvfilter_is_on=0;//acces reglages images oCV
@@ -535,6 +535,12 @@ double pixels_changed=0;
 double old_pixels_changed=0;
 double nbre_pixels_changed=0;
 float ratio_pixels_changed=0.0;
+
+int camera_size_settings_is=0;// nouveau système selection de taille image
+int camera_size_array[2][2]; // x y size à définir 320x240 640x480
+int camera_fps_settings_is=0;// nouveau systeme selection fps en index
+bool manipulating_camera=0;//pour éviter de planter lectrue ecriture de données
+
 int camera_modes_and_settings[8][16];//ocv_calcul_mode /levels
 float level_visu=1.0;
 int index_count_trackers=0;
@@ -567,10 +573,7 @@ char string_tracker_edited_dat[48];
 //6 tracking docks // 12 espaces de tracking par tracking dock//
 int tracking_dock_selected=0;
 bool tracking_spaces_on_off[6][12];//dock selected / tracker
-/////////////////////VIDEO RATE TIMER////////////////////
-int last_ticker_video=0;
-volatile int ticks_for_video=0;
-int ticker_video_rate = BPS_TO_TIMER(fps_video_rate);
+
 ////////////////////VIDEO AVI///////////////////////////////////////////////////
 char list_my_video[25][16];//24 videos
 char annote_my_video[25][64];//24 videos
@@ -582,7 +585,7 @@ int XChannels=-20, YChannels=70;
 int ChScrollX=580, ChScrollY=50; //scroller ascenceur
 float Ch_Scroll_Factor=12.0;
 int last_scroll_mouse_for_chan=0;
-
+bool index_moving_channel_scroller=0;
 char string_last_ch[36];
 
 ///////////////DMX ENTTEC PRO//////////////////////////////////////////////////
@@ -714,7 +717,7 @@ short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
 MidiName AppliName = "white cat";
 
-char	  	TblLibEv[256][20];
+char TblLibEv[256][20];
 char my_midi_string[64];
 char my_midi_original_string[64];
 char my_midi_out_string[128];
@@ -2457,7 +2460,7 @@ int previous_draw_preset_selected=-1;//icat
 int draw_brush_type[6]; //point / GPL
 int draw_mode[6];//0= draw 1= erase 2= solo 3=ghost
 float draw_level_to_do[6];
-float draw_tilt_to_do[6];
+float draw_damper_decay_factor[6];
 float draw_ghost_to_do[6];
 
 bool draw_point_is_traced[6];//pour curseur maintenu ipad ou souris et routines de up down etc
@@ -2465,7 +2468,7 @@ bool draw_point_is_traced[6];//pour curseur maintenu ipad ou souris et routines 
 bool previous_draw_brush_type[6];
 int previous_draw_mode[6];
 float previous_draw_level_to_do[6];
-float previous_draw_tilt_to_do[6];
+float previous_draw_damper_decay_factor[6];
 float previous_draw_ghost_to_do[6];
 
 int draw_centre_x[6];
@@ -2487,8 +2490,10 @@ volatile bool merging_gpl_in_draw=0;
 int draw_get_gpl[6];
 int draw_offset_gpl[6];
 
-
-
+//rajout version fevrier 2015 Variables de calculs damper decay
+float damper_target_val=0.0;
+float damper_val=0.0;
+float damper_vel=0.0;
 
 ////ECHO
 bool index_show_echo_window=0;
@@ -2550,3 +2555,7 @@ int position_y_bazoocat_menus=100;
 
 
 bool index_click_move_bazoocat_window=0;
+
+
+
+float une_valeur_de_debug=0.0;

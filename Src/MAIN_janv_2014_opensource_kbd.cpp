@@ -93,6 +93,8 @@ template <class T> const T& Tmax ( const T& a, const T& b ) {
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 #include <patch_splines_2.cpp>//spline pour curves
 
+
+
 #include <grider_calculs8.cpp>
 
 
@@ -189,6 +191,7 @@ template <class T> const T& Tmax ( const T& a, const T& b ) {
 #include <arduino_6_UNO.cpp>
 
 
+
 int time_doing()
 {
 if (index_play_chrono==1){++actual_tickers_chrono;}
@@ -239,7 +242,8 @@ switch (i)
        //trichro_back_buffer(315/2,550/2,125,15);//calcul trichro ( triangle et saturation dans buffer separé)
        break;//obligé dans main loop
        case 4:
-       ventilation_video_trackers();
+
+        if(manipulating_camera==0)       ventilation_video_trackers();
        break;
        case 5:
        do_chaser();
@@ -258,7 +262,6 @@ switch (i)
 }
 }
 }
-
 
 
 for(int pr=0;pr<6;pr++)
@@ -356,6 +359,7 @@ void my_callback(int flags) {
         editing_plan_data_type=0; editing_plot_sizey=0; editing_plot_sizex=0;  moving_size_relativ_x=0; moving_size_relativ_y=0;
         plot_editing_color_line=0; plot_editing_color_background=0; index_adjusting_shape_x=0;index_adjusting_shape_y=0;
         handle_selected_for_line_editing=0;  editing_shape_line_number=0;
+        index_moving_channel_scroller=0;
         if(dragging_draw==1)
         {draw_point_is_traced[draw_preset_selected]=0;}
         dragging_draw=0; dragging_channel_in_echo=0;
@@ -1063,7 +1067,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%d / %d ", ratio_X1X2_together,index_go);
+sprintf(string_debug,"%.2f", une_valeur_de_debug);
 
 if(there_is_change_on_show_save_state==1)
 {
@@ -1129,13 +1133,7 @@ Save_setup_conf();
 
 }
 destroy_bitmap(bmp_buffer_trichro);
-/*
-if(index_bazoocat_renderer_window==1)
-{
-close_bazoocat_rendering_window();
-}*/
 
-//destroy_bitmap(Draw0);
 remove_timer();
 WSACleanup ();//liberation librairie socket
 return 0;

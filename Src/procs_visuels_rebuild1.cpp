@@ -80,7 +80,7 @@ switch(window_opened[i])
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_TRACKINGVIDEO:
-        if( mouse_x>= videoX && mouse_x<= videoX+video_size_x+35 && mouse_y>=videoY  && mouse_y<= videoY+video_size_y+500)
+        if( mouse_x>= videoX && mouse_x<= videoX+frame_video_x+35 && mouse_y>=videoY  && mouse_y<= videoY+frame_video_y+460)
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_ARTPOLLREPLY:
