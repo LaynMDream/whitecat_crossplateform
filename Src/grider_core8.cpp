@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file grider_core8.cpp
 * \brief {Core fonctions for grid players}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -119,38 +119,41 @@ if( mouse_released==0)
                       }
  else if (numeric_postext>0  && index_do_dock==1 && index_enable_edit_Grider==1)//charge mem
  {
+  int offset=grider_begin_channel_is-1;
   int mem_to_affect_to_grid=0;
   mem_to_affect_to_grid=int(atof(numeric)*10);
+
   if(MemoiresExistantes[mem_to_affect_to_grid]==1)
   {
-    for(int i=1;i<513;i++)
+   for(int i=offset;i<513;i++)////A REVOIR COMME SUR EN DESSOUS
    {
-   if(i+grider_begin_channel_is+1<513)
+   if(i+1<513)
    {
-   grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i+1]=Memoires[mem_to_affect_to_grid][i+grider_begin_channel_is+1];
+   grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i-offset-1]=Memoires[mem_to_affect_to_grid][i];
    }
    }
    reset_numeric_entry();
    index_do_dock=0;
   }
  }
- else if (index_do_dock==1 && index_enable_edit_Grider==1)//charge circuits
+ else if (index_do_dock==1 && numeric_postext==0 && index_enable_edit_Grider==1)//charge circuits
  {
+ int ofset=grider_begin_channel_is-1;
  if(index_affect_time==0)
  {
  switch(index_blind)
  {
  case 0:
-  for(int i=1;i<513;i++)
+  for(int i=ofset;i<513;i++)//OK FEVRIER 2015
  {
-  grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i-1]=bufferSaisie[i];
+  grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i-1-ofset]=bufferSaisie[i];
   bufferSaisie[i]=0;
  }
  break;
   case 1:
   for(int i=1;i<513;i++)
  {
-  grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i-1]=bufferBlind[i];
+  grid_levels[index_grider_selected[num_grid_player]][index_grider_step_is[num_grid_player]][i-1-ofset]=bufferBlind[i];
   bufferBlind[i]=0;
  }
  break;
@@ -484,7 +487,7 @@ int do_logical_TheGrid_divers( int xb, int yb, int num_grid_player)
  if(mouse_x>xb+60 && mouse_x<xb+60+50 && mouse_y>yb && mouse_y<yb+30 &&  mouse_released==0)
  {
 
-index_do_dock=index_affect_color_to_dock;
+  index_do_dock=index_affect_color_to_dock;
   if(num_grid_player==gridplayer_to_affect_is)
   {
   reset_index_actions();

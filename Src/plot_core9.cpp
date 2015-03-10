@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file plot_core9.cpp
 * \brief {Plot Core fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -270,11 +270,13 @@ int scan_planfolder()//plot
     {
             while(!al_findnext(&f))
             {
+            //christoph 19/12/14
+            int f_name_len = strlen(f.name);
             isSomeone=true; // we've found a directory!
             bool index_check_is_supported=0;
-            for(unsigned int a=0;a<strlen(f.name);a++)
+            for(unsigned int a=0;a<f_name_len;a++)
            {
-           if( f.name[a]=='.')
+           if( f.name[a]=='.' && a<=f_name_len-3)
            {
                 if(
                 (f.name[a+1]=='j' &&  f.name[a+2]=='p' &&  f.name[a+3]=='g')
@@ -1008,12 +1010,7 @@ if( symbol_is_selected[calc][i]==1)
  pos_symbol[calc][new_position][0]=pos_symbol[calc][i][0]+10;
  pos_symbol[calc][new_position][1]=pos_symbol[calc][i][1]+10;
  symbol_channel_is[calc][new_position]=symbol_channel_is[calc][i];
- //dub des links
- if(symbol_is_linked_to[calc][i]!=0)
- {
-//sab 02/03/2014 unused var  difference=new_position-i;
- symbol_is_linked_to[calc][new_position]=symbol_is_linked_to[calc][new_position];
- }
+
  for(int opt=0;opt<5;opt++)
  {
  gelat[calc][new_position][opt]=gelat[calc][i][opt];
@@ -2361,13 +2358,13 @@ mouse_released=1;
 
 if(index_adjusting_shape_x==1 && index_click_inside_relativ_xy==0)
 {
-shape_rect_size_x=(temp_shape_rect_size_x)-(((float)(mouse_y-original_posy))/10);
+//shape_rect_size_x=(temp_shape_rect_size_x)-(((float)(mouse_y-original_posy))/10);
 affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
 }
 else if
 (index_adjusting_shape_y==1  && index_click_inside_relativ_xy==0)
 {
-shape_rect_size_y=(temp_shape_rect_size_y)-(((float)(mouse_y-original_posy))/10);
+//shape_rect_size_y=(temp_shape_rect_size_y)-(((float)(mouse_y-original_posy))/10);
 affect_size_to_rect(shape_rect_size_x,shape_rect_size_y);
 }
 
@@ -2413,7 +2410,7 @@ store_relativ_xy_position_of_shape();
 
 //alpha shape
 
-if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 && index_click_inside_relativ_xy==0 )
+if(index_click_inside_relativ_xy==0 && mouse_x>plotx-5 && mouse_x<plotx+10+100 && mouse_y>ploty+380 && mouse_y<ploty+380+10 && index_adjusting_shape_x==0 && index_adjusting_shape_y==0 )
 {
 general_alpha_for_shape=((float)(mouse_x-plotx))/100;
 if(general_alpha_for_shape<0){general_alpha_for_shape=0;}
@@ -2887,7 +2884,7 @@ for(int c=0;c<3;c++)
 for(int l=0;l<2;l++)
 {
 //MySymbAction.MoveTo(Vec2D(plotx+5+(c*65),ploty+70+(l*20)));
-if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0 && index_click_inside_relativ_xy==0
+if(index_edit_light_plot==1 && index_click_inside_relativ_xy==0
 && mouse_x>plotx+5+(c*65) && mouse_x<plotx+5+(c*65)+60 && mouse_y>ploty+60+(l*20) && mouse_y<ploty+60+(l*20)+18
 && mouse_button==1 && mouse_released==0)
 {

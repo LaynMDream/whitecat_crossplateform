@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file Draw3.cpp
 * \brief {fonctions for the draw module}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -64,19 +64,30 @@ float value_grid;
 int coord=0;
 
 int rate=BPS_RATE/10;
-// draw_level_to_do[pr]/BPS_RATE car dans la boucle data
+
+
+
 
 if(draw_brush_type[pr]==0)//Point
           {
+          //préparattion calculs damper decay
+          damper_target_val=draw_preset_levels[pr][coord]+(draw_level_to_do[pr]/rate);
+          if(damper_target_val>1.0){damper_target_val=1.0;}
+          else if(damper_target_val<0.0){damper_target_val=0.0;}
+          damper_val=draw_preset_levels[pr][coord];
+          damper_vel= (damper_target_val-damper_val)* (1.0-draw_damper_decay_factor[pr]);
+
           coord=index_case[pr];
            switch(draw_mode[pr])
            {
            case 0://draw
-           draw_preset_levels[pr][coord]+=draw_level_to_do[pr]/rate ;
+           if(draw_damper_decay_factor[pr]==0.0){draw_preset_levels[pr][coord]+=draw_level_to_do[pr]/rate;}
+           else{draw_preset_levels[pr][coord]+=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);}
            if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
            break;
            case 1://erase
-           draw_preset_levels[pr][coord]-=draw_level_to_do[pr]/rate ;
+           if(draw_damper_decay_factor[pr]==0.0){draw_preset_levels[pr][coord]-=draw_level_to_do[pr]/rate;}
+           else {draw_preset_levels[pr][coord]-=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);}
            if(draw_preset_levels[pr][coord]<0.0){draw_preset_levels[pr][coord]=0.0;}
            break;
            case 2://solo
@@ -84,19 +95,35 @@ if(draw_brush_type[pr]==0)//Point
            {
            if(i!=coord){draw_preset_levels[pr][i]=0.0;  }
            }
-           draw_preset_levels[pr][coord]+=draw_level_to_do[pr]/rate ;
+           if(draw_damper_decay_factor[pr]==0.0){draw_preset_levels[pr][coord]+=draw_level_to_do[pr]/rate;}
+           else {draw_preset_levels[pr][coord]+=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);}
            if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
            break;
            case 3://ghost
+           if(draw_damper_decay_factor[pr]==0.0)
+           {
            for(int i=0;i<(draw_preset_parameters[pr][0]*draw_preset_parameters[pr][1]);i++)
            {
            if(i!=coord && draw_preset_levels[pr][i]>0.0)
            {
-           draw_preset_levels[pr][i]-=draw_ghost_to_do[pr]/(rate);
+           draw_preset_levels[pr][i]-=(draw_ghost_to_do[pr]/(rate))/10;
            if(draw_preset_levels[pr][i]<0.0){draw_preset_levels[pr][i]=0.0;}
            }
            }
            draw_preset_levels[pr][coord]+=draw_level_to_do[pr]/rate ;
+           }
+           else //decay
+           {
+           for(int i=0;i<(draw_preset_parameters[pr][0]*draw_preset_parameters[pr][1]);i++)
+           {
+           if(i!=coord && draw_preset_levels[pr][i]>0.0)
+           {
+           draw_preset_levels[pr][i]-=(draw_ghost_to_do[pr]/(rate))/10;
+           if(draw_preset_levels[pr][i]<0.0){draw_preset_levels[pr][i]=0.0;}
+           }
+           }
+           draw_preset_levels[pr][coord]+=(damper_vel*0.1)*(1.0-draw_damper_decay_factor[pr]);
+           }
            if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
           break;
           default:
@@ -117,36 +144,84 @@ if(draw_brush_type[pr]==2)//mode solo, reset
 
 for(int c=-draw_preset_parameters[pr][0]/2;c<=(draw_preset_parameters[pr][0]/2) ;c++)
  {
-   for(int l=-draw_preset_parameters[pr][1]/2;l<grider_nb_row;l++)
+     //for(int l=-draw_preset_parameters[pr][1]/2;l<grider_nb_row/2;l++) //christoph 21/02/15
+   for(int l=-draw_preset_parameters[pr][1]/2;l<=grider_nb_row/2;l++)
     {
-
           coord=index_case[pr]+c+(l*draw_preset_parameters[pr][0]);
           //restriction au tableau pour éviter les débordements du motif
           if( coord>=0 && coord<=(draw_preset_parameters[pr][1]*draw_preset_parameters[pr][0]))
           {
 
           if (coord%draw_preset_parameters[pr][0]>=draw_centre_x[pr]-(draw_preset_parameters[pr][0]/2)
-          && coord%draw_preset_parameters[pr][0]<=draw_centre_x[pr]+(draw_preset_parameters[pr][0]/2)
-         // && coord/draw_preset_parameters[pr][0]>=draw_centre_y[pr]-(draw_preset_parameters[pr][1]/2)
-         // && coord/draw_preset_parameters[pr][0]<=draw_centre_y[pr]+(draw_preset_parameters[pr][1]/2)
-         )
+          && coord%draw_preset_parameters[pr][0]<=draw_centre_x[pr]+(draw_preset_parameters[pr][0]/2) )
           {
           value_grid=((float)(buffer_gridder[draw_get_gpl[pr]-1][draw_offset_gpl[pr]-1 + c+(l*grider_nb_col)])/255 )*draw_level_to_do[pr];
+
+//préparattion calculs damper decay
+          damper_target_val=draw_preset_levels[pr][coord]+value_grid;
+          if(damper_target_val>1.0){damper_target_val=1.0;}
+          else if(damper_target_val<0.0){damper_target_val=0.0;}
+          damper_val=draw_preset_levels[pr][coord];
+          damper_vel= (damper_target_val-damper_val)* (1.0-draw_damper_decay_factor[pr]);
 
           switch(draw_mode[pr])
           {
           case 0://draw
-          draw_preset_levels[pr][coord]+= value_grid;
+          if(draw_damper_decay_factor[pr]==0.0){draw_preset_levels[pr][coord]+=value_grid;}
+          else{draw_preset_levels[pr][coord]+=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);}
           if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
           break;
           case 1://erase
-          draw_preset_levels[pr][coord]-= value_grid;
+          if(draw_damper_decay_factor[pr]==0.0){draw_preset_levels[pr][coord]-=value_grid;}
+           else {draw_preset_levels[pr][coord]-=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);}
           if(draw_preset_levels[pr][coord]<0.0){draw_preset_levels[pr][coord]=0.0;}
           break;
           case 2://solo
-          draw_preset_levels[pr][coord]= value_grid;
+          //faire reset de la grille draw SOUCI
+
+          if(draw_damper_decay_factor[pr]==0.0)
+          {
+          if(value_grid>0.0){ draw_preset_levels[pr][coord]+=value_grid;}
+          else {draw_preset_levels[pr][coord]=0;}
+          }
+          else
+          {
+          if(value_grid>0.0){draw_preset_levels[pr][coord]+=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);}
+          else {draw_preset_levels[pr][coord]=0;}
+          }
+          if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
           break;
           case 3://ghost
+          /* //previous algo
+          if(draw_damper_decay_factor[pr]==0.0)
+           {
+           for(int i=0;i<(draw_preset_parameters[pr][0]*draw_preset_parameters[pr][1]);i++)
+           {
+           if(i!=coord && draw_preset_levels[pr][i]>0.0)
+           {
+           draw_preset_levels[pr][i]-=(draw_ghost_to_do[pr]/(rate))/10;
+           if(draw_preset_levels[pr][i]<0.0){draw_preset_levels[pr][i]=0.0;}
+           }
+           }
+           draw_preset_levels[pr][coord]+=draw_level_to_do[pr]/rate ;
+           }
+           else //decay
+           {
+           for(int i=0;i<(draw_preset_parameters[pr][0]*draw_preset_parameters[pr][1]);i++)
+           {
+           if(i!=coord && draw_preset_levels[pr][i]>0.0)
+           {
+           draw_preset_levels[pr][i]-=(draw_ghost_to_do[pr]/(rate))/10;
+           if(draw_preset_levels[pr][i]<0.0){draw_preset_levels[pr][i]=0.0;}
+           }
+           }
+           draw_preset_levels[pr][coord]+=(damper_vel*0.1)*(1.0-draw_damper_decay_factor[pr]);
+           }
+           if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
+          */
+          //christoph 21/02/15
+          if(draw_damper_decay_factor[pr]==0.0)
+          {
           if(value_grid!=0.0)//is a pattern
           {
           draw_preset_levels[pr][coord]+=value_grid;
@@ -154,9 +229,25 @@ for(int c=-draw_preset_parameters[pr][0]/2;c<=(draw_preset_parameters[pr][0]/2) 
           }
           else
           {
-          draw_preset_levels[pr][coord]-=draw_ghost_to_do[pr]/(rate);
-          if(draw_preset_levels[pr][coord]<0.0){draw_preset_levels[pr][coord]=0.0;
+          draw_preset_levels[pr][coord]-=(draw_ghost_to_do[pr]/(rate))/10;
+          if(draw_preset_levels[pr][coord]<0.0){draw_preset_levels[pr][coord]=0.0;}
           }
+          }
+          else //decay
+          {
+          if(value_grid!=0.0)//is a pattern
+          {
+          draw_preset_levels[pr][coord]+=(damper_vel*0.1)* (1.0-draw_damper_decay_factor[pr]);
+          if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
+          }
+          else
+          {
+          draw_preset_levels[pr][coord]-=(draw_ghost_to_do[pr]/(rate))/10;
+          if(draw_preset_levels[pr][coord]<0.0){draw_preset_levels[pr][coord]=0.0;}
+          }
+          }
+          if(draw_preset_levels[pr][coord]>1.0){draw_preset_levels[pr][coord]=1.0;}
+          if(draw_preset_levels[pr][coord]<0.0){draw_preset_levels[pr][coord]=0.0;}
           break;
           default:
           break;
@@ -164,16 +255,17 @@ for(int c=-draw_preset_parameters[pr][0]/2;c<=(draw_preset_parameters[pr][0]/2) 
 
           }
 
+          }
+          }
+          }
 
-          }
-          }
-          }
-          }
 
 
 }
 draw_point_is_traced[pr]=0;//pour ipad reset de l'action
 }
+
+
 merging_gpl_in_draw=0;
 return(0);
 }
@@ -344,17 +436,17 @@ BMidiOutPressure.Draw(CouleurBlind);
 BMidiOutPressure.DrawOutline(CouleurGrisMoyen);
 
 
-petitchiffre.Print("Brush Angle",xw+105,yw+78);
-Rect FrameLevelTilt(Vec2D(xw+180,yw+70),Vec2D(127,10));
-Rect LevelTilt(Vec2D(xw+180,yw+70),Vec2D(127*draw_tilt_to_do[draw_preset_selected],10));
-LevelTilt.Draw(CouleurFader);
-FrameLevelTilt.DrawOutline(CouleurLigne.WithAlpha(0.5));
-minichiffrerouge.Print(ol::ToString((int)( draw_tilt_to_do[draw_preset_selected]*127)),xw+312,yw+78);
-petitchiffre.Print(ol::ToString( draw_tilt_to_do[draw_preset_selected]),xw+330,yw+84);
+petitchiffre.Print("DampDecay",xw+105,yw+78);
+Rect FrameDamperDec(Vec2D(xw+180,yw+70),Vec2D(127,10));
+Rect DamperDec(Vec2D(xw+180,yw+70),Vec2D(127*draw_damper_decay_factor[draw_preset_selected],10));
+DamperDec.Draw(CouleurFader);
+FrameDamperDec.DrawOutline(CouleurLigne.WithAlpha(0.5));
+minichiffrerouge.Print(ol::ToString((int)( draw_damper_decay_factor[draw_preset_selected]*127)),xw+312,yw+78);
+petitchiffre.Print(ol::ToString( draw_damper_decay_factor[draw_preset_selected]),xw+330,yw+84);
 
 if(window_focus_id==W_DRAW && Midi_Faders_Affectation_Type!=0 && mouse_x>xw+180 && mouse_x<xw+307 && mouse_y>yw+70 && mouse_y<yw+80)//config midi
 {
-FrameLevelTilt.DrawOutline(CouleurBlind);
+FrameDamperDec.DrawOutline(CouleurBlind);
 }
 
 Circle BMidiOutTilt(xw+316,yw+87, 5);
@@ -653,7 +745,7 @@ float po=constrain_data_to_midi_range(mouse_x-(xw+175));
  draw_level_to_do[draw_preset_selected]=po/127;
  break;
  case 1:
- draw_tilt_to_do[draw_preset_selected]=po/127;
+ draw_damper_decay_factor[draw_preset_selected]=po/127;
  break;
  case 2:
  draw_ghost_to_do[draw_preset_selected]=po/127;

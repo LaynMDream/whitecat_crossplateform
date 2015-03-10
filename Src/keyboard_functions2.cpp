@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file keyboard_functions2.cpp
 * \brief {Core fonctions for keyboard entry}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -1270,10 +1270,10 @@ int key_time_in_out()
             //IN OUT SEL
              if(numeric_postext==0)
            {
-           if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )
-           {index_type_of_time_to_affect[0]=1; index_type_of_time_to_affect[2]=1; }
-            else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[0]==1 )
-            {index_type_of_time_to_affect[0]=0; index_type_of_time_to_affect[2]=0; }
+           if(index_type_of_time_to_affect[0]==0 || index_type_of_time_to_affect[2]==0 )//Delay selection
+           {index_type_of_time_to_affect[0]=1; index_type_of_time_to_affect[2]=1; }//delay in et out sélectionnés
+            else if(index_type_of_time_to_affect[0]==1 || index_type_of_time_to_affect[2]==1 )//Delays déselection 18/12/14 christoph
+            {index_type_of_time_to_affect[0]=0; index_type_of_time_to_affect[2]=0; }//0=DIN 1=IN 2=DOUT 3=OUT
             }
             else//entree directe pour le preset
             {

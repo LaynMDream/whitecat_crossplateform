@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file video_tracking_core.cpp
 * \brief {Core fonctions for the tracking video}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -42,9 +42,10 @@ WWWWWWWW           C  WWWWWWWW   |
 **/
 
 #include "opencv2/opencv.hpp"
-#include "opencv/cv.h"
-#include "opencv/highgui.h"
-
+/*
+#include "opencv2/cv/cv.h"
+#include "opencv2/highui/highgui.h"
+*/
 CvCapture* g_capture = NULL;
 IplImage* frame;
 IplImage* affichage;
@@ -56,16 +57,24 @@ IplImage* onech_snap_background;
 CvCapture* file_capture;
 IplImage* frame_played;
 
-void ticker_video()
+
+
+int set_default_image_size()
 {
+    camera_size_array[0][0]=320;
+    camera_size_array[0][1]=240;
 
-ticks_for_video++;
+    camera_size_array[1][0]=640;
+    camera_size_array[1][1]=480;
+
+    return(0);
 }
-
 
 /////////////////CONFIG/////////////////////////////////////////////////////////
 int Load_Video_Conf()
 {
+set_default_image_size();
+
     FILE *video_file = NULL ;
     char read_buff_vid[ 512 ] ;
     //sab 02/03/2014 unused var int it=0;
@@ -81,11 +90,14 @@ int Load_Video_Conf()
      printf("\nErreur lors de la lecture de la première ligne de commentaires\n");
      return 1;
 	}
-	fscanf( video_file , "%d %d %d\n" ,  &video_size_x , &video_size_y, &fps_video_rate);
+	fscanf( video_file , "%d\n" ,  &camera_size_settings_is);
 	//2eme ligne args
+    fgets( read_buff_vid , sizeof( read_buff_vid ) ,video_file );
+	fscanf( video_file , "%dx%d %dx%d\n",&camera_size_array[0][0],&camera_size_array[0][1],&camera_size_array[1][0],&camera_size_array[1][1]);
+    //3eme ligne
 	fgets( read_buff_vid , sizeof( read_buff_vid ) ,video_file );
 	fscanf( video_file , "%d %d %d %d %d %d %d\n" , &flip_image,&threshold_on, &erode_mode,&blur_on, &threshold_level,&erode_level,&div_facteur);
-	//3eme ligne
+	//4eme ligne
 	fgets( read_buff_vid , sizeof( read_buff_vid ) ,video_file );
 	fscanf( video_file , "%d %d" ,&tracking_dock_selected, &ocv_calcul_mode);
 
@@ -95,6 +107,7 @@ int Load_Video_Conf()
    else if(ocv_calcul_mode==2){sprintf(string_ocv_mode,"AbsD");}
 
     fclose( video_file );
+
 return(0);
 }
 
@@ -104,8 +117,10 @@ int Save_Video_Conf()
 FILE *fph;
 if((fph=fopen("user//config_video.txt","w")))
 {
-fprintf(fph,"#arguments: size of image X size of image Y - Video Rate");
-fprintf(fph,"\n%d %d %d",video_size_x,video_size_y, fps_video_rate);
+fprintf(fph,"#arguments: index size image");
+fprintf(fph,"\n%d",camera_size_settings_is);
+fprintf(fph,"\n#arguments: your camera prerecorded size ");
+fprintf(fph,"\n%dx%d %dx%d",camera_size_array[0][0],camera_size_array[0][1],camera_size_array[1][0],camera_size_array[1][1]);
 fprintf(fph,"\n#arguments: (0-1)flip threshold erode blur (Level) thresh erode div");
 fprintf(fph,"\n%d %d %d %d %d %d %d",flip_image,threshold_on, erode_mode,blur_on, threshold_level,erode_level,div_facteur);
 fprintf(fph,"\n#arguments: preset ocv_mode");
@@ -116,35 +131,53 @@ return(0);
 }
  ///////////////////////////////////////////////////////////////////////////////
 
+int set_camera_size()
+{
+manipulating_camera=1;
+mouse_released=1;
+video_size_x=camera_size_array[camera_size_settings_is][0];
+video_size_y=camera_size_array[camera_size_settings_is][1];
+
+cvSetCaptureProperty( g_capture, CV_CAP_PROP_FRAME_WIDTH ,video_size_x);
+cvSetCaptureProperty( g_capture, CV_CAP_PROP_FRAME_HEIGHT,video_size_y);
+
+rest(1000);
+manipulating_camera=0;
+
+return(0);
+}
+
+
+int set_image_caches()
+{
+
+frame=cvQueryFrame(g_capture);
+frame    = cvCreateImage(cvSize(video_size_x,video_size_y), IPL_DEPTH_8U ,3);// 8 bits 3 couches color
+affichage   =  cvCreateImage(cvSize(video_size_x,video_size_y), IPL_DEPTH_8U ,1);// 8 bits 1 couches color AFFICHAGE final
+onech_temoin=cvCreateImage(cvSize(video_size_x,video_size_y), IPL_DEPTH_8U ,1);
+onech_difference=cvCreateImage(cvSize(video_size_x,video_size_y), IPL_DEPTH_8U ,1);
+onech_snap_background=cvCreateImage(cvSize(video_size_x,video_size_y), IPL_DEPTH_8U ,1);
+
+
+return(0);
+}
+
 int InitVideo()
 {
 g_capture= cvCreateCameraCapture(0); //selection manuelle // 0 toutescvCaptureFromCAM(0);
 
 if(g_capture!=0)
 {
-cvSetCaptureProperty(g_capture,CV_CAP_PROP_FPS,fps_video_rate);
-frame=cvQueryFrame(g_capture);
-int cx_size=(int)cvGetCaptureProperty( g_capture, CV_CAP_PROP_FRAME_WIDTH );
-int cy_size=(int)cvGetCaptureProperty( g_capture, CV_CAP_PROP_FRAME_HEIGHT);
-frame    = cvCreateImage(cvSize(cx_size,cy_size), IPL_DEPTH_8U ,3);// 8 bits 3 couches color
-affichage   =  cvCreateImage(cvSize(cx_size,cy_size), IPL_DEPTH_8U ,1);// 8 bits 1 couches color AFFICHAGE final
-onech_temoin=cvCreateImage(cvSize(cx_size,cy_size), IPL_DEPTH_8U ,1);
-onech_difference=cvCreateImage(cvSize(cx_size,cy_size), IPL_DEPTH_8U ,1);
-onech_snap_background=cvCreateImage(cvSize(cx_size,cy_size), IPL_DEPTH_8U ,1);
-
-camera_original_fps_is=(int)cvGetCaptureProperty( g_capture, CV_CAP_PROP_FPS);
-video_size_x=(int)cvGetCaptureProperty( g_capture, CV_CAP_PROP_FRAME_WIDTH );
-video_size_y=(int)cvGetCaptureProperty( g_capture, CV_CAP_PROP_FRAME_HEIGHT);
+fps_video_rate=cvGetCaptureProperty( g_capture, CV_CAP_PROP_FPS);
+set_camera_size();
+set_image_caches();
 camera_is_on=1;
-sprintf(string_Last_Order,">>Camera %d x %d FPS: %d ", cx_size,cy_size,fps_video_rate) ;
+sprintf(string_Last_Order,">>Camera %d x %d FPS: %d ", video_size_x,video_size_y,fps_video_rate) ;
 }
 
 else {sprintf(string_Last_Order,">>No Camera recognized !");}
 return(0);
 }
-
-
-
 
 int CloseVideo()
 {
@@ -368,18 +401,21 @@ return(0);
 int do_logical_Interface_video_window(int WindowVideoX,int WindowVideoY)
 {
 
-//FPS CALIBRATION///////////////////////////////////////////////////////////////
-if(mouse_x>WindowVideoX+120 && mouse_x<=WindowVideoX+330 && mouse_y> WindowVideoY+10 && mouse_y< WindowVideoY+45)
+//SIZE CALIBRATION///////////////////////////////////////////////////////////////
+for (int i=0;i<2;i++)
 {
-fps_video_rate=(int) ((float)(mouse_x-(WindowVideoX+150))/3);
-if(fps_video_rate<=0){fps_video_rate=1;}
-if(g_capture!=0 && camera_is_on==1)
+if(mouse_x>WindowVideoX+90+(i*60) && mouse_x<WindowVideoX+140+(i*60)&& mouse_y> WindowVideoY+10 && mouse_y< WindowVideoY+25)//SIZE
 {
-cvSetCaptureProperty(g_capture,CV_CAP_PROP_FPS,fps_video_rate);
-int ticker_video_rate = BPS_TO_TIMER(fps_video_rate);
-install_int_ex(ticker_video , ticker_video_rate);
+camera_size_settings_is=i;
+if(mouse_released==0)
+{
+set_camera_size();
+set_image_caches();
+mouse_released=1;
 }
 }
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //tracking zones
 

@@ -30,8 +30,9 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file save_show_13.cpp
 * \brief {save and load fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
+
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   Fonctions de sauvegarde et de rappel
@@ -271,6 +272,8 @@ const char file_arduino_an_typ[24]={"arduino_AN_typ.whc"};//
 unsigned int arduino_an_typ_size=64;//int arduino_analog_function_input[64];
 const char file_arduino_an_aff[24]={"arduino_AN_aff.whc"};//
 unsigned int arduino_an_aff_size=64;//int arduino_analog_attribution_input[64];
+const char file_arduino_an_on[24]={"arduino_AN_ON.whc"};//
+unsigned int arduino_an_on_size=64;//bool ventilate_analog_data[64];
 const char file_arduino_pwm_aff[24]={"arduino_PWM_typ.whc"};//
 unsigned int arduino_pwm_aff_size=36*2;//int arduino_pwm_function_input[36][2];//Action // Val  fader
 const char file_arduino_dig_out[24]={"arduino_PWM_typ.whc"};//
@@ -569,6 +572,9 @@ void On_Open_name_of_directory()
 }
 
 
+
+
+
 int get_current_time()
 {
       time_t timestamp;
@@ -583,44 +589,73 @@ int get_current_time()
 }
 
 
-
-
-int load_midipreset()
+int load_gel_list_numerical()
 {
-char temp_folder_midi[256];
-sprintf(temp_folder_midi,"%s\\midi_presets\\%s",mondirectory,midipreset_name);
-chdir(temp_folder_midi);
-FILE *fpm;
+sprintf(rep,"%s\\",mondirectory);
+chdir(rep);
+sprintf(rep,"%s\\ressources",mondirectory);
+chdir(rep);
+volatile bool index_ok=1;
+char line [256];
+char tmp_name_of_mark[72];
+char tmp_name_of_gel[96];
+int tmp_ref=0;
+int tmprvb[3];
+int index_type_of_gel=-1;
+int marker_de_gel[4];
+float transmission=-1;;
+for(int i=0;i<4;i++)
+{
+marker_de_gel[i]=0;
+}
 
-if ((fpm=fopen(file_midi_affectation, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_affectation);b_report_error[idf]=1;}
+FILE *f=NULL;
+
+
+if ((f=fopen("gel_list_num_order.txt", "rt"))== NULL)
+{
+    sprintf(string_save_load_report[0],"Error opening %s","gel_list_num_order.txt"); b_report_error[0]=1;
+    idf++;
+}
 else
-{
-sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_affectation);
-if (fread(miditable, sizeof(int),midi_affectation_size, fpm) !=midi_affectation_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_affectation);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_affectation);
+    {
+	do {
+		if (fgets(line,256,f)!=NULL)
+		{
+		sscanf(line,"%s\t%d\t%s\t%d\t%d\t%d\t%f\n",&tmp_name_of_mark,&tmp_ref,&tmp_name_of_gel,&tmprvb[0],&tmprvb[1],&tmprvb[2],&transmission);
+
+        if(strcmp(tmp_name_of_mark,"Lee")==0){index_type_of_gel=0;}
+        if(strcmp(tmp_name_of_mark,"Rosco")==0){index_type_of_gel=1;}
+        if(strcmp(tmp_name_of_mark,"GamColor")==0){index_type_of_gel=2;}
+        if(strcmp(tmp_name_of_mark,"Apollo")==0){index_type_of_gel=3;}
+
+        if(marker_de_gel[index_type_of_gel]<10000 && index_type_of_gel>=0 && index_type_of_gel<=3 )
+        {
+
+        refs_of_gels[index_type_of_gel][marker_de_gel[index_type_of_gel]]=tmp_ref; //numerical reference
+        sprintf(name_of_gels[index_type_of_gel][marker_de_gel[index_type_of_gel]],tmp_name_of_gel);//nom des gels
+        for(int i=0;i<3;i++)
+        {
+            rvb_of_gels[index_type_of_gel][(marker_de_gel[index_type_of_gel])][i]=tmprvb[i];//rvb of gels
+        }
+        gel_transimission[index_type_of_gel][marker_de_gel[index_type_of_gel]]=transmission;
+        marker_de_gel[index_type_of_gel]++;
+        }
+        //reset values
+        transmission=-1;
+        if(strcmp(line,"ENDDATA")==0){index_ok=0;}
+		}
+		else break;
+	}
+	while (index_ok!=0);
+
 }
 
-if ((fpm=fopen(file_midi_send_out, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_send_out);b_report_error[idf]=1;}
-else
-{
-sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_send_out);
-if (fread(midi_send_out, sizeof(bool),midi_send_out_size, fpm) !=midi_send_out_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_send_out);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_send_out);
+sprintf(rep,"%s\\",mondirectory);
+chdir(rep);
+return(0);
 }
-load_Fader_state_to_midi_array();
 
-fclose(fpm);
-//REROLL
-strcpy(rep,"");
-sprintf(rep,"%s",mondirectory);
-chdir (rep);
-
- return(0);
-}
 
 
 int Show_report_save_load()
@@ -935,7 +970,7 @@ for(int i=0;i<6;i++)
 {
 fprintf(fpp,"#arguments Preset %d:MODE (0 to 3) / LEVEL (float) / TILT (float)/ SIZE (float)/ GHOST (float) / BRUSH TYPE (int) /\n",i+1);
 fprintf(fpp,"#arguments 2ndLine :GPL NUM ( 1 to 4 ) / Offset ( 1 to 513 ) / position point / col / row /\n");
-fprintf(fpp, "M %d / %f / %f / %f / %d /\n",draw_mode[i],draw_level_to_do[i],draw_tilt_to_do[i],draw_ghost_to_do[i],draw_brush_type[i]);
+fprintf(fpp, "M %d / %f / %f / %f / %d /\n",draw_mode[i],draw_level_to_do[i],draw_damper_decay_factor[i],draw_ghost_to_do[i],draw_brush_type[i]);
 fprintf(fpp, "G %d / %d / %d / %d / %d /\n",draw_get_gpl[i],draw_offset_gpl[i], index_case[i],draw_centre_x[i], draw_centre_y[i]);
 }
 fclose(fpp);
@@ -977,7 +1012,7 @@ int load_draw_preset_config()
    	if( !fgets( read_buff_winfil , sizeof( read_buff_winfil ) ,cfg_file ) )
 	{ sprintf(string_save_load_report[idf],"! draw_presets_states.txt");}
 
-    fscanf( cfg_file , "M %d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_tilt_to_do[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
+    fscanf( cfg_file , "M %d / %f / %f / %f / %d /\n" , &draw_mode[i], &draw_level_to_do[i], &draw_damper_decay_factor[i] ,&draw_ghost_to_do[i], &draw_brush_type[i]);
 
     fscanf( cfg_file , "G %d / %d / %d / %d / %d /\n" ,&draw_get_gpl[i],&draw_offset_gpl[i], &index_case[i], &draw_centre_x[i], &draw_centre_y[i]);
 
@@ -986,7 +1021,7 @@ int load_draw_preset_config()
     draw_offset_gpl[i]=constrain_int_data_to_this_range(draw_offset_gpl[i],1,512);
 
     if(draw_level_to_do[i]>1.0){draw_level_to_do[i]=1.0;}
-    if(draw_tilt_to_do[i]>1.0){draw_tilt_to_do[i]=1.0;}
+    if(draw_damper_decay_factor[i]>1.0){draw_damper_decay_factor[i]=1.0;}
     if(draw_ghost_to_do[i]>1.0){draw_ghost_to_do[i]=1.0;}
 
     }
@@ -1406,7 +1441,7 @@ else if(niveauGMaster==255){midi_levels[615]=127;}
 
 
 
-if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9 && index_allow_multicore==1)
+if(index_allow_multicore==1 && core_to_assign>0 && core_to_assign<9)
 {process_assign_to_core(core_to_assign);}
 
 switch(config_page_is)
@@ -3112,6 +3147,19 @@ else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_an_aff);
 fclose(fp);
 }
  idf++;
+
+if ((fp=fopen( file_arduino_an_on, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_an_on); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s",   file_arduino_an_on);
+if (fwrite( ventilate_analog_data, sizeof(bool),arduino_an_on_size, fp) !=  arduino_an_on_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_arduino_an_on); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",file_arduino_an_on);
+fclose(fp);
+}
+ idf++;
+
 
 
 if ((fp=fopen( file_arduino_dig_out, "wb"))==NULL)
@@ -6277,6 +6325,18 @@ else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_an_aff);
 }
 idf++;
 
+if ((fp=fopen( file_arduino_an_on, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_arduino_an_on);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s", file_arduino_an_on);
+if (fread(ventilate_analog_data, sizeof(bool),arduino_an_on_size, fp) !=arduino_an_on_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_arduino_an_on);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_arduino_an_on);
+ fclose(fp);
+}
+idf++;
+
 if ((fp=fopen(  file_arduino_dig_out, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_arduino_dig_out);b_report_error[idf]=1;}
 else
@@ -7136,6 +7196,7 @@ if(grider_nb_row>24){grider_nb_row=8;}
 if(grider_begin_channel_is>512){grider_begin_channel_is=1;}
 
 int grider_report_cross[8];
+
 if ((fp=fopen( file_gridpl_crosslv, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_gridpl_crosslv);b_report_error[idf]=1;}
 else
@@ -7149,7 +7210,7 @@ else sprintf(string_save_load_report[idf],"Loaded file %s", file_gridpl_crosslv)
 for(int gr=0;gr<4;gr++)
 {
 grid_niveauX1[gr]=grider_report_cross[gr];
-grid_niveauX2[gr+4]=grider_report_cross[gr+4];
+grid_niveauX2[gr]=grider_report_cross[gr+4];//debug christoph ruiserge sur état crossfade 18/12/14
 grid_floatX1[gr]=(float)grid_niveauX1[gr];
 grid_floatX2[gr]=(float)grid_niveauX2[gr];
 }

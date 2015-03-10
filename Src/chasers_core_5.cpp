@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file chasers_core_5.cpp
 * \brief {file for the core of the chasers}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -66,8 +66,6 @@ if(chaser_way[chaser_selected]==0)////forward
 {midi_levels[981]=127;midi_levels[982]=0;midi_levels[983]=0;}
 else if(chaser_way[chaser_selected]==1)//backward
 {midi_levels[981]=0;midi_levels[982]=127;midi_levels[983]=0;}
-else  if(chaser_way[chaser_selected]==2)//AR
-{midi_levels[981]=0;midi_levels[982]=0;midi_levels[983]=127;}
 
 index_send_midi_out[980]=1;
 index_send_midi_out[981]=1;

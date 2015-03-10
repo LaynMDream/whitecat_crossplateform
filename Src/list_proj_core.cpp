@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file list_proj_core.cpp
 * \brief {spot list and channels macro core}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -71,20 +71,21 @@ switch(dmx_view)
 case 0:
 audiofile_selected=(int)(((float)MergerArray[the_chan])/2.55);
 if(channel_macro_reaction[the_chan][num_macro]==8){audiofile_selected=100-(int)(((float)MergerArray[the_chan])/2.55);}
-if(audiofile_selected>100){audiofile_selected=100;}
 if(audiofile_selected<0){audiofile_selected=0;}
+if(audiofile_selected>100){audiofile_selected=100;}
 break;
 case 1:
 audiofile_selected=MergerArray[the_chan];
 if(channel_macro_reaction[the_chan][num_macro]==8){audiofile_selected=127-audiofile_selected;}
-if(audiofile_selected>127){audiofile_selected=127;}
 if(audiofile_selected<0){audiofile_selected=0;}
+if(audiofile_selected>127){audiofile_selected=127;}
 break;
 }
-}
-
 sprintf(audiofile_name,list_audio_files[audiofile_selected]);
 AffectSoundFile(channel_macro_val[the_chan][num_macro][1]-1);
+}
+
+
 break;
 case 3://Play A.Pl
 if(player_ignited[channel_macro_val[the_chan][num_macro][1]-1]==1)

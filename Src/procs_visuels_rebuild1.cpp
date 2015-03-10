@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file procs_visuels_rebuild1.cpp
 * \brief {Redraw fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -72,7 +72,7 @@ switch(window_opened[i])
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_TRICHROMY:
-        if( mouse_x>= xtrichro_window-158 && mouse_x<= xtrichro_window+157 && mouse_y>=ytrichro_window-206  && mouse_y<= ytrichro_window+344)
+        if( mouse_x>= xtrichro_window-158 && mouse_x<= xtrichro_window+157+(show_gel_list*gel_size_window) && mouse_y>=ytrichro_window-206  && mouse_y<= ytrichro_window+344)
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_NUMPAD:
@@ -80,7 +80,7 @@ switch(window_opened[i])
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_TRACKINGVIDEO:
-        if( mouse_x>= videoX && mouse_x<= videoX+video_size_x+35 && mouse_y>=videoY  && mouse_y<= videoY+video_size_y+500)
+        if( mouse_x>= videoX && mouse_x<= videoX+frame_video_x+35 && mouse_y>=videoY  && mouse_y<= videoY+frame_video_y+460)
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_ARTPOLLREPLY:
@@ -170,6 +170,10 @@ switch(window_opened[i])
         break;
         case W_GRID:
         if( mouse_x>=grider_window_x && mouse_x<=grider_window_x+largeurGrider && mouse_y>=grider_window_y && mouse_y<=grider_window_y+hauteurGrider)
+        {window_is=window_opened[i];stop_detect=1;}
+        break;
+        case W_BAZOOKAT:
+        if( mouse_x>=position_x_bazoocat_menus && mouse_x<=position_x_bazoocat_menus+size_x_bazoocat_menus && mouse_y>=position_y_bazoocat_menus && mouse_y<=position_y_bazoocat_menus+size_y_bazoocat_menus)
         {window_is=window_opened[i];stop_detect=1;}
         break;
         case W_MY_WINDOW:
@@ -354,6 +358,11 @@ if(mouse_button==1 && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu
  case W_DRAW:
  x_Wdraw=mouse_x-(40+15);
  y_Wdraw=mouse_y-25;
+ im_moving_a_window=1;
+ break;
+ case W_BAZOOKAT:
+ position_x_bazoocat_menus=mouse_x-(40+15);
+ position_y_bazoocat_menus=mouse_y-25;
  im_moving_a_window=1;
  break;
  case W_MY_WINDOW:
@@ -579,7 +588,6 @@ case W_MOVER:
      do_logical_MoveCloseBox(xmover_window+20, ymover_window-20,W_MOVER);
 break;
 case W_iCAT:
-
      do_logical_MoveCloseBox( X_gui_iCat+20,Y_gui_iCat+20,W_iCAT);
 break;
 case W_GRID:
@@ -589,6 +597,10 @@ break;
 case W_MY_WINDOW:
      do_logical_my_window_Box(my_window_x, my_window_y);
      do_logical_MoveCloseBox( my_window_x+20,my_window_y+20,W_MY_WINDOW);
+break;
+case W_BAZOOKAT:
+     do_logical_fenetre_bazookat_menus(position_x_bazoocat_menus, position_y_bazoocat_menus);
+     do_logical_MoveCloseBox( position_x_bazoocat_menus+20,position_y_bazoocat_menus+20,W_BAZOOKAT);
 break;
 default:
 break;

@@ -9,9 +9,9 @@
 		<Build>
 			<Target title="Debug">
 				<Option platforms="Windows;" />
-				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../whitecatbuild/build/white_cat_for_mingw" />
-				<Option object_output="../../../../whitecatbuild/build/white_cat_for_mingw/obj" />
+				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_0_8_6_3" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../../../whitecatbuild/build/white_cat_for_mingw/" />
+				<Option object_output="../../../whitecatbuild" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -21,10 +21,14 @@
 			<Target title="Release">
 				<Option platforms="Windows;" />
 				<Option output="../../../whitecatbuild/build/white_cat_for_mingw/Whitecat_Crossplatform" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="../../../../whitecatbuild/build/white_cat_for_mingw" />
-				<Option object_output="../../../../whitecatbuild/build/white_cat_for_mingw/obj" />
+				<Option working_dir="../../../whitecatbuild/build/white_cat_for_mingw" />
+				<Option object_output="../../../whitecatbuild" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="0" />
+				<Linker>
+					<Add library="..\..\..\..\MinGW\lib\libglu32.a" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
@@ -139,6 +143,9 @@
 		<Unit filename="../../../Src/banger_visu_8.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/bazooKAT.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="../../../Src/channels_10_visu.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -154,6 +161,7 @@
 		<Unit filename="../../../Src/chat_dock_machine.ico">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/debug_informations.h" />
 		<Unit filename="../../../Src/dmx_enttec_pro.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -238,6 +246,7 @@
 		<Unit filename="../../../Src/midi_CORE.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="../../../Src/midi_affectation_table.h" />
 		<Unit filename="../../../Src/midi_launchpad.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

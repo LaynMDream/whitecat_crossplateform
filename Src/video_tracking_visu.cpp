@@ -30,8 +30,9 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file video_tracking_visu.cpp
 * \brief {GUI fonctions for the tracking video}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
+
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
 *   GUI fonctions pour la fenêtre de tracking video
@@ -75,8 +76,8 @@ int hauteur_cadre_filter_image=0;
 if(ocv_calcul_mode==0)
 {hauteur_cadre_filter_image=180;}
 else{hauteur_cadre_filter_image=130;}
-Rect Background_Thres(Vec2D(videoX+30, videoY+70),Vec2D(265,hauteur_cadre_filter_image));
 
+Rect Background_Thres(Vec2D(videoX+30, videoY+70),Vec2D(265,hauteur_cadre_filter_image));
 Background_Thres.SetRoundness(5);
 Background_Thres.Draw(CouleurFond.WithAlpha(0.3));
 
@@ -159,34 +160,24 @@ return(0);
 
 int tracking_print_to_screen()
 {
+//cadre image définit pixel blanc : ne pas supprimer
+Rect backim(Vec2D(videoX+15,videoY+61),Vec2D(video_size_x,video_size_y));
+backim.DrawOutline(CouleurLigne);
 //AFFICHAGE CAM et calculs///////////////////////////////////////////////////////////
-if(g_capture!=0 && camera_is_on==1 )
+if(g_capture!=0 && camera_is_on==1 && manipulating_camera==0 )
 {
-                   if(last_ticker_video!=ticks_for_video)
-                   {
                    frame = cvQueryFrame(g_capture);
 
                    if(flip_image==1)
                    {cvConvertImage(frame,frame,CV_CVTIMG_FLIP);}
-
-
                    cvCvtColor(frame,onech_temoin,CV_BGR2GRAY);//recup dans un grayscale du actual frame
 
                    Trackers();
 
-                   if(ocv_calcul_mode==0 )
-                   {
                    cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);
-                   cvCopyImage(onech_temoin,affichage);
-                   }
-                   else if(ocv_calcul_mode==1 )
-                   {
-                   cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);
-                   cvCopyImage(onech_temoin,affichage);
-                   }
+                   cvCopy(onech_temoin,affichage);//opencv2.0
 
-                   last_ticker_video=ticks_for_video;
-
+}
 Point::StartFastDrawing();
 
                    for(int pix_x=0; pix_x<video_size_x;pix_x++)
@@ -199,23 +190,19 @@ Point::StartFastDrawing();
                    }
                    }
 Point::FinishFastDrawing();
-                   }
-}
+
  return(0);
 }
-
-
-
 
 
 int Interface_video_window(int WindowVideoX,int WindowVideoY)
 {
 //background window
-if(video_size_x>=352 && video_size_y>=288)
+if(video_size_x>320 && video_size_y>240)//taille de l image video grabée
 {
 frame_video_x=video_size_x; frame_video_y=video_size_y;
 }
-else {frame_video_x=352; frame_video_y=288;}
+else {frame_video_x=345; frame_video_y=240;}
 
 //background window
 Rect VideoBackground(Vec2D ( WindowVideoX, WindowVideoY ), Vec2D ( frame_video_x+35,frame_video_y+460));
@@ -231,25 +218,29 @@ else
 VideoBackground.DrawOutline(CouleurLigne);
 }
 
-//FPS CALIBRATION///////////////////////////////////////////////////////////////
-Rect FPSVideo(Vec2D(WindowVideoX+120+(fps_video_rate*3), WindowVideoY+10), Vec2D ( 60,25));
-FPSVideo.SetRoundness(10);
-FPSVideo.SetLineWidth(epaisseur_ligne_fader);
-Line(WindowVideoX+150, WindowVideoY+45,WindowVideoX+330, WindowVideoY+45,2.0).Draw(CouleurLigne);
-Line(WindowVideoX+150+(fps_video_rate*3), WindowVideoY+35,WindowVideoX+150+(fps_video_rate*3), WindowVideoY+45,2.0).Draw(CouleurLigne);
-FPSVideo.Draw(CouleurFond);
-neuro.Print(ol::ToString(fps_video_rate),WindowVideoX+145+(fps_video_rate*3), WindowVideoY+30);
-FPSVideo.DrawOutline(CouleurLigne);
+// SIZE CALIBRATION///////////////////////////////////////////////////////////////
+
+Rect FrameT(Vec2D(WindowVideoX, WindowVideoY), Vec2D (50,15));
+
+char stmp[16];
+for (int i=0;i<2;i++)
+{
+FrameT.MoveTo(Vec2D(WindowVideoX+90+(i*60), WindowVideoY+10));
+if(i==camera_size_settings_is){FrameT.DrawOutline(CouleurFader);}
+FrameT.DrawOutline(CouleurLigne.WithAlpha(0.5));
+sprintf(stmp,"%dx%d", camera_size_array[i][0],camera_size_array[i][1]);
+minichiffre.Print(stmp, WindowVideoX+95+(i*60),WindowVideoY+20);
+}
+
+sprintf(stmp,"FPS: %d",fps_video_rate);
+petitchiffre.Print(stmp,WindowVideoX+300,WindowVideoY+20);
 /////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////
+if(manipulating_camera==0)
+{
 tracking_print_to_screen();
-//cadre image
-Rect PourtourImage(Vec2D (videoX+15, videoY+60 ), Vec2D ( frame_video_x,frame_video_y));
-PourtourImage.DrawOutline(CouleurLigne);
-///////////////////////////////////////////////////////////////////////////////////////////////
 ShowTrackers();
-
+}
 //affichage des niveaux issus trackers
 char chif_ttr[4];
 for(int trZ=0;trZ<6;trZ++)

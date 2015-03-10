@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file saves_export_pdf2.cpp
 * \brief {import and export the show in PDF}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -816,7 +816,7 @@ cmptline_pdf++;
 sprintf(header_export,"Description: %s", chaser_name[chaser_num]);
 draw_info(page, 100, debut_lignes -(position_ligne1 +(cmptline_pdf*12)),header_export);
 cmptline_pdf++;
-char tmp_y[12];
+char tmp_y[16];
 //time
 switch(chaser_time_mode[chaser_num])
 {
@@ -4747,6 +4747,7 @@ sprintf(little_header,"As CC CH7 Pitch %d",arduino_analog_attribution_input[i]);
 break;
 case 13://Midi CH8
 sprintf(little_header,"As CC CH8 Pitch %d",arduino_analog_attribution_input[i]);
+break;
 case 14://Midi CH9
 sprintf(little_header,"As CC CH9 Pitch %d",arduino_analog_attribution_input[i]);
 break;

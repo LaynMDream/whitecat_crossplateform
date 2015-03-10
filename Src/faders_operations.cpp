@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file faders_operations.cpp
 * \brief {fonctions to assign dock and fonctions for the faders}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -211,8 +211,11 @@ int record_minifaders_selected_as_fgroup(int fd, int dk)
 {
 for(int i=0;i<48;i++)
 {
+if(i!=fd)
+{
 fgroup[fd][dk][i]= minifaders_selected[i];
 minifaders_selected[i]=0;
+}
 }
  return(0);
 }

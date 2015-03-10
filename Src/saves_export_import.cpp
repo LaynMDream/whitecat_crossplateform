@@ -1,6 +1,6 @@
 /*-------------------------------------------------------------------------------------------------------------
                                  |
-          CWWWWWWWW              | Copyright (C) 2009-2013  Christoph Guillermet
+          CWWWWWWWW              | Copyright (C) 2009-2014  Christoph Guillermet
        WWWWWWWWWWWWWWW           |
      WWWWWWWWWWWWWWWWWWW         | This file is part of White Cat.
     WWWWWWWWWWWWWWWWWCWWWW       |
@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file saves_export_import.cpp
 * \brief {import and export the show in ASCII}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -151,7 +151,7 @@ chdir(rep);
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2d\n",&chan,&level);
+							sscanf(temp,"%d/H%x\n",&chan,&level);//debug 3/12/14 christoph
 							Memoires[cue][chan]=(unsigned char)level;
 							temp=strtok(NULL," ");
 						    }
@@ -249,7 +249,7 @@ chdir(rep);
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2d\n",&chan,&level);
+							sscanf(temp,"%d/H%x\n",&chan,&level);//debug 3/12/14 christoph
                             if(chan<513)
                             {
                             FaderDockContains[sub_f][sub_d][chan]=(unsigned char)level ;

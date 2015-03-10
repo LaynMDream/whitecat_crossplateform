@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file mover_2013.cpp
 * \brief {pan and tilt for motor spot}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -681,7 +681,7 @@ for(int dv=0;dv<5;dv++)
 Rect ParamN(Vec2D( xt+60,yt+5+(dv*15)),Vec2D(30,12));
 Rect LevelFrame(Vec2D(xt+180,yt+5+(dv*15)),Vec2D(255,10));
 LevelFrame.SetRoundness(5);
-if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10 && window_focus_id==W_MOVER && mouse_button==1 && mouse_released==0)
+if(window_focus_id==W_MOVER && index_do_dock==1 && mouse_x>xt+60 && mouse_x<xt+60+30 && mouse_y>yt+5+(dv*15) && mouse_y<yt+5+(dv*15)+10  && mouse_button==1 && mouse_released==0)
 {
 ParamN.Draw(CouleurBlind);
 
@@ -773,11 +773,9 @@ case 0:
 if(tracker_16b_edit==0)
 {
 mover_params[0][0]=valeur;
-mover_params[0][0]=valeur;
 }
 else //fine
 {
-mover_params[0][1]=valeur;
 mover_params[0][1]=valeur;
 }
 break;
@@ -786,11 +784,9 @@ case 1:
 if(tracker_16b_edit==0)
 {
 mover_params[1][0]=valeur;
-mover_params[1][0]=valeur;
 }
 else //fine
 {
-mover_params[1][1]=valeur;
 mover_params[1][1]=valeur;
 }
 break;
@@ -799,11 +795,9 @@ case 2:
 if(tracker_16b_edit==0)
 {
 mover_params[2][0]=valeur;
-mover_params[2][0]=valeur;
 }
 else //fine
 {
-mover_params[2][1]=valeur;
 mover_params[2][1]=valeur;
 }
 break;
@@ -812,11 +806,9 @@ case 3:
 if(tracker_16b_edit==0)
 {
 mover_params[3][0]=valeur;
-mover_params[3][0]=valeur;
 }
 else //fine
 {
-mover_params[3][1]=valeur;
 mover_params[3][1]=valeur;
 }
 break;
@@ -825,11 +817,9 @@ case 4:
 if(tracker_16b_edit==0)
 {
 mover_params[4][0]=valeur;
-mover_params[4][0]=valeur;
 }
 else //fine
 {
-mover_params[4][1]=valeur;
 mover_params[4][1]=valeur;
 }
 break;
@@ -1731,7 +1721,7 @@ if(tracker_mode==0)//not spline
   if (mover_params[0][0]<0) {mover_params[0][0]=0;}
   else if (mover_params[0][0] >255){mover_params[0][0]=255;}
   mover_params[1][0]=(int) y_val_at_end[move_selected];
-  if (mover_params[1][0]>255) {mover_params[1][0]=255;}
+  if (mover_params[1][0]<0) {mover_params[1][0]=0;}
   else if (mover_params[1][0] >255){mover_params[1][0]=255;}
   if (mover_params[2][0]<0) {mover_params[2][0]=0;}
   else if (mover_params[2][0] >255){mover_params[2][0]=255;}

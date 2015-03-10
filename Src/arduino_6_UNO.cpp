@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file arduino_6_UNO.cpp
 * \brief {arduino GUI fonctions}
 * \author Christoph Guillermet, Anton Langhoff
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -348,6 +348,9 @@ Rect OverAff(Vec2D(cfg_X+520+5,(cfg_Y+40+(y*20)-10)),Vec2D(105,18));
 OverAff.SetRoundness(7.5);
 if(position_line_ana+y<=arduino_max_analog)
 {OverAff.Draw(CouleurFond.WithAlpha(0.3));}
+
+Rect Bool_on(Vec2D(0,0),Vec2D(15,15));
+Bool_on.SetRoundness(1.5);
 
 Rect OverValA(Vec2D(cfg_X+630+5,(cfg_Y+40+(y*20)-10)),Vec2D(30,18));
 OverValA.SetRoundness(7.5);
@@ -843,8 +846,37 @@ break;
 }
 petitchiffre.Print(string_temp_familly,cfg_X+530,cfg_Y+43+(y*20));
 petitchiffrerouge.Print(ol::ToString(analog_data_from_arduino[position_line_ana+y]),cfg_X+675,cfg_Y+43+(y*20));
+
+//activation desactivation du routage des analog
+Bool_on.MoveTo(Vec2D(cfg_X+710,cfg_Y+33+(y*20)));
+Bool_on.Draw(CouleurFond.WithAlpha(0.5));
+Bool_on.Draw(CouleurBlind.WithAlpha(ventilate_analog_data[position_line_ana+y]));
+
+if(mouse_x>cfg_X+710 && mouse_x<cfg_X+725 && mouse_y>cfg_Y+33+(y*20) && mouse_y<cfg_Y+48+(y*20))
+{
+    Bool_on.DrawOutline(CouleurLigne);
+     if( Midi_Faders_Affectation_Type!=0)
+    {
+        Bool_on.DrawOutline(CouleurBlind);
+    }
+    if(mouse_button==1 && mouse_released==0)
+    {
+    if( Midi_Faders_Affectation_Type!=0)
+    {
+    attribute_midi_to_control(1830+y,Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+    mouse_released=1;
+    }
+    else
+    {
+    ventilate_analog_data[position_line_ana+y]=toggle(ventilate_analog_data[position_line_ana+y]);
+    mouse_released=1;
+    }
 }
 }
+
+}
+}
+
 //fin boucle des 12 lignes
 }
 /////////////////UP DOWN LINE IO /////////////////////
@@ -902,7 +934,7 @@ LineDownA.Draw(CouleurSurvol);
 if(mouse_button==1)
 {
 LineDownA.Draw(CouleurFader);
-if(position_line_ana<=arduino_max_analog-11){position_line_ana++;}
+if(position_line_ana<=arduino_max_analog){position_line_ana++;}
 }
 }
 }
@@ -914,12 +946,10 @@ LineDownA.DrawOutline(CouleurLigne.WithAlpha(0.6));
 
 
 //FEEDBACK
-petitpetitchiffre.Print("Bytes received:",cfg_X+700,cfg_Y+60);
-petitchiffre.Print(ol::ToString( nBytesReadArduino0),cfg_X+700,cfg_Y+70);
-petitpetitchiffre.Print("Last str. received:",cfg_X+700,cfg_Y+80);
-petitpetitchiffre.Print(tmp_str_arduino,cfg_X+700,cfg_Y+90);
-petitchiffrerouge.Print(string_Arduino_status,cfg_X+10,cfg_Y+285);
-
+petitpetitchiffre.Print("Bytes received:",cfg_X+510,cfg_Y+270);
+petitchiffre.Print(ol::ToString( nBytesReadArduino0),cfg_X+560,cfg_Y+270);
+petitpetitchiffre.Print(tmp_str_arduino,cfg_X+510,cfg_Y+280);
+petitchiffrerouge.Print(string_Arduino_status,cfg_X+510,cfg_Y+290);
 
 
 return(0);

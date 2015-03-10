@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file minifaders_core.cpp
 * \brief {minifaders Core}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -526,7 +526,7 @@ int dock_selected_is=detect_dock_used(position_minifader_selected);
 
 
 //SELECTION
-if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0    && index_main_clear==0 )
+if(index_do_dock==0 && index_do_modify==0  && index_type==0    && index_main_clear==0 )
 {
  minifaders_selected[position_minifader_selected]=toggle(minifaders_selected[position_minifader_selected]);
  if(index_inspekt==1)//affichage qui dans dock si VIEW activé
@@ -538,7 +538,7 @@ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0
 
 
  //store normal
- else if(index_do_dock==1 && index_direct_chan==0   && index_affect_chaser_to_dock==0  && index_affect_time==0 && index_affect_color_to_dock==0 && index_do_affect_net_to_dock==0
+ if(index_do_dock==1 && index_direct_chan==0   && index_affect_chaser_to_dock==0  && index_affect_time==0 && index_affect_color_to_dock==0 && index_do_affect_net_to_dock==0
  && index_affect_dmxin==0 && index_affect_video_tracking_to_dock==0 && index_affect_audio_to_dock==0 && gridplayer_to_affect_is==-1
  && index_do_fgroup==0 && index_affect_to_dock_mover==0 && index_affect_draw_to_dock==0 &&  index_affect_echo_to_dock==0)
  {
@@ -548,13 +548,31 @@ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0
  index_ask_confirm=1;
  }
 
+ //store group fader
+ else if(index_do_dock==1 && index_do_fgroup==1 )
+ {
+ fader_selected_for_record=position_minifader_selected;
+ dock_selected_for_record=dock_selected_is;
+ bool index_there_is_fader_selected=0;
+ for(int io=0;io<48;io++)
+ {
+ if(minifaders_selected[io]==1){index_there_is_fader_selected=1;break;}
+ }
+ if(index_there_is_fader_selected==1)
+ {
+ index_do_affect_fgroup=1;
+ index_ask_confirm=1;
+ }
+ else{sprintf(string_Last_Order,"No minifaders selected");}
+ }
+
   //affect time
  else if (index_do_dock==1 && index_affect_time==1 )
  {
  show_im_recording_a_time=1;
  DoTimeToDock(position_minifader_selected,dock_selected_is);
  sprintf(string_Last_Order,">>Time affected to Master %d Dock %d", position_minifader_selected+1,dock_selected_is);
- index_affect_time=0;
+ //index_affect_time=0; DEBUG Fevrier 2015 time affectation was not working on minifaders
  }
  //color dock
  else if(index_do_dock==1 && index_affect_color_to_dock==1 )
@@ -624,23 +642,7 @@ if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0
  index_do_affect_grid_to_fader=1;
  index_ask_confirm=1;
  }
- //store group fader
- else if(index_do_dock==1 && index_do_fgroup==1 )
- {
- fader_selected_for_record=position_minifader_selected;
- dock_selected_for_record=dock_selected_is;
- bool index_there_is_fader_selected=0;
- for(int io=0;io<48;io++)
- {
- if(minifaders_selected[io]==1){index_there_is_fader_selected=1;break;}
- }
- if(index_there_is_fader_selected==1)
- {
- index_do_affect_fgroup=1;
- index_ask_confirm=1;
- }
- else{sprintf(string_Last_Order,"No minifaders selected");}
- }
+
 
   //Store Mover dans dock
  else if (  index_do_dock==1 && index_affect_to_dock_mover==1)

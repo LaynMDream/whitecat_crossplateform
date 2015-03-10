@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file gui_boutons_rebuild1.cpp
 * \brief {GUI fonctions to redraw buttons}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -709,6 +709,7 @@ Command.DrawOutline(CouleurLigne);
 Command.DrawOutline(CouleurBleuProcedure.WithAlpha(alpha_blinker));  //animation qui est faite dans le fichier main
 //chercher alpha_blinker ....
 break;
+
 default:
 if(isstate==1)
 {Command.Draw(CouleurFader);}
@@ -730,7 +731,10 @@ petitpetitchiffre.Print(desc,xcom+5,ycom+12);
 //sab 02/03/2014 int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
 void command_button_logical( int xcom, int ycom, int isstate, const std::string desc, const std::string raccourci, int IDmidi, int thecommand)
 {
-if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT) && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && mouse_released==0)
+if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT)
+   && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && mouse_released==0
+   && index_moving_channel_scroller==0 && dragging_draw==0
+   )
 {
 if( Midi_Faders_Affectation_Type!=0)
 {
@@ -827,6 +831,10 @@ break;
 case 24://grider
  if(index_grider_window==0){add_a_window(W_GRID);substract_a_window(W_MAINMENU);}
  else {substract_a_window(W_GRID);}
+break;
+case 25:
+     if(index_bazoocat_menu_window==0){add_a_window(W_BAZOOKAT);substract_a_window(W_MAINMENU);}
+ else {substract_a_window(W_BAZOOKAT);}
 break;
 
 

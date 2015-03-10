@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file channels_9_core.cpp
 * \brief {file for the core of dmx channels}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -289,6 +289,7 @@ mouse_released=1;
 else
 {
 scroll_channelspace=mouse_y-ScrollY;
+index_moving_channel_scroller=1;
 }
 }
 return(0);

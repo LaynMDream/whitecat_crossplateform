@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file graphics_rebuild1.cpp
 * \brief {GUI fonctions to redraw graphics}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -223,6 +223,10 @@ for (int f=63;f>=0;f--)
         case W_SAVE:
         Save_Menu(xsave_window,ysave_window);
         MoveCloseBox(xsave_window+20,ysave_window+25,W_SAVE);
+        break;
+        case W_BAZOOKAT:
+        fenetre_bazookat_menus(position_x_bazoocat_menus,position_y_bazoocat_menus);
+        MoveCloseBox(position_x_bazoocat_menus+20,position_y_bazoocat_menus+25,W_BAZOOKAT);
         break;
         case W_BANGER:
         fenetre_banger(X_banger,Y_banger);

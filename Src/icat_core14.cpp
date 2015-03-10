@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file icat_core14.cpp
 * \brief {Core fonctions for iCAT}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -104,7 +104,7 @@ for(int f=0;f<48;f++)
 for(int pr=0;pr<6;pr++)
 {
  previous_draw_level_to_do[pr]=-1;
- previous_draw_tilt_to_do[pr]=-1;
+ previous_draw_damper_decay_factor[pr]=-1;
  previous_draw_ghost_to_do[pr]=-1;
 }
 
@@ -575,21 +575,21 @@ if( draw_level_to_do[drawpr]!=previous_draw_level_to_do[drawpr] || index_refresh
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 }
 break;
-case 8: //Draw Angle
+case 8: //Draw Decay
 drawpr=iCat_affectation_slider_value_is[iCatPageis][i]-1;
-if( draw_tilt_to_do[drawpr]!=previous_draw_tilt_to_do[drawpr] || index_refresh_valeurs_continous==1)
+if( draw_damper_decay_factor[drawpr]!=previous_draw_damper_decay_factor[drawpr] || index_refresh_valeurs_continous==1)
 {
       switch (iCat_orientation_slider[iCatPageis][i])
         {
         case 0://vertical
-        sprintf(StrOrderToiCat,"model level%d position 0 -%d 0",i,(int)((draw_tilt_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
+        sprintf(StrOrderToiCat,"model level%d position 0 -%d 0",i,(int)((draw_damper_decay_factor[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         case 1://horizontal
-        sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_tilt_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
+        sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_damper_decay_factor[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-        sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_tilt_to_do[drawpr]*127) );
+        sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_damper_decay_factor[drawpr]*127) );
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 }
 break;
@@ -633,23 +633,23 @@ if( draw_level_to_do[drawpr]!=previous_draw_level_to_do[drawpr] || index_refresh
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 }
 break;
-case 11: //Draw Angle selected
+case 11: //Draw decay selected
 drawpr=draw_preset_selected;
-if( draw_tilt_to_do[drawpr]!=previous_draw_tilt_to_do[drawpr] || index_refresh_valeurs_continous==1 || draw_preset_selected!=previous_draw_preset_selected)
+if( draw_damper_decay_factor[drawpr]!=previous_draw_damper_decay_factor[drawpr] || index_refresh_valeurs_continous==1 || draw_preset_selected!=previous_draw_preset_selected)
 {
       switch (iCat_orientation_slider[iCatPageis][i])
         {
         case 0://vertical
-        sprintf(StrOrderToiCat,"model level%d position 0 -%d 0",i,(int)((draw_tilt_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
+        sprintf(StrOrderToiCat,"model level%d position 0 -%d 0",i,(int)((draw_damper_decay_factor[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         case 1://horizontal
-        sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_tilt_to_do[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
+        sprintf(StrOrderToiCat,"model level%d position %d 0 0",i,(int)((draw_damper_decay_factor[drawpr]*127)*ratio_iCat_slider[iCatPageis][i]));
         break;
         }
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-        sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_tilt_to_do[drawpr]*127) );
+        sprintf(StrOrderToiCat, "model tlev%d text %d",i,(int) ( draw_damper_decay_factor[drawpr]*127) );
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
-        sprintf(StrOrderToiCat, "model t%d text A%d",i, draw_preset_selected+1);
+        sprintf(StrOrderToiCat, "model t%d text D%d",i, draw_preset_selected+1);
         nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 }
 break;
@@ -684,7 +684,7 @@ index_refresh_valeurs_continous=0;
 for(int i=0; i<6;i++)
 {
            previous_draw_level_to_do[i]=draw_level_to_do[i];
-           previous_draw_tilt_to_do[i]=draw_tilt_to_do[i];
+           previous_draw_damper_decay_factor[i]=draw_damper_decay_factor[i];
            previous_draw_ghost_to_do[i]=draw_ghost_to_do[i];
 }
 return(0);
@@ -1780,7 +1780,7 @@ sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_f
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
 //text
-sprintf(StrOrderToiCat, "model t%d text A%d",id, iCat_affectation_slider_value_is[iCatPageis][id]);
+sprintf(StrOrderToiCat, "model t%d text D%d",id, iCat_affectation_slider_value_is[iCatPageis][id]);
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
@@ -1790,7 +1790,7 @@ sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
 //affichage niveau
-sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_tilt_to_do[(iCat_affectation_slider_value_is[iCatPageis][id]-1)]*127));
+sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_damper_decay_factor[(iCat_affectation_slider_value_is[iCatPageis][id]-1)]*127));
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
@@ -1912,7 +1912,7 @@ sprintf(StrOrderToiCat,"model level%d color %.1f %.1f %.1f",id,col_fader_r,col_f
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
 //text
-sprintf(StrOrderToiCat, "model t%d text A%d",id, draw_preset_selected+1);
+sprintf(StrOrderToiCat, "model t%d text D%d",id, draw_preset_selected+1);
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 sprintf(StrOrderToiCat, "model t%d position %d %d 0",id, (x1*2)-(5*ratio_iCat_slider[iCatPageis][id]), (y1*2)-5);
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
@@ -1922,7 +1922,7 @@ sprintf(StrOrderToiCat, "model t%d fontsize 20",id);
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 
 //affichage niveau
-sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_tilt_to_do[draw_preset_selected]*127));
+sprintf(StrOrderToiCat, "model tlev%d text %d",id,(int)(draw_damper_decay_factor[draw_preset_selected]*127));
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);
 sprintf(StrOrderToiCat, "model tlev%d position %d %d 0",id,(x1*2)+(10*ratio_iCat_slider[iCatPageis][id]), (y1*2));
 nbrbytessendediCat=sendto(sockiCat,  StrOrderToiCat,strlen(StrOrderToiCat)+1,0,(SOCKADDR*)&siniCat,sinsizeiCat);

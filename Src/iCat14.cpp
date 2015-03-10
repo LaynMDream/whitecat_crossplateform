@@ -31,8 +31,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file iCat14.cpp
 * \brief {GUI fonctions for iCAT}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -331,7 +331,7 @@ case 7://draw
 sprintf(string_temp_familly,"Draw Press.:");
 break;
 case 8://draw
-sprintf(string_temp_familly,"Draw Angle:");
+sprintf(string_temp_familly,"Draw Decay:");
 break;
 case 9://draw
 sprintf(string_temp_familly,"Draw Ghost:");
@@ -340,7 +340,7 @@ case 10://draw
 sprintf(string_temp_familly,"Draw Act.Press");
 break;
 case 11://draw
-sprintf(string_temp_familly,"Draw Act.Angle");
+sprintf(string_temp_familly,"Draw Act.Decay");
 break;
 case 12://draw
 sprintf(string_temp_familly,"Draw Act.Ghost");
@@ -3716,8 +3716,8 @@ midi_levels[1653]=level_from_touch[iCatPageis][sl]/2;
 if(midi_send_out[1653]==1){ index_send_midi_out[1653]=1;}
 }
 break;
-case 8: //DRAW ANGLE
-draw_tilt_to_do[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=((float)(level_from_touch[iCatPageis][sl])/2)/127.0;
+case 8: //DRAW decay
+draw_damper_decay_factor[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=((float)(level_from_touch[iCatPageis][sl])/2)/127.0;
 if((iCat_affectation_slider_value_is[iCatPageis][sl]-1)==draw_preset_selected)
 {
 midi_levels[1654]=level_from_touch[iCatPageis][sl]/2;
@@ -3737,8 +3737,8 @@ draw_level_to_do[draw_preset_selected]=((float)(level_from_touch[iCatPageis][sl]
 midi_levels[1653]=level_from_touch[iCatPageis][sl]/2;
 if(midi_send_out[1653]==1){ index_send_midi_out[1653]=1;}
 break;
-case 11: //DRAW ANGLE
-draw_tilt_to_do[draw_preset_selected]=((float)(level_from_touch[iCatPageis][sl])/2)/127.0;
+case 11: //DRAW DECAY
+draw_damper_decay_factor[draw_preset_selected]=((float)(level_from_touch[iCatPageis][sl])/2)/127.0;
 midi_levels[1654]=level_from_touch[iCatPageis][sl]/2;
 if(midi_send_out[1654]==1){ index_send_midi_out[1654]=1;}
 break;
@@ -3844,12 +3844,6 @@ break;
 if(zone_is_touched[iCatPageis][sl]==1 && zone_is_controlled_by_point[iCatPageis][sl]==tp)
 {
 int pr=0;
-//sab 02/03/2014 unused var int centre_x=0;
-//sab 02/03/2014 unused var int centre_y=0;
-//sab 02/03/2014 unused var int drawing_on_index=0;
-//sab 02/03/2014 unused var int etendue_x=0;
-//sab 02/03/2014 unused var int etendue_y=0;
-//sab 02/03/2014 unused var float angleD=0.0;
 float ratiox=0.0;
 float ratioy=0.0;
 

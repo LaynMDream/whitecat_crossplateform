@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file faders_core_24.cpp
 * \brief {Core fonctions for the faders}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -760,27 +760,6 @@ return(0);
 }
 
 
-int do_scroll_fader_space()
-{
-scroll_target_val=goto_scroll_faderspace;
-//sab 02/03/2014 unused var float old_position_faderspace=scroll_faderspace;
-if(index_stop_move!=1)
-{
-  float scroll_decay_constant = 0.8;
-  float scroll_vel = (scroll_target_val - scroll_val) * scroll_decay_constant;
-  scroll_val += scroll_vel * scroll_dt;
-  scroll_faderspace=scroll_val;
-}
-if( scroll_faderspace<goto_scroll_faderspace)
-{
-if (scroll_faderspace>goto_scroll_faderspace){index_stop_move=1;}
-}
-else if( scroll_faderspace>goto_scroll_faderspace)
-{
-if (scroll_faderspace<goto_scroll_faderspace){index_stop_move=1;}
-}
-return(0);
-}
 
 
 
@@ -936,7 +915,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
 
 
  //selection dock
- if(index_do_dock==0 && index_do_modify==0 && index_do_dock==0   && index_type==0    && index_main_clear==0 )
+ if(index_do_dock==0 && index_do_modify==0  && index_type==0    && index_main_clear==0 )
  {
    DockIsSelected[cmptfader][dd]=1;
    Unselect_other_docks(cmptfader, dd);
@@ -961,6 +940,7 @@ if(mouse_x>=(x+(cmptfader*espacement)+(largeur+30)) && mouse_x<=(x+(cmptfader*es
  sprintf(string_Last_Order,">>On Master %d GIVED A NAME FOR DOCK %d ", cmptfader+1,dd);
  mouse_released=1;
  }
+
  //store normal
  else if(index_do_dock==1 && index_direct_chan==0   && index_affect_chaser_to_dock==0  && index_affect_time==0 && index_affect_color_to_dock==0 && index_do_affect_net_to_dock==0
  && index_affect_dmxin==0 && index_affect_video_tracking_to_dock==0 && index_affect_audio_to_dock==0 && gridplayer_to_affect_is==-1

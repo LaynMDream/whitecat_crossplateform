@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.6.1}
-* \date {16/06/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,8 +45,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.1 - 16 juin 2014"};
-char nickname_version[48]={"SPRING POWER"};
+char versionis[72]={"Beta 0.8.6.3 - 27 fev 2015"};
+char nickname_version[48]={"WINTER POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -82,7 +82,7 @@ W_FADERS=906,
 W_PATCH=907,
 W_TIME=908,
 W_SEQUENCIEL=909,
-//910
+W_BAZOOKAT=910,
 W_ASKCONFIRM=911,
 W_PLOT=912,
 W_ECHO=913,
@@ -113,7 +113,7 @@ int temp_report_window[72];
 volatile int ticks_dixieme_for_icat_and_draw=0;
 volatile int before_ticks_dixieme_for_icat_and_draw=0;
 ////////////////////AFFICHAGE///////////////////////////////////////////////////
-int largeur_ecran=1280;
+int largeur_ecran=1368;
 int hauteur_ecran=800;
 int visu_performances[32];
 Bitmap logo;
@@ -181,6 +181,25 @@ bool index_click_move_savereportwindow=0;//report
 
 bool index_click_move_banger_window=0;
 bool index_click_move_cfg_window=0;
+
+volatile bool index_snap_color_wheel_levels=0;
+int previous_trichro_wheel=0;
+//GEL LIST in TRICHROMY
+//GUI
+int gel_size_window=400;
+bool show_gel_list=1;
+int gel_position[4];
+int call_ref_number=0;//appel clavier
+//gel list trichro 0 Lee 1 Rosco 2 Gamcolor 3 Apollo
+int index_gel_type_selected=0;
+int refs_of_gels[4][10000]; //numerical reference
+char name_of_gels[4][10000][96];//nom des gels
+int rvb_of_gels[4][10000][3];//rvb of gels
+float gel_transimission[4][10000];
+int gel_position_selected[4];
+bool show_designer_list=0;
+bool index_use_transmission=0;
+
 ////////////////////RETOUR INFOS////////////////////////////////////////////////
 char string_debug[120];
 int scroll_y_info=0;
@@ -270,7 +289,7 @@ int colorpreset_linked_to_dock[8][2];//colorpreset// num fader puis num dock
 char string_docktypvideo[8];
 char DockName[48][6][25];
 unsigned char FaderDockContains[48][6][514];
-unsigned char FaderDoDmx[48][514];//la sortie de chaque fader
+unsigned char FaderDoDmx[49][514];//la sortie de chaque fader // passé à 49 pour éviter debordement pointeur ECHO SNAP 19/12/14
 bool show_who_is_in_FADER_DOCK[514];//pour affichage de qui est dans le dock
 bool FaderLocked[48];
 unsigned char OldFaderLockProc[48];//pour lancer le midi send out, prend dernier etat fader lors du lock et compare
@@ -495,7 +514,7 @@ int numero_de_dock_goto_spline=1;
 ////////////////////////VIDEO //////////////////////////////////////////////////
 double image_recording_size;
 double image_recorded_size;
-int fps_video_rate=25;
+int fps_video_rate=30;
 int default_fps_video_rate=12;
 int recup_val_pix_video=0;
 bool ocvfilter_is_on=0;//acces reglages images oCV
@@ -516,11 +535,17 @@ double pixels_changed=0;
 double old_pixels_changed=0;
 double nbre_pixels_changed=0;
 float ratio_pixels_changed=0.0;
+
+int camera_size_settings_is=0;// nouveau système selection de taille image
+int camera_size_array[2][2]; // x y size à définir 320x240 640x480
+int camera_fps_settings_is=0;// nouveau systeme selection fps en index
+bool manipulating_camera=0;//pour éviter de planter lectrue ecriture de données
+
 int camera_modes_and_settings[8][16];//ocv_calcul_mode /levels
 float level_visu=1.0;
 int index_count_trackers=0;
 int frame_video_x, frame_video_y;
-int video_size_x=352 , video_size_y=288;
+int video_size_x=320 , video_size_y=200;
 bool camera_is_on=0;
 int load_camera_on_start=0;
 int camera_original_fps_is=15;
@@ -528,7 +553,7 @@ float display_fps;
 //6 tracking docks // 12 espaces de tracking par tracking dock//
 int tracking_coordonates[6][12][4];//dock selected / tracker / x y largeur x largeur y
 bool tracking_contents[6][12][512];//channel affectation
-int buffer_tracker[512];
+int buffer_tracker[514];
 int tracker_level[6][12];
 int tracker_to_edit=0;
 //smooth
@@ -548,10 +573,7 @@ char string_tracker_edited_dat[48];
 //6 tracking docks // 12 espaces de tracking par tracking dock//
 int tracking_dock_selected=0;
 bool tracking_spaces_on_off[6][12];//dock selected / tracker
-/////////////////////VIDEO RATE TIMER////////////////////
-int last_ticker_video=0;
-volatile int ticks_for_video=0;
-int ticker_video_rate = BPS_TO_TIMER(fps_video_rate);
+
 ////////////////////VIDEO AVI///////////////////////////////////////////////////
 char list_my_video[25][16];//24 videos
 char annote_my_video[25][64];//24 videos
@@ -563,7 +585,7 @@ int XChannels=-20, YChannels=70;
 int ChScrollX=580, ChScrollY=50; //scroller ascenceur
 float Ch_Scroll_Factor=12.0;
 int last_scroll_mouse_for_chan=0;
-
+bool index_moving_channel_scroller=0;
 char string_last_ch[36];
 
 ///////////////DMX ENTTEC PRO//////////////////////////////////////////////////
@@ -590,8 +612,7 @@ int wheellevel_absolutemode=0;
 int previous_level_wheel=1;
 int absolute_level_wheel=0;//icat
 int previous_absolute_level_wheel=0;//icat
-//NUMPAD SHOW MIDI IN
-bool show_numpad_midi[24];
+
 ////////////////////////TIME CHRONO///////////////////////////////////////////
 
 float position_curseur_time_x;//=1242,
@@ -696,7 +717,7 @@ short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
 MidiName AppliName = "white cat";
 
-char	  	TblLibEv[256][20];
+char TblLibEv[256][20];
 char my_midi_string[64];
 char my_midi_original_string[64];
 char my_midi_out_string[128];
@@ -839,7 +860,8 @@ int crossfade_time_delay_in=0;
 int crossfade_time_delay_out=0;
 float fraction_goback_X2_in=0.0;
 float fraction_goback_X1_out=0.0;
-float alpha_blinker=0.3;
+float alpha_blinker=0.0;
+float alpha_smooth_blinker=0.0;
 float default_time_back=3.0;
 int ratio_cross_manuel[10000];
 bool index_get_back_faders_need_to_be_done=0;//pour crossfade manuel en midi
@@ -917,8 +939,6 @@ bool index_do_banger_memonstage=0;
 bool index_do_banger_memonpreset=0;
 bool index_do_banger_membeforeone=0;
 bool index_do_banger_memother=0; // les 8 autres memoires
-bool index_do_load_midipreset=0;//chargement midi preset
-
 /////////////////////////////////FENTRE LISTE PROJOS//////////////////////////
 bool index_list_projecteurs=1;
 bool index_edit_listproj=0;
@@ -1161,8 +1181,8 @@ bool specify_who_to_save_PDF[36];
 bool freeze_array[514];
 unsigned char freeze_state[514];
 ///////////////////////////FADERS SNAPSHOTS GENERAL//////////////////////////////////
-unsigned char SnapFader[48];
-bool SnapFaderLocked[48];
+unsigned char SnapFader[49];
+bool SnapFaderLocked[49];
 bool Snapis_dock_for_lfo_selected[49][6];
 int Snaplfo_mode_is[49];// //0 NO LFO- 1 UP ONCE - 2 DOWN ONCE
 bool Snaplfo_cycle_is_on[49];// SAW up down
@@ -1181,7 +1201,7 @@ int index_over_banger_window=0;
 bool index_banger_is_on=0;//on off du mode
 int index_banger_selected=0;
 bool index_enable_edit_banger=0;
-char string_event[36];
+char string_event[72];//debug debordement de tableau 18/12/14 christoph ruiserge
 int Banger_Memoire[10000];//le banger affecté à une mémoire
 char bangers_name[128][25];//128 bangers
 int bangers_type[128][6];//128 bangers // 6 events par banger
@@ -1203,7 +1223,7 @@ char keyname[256][16];//nom des touches
 
 
 bool  bang_in_mem_is_sended=0; //pour les envois dans les memoires, un seul index
-int remember_state_of_banged_fader[48][24];
+int remember_state_of_banged_fader[49][24];
 int memoire_asked_in_bang=0;
 char string_alarm[128][25];//une alarm par banger
 char string_THE_alarm[25];//Etait 30 . 27/10/2010 Lanion
@@ -1370,11 +1390,7 @@ int pos_focus_window=0;
 
 bool im_moving_a_window=0;//index poru lros de déplacement
 int last_window_founded=0;
-/////midi presets///////////////////////////////
-char list_midipreset_files[127][72];
-int midipreset_selected=0;
-char midipreset_name[72];
-int line_midipreset=0;
+
 
 //////////////WIZARD /////////////////////////
 int Xwizard=100;
@@ -1472,6 +1488,7 @@ int previous_digital_data_from_arduino[128];
 int arduino_max_digital=54;
 int analog_data_from_arduino[64];//tableau des datas gardé tres large au cas ou grande extension
 int previous_analog_data_from_arduino[64];
+bool ventilate_analog_data[64];//pour muter demuter les entrées arduino
 int arduino_max_analog=5;
 bool digital_data_is_switch[128];//pour comportements switch
 bool snap_dig_for_switch[128];
@@ -2443,7 +2460,7 @@ int previous_draw_preset_selected=-1;//icat
 int draw_brush_type[6]; //point / GPL
 int draw_mode[6];//0= draw 1= erase 2= solo 3=ghost
 float draw_level_to_do[6];
-float draw_tilt_to_do[6];
+float draw_damper_decay_factor[6];
 float draw_ghost_to_do[6];
 
 bool draw_point_is_traced[6];//pour curseur maintenu ipad ou souris et routines de up down etc
@@ -2451,7 +2468,7 @@ bool draw_point_is_traced[6];//pour curseur maintenu ipad ou souris et routines 
 bool previous_draw_brush_type[6];
 int previous_draw_mode[6];
 float previous_draw_level_to_do[6];
-float previous_draw_tilt_to_do[6];
+float previous_draw_damper_decay_factor[6];
 float previous_draw_ghost_to_do[6];
 
 int draw_centre_x[6];
@@ -2473,8 +2490,10 @@ volatile bool merging_gpl_in_draw=0;
 int draw_get_gpl[6];
 int draw_offset_gpl[6];
 
-
-
+//rajout version fevrier 2015 Variables de calculs damper decay
+float damper_target_val=0.0;
+float damper_val=0.0;
+float damper_vel=0.0;
 
 ////ECHO
 bool index_show_echo_window=0;
@@ -2520,3 +2539,23 @@ bool bounce_is_prepared[24];
 int fader_before_bounce[48];
 
 float snap_echo_to_recall[24][513];
+
+
+//BAZOOCAT video handler
+
+bool index_bazoocat_menu_window=1;
+
+
+
+
+int size_x_bazoocat_menus=800;
+int size_y_bazoocat_menus=600;
+int position_x_bazoocat_menus=100;
+int position_y_bazoocat_menus=100;
+
+
+bool index_click_move_bazoocat_window=0;
+
+
+
+float une_valeur_de_debug=0.0;

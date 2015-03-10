@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file Call_everybody_5.cpp
 * \brief {no idea}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -151,17 +151,14 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 switch(df)
 {
 case 0:
-if (show_numpad_midi[12]==1){FunctionChThr.Draw(CouleurSurvol);show_numpad_midi[12]=0;}
 petitchiffre.Print("  ALL",fx+5, fy+15 + (df*fhaut)+ (space*df));
 petitpetitchiffre.Print(" Y",fx+40, fy+25 + (df*fhaut)+ (space*df));
 break;
 case 1:
-if (show_numpad_midi[13]==1){FunctionChThr.Draw(CouleurSurvol);show_numpad_midi[13]=0;}
 petitchiffre.Print("  INV",fx+5, fy+15 + (df*fhaut)+ (space*df));
 petitpetitchiffre.Print(" U",fx+40, fy+25 + (df*fhaut)+ (space*df));
 break;
 case 2:
-if (show_numpad_midi[14]==1){FunctionChThr.Draw(CouleurSurvol);show_numpad_midi[14]=0;}
 petitchiffre.Print(" THRU",fx+5, fy+15 + (df*fhaut)+ (space*df));
 petitpetitchiffre.Print("Tab",fx+40, fy+25 + (df*fhaut)+ (space*df));
 break;
@@ -303,7 +300,7 @@ command_button_logical(xmenu+80,ymenu+50+(cl*25),stae,nom_commande,raccourci_com
 
 
 //3ème colonne grands blocs
-for(int cl=0;cl<5;cl++)
+for(int cl=0;cl<6;cl++)
 {
 switch(cl)
 {
@@ -342,7 +339,13 @@ strcpy(nom_commande,"GridPl.");
 strcpy(raccourci_commande,"");
 stae=index_grider_window;
 break;
-
+case 5:
+IDmidi=1829;
+IDcommand=cl+20;
+strcpy(nom_commande,"BazooKAT");
+strcpy(raccourci_commande,"");
+stae=index_bazoocat_menu_window;
+break;
 default:
 break;
 }
@@ -592,7 +595,7 @@ command_button_view(xmenu+80,ymenu+50+(cl*25),stae,nom_commande,raccourci_comman
 
 
 //3ème colonne grands blocs
-for(int cl=0;cl<5;cl++)
+for(int cl=0;cl<6;cl++)
 {
 switch(cl)
 {
@@ -631,7 +634,12 @@ strcpy(nom_commande,"GRID PL.");
 strcpy(raccourci_commande,"");
 stae=index_grider_window;
 break;
-
+case 5:
+IDmidi=1829;
+strcpy(nom_commande,"BazooKAT");
+strcpy(raccourci_commande,"");
+stae=index_bazoocat_menu_window;
+break;
 default:
 break;
 }

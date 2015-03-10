@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file banger_core_8.cpp
 * \brief {Bangers fonctions}
 * \author Christoph Guillermet
-* \version {0.8.6}
-* \date {28/04/2014}
+* \version {0.8.6.3}
+* \date {12/02/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -1318,10 +1318,11 @@ if(param1_is>=0 && param1_is<5)
      break;
      case 8:
      //sprintf(bangers_type_action,"Seek to CueIn Pl.");
-     switch(param1_is)
+      if(player_ignited[param1_is]==1 && param2_is==1)//christoph 03/12/14
      {
-     if(player_ignited[param1_is]==1 && param2_is==1)
+         switch(param1_is)
      {
+
        case 0://PLAYER 1
        player1->setPosition(audio_position_was[param1_is]);
        sprintf(string_event,"BACK: Player 1 SeekToCueIn");
@@ -2550,7 +2551,11 @@ if(param1_is>=0 && param1_is<5)
      sprintf(audiofile_name_was[param1_is],sound_files[param1_is]);
      //sprintf(bangers_type_action,"Load in Player");
      sprintf(audiofile_name,list_audio_files[param2_is]);
+     //debug christoph 11/12/14
+     audiofile_selected=param2_is;
+     //
      AffectSoundFile(param1_is);
+
      player_seek_position[param1_is]=audiofile_cue_in_out_pos[param2_is][0];
      player_loop_out_position[param1_is]=audiofile_cue_in_out_pos[param2_is][1];
      sprintf(string_event,"Affected Audio %d to Player %d",param2_is,param1_is);
@@ -2612,6 +2617,9 @@ if(param1_is>=0 && param1_is<5)
      sprintf(audiofile_name_was[param1_is],sound_files[param1_is]);
      //sprintf(bangers_type_action,"Load in Player");
      sprintf(audiofile_name,list_audio_files[param2_is]);
+    //debug christoph 11/12/14
+     audiofile_selected=param2_is;
+     //
      AffectSoundFile(param1_is);
      player_seek_position[param1_is]=audiofile_cue_in_out_pos[param2_is][0];
      player_loop_out_position[param1_is]=audiofile_cue_in_out_pos[param2_is][1];
@@ -4084,7 +4092,7 @@ switch(bangers_action[banger_num][event_num])
      if(param1_is>0 && param1_is<5)
      {
      numgridpl=param1_is-1;
-     if(param2_is>=0 || param2_is <=127)
+     if(param2_is>=0 && param2_is <=127)
      {
      grid_crossfade_speed[numgridpl]=param2_is;
      sprintf(string_event,"GridPl %d Set Accel at %d",numgridpl+1,param2_is);
@@ -4192,6 +4200,18 @@ param2_is=bangers_params[banger_num][event_num][1];
      arduino_baud_rate0=param2_is;
      arduino_init(0);
      sprintf(string_event,"Arduino BaudRate %d",param2_is);
+     }
+     break;
+     case 2://on off analog input
+     if(param1_is>=0 && param1_is<64)
+     {
+         if(param2_is!=0)
+         {
+         param2_is=1;
+         sprintf(string_event,"Arduino Analog %d ON",param1_is);
+         }
+         else {sprintf(string_event,"Arduino Analog %d OFF",param1_is);}
+         ventilate_analog_data[param1_is]=param2_is;
      }
      break;
      default:
@@ -4427,7 +4447,7 @@ if(param1_is>=0 && param1_is<=6)
       sprintf(string_event,"Draw Pressure %d on Matrix %d",param2_is, param1_is+1);
      break;
      case 4://"Set Angle");
-     draw_tilt_to_do[param1_is]=(float)(constrain_data_to_midi_range(param2_is))/127;
+     draw_damper_decay_factor[param1_is]=(float)(constrain_data_to_midi_range(param2_is))/127;
      sprintf(string_event,"Draw Angle %d on Matrix %d",param2_is, param1_is+1);
      break;
      case 5://"Set Ghost");
