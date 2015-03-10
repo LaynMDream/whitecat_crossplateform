@@ -47,7 +47,7 @@ int arduino_decode_array_method(char *tmp_ard)
 {
 if(strncmp(tmp_ard,"DG/",3)==0)//3= le code
 {
-for(int o=3;o<3+arduino_max_digital;o++)
+for(int o=3;o<3+arduino_max_out_digi;o++)
 {
 
 digital_data_from_arduino[o-3]=tmp_ard[o];
@@ -58,7 +58,7 @@ sprintf( string_Arduino_status,">>ARDUINO : Received Digital ");
 
 else if(strncmp(tmp_ard,"AN/",3)==0)
 {
-for(int o=3;o<3+arduino_max_analog;o++)
+for(int o=3;o<=3+arduino_max_analog;o++)
 {
 analog_data_from_arduino[o-3]=(int)(tmp_ard[o]) &0xff;     //cast si val=127 -> 127 si val=-1 -> val 255 si val=-128 ->val 128
 }
@@ -80,7 +80,7 @@ arduino_order[0]='S';arduino_order[1]='D';arduino_order[2]='/';arduino_order[3]=
 //ne pa enlever nBytes
 nBytesSendtoArduino=serial0.SendData(arduino_order,4);
 //capture de l'état précédent
-for(int y=0;y<=arduino_max_digital;y++)
+for(int y=0;y<=arduino_max_out_digi;y++)
 {
 previous_digital_data_from_arduino[y]=digital_data_from_arduino[y];
 }
@@ -225,7 +225,7 @@ if( new_maxan>=0 && new_maxan<=analog_limit )
 arduino_max_analog=new_maxan;
 mouse_released=1;
 }
-if(position_line_ana>arduino_max_analog-12)
+if(position_line_ana>arduino_max_analog-11)
 {position_line_ana=0;}
 }
 }

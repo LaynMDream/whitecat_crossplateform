@@ -74,7 +74,7 @@ int vfader=0;
 int temp_ardniveauX1=0;
 int temp_ardniveauX2=0;
 
-for(int p=0;p<arduino_max_analog;p++)
+for(int p=0;p<=arduino_max_analog;p++)
 {
 if(analog_data_from_arduino[p]!=previous_analog_data_from_arduino[p])
 {
