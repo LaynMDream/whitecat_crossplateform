@@ -2,7 +2,7 @@
 1398954421 source:e:\github\whitecat_crossplateform\src\whitecat_private.rc
 	<windows.h>
 
-1423917347 source:e:\github\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
+1425945745 source:e:\github\whitecat_crossplateform\src\main_janv_2014_opensource_kbd.cpp
 	<allegro.h>
 	<winalleg.h>
 	<OpenLayer.hpp>
@@ -1409,7 +1409,7 @@
 
 1425944792 e:\github\whitecat_crossplateform\src\arduino_core_6_uno.cpp
 
-1425943688 e:\github\whitecat_crossplateform\src\arduino_6_uno.cpp
+1425947793 e:\github\whitecat_crossplateform\src\arduino_6_uno.cpp
 
 1423917347 e:\github\whitecat_crossplateform\src\cfg_config_panel_8.cpp
 

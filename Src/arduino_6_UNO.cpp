@@ -225,7 +225,7 @@ if( new_maxan>=0 && new_maxan<=analog_limit )
 arduino_max_analog=new_maxan;
 mouse_released=1;
 }
-if(position_line_ana>arduino_max_analog-11)
+if(position_line_ana>=arduino_max_analog-11)
 {position_line_ana=0;}
 }
 }
