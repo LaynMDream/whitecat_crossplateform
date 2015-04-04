@@ -41,6 +41,8 @@ WWWWWWWW           C  WWWWWWWW   |
 *
 **/
 
+#include <map>
+
 int do_reset_all_listproj()
 {
 for (int r=0;r<514;r++)
@@ -65,7 +67,7 @@ chdir(rep);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-	char line [512];
+	char line [2048];
 //sab 02/03/2014 unused var	int n=0;
 	int cue=0;
 	float down=0.0;
@@ -83,7 +85,7 @@ chdir(rep);
 	int flagpatch= -1;
 	int flagsub=-1;
 	int first_cue_from_import=0;
-
+std::map<int, float> followtimemap;
 
 
 	FILE *f=NULL;
@@ -97,14 +99,37 @@ chdir(rep);
     else
     {
 	do {
-		if (fgets(line,512,f)!=NULL)
+		if (fgets(line,2048,f)!=NULL)
 		{
+int h;
+  for (h=0;h<2048;++h)
+  {
+    if(line[h]!=' '){
+     break;
+    }
+  }
+
+  for (int k=0; k<2048-h;++k)
+  {
+     line[k] = line[k+h]; //supprime les espaces en début de line
+     if(line[k]=='@') //remplace les @ par /
+     {
+         line[k]='/';
+     }
+     // met toute les lettre minuscule en majuscule pour la comparaison
+     if(line[k]>=97&&line[k]<=122)
+     {
+       line[k]=line[k]-32;
+     }
+  }
 				if (strncmp(line, "CUE",3)==0)
 					{
-						float tmpcueval= strtof(line+4,NULL);
-						cue = (int)(tmpcueval*10);
+char* pEnd;
+						double tmpcueval= strtod(line+4,NULL);
+						//float cuelistnumber = strtof (pEnd, NULL);
+						cue = (int)((double)tmpcueval*10);
 						MemoiresExistantes[cue]=1;
-	                    if(first_cue_from_import==0)
+	                if(first_cue_from_import==0)
 	                    {first_cue_from_import=cue;}
 						flagcue=1;flagsub=-1;flagpatch=-1;
 
@@ -122,9 +147,6 @@ chdir(rep);
                  descriptif_memoires[cue][24]='\0';
                  }
 
-                 ////0=DIN  1=IN 2=DOUT 3=OUT
-                //sprintf(header_export,"Stage: d:%.1f  OUT: %.1f  | Memory: d:%.1f  IN: %.1f", Times_Memoires[m][2], Times_Memoires[m][3],Times_Memoires[m][0],Times_Memoires[m][1]);
-
 
 				if(strncmp(line,"DOWN",4)==0)
 					{
@@ -141,35 +163,64 @@ chdir(rep);
 				if(strncmp(line,"$$WAIT",6)==0)
 					{
 					autogotime=(float)strtof(line+7,NULL);
-					if (autogotime>0) {Links_Memoires[cue]=1;}
-				//	Times_Memoires[cue][0]=autogotime;
-				//	Times_Memoires[cue][2]=autogotime;
+					if (autogotime>0) {Links_Memoires[cue]=1;
+										followtimemap[cue]=autogotime;
+
 					}
 
-				if(strncmp(line,"CHAN",4)==0)
+					}
+
+if(strncmp(line,"FOLLOWON",8)==0)
+					{
+
+        autogotime=(float)strtof(line+9,NULL);
+					if (autogotime>0)
+                        {
+
+                            Links_Memoires[cue]=1;
+                            followtimemap[cue]=autogotime;
+
+
+                    }
+
+					}
+
+				if(strncmp(line,"CHAN",4)==0&&strncmp(line,"$$CHANMOVE",10)!=0)
 					{
 					temp= strtok(line+5," ");
 					while((temp!=NULL) && (strcmp(temp,"\n")!=0))
 					    	{
-							sscanf(temp,"%d/H%2d\n",&chan,&level);
+							sscanf(temp,"%d/H%2x\n",&chan,&level);
 							Memoires[cue][chan]=(unsigned char)level;
 							temp=strtok(NULL," ");
 						    }
 					}
                 }//fin cues
 
-                if (strncmp(line, "SET DEFAULT PATCH",17)==0 || strncmp(line, "CLEAR PATCH",11)==0  )
+                if (strncmp(line, "SET DEFAULT PATCH",17)==0 || strncmp(line, "CLEAR PATCH",11)==0 || strncmp(line, "! CONVENTIONAL PATCH",20)==0 )
                 {
 
                 flagcue=-1; flagsub=-1;
                 flagpatch=1;
                 if (strncmp(line, "SET DEFAULT PATCH",17)==0 )
                 {
+                patch_select_all_dimmers();
                 patch_to_default_selected();
+                patch_unselect_all_dimmers();
+
                 }
                 else if (strncmp(line, "CLEAR PATCH",11)==0 )
                 {
+                patch_select_all_dimmers();
                 patch_clear_selected();
+                patch_unselect_all_dimmers();
+                }
+                else if (strncmp(line, "! CONVENTIONAL PATCH",20)==0 )
+                {
+                patch_select_all_dimmers();
+                patch_clear_selected();
+                patch_unselect_all_dimmers();
+
                 }
                 }
                 if (flagpatch==1)//patch
@@ -243,6 +294,13 @@ chdir(rep);
 					time_per_dock[sub_f][sub_d][2]=autogotime;
 					}
 
+					if(strncmp(line,"FOLLOWON",8)==0)
+					{
+					autogotime=(float)strtof(line+9,NULL);
+					time_per_dock[sub_f][sub_d][0]=autogotime;
+					time_per_dock[sub_f][sub_d][2]=autogotime;
+					}
+
 				 if(strncmp(line,"CHAN",4)==0)
 					{
                     DockTypeIs[sub_f][sub_d]=0;
@@ -271,6 +329,8 @@ fclose(f);
 }
 scan_for_free_dock();
 ////////////////////////////////////////////////////////////////////////////////
+
+
 //detect sequenciel
 position_onstage=first_cue_from_import;
 refresh_mem_onstage(position_onstage);
@@ -283,6 +343,25 @@ index_window_sequentiel=1;
 sprintf(rep,"%s",mondirectory);
 chdir (rep);
 index_is_saving=0;
+
+/////////charge delay follow time
+
+std::map<int, float>::iterator it;
+for(it = followtimemap.begin() ; it != followtimemap.end() ; ++it)
+{
+    int mcue = it->first;
+    float mtimefolow = it->second ;
+    int nex_mmem= detect_next_mem(mcue);
+
+if(nex_mmem>0)
+                        {
+                    Times_Memoires[nex_mmem][0]=mtimefolow;
+					Times_Memoires[nex_mmem][2]=mtimefolow;
+                        }
+
+}
+
+
 return(0);
 }
 

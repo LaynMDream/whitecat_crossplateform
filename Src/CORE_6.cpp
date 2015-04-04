@@ -3894,6 +3894,22 @@ int detect_mem_preset()
     return(0);
 }
 
+int detect_next_mem(int mem_to_detect)
+{
+    for (int k=mem_to_detect+1; k<10000; ++k)
+    {
+        if(k>=9999)
+        {
+    return(0);
+        }
+        if(MemoiresExistantes[k]==1)
+        {
+            return k;
+        }
+    }
+    return(0);
+}
+
 int detect_mem_preset_previous()
 {
     bool turn=0;
@@ -5856,7 +5872,7 @@ int GlobInit()
         }
         position_onstage=10;
         position_preset=10;
-        MemoiresExistantes[10]=1;
+       // MemoiresExistantes[10]=1;
     }
 
     if(specify_who_to_save_load[1]==1)//memoires times /////////////////////////////
