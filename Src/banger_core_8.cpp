@@ -301,9 +301,10 @@ if(the_fader_is>=0 && the_fader_is<core_user_define_nb_faders)
       }
       break;
      }
-     Fader[the_fader_is]= niv_transforme;
+     /*Fader[the_fader_is]= niv_transforme;
      midi_levels[the_fader_is]= niv_transforme/2;
-     index_send_midi_out[the_fader_is]=1;
+     index_send_midi_out[the_fader_is]=1;*/
+     fader_set_level(the_fader_is,niv_transforme);
 
      if(lfo_mode_is[the_fader_is]==1 || lfo_mode_is[the_fader_is]==2 || lfo_cycle_is_on[the_fader_is]==1)
      {
@@ -484,6 +485,8 @@ if((param1_is>=0 && param1_is<=15 ) && (param2_is>=0 && param2_is<=127))
      send_my_midi_note( 4,  param1_is, param2_is, 127, 10);//velocite / duree
      sprintf(string_event,"BACK:ctrl-change Ch:%d P:%d V:127",param1_is,param2_is);
      break;
+     default:
+         break;
      }
 }
 break;
@@ -1713,9 +1716,11 @@ if(the_fader_is>=0 && the_fader_is<core_user_define_nb_faders)
       break;
      }
      do_stock_fadersstate(1,0,0,0,0);
+     /*
      Fader[the_fader_is]= niv_transforme;
      midi_levels[the_fader_is]= niv_transforme/2;
-     index_send_midi_out[the_fader_is]=1;
+     index_send_midi_out[the_fader_is]=1;*/
+     fader_set_level(the_fader_is, niv_transforme);
      if(lfo_mode_is[the_fader_is]==1 || lfo_mode_is[the_fader_is]==2 || lfo_cycle_is_on[the_fader_is]==1)
      {
      lfo_mode_is[the_fader_is]=0; lfo_mode_is[the_fader_is]=0; lfo_cycle_is_on[the_fader_is]=0;
@@ -2004,6 +2009,41 @@ if(the_fader_is>=0 && the_fader_is<core_user_define_nb_faders)
      sprintf(string_event,"Fader %d Dock %d CH %d At Full", the_fader_is+1,dock_used_by_fader_is[param1_is]+1, param2_is);
      }
      break;
+     case 34://"Damper On/Off"
+     if( param2_is==0 ||  param2_is==1)
+     {
+     if(fader_damper_is_on[the_fader_is]==0)
+        {
+        Fader_dampered[the_fader_is].fix_all_damper_state_value(Fader[the_fader_is]);
+        Fader_dampered[the_fader_is].set_target_val(Fader[the_fader_is]);
+        sprintf(string_event,"Fader %d Damper Off", the_fader_is+1);
+        }
+     else
+        {sprintf(string_event,"Fader %d Damper On", the_fader_is+1);}
+     fader_damper_is_on[the_fader_is]=param2_is;
+     }
+     break;
+     case 35://"Damper SetDecay"
+     if( param2_is>=0 &&  param2_is<=127)
+     {
+     Fader_dampered[the_fader_is].set_damper_decay((((float)param2_is)/127));
+     sprintf(string_event,"Fader %d Damper Decay at %d level", the_fader_is+1, param2_is);
+     }
+     break;
+     case 36://"Damper SetDelta"
+     if( param2_is>=0 &&  param2_is<=127)
+     {
+     Fader_dampered[the_fader_is].set_damper_dt((((float)param2_is)/127));
+     sprintf(string_event,"Fader %d Damper Delta at %d level", the_fader_is+1, param2_is);
+     }
+     break;
+     case 37://"Damper Mode"
+     if( param2_is>=0 &&  param2_is<=max_damper_mode)
+     {
+     Fader_dampered[the_fader_is].set_damper_mode(param2_is);
+     sprintf(string_event,"Fader %d Damper Mode is %d", the_fader_is+1, param2_is);
+     }
+     break;
      default:
      break;
 }
@@ -2014,10 +2054,14 @@ break;
 case 2: //midi send
 param1_is=bangers_params[banger_num][event_num][0];
 param2_is=bangers_params[banger_num][event_num][1];
-if((param1_is>=0 && param1_is<=15 ) && (param2_is>=0 && param2_is<=127))
+if(bangers_action[banger_num][event_num]<=23)//calibration CH max 15 et PITCH max 127 pour envoyer des arguments au midiclock rate
+//if((param1_is>=0 && param1_is<=15 ) && (param2_is>=0 && param2_is<=127))
 {
+if(param1_is>15){param1_is=15;}
+if(param2_is>127){param1_is=127;}
+}
 //send_my_midi_note( int letype,  int lechannel, int lanote, int lavelocite, int laduree)
-    switch(bangers_action[banger_num][event_num])
+switch(bangers_action[banger_num][event_num])
      {
      case 0://key on 127
       send_my_midi_note( 1,  param1_is, param2_is, 127, 10);//velocite / duree
@@ -2136,16 +2180,44 @@ if((param1_is>=0 && param1_is<=15 ) && (param2_is>=0 && param2_is<=127))
      }
      break;
      case 23://refresh et send de toutes les commandes
-     for(int i=0;i<2048;i++)
+     for(int i=0;i<3072;i++)
      {
      index_send_midi_out[i]=1;
      }
      sprintf(string_event,"Resend all Midi states !");
      break;
+     case 24:
+     index_midi_clock_on=1;
+     sprintf(string_event,"MidiClock ON !");
+     break;
+     case 25:
+     index_midi_clock_on=0;
+     sprintf(string_event,"MidiClock OFF !");
+     break;
+     case 26:
+     if(param1_is>0)
+     {
+     midi_BPM=param1_is;
+     ticker_midi_clock_rate=BPM_TO_TIMER(24 * midi_BPM);
+     install_int_ex(ticker_midi_clock , ticker_midi_clock_rate);
+     sprintf(string_event,"MidiClock at RATE %d BPM", midi_BPM);
+     }
+     break;
+     case 27:
+     midi_send_type_message(typeStart);
+     sprintf(string_event,"Midi Msg START");
+     break;
+     case 28:
+     midi_send_type_message(typeStop);
+     sprintf(string_event,"Midi Msg STOP");
+     break;
+     case 29:
+     midi_send_type_message(typeContinue);
+     sprintf(string_event,"Midi Msg CONTINUE");
+     break;
      default:
      break;
      }
-}
 break;
 /////////fin MIDI///////////////////////////////////////////////////////////////////
 ////////////DEBUT WINDOWS//////////////////////////////////////////////////////////
@@ -3800,7 +3872,7 @@ case 13://midi mute
      switch(bangers_action[banger_num][event_num])
      {
      case 0://,"[GLOBAL]");
-     for(int i=0;i<2048;i++)
+     for(int i=0;i<3072;i++)
      {
      is_raccrochage_midi_remote[i]=param2_is;
      }
@@ -4157,6 +4229,8 @@ switch(bangers_action[banger_num][event_num])
      numgridpl=param1_is-1;
      index_grider_seek_pos[numgridpl]=index_grider_step_is[numgridpl];//redefine seek step on the fly
      }
+      sprintf(string_event,"Redefined SeekPts as %d in Grid %d",index_grider_seek_pos[numgridpl]+1, index_grider_selected[numgridpl]+1);
+
      break;
      case 22: //christoph 21/04/14  clear seek points
      if(param1_is>0 && param1_is<5)
@@ -4165,6 +4239,15 @@ switch(bangers_action[banger_num][event_num])
      {
      grid_seekpos[index_grider_selected[numgridpl]][i]=0;
      }
+     }
+     sprintf(string_event,"GridPl %d Cleared SeekPts in %d", numgridpl, index_grider_selected[numgridpl]+1);
+     break;
+     case 23: //christoph 25/03/15  clear grid number for recording
+     if(param1_is>0 && param1_is<5)
+     {
+       grid_to_clear=index_grider_selected[numgridpl];
+       clear_a_grid(grid_to_clear);
+       sprintf(string_event,"GridPl %d Cleared Grid %d", numgridpl, grid_to_clear+1);
      }
      break;
      default:

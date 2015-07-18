@@ -323,6 +323,7 @@ if(mouse_button==1 && window_focus_id==idwindowis && mouse_y>hauteur_ChannelMenu
  case W_CFGMENU:
  window_cfgX=mouse_x-(40+15);
  window_cfgY=mouse_y-25;
+ rafraichissement_clockwheel();
  im_moving_a_window=1;
  break;
  case W_WIZARD://wizard window

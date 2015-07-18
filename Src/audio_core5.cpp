@@ -689,7 +689,6 @@ if(mouse_x>xp && mouse_x<xp+20 && mouse_y>=yp && mouse_y<=yp+127)
   sprintf(string_last_midi_id,"VolumePlayer %d is Ch: %d Pitch: %d Typ: %s" , numero, miditable[1][616+numero],miditable[2][616+numero],thetypinfo);
 if( Midi_Faders_Affectation_Type!=0)
 {
-
 attribute_midi_solo_affectation(616+numero,Midi_Faders_Affectation_Mode);
 }
 else

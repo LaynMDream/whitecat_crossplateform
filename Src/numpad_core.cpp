@@ -41,8 +41,6 @@ WWWWWWWW           C  WWWWWWWW   |
 *
 **/
 
-#define PIknob  3.14159265358979323846264338327950288419716939937510
-
 int do_wheel_level_job(int levelwheelis)
 {
 switch(wheellevel_absolutemode)
@@ -296,6 +294,7 @@ if( Midi_Faders_Affectation_Type!=0)//config midi
 else
 {
 simulate_keypress(KEY_UP<<8);
+mouse_released=1;
 }
 }
 //
@@ -319,6 +318,7 @@ if(Midi_Faders_Affectation_Type!=0)//config midi
 else
 {
 simulate_keypress(KEY_DOWN<<8);
+mouse_released=1;
 }
 }
 

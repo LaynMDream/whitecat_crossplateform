@@ -733,14 +733,15 @@ if(mouse_x>xlist+290 && mouse_x<xlist+330)
  {
   line_list_is-=1;
   if(line_list_is<0) {line_list_is=0;  }
+  mouse_released=1;
   }
 
 //+
  if( mouse_y>ylist+81 && mouse_y<ylist+101)
  {
-
   if(line_list_is<513){line_list_is+=1;  }
   if(line_list_is>513) {line_list_is=513;  }
+  mouse_released=1;
   }
 }
 //ascenceur

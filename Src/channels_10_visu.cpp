@@ -944,6 +944,14 @@ int ChannelsMenuSelection(int chx, int chy)
         break;
     case 2:
         command_button_view(chx+620,chy+1,Midi_Faders_Affectation_Type,"MidiAff.X8","",1625);// int x, inty ,bool state, char *textedesc, int midiaffectation
+        if(toggle_numerical_midi_way==0)
+        {
+        minidoomblanc.Print("P",chx+670,chy+25);
+         }
+        else
+        {
+        minidoomblanc.Print("CH",chx+670,chy+25);
+        }
         break;
     default:
         break;

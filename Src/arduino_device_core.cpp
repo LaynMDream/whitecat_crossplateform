@@ -29,9 +29,9 @@ WWWWWWWW           C  WWWWWWWW   |
 
 * \file arduino_device_core.cpp
 * \brief {arduino serial open close fonction}
-* \author Christoph Guillermet, Anton Langhoff
-* \version {0.8.6.3}
-* \date {12/02/2015}
+* \author Christoph Guillermet
+* \version {0.8.7}
+* \date {21/04/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -50,13 +50,13 @@ if(device==0)
 {
 if(serial0.Open(arduino_com0,arduino_baud_rate0))
 {
-sprintf(string_Arduino_status,">>ARDUINO : Open Arduino on PORT %d rate: %d >> OK !",arduino_com0,arduino_baud_rate0);
+sprintf(string_Arduino_status,">> Open Arduino on PORT %d rate: %d >> OK !",arduino_com0,arduino_baud_rate0);
 arduino_device_0_is_ignited=1;
 //rest(1000); //temps d'initialisation avant communication ( sinon pense recuperer script)
 }
 else
 {
-sprintf(string_Arduino_status,">>ARDUINO : Open Arduino on PORT %d >> FAILED !",arduino_com0);
+sprintf(string_Arduino_status,">> Open Arduino on PORT %d >> FAILED !",arduino_com0);
 arduino_device_0_is_ignited=0;
 }
 }
@@ -68,7 +68,7 @@ int arduino_close(int device)
 if(device==0)
 {
  serial0.Close();
- sprintf(string_Arduino_status,">>ARDUINO : Closed Arduino on PORT %d >> OK !",arduino_com0);
+ sprintf(string_Arduino_status,">> Closed Arduino on PORT %d >> OK !",arduino_com0);
 }
 
 return(0);

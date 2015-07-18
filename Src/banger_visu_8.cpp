@@ -426,6 +426,18 @@ case 1:
      case 33:
      sprintf(bangers_type_action,"Fader: SetCH 0");
      break;
+     case 34:
+     sprintf(bangers_type_action,"Damper On/Off");
+     break;
+     case 35:
+     sprintf(bangers_type_action,"Damper SetDecay");
+     break;
+     case 36:
+     sprintf(bangers_type_action,"Damper SetDelta");
+     break;
+     case 37:
+     sprintf(bangers_type_action,"Damper Mode");
+     break;
      default:
      sprintf(bangers_type_action,"-");
      break;
@@ -506,6 +518,24 @@ case 2:
      break;
      case 23:
      sprintf(bangers_type_action,"Re-emit ALL Out");
+     break;
+     case 24:
+     sprintf(bangers_type_action,"MidiClock ON");
+     break;
+     case 25:
+     sprintf(bangers_type_action,"MidiClock OFF");
+     break;
+     case 26:
+     sprintf(bangers_type_action,"MidiClock RATE");
+     break;
+     case 27:
+     sprintf(bangers_type_action,"Msg START");
+     break;
+     case 28:
+     sprintf(bangers_type_action,"Msg STOP");
+     break;
+     case 29:
+     sprintf(bangers_type_action,"Msg CONTINUE");
      break;
      default:
      sprintf(bangers_type_action,"-");
@@ -1031,6 +1061,9 @@ sprintf(bangers_type_affiche,"GridPlayer");
      case 22:
      sprintf(bangers_type_action,"Clear SeekSteps!"); //clear all seek steps
      break;
+     case 23:
+     sprintf(bangers_type_action,"Clear Grid in GPL !!!"); //clear all grid
+     break;
      default:
      sprintf(bangers_type_action,"-");
      break;
@@ -1048,6 +1081,8 @@ sprintf(bangers_type_affiche,"Hardware");
      break;
      case 2:
      sprintf(bangers_type_action,"Analog input ON");
+     break;
+     default:
      break;
      }
 break;

@@ -164,7 +164,7 @@ int tracking_print_to_screen()
 Rect backim(Vec2D(videoX+15,videoY+61),Vec2D(video_size_x,video_size_y));
 backim.DrawOutline(CouleurLigne);
 //AFFICHAGE CAM et calculs///////////////////////////////////////////////////////////
-if(g_capture!=0 && camera_is_on==1 && manipulating_camera==0 )
+if(g_capture!=0 && camera_is_on==1 && manipulating_camera==0  )
 {
                    frame = cvQueryFrame(g_capture);
 
@@ -177,7 +177,7 @@ if(g_capture!=0 && camera_is_on==1 && manipulating_camera==0 )
                    cvAddWeighted(onech_temoin,1.0,onech_difference,1.0,0.0,onech_temoin);
                    cvCopy(onech_temoin,affichage);//opencv2.0
 
-}
+
 Point::StartFastDrawing();
 
                    for(int pix_x=0; pix_x<video_size_x;pix_x++)
@@ -190,7 +190,7 @@ Point::StartFastDrawing();
                    }
                    }
 Point::FinishFastDrawing();
-
+}
  return(0);
 }
 

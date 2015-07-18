@@ -43,63 +43,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-int arduino_decode_array_method(char *tmp_ard)
-{
-if(strncmp(tmp_ard,"DG/",3)==0)//3= le code
-{
-for(int o=3;o<3+arduino_max_digital;o++)
-{
-
-digital_data_from_arduino[o-3]=tmp_ard[o];
-
-}
-sprintf( string_Arduino_status,">>ARDUINO : Received Digital ");
-}
-
-else if(strncmp(tmp_ard,"AN/",3)==0)
-{
-for(int o=3;o<3+arduino_max_analog;o++)
-{
-analog_data_from_arduino[o-3]=(int)(tmp_ard[o]) &0xff;     //cast si val=127 -> 127 si val=-1 -> val 255 si val=-128 ->val 128
-}
-sprintf( string_Arduino_status,">>ARDUINO : Received Analogic");
-}
-return(0);
-}
-
-
-int read_arduino_data(int device)
-{
-if(device==0)
-{
-if(arduino_device_0_is_ignited==1)
-{
-sprintf(arduino_order,"%s","");
-arduino_order[0]='S';arduino_order[1]='D';arduino_order[2]='/';arduino_order[3]='\0';
-//arduino_order[3]='\0';//pour UNO [3]='\0' pour 2009 =0
-//ne pa enlever nBytes
-nBytesSendtoArduino=serial0.SendData(arduino_order,4);
-//capture de l'état précédent
-for(int y=0;y<=arduino_max_digital;y++)
-{
-previous_digital_data_from_arduino[y]=digital_data_from_arduino[y];
-}
-nBytesReadArduino0=serial0.ReadData(tmp_str_arduino,128);
-arduino_decode_array_method(tmp_str_arduino);
-}
-}
-return(0);
-}
-
-
-int arduino_read()
-{
-
- read_arduino_data(0);
-
- return(0);
-}
-
+//Christoph 21/04/2015 simplification and reversing out the whitekitten dynamic method
+//wich was too much dangerous for show usage (electrical cut off is killing configuration of the arduino)
 int do_arduino_config(int cfg_X, int cfg_Y)
 {
 //port COM
@@ -121,7 +66,6 @@ if(  new_comport>0 && new_comport<18)
 if(arduino_device_0_is_ignited==1){arduino_close(0);}
 arduino_com0=new_comport;
 arduino_init(0);
-index_send_arduino_config=1;
 mouse_released=1;
 }
 }
@@ -148,7 +92,6 @@ new_Baudrate==14400 || new_Baudrate==19200 || new_Baudrate==28800 || new_Baudrat
 if(arduino_device_0_is_ignited==1){arduino_close(0);}
 arduino_baud_rate0=new_Baudrate;
 arduino_init(0);
-index_send_arduino_config=1;
 mouse_released=1;
 }
 }
@@ -229,50 +172,28 @@ if(position_line_ana>arduino_max_analog-12)
 {position_line_ana=0;}
 }
 }
-arduino_total_pin = arduino_max_out_digi+arduino_max_analog+2;
+
 petitchiffre.Print(ol::ToString(arduino_max_analog),cfg_X+140,cfg_Y+165);
 
-///////////////////////////////DIGITAL
-petitchiffre.Print("DIGITAL:",cfg_X+20,cfg_Y+195);
-Rect MaxDIB(Vec2D(cfg_X+120,cfg_Y+180),Vec2D(50,25));
-MaxDIB.SetRoundness(7.5);
-MaxDIB.SetLineWidth(epaisseur_ligne_fader);
-MaxDIB.Draw(CouleurFond.WithAlpha(0.5));
-if(mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+180 && mouse_y<cfg_Y+205)
-{
-MaxDIB.DrawOutline(CouleurLevel);
-if(mouse_button==1 && mouse_released==0)
-{
-MaxDIB.Draw(CouleurBlind);
-int new_maxdi=atoi(numeric);
-reset_numeric_entry();
-if( new_maxdi>=0 && new_maxdi<=digital_limit )
-{
-arduino_max_out_digi=new_maxdi;
-mouse_released=1;
-}
-}
-}
-arduino_total_pin = arduino_max_out_digi+arduino_max_analog+2;
-petitchiffre.Print(ol::ToString(arduino_max_out_digi),cfg_X+140,cfg_Y+195);
+
 /////////////////////////////////
-petitchiffre.Print("OPEN:",cfg_X+20,cfg_Y+225);
-Rect OpenB(Vec2D(cfg_X+120,cfg_Y+210),Vec2D(50,25));
+petitchiffre.Print("OPEN:",cfg_X+20,cfg_Y+195);
+Rect OpenB(Vec2D(cfg_X+120,cfg_Y+180),Vec2D(50,25));
 OpenB.SetRoundness(7.5);
 OpenB.SetLineWidth(epaisseur_ligne_fader);
 OpenB.Draw(CouleurFond.WithAlpha(0.5));
 switch (arduino_device_0_is_ignited)
 {
 case 0:
-petitchiffre.Print("is OFF",cfg_X+130,cfg_Y+225);
+petitchiffre.Print("is OFF",cfg_X+130,cfg_Y+195);
 break;
 case 1:
-petitchiffre.Print("is ON",cfg_X+130,cfg_Y+225);
+petitchiffre.Print("is ON",cfg_X+130,cfg_Y+195);
 
 
 break;
 }
-if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+210 && mouse_y<cfg_Y+235)
+if(window_focus_id==W_CFGMENU && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+180 && mouse_y<cfg_Y+205)
 {
 OpenB.DrawOutline(CouleurLevel);
 if(mouse_button==1 && mouse_released==0)
@@ -283,8 +204,6 @@ switch (arduino_device_0_is_ignited)
 {
 case 0:
    arduino_init(0);
-index_send_arduino_config=1;
-index_do_light_send_config=1.0;
 break;
 case 1:
    arduino_close(0);
@@ -292,24 +211,6 @@ case 1:
 break;
 }
 mouse_released=1;
-}
-}
-
-//Arduino config
-petitchiffre.Print("SEND CONFIG",cfg_X+20,cfg_Y+255);
-Rect arduino_send(Vec2D(cfg_X+120,cfg_Y+240),Vec2D(50,25));
-arduino_send.SetRoundness(7.5);
-arduino_send.Draw(CouleurFond.WithAlpha(0.5));
-arduino_send.Draw(CouleurBlind.WithAlpha(index_do_light_send_config));
-if(index_do_light_send_config>0){index_do_light_send_config-=0.2;if(index_do_light_send_config<0) index_do_light_send_config=0;}
-if(window_focus_id==W_CFGMENU && arduino_device_0_is_ignited==1 && mouse_x>cfg_X+120 && mouse_x<cfg_X+170 && mouse_y>cfg_Y+240 && mouse_y<cfg_Y+265)
-{
-arduino_send.DrawOutline(CouleurLigne.WithAlpha(0.5));
-
-if(mouse_button==1 && mouse_released==0)
-{
-index_send_arduino_config=1;
-index_do_light_send_config=1.0;
 }
 }
 
@@ -324,7 +225,7 @@ char string_temp_familly[25];
 
 
 
-for (int y=0;y<=arduino_max_digital;y++)
+for (int y=0;y<=10;y++)
 {
 ////////DIG/////////////////////////////////////////////////////////////////
 if(cfg_Y+43+(y*20)<cfg_Y+285&&position_line_io+y<=arduino_max_digital)
@@ -367,26 +268,38 @@ if(mouse_x>cfg_X+205 && mouse_x<cfg_X+275)
 OverTyp.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0)
 {
+
+if(index_main_clear==1)
+{
+arduino_digital_type[position_line_io+y]=0;
+arduino_digital_function_input[position_line_io+y][1]=0;
+arduino_digital_function_input[position_line_io+y][0]=0;
+arduino_digital_function_output[position_line_io+y][1]=0;
+arduino_digital_function_output[position_line_io+y][0]=0;
+}
+else
+{
 arduino_digital_type[position_line_io+y]++;
 arduino_digital_function_input[position_line_io+y][1]=0;
 arduino_digital_function_input[position_line_io+y][0]=0;
 arduino_digital_function_output[position_line_io+y][1]=0;
 arduino_digital_function_output[position_line_io+y][0]=0;
 
-if((position_line_io+y)<=arduino_total_pin)
-{if(arduino_digital_type[position_line_io+y]>6)
+if((position_line_io+y)<arduino_max_digital)
+{if(arduino_digital_type[position_line_io+y]>3)
 {arduino_digital_type[position_line_io+y]=0;}}
 
-else if((position_line_io+y)>=arduino_total_pin)
+else if((position_line_io+y)>arduino_max_digital)
 {
-     if(arduino_digital_type[position_line_io+y]>6)
+     if(arduino_digital_type[position_line_io+y]>3)
      {arduino_digital_type[position_line_io+y]=0;}
-    if(arduino_digital_type[position_line_io+y]>0&&arduino_digital_type[position_line_io+y]<6)
-     {arduino_digital_type[position_line_io+y]=6;}
+    if(arduino_digital_type[position_line_io+y]>0 && arduino_digital_type[position_line_io+y]<3)
+     {arduino_digital_type[position_line_io+y]=0;}
 }
 
-
+}
 OverTyp.Draw(CouleurFader);
+
 mouse_released=1;
 
 }
@@ -399,21 +312,32 @@ if(mouse_x>cfg_X+285 && mouse_x<cfg_X+425)//famille d action
 OverAction.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0)
 {
-if(arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==7|| arduino_digital_type[position_line_io+y]==2)//input
+
+if(index_main_clear==1)
+{
+arduino_digital_type[position_line_io+y]=0;
+arduino_digital_function_input[position_line_io+y][1]=0;
+arduino_digital_function_input[position_line_io+y][0]=0;
+arduino_digital_function_output[position_line_io+y][1]=0;
+arduino_digital_function_output[position_line_io+y][0]=0;
+}
+else
+{
+if(arduino_digital_type[position_line_io+y]==1)//input
 {
 arduino_digital_function_input[position_line_io+y][0]++;
 if(arduino_digital_function_input[position_line_io+y][0]>32)
 {arduino_digital_function_input[position_line_io+y][0]=0;}
 arduino_digital_function_input[position_line_io+y][1]=0;
 }
-if(arduino_digital_type[position_line_io+y]==6 || arduino_digital_type[position_line_io+y]==3 || arduino_digital_type[position_line_io+y]==4|| arduino_digital_type[position_line_io+y]==5)//output ON OF ET PWM
+if(arduino_digital_type[position_line_io+y]==2 || arduino_digital_type[position_line_io+y]==3 )//output ON OF ET PWM
 {
 arduino_digital_function_output[position_line_io+y][0]++;
 if(arduino_digital_function_output[position_line_io+y][0]>2)
 {arduino_digital_function_output[position_line_io+y][0]=0;}
 arduino_digital_function_output[position_line_io+y][1]=0;
 }
-
+}
 OverAction.Draw(CouleurFader);
 mouse_released=1;
 }
@@ -434,7 +358,7 @@ int valois=atoi(numeric);
 //INPUT/////////////////
 //data Val1 range pour un input de type fader ( 0 à 11 )
 if(
-(arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==2|| arduino_digital_type[position_line_io+y]==7)
+(arduino_digital_type[position_line_io+y]==1)
 && arduino_digital_function_input[position_line_io+y][0]>=0 && arduino_digital_function_input[position_line_io+y][0]<=11
 && valois>0 && valois<=48
 )
@@ -443,7 +367,7 @@ arduino_digital_function_input[position_line_io+y][1]=valois;
 }
 //faire data range pour le picth: 0 à 127
 if(
-(arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==2|| arduino_digital_type[position_line_io+y]==7)
+(arduino_digital_type[position_line_io+y]==1)
 && ( arduino_digital_function_input[position_line_io+y][0]>=17 || arduino_digital_function_input[position_line_io+y][0]<=32)
 && valois>=0 && valois<=127
 )
@@ -451,12 +375,12 @@ if(
 arduino_digital_function_input[position_line_io+y][1]=valois;
 }
 ///////////OUTPUT ON OFF ET PWM///////////////////////////////////////////////////////////////
-if((arduino_digital_type[position_line_io+y]==6 || arduino_digital_type[position_line_io+y]==3|| arduino_digital_type[position_line_io+y]==4|| arduino_digital_type[position_line_io+y]==5) && arduino_digital_function_output[position_line_io+y][0]==1
+if((arduino_digital_type[position_line_io+y]==2 || arduino_digital_type[position_line_io+y]==3 )&& arduino_digital_function_output[position_line_io+y][0]==1
 && valois>0 && valois<513)//CHANNEL
 {
 arduino_digital_function_output[position_line_io+y][1]=valois;
 }
-if((arduino_digital_type[position_line_io+y]==6 || arduino_digital_type[position_line_io+y]==3|| arduino_digital_type[position_line_io+y]==4|| arduino_digital_type[position_line_io+y]==5) && arduino_digital_function_output[position_line_io+y][0]==2
+if((arduino_digital_type[position_line_io+y]==2 || arduino_digital_type[position_line_io+y]==3)  && arduino_digital_function_output[position_line_io+y][0]==2
 && valois>0 && valois<49)//Fader
 {
 arduino_digital_function_output[position_line_io+y][1]=valois;
@@ -466,28 +390,34 @@ OverVal.Draw(CouleurFader);
 mouse_released=1;
 }
 }
+
 ///////////////////////////////////////
 ///////////////////BOX AFFECTATION ANALOG////////////////
 
-
-//////L'ASSIGNATION Analog/////////////////////////////////////////////
-
-//changement affectation
-if(mouse_x>cfg_X+525 && mouse_x<cfg_X+630)
+if(mouse_x>cfg_X+525 && mouse_x<cfg_X+630 && y<=arduino_max_analog)
 {
 OverAff.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0)
 {
+
+if(index_main_clear==1)
+{
+arduino_analog_function_input[position_line_ana+y]=0;
+arduino_analog_attribution_input[position_line_ana+y]=0;
+}
+else
+{
 arduino_analog_function_input[position_line_ana+y]++;
 arduino_analog_attribution_input[position_line_ana+y]=0;
-if(arduino_analog_function_input[position_line_ana+y]>20)
+if(arduino_analog_function_input[position_line_ana+y]>24)
 {arduino_analog_function_input[position_line_ana+y]=0;}
+}
 OverAff.Draw(CouleurFader);
 mouse_released=1;
 }
 }
 ///////////////LA VALEUR/////////////////////////////
-if(mouse_x>cfg_X+635 && mouse_x<cfg_X+665)//valeur
+if(mouse_x>cfg_X+635 && mouse_x<cfg_X+665 )//valeur
 {
 OverValA.DrawOutline(CouleurLigne);
 if(mouse_button==1 && mouse_released==0)
@@ -497,17 +427,22 @@ valana=atoi(numeric);
 reset_numeric_entry();
 /////////////INPUT
 //limitation des valeurs aux types d entrees
-if(arduino_analog_function_input[position_line_ana+y]==1 || arduino_analog_function_input[position_line_ana+y]==2)//faders level et speed
+if(arduino_analog_function_input[position_line_ana+y]>0 && arduino_analog_function_input[position_line_ana+y]<=4)//faders level et speed decay delta
 {
  if(valana>0 && valana<=48)
  {arduino_analog_attribution_input[position_line_ana+y]=valana-1;}
 }
-if(  arduino_analog_function_input[position_line_ana+y]==4)//seq scene et preset
+if(  arduino_analog_function_input[position_line_ana+y]==6)//seq scene et preset
 {
  if(valana>0 && valana<=3)//1 stage 2 preset 3 speed
  {arduino_analog_attribution_input[position_line_ana+y]=valana-1;}
 }
-if(  arduino_analog_function_input[position_line_ana+y]>=5 &&  arduino_analog_function_input[position_line_ana+y]<=20 )//simulation midi
+if(  arduino_analog_function_input[position_line_ana+y]==11 )//track chaser
+{
+if(valana>0 && valana<=24)
+ {arduino_analog_attribution_input[position_line_ana+y]=valana-1;}
+}
+if(  arduino_analog_function_input[position_line_ana+y]>=12  )//simulation midi
 {
  if(valana>=0 && valana<=127)//Pitch
  {arduino_analog_attribution_input[position_line_ana+y]=valana;}
@@ -535,7 +470,7 @@ sprintf(string_temp_familly,"Rx");
 OverTyp.Draw(CouleurFond);
 petitchiffre.Print(string_temp_familly,cfg_X+293,cfg_Y+43+(y*20));
 petitchiffre.Print(string_temp_def,cfg_X+215,cfg_Y+43+(y*20));
-petitchiffrerouge.Print(ol::ToString(digital_data_from_arduino[position_line_io+y]),cfg_X+475,cfg_Y+43+(y*20));
+petitchiffrerouge.Print(ol::ToString(nBytesReadArduino0),cfg_X+475,cfg_Y+43+(y*20));
 }
 if(position_line_io+y==1)
 {
@@ -544,7 +479,7 @@ sprintf(string_temp_familly,"Tx");
 OverTyp.Draw(CouleurFond);
 petitchiffre.Print(string_temp_familly,cfg_X+293,cfg_Y+43+(y*20));
 petitchiffre.Print(string_temp_def,cfg_X+215,cfg_Y+43+(y*20));
-petitchiffrerouge.Print(ol::ToString(digital_data_from_arduino[position_line_io+y]),cfg_X+475,cfg_Y+43+(y*20));
+petitchiffre.Print(ol::ToString(nBytesSendtoArduino),cfg_X+475,cfg_Y+43+(y*20));
 }
 
 if(position_line_io+y>1 && position_line_io+y<=arduino_max_digital)
@@ -560,29 +495,13 @@ case 1://input
 sprintf(string_temp_def,"%d:Input",position_line_io+y);
 OverTyp.Draw(CouleurRed);
 break;
-case 2://PUL UP
-sprintf(string_temp_def,"%d:Pull Up",position_line_io+y);
-OverTyp.Draw(CouleurRed);
-break;
-case 3://output
+case 2://output
 sprintf(string_temp_def,"%d:Output",position_line_io+y);
 OverTyp.Draw(CouleurGreen);
 break;
-case 4://pwm
+case 3://pwm
 sprintf(string_temp_def,"%d:PWM",position_line_io+y);
 OverTyp.Draw(CouleurYellow);
-break;
-case 5://servo
-sprintf(string_temp_def,"%d:SERVO",position_line_io+y);
-OverTyp.Draw(CouleurBleu8);
-break;
-case 6://HF out
-sprintf(string_temp_def,"%d:HF OUT",position_line_io+y);
-OverTyp.Draw(CouleurGrisClair);
-break;
-case 7://HF in
-sprintf(string_temp_def,"%d:HF IN",position_line_io+y);
-OverTyp.Draw(CouleurGrisClair);
 break;
 default:
 break;
@@ -590,7 +509,7 @@ break;
 
 ////////////ACTIONS /////////////////////////////////////////////////
 ////////////////GRANDE FAMILLE INPUT////////////////////////////////////////
-if(arduino_digital_type[position_line_io+y]==1|| arduino_digital_type[position_line_io+y]==2|| arduino_digital_type[position_line_io+y]==7)//si de la famille des inputs
+if(arduino_digital_type[position_line_io+y]==1)//si de la famille des inputs
 {
 switch(arduino_digital_function_input[position_line_io+y][0])
 {
@@ -696,21 +615,28 @@ break;
 default:
 break;
 }
-if(cfg_Y+43+(y*20)<cfg_Y+285)
-{
 petitchiffre.Print(string_temp_familly,cfg_X+293,cfg_Y+43+(y*20));
 petitchiffre.Print(ol::ToString(arduino_digital_function_input[position_line_io+y][1]),cfg_X+440+3,cfg_Y+43+(y*20));
 }
+switch(arduino_digital_type[position_line_io+y])
+{
+case 1://ON OFF INPUT
+    petitchiffrerouge.Print(ol::ToString(digital_data_from_arduino[position_line_io+y]),cfg_X+475,cfg_Y+43+(y*20));
+break;
+case 2://ON OFF OUTPUT
+    petitchiffre.Print(ol::ToString(digital_data_to_arduino[position_line_io+y]),cfg_X+475,cfg_Y+43+(y*20));
+break;
+case 3://PWM OUTPUT
+    petitchiffrenoir.Print(ol::ToString(pwm_data_to_arduino[position_line_io+y]),cfg_X+475,cfg_Y+43+(y*20));
+break;
+default:
+break;
 }
 
-if(cfg_Y+43+(y*20)<cfg_Y+285)
-{
-petitchiffrerouge.Print(ol::ToString(digital_data_from_arduino[position_line_io+y]),cfg_X+475,cfg_Y+43+(y*20));
 petitchiffre.Print(string_temp_def,cfg_X+215,cfg_Y+43+(y*20));
 }
-}
 
-if(arduino_digital_type[position_line_io+y]==3)//si de la famille des Outputs
+if(arduino_digital_type[position_line_io+y]==2)//si de la famille des Outputs
 {
 switch(arduino_digital_function_output[position_line_io+y][0])
 {
@@ -730,7 +656,7 @@ petitchiffre.Print(string_temp_familly,cfg_X+293,cfg_Y+43+(y*20));
 petitchiffre.Print(ol::ToString(arduino_digital_function_output[position_line_io+y][1]),cfg_X+443,cfg_Y+43+(y*20));
 }
 }
-if(arduino_digital_type[position_line_io+y]==6||arduino_digital_type[position_line_io+y]==4||arduino_digital_type[position_line_io+y]==5)//si de la famille pwm
+if(arduino_digital_type[position_line_io+y]==3)//si de la famille pwm
 {
 switch(arduino_digital_function_output[position_line_io+y][0])
 {
@@ -742,6 +668,8 @@ sprintf(string_temp_familly,"Channel");
 break;
 case 2://relié à un fader
 sprintf(string_temp_familly,"Fader");
+break;
+default:
 break;
 }
 if(cfg_Y+43+(y*20)<cfg_Y+285)
@@ -770,74 +698,98 @@ case 2://faders speeed
 sprintf(string_temp_familly,"Fader Speed:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]+1),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 3://master
+case 3://Damper decay
+sprintf(string_temp_familly,"Fader Decay:");
+petitchiffre.Print(ol::ToString((arduino_analog_attribution_input[position_line_ana+y]+1)),cfg_X+645,cfg_Y+43+(y*20));
+break;
+case 4://damper delta
+sprintf(string_temp_familly,"Fader Delta:");
+petitchiffre.Print(ol::ToString((arduino_analog_attribution_input[position_line_ana+y]+1)),cfg_X+645,cfg_Y+43+(y*20));
+break;
+case 5://master
 sprintf(string_temp_familly,"Grand Master");
 break;
-case 4://seq scene et preset et vitesse
+case 6://seq scene et preset et vitesse
 sprintf(string_temp_familly,"Sequence:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]+1),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 5://Midi CH0
+case 7://relié à Draw
+sprintf(string_temp_familly,"Draw X1");
+break;
+case 8://relié à Draw
+sprintf(string_temp_familly,"Draw X2");
+break;
+case 9://relié à Draw
+sprintf(string_temp_familly,"Draw Y1");
+break;
+case 10://relié à Draw
+sprintf(string_temp_familly,"Draw Y2");
+break;
+case 11://chaser track
+sprintf(string_temp_familly,"Chaser Track:");
+petitchiffre.Print(ol::ToString((arduino_analog_attribution_input[position_line_ana+y]+1)),cfg_X+645,cfg_Y+43+(y*20));
+break;
+case 12://Midi CH0
 sprintf(string_temp_familly,"As CC CH0 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 6://Midi CH1
+case 13://Midi CH1
 sprintf(string_temp_familly,"As CC CH1 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 7://Midi CH2
+case 14://Midi CH2
 sprintf(string_temp_familly,"As CC CH2 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 8://Midi CH3
+case 15://Midi CH3
 sprintf(string_temp_familly,"As CC CH3 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 9://Midi CH4
+case 16://Midi CH4
 sprintf(string_temp_familly,"As CC CH4 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 10://Midi CH5
+case 17://Midi CH5
 sprintf(string_temp_familly,"As CC CH5 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 11://Midi CH6
+case 18://Midi CH6
 sprintf(string_temp_familly,"As CC CH6 Picth:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 12://Midi CH7
+case 19://Midi CH7
 sprintf(string_temp_familly,"As CC CH7 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 13://Midi CH8
+case 20://Midi CH8
 sprintf(string_temp_familly,"As CC CH8 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 14://Midi CH9
+case 21://Midi CH9
 sprintf(string_temp_familly,"As CC CH9 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 15://Midi CH10
+case 22://Midi CH10
 sprintf(string_temp_familly,"As CC CH10 Picth:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 16://Midi CH11
+case 23://Midi CH11
 sprintf(string_temp_familly,"As CC CH11 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 17://Midi CH12
+case 24://Midi CH12
 sprintf(string_temp_familly,"As CC CH12 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 18://Midi CH13
+case 25://Midi CH13
 sprintf(string_temp_familly,"As CC CH13 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 19://Midi CH14
+case 26://Midi CH14
 sprintf(string_temp_familly,"As CC CH14 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
-case 20://Midi CH15
+case 27://Midi CH15
 sprintf(string_temp_familly,"As CC CH15 Pitch:");
 petitchiffre.Print(ol::ToString(arduino_analog_attribution_input[position_line_ana+y]),cfg_X+645,cfg_Y+43+(y*20));
 break;
@@ -877,7 +829,7 @@ if(mouse_x>cfg_X+710 && mouse_x<cfg_X+725 && mouse_y>cfg_Y+33+(y*20) && mouse_y<
 }
 }
 
-//fin boucle des 12 lignes
+//fin boucle des 10 lignes
 }
 /////////////////UP DOWN LINE IO /////////////////////
 Circle LineUp(Vec2D(cfg_X+400,cfg_Y+15),12);
@@ -946,10 +898,7 @@ LineDownA.DrawOutline(CouleurLigne.WithAlpha(0.6));
 
 
 //FEEDBACK
-petitpetitchiffre.Print("Bytes received:",cfg_X+510,cfg_Y+270);
-petitchiffre.Print(ol::ToString( nBytesReadArduino0),cfg_X+560,cfg_Y+270);
-petitpetitchiffre.Print(tmp_str_arduino,cfg_X+510,cfg_Y+280);
-petitchiffrerouge.Print(string_Arduino_status,cfg_X+510,cfg_Y+290);
+petitchiffrerouge.Print(string_Arduino_status,cfg_X+10,cfg_Y+280);
 
 
 return(0);

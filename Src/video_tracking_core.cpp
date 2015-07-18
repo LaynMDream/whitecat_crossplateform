@@ -176,6 +176,7 @@ sprintf(string_Last_Order,">>Camera %d x %d FPS: %d ", video_size_x,video_size_y
 }
 
 else {sprintf(string_Last_Order,">>No Camera recognized !");}
+save_load_print_to_screen(string_Last_Order);
 return(0);
 }
 

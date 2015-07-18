@@ -50,7 +50,7 @@ pascal void MSALARMAPI ReceivePolling ( long date, short r, long a, long b, long
 /////////////////////////////////////////////////////////////////////////////////
 int midi_init_sepecial_case_key_on()
 {
-for(int i=0;i<48;i++)
+for(int i=0;i<48;i++)//faders
 {
 midi_needs_no_key_on_key_off[900+i]=1;
 }
@@ -132,6 +132,15 @@ pascal void InstallFilter( short refNum, MidiFilterPtr filter )
 	MidiAcceptType(myFilter,typeKeyOff, true);
 	MidiAcceptType(myFilter,typeCtrlChange, true);
  	MidiAcceptType(myFilter,typePitchWheel, true);
+ 	//midi clock
+/*  MidiAcceptType(myFilter,typeClock, true);
+    MidiAcceptType(myFilter,typeQuarterFrame, true);
+    MidiAcceptType(myFilter, typeStart, true);
+    MidiAcceptType(myFilter, typeContinue, true);
+    MidiAcceptType(myFilter, typeStop, true);*/
+    //Notes off Note On pour Twister
+    MidiAcceptType(myFilter,NoteOff , true);
+    MidiAcceptType(myFilter,NoteOn , true);
 
 	MidiSetFilter(refNum, myFilter);
 }
@@ -162,7 +171,7 @@ sprintf (string_Last_Order,"MidiShare not available\n");
 }
 InitTblLibEv();
 
-myRefNum = MidiOpen(AppliName); //ouverture classique
+myRefNum = MidiOpen("WhiteCat"); //ouverture classique
 
 //driver nouveau code
 /*		TDriverInfos infos = { "WhiteCat", 100, 0, { 0, 0 } };
@@ -172,14 +181,12 @@ if (myRefNum < 0) {sprintf(string_Last_Order,"MidiOpen failed!");}
 
 
 MidiSetRcvAlarm(myRefNum,ReceiveEvents);
+
 MidiConnect(0, myRefNum, true);//in
 MidiConnect(myRefNum,0,true);//out
 
-
 myFilter = MidiNewFilter();
 InstallFilter( myRefNum,myFilter ); //filtrage
-
-
 
 return(0);
 }
@@ -193,3 +200,4 @@ int QuitMidi()
 	MidiClose(myRefNum);
 	return ( 0);
 }
+

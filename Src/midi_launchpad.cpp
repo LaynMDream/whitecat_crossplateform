@@ -43,7 +43,7 @@ WWWWWWWW           C  WWWWWWWW   |
 
 int define_colors()
 {
-for(int g=0;g<2048;g++)
+for(int g=0;g<3072;g++)
 {
 launchpad_color_defined[g]=8;
 launchpad_is_a_cycling_effect[g]=0;
@@ -424,7 +424,7 @@ midi_launchpad_state[1591]=auto_reset_crossfade_speed_on_link;//auto reset cross
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-for(int l=0;l<2048;l++)
+for(int l=0;l<3072;l++)
 {
 if(midi_launchpad_state[l]!=midi_launchpad_state_before[l])
 {

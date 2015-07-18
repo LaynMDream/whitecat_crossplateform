@@ -719,7 +719,7 @@ break;
 
 if ( ( (window_focus_id==0 && index_over_A_window==0 )|| window_focus_id==W_MAINMENU) && mouse_x>xcom && mouse_x<xcom+60 && mouse_y>ycom && mouse_y<ycom+20)
 {
-if(Midi_Faders_Affectation_Type!=0 && IDmidi!=1625)
+if(Midi_Faders_Affectation_Type!=0 && IDmidi!=1625 )
 {show_type_midi(IDmidi, desc);
 Command.DrawOutline(CouleurBlind);}
 }
@@ -731,32 +731,28 @@ petitpetitchiffre.Print(desc,xcom+5,ycom+12);
 //sab 02/03/2014 int command_button_logical( int xcom, int ycom, int isstate, char *desc, char *raccourci, int IDmidi, int thecommand)
 void command_button_logical( int xcom, int ycom, int isstate, const std::string desc, const std::string raccourci, int IDmidi, int thecommand)
 {
-if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT)
+if((window_focus_id==0 || window_focus_id==W_MAINMENU || window_focus_id==W_PLOT )
    && mouse_x>xcom && mouse_x<xcom+65 && mouse_y>ycom && mouse_y<ycom+20  && mouse_released==0
    && index_moving_channel_scroller==0 && dragging_draw==0
    )
 {
-if( Midi_Faders_Affectation_Type!=0)
-{
-if( IDmidi!=1625)
-{
-attribute_midi_solo_affectation(IDmidi,1);
-}
-else if( IDmidi==1625)
-{
-if(do_affectation_on_midi_affect_itself==1 ) {attribute_midi_solo_affectation(IDmidi,1);}
-else
+
+
+if( IDmidi==1625)
 {
 Midi_Faders_Affectation_Type++;
 if(Midi_Faders_Affectation_Type>2){Midi_Faders_Affectation_Type=0;}
 index_midi_mute=0;
 reset_index_actions();
 }
-}
-
-}
 
 else
+{
+    if( Midi_Faders_Affectation_Type>0)
+    {
+    attribute_midi_solo_affectation(IDmidi,1);
+    }
+    else
 {
 switch (thecommand)//permet de faire un toggle du bon index
 {
@@ -978,12 +974,12 @@ reset_index_actions();
 index_midi_mute=toggle(index_midi_mute);
     if(index_midi_mute==1)
     {
-    for(int y=0;y<2048;y++)
+    for(int y=0;y<3072;y++)
     { is_raccrochage_midi_remote[y]=1;}
     sprintf(string_Last_Order,">>Midi IN muted");
     }
     else {
-    for(int y=0;y<2048;y++)
+    for(int y=0;y<3072;y++)
     { is_raccrochage_midi_remote[y]=0;}
     sprintf(string_Last_Order,">>Midi IN un-muted");
     }
@@ -1056,13 +1052,10 @@ break;
 }
 }
 
+}
 if(index_show_main_menu==1 ){window_bring_to_front(W_MAINMENU);}
 mouse_released=1;
 }
-
-
-
-
 //sab 02/03/2014  return(0);
 }
 

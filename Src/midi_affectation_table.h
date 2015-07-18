@@ -357,6 +357,16 @@ sur les 4 gridplayers
 1829 > window BazooCAT in menu
 
 
+1830 > 1893  arduino analogic on/off
+
+1894: midi clock level
+1895 > 1921 midiclock preset
+
+1912 > 1959 DamperFader ON Off
+1960 > 2007 DamperFader decay
+2008 > 2055 DamperFader Mode
+2056 > 2113 DamperFader Dt
+
 
 
 */

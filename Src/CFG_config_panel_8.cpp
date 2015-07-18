@@ -720,12 +720,21 @@ if(window_focus_id==W_CFGMENU && mouse_x> cfgnetw_X+525 && mouse_x<cfgnetw_X+525
 CamOn.DrawOutline(CouleurLevel);
 if(mouse_button==1 && mouse_released==0)
 {
-load_camera_on_start=toggle(load_camera_on_start);
+camera_on_open=toggle(camera_on_open);
 CamOn.Draw(CouleurBlind);
 mouse_released=1;
+switch(camera_on_open)
+{
+case 0:
+CloseVideo();
+break;
+case 1:
+InitVideo();
+break;
 }
 }
-switch(load_camera_on_start)
+}
+switch(camera_on_open)
 {
 case 0:
 sprintf(string_cfg_main,"/Off");
@@ -1451,7 +1460,6 @@ petitchiffre.Print( string_title_panel_config,cfg_X+20, cfg_Y+20);
 else if(index_config_network==1)
 {
 do_network_config(cfg_X,cfg_Y,largeurCFGwindow,hauteurCFGwindow);
-do_keyboard_config(cfg_X+405,cfg_Y+20,largeurCFGwindow,hauteurCFGwindow);
 sprintf(string_title_panel_config,"NETWORK/KBD");
 petitchiffre.Print( string_title_panel_config,cfg_X+20, cfg_Y+20);
 }

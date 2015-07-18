@@ -91,6 +91,192 @@ int DoLock(int masterfader, int locklevel)
  return(0);
 }
 
+
+
+int do_logical_fader_damper_commands(int _x,int _y, int fd)
+{
+
+if(window_focus_id==W_FADERS)
+{
+//ON OFF DAMPER
+if( mouse_x>_x && mouse_x<_x+20 && mouse_y>_y+20 && mouse_y<_y+40)
+{
+if(mouse_button==1 && mouse_released==0)
+{
+if( Midi_Faders_Affectation_Type!=0 )
+{
+attribute_midi_to_control((1912+fd), Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+}
+else
+{
+    if(fader_damper_is_on[fd]==0)
+    {
+        Fader_dampered[fd].fix_all_damper_state_value(Fader[fd]);
+        Fader_dampered[fd].set_target_val(Fader[fd]);
+    }
+    fader_damper_is_on[fd]=toggle(fader_damper_is_on[fd]);
+}
+mouse_released=1;
+}
+if( Midi_Faders_Affectation_Type!=0)
+{
+//midi report
+ switch(miditable[0][1912+fd])
+ {
+  case 0:
+  sprintf(thetypinfo,"Note");
+  break;
+  case 1:
+  sprintf(thetypinfo,"Key On");
+  break;
+  case 2:
+  sprintf(thetypinfo,"Key Off");
+  break;
+  case 4:
+  sprintf(thetypinfo,"Ctrl Change");
+  break;
+}
+  sprintf(string_last_midi_id,"Damper ON/OFF is Ch: %d Pitch: %d Type: %s", miditable[1][1912+fd],miditable[2][1912+fd],thetypinfo);
+}
+}
+
+//DECAY CONSTANT OF DAMPER
+if( mouse_x>_x+30 && mouse_x<=_x+157 && mouse_y>_y+15 && mouse_y<_y+27)
+{
+
+if( mouse_button==1 )
+{
+if( Midi_Faders_Affectation_Type!=0 && mouse_released==0)
+{
+attribute_midi_to_control((1960+fd), Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+mouse_released=1;
+}
+else
+{
+    set_mouse_range(_x+30, _y+15, _x+157, _y+27);
+    Fader_dampered[fd].set_damper_decay(1.0-(((float)(_x+157-mouse_x))/127));
+    midi_levels[1960+fd]=127-(_x+157-mouse_x);
+    index_send_midi_out[1960+fd]=1;
+}
+}
+if( Midi_Faders_Affectation_Type!=0)
+{
+//midi report
+ switch(miditable[0][1960+fd])
+ {
+  case 0:
+  sprintf(thetypinfo,"Note");
+  break;
+  case 1:
+  sprintf(thetypinfo,"Key On");
+  break;
+  case 2:
+  sprintf(thetypinfo,"Key Off");
+  break;
+  case 4:
+  sprintf(thetypinfo,"Ctrl Change");
+  break;
+}
+  sprintf(string_last_midi_id,"Damper Decay is Ch: %d Pitch: %d Type: %s", miditable[1][1960+fd],miditable[2][1960+fd],thetypinfo);
+}
+
+}
+
+//DT CONSTANT OF DAMPER
+if( mouse_x>_x+30 && mouse_x<=_x+157 && mouse_y>_y+35 && mouse_y<_y+47)
+{
+
+if( mouse_button==1 )
+{
+if( Midi_Faders_Affectation_Type!=0 && mouse_released==0)
+{
+attribute_midi_to_control((2056+fd), Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+mouse_released=1;
+}
+else
+{
+    set_mouse_range(_x+30, _y+35, _x+157, _y+47);
+    Fader_dampered[fd].set_damper_dt((1.0-(((float)(_x+157-mouse_x))/127))/10);
+    midi_levels[2056+fd]=127-(_x+157-mouse_x);
+    index_send_midi_out[2056+fd]=1;
+}
+}
+if( Midi_Faders_Affectation_Type!=0)
+{
+//midi report
+ switch(miditable[0][2056+fd])
+ {
+  case 0:
+  sprintf(thetypinfo,"Note");
+  break;
+  case 1:
+  sprintf(thetypinfo,"Key On");
+  break;
+  case 2:
+  sprintf(thetypinfo,"Key Off");
+  break;
+  case 4:
+  sprintf(thetypinfo,"Ctrl Change");
+  break;
+}
+  sprintf(string_last_midi_id,"Damper DT is Ch: %d Pitch: %d Type: %s", miditable[1][2056+fd],miditable[2][2056+fd],thetypinfo);
+}
+
+}
+
+
+//Damper mode
+if( mouse_x>_x+137 && mouse_x<_x+157 && mouse_y>_y && mouse_y<_y+10)
+{
+if(mouse_button==1 && mouse_released==0)
+{
+if( Midi_Faders_Affectation_Type!=0 )
+{
+attribute_midi_to_control((2008+fd), Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+}
+else
+{
+    Fader_dampered[fd].set_damper_mode((Fader_dampered[fd].getdampermode()+1));
+    mouse_released=1;
+}
+}
+if( Midi_Faders_Affectation_Type!=0)
+{
+//midi report
+ switch(miditable[0][2008+fd])
+ {
+  case 0:
+  sprintf(thetypinfo,"Note");
+  break;
+  case 1:
+  sprintf(thetypinfo,"Key On");
+  break;
+  case 2:
+  sprintf(thetypinfo,"Key Off");
+  break;
+  case 4:
+  sprintf(thetypinfo,"Ctrl Change");
+  break;
+}
+  sprintf(string_last_midi_id,"Damper Mode is Ch: %d Pitch: %d Type: %s", miditable[1][2008+fd],miditable[2][2008+fd],thetypinfo);
+}
+}
+
+//midi out
+button_midi_out_core(_x+130,_y+65,(fd+1960));//DECAY
+button_midi_out_core(_x+150,_y+65,(fd+2056));//DT
+
+}
+
+/*
+if( mouse_x>_x+147 && mouse_x<_x+160 && mouse_y>_y+55 && mouse_y<_y+65 && mouse_button==1 && mouse_released==0)
+{
+midi_send_out[fd+1960]=toggle(midi_send_out[fd+1960]);
+mouse_released=1;
+}*/
+return(0);
+}
+
 ////////////////////////////////////////////////////////////////////////////
 int do_logical_Lock_Preset_Call(int xf,int yf)
 {
@@ -819,10 +1005,10 @@ set_mouse_range(x+(cmptfader*espacement), y, x+(cmptfader*espacement)+largeur, y
 if( index_main_clear==0)
 {
 //NIVEAU
-Fader[cmptfader]=((y+255)-mouse_y);
-midi_levels[cmptfader]=(Fader[cmptfader]/2);
-index_fader_is_manipulated[cmptfader]=1;
-if(midi_send_out[cmptfader]==1){ index_send_midi_out[cmptfader]=1;}
+int val=((y+255)-mouse_y);
+fader_set_level(cmptfader,val);
+//index_fader_is_manipulated[cmptfader]=1;
+//if(midi_send_out[cmptfader]==1){ index_send_midi_out[cmptfader]=1;}
 if(lfo_mode_is[cmptfader]==1 || lfo_mode_is[cmptfader]==2 || lfo_cycle_is_on[cmptfader]==1)
 {
 lfo_mode_is[cmptfader]=0; lfo_mode_is[cmptfader]=0; lfo_cycle_is_on[cmptfader]=0;
@@ -1850,14 +2036,15 @@ mouse_released=1;
 
 }//fin si chaser embeded
 
+//Damper mode
+
+do_logical_fader_damper_commands(x+(cmptfader*espacement)-10,y+440, cmptfader );
+
+
 }
 //fin des 48
 }//fin de la condition moving fader space
 
-
-//GRAND MASTER
-do_logical_grand_master(x-140, y, (int(50*size_faders)));//x y largeur
-do_logical_grand_master(x+(48*espacement)+50, y, (int(50*size_faders)));//x y largeur
 
 do_logical_MoveFaderSpace(y-70);// fonction pour se deplacer sur les 48 masters
 

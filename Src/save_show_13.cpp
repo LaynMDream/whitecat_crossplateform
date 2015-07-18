@@ -113,6 +113,12 @@ const char file_fader_draw[24]={"faders_draw.whc"};
 unsigned int fader_draw_size=48*6;//int DrawAffectedToDck[48][6];//contenu des draws dans les docks
 const char file_fader_echo[24]={"faders_echo.whc"};
 unsigned int fader_echo_size=48*6;//int echo_affected_to_dock[48][6];//
+const char file_fader_damper_on[24]={"faders_damper_on.whc"};
+unsigned int fader_damper_on_size=48;//bool fader_damper_is_on[48]//
+const char file_fader_damper_typ[24]={"faders_damper_typ.whc"};
+unsigned int fader_damper_typ_size=48;//1x 48 tmp tableau set mod
+const char file_fader_damper_levels[24]={"faders_damper_lvls.whc"};
+int fader_damper_levels_size=96;//2x48 tmp 2 tableaux pour set decay et set dt en valeur 0 - 127
 
 ////COLORS
 const char file_dock_color_type[24]={"dockcolor_typ.whc"};
@@ -153,11 +159,14 @@ const char file_curve_matrix[24]={"curves_matrix.whc"};
 unsigned int curve_matrix_size=16*256;//int curve_report[16][256];
 //MIDI
 const char file_midi_affectation[24]={"midi_affectation.whc"};
-unsigned int midi_affectation_size=3*2048;//int miditable[3][2048];
+unsigned int midi_affectation_size=3*3072;//int miditable[3][3072];
 const char file_midi_send_out[24]={"midi_send_out.whc"};
-unsigned int midi_send_out_size=2048;//bool midi_send_out[2048];
+unsigned int midi_send_out_size=3072;//bool midi_send_out[3072];
 const char file_midi_properties[24]={"midi_properties.whc"};
 unsigned int midi_properties_size=16*128;//int midi_change_vel_type[16][128]
+const char file_midi_clock[24]={"midi_clock.whc"};
+int midi_clock_size=16;//int bpm_personnal[16]
+
 //LFOS
 const char file_dock_times[24]={"dock_times.whc"};
 unsigned int dock_times_size=49*6*4;//float time_per_dock[49][6][4];//WAIT IN- IN - WAIT OUT- OUT -
@@ -758,7 +767,7 @@ int load_onstart_config()
      sprintf(string_save_load_report[idf],"! config_onstart.txt");
 	}
 
-	fscanf( cfg_file , "%d / %d / %d / %d /\n" ,  &load_camera_on_start, &open_arduino_on_open , &enable_iCat, &expert_mode);
+	fscanf( cfg_file , "%d / %d / %d / %d /\n" ,  &camera_on_open, &open_arduino_on_open , &enable_iCat, &expert_mode);
 
 	fclose( cfg_file );
     }
@@ -875,7 +884,7 @@ FILE *fpp;
 if((fpp=fopen("user/config_onstart.txt","w")))//etait wb
 {
 fprintf(fpp,"#arguments:values 0-1: open camera / open arduino / open iCat server / expert_mode /\n");
-fprintf(fpp, "%d / %d / %d / %d /\n" ,  load_camera_on_start, open_arduino_on_open , enable_iCat, expert_mode);
+fprintf(fpp, "%d / %d / %d / %d /\n" ,  camera_on_open, open_arduino_on_open , enable_iCat, expert_mode);
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved config_onstart.txt");
 }
 
@@ -1038,7 +1047,7 @@ FILE *fpp;
 if((fpp=fopen("arduino.txt","w")))//etait wb
 {
 fprintf(fpp,"#arguments:COM PORT / BAUDRATE / REQUEST RATE / MAX IO / MAX ANALOG /\n");
-fprintf(fpp, "%d / %d / %d / %d / %d / %d /\n" ,  arduino_com0, arduino_baud_rate0, ARDUINO_RATE, arduino_max_digital, arduino_max_out_digi, arduino_max_analog );
+fprintf(fpp, "%d / %d / %d / %d / %d /\n" ,  arduino_com0, arduino_baud_rate0, ARDUINO_RATE, arduino_max_digital, arduino_max_analog );
 fclose(fpp);  sprintf(string_save_load_report[idf],"Saved arduino.txt");
 }
 if( !fpp )
@@ -1069,7 +1078,7 @@ int load_arduino_config()
      sprintf(string_save_load_report[idf],"! arduino.txt");
 	}
 
-fscanf( cfg_file , "%d / %d / %d / %d / %d / %d /\n" ,  &arduino_com0, &arduino_baud_rate0, &ARDUINO_RATE, &arduino_max_digital,  &arduino_max_out_digi, &arduino_max_analog );
+fscanf( cfg_file , "%d / %d / %d / %d / %d /\n" ,  &arduino_com0, &arduino_baud_rate0, &ARDUINO_RATE, &arduino_max_digital,  &arduino_max_analog );
 	fclose( cfg_file );
     }
 return(0);
@@ -1316,8 +1325,8 @@ index_report_customs[26]=index_save_mode_export_or_binary;
 index_report_customs[27]=index_allow_sunlite_dmxIN;// dmx in position sunlite
 index_report_customs[28]=index_config_general;
 index_report_customs[29]=niveauGMaster;//grand master
-//index_report_customs[30]=tochanDMXIN;//usbdmx512online
-//index_report_customs[31]=VellemanMaxGradas;//Velleman
+index_report_customs[30]=cheat_key_off_to_key_on;
+index_report_customs[31]=clocklevel_absolutemode;//midi clock add level
 index_report_customs[32]=echo_selected;
 index_report_customs[33]=index_allow_multicore;
 index_report_customs[34]=allow_artnet_in;
@@ -1326,13 +1335,13 @@ index_report_customs[36]=recall_windows_focus_id;
 index_report_customs[37]=index_config_network;
 index_report_customs[38]=index_setup_gfx;
 index_report_customs[39]=core_to_assign;
-//index_report_customs[40]=index_show_config_window;
-//index_report_customs[41]=index_grider_window;
+index_report_customs[40]=index_midi_clock_on;
+index_report_customs[41]=midi_BPM;
 index_report_customs[42]=show_global_view_grider;
 index_report_customs[43]=enable_launchpad;
-//index_report_customs[44]=index_show_wizard_window;
+index_report_customs[44]=relativ_encoder_midi_clock_value;
 index_report_customs[45]=config_page_is;
-//index_report_customs[46]=index_show_minifaders;
+index_report_customs[46]=index_midi_affectation_autoclose;
 //index_report_customs[47]=index_window_chasers;
 index_report_customs[48]=nbre_track_visualisables;
 index_report_customs[49]=chaser_operator_is;
@@ -1355,6 +1364,7 @@ index_report_customs[65]=index_config_core;
 index_report_customs[66]=show_gridplayer_in_seq;
 index_report_customs[67]=index_auto_mute_cuelist_speed;
 index_report_customs[68]=Midi_Force_Go;
+
 return(0);
 }
 
@@ -1390,8 +1400,8 @@ index_save_mode_export_or_binary=index_report_customs[26];
 index_allow_sunlite_dmxIN=index_report_customs[27];//sunlite
 index_config_general=index_report_customs[28];
 niveauGMaster=index_report_customs[29];//grand master
-//tochanDMXIN=index_report_customs[30];//usbdmx512online
-//VellemanMaxGradas=index_report_customs[31];//Velleman
+cheat_key_off_to_key_on=index_report_customs[30];
+clocklevel_absolutemode=index_report_customs[31];//midiclock midi mode
 echo_selected=index_report_customs[32];
 index_allow_multicore=index_report_customs[33];
 allow_artnet_in=index_report_customs[34];
@@ -1400,13 +1410,13 @@ recall_windows_focus_id=index_report_customs[36];
 index_config_network=index_report_customs[37];
 index_setup_gfx=index_report_customs[38];
 core_to_assign=index_report_customs[39];
-//index_show_config_window=index_report_customs[40];
-//index_grider_window=index_report_customs[41];
+index_midi_clock_on=index_report_customs[40];
+midi_BPM=index_report_customs[41];
 show_global_view_grider=index_report_customs[42];
 enable_launchpad=index_report_customs[43];
-//index_show_wizard_window=index_report_customs[44];
+relativ_encoder_midi_clock_value=index_report_customs[44];
 config_page_is=index_report_customs[45];
-//index_show_minifaders=index_report_customs[46];
+index_midi_affectation_autoclose=index_report_customs[46];
 //index_window_chasers=index_report_customs[47];
 nbre_track_visualisables=index_report_customs[48];
 chaser_operator_is=index_report_customs[49];
@@ -1478,9 +1488,15 @@ hauteur_globale_sequenciel=180+(35*(nbre_memoires_visualisables_en_preset+1))+35
 //chaser midi refresh window
 set_refresh_mode_for_chaser(refresh_midi_chasers);
 
+//rafraichissement tracking video decay
+midi_levels[498]=index_decay_tracker;index_send_midi_out[498]=1;
 
-//draw
-
+//mid clock
+if(midi_BPM<=0){midi_BPM=120;}
+ticker_midi_clock_rate=BPM_TO_TIMER(24 * midi_BPM);
+install_int_ex(ticker_midi_clock , ticker_midi_clock_rate);
+if(relativ_encoder_midi_clock_value<=0){relativ_encoder_midi_clock_value=1;}
+if(clocklevel_absolutemode<0){clocklevel_absolutemode=0;}
 return(0);
 }
 
@@ -2232,6 +2248,8 @@ else sprintf(string_save_load_report[idf],"Saved file %s", file_faders_state);
 fclose(fp);
 }
  idf++;
+
+
 if ((fp=fopen( file_dock_selected, "wb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_selected); b_report_error[idf]=1;}
 else
@@ -2442,7 +2460,73 @@ if (fwrite(echo_affected_to_dock, sizeof(int),fader_echo_size, fp) !=fader_echo_
 else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_echo);
 fclose(fp);
 }
- idf++;
+idf++;
+
+//Damper
+if ((fp=fopen(  file_fader_damper_on, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_damper_on); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s", file_fader_damper_on);
+if (fwrite(fader_damper_is_on, sizeof(bool),fader_damper_on_size, fp) !=fader_damper_on_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_fader_damper_on); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_damper_on);
+fclose(fp);
+}
+idf++;
+
+int tmp_typ[48];
+for(int i=0;i<48;i++)
+{
+    tmp_typ[i]=Fader_dampered[i].getdampermode();
+}
+if ((fp=fopen(  file_fader_damper_typ, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_damper_typ); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s", file_fader_damper_typ);
+if (fwrite(tmp_typ, sizeof(int),fader_damper_typ_size, fp) !=fader_damper_typ_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_fader_damper_typ); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_damper_typ);
+fclose(fp);
+}
+idf++;
+
+float tmp_data[96];
+for(int i=0;i<48;i++)
+{
+    tmp_data[i]=Fader_dampered[i].getdecay();
+    tmp_data[i+48]=Fader_dampered[i].getdt();
+}
+if ((fp=fopen(  file_fader_damper_levels, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",  file_fader_damper_levels); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s", file_fader_damper_levels);
+if (fwrite(tmp_data, sizeof(float),fader_damper_levels_size, fp) !=fader_damper_levels_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s", file_fader_damper_levels); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",  file_fader_damper_levels);
+fclose(fp);
+}
+idf++;
+
+
+/*const char file_fader_damper_on[24]={"faders_damper_on.whc"};
+unsigned int fader_damper_on_size=48;//bool fader_damper_is_on[48]//
+const char file_fader_damper_typ[24]={"faders_damper_typ.whc"};
+unsigned int fader_damper_typ_size=48;//1x 48 tmp tableau set mod
+const char file_fader_damper_levels[24]={"faders_damper_lvls.whc"};
+int fader_damper_levels=96;//2x48 tmp 2 tableaux pour set decay et set dt en valeur 0 - 127*/
+
+
+for(int i=0;i<48;i++)
+{
+    if(fader_damper_is_on[i]==1)
+    {
+     Fader_dampered[i].fix_all_damper_state_value(Fader[i]);
+     Fader_dampered[i].set_target_val(Fader[i]);
+    }
+}
 
 }
 
@@ -2973,6 +3057,18 @@ sprintf(string_save_load_report[idf],"Opened file %s", file_midi_properties);
 if (fwrite(midi_change_vel_type, sizeof(int),midi_properties_size, fp) != midi_properties_size)
 { sprintf(string_save_load_report[idf],"Error writting %s",file_midi_properties); b_report_error[idf]=1;}
 else sprintf(string_save_load_report[idf],"Saved file %s",file_midi_properties);
+fclose(fp);
+}
+
+
+if ((fp=fopen( file_midi_clock, "wb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_midi_clock); b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opened file %s", file_midi_clock);
+if(fwrite (bpm_personnal, sizeof(int),midi_clock_size, fp) != midi_clock_size)
+{ sprintf(string_save_load_report[idf],"Error writting %s",file_midi_clock); b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Saved file %s",file_midi_clock);
 fclose(fp);
 }
  idf++;
@@ -4684,9 +4780,10 @@ reset_all_bangers();
 clear_report_string();
 idf=0;
 //POUR RAFRAICHIR CORRECTEMENT LES VARIABLES DE POSITIONS DE FENETRES ( TIME WHEEL COLOR WHEEL) AVANT CALCULS
+
+//christoph 18/05/15
+GlobInit();
 Load_Window_Conf();
-
-
 
 if(specify_who_to_save_load[0]==1)//MEMOIRES/////////////////////////////////
 {
@@ -5227,17 +5324,8 @@ if(specify_who_to_save_load[12]==1) ////FADERS CONTENT//////////////////////////
 {
 save_load_print_to_screen("Loading Faders");
 
-if ((fp=fopen(file_faders_state, "rb"))==NULL)
-{ sprintf(string_save_load_report[idf],"Error opening file %s", file_faders_state);b_report_error[idf]=1;}
-else
-{
-sprintf(string_save_load_report[idf],"Opening file %s", file_faders_state);
-if (fread(Fader, sizeof(unsigned char),faders_saving_size, fp) !=faders_saving_size)
-{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_faders_state);b_report_error[idf]=1;}
-else sprintf(string_save_load_report[idf],"Loaded file %s", file_faders_state);
- fclose(fp);
-}
-idf++;
+
+
 if ((fp=fopen(file_dock_selected, "rb"))==NULL)
 { sprintf(string_save_load_report[idf],"Error opening file %s", file_dock_selected);b_report_error[idf]=1;}
 else
@@ -5464,6 +5552,82 @@ if (fread(echo_affected_to_dock, sizeof(int),fader_echo_size, fp) !=fader_echo_s
 else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_echo);
  fclose(fp);
 }
+idf++;
+
+//DAMPER faders
+if ((fp=fopen(file_fader_damper_on, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_damper_on);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s",file_fader_damper_on);
+if (fread(fader_damper_is_on, sizeof(bool),fader_damper_on_size, fp) !=fader_damper_on_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_fader_damper_on);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_damper_on);
+ fclose(fp);
+}
+idf++;
+
+int tmp_typ[48];
+if ((fp=fopen(file_fader_damper_typ, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_damper_typ);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s",file_fader_damper_typ);
+if (fread(tmp_typ, sizeof(int),fader_damper_typ_size, fp) !=fader_damper_typ_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_fader_damper_typ);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_damper_typ);
+ fclose(fp);
+}
+idf++;
+for(int i=0;i<48;i++)
+{
+Fader_dampered[i].set_damper_mode(tmp_typ[i]);
+}
+
+float tmp_data[96];
+if ((fp=fopen(file_fader_damper_levels, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s",file_fader_damper_levels);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s",file_fader_damper_levels);
+if (fread(tmp_data, sizeof(float),fader_damper_levels_size, fp) !=fader_damper_levels_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_fader_damper_levels);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",file_fader_damper_levels);
+ fclose(fp);
+}
+idf++;
+for(int i=0;i<48;i++)
+{
+Fader_dampered[i].set_damper_decay(tmp_data[i]);
+midi_levels[1960+i]=(int)(tmp_data[i]*127);
+Fader_dampered[i].set_damper_dt(tmp_data[i+48]);
+midi_levels[2056+i]=(int)(tmp_data[i+48]*127);
+}
+/*const char file_fader_damper_on[24]={"faders_damper_on.whc"};
+unsigned int fader_damper_on_size=48;//bool fader_damper_is_on[48]//
+const char file_fader_damper_typ[24]={"faders_damper_typ.whc"};
+unsigned int fader_damper_typ_size=48;//1x 48 tmp tableau set mod
+const char file_fader_damper_levels[24]={"faders_damper_lvls.whc"};
+int fader_damper_levels=96;//2x48 tmp 2 tableaux pour set decay et set dt en valeur 0 - 127*/
+
+if ((fp=fopen(file_faders_state, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s", file_faders_state);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s", file_faders_state);
+if (fread(Fader, sizeof(unsigned char),faders_saving_size, fp) !=faders_saving_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s", file_faders_state);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s", file_faders_state);
+ fclose(fp);
+}
+
+for(int i=0; i<48;i++)//maj des faders
+{
+     Fader_dampered[i].fix_all_damper_state_value(Fader[i]);
+     Fader_dampered[i].set_target_val(Fader[i]);
+     fader_set_level(i,Fader[i]);
+}
+
 idf++;
 
 
@@ -6020,6 +6184,20 @@ if (fread( midi_change_vel_type, sizeof(int),midi_properties_size, fp) !=midi_pr
 else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_properties);
  fclose(fp);
 }
+
+if ((fp=fopen(file_midi_clock, "rb"))==NULL)
+{ sprintf(string_save_load_report[idf],"Error opening file %s", file_midi_clock);b_report_error[idf]=1;}
+else
+{
+sprintf(string_save_load_report[idf],"Opening file %s",   file_midi_clock);
+if (fread( bpm_personnal, sizeof(int),midi_clock_size, fp) !=midi_clock_size)
+{ sprintf(string_save_load_report[idf],"Error Loaded %s",   file_midi_clock);b_report_error[idf]=1;}
+else sprintf(string_save_load_report[idf],"Loaded file %s",  file_midi_clock);
+ fclose(fp);
+}
+
+
+
 idf++;
 
 rest(10);
@@ -7741,7 +7919,8 @@ idf++;
 
 plot_generate_appareils_list();
 
-
+//refresh midi out to motorized surfaces
+refresh_all_midi_out_faders();
 
 
 sprintf(rep,"%s",mondirectory);

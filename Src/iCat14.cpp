@@ -2375,8 +2375,10 @@ else if ( DockTypeIs[fis][dock_used_by_fader_is[fis]]==8 ) the_audio_player=Dock
       case 1:
       FaderLocked[fis]=0;
       //remise à plat du niveau
+      fader_set_level(fis,(unsigned char)((((float)(StateOfFaderBeforeLock[fis]))/255)*locklevel));
+      /*
       Fader[fis]=(unsigned char)((((float)(StateOfFaderBeforeLock[fis]))/255)*locklevel);
-      midi_levels[fis]=(int)(((float)Fader[fis])/2);
+      midi_levels[fis]=(int)(((float)Fader[fis])/2);*/
       break;
       }
       reset_button(iCatPageis,bt, tp);
@@ -3601,11 +3603,12 @@ level_from_touch[iCatPageis][sl]=constrain_data_to_dmx_range(level_from_touch[iC
 switch(iCat_affectation_slider_type_is[iCatPageis][sl])
 {
 case 1://niveaux faders
-Fader[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=level_from_touch[iCatPageis][sl];
-//direct chan
+    fader_set_level((iCat_affectation_slider_value_is[iCatPageis][sl]-1),level_from_touch[iCatPageis][sl]);
+/*Fader[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=level_from_touch[iCatPageis][sl];
 index_fader_is_manipulated[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=1;
 midi_levels[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=level_from_touch[iCatPageis][sl]/2;
 if(midi_send_out[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]==1){ index_send_midi_out[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=1;}
+*/
 if(lfo_mode_is[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]==1 || lfo_mode_is[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]==2 || lfo_cycle_is_on[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]==1)
 {
 lfo_mode_is[(iCat_affectation_slider_value_is[iCatPageis][sl]-1)]=0;

@@ -30,8 +30,8 @@ WWWWWWWW           C  WWWWWWWW   |
 * \file whitecat.h
 * \brief {header file for all the global variable in whitecat}
 * \author Christoph Guillermet
-* \version {0.8.6.3}
-* \date {12/02/2015}
+* \version {0.8.7.0}
+* \date {15/05/2015}
 
  White Cat {- categorie} {- sous categorie {- sous categorie}}
 
@@ -45,8 +45,8 @@ WWWWWWWW           C  WWWWWWWW   |
 
 
 
-char versionis[72]={"Beta 0.8.6.3 - 27 fev 2015"};
-char nickname_version[48]={"WINTER POWER"};
+char versionis[72]={"ALPHA 0.8.7 - 25 juin 2015"};
+char nickname_version[48]={"ARDUINO POWER"};
 
 bool init_done=0;//démarrage pour éviter envoyer data pdt procedure d initialisation
 /////////////////////REPERTOIRE/////////////////////////////////////////////////
@@ -339,6 +339,9 @@ bool index_ask_curv_to_fader=0;
 int curve_asked_for_fader=0;
 
 bool autolaunch[48];//déclenchement des embarqué au montage de potard
+
+bool fader_damper_is_on[48];
+
 ////////////////////////////////////////////////////////////////////////////////
 ///MODE DIRECT CHANNEL POUR LES FADERS
 int FaderDirectChan[48][6];
@@ -547,7 +550,7 @@ int index_count_trackers=0;
 int frame_video_x, frame_video_y;
 int video_size_x=320 , video_size_y=200;
 bool camera_is_on=0;
-int load_camera_on_start=0;
+int camera_on_open=0;
 int camera_original_fps_is=15;
 float display_fps;
 //6 tracking docks // 12 espaces de tracking par tracking dock//
@@ -715,10 +718,15 @@ bool index_auto_mute_cuelist_speed=0;
 int index_midi_auto_desaffect=0;
 short		myRefNum; // application reference number
 MidiFilterPtr	myFilter; // events filter
-MidiName AppliName = "white cat";
+//MidiName AppliName = "white cat";
+bool index_midi_clock_on=0;
 
 char TblLibEv[256][20];
 char my_midi_string[64];
+char midi_historic[256][64];//affichage
+int midi_historic_data[256][4];//stockage
+int position_midi_historic=0;
+
 char my_midi_original_string[64];
 char my_midi_out_string[128];
 char tableau_peripheriques_in[32][64];//ordonnees nom
@@ -748,17 +756,17 @@ char string_shortview_midi[24];//affichage over souris
 int isport=0 ; int ischan=0 ; int ispitch=0; int isvel=0;
 int istyp=0;
 byte isrefnum=0;
-int miditable[3][2048];
+int miditable[3][3072];
 int   over_fader=0, over_dock=0; // survol d un fader ou d un dock pour visualisation des circuits et de leur niveau
 //[3] : 0 typ 1 Chan 2 Pitch
 //[512]: 0-48: faders / 49-96: Dock - 97-145: Dock + / 146- 194
-int midi_levels[2048];
-bool midi_send_out[2048];//atribué ou pas
-bool index_send_midi_out[2048];//index booleen pour lancer l ordre depuis la boucle
+int midi_levels[3072];
+bool midi_send_out[3072];//atribué ou pas
+bool index_send_midi_out[3072];//index booleen pour lancer l ordre depuis la boucle
 bool index_global_midi_send_on_faders=0;//enclenche l envoi global ou pas des midi out sur tous les faders donnee non sauvegardée, car c est un impulse
 bool do_light_midi_send_on_faders=0;
 int midi_page=0;
-bool do_affectation_on_midi_affect_itself=0;
+//bool do_affectation_on_midi_affect_itself=0;
 int Midi_Faders_Affectation_Type=0;
 //0 ne rien faire
 //1 faders 1 à 1
@@ -773,14 +781,27 @@ bool toggle_numerical_midi_way=0;
 int fakemidichan=0; //les entrees d affectations en manuel
 int fakemidipitch=1;
 int fakemiditype=4;
+
+bool index_midi_affectation_autoclose=1; //when at 1, midi affectation once done is disable, to avoid errors
 /////////////////
 char thetypinfo[12];//affciahge dans midi conf du type en lettres
 int type_of_midi_button=0; //0=fader 1 = dock button   2= lock button 3= midi out on off button  4=speed lfo function
 // 5= boutton normal
-bool cheat_key_off=0;
+bool cheat_key_off=0;//key on vel 0 = key off
+bool cheat_key_off_to_key_on=1;//key off vel 127 ou autre= key on vel 0, filtre general 12/05/15 christoph mf twister sequencer
+
+int bpm_personnal[16];
+int relativ_encoder_midi_clock_value=10;//for cc increment in live of BPM
+bool clocklevel_absolutemode=0;
+int clock_level_is=0;
+float clock_vx;
+float clock_vy;
+float angle_snap_clock;
+float position_curseur_clock_x;
+float position_curseur_clock_y;
 /////////////////////////////////////////////////////////////////////////////////
-bool is_raccrochage_midi_remote[2048];
-int val_raccrochage_midi[2048];//valeur recue
+bool is_raccrochage_midi_remote[3072];
+int val_raccrochage_midi[3072];//valeur recue
 
 
 bool refresh_midi_chasers=0;
@@ -1465,66 +1486,60 @@ int core_to_assign=0;
 int open_arduino_on_open=0;
 char string_Arduino_status[128];
 int arduino_max_devices=1;
-bool index_send_arduino_config=0;//
-float index_do_light_send_config=1.0;
+
+
 int nBytesReadArduino0=0;
 int nBytesSendtoArduino=0;
-char arduino_order[4];//l ordre a envoyer se compose de trois lettres, un slash, un EOL
 
 int arduino_com0=4;
-int arduino_baud_rate0=14400;//9600 ok sur 6 ana 13 io //11400 ùega 54 IO
+int arduino_baud_rate0=9600;//9600 ok sur 6 ana 13 io //11400 ùega 54 IO
 bool arduino_device_0_is_ignited=0;
-char tmp_str_arduino[128];//chaine input
+
 
 #define digital_limit 127
-#define analog_limit 63 //eviter debordements
+#define analog_limit 63
 #define pwm_limit 35
 
 
-bool need_send_pwm;
+unsigned char input_str_arduino[digital_limit];//chaine input data from arduino (analog and digital)
 
-int digital_data_from_arduino[128];//tableau des datas gardé tres large au cas ou grande extension
-int previous_digital_data_from_arduino[128];
-int arduino_max_digital=54;
-int analog_data_from_arduino[64];//tableau des datas gardé tres large au cas ou grande extension
-int previous_analog_data_from_arduino[64];
-bool ventilate_analog_data[64];//pour muter demuter les entrées arduino
+
+
+int digital_data_from_arduino[digital_limit];//tableau des datas gardé tres large au cas ou grande extension
+int previous_digital_data_from_arduino[digital_limit];
+int arduino_max_digital=13;
+int analog_data_from_arduino[analog_limit];//tableau des datas gardé tres large au cas ou grande extension
+int previous_analog_data_from_arduino[analog_limit];
+bool ventilate_analog_data[analog_limit];//pour muter demuter les entrées arduino
 int arduino_max_analog=5;
-bool digital_data_is_switch[128];//pour comportements switch
-bool snap_dig_for_switch[128];
-int arduino_max_out_digi=13;
+bool digital_data_is_switch[digital_limit];//pour comportements switch
+bool snap_dig_for_switch[digital_limit];
 
 
-bool index_send_digital_data=0;//pour demander d envoyer la trame
-int digital_data_to_arduino[128];
-int previous_digital_data_to_arduino[128];
+int digital_data_to_arduino[digital_limit];
+int previous_digital_data_to_arduino[digital_limit];
 
-int arduino_digital_type[128];//0= desaffecté 1= input 2= output 3= PWM
-int arduino_digital_function_input[128][2];//Action // Val
-int arduino_analog_function_input[64];//0-rien 1-fader 2 Seq 3 trichro 4 video 5 master
-int arduino_analog_attribution_input[64];//Val 1-48 ou sequenciel 123
+int arduino_digital_type[digital_limit];//0= desaffecté 1= input 2= output 3= PWM
+int arduino_digital_function_input[digital_limit][2];//Action // Val
+int arduino_analog_function_input[analog_limit];//0-rien 1-fader 2 Seq 3 trichro 4 video 5 master
+int arduino_analog_attribution_input[analog_limit];//Val 1-48 ou sequenciel 123
 int position_line_io=0;
 int position_line_ana=0;
 bool arduino_simulating_midi=0;//pour bypasser le EV pointeur de midishare
 
-int arduino_digital_function_output[128][2];//Action // Val
+int arduino_digital_function_output[digital_limit][2];//Action // Val
 
-bool index_send_pwm_data=0;
-int pwm_data_to_arduino[36];
-int previous_pwm_data_to_arduino[36];
-
-
-int arduino_total_pin = arduino_max_out_digi+arduino_max_analog+2;
-int ticks_arduino_passe;
+int pwm_data_to_arduino[pwm_limit];
+int previous_pwm_data_to_arduino[pwm_limit];
 
 /////////////////////MIDI LAUNCHPAD RETOUR VISUEL D INFOS///////////////////////
 bool enable_launchpad=0;
 int midi_duree_launchpad=10;
 int temp_launchpad=0;//pour envoyer niveau dans tooutes les instructions en level sans se rajouter bp de code
-bool midi_launchpad_state[2048];
-bool midi_launchpad_state_before[2048];
-bool launchpad_impulse_type_is[2048];
-int launchpad_color_defined[2048];
+bool midi_launchpad_state[3072];
+bool midi_launchpad_state_before[3072];
+bool launchpad_impulse_type_is[3072];
+int launchpad_color_defined[3072];
 int launchpad_color[16];//16 couleurs customisables
 int lch_orange=63;
 int lch_green=60;
@@ -1534,11 +1549,11 @@ int lch_ambre=31;
 int lch_orange_fonce=30;
 int facteur_cycling=0;//-1 à +1
 bool entered_main=0;
-bool launchpad_is_a_cycling_effect[2048];//faire fader les leds
-bool midi_needs_no_key_on_key_off[2048];
+bool launchpad_is_a_cycling_effect[3072];//faire fader les leds
+bool midi_needs_no_key_on_key_off[3072];
 bool launchpad_buffer=0;
 ////////////////////////////////////////////////////////////////////////////////
-char list_midi_affect[2048][36];
+char list_midi_affect[3072][36];
 
 //////////////////////////CHASERS//////////////////////////////////////////////
 bool index_window_chasers=0;
@@ -2489,6 +2504,9 @@ volatile bool merging_gpl_in_draw=0;
 
 int draw_get_gpl[6];
 int draw_offset_gpl[6];
+
+int draw_arduino_xy[4];
+
 
 //rajout version fevrier 2015 Variables de calculs damper decay
 float damper_target_val=0.0;

@@ -123,10 +123,11 @@ int all_at_zero_panel_visu(int xf, int yf)
     petitpetitchiffre.Print("AtZero",xf+10,yf+5);
     Rect Commande(Vec2D(xf,yf),Vec2D(50,20));
     Commande.SetRoundness(4);
-    Commande.DrawOutline(CouleurLigne.WithAlpha(0.5));
+
     for (int u=0; u<8; u++)
     {
         Commande.MoveTo(Vec2D(xf,yf+10+(25*u)));
+        Commande.DrawOutline(CouleurLigne.WithAlpha(0.5));
         switch(u)
         {
         case 0:
@@ -495,10 +496,10 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
 
                 sprintf(string_last_midi_id,"%s is Ch: %d Pitch: %d Type: %s",tmp_c, miditable[1][778+numcom],miditable[2][778+numcom],thetypinfo);
 
-                if(numcom==0)//flash
+                if(numcom==0 && window_focus_id==W_MINIFADERS)//flash
                 {
 //BLOCK FLASHqui doit etre dans boucle principale et pas dans le core qui checke la souris
-                    if(mouse_button==1 &&  mouse_released==0)
+                    if(  mouse_button==1 &&  mouse_released==0)
                     {
                         if( Midi_Faders_Affectation_Type!=0)
                         {
@@ -705,7 +706,7 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
         petitpetitchiffre.Print(str_minifader_feedback[iog],xmf+(24*larg)+10,ymf+305+(iog*10));
     }
 ////////////////////////////////////////////////////////////////////////////////
-/////////////////////////LES 48 POTARDS/////////////////////////////////////////
+/////////////////////////LES 48 FADERS/////////////////////////////////////////
     int hmfd=200;//hauteur d une ligne de 24 faders
 
     Rect FaderSelB(Vec2D(xmf,ymf),Vec2D(larg-2,15));
@@ -715,6 +716,10 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
     FaderLittle.SetRoundness(3);
     Rect FlashTouch(Vec2D(xmf,ymf),Vec2D(larg-5,10));
     FlashTouch.SetRoundness(3);
+    Rect DB(Vec2D(xmf, ymf+20),Vec2D( larg-5,7 ));
+    DB.SetRoundness(1);
+
+
     for(int cmptfader=0; cmptfader<max_faders/2; cmptfader++)
     {
         for(int lfad=0; lfad<2; lfad++)
@@ -911,6 +916,16 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
                     FaderSelB.DrawOutline(CouleurFader);
                     over_minifader=cmptfader +(lfad*24);
                 }
+
+//Damper
+DB.MoveTo(Vec2D(xmf+(cmptfader*larg),ymf+165+(lfad*hmfd)));
+DB.DrawOutline(CouleurLigne.WithAlpha(0.5));
+DB.Draw(CouleurBleuProcedure.WithAlpha(fader_damper_is_on[cmptfader +(lfad*24)]));
+petitpetitchiffre.Print("~",xmf+(cmptfader*larg)+4,ymf+171+(lfad*hmfd));
+if(Midi_Faders_Affectation_Type!=0 && mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg-5 && mouse_y>ymf+165+(lfad*hmfd) && mouse_y<ymf+173+(lfad*hmfd))
+{
+ DB.DrawOutline(CouleurBlind);
+}
 //Flash du Fader//////////////////////////////////////////////////////////////////
                 FlashTouch.MoveTo(Vec2D(xmf+(cmptfader*larg),ymf+175+(lfad*hmfd)));
                 FlashTouch.SetRoundness(3);
@@ -922,7 +937,7 @@ int mini_faders_panel_visu(int xmf, int ymf, int larg)
                 }
 
 //flash ou pas
-                if(mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg-5 && mouse_y>ymf+175+(lfad*hmfd) && mouse_y<ymf+185+(lfad*hmfd))
+            if(mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg-5 && mouse_y>ymf+175+(lfad*hmfd) && mouse_y<ymf+185+(lfad*hmfd))
                 {
                     if(mouse_button==1 && FaderIsFlash[cmptfader +(lfad*24)]==0 && mouse_released==0)
                     {

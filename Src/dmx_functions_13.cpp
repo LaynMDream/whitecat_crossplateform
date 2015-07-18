@@ -493,7 +493,8 @@ int do_lfos()
  if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
- Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ //Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ fader_set_level(cmptfader,int(faders_in_float[cmptfader]));
  }
 
  lfo_running_is_upward[cmptfader]=1;
@@ -505,7 +506,9 @@ int do_lfos()
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader]
  || Fader[cmptfader]>LevelStopPos[cmptfader]) && FaderIsFlash[cmptfader]==0)
  {
-  Fader[cmptfader]=LevelStopPos[cmptfader];lfo_mode_is[cmptfader]=0;ActionnateStopOn[cmptfader]=0;
+  //Fader[cmptfader]=LevelStopPos[cmptfader];
+  fader_set_level(cmptfader,LevelStopPos[cmptfader]);
+  lfo_mode_is[cmptfader]=0;ActionnateStopOn[cmptfader]=0;
   }
  //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
@@ -522,7 +525,8 @@ int do_lfos()
  if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
- Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ //Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ fader_set_level(cmptfader,int(faders_in_float[cmptfader]));
  }
 
  lfo_running_is_upward[cmptfader]=0;
@@ -534,7 +538,9 @@ int do_lfos()
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader]
  || Fader[cmptfader]<LevelStopPos[cmptfader]) && FaderIsFlash[cmptfader]==0)
  {
- Fader[cmptfader]=LevelStopPos[cmptfader];lfo_mode_is[cmptfader]=0;ActionnateStopOn[cmptfader]=0;
+ //Fader[cmptfader]=LevelStopPos[cmptfader];
+ fader_set_level(cmptfader,LevelStopPos[cmptfader]);
+ lfo_mode_is[cmptfader]=0;ActionnateStopOn[cmptfader]=0;
  }
  //report midi
   midi_levels[cmptfader]=(Fader[cmptfader]/2);
@@ -555,13 +561,16 @@ int do_lfos()
  if(faders_in_float[cmptfader]>255){faders_in_float[cmptfader]=255;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
- Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ //Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ fader_set_level(cmptfader,int(faders_in_float[cmptfader]));
  }
 
 //ONSTOP est butee haute de la boucle
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] || Fader[cmptfader]>LevelStopPos[cmptfader])
  && FaderIsFlash[cmptfader]==0)
- { Fader[cmptfader]=LevelStopPos[cmptfader]; }
+ {//Fader[cmptfader]=LevelStopPos[cmptfader];
+ fader_set_level(cmptfader,LevelStopPos[cmptfader]);
+ }
  //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
@@ -571,7 +580,9 @@ int do_lfos()
  if(faders_in_float[cmptfader]>=255)
  {
  start_time_for_delays[cmptfader]=actual_time;
- faders_in_float[cmptfader]=0.0;Fader[cmptfader]=0;
+ faders_in_float[cmptfader]=0.0;
+ //Fader[cmptfader]=0;
+ fader_set_level(cmptfader,0);
  }
 
 
@@ -611,13 +622,17 @@ int do_lfos()
  if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
- Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ //Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ fader_set_level(cmptfader,int(faders_in_float[cmptfader]));
  }
 
  //ONSTOP est plancher de la boucle
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader]
  || Fader[cmptfader]<LevelStopPos[cmptfader]) && FaderIsFlash[cmptfader]==0)
- { Fader[cmptfader]=255;}
+ {
+ //    Fader[cmptfader]=255;
+   fader_set_level(cmptfader,255);
+ }
   //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
@@ -626,7 +641,9 @@ int do_lfos()
  lfo_running_is_upward[cmptfader]=0;
  if(faders_in_float[cmptfader]==0.0)
  {
- Fader[cmptfader]=255;faders_in_float[cmptfader]=255.0;
+ //Fader[cmptfader]=255;
+ fader_set_level(cmptfader,255);
+ faders_in_float[cmptfader]=255.0;
  start_time_for_delays[cmptfader]=actual_time;
  if(lfo_do_next_step[cmptfader][1]==1)
  {
@@ -668,13 +685,16 @@ int do_lfos()
 
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
- Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ //Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ fader_set_level(cmptfader,int(faders_in_float[cmptfader]));
  }
 
  //ONSTOP est plancher de la boucle
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] || Fader[cmptfader]<LevelStopPos[cmptfader])
  && FaderIsFlash[cmptfader]==0)
- { Fader[cmptfader]=LevelStopPos[cmptfader]; }
+ { //Fader[cmptfader]=LevelStopPos[cmptfader];
+ fader_set_level(cmptfader,LevelStopPos[cmptfader]);
+ }
   //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
  if(midi_send_out[cmptfader]==1  )
@@ -682,7 +702,9 @@ int do_lfos()
  lfo_running_is_upward[cmptfader]=1;
  if(faders_in_float[cmptfader]==255)
  {
- faders_in_float[cmptfader]=255.0;Fader[cmptfader]=255;
+ faders_in_float[cmptfader]=255.0;
+ //Fader[cmptfader]=255;
+ fader_set_level(cmptfader,255);
  start_time_for_delays[cmptfader]=actual_time;
  lfo_running_is_upward[cmptfader]=0;
  }
@@ -694,7 +716,8 @@ int do_lfos()
  if(faders_in_float[cmptfader]<0){faders_in_float[cmptfader]=0;}
  if(FaderIsFlash[cmptfader]==0)//tous calculs ok si pas de flash
  {
- Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ //Fader[cmptfader]=int(faders_in_float[cmptfader]);
+ fader_set_level(cmptfader,int(faders_in_float[cmptfader]));
  }
 
 
@@ -702,7 +725,8 @@ int do_lfos()
  if( ActionnateStopOn[cmptfader]==1 && StopPosOn[cmptfader]==1 && (Fader[cmptfader]==LevelStopPos[cmptfader] || Fader[cmptfader]<LevelStopPos[cmptfader])
  && FaderIsFlash[cmptfader]==0)
  {
- Fader[cmptfader]=LevelStopPos[cmptfader];
+ //Fader[cmptfader]=LevelStopPos[cmptfader];
+ fader_set_level(cmptfader,LevelStopPos[cmptfader]);
  }
  //report midi
  midi_levels[cmptfader]=(Fader[cmptfader]/2);
@@ -712,7 +736,11 @@ int do_lfos()
  if(faders_in_float[cmptfader]==0.0)
  {
  faders_in_float[cmptfader]=0.0;
- if( ActionnateStopOn[cmptfader]==0 && FaderIsFlash[cmptfader]==0){Fader[cmptfader]=0; }
+ if( ActionnateStopOn[cmptfader]==0 && FaderIsFlash[cmptfader]==0)
+    {
+    //Fader[cmptfader]=0;
+    fader_set_level(cmptfader,0);
+    }
 
  start_time_for_delays[cmptfader]=actual_time;
  prepare_lfos(cmptfader, dockis);
@@ -977,15 +1005,19 @@ DoLock(f,Fader[f]);//remasterisation des niveaux
 if(FaderIsFlash[f]==1 && FaderIsFlashBefore[f]==0)
 {
 LevelFaderBeforeFlash[f]=Fader[f];
-Fader[f]=255;
-midi_levels[f]=127; FaderIsFlashBefore[f]= FaderIsFlash[f];
-index_fader_is_manipulated[f]=1;
+fader_set_level(f,255);
+//Fader[f]=255;
+//midi_levels[f]=127;
+//index_fader_is_manipulated[f]=1;
+FaderIsFlashBefore[f]= FaderIsFlash[f];
 }
 else if (FaderIsFlash[f]==0 && FaderIsFlashBefore[f]==1)
 {
-Fader[f]=LevelFaderBeforeFlash[f];
-midi_levels[f]=Fader[f]/2; FaderIsFlashBefore[f]= FaderIsFlash[f];
-index_fader_is_manipulated[f]=1;
+//Fader[f]=LevelFaderBeforeFlash[f];
+fader_set_level(f,LevelFaderBeforeFlash[f]);
+//midi_levels[f]=Fader[f]/2;
+FaderIsFlashBefore[f]= FaderIsFlash[f];
+//index_fader_is_manipulated[f]=1;
 }
 
 ////////////////////////
@@ -1238,8 +1270,7 @@ int Merger()
  DmxBlock[i]=255-curve_report[courb][(DmxBlockPatch[i])];
  }
  }
- //master sorti pour le freeze et mis dans la partie  freeze array 0
-// DmxBlock[i]=(int)(((float)(DmxBlock[i])/255)*niveauGMaster);
+
 
  //check channel override la sortie
  if(index_patch_overide==1)

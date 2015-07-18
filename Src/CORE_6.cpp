@@ -108,6 +108,27 @@ int reset_temp_state_for_channel_macros_launch()
 return(0);
 }
 
+int fader_set_level(int cmptfader, int val)
+{
+switch(fader_damper_is_on[cmptfader])
+{
+case 0:
+Fader[cmptfader]=val;
+midi_levels[cmptfader]=(Fader[cmptfader]/2);
+Fader_dampered[cmptfader].fix_all_damper_state_value(val);
+Fader_dampered[cmptfader].set_target_val(val);
+break;
+case 1:
+Fader_dampered[cmptfader].set_target_val(val);
+break;
+}
+
+index_fader_is_manipulated[cmptfader]=1;midi_levels[cmptfader]=(Fader[cmptfader]/2);
+if(midi_send_out[cmptfader]==1){ index_send_midi_out[cmptfader]=1;}
+return(0);
+}
+
+
 //christoph 14/04/14 avoiding clippling on stop
 int player1_do_stop()//fade out to avoid clipping in sound when stopping
 {
@@ -621,7 +642,8 @@ int reset_index_actions()
     index_affect_draw_to_dock=0;
     index_affect_echo_to_dock=0;
 
-    //gridplayer_to_affect_is=-1;
+
+
     return(0);
 }
 
@@ -789,6 +811,34 @@ int reset_indexs_confirmation()
     //sab 02/03/2014 sprintf(string_confirmation,"");
     strcpy(string_confirmation,"");
     return(0);
+}
+
+
+int do_clock_level_modification(int level)
+{
+switch(clocklevel_absolutemode)
+{
+case 0://relatif
+    if(level<64){
+    midi_BPM+=relativ_encoder_midi_clock_value;
+    ticker_midi_clock_rate=BPM_TO_TIMER(24 * midi_BPM);
+    install_int_ex(ticker_midi_clock , ticker_midi_clock_rate);}
+    else if(level>64){
+    midi_BPM-=relativ_encoder_midi_clock_value;
+    if(midi_BPM<=0){midi_BPM=relativ_encoder_midi_clock_value;}
+    ticker_midi_clock_rate=BPM_TO_TIMER(24 * midi_BPM);
+    install_int_ex(ticker_midi_clock , ticker_midi_clock_rate);
+    }
+break;
+case 1://absolute , on récupère de toute facon le niveau midi comme base
+    midi_BPM=relativ_encoder_midi_clock_value*level;
+    if(midi_BPM<=0){midi_BPM=relativ_encoder_midi_clock_value;}
+    ticker_midi_clock_rate=BPM_TO_TIMER(24 * midi_BPM);
+    install_int_ex(ticker_midi_clock , ticker_midi_clock_rate);
+break;
+}
+
+return(0);
 }
 
 int reset_channel_first_dimmer_list()
@@ -1576,10 +1626,44 @@ int set_all_faders_midi_out(bool state)
             index_send_midi_out[i]=1;
         }
     }
+
+
+
     return(0);
 }
 
+int refresh_all_midi_out_faders()
+{
 
+    for(int i=0; i<48; i++) //faders
+    {
+            index_send_midi_out[i]=1;
+    }
+
+    for(int i=196; i<(196+48); i++) //LFO
+    {
+            index_send_midi_out[i]=1;
+    }
+
+    for (int i=1960; i<2007;i++ )//decay
+    {
+            index_send_midi_out[i]=1;
+    }
+
+    for (int i=2056 ; i <2113; i++)//dt
+    {
+            index_send_midi_out[i]=1;
+    }
+
+
+    //trichro wheel
+    index_send_midi_out[497]=1;
+
+    //tracking video decay
+    index_send_midi_out[498]=1;
+
+    return(0);
+}
 
 int reset_window_opened_indexes()
 {
@@ -1620,13 +1704,13 @@ int constrain_banger_param(int lp)
         bangers_action[index_banger_selected][lp]=0;
         break;
     case 1://faders
-        if(bangers_action[index_banger_selected][lp]>33)
+        if(bangers_action[index_banger_selected][lp]>37)
         {
             bangers_action[index_banger_selected][lp]=0;
         }
         break;
     case 2://midi send
-        if(bangers_action[index_banger_selected][lp]>23)
+        if(bangers_action[index_banger_selected][lp]>29)
         {
             bangers_action[index_banger_selected][lp]=0;
         }
@@ -1705,7 +1789,7 @@ int constrain_banger_param(int lp)
         }
         break;
     case 14://grid
-        if(bangers_action[index_banger_selected][lp]>22)
+        if(bangers_action[index_banger_selected][lp]>23)
         {
             bangers_action[index_banger_selected][lp]=0;
         }
@@ -1937,7 +2021,7 @@ int search_and_desaffect_previous_midi_signal(int typaction)
 
     if (typaction==1)//1/1
     {
-        for (int i=0; i<2048; i++)
+        for (int i=0; i<3072; i++)
         {
             if (miditable[0][i]==istyp && miditable[1][i]==ischan && miditable[2][i]==ispitch) //0.8.2.2
             {
@@ -1957,7 +2041,7 @@ int search_and_desaffect_previous_midi_signal(int typaction)
         case 0:
             for(int h=0; h<8; h++)
             {
-                for (int i=0; i<2048; i++)
+                for (int i=0; i<3072; i++)
                 {
                     if (miditable[0][i]==istyp && miditable[1][i]==ischan && miditable[2][i]==ispitch+h)
                     {
@@ -1973,7 +2057,7 @@ int search_and_desaffect_previous_midi_signal(int typaction)
         case 1:
             for(int h=0; h<8; h++)
             {
-                for (int i=0; i<2048; i++)
+                for (int i=0; i<3072; i++)
                 {
                     if (miditable[0][i]==istyp && miditable[1][i]==ischan+h && miditable[2][i]==ispitch)
 
@@ -2092,6 +2176,10 @@ int attribute_midi_to_control(int faderis, int typaction, int modeaction)
         }
     }
 
+//midi affect auto close
+if( index_midi_affectation_autoclose==1)
+    {Midi_Faders_Affectation_Type=0;}
+
 
     return(0);
 }
@@ -2131,6 +2219,9 @@ int attribute_midi_solo_affectation(int faderis, int modeaction)
 //modeaction=0;
     }
 
+//midi affect auto close
+if( index_midi_affectation_autoclose==1)
+    {Midi_Faders_Affectation_Type=0;}
 
     return(0);
 }
@@ -2541,7 +2632,7 @@ int reset_indexes_conf()//menu setup cfg
     index_affect_dmxin=0;
     Midi_Faders_Affectation_Type=0;//pour ne pas affecter quoi que ce soit en midi
     Midi_Faders_Affectation_Mode=0;
-    do_affectation_on_midi_affect_itself=0;//pour affectation midi on itself
+    //do_affectation_on_midi_affect_itself=0;//pour affectation midi on itself
     return(0);
 }
 
@@ -2567,7 +2658,7 @@ int button_midi_out_visu(int xmi, int ymi, int control)
     {
         BMidiOut.Draw(CouleurBlind);
     }
-    BMidiOut.DrawOutline(CouleurLigne);
+    BMidiOut.DrawOutline(CouleurLigne.WithAlpha(0.5));
 
     return(0);
 }
@@ -2885,6 +2976,19 @@ int write_window_indexes_from_list_of_windows()
 }
 
 
+
+int rafraichissement_clockwheel()
+{
+
+   clock_vx = cos(angle_snap_clock)* rayon_wheel_level;
+   clock_vy = sin(angle_snap_clock)* rayon_wheel_level;
+   position_curseur_clock_x= window_cfgX+770+clock_vx;
+   position_curseur_clock_y=window_cfgY+115+clock_vy ;
+
+
+return(0);
+}
+
 int recall_windows()
 {
     window_focus_id=recall_windows_focus_id;
@@ -3181,9 +3285,10 @@ int do_recall_fadersstate(bool fads, bool speeds, bool locks, bool lfos, bool lo
         {
             if(fads==1)
             {
-                Fader[p]=SnapFader[p];
+                fader_set_level(p,SnapFader[p]);
+                /*Fader[p]=SnapFader[p];
                 midi_levels[p]=(int)((float)(SnapFader[p])/2);
-                index_send_midi_out[p]=1;
+                index_send_midi_out[p]=1;*/
             }
             if(speeds==1)
             {
@@ -3507,11 +3612,24 @@ int send_immidiateley_my_midi_cc( int letype,  int lechannel, int lanote, int la
     return(0);
 }
 
+int midi_send_type_message(int msgmidi)
+{
+     MidiEvPtr eIMid;
+        if ((eIMid = MidiNewEv(msgmidi)))
+        {
+        Port(eIMid) = 0;
+        /*Chan(eIMid) = 0;
+        Pitch(eIMid)= 0;
+        Vel(eIMid)  = 0;*/
+        MidiSendIm(myRefNum, eIMid);
+        }
+  return(0);
+}
 
 int emit_midi_out()
 {
 //Midi out sur faders
-    for(int i=0; i<2048; i++)
+    for(int i=0; i<3072; i++)
     {
         if(midi_send_out[i]==1 && index_send_midi_out[i]==1 )
         {
@@ -5650,7 +5768,7 @@ int substract_a_window(int id)
         Midi_Faders_Affectation_Mode=0;
 
         remember_config_page();
-        do_affectation_on_midi_affect_itself=0;
+        //do_affectation_on_midi_affect_itself=0;
         break;
     case W_WIZARD:
         index_show_wizard_window=0;
@@ -5693,6 +5811,18 @@ if (nbre_fenetre_actives<=0){nbre_fenetre_actives=0;window_focus_id=0;}
 
 return(0);
 }
+
+int clear_ip_artnet()
+{
+    //ip artnet
+    for(int u=0; u<8; u++)
+    {
+        sprintf(IP_detected_dmxOUT[u],"-");
+    }
+
+return(0);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 int GlobInit()
 {
@@ -5702,12 +5832,7 @@ int GlobInit()
         core_do_calculations[i]=1;
     }
 
-//ip artnet
-    for(int u=0; u<8; u++)
-    {
-        sprintf(IP_detected_dmxOUT[u],"-");
-    }
-
+    clear_ip_artnet();
 /////////////////////////////////////////
     if(specify_who_to_save_load[0]==1)//memoires ///////////////////////////////////
     {
@@ -5886,6 +6011,10 @@ int GlobInit()
         for (int in=0; in<48; in++)
         {
             Fader[in]=0;
+            Fader_dampered[in].fix_all_damper_state_value(Fader[in]);
+            Fader_dampered[in].set_target_val(Fader[in]);
+            Fader_dampered[in].set_damper_decay(1.0);
+            Fader_dampered[in].set_damper_dt(0.1);
             FaderLocked[in]=0;
             LockFader_is_FullLevel[in]=0;
             StateOfFaderBeforeLock[in]=0;
@@ -6014,7 +6143,7 @@ int GlobInit()
 
     if(specify_who_to_save_load[17]==1)//midi affect////////////////////////////////
     {
-        for(int mi=0; mi<2048; mi++)
+        for(int mi=0; mi<3072; mi++)
         {
             miditable[0][mi]=999;
             miditable[1][mi]=999;
@@ -6037,6 +6166,24 @@ int GlobInit()
                 midi_recognize_on_off[li][u]=0;
             }
         }
+
+        //midi clock personnal
+        bpm_personnal[0]=160;
+        bpm_personnal[1]=140;
+        bpm_personnal[2]=120;
+        bpm_personnal[3]=100;
+        bpm_personnal[4]=90;
+        bpm_personnal[5]=80;
+        bpm_personnal[6]=70;
+        bpm_personnal[7]=60;
+        bpm_personnal[8]=50;
+        bpm_personnal[9]=40;
+        bpm_personnal[10]=30;
+        bpm_personnal[11]=20;
+        bpm_personnal[12]=10;
+        bpm_personnal[13]=5;
+        bpm_personnal[14]=2;
+        bpm_personnal[15]=1;
     }
 
 
@@ -6086,7 +6233,7 @@ int GlobInit()
     if(specify_who_to_save_load[21]==1)//arduino/////////////////////////////////////
     {
 
-        for(int i=0; i<128; i++)
+        for(int i=0; i<digital_limit; i++)
         {
             arduino_digital_type[i]=0;
             arduino_digital_function_input[i][0]=0;
@@ -6094,16 +6241,15 @@ int GlobInit()
             arduino_digital_function_output[i][0]=0;
             arduino_digital_function_output[i][1]=0;
         }
-        for(int i=0; i<64; i++)
+        for(int i=0; i<analog_limit; i++)
         {
             arduino_analog_function_input[i]=0;
             arduino_analog_attribution_input[i]=0;
         }
 
         arduino_baud_rate0=14400;
-        arduino_max_digital=54;
+        arduino_max_digital=13;
         arduino_max_analog=5;
-        arduino_max_out_digi=13;
 
     }
 
@@ -6200,8 +6346,7 @@ int GlobInit()
         allow_artnet_in=0;
         index_setup_gfx=0;
         core_to_assign=0;
-        load_camera_on_start=0;
-        open_arduino_on_open=0;
+
         enable_launchpad=0;
         nbre_track_visualisables=8;
         chaser_operator_is=0;
@@ -6212,7 +6357,7 @@ int GlobInit()
         chaser_midi_rows=8;
         line_list_is=0;
         iCatPageis=0;
-        enable_iCat=0;
+
         surface_type=0;//icat
         L_tablier_iCat=240;
         H_tablier_iCat=160;

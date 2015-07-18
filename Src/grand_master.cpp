@@ -48,7 +48,7 @@ if(mouse_x>GMX && mouse_x<GMX+larg && mouse_y>=GMY-20 && mouse_y<=GMY+275)
 {
 
 
-if((window_focus_id==0 || window_focus_id==906 )&& mouse_button==1 && index_allow_grand_master==1)
+if((window_focus_id==0)&& mouse_button==1 && index_allow_grand_master==1)
 {
 set_mouse_range(GMX, GMY-20, GMX+larg, GMY+275);//pour pas deborder
 //NIVEAU

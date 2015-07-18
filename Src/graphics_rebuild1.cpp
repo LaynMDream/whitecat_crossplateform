@@ -125,9 +125,11 @@ RetourInfos(680,40);
 grand_master(1050, 55);//x y largeur
 show_windows_list_id(1100, 50);//debug windows
 
-petitchiffre.Print(nickname_version,680,195);
+petitchiffre.Print(versionis,680,195);
+petitchiffre.Print(nickname_version,680,205);
 
 petitchiffre.Print(string_debug,680, 210);
+
 
 //focus window
 petitchiffre.Print("Focus: ",680,220);

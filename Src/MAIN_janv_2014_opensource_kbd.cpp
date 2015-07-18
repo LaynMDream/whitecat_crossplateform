@@ -55,7 +55,11 @@ WWWWWWWW           C  WWWWWWWW   |
 #include <audiere.h>
 
 #include <jpgalleg.h>
+#include <vector>
 
+#include <SmoothData.cpp>
+//création du damper sur les faders
+std::vector<SmoothData> Fader_dampered(48);
 
 using namespace audiere;
 using namespace ol;
@@ -65,10 +69,13 @@ int dmxINrate=25;
 int ARDUINO_RATE=20;
 
 
+#define PIknob  3.14159265358979323846264338327950288419716939937510
+
 //ticks
 volatile int ticks = 0;
 int ticker_rate = BPS_TO_TIMER(BPS_RATE);
 int ticker_dmxIn_rate = BPS_TO_TIMER(dmxINrate);
+int midi_BPM=120;
 int ticks_passed = 0;
 volatile int mouse_button;
 volatile int mouse_released;
@@ -90,6 +97,40 @@ template <class T> const T& Tmax ( const T& a, const T& b ) {
 #include <hpdf.h>
 #include <MidiShare.h>
 #include <whitecat.h>
+
+volatile int ticker_midi_clock_rate=BPM_TO_TIMER(24 * midi_BPM);
+/*
+      SECS_TO_TIMER(secs)  - give the number of seconds between
+                             each tick
+      MSEC_TO_TIMER(msec)  - give the number of milliseconds
+                             between ticks
+      BPS_TO_TIMER(bps)    - give the number of ticks each second
+      BPM_TO_TIMER(bpm)    - give the number of ticks per minute
+24 * 120 MIDI Clocks per minute. So, each MIDI Clock is sent at a rate of 60,000,000/(24 * 120) microseconds).
+So, each MIDI Clock is sent at a rate of 60,000,000/(24 * BPM) microseconds).
+*/
+
+void ticker_midi_clock()
+{
+
+     if(index_midi_clock_on==1)
+    {
+    MidiEvPtr eMid;
+    //long  dt = MidiGetTime();
+    if ((eMid = MidiNewEv(typeClock)))
+    {
+        Port(eMid) = 0;
+        Chan(eMid) = 0;
+        Pitch(eMid)= 0;
+        Vel(eMid)  = 0;
+        Dur(eMid)= 0;
+        MidiSendAt(myRefNum, MidiCopyEv(eMid), 0);
+
+    }
+    }
+}
+END_OF_FUNCTION(ticker_midi_clock);
+
 #include <my_window_file_sample.h>//ressources juste après whitecat.h
 #include <patch_splines_2.cpp>//spline pour curves
 
@@ -99,6 +140,7 @@ template <class T> const T& Tmax ( const T& a, const T& b ) {
 
 
 #include <midi_CORE.cpp>
+
 #include <CORE_6.cpp>
 
 
@@ -212,8 +254,6 @@ END_OF_FUNCTION(ticker_dmxIn);
 
 /////////////////////////////////////////////
 
-
-
 void ticker()
 {
 time_doing();
@@ -278,8 +318,19 @@ actual_spline_tick+=spline_tick_fraction;
 move_current_time=ticks_move;
 
 
-
-
+//damper of faders
+for (int i=0;i<48;i++)
+{
+    if(fader_damper_is_on[i]==1)
+    {
+        Fader_dampered[i].damper();
+        Fader[i]=Fader_dampered[i].getdmxvalue_dampered();
+        midi_levels[i]=((Fader_dampered[i].getdmxvalue_dampered())/2);
+        index_send_midi_out[1960+i]=1;//???
+        if(Fader_dampered[i].calculating()==1)
+            { index_fader_is_manipulated[i]=1;}//direct chan
+    }
+}
 
 //
 Merger();
@@ -489,11 +540,6 @@ if (enable_iCat==1 && iCat_serveur_is_initialized==1 && index_quit==0 && index_i
       refresh_continuously_iCat_buttons();
       refresh_continuously_iCat_trackerzones();
       }
-      /*for(int nbr=0;nbr<12;nbr++)//sensibilité clavier
-      {
-      FS_sensibilite_touche[nbr]-=1;
-      if( FS_sensibilite_touche[nbr]<0){ FS_sensibilite_touche[nbr]=0;}
-      }*/
       }
 
 if(expert_mode==1)
@@ -510,13 +556,8 @@ index_enable_edit_echo=1;
 if(right_click_for_menu==1)//sortie du call back pour écrire correctement fermeture fenetres
 {do_mouse_right_click_menu();}
 
-
-if(arduino_device_0_is_ignited==1)
-{
-arduino_do_digital_in_whitecat();arduino_do_analog_in_whitecat();
-arduino__send_config();
-}
 do_audio_midi_function_next_prev_track();//christoph 22/04/14 debugging midi next prev function by outputting it inside the 1/10th second loop
+
 }
 END_OF_FUNCTION(dixiemes_de_secondes);
 
@@ -807,8 +848,8 @@ else {Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color
    LOCK_FUNCTION( ticker_full_loop);
    install_int_ex(ticker_full_loop,ticker_full_loop_rate );
 
-
-
+    LOCK_FUNCTION(ticker_midi_clock);
+    install_int_ex(ticker_midi_clock,ticker_midi_clock_rate );
 
    load_indexes();
    LoadWhiteCatColorProfil();
@@ -853,9 +894,11 @@ else {Setup::SetupScreen( largeur_ecran, hauteur_ecran,FULLSCREEN, desktop_color
  {
  specify_who_to_save_load[r]=1;
  }
+
+
  GlobInit();//rajout version 0.8.2.3
 //reset des bangs
-reset_all_bangers();
+ reset_all_bangers();
  generation_Tableau_noms_clavier_FR() ;
 // generation_Tableau_noms_fonctions() ;
  save_load_print_to_screen("Init Midi");
@@ -915,10 +958,11 @@ reset_all_bangers();
  save_load_print_to_screen("Init Dmx");
  Init_dmx_interface();
 
- if(load_camera_on_start==1)
+ if(camera_on_open==1)
  {
  save_load_print_to_screen("Init Camera");
  InitVideo();
+
  }
 
 
@@ -933,9 +977,6 @@ if( open_arduino_on_open==1)
 {
 save_load_print_to_screen("Init Arduino");
 arduino_init(0);
-index_send_digital_data=1;
-index_send_pwm_data=1;
-read_arduino_data(0);
 }
 
 
@@ -983,6 +1024,7 @@ clear_bitmap(bmp_buffer_trichro);
 
 
 rafraichissement_padwheel();
+rafraichissement_clockwheel();
 
 recalculate_draw_sizes(draw_preset_selected);
 
@@ -1046,13 +1088,22 @@ while(index_quit!=1)
 
 MemoiresExistantes[0]=1;
 show_im_recording_a_time=0;// met à zéro l'affichage du stock visuel du time
-//remis dans boucle pour bug freeze V8.3 et 8.4
-if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && index_writing_curve==0 && arduino_device_0_is_ignited==1 && index_quit==0)//procedures de communication
+
+//must be in main loop to avoid freezing
+if(arduino_device_0_is_ignited==1 &&  ticks_arduino!= old_ticks_arduino
+  && index_is_saving==0 && init_done==1 && index_writing_curve==0 &&  index_quit==0)
 {
-    arduino_read();
-    arduino_do_digital_out_whitecat(); //ecriture
-    arduino_do_pwm_out_whitecat();
+
+
+    arduino_merge_and_do_data_out();
+    arduino_read();//doit etre posé après data out
     serial0.Flush();
+
+    old_ticks_arduino=ticks_arduino;
+
+
+    arduino_do_digital_in_whitecat();arduino_do_analog_in_whitecat();
+
 }
 
  switch(index_art_polling)
@@ -1067,7 +1118,7 @@ if(old_ticks_arduino!=ticks_arduino && index_is_saving==0 && init_done==1 && ind
     break;
    }
 //DEBUG
-sprintf(string_debug,"%.2f", une_valeur_de_debug);
+sprintf(string_debug,"%d",index_decay_tracker);
 
 if(there_is_change_on_show_save_state==1)
 {

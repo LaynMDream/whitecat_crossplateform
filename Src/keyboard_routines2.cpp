@@ -89,18 +89,36 @@ int commandes_clavier()//la fonction sprintf tue l acces clavier
         switch (chi >> 8)
         {
 
+        case KEY_INSERT://affectation midi
+
+        if (key_shifts & KB_CTRL_FLAG  || index_false_control==1)
+            {
+            toggle_numerical_midi_way=toggle(toggle_numerical_midi_way);
+            }
+        else
+            {
+            Midi_Faders_Affectation_Type++;
+            if(Midi_Faders_Affectation_Type>2){Midi_Faders_Affectation_Type=0;}
+            index_midi_mute=0;
+            reset_index_actions();
+            }
+        break;
 
         case KEY_ESC://nettoyage chaine de caractere et deselection totale
 
             reset_indexs_confirmation();
             reset_index_actions();
             key_unselect_ch();
+            Midi_Faders_Affectation_Type=0;
             if(window_focus_id==W_PLOT )
             {
                 if(index_menus_lighting_plot==1) unselect_all_shapes();
                 else if( index_menus_lighting_plot==2 || index_menus_lighting_plot==4)
                 {
-                    reset_symbols_selected(view_plot_calc_number_is);
+                    for(int i=0;i<4;i++)
+                    {
+                         reset_symbols_selected(i);
+                    }
                 }
             }
             else if(window_focus_id==W_ASKCONFIRM)

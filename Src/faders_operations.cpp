@@ -172,6 +172,10 @@ for(int p=0;p<6;p++)
   }
  //mise a plat niveau
  Fader[fad]=0;
+ Fader_dampered[fad].fix_all_damper_state_value(Fader[fad]);
+ Fader_dampered[fad].set_target_val(Fader[fad]);
+ Fader_dampered[fad].set_damper_decay(1.0);
+ Fader_dampered[fad].set_damper_dt(0.1);
  FaderLocked[fad]=0;
  LockFader_is_FullLevel[fad]=0;
  StateOfFaderBeforeLock[fad]=0;
@@ -519,6 +523,7 @@ numeric_postext=0;
 
 if(last_ch_selected>0 && last_ch_selected<513)
 {
+ClearDock(fad,dk);
 switch(multiple_direct_chan)
 {
 case 0:
@@ -551,3 +556,4 @@ sprintf(string_Last_Order,">>Direct Channel: Please select a channel !");
 }
 return(0);
 }
+

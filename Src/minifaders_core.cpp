@@ -69,9 +69,10 @@ if( Midi_Faders_Affectation_Type!=0)
            {
            if(minifaders_selected[p]==1)
            {
-           Fader[p]=0;
+           fader_set_level(p,0);
+           /*Fader[p]=0;
            midi_levels[p]=0;
-           index_send_midi_out[p]=1;
+           index_send_midi_out[p]=1;*/
            }
            }
            break;
@@ -130,9 +131,10 @@ if( Midi_Faders_Affectation_Type!=0)
            {
            if(minifaders_selected[p]==1)
            {
-           Fader[p]=0;
+           /*Fader[p]=0;
            midi_levels[p]=0;
-           index_send_midi_out[p]=1;
+           index_send_midi_out[p]=1;*/
+           fader_set_level(p,0);
            lfo_speed[p]=64;
            midi_levels[196+p]=64;
            index_send_midi_out[196+p]=1;
@@ -734,13 +736,15 @@ set_mouse_range(xmf+(cmptfader*larg), ymf+20+(lfad*hmfd), xmf+(cmptfader*larg)+l
 if( index_main_clear==0)
 {
 //NIVEAU
-Fader[cmptfader+(lfad*24)]=((ymf+127+20+(lfad*hmfd))-mouse_y)*2;
-midi_levels[cmptfader+(lfad*24)]=((ymf+127+20+(lfad*hmfd))-mouse_y);//desafffceté pour trouver pb
+//Fader[cmptfader+(lfad*24)]=((ymf+127+20+(lfad*hmfd))-mouse_y)*2;
+//midi_levels[cmptfader+(lfad*24)]=((ymf+127+20+(lfad*hmfd))-mouse_y);//desafffceté pour trouver pb
 
-if(Fader[cmptfader+(lfad*24)]>=254){Fader[cmptfader+(lfad*24)]=255;midi_levels[cmptfader+(lfad*24)]=127;}
+int val=((ymf+127+20+(lfad*hmfd))-mouse_y)*2;
+fader_set_level(cmptfader+(lfad*24),val);
+//if(Fader[cmptfader+(lfad*24)]>=254){Fader[cmptfader+(lfad*24)]=255;midi_levels[cmptfader+(lfad*24)]=127;}
 
-index_fader_is_manipulated[cmptfader+(lfad*24)]=1;
-if(midi_send_out[cmptfader+(lfad*24)]==1){ index_send_midi_out[cmptfader+(lfad*24)]=1;}
+//index_fader_is_manipulated[cmptfader+(lfad*24)]=1;
+//if(midi_send_out[cmptfader+(lfad*24)]==1){ index_send_midi_out[cmptfader+(lfad*24)]=1;}
 if(lfo_mode_is[cmptfader+(lfad*24)]==1 || lfo_mode_is[cmptfader+(lfad*24)]==2 || lfo_cycle_is_on[cmptfader+(lfad*24)]==1)
 {
 lfo_mode_is[cmptfader+(lfad*24)]=0; lfo_mode_is[cmptfader+(lfad*24)]=0; lfo_cycle_is_on[cmptfader+(lfad*24)]=0;
@@ -761,6 +765,31 @@ if(index_main_clear==1)//clear de tous les dock du fader
  mouse_released=1  ;
 }
 }
+
+//damper on off
+if(mouse_x>xmf+(cmptfader*larg) && mouse_x<xmf+(cmptfader*larg)+larg-5 && mouse_y>ymf+165+(lfad*hmfd) && mouse_y<ymf+173+(lfad*hmfd))
+{
+                    if(mouse_button==1 && mouse_released==0)
+                    {
+                    int fd=cmptfader+(lfad*24);
+                    if( Midi_Faders_Affectation_Type!=0 )
+                        {
+                        attribute_midi_to_control((1912+fd), Midi_Faders_Affectation_Type,Midi_Faders_Affectation_Mode);
+                        }
+                        else
+                        {
+                        if(fader_damper_is_on[fd]==0)
+                        {
+                            Fader_dampered[fd].fix_all_damper_state_value(Fader[fd]);
+                            Fader_dampered[fd].set_target_val(Fader[fd]);
+                        }
+                        fader_damper_is_on[fd]=toggle(fader_damper_is_on[fd]);
+                        }
+                    mouse_released=1;
+                    }
+
+}
+
 }//fin limitation nb faders user define
 }//fin doublage des faders
 }
